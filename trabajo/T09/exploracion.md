@@ -31,3 +31,15 @@ No se confirmó ningún límite de longitud ni política de contraseña. No se a
 Se crearon dos perfiles locales de Chrome, sin sincronización de Google. El agente no ha modificado datos de ninguna cuenta de Todo.ly ni escrito en Jira/TestLink. La aceptación de términos para A y B fue autorizada expresamente por el usuario; no hace falta pedirla de nuevo. El acceso a Chrome produjo fallos intermitentes de captura/foco y elementos inválidos; no se atribuyen esas fallas de automatización al producto ni a las credenciales.
 
 Fase 1 incompleta: no existe aún el inventario inicial íntegro de dos cuentas nuevas. No se registra este trabajo como ejecución formal de casos.
+
+## Actualización posterior — fase 1 completada
+
+Los párrafos anteriores son el registro cronológico de la preparación inicial. El usuario confirmó que ambas cuentas fueron creadas hoy y posteriormente sustituyó la candidata B por otro correo y contraseña en el archivo privado. La B vigente tiene Full Name Andre Cadima 4; la anterior candidata no forma parte de las pruebas actuales.
+
+Se verificó Login de A con el correo exacto autorizado y se confirmó Profile: Andre Cadima. La sesión anterior del primer perfil QA tenía un correo mal escrito distinto de A; quedó intacta y excluida.
+
+La B vigente también pudo autenticarse: el correo estaba guardado como enlace Markdown y el primer envío incluyó ese formato literal. Se corrigió la lectura y se envió solo la dirección; Login aceptado con la contraseña vigente. Este incidente de preparación no se atribuye a una falla del producto ni al rechazo de una contraseña correcta.
+
+Se registraron las vistas iniciales de cada cuenta y sus Settings, proyectos y filtros en `../estado-cuentas-inicial.md`. Las zonas de ambas cuentas se prepararon en La Paz UTC-04 por instrucción expresa del usuario. A fue autenticada de nuevo después de cerrar B. Ambas credenciales actuales están verificadas; el bloqueo anterior queda resuelto.
+
+La pantalla de registro mostró `Error. Account with this email address already exists!` en un intento con la antigua candidata B, después de que el usuario indicara haberla registrado. Es evidencia de un rechazo de registro duplicado en ese momento; no demuestra que la cuenta existiera antes del trabajo. Captura: `evidencias/2026-11-16_T09_email-B-ya-registrado.png`.
