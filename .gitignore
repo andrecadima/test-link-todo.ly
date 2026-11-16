@@ -1,0 +1,11 @@
+# Credenciales de las cuentas de prueba: nunca subir
+.secrets/
+*.local.md
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Extracciones y renders temporales de lectura
+tmp/
