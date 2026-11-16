@@ -89,3 +89,9 @@ Eliminación completa de la cuenta, funciones Pro, colaboración y compras, API,
 ## 11. Fechas
 
 La demostración y el cierre del sprint son el **18 de noviembre de 2026**. Se atienden primero los riesgos altos.
+
+## 12. Aclaración del usuario sobre Timezone (16 de noviembre)
+
+En T09, Timezone se trata únicamente como campo de Signup: obligatoriedad, valores ofrecidos y posibilidad de dejarlo vacío. No se diseñan en T09 efectos de la zona sobre fechas o vencimientos; corresponden a T12 / PEB-76.
+
+Para las cuentas A y B el usuario solicita America/La_Paz. Signup no muestra identificadores IANA: la opción visible correspondiente a La Paz, Bolivia, es `(UTC-04:00) Georgetown, La Paz, Manaus, San Juan`. Se registrará ese texto exacto en el estado inicial. No se confundirá con `(UTC-07:00) Chihuahua, La Paz, Mazatlan`.
