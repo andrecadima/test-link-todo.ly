@@ -118,4 +118,3 @@ No se reporta el hallazgo HTTP en la planilla de fallas: el comentario lo dejar�
 ## 9. Estado
 
 Diseño preparado y presentado para revisión: **seis casos listos (T10-01/02/03/08/09/10) y cuatro candidatos pendientes (T10-04/05/06/07), excluidos del registro propuesto**. Exploración adicional cerrada con dudas declaradas para priorizar la entrega. **No registrado, no publicado y no ejecutado formalmente.** Se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante” únicamente después del registro comprobado.
-
