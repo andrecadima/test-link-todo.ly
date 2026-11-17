@@ -71,3 +71,14 @@ Se envió una vez Full Name vacío, conservando correo y configuración, y con l
 Se dejó Settings de A abierto para intervención manual solicitada al usuario: Old Password vacío y New Password igual a la contraseña anterior privada, pulsar Ok y comunicar el mensaje. Se pidió realizar solamente ese intento para comprobar el estado antes del siguiente. **Sin respuesta ni resultado confirmado todavía.** Luego corresponden el contraste con Old Password incorrecto y la restauración por el flujo válido. No se introdujo ninguna nueva credencial por el agente.
 
 La instrucción expresa del usuario establece HTTPS como **Criterio del equipo** para el enlace de recuperación. T10-10 lo incorpora como seguridad observable; el comentario de Jira lo mencionará como hallazgo a confirmar durante la ejecución. No se reporta en la planilla de fallas.
+
+### Respuesta manual: Old Password vacío
+
+El usuario proporcionó `Screenshot 2026-11-17 at 2.38.43 PM.heic` como respuesta al traspaso de control. La captura fue abierta y leída: muestra Settings / Profile de A, Old Password vacío, New Password con contenido enmascarado y un aviso de Todo.ly con el texto exacto **`Invalid Password`**, botón `OK`. Nombre y zona La Paz siguen visibles. No se conoce ni se transcribe la contraseña a partir de la imagen.
+
+- **Clasificación:** Comportamiento observado: el intento con Old Password vacío produce el aviso Invalid Password. No demuestra por sí solo la conservación de la contraseña, que se contrastará mediante Login.
+- **Evidencia:** `evidencias/2026-11-17_T10_old-password-vacio-Invalid-Password.png`, conversión PNG de la captura proporcionada, sin token ni contraseña legible.
+- **Diseño:** T10-03 deja de tener pendiente el mensaje de rechazo. Su ejecución incluye verificar el acceso con la credencial anterior al intento.
+- **Siguiente traspaso solicitado:** probar Old Password incorrecto y, si se rechaza, efectuar el cambio válido para restaurar la contraseña original, actualizando el secreto únicamente al confirmar aceptación. Si el intento incorrecto fuese aceptado, detenerse y registrar esa credencial como vigente. Aún no hay resultado confirmado de esas dos acciones.
+
+La hora entre la solicitud manual y esta respuesta no se contabiliza como exploración activa del producto. Se mantiene el límite aproximado de una hora de trabajo activo y se dejarán las dudas no resueltas expresamente pendientes.
