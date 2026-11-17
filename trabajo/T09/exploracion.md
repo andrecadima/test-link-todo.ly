@@ -62,3 +62,31 @@ Datos temporales aún por limpiar: marcador A en Home de A y marcador B en Home 
 Se confirmó la identidad A en Settings y se consultó Home: conserva `Prueba T09-aislamiento-A-1937` y no muestra `Prueba T09-aislamiento-B-1941`. La separación queda observada en ambos sentidos para esos dos marcadores. El marcador A permanece al retomar al día siguiente. Captura: `evidencias/2026-11-17_T09_A-conserva-marcador-y-no-ve-B.png`.
 
 La sesión se encontró disponible al retomar el perfil, pero el cierre y reapertura entre días no se controlaron como experimento. Esto no sustituye las comprobaciones separadas de Remember Me marcado y sin marcar.
+
+## Continuación acotada mientras se revisa T10
+
+Se releyó el secreto local vigente, sin modificarlo ni publicar sus valores. A volvió a autenticar correctamente y su identidad se verificó en Settings antes de continuar. Las entradas negativas siguientes se enviaron mediante Login, sin realizar cambios de credenciales.
+
+| Dato / combinación | Resultado y alcance | Clasificación | Evidencia |
+|---|---|---|---|
+| Email y Password vacíos | No se obtuvo acceso; la consulta posterior conservó Login. No se retuvo un mensaje literal fiable en ese contraste. | Comportamiento observado, mensaje pendiente | `evidencias/2026-11-17_T09_login-ambos-vacios-controlado.png` |
+| Email vacío y Password informado con un valor de prueba | La captura muestra `Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.` y el formulario de Login, sin acceso. La lectura AX previa a la captura todavía no reflejaba la respuesta. | Comportamiento observado; imagen inspeccionada | `evidencias/2026-11-17_T09_login-correo-vacio-password-informado.png` |
+| Correo no registrado reservado en example.com y Password de prueba | Aviso genérico Wrong email or password; Login permanece, no aparece Logout. | Comportamiento observado | `evidencias/2026-11-17_T09_login-cuenta-inexistente.png` y lectura AX |
+| Correo válido de A y Password incorrecto | Aviso genérico Wrong email or password; no se concede acceso. Un intento, sin repetir por el error intermedio de captura. | Comportamiento observado | `evidencias/2026-11-17_T09_login-A-password-incorrecto.png` y lectura AX |
+| Correo válido de A y Password vacío | Mismo aviso genérico; no se concede acceso. Un intento. | Comportamiento observado | `evidencias/2026-11-17_T09_login-A-password-vacio.png` y lectura AX |
+| Email `PruebaT09SinArroba` y Password de prueba | La pestaña quedó sin contenido en dos contrastes; no se obtuvo mensaje de validación ni acceso verificable. Se abrió GET nuevo para recuperar la interfaz. No se concluye un defecto del producto ni un rechazo específico de formato a partir de las vistas vacías. | Duda pendiente; causa de la vista vacía no confirmada | `evidencias/2026-11-17_T09_login-formato-email-invalido.png`, `evidencias/2026-11-17_T09_login-formato-invalido-confirmado.png` |
+
+Presupuesto conservador de A en el trabajo actual del 17/11: dos rechazos de esta continuación más el rechazo de la contraseña reemplazada comprobado anteriormente durante T10. No se realizarán más intentos negativos asociados a A. Los vacíos sin correo, el formato inválido y la cuenta inexistente no utilizan el identificador de A o B. No se observó CAPTCHA ni bloqueo en las respuestas legibles; no se afirma su inexistencia general.
+
+Las capturas y las lecturas AX pueden corresponder a instantes distintos de una respuesta asíncrona. Se distinguen explícitamente: no se atribuye un mensaje a una imagen vacía ni se presenta una página vacía como evidencia de validación correcta.
+
+### Remember Me — cierre controlado iniciado, reapertura pendiente
+
+1. Se recuperó una pestaña GET con la landing y sin sesión después del intento de formato inválido.
+2. Se abrió Login y se desmarcó Remember Me. Lectura AX: `checkbox Remember Me, Value: 0`. Evidencia: `evidencias/2026-11-17_T09_remember-me-desmarcado-antes-login.png`.
+3. Se hizo Login válido de A con las credenciales actuales del secreto. La vista autenticada mostró Settings, Logout y los datos de A. Evidencia: `evidencias/2026-11-17_T09_remember-off-sesion-antes-cierre.png`.
+4. El menú Window enumeró dos ventanas: la del correo del perfil original y Todo.ly del perfil QA. Se descartó ese menú mediante su acción accesible Cancel. Se verificó el título `Todo.ly - Google Chrome - Todo.ly QA cuenta B` y se pulsó el close button de esa ventana; no se usó Quit ni se borraron cookies.
+5. La lectura posterior devolvió `timeoutReached`. Dos intentos de reenlazar Chrome y otro tras reiniciar la conexión CUA devolvieron el mismo error. El inventario indicó que Chrome seguía ejecutándose, pero no permitió comprobar la ventana ni reabrir el perfil. El host de acceso DOM también continuó no disponible.
+6. Se solicitó al usuario reabrir el perfil QA y Todo.ly **sin introducir credenciales**, para observar si la sesión se conservó. Esa solicitud corresponde al procedimiento manual previsto por el usuario cuando Remember Me falla con la herramienta.
+
+**Clasificación:** Duda pendiente. Se confirmó la casilla desmarcada y Login previo; el cierre intentado y sus errores no prueban qué estado tendría la sesión después de reabrir. Falta observar la reapertura y el contraste separado con Remember Me marcado. No se atribuye esta falla de control a un defecto de Todo.ly. La ventana del correo no fue objetivo de ninguna acción de cierre; su permanencia posterior aún no pudo verificarse por el timeout.
