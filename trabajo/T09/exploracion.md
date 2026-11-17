@@ -90,3 +90,24 @@ Las capturas y las lecturas AX pueden corresponder a instantes distintos de una 
 6. Se solicitó al usuario reabrir el perfil QA y Todo.ly **sin introducir credenciales**, para observar si la sesión se conservó. Esa solicitud corresponde al procedimiento manual previsto por el usuario cuando Remember Me falla con la herramienta.
 
 **Clasificación:** Duda pendiente. Se confirmó la casilla desmarcada y Login previo; el cierre intentado y sus errores no prueban qué estado tendría la sesión después de reabrir. Falta observar la reapertura y el contraste separado con Remember Me marcado. No se atribuye esta falla de control a un defecto de Todo.ly. La ventana del correo no fue objetivo de ninguna acción de cierre; su permanencia posterior aún no pudo verificarse por el timeout.
+
+### Reapertura observada — Remember Me desmarcado
+
+El usuario indicó que había reabierto el perfil sin Login. La primera ventana recibida por CUA correspondía a **Andre**, con un formulario de Login rellenado: no se pulsó Submit ni se usó esa ventana como evidencia del experimento. Su árbol conservaba las pestañas de TestLink, Jira y correo. Se seleccionó explícitamente **Todo.ly QA cuenta B** desde Profiles; ese perfil mostró una ventana con New Tab. Se abrió https://todo.ly/ sin introducir credenciales. Tras una carga inicialmente vacía, la lectura posterior mostró la landing pública con `javascript:ShowLogin();` y `javascript:ShowSignup();`, sin Settings ni Logout. Solo entonces se inició el siguiente contraste.
+
+- **Resultado observado:** en el perfil correcto, después del cierre previo con Remember Me desmarcado, **no reapareció una sesión autenticada**.
+- **Evidencia:** `evidencias/2026-11-17_T09_remember-off-reapertura-sin-sesion.png`; lectura AX confirma perfil y landing.
+- **Límite:** la reapertura fue asistida por el usuario tras fallos de CUA y hubo un intervalo entre cierre y consulta. No se infiere una duración de sesión ni que todo el proceso de cierre/reapertura fuese automatizado sin interrupciones.
+- **Siguiente contraste:** Remember Me marcado con B. Se verificó la casilla `Value: 1` antes del envío; las credenciales proporcionadas nuevamente por el usuario coinciden con el archivo privado. No se modifica el secreto ni se publica la contraseña. Login y reapertura marcados aún pendientes de resultado final.
+
+### Reapertura observada — Remember Me marcado
+
+La consulta GET posterior al envío de Login mostró el área autenticada; Settings confirmó Full Name Andre Cadima 4 y el correo de B. Se guardó `evidencias/2026-11-17_T09_remember-on-B-identidad-antes-cierre.png`. La casilla estaba marcada antes del Login, como muestra `evidencias/2026-11-17_T09_remember-me-marcado-antes-login.png`.
+
+Se cerró exclusivamente la ventana cuyo título identificaba el perfil QA. La lectura inmediata volvió a dar timeoutReached. Esta vez se recuperó el control consultando Finder y reenlazando Chrome: reapareció la ventana original Andre con sus pestañas de Jira, TestLink y correo, sin operar su formulario de Todo.ly. Desde Profiles se seleccionó Todo.ly QA cuenta B; abrió New Tab, confirmando que la ventana anterior de QA ya estaba cerrada. Se abrió https://todo.ly/ sin introducir ninguna credencial nueva ni ejecutar Login.
+
+La página mostró **Settings y Logout**, y al abrir Profile se confirmó de nuevo **Andre Cadima 4 y el correo de B**. Resultado: **la sesión autenticada de B reapareció al reabrir el perfil con Remember Me marcado**. Evidencia del área autenticada después de reabrir: `evidencias/2026-11-17_T09_remember-on-reapertura-autenticada.png`; identidad corroborada mediante AX de Profile.
+
+Los resultados corresponden a dos recorridos independientes: A sin marcar y B marcado, en el mismo perfil local. No se deduce una caducidad ni un cierre completo del proceso Chrome; sus otros perfiles permanecieron abiertos. No se borraron cookies ni se alteraron contraseñas o correo. Se deja B autenticada con Settings abierto tras la comprobación.
+
+Se cierra la exploración adicional para el diseño de T09. Permanecen pendientes el mensaje específico y la causa de la vista vacía con correo mal formado, las validaciones aisladas de cada campo de Signup, una exploración controlada del registro válido (los registros iniciales fueron completados por el usuario) y cualquier frontera de longitud. No se aplica análisis de valores límite sin esa frontera.

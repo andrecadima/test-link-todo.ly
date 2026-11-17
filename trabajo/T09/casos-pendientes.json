@@ -1,0 +1,29 @@
+[
+  {
+    "id": "T09-08",
+    "titulo": "Investigar Login con Email sin formato de correo",
+    "importancia": "medium",
+    "razon": "Identifica una entrada negativa cuya respuesta visible todavía no está resuelta.",
+    "requerimiento": "PEB-73 / T09. Tratamiento del Email mal formado, pendiente de fijar resultado visible.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil."
+    ],
+    "descripcion": "Candidato pendiente: las vistas vacías impiden fijar una respuesta de validación. No registrar como caso listo.",
+    "pasos": [
+      [
+        "Abrir Login e introducir PruebaT09SinArroba en Email y Prueba-T09-no-valida-17 en Password.",
+        "Los campos contienen los representantes de prueba, sin datos de una cuenta ajena."
+      ],
+      [
+        "Pulsar Login / Submit una sola vez.",
+        "PENDIENTE: confirmar el tratamiento visible y el mensaje. La página vacía de la herramienta no demuestra una regla de validación del producto."
+      ],
+      [
+        "Abrir una consulta GET nueva sin introducir credenciales y registrar el estado.",
+        "Se documenta si aparece la página pública o una sesión autenticada; no se atribuye el resultado a una regla sintáctica sin confirmarla."
+      ]
+    ],
+    "postcondiciones": "Candidato fuera del registro propuesto; sin cambios de credencial y con la causa de la vista vacía pendiente."
+  }
+]

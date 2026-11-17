@@ -1,0 +1,419 @@
+[
+  {
+    "id": "T09-01",
+    "titulo": "Rechazar Signup con campos vacíos y términos sin aceptar",
+    "importancia": "medium",
+    "razon": "Detecta aceptación de un formulario sin los datos necesarios ni el consentimiento indicado.",
+    "requerimiento": "PEB-73 / T09. Signup informa las omisiones observadas y no concede acceso.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil."
+    ],
+    "descripcion": "Comprobar la combinación vacía observada; no aislar como reglas independientes todas sus condiciones concurrentes.",
+    "pasos": [
+      [
+        "Abrir https://todo.ly/ y desplegar Signup.",
+        "Se muestran Full Name, Email, Password, Timezone, casilla de términos y Submit."
+      ],
+      [
+        "Dejar Full Name, Email y Password vacíos, conservar Timezone predeterminado y dejar los términos sin marcar; pulsar Submit.",
+        "Se rechaza el envío con Error. Please correct the missing fields.; aparecen asteriscos en nombre, correo y contraseña, y el aviso If you don’t agree you can’t use Todo.ly."
+      ],
+      [
+        "Conservar evidencia de las señales visibles y volver a https://todo.ly/ sin completar el registro.",
+        "La sesión continúa cerrada; no aparece el área de proyectos de una cuenta."
+      ]
+    ],
+    "postcondiciones": "Sin cuenta nueva ni sesión; evidencia de la combinación vacía, sin atribuir obligatoriedad del servidor a Timezone."
+  },
+  {
+    "id": "T09-02",
+    "titulo": "Rechazar el registro con el correo de una cuenta de prueba existente",
+    "importancia": "high",
+    "razon": "Evita sustituir o confundir una cuenta al reutilizar su identificador.",
+    "requerimiento": "PEB-73 / T09. Signup rechaza un correo ya registrado sin sustituir la cuenta existente.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.",
+      "Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.",
+      "Datos de registro válidos conocidos para la cuenta de prueba y aceptación de los términos por quien ejecuta."
+    ],
+    "descripcion": "Comprobar el rechazo de un duplicado usando exclusivamente una cuenta propia de prueba.",
+    "pasos": [
+      [
+        "Abrir Signup e introducir Prueba T09-02 - duplicado en Full Name, el correo de A en Email y una contraseña de prueba privada válida en Password; seleccionar La Paz UTC-04.",
+        "Los campos contienen los datos previstos y el correo corresponde a la cuenta de prueba existente."
+      ],
+      [
+        "Quien ejecuta marca los términos que acepta y pulsa Submit.",
+        "Aparece Error. Account with this email address already exists!; no se registra una segunda cuenta con ese correo."
+      ],
+      [
+        "Volver a Login e iniciar sesión con las credenciales de A vigentes antes del intento; abrir Settings / Profile.",
+        "Se accede a A y se conservan su identidad y nombre originales, sin aplicar el nombre del registro duplicado."
+      ]
+    ],
+    "postcondiciones": "A conserva sus datos y credenciales; no se crea otra cuenta. Evidencia del rechazo sin contraseñas."
+  },
+  {
+    "id": "T09-03",
+    "titulo": "Consultar y seleccionar Timezone como campo de Signup",
+    "importancia": "medium",
+    "razon": "Evita confundir las opciones de La Paz y atribuir al campo reglas temporales fuera del alcance.",
+    "requerimiento": "PEB-73 / T09. Signup ofrece selección de zona y refleja la opción elegida en el formulario.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil."
+    ],
+    "descripcion": "Comprobar opciones, valor inicial y ausencia de una opción vacía en la interfaz; sin crear cuenta ni evaluar vencimientos.",
+    "pasos": [
+      [
+        "Abrir Signup y consultar el valor inicial de Timezone.",
+        "El selector muestra (UTC-08:00) Pacific Time (US & Canada), según la referencia observada."
+      ],
+      [
+        "Desplegar el selector y revisar sus opciones, registrando el inventario visible.",
+        "La lista incluye (UTC-04:00) Georgetown, La Paz, Manaus, San Juan y la opción mexicana UTC-07 distinta; no ofrece una entrada vacía en el listado observado. El inventario de referencia contiene 101 opciones."
+      ],
+      [
+        "Seleccionar (UTC-04:00) Georgetown, La Paz, Manaus, San Juan.",
+        "El selector refleja exactamente la opción UTC-04 elegida."
+      ],
+      [
+        "Volver a https://todo.ly/ sin enviar Signup.",
+        "No se crea cuenta ni se modifica la configuración de A o B."
+      ]
+    ],
+    "postcondiciones": "Formulario descartado sin registro. No se concluye validación de servidor para un Timezone vacío que la interfaz no permite seleccionar."
+  },
+  {
+    "id": "T09-04",
+    "titulo": "Iniciar sesión con credenciales que corresponden a A",
+    "importancia": "high",
+    "razon": "Protege la operación esencial de acceso a la cuenta correcta.",
+    "requerimiento": "PEB-73 / T09. Credenciales vigentes que corresponden a una cuenta permiten acceso a esa identidad.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.",
+      "Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado."
+    ],
+    "descripcion": "Recorrer la regla positiva de la tabla de decisión y comprobar identidad en Profile.",
+    "pasos": [
+      [
+        "Desplegar Login e introducir el correo de A y su contraseña vigente del registro privado; desmarcar Remember Me para este recorrido.",
+        "Los datos corresponden a A y la casilla está desmarcada."
+      ],
+      [
+        "Pulsar Login, cuyo nombre accesible es Submit.",
+        "Se muestra el área autenticada con Settings y Logout."
+      ],
+      [
+        "Abrir Settings / Profile y comparar identidad con el registro privado.",
+        "El nombre y el correo corresponden a A; no se abre otra cuenta."
+      ],
+      [
+        "Cerrar Settings con Cancel y pulsar Logout.",
+        "Se vuelve a la página pública, con la sesión cerrada."
+      ]
+    ],
+    "postcondiciones": "Sesión cerrada y datos de A sin cambios; evidencia de identidad sin secretos."
+  },
+  {
+    "id": "T09-05",
+    "titulo": "Rechazar Login con ambos campos vacíos",
+    "importancia": "high",
+    "razon": "Evita acceso sin una combinación de credenciales que corresponda a la cuenta.",
+    "requerimiento": "PEB-73 / T09. La combinación negativa R1 de la tabla de decisión no concede acceso.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil."
+    ],
+    "descripcion": "Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.",
+    "pasos": [
+      [
+        "Desplegar Login; dejar o introducir Email vacío y Password vacío; conservar Remember Me sin cambios.",
+        "Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia."
+      ],
+      [
+        "Pulsar Login / Submit una sola vez.",
+        "No se concede acceso. La lectura posterior conserva Login y no muestra datos de proyectos autenticados."
+      ],
+      [
+        "Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales.",
+        "Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B."
+      ]
+    ],
+    "postcondiciones": "Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible."
+  },
+  {
+    "id": "T09-06",
+    "titulo": "Rechazar Login con Email vacío y Password informado",
+    "importancia": "high",
+    "razon": "Evita acceso sin una combinación de credenciales que corresponda a la cuenta.",
+    "requerimiento": "PEB-73 / T09. La combinación negativa R2 de la tabla de decisión no concede acceso.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil."
+    ],
+    "descripcion": "Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.",
+    "pasos": [
+      [
+        "Desplegar Login; dejar o introducir Email vacío y Prueba-T09-no-valida-17 en Password; conservar Remember Me sin cambios.",
+        "Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia."
+      ],
+      [
+        "Pulsar Login / Submit una sola vez.",
+        "No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below."
+      ],
+      [
+        "Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales.",
+        "Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B."
+      ]
+    ],
+    "postcondiciones": "Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible."
+  },
+  {
+    "id": "T09-07",
+    "titulo": "Rechazar Login de A con Password vacío",
+    "importancia": "high",
+    "razon": "Evita acceso sin una combinación de credenciales que corresponda a la cuenta.",
+    "requerimiento": "PEB-73 / T09. La combinación negativa R3 de la tabla de decisión no concede acceso.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.",
+      "Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.",
+      "Menos de tres intentos fallidos asociados a A en la exploración del lote; la clave vigente es distinta de Prueba-T09-no-valida-17."
+    ],
+    "descripcion": "Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.",
+    "pasos": [
+      [
+        "Desplegar Login; dejar o introducir el correo vigente de A y Password vacío; conservar Remember Me sin cambios.",
+        "Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia."
+      ],
+      [
+        "Pulsar Login / Submit una sola vez.",
+        "No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below."
+      ],
+      [
+        "Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales.",
+        "Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B."
+      ]
+    ],
+    "postcondiciones": "Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible."
+  },
+  {
+    "id": "T09-09",
+    "titulo": "Rechazar Login con un correo no registrado",
+    "importancia": "high",
+    "razon": "Evita acceso sin una combinación de credenciales que corresponda a la cuenta.",
+    "requerimiento": "PEB-73 / T09. La combinación negativa R4 de la tabla de decisión no concede acceso.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.",
+      "El correo reservado prueba-t10-no-registrada-20261117@example.com no pertenece a una cuenta; esta condición fue contrastada mediante recuperación en la exploración."
+    ],
+    "descripcion": "Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.",
+    "pasos": [
+      [
+        "Desplegar Login; dejar o introducir prueba-t10-no-registrada-20261117@example.com y Prueba-T09-no-valida-17 en Password; conservar Remember Me sin cambios.",
+        "Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia."
+      ],
+      [
+        "Pulsar Login / Submit una sola vez.",
+        "No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below."
+      ],
+      [
+        "Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales.",
+        "Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B."
+      ]
+    ],
+    "postcondiciones": "Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible."
+  },
+  {
+    "id": "T09-10",
+    "titulo": "Rechazar Login de A con contraseña incorrecta",
+    "importancia": "high",
+    "razon": "Evita acceso sin una combinación de credenciales que corresponda a la cuenta.",
+    "requerimiento": "PEB-73 / T09. La combinación negativa R5 de la tabla de decisión no concede acceso.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.",
+      "Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.",
+      "Menos de tres intentos fallidos asociados a A en la exploración del lote; la clave vigente es distinta de Prueba-T09-no-valida-17."
+    ],
+    "descripcion": "Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.",
+    "pasos": [
+      [
+        "Desplegar Login; dejar o introducir el correo vigente de A y Prueba-T09-no-valida-17 en Password; conservar Remember Me sin cambios.",
+        "Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia."
+      ],
+      [
+        "Pulsar Login / Submit una sola vez.",
+        "No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below."
+      ],
+      [
+        "Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales.",
+        "Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B."
+      ]
+    ],
+    "postcondiciones": "Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible."
+  },
+  {
+    "id": "T09-11",
+    "titulo": "Cerrar sesión y proteger datos ante Atrás y URL directa",
+    "importancia": "high",
+    "razon": "Detecta exposición de datos después de Logout por historial o navegación directa.",
+    "requerimiento": "PEB-73 / T09. Logout deja sin acceso autenticado el historial y la URL previamente observada.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.",
+      "Sesión iniciada como A; proyecto Home disponible y sin una tarea llamada Prueba T09-11 - sesión."
+    ],
+    "descripcion": "Comprobar una secuencia de estados con un marcador propio reconocible; la creación de la tarea es preparación para la observación de sesión.",
+    "pasos": [
+      [
+        "Seleccionar Home y crear mediante Add una tarea Prueba T09-11 - sesión.",
+        "Home de A muestra el marcador pendiente para distinguir sus datos."
+      ],
+      [
+        "Pulsar Logout.",
+        "Aparece la página pública y el marcador ya no se muestra como dato autenticado."
+      ],
+      [
+        "Usar Atrás del navegador una vez.",
+        "No se restablece una sesión autenticada ni se expone el marcador de A."
+      ],
+      [
+        "Introducir directamente https://todo.ly/, URL observada durante la sesión, sin Login.",
+        "Se muestra la página pública con acceso a Login; no se expone el marcador."
+      ],
+      [
+        "Conservar evidencia del estado posterior a las dos navegaciones.",
+        "La evidencia permite reconocer la ausencia de acceso autenticado sin contener secretos."
+      ]
+    ],
+    "postcondiciones": "Sesión cerrada. El marcador permanece en Home de A para la limpieza del lote; datos previos conservados. No se afirma protección de API ni de rutas que no se hayan observado."
+  },
+  {
+    "id": "T09-12",
+    "titulo": "Separar los datos propios de A y B al cambiar de cuenta",
+    "importancia": "high",
+    "razon": "Evita exposición o mezcla de información entre dos cuentas sin proyectos compartidos.",
+    "requerimiento": "PEB-73 / T09. Cada cuenta muestra sus propios datos de Home después de cambiar de identidad.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.",
+      "Dos cuentas gratuitas de prueba A y B sin proyectos compartidos; credenciales privadas vigentes y proyectos Home disponibles.",
+      "No existen los marcadores Prueba T09-12 - marcador A y Prueba T09-12 - marcador B en sus respectivos Home."
+    ],
+    "descripcion": "Comprobar aislamiento en ambos sentidos mediante datos distintos y consultas de identidad.",
+    "pasos": [
+      [
+        "Iniciar sesión como A y verificar su identidad en Settings; cerrar Settings con Cancel.",
+        "El perfil corresponde a A."
+      ],
+      [
+        "Abrir Home y crear Prueba T09-12 - marcador A; pulsar Logout.",
+        "El marcador pertenece a Home de A y la sesión queda cerrada."
+      ],
+      [
+        "Iniciar sesión como B, verificar identidad en Settings y consultar Home.",
+        "Se abre B; no aparece el marcador de A."
+      ],
+      [
+        "Crear Prueba T09-12 - marcador B en Home de B y pulsar Logout.",
+        "B conserva su marcador y la sesión queda cerrada."
+      ],
+      [
+        "Iniciar sesión como A y consultar Home.",
+        "A muestra su marcador y no el de B."
+      ],
+      [
+        "Pulsar Logout, iniciar sesión como B y consultar Home.",
+        "B muestra su marcador y no el de A."
+      ],
+      [
+        "Conservar evidencia de ambos sentidos y pulsar Logout.",
+        "La sesión queda cerrada y los marcadores siguen separados por cuenta."
+      ]
+    ],
+    "postcondiciones": "Marcadores propios en Home de sus cuentas, pendientes de la limpieza del lote; sin proyectos compartidos ni cambios a datos de otras personas."
+  },
+  {
+    "id": "T09-13",
+    "titulo": "Reabrir el perfil tras Login con Remember Me desmarcado",
+    "importancia": "high",
+    "razon": "Detecta permanencia de acceso no solicitada al reabrir el perfil de QA.",
+    "requerimiento": "PEB-73 / T09. El recorrido observado sin Remember Me vuelve a la página pública al reabrir.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.",
+      "Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.",
+      "Perfil dedicado sin otras ventanas propias; configuración de Chrome estable durante el recorrido y posibilidad de reabrir ese mismo perfil."
+    ],
+    "descripcion": "Repetir el recorrido observado con A, registrando intervalo y cierre de ventanas; no inferir una caducidad de cookies.",
+    "pasos": [
+      [
+        "Abrir Login y desmarcar Remember Me; conservar evidencia de la casilla desmarcada antes del envío.",
+        "Remember Me está desmarcado."
+      ],
+      [
+        "Introducir las credenciales vigentes de A, pulsar Login y confirmar identidad en Profile.",
+        "Se inicia sesión en A; Settings y Logout están disponibles."
+      ],
+      [
+        "Cerrar todas las ventanas de ese perfil dedicado sin pulsar Logout, sin borrar cookies y sin cerrar otros perfiles. Anotar el intervalo hasta la reapertura.",
+        "Las ventanas del perfil QA quedan cerradas; el resto del navegador conserva sus sesiones."
+      ],
+      [
+        "Reabrir el mismo perfil y consultar https://todo.ly/ sin introducir credenciales.",
+        "Aparece la página pública con Login/Signup, sin una sesión autenticada, conforme al recorrido observado."
+      ],
+      [
+        "Conservar evidencia con nombre del perfil y estado de Todo.ly.",
+        "La evidencia identifica la reapertura correcta; no se usa otro perfil como prueba."
+      ]
+    ],
+    "postcondiciones": "Perfil QA abierto con sesión cerrada, datos y credenciales sin cambios; intervalo y cualquier ayuda manual documentados."
+  },
+  {
+    "id": "T09-14",
+    "titulo": "Reabrir el perfil tras Login con Remember Me marcado",
+    "importancia": "high",
+    "razon": "Comprueba recuperación de la sesión solicitada sin confundirla con un nuevo Login.",
+    "requerimiento": "PEB-73 / T09. El recorrido observado con Remember Me conserva la identidad autenticada al reabrir.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.",
+      "Cuenta gratuita de prueba B con credenciales privadas vigentes; perfil dedicado sin otras ventanas propias y configuración de Chrome estable."
+    ],
+    "descripcion": "Repetir el recorrido observado con B, comprobando la identidad restaurada y cerrando después la sesión.",
+    "pasos": [
+      [
+        "Abrir Login y marcar Remember Me; conservar evidencia de la casilla antes del envío.",
+        "Remember Me está marcado."
+      ],
+      [
+        "Introducir las credenciales vigentes de B, pulsar Login y consultar Profile.",
+        "Se inicia sesión y se confirma la identidad de B."
+      ],
+      [
+        "Cerrar todas las ventanas de ese perfil sin Logout, sin borrar cookies y sin cerrar otros perfiles; registrar el intervalo.",
+        "Las ventanas QA quedan cerradas conservando la configuración del recorrido."
+      ],
+      [
+        "Reabrir el mismo perfil y consultar https://todo.ly/ sin introducir credenciales.",
+        "Aparece el área autenticada con Settings y Logout, sin un nuevo envío de Login."
+      ],
+      [
+        "Abrir Profile y contrastar identidad con el registro privado.",
+        "La sesión restaurada corresponde a B, no a A ni a otra cuenta."
+      ],
+      [
+        "Conservar evidencia, cerrar Profile con Cancel y pulsar Logout.",
+        "Se vuelve a la página pública y la sesión queda cerrada."
+      ]
+    ],
+    "postcondiciones": "Sesión de B cerrada después de conservar evidencia; datos y credenciales sin cambios. El recorrido no prueba una caducidad ni el cierre completo del proceso Chrome."
+  }
+]
