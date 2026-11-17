@@ -1,6 +1,6 @@
 # T10 / PEB-74 — Perfil, credenciales y recuperación de acceso
 
-Fecha: 17 de noviembre de 2026. **Borrador de diseño en preparación; aún no presentado al punto de control.** No registrado en TestLink ni publicado en Jira. La exploración adicional comenzó a las 15:51 UTC; el presupuesto aproximado de una hora corresponde al trabajo activo. La espera entre el traspaso manual y la respuesta del usuario se registra separadamente. Las fichas de este archivo se generan a partir de `casos.json`, manteniendo los campos acordados.
+Fecha: 17 de noviembre de 2026. **Diseño preparado para el punto de control: seis casos listos y cuatro candidatos pendientes excluidos del registro propuesto.** No registrado en TestLink ni publicado en Jira. La exploración adicional comenzó a las 15:51 UTC; el presupuesto aproximado de una hora corresponde al trabajo activo. La espera entre el traspaso manual y la respuesta del usuario se registra separadamente. Las fichas de este archivo se generan a partir de `casos.json`, manteniendo los campos acordados. `casos-listos.json` delimita los seis casos propuestos para registro; `casos-pendientes.json` conserva cuatro candidatos que no se importarán como listos. Los códigos se conservan para trazabilidad, aunque la lista registrable no sea consecutiva.
 
 ## 1. Análisis del área
 
@@ -8,7 +8,7 @@ Se analizaron Settings / Profile, el guardado con Ok, el descarte con Cancel y e
 
 Profile ofrece Full Name, Email, Time zone, Old Password y New Password. **Settings no ofrece un campo de confirmación de contraseña.** El formulario de recuperación sí ofrece Enter a New Password y Verify New Password, con Done. Por ello no se fabrica una validación de confirmación distinta dentro de Settings.
 
-Se observaron Cancel del nombre, guardado y persistencia tras recarga y una nueva sesión. La recuperación de A fue completada manualmente por el usuario; el Login posterior rechazó la contraseña reemplazada y aceptó la nueva, conservando la identidad de A. El correo no registrado produjo rechazo explícito. La captura manual de las 14:38 muestra Invalid Password con Old Password vacío y New Password informado. Continúan pendientes el contraste de contraseña incorrecta, el cambio válido desde Settings y el cambio de Email.
+Se observaron Cancel del nombre, guardado y persistencia tras recarga y una nueva sesión. La recuperación de A fue completada manualmente por el usuario; el Login posterior rechazó la contraseña reemplazada y aceptó la nueva, conservando la identidad de A. El correo no registrado produjo rechazo explícito. La captura manual de las 14:38 muestra Invalid Password con Old Password vacío y New Password informado. Posteriormente se descartó el formulario y se verificó Login con la misma contraseña vigente antes del intento, confirmando identidad A en Profile. Continúan pendientes el contraste de contraseña incorrecta, el cambio válido desde Settings y el cambio de Email.
 
 No se incluyen zona horaria, vencimientos, eliminación de cuenta, funciones Pro, auditoría de penetración ni tiempos de respuesta sin umbral documentado. Los datos de sesión se usan para comprobar persistencia del perfil; la cobertura completa de sesión corresponde a T09.
 
@@ -31,9 +31,9 @@ Valoración cualitativa de diseño, no frecuencia medida: probabilidad P baja=1/
 |---|---|---|
 | Ok guarda el nombre y Cancel conserva el anterior; el guardado persiste tras recarga y nueva sesión | Comportamiento observado | `exploracion.md`, consultas de Profile del 17/11 |
 | Settings tiene Old Password y New Password, sin confirmación | Comportamiento observado | Consulta del formulario del 17/11 |
-| Old Password vacío con New Password informado muestra `Invalid Password` | Comportamiento observado | Captura aportada por el usuario del 17/11 a las 14:38; la conservación posterior de la contraseña sigue por contrastar |
+| Old Password vacío con New Password informado muestra `Invalid Password` | Comportamiento observado | Captura aportada por el usuario del 17/11 a las 14:38; la conservación posterior se contrastó por Login y Profile con la misma credencial previa |
 | Old Password incorrecto y cambio válido desde Settings | Duda pendiente | Segundo contraste manual y restauración solicitados; no confundir el rechazo de vacío con el de incorrecto |
-| Rechazar cambios sin contraseña actual correcta | Criterio de seguridad propuesto para revisión; no confirmado todavía | Riesgo R1; el rechazo de vacío ya se observó; el de incorrecto y la conservación de credenciales requieren contraste |
+| Rechazar cambios sin contraseña actual correcta | Criterio de seguridad propuesto para revisión; no confirmado todavía | Riesgo R1; el rechazo de vacío ya se observó; el de incorrecto requiere contraste; la conservación tras el intento vacío se verificó |
 | Cambio válido de contraseña desde Settings y reversión | Duda pendiente | Existe el control; no se ha acreditado el resultado del flujo |
 | Cancel específico de Email y cambio válido a alias sin verificar por correo | Duda pendiente | No atribuir a Email el contraste realizado únicamente con Full Name |
 | Para recuperación registrada se muestra `Info. An email has been sent with a link where you can change your password.` | Comportamiento observado | Solicitud de A, mensaje recibido y formulario leído |
@@ -67,7 +67,7 @@ Una clase agrupa datos con el mismo tratamiento esperado; se elige un representa
 | Correo solicitado en recuperación | Correo sin cuenta: rechazo explícito | Inválida para recuperar una cuenta | `prueba-t10-no-registrada-20261117@example.com` | T10-09, regla observada |
 | Credencial en Login posterior a recuperación | Contraseña vigente: acceso a A | Válida | Nueva contraseña privada de A | T10-08, contraste del flujo de recuperación |
 | Credencial en Login posterior a recuperación | Contraseña reemplazada: rechazo | Inválida | Contraseña privada anterior de A | T10-08, contraste del flujo de recuperación |
-| Old Password al cambiar desde Settings | Vacío con New Password informado: aviso Invalid Password | Inválida, rechazo observado | Campo vacío y alternativa privada no vacía | T10-03, regla de rechazo observada; conservación de acceso por comprobar |
+| Old Password al cambiar desde Settings | Vacío con New Password informado: aviso Invalid Password | Inválida, rechazo observado | Campo vacío y alternativa privada no vacía | T10-03, rechazo y conservación de acceso observados |
 | Old Password al cambiar desde Settings | No coincide / coincide con la actual | Resultado pendiente de contraste | Un valor distinto; valor vigente privado | T10-04/05, **particiones candidatas** |
 
 ### 5.2 Flujos de casos de uso
@@ -90,12 +90,12 @@ No se aplican valores límite: no hay una frontera real confirmada de longitud n
 |---|---|---|---|---|
 | T10-01 Cancelar nombre | Descartar una edición; R3 | Alternativa Cancel del UC1, ya contrastada | medium | Preparado |
 | T10-02 Guardar nombre y persistir | Evitar pérdida del perfil; R2 | Principal UC1 con recarga y nueva sesión | high | Preparado |
-| T10-03 Old Password vacío | Proteger cambio de credencial; R1 | Partición inválida vacío y alternativa UC3; aviso Invalid Password observado | high | Preparado; conservación posterior de acceso por ejecutar |
+| T10-03 Old Password vacío | Proteger cambio de credencial; R1 | Partición inválida vacío y alternativa UC3; aviso Invalid Password observado | high | Preparado; rechazo y conservación de acceso observados |
 | T10-04 Old Password incorrecto | Proteger cambio de credencial; R1 | Partición candidata no corresponde y alternativa UC3 | high | Pendiente de regla/resultado |
 | T10-05 Cambio válido desde Settings | Continuidad del acceso; R1 | Principal UC3, contraste antes/después y reversión | high | Pendiente de exploración |
 | T10-06 Cancelar correo | Conservar identificador descartado; R3 | Alternativa UC4 | high | Pendiente de contraste específico |
 | T10-07 Cambiar correo a alias y restaurar | Evitar pérdida de acceso/datos; R4 | Principal UC4 | high | Pendiente de verificación/activación |
-| T10-08 Recuperar acceso | Acceso con credencial nueva; R1 | Particiones de correo/credencial y UC2 principal | high | Flujo observado; restauración depende de T10-05 |
+| T10-08 Recuperar acceso | Acceso con credencial nueva; R1 | Particiones de correo/credencial y UC2 principal | high | Preparado; nueva credencial queda vigente y registrada privadamente |
 | T10-09 Correo no registrado | Distinguir rechazo de envío aceptado; R6 | Partición sin cuenta y alternativa UC2 | medium | Preparado |
 | T10-10 HTTPS del enlace | Transporte del token; R5 | Procedimiento observable sobre entrega/apertura del UC2, criterio del equipo | high | Preparado; hallazgo a confirmar en ejecución |
 
@@ -107,7 +107,7 @@ El comentario final de Jira contendrá la lista resumida con IDs y enlaces reale
 
 ## 8. Cobertura pendiente y límites
 
-Pendientes: contraste de contraseña desde Settings, restauración de A, Email de B, política de contraseña, fronteras de campos, token de uso único/caducidad y sesiones paralelas. La exploración acotada prioriza los primeros tres; lo restante se declara como duda. Los cuatro PDF faltantes se excluyen expresamente como fuentes por instrucción del usuario.
+Pendientes: Old Password incorrecto, cambio válido desde Settings, restauración de A, Email de B, política de contraseña, fronteras de campos, token de uso único/caducidad y sesiones paralelas. Se cierra la exploración adicional para avanzar al diseño, conforme a la prioridad de la demo. El usuario pidió delegar los cambios; la política de CUA exige que los introduzca y envíe personalmente. Por ello T10-04/05/06/07 quedan pendientes por limitación de ejecución, sin nuevas solicitudes repetidas de intervención. No se afirma que el producto exija verificación de correo: esa regla no se alcanzó a consultar mediante un cambio válido. Los cuatro PDF faltantes se excluyen expresamente como fuentes por instrucción del usuario.
 
 El nombre vacío se envió una vez con credenciales de cambio vacías: la vista quedó en Loading y una nueva consulta conservó Andre Cadima. No hubo una validación visible fiable; no se establece obligatoriedad ni se genera un caso de rechazo basándose solo en ese intento. No se repite la exploración para buscar límites arbitrarios.
 
@@ -115,9 +115,9 @@ No se reporta el hallazgo HTTP en la planilla de fallas: el comentario lo dejar�
 
 ## 9. Estado
 
-Diseño en preparación. Exploración y solicitudes de intervención manual en curso. **No registrado, no publicado y no ejecutado formalmente.** Se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante” únicamente después del registro comprobado.
+Diseño preparado y presentado para revisión: **seis casos listos (T10-01/02/03/08/09/10) y cuatro candidatos pendientes (T10-04/05/06/07), excluidos del registro propuesto**. Exploración adicional cerrada con dudas declaradas para priorizar la entrega. **No registrado, no publicado y no ejecutado formalmente.** Se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante” únicamente después del registro comprobado.
 
-## Fichas para TestLink
+## Fichas para TestLink — seis casos preparados
 
 <!-- FICHAS_GENERADAS -->
 
@@ -193,6 +193,86 @@ Diseño en preparación. Exploración y solicitudes de intervención manual en c
 | 5. Consultar Profile y conservar evidencia sin secretos. | Se mantienen la identidad y los valores iniciales de A; la evidencia del aviso no revela contraseñas. |
 
 **Postcondiciones:** Contraseña vigente antes del intento conservada y acceso comprobado; nombre, correo y configuración sin cambios. Evidencia del rechazo sin secretos.
+
+---
+
+### T10-08. Recuperar el acceso de una cuenta registrada mediante su buzón
+
+**Importancia:** **high**. Cubre pérdida de acceso, aplicación de la nueva credencial y conservación de identidad y datos.
+
+**Requerimiento:** PEB-74 / T10. La recuperación de una cuenta registrada permite establecer una nueva contraseña y volver a acceder.
+
+**Precondiciones:**
+1. Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
+2. Sesión de Todo.ly cerrada en el perfil dedicado de QA.
+3. Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta; contraseña inicial conocida y otra contraseña de prueba disponibles en registro privado.
+4. Nombre y un dato representativo de A conocidos para comprobar identidad y conservación.
+
+**Descripción:** Recorrer solicitud, correo, formulario y Login posterior. Las condiciones de seguridad del transporte se evalúan separadamente en T10-10.
+
+| Paso | Resultado esperado |
+|---|---|
+| 1. Abrir Todo.ly, desplegar Login y seleccionar Reset your Password. | Se presenta Enter your email address to reset your password y el control Send. |
+| 2. Introducir el correo de A y pulsar Send una vez. | Aparece Info. An email has been sent with a link where you can change your password. |
+| 3. Consultar personalmente el buzón controlado y abrir el mensaje Forgot Password correspondiente a esa solicitud; no copiar el token a la evidencia. | Llega un mensaje dirigido a A con instrucciones y enlace de recuperación. No se exige un plazo de recepción no documentado. |
+| 4. Abrir el enlace de recuperación en el perfil de QA mediante HTTPS. | Se muestra Please Enter a New Password con Enter a New Password, Verify New Password y Done. |
+| 5. Introducir personalmente la misma nueva contraseña en ambos campos y pulsar Done; actualizar el registro privado. | El cambio permite acceder a A. No se exige un aviso literal posterior a Done porque no se observó su texto. |
+| 6. Cerrar sesión y realizar un intento de Login con la contraseña reemplazada. | No se concede acceso; se muestra Wrong email or password dentro del aviso de rechazo observado. |
+| 7. Iniciar sesión con la nueva contraseña y consultar Profile y el dato representativo. | Acceso a A; se conservan identidad y datos anteriores a la recuperación. |
+
+**Postcondiciones:** Cuenta A accesible con la nueva contraseña, que queda vigente y reflejada en el registro privado; identidad y datos conservados. Sin token ni contraseñas publicados. La restauración de la contraseña anterior queda identificada como actividad pendiente del entorno, separada de este caso de recuperación.
+
+---
+
+### T10-09. Solicitar recuperación con un correo no registrado
+
+**Importancia:** **medium**. Comprueba la alternativa de una solicitud que no identifica una cuenta recuperable.
+
+**Requerimiento:** PEB-74 / T10. La recuperación informa el rechazo de un correo que no pertenece a una cuenta.
+
+**Precondiciones:**
+1. Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
+2. Sesión de Todo.ly cerrada en el perfil dedicado de QA.
+3. Dirección reservada para ejemplos sin cuenta en Todo.ly: prueba-t10-no-registrada-20261117@example.com.
+
+**Descripción:** Comprobar el tratamiento observado para la clase correo no registrado, sin consultar ni crear buzones externos.
+
+| Paso | Resultado esperado |
+|---|---|
+| 1. Abrir Todo.ly, desplegar Login y seleccionar Reset your Password. | Se presenta el campo de correo para recuperación y el control Send. |
+| 2. Introducir prueba-t10-no-registrada-20261117@example.com y pulsar Send una vez. | Aparece Error. Account with this Email address doesn't exist.; el formulario de recuperación permanece disponible. |
+| 3. Conservar evidencia del aviso sin credenciales y cerrar el panel de Login. | No se inicia una sesión ni se modifica ninguna cuenta A o B. |
+
+**Postcondiciones:** Sin sesión ni cambios de cuenta. Evidencia del rechazo conservada. El comportamiento de revelar existencia de cuenta se documenta, sin convertirlo en una auditoría de seguridad.
+
+---
+
+### T10-10. Comprobar HTTPS en el enlace de recuperación recibido
+
+**Importancia:** **high**. Detecta exposición observable del token de recuperación mediante una URL HTTP.
+
+**Requerimiento:** PEB-74 / T10. Criterio del equipo: el enlace de recuperación debe usar HTTPS.
+
+**Precondiciones:**
+1. Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
+2. Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta.
+3. Mensaje de recuperación de A disponible con enlace aún no utilizado; sin otras credenciales visibles en pantalla.
+
+**Descripción:** Examinar el esquema de los enlaces y la indicación de conexión al abrir el enlace directo, sin introducir una nueva contraseña ni interceptar tráfico.
+
+| Paso | Resultado esperado |
+|---|---|
+| 1. Abrir personalmente el mensaje Forgot Password de la solicitud de A e inspeccionar el esquema de cada enlace de recuperación y su destino visible, sin publicar el token. | Los enlaces de recuperación utilizan HTTPS según el criterio del equipo. Un enlace HTTP constituye una discrepancia a registrar en la ejecución. |
+| 2. Abrir el enlace directo en el perfil dedicado de QA sin introducir contraseñas; consultar la indicación de conexión de Chrome. | El recorrido de recuperación utiliza una conexión segura; Chrome no presenta Not Secure para la página de recuperación. |
+| 3. Registrar esquema e indicador observados en evidencia que oculte el token y cerrar esa pestaña. | La evidencia permite evaluar el criterio sin divulgar el token; no se ha enviado una nueva contraseña ni cambiado la cuenta. |
+
+**Postcondiciones:** Credenciales y datos sin cambios. Resultado del caso pendiente de ejecución formal; hallazgo previo HTTP indicado para confirmar, sin reporte en la planilla de fallas.
+
+---
+
+## Candidatos pendientes — no registrar todavía
+
+Sus resultados principales o reglas continúan pendientes. Estas fichas conservan la propuesta y no forman parte de los seis casos listos para TestLink.
 
 ---
 
@@ -293,78 +373,3 @@ Diseño en preparación. Exploración y solicitudes de intervención manual en c
 | 5. Restaurar personalmente el correo original por el flujo válido, actualizar el registro privado y comprobar Login. | B queda accesible con su correo original y conserva la contraseña y los datos iniciales. |
 
 **Postcondiciones:** Correo original de B restaurado y registro privado coherente. Caso pendiente: no registrar como listo con resultados principales condicionales.
-
----
-
-### T10-08. Recuperar el acceso de una cuenta registrada mediante su buzón
-
-**Importancia:** **high**. Cubre pérdida de acceso, aplicación de la nueva credencial y conservación de identidad y datos.
-
-**Requerimiento:** PEB-74 / T10. La recuperación de una cuenta registrada permite establecer una nueva contraseña y volver a acceder.
-
-**Precondiciones:**
-1. Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
-2. Sesión de Todo.ly cerrada en el perfil dedicado de QA.
-3. Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta; contraseña inicial conocida y otra contraseña de prueba disponibles en registro privado.
-4. Nombre y un dato representativo de A conocidos para comprobar identidad y conservación.
-
-**Descripción:** Recorrer solicitud, correo, formulario y Login posterior. Las condiciones de seguridad del transporte se evalúan separadamente en T10-10.
-
-| Paso | Resultado esperado |
-|---|---|
-| 1. Abrir Todo.ly, desplegar Login y seleccionar Reset your Password. | Se presenta Enter your email address to reset your password y el control Send. |
-| 2. Introducir el correo de A y pulsar Send una vez. | Aparece Info. An email has been sent with a link where you can change your password. |
-| 3. Consultar personalmente el buzón controlado y abrir el mensaje Forgot Password correspondiente a esa solicitud; no copiar el token a la evidencia. | Llega un mensaje dirigido a A con instrucciones y enlace de recuperación. No se exige un plazo de recepción no documentado. |
-| 4. Abrir el enlace de recuperación en el perfil de QA mediante HTTPS. | Se muestra Please Enter a New Password con Enter a New Password, Verify New Password y Done. |
-| 5. Introducir personalmente la misma nueva contraseña en ambos campos y pulsar Done; actualizar el registro privado. | El cambio permite acceder a A. No se exige un aviso literal posterior a Done porque no se observó su texto. |
-| 6. Cerrar sesión y realizar un intento de Login con la contraseña reemplazada. | No se concede acceso; se muestra Wrong email or password dentro del aviso de rechazo observado. |
-| 7. Iniciar sesión con la nueva contraseña y consultar Profile y el dato representativo. | Acceso a A; se conservan identidad y datos anteriores a la recuperación. |
-| 8. Restaurar personalmente la contraseña inicial mediante el flujo de cambio válido ya confirmado, actualizar el registro privado y verificar Login. | A queda accesible con su contraseña inicial; sin cambios de nombre, correo ni configuración temporal. |
-
-**Postcondiciones:** Cuenta A accesible con su contraseña inicial y datos conservados; buzón y evidencias sin token publicado. La restauración desde Settings depende del cierre de la comprobación T10-05.
-
----
-
-### T10-09. Solicitar recuperación con un correo no registrado
-
-**Importancia:** **medium**. Comprueba la alternativa de una solicitud que no identifica una cuenta recuperable.
-
-**Requerimiento:** PEB-74 / T10. La recuperación informa el rechazo de un correo que no pertenece a una cuenta.
-
-**Precondiciones:**
-1. Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
-2. Sesión de Todo.ly cerrada en el perfil dedicado de QA.
-3. Dirección reservada para ejemplos sin cuenta en Todo.ly: prueba-t10-no-registrada-20261117@example.com.
-
-**Descripción:** Comprobar el tratamiento observado para la clase correo no registrado, sin consultar ni crear buzones externos.
-
-| Paso | Resultado esperado |
-|---|---|
-| 1. Abrir Todo.ly, desplegar Login y seleccionar Reset your Password. | Se presenta el campo de correo para recuperación y el control Send. |
-| 2. Introducir prueba-t10-no-registrada-20261117@example.com y pulsar Send una vez. | Aparece Error. Account with this Email address doesn't exist.; el formulario de recuperación permanece disponible. |
-| 3. Conservar evidencia del aviso sin credenciales y cerrar el panel de Login. | No se inicia una sesión ni se modifica ninguna cuenta A o B. |
-
-**Postcondiciones:** Sin sesión ni cambios de cuenta. Evidencia del rechazo conservada. El comportamiento de revelar existencia de cuenta se documenta, sin convertirlo en una auditoría de seguridad.
-
----
-
-### T10-10. Comprobar HTTPS en el enlace de recuperación recibido
-
-**Importancia:** **high**. Detecta exposición observable del token de recuperación mediante una URL HTTP.
-
-**Requerimiento:** PEB-74 / T10. Criterio del equipo: el enlace de recuperación debe usar HTTPS.
-
-**Precondiciones:**
-1. Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
-2. Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta.
-3. Mensaje de recuperación de A disponible con enlace aún no utilizado; sin otras credenciales visibles en pantalla.
-
-**Descripción:** Examinar el esquema de los enlaces y la indicación de conexión al abrir el enlace directo, sin introducir una nueva contraseña ni interceptar tráfico.
-
-| Paso | Resultado esperado |
-|---|---|
-| 1. Abrir personalmente el mensaje Forgot Password de la solicitud de A e inspeccionar el esquema de cada enlace de recuperación y su destino visible, sin publicar el token. | Los enlaces de recuperación utilizan HTTPS según el criterio del equipo. Un enlace HTTP constituye una discrepancia a registrar en la ejecución. |
-| 2. Abrir el enlace directo en el perfil dedicado de QA sin introducir contraseñas; consultar la indicación de conexión de Chrome. | El recorrido de recuperación utiliza una conexión segura; Chrome no presenta Not Secure para la página de recuperación. |
-| 3. Registrar esquema e indicador observados en evidencia que oculte el token y cerrar esa pestaña. | La evidencia permite evaluar el criterio sin divulgar el token; no se ha enviado una nueva contraseña ni cambiado la cuenta. |
-
-**Postcondiciones:** Credenciales y datos sin cambios. Resultado del caso pendiente de ejecución formal; hallazgo previo HTTP indicado para confirmar, sin reporte en la planilla de fallas.

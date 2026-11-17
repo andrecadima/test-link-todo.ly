@@ -82,3 +82,11 @@ El usuario proporcionó `Screenshot 2026-11-17 at 2.38.43 PM.heic` como respuest
 - **Siguiente traspaso solicitado:** probar Old Password incorrecto y, si se rechaza, efectuar el cambio válido para restaurar la contraseña original, actualizando el secreto únicamente al confirmar aceptación. Si el intento incorrecto fuese aceptado, detenerse y registrar esa credencial como vigente. Aún no hay resultado confirmado de esas dos acciones.
 
 La hora entre la solicitud manual y esta respuesta no se contabiliza como exploración activa del producto. Se mantiene el límite aproximado de una hora de trabajo activo y se dejarán las dudas no resueltas expresamente pendientes.
+
+### Contraste de conservación y cierre de exploración adicional
+
+El usuario solicitó que el agente continuara sin delegarle más cambios. Se retomó la pantalla y se descartó con Cancel el formulario que conservaba New Password enmascarado. Se cerró la sesión de A, se abrió una nueva consulta GET y se realizó Login con la contraseña actual de `.secrets`. Su valor coincidía privadamente con el usado en el último Login exitoso anterior al intento vacío. Login fue aceptado y Settings confirmó identidad A, nombre original y La Paz UTC-04. **Queda observada la conservación de la credencial tras Old Password vacío.** No se modificó ninguna contraseña ni correo.
+
+Se cierra la exploración adicional de T10 para priorizar la demo. Quedan pendientes T10-04 (Old Password incorrecto), T10-05 (cambio válido y restauración desde Settings), T10-06 (Cancel de Email) y T10-07 (cambio válido de Email y posible verificación). La causa inmediata es la exigencia de entrada/envío manual de nuevas credenciales de la herramienta, no una restricción observada de Todo.ly. No se repite la solicitud al usuario.
+
+El diseño propone seis casos listos y conserva cuatro candidatos pendientes fuera del conjunto registrable. No se interpreta la delegación general como aprobación de un diseño todavía no presentado. Se mantiene el punto de control por ticket antes de Jira/TestLink.

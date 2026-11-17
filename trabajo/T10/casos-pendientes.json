@@ -1,0 +1,143 @@
+[
+  {
+    "id": "T10-04",
+    "titulo": "Intentar cambiar la contraseña con la contraseña actual incorrecta",
+    "importancia": "high",
+    "razon": "Detecta sustitución de credenciales sin validar correctamente la contraseña anterior.",
+    "requerimiento": "PEB-74 / T10. Validar la correspondencia de Old Password con la cuenta; resultado principal pendiente de confirmar.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A.",
+      "Credencial vigente, una entrada distinta de ella y una contraseña alternativa disponibles únicamente para quien ejecuta."
+    ],
+    "descripcion": "Propuesta pendiente: comprobar el tratamiento de una contraseña anterior incorrecta. No registrar como caso listo hasta confirmar la regla o aprobar expresamente el criterio de seguridad.",
+    "pasos": [
+      [
+        "Abrir Settings / Profile sin alterar nombre, correo ni configuración temporal.",
+        "Se muestran los controles Old Password y New Password vacíos."
+      ],
+      [
+        "Introducir personalmente una contraseña incorrecta en Old Password y la alternativa en New Password; pulsar Ok una sola vez.",
+        "PENDIENTE: confirmar rechazo y señal visible. El criterio de seguridad propuesto exige que la contraseña incorrecta no autorice el cambio."
+      ],
+      [
+        "Registrar la respuesta y comprobar qué credencial permite Login, sin superar el presupuesto de intentos de la exploración.",
+        "Se identifica el estado real de la credencial sin atribuir fallos de la herramienta al producto."
+      ],
+      [
+        "Restaurar personalmente la credencial inicial si fuera necesario y actualizar el registro privado.",
+        "La cuenta queda accesible con su contraseña inicial y el registro privado coincide."
+      ]
+    ],
+    "postcondiciones": "Cuenta accesible y credencial inicial conservada o restaurada; regla y resultado principal pendientes antes del registro definitivo."
+  },
+  {
+    "id": "T10-05",
+    "titulo": "Cambiar la contraseña desde Settings y recuperar el estado inicial",
+    "importancia": "high",
+    "razon": "Protege la continuidad del acceso después de un cambio voluntario de credencial.",
+    "requerimiento": "PEB-74 / T10. Un cambio válido desde Settings permite Login con la nueva contraseña y deja sin efecto la anterior.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A.",
+      "Contraseña inicial vigente y otra contraseña de prueba disponibles únicamente para quien ejecuta; posibilidad de recuperación por buzón controlado si ocurre un fallo."
+    ],
+    "descripcion": "Comprobar cambio válido, acceso posterior y reversión. La observación del flujo Settings todavía debe completarse antes de declarar listo el caso.",
+    "pasos": [
+      [
+        "Abrir Settings / Profile.",
+        "El perfil corresponde a A y presenta Old Password y New Password."
+      ],
+      [
+        "Introducir personalmente la contraseña vigente en Old Password y la alternativa en New Password; pulsar Ok.",
+        "El cambio válido es aceptado sin alterar nombre, correo ni configuración temporal. Resultado del flujo Settings pendiente de confirmar en la exploración."
+      ],
+      [
+        "Cerrar sesión y probar una vez Login con la contraseña inicial.",
+        "Login no concede acceso con la contraseña reemplazada."
+      ],
+      [
+        "Iniciar sesión con la contraseña alternativa.",
+        "Login concede acceso a A y se conserva su información."
+      ],
+      [
+        "Volver a Settings y restaurar personalmente la contraseña inicial mediante Old Password y New Password; actualizar el registro privado.",
+        "La restauración es aceptada y el registro privado refleja la contraseña inicial vigente."
+      ],
+      [
+        "Cerrar sesión, iniciar sesión con la contraseña inicial y consultar Profile.",
+        "A vuelve a ser accesible con la contraseña inicial; nombre y correo conservan los valores previos."
+      ]
+    ],
+    "postcondiciones": "Contraseña inicial restaurada y Login comprobado; nombre, correo y Settings sin cambios; registro privado actualizado y sin secretos en evidencias."
+  },
+  {
+    "id": "T10-06",
+    "titulo": "Cancelar una edición de correo conserva el identificador de acceso",
+    "importancia": "high",
+    "razon": "Evita pérdida de acceso por una modificación de correo descartada.",
+    "requerimiento": "PEB-74 / T10. Cancel descarta el correo editado en Profile.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba B.",
+      "Correo original de B y alias alternativo del mismo buzón controlado disponibles para quien ejecuta; credenciales en registro privado."
+    ],
+    "descripcion": "Comprobar la cancelación de la edición de Email. El descarte de nombre fue observado; el efecto específico sobre Email sigue pendiente de contraste.",
+    "pasos": [
+      [
+        "Abrir Settings / Profile y verificar que corresponde a B; anotar privadamente el correo original.",
+        "Email muestra el identificador original de B."
+      ],
+      [
+        "Sustituir personalmente Email por el alias de prueba del mismo buzón y pulsar Cancel.",
+        "Settings se cierra y la edición se descarta; este resultado específico requiere contraste exploratorio."
+      ],
+      [
+        "Volver a abrir Profile.",
+        "Email conserva exactamente el correo original de B."
+      ],
+      [
+        "Cerrar Settings, pulsar Logout e iniciar sesión con el correo original y su contraseña vigente.",
+        "Login permite acceder a B con el identificador original; no se necesita una verificación para una edición descartada."
+      ]
+    ],
+    "postcondiciones": "B conserva su correo original y su acceso; no se ha enviado un cambio válido de correo ni utilizado un buzón ajeno."
+  },
+  {
+    "id": "T10-07",
+    "titulo": "Cambiar el correo de B a un alias y restaurar el original",
+    "importancia": "high",
+    "razon": "Protege el acceso y los datos al modificar el identificador de la cuenta.",
+    "requerimiento": "PEB-74 / T10. Guardar un cambio válido de Email conserva los datos y permite acceso con el identificador vigente.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba B.",
+      "Correo original, contraseña vigente y alias nuevo del mismo buzón controlado disponibles para quien ejecuta; el alias no pertenece a otra cuenta.",
+      "Duda pendiente: requisito de verificación de correo y secuencia de activación del nuevo identificador. Si la interfaz lo exige, buzón controlado y verificación a cargo de quien ejecuta."
+    ],
+    "descripcion": "Propuesta pendiente hasta confirmar si el cambio exige verificar por correo. Durante la exploración acotada no se completará esa verificación si se exige.",
+    "pasos": [
+      [
+        "Abrir Settings / Profile y anotar privadamente el correo inicial y un dato representativo de B.",
+        "El perfil y los datos corresponden a B."
+      ],
+      [
+        "Introducir personalmente el alias en Email y pulsar Ok sin modificar otros campos.",
+        "PENDIENTE: confirmar aceptación directa o solicitud de verificación. No fijar activación inmediata mientras esa regla sea desconocida."
+      ],
+      [
+        "Una vez confirmada la regla, seguir únicamente su flujo válido y volver a consultar Profile tras recarga.",
+        "PENDIENTE: definir el punto exacto en que el alias pasa a ser el identificador vigente; los datos de B se conservan."
+      ],
+      [
+        "Comprobar Login con el identificador vigente conforme al flujo confirmado.",
+        "Acceso a la misma B con sus datos; resultado sobre el identificador anterior pendiente de la regla observada."
+      ],
+      [
+        "Restaurar personalmente el correo original por el flujo válido, actualizar el registro privado y comprobar Login.",
+        "B queda accesible con su correo original y conserva la contraseña y los datos iniciales."
+      ]
+    ],
+    "postcondiciones": "Correo original de B restaurado y registro privado coherente. Caso pendiente: no registrar como listo con resultados principales condicionales."
+  }
+]

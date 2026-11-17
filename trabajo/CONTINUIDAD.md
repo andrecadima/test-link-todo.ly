@@ -8,10 +8,10 @@ Actualización: 17 de noviembre de 2026.
 - Orden de principio a fin: T10 → T09 → T11. Exploración adicional aproximada de una hora como máximo por ticket; después declarar dudas pendientes, sin ampliar indefinidamente.
 - Seguir sin los cuatro PDF faltantes y sin releer completos los PDF disponibles.
 - Punto de control por ticket. Mientras el usuario revisa su diseño, explorar el siguiente. Solo con OK registrar ese ticket en TestLink y comentarlo en Jira; después actualizar continuidad, commit y push. Limpieza de marcadores/proyecto al terminar los tres.
-- Borrador local T10 creado: `trabajo/T10/analisis-diseno.md` y diez fichas fuente en `trabajo/T10/casos.json`. Aún NO presentado como diseño cerrado ni aprobado: cuatro candidatos de contraseña/correo siguen pendientes de reglas/contrastes; restauración de A pendiente.
-- Captura manual del usuario a las 14:38 leída: Old Password vacío, New Password informado y aviso Invalid Password. Guardada en T10/evidencias; T10-03 actualizado con regla de rechazo observada, conservación de acceso aún por contrastar.
-- Nuevo traspaso manual solicitado: probar Old Password incorrecto; si se rechaza, restaurar mediante Old Password correcto y New Password original; actualizar .secrets solo si se acepta. Si el intento incorrecto fuera aceptado, detenerse y registrar la credencial resultante. Pendiente respuesta; no operar la pantalla mientras el usuario introduce credenciales.
-- Borrador T10 ahora tiene seis fichas con resultados principales definidos y cuatro candidatos pendientes (T10-04/05/06/07); T10-08 conserva dependencia de la restauración desde Settings. El tiempo de espera por intervención manual no es tiempo de exploración activa.
+- Diseño T10 cerrado para punto de control: seis casos listos T10-01/02/03/08/09/10 en `trabajo/T10/casos-listos.json`; cuatro candidatos T10-04/05/06/07 en `casos-pendientes.json`, excluidos del registro propuesto. Fichas y artefactos en `analisis-diseno.md`.
+- Captura manual de las 14:38: Invalid Password con Old Password vacío. Después se descartó el formulario y se verificó Login con la misma credencial previa; identidad A confirmada en Settings. T10-03 tiene rechazo y conservación observados.
+- El usuario pidió delegar también los cambios de credenciales. Se explicó la limitación de CUA y se cerró la exploración adicional sin reiterar solicitudes manuales. No se modificó contraseña ni Email. Restauración de A y reglas de cambio/cancelación de Email pendientes, sin atribuir necesidad de verificación al producto.
+- Mantener el punto de control solicitado: presentar seis casos registrables y cuatro pendientes, esperar OK antes de TestLink/Jira. Mientras se revisa, explorar T09. La delegación general no se interpreta como aprobación de un diseño aún no presentado.
 - Settings no presenta confirmación de contraseña. Nombre vacío enviado una vez: Loading; nueva consulta conserva el nombre original, sin mensaje fiable. No convertirlo en una regla ni continuar buscando fronteras sin evidencia.
 - HTTPS del enlace es ahora Criterio del equipo expreso; T10-10 diseñado para confirmarlo durante ejecución. No reportar aún en la planilla de fallas.
 
@@ -31,7 +31,7 @@ Actualización: 17 de noviembre de 2026.
 - La herramienta CUA exige control del usuario antes de introducir nuevas contraseñas u otras credenciales. El usuario ya autorizó crear cuentas y aceptar los términos; no volver a pedir esas autorizaciones. Para cambios de contraseña/correo corresponde un traspaso de control, no permiso repetido.
 - Drag de proyecto devolvió noWindowsAvailable; la consulta siguiente mantuvo el proyecto temporal en raíz. No atribuir una restricción a Todo.ly por esa falla de herramienta.
 - Faltan cuatro PDF de clase, enumerados en 00-contexto.md. No suponer su contenido.
-- No se alcanzó aún el punto de control de diseño. No escribir en Jira/TestLink hasta presentar análisis/artefactos/casos y recibir OK.
+- T10 preparado para su punto de control por ticket; pendiente OK del usuario. No escribir en Jira/TestLink sin ese OK. T09 y T11 aún sin diseño cerrado.
 
 ## Datos temporales que permanecen
 

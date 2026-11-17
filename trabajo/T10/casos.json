@@ -289,13 +289,9 @@
       [
         "Iniciar sesión con la nueva contraseña y consultar Profile y el dato representativo.",
         "Acceso a A; se conservan identidad y datos anteriores a la recuperación."
-      ],
-      [
-        "Restaurar personalmente la contraseña inicial mediante el flujo de cambio válido ya confirmado, actualizar el registro privado y verificar Login.",
-        "A queda accesible con su contraseña inicial; sin cambios de nombre, correo ni configuración temporal."
       ]
     ],
-    "postcondiciones": "Cuenta A accesible con su contraseña inicial y datos conservados; buzón y evidencias sin token publicado. La restauración desde Settings depende del cierre de la comprobación T10-05."
+    "postcondiciones": "Cuenta A accesible con la nueva contraseña, que queda vigente y reflejada en el registro privado; identidad y datos conservados. Sin token ni contraseñas publicados. La restauración de la contraseña anterior queda identificada como actividad pendiente del entorno, separada de este caso de recuperación."
   },
   {
     "id": "T10-09",
