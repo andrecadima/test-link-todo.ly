@@ -43,3 +43,22 @@ La B vigente también pudo autenticarse: el correo estaba guardado como enlace M
 Se registraron las vistas iniciales de cada cuenta y sus Settings, proyectos y filtros en `../estado-cuentas-inicial.md`. Las zonas de ambas cuentas se prepararon en La Paz UTC-04 por instrucción expresa del usuario. A fue autenticada de nuevo después de cerrar B. Ambas credenciales actuales están verificadas; el bloqueo anterior queda resuelto.
 
 La pantalla de registro mostró `Error. Account with this email address already exists!` en un intento con la antigua candidata B, después de que el usuario indicara haberla registrado. Es evidencia de un rechazo de registro duplicado en ese momento; no demuestra que la cuenta existiera antes del trabajo. Captura: `evidencias/2026-11-16_T09_email-B-ya-registrado.png`.
+
+## Fase 2 — observaciones en curso
+
+| Hora AUT | Cuenta | Condición y acción | Resultado observado | Clasificación | Evidencia |
+|---|---|---|---|---|---|
+| 7:38 PM | A | Crear `Prueba T09-aislamiento-A-1937` en Home mediante Add | Una tarea pendiente en Home. | Comportamiento observado | `evidencias/2026-11-16_T09_A-marcador-creado.png` |
+| 7:39 PM | A | Logout con ese marcador existente | Landing con Login y sin el marcador. | Comportamiento observado | `evidencias/2026-11-16_T09_logout-A.png` |
+| 7:39 PM | Sin sesión | Atrás después de Logout | Landing sin exposición del marcador de A. | Comportamiento observado | `evidencias/2026-11-16_T09_atras-tras-logout.png` |
+| 7:39 PM | Sin sesión | Abrir directamente https://todo.ly/ después de Logout (misma URL observada durante sesión) | Landing con Login y sin el marcador. No se adivinaron endpoints internos. | Comportamiento observado | `evidencias/2026-11-16_T09_url-directa-tras-logout.png` |
+| 7:39–7:40 PM | Sin sesión | Intentos con campos vacíos y A sin contraseña | Se vio rechazo genérico con los campos vacíos en la lectura de accesibilidad; hubo interrupciones de captura y página sin contenido. No se considera comprobada todavía cada combinación ni se atribuye la interrupción al producto. | Duda pendiente | Capturas login-vacios/login-A-sin-password requieren repetición antes de usarlas como evidencia de reglas. |
+| 7:41 PM | B vigente | Login con credencial correcta; consultar Home y crear `Prueba T09-aislamiento-B-1941` | Home contiene solo el marcador B; no muestra el marcador de A. | Comportamiento observado | `evidencias/2026-11-16_T09_B-marcador-y-ausencia-A.png` |
+
+Datos temporales aún por limpiar: marcador A en Home de A y marcador B en Home de B. No se han eliminado los tutoriales ni modificado prioridades, fechas, zona horaria o ajustes durante estas observaciones de fase 2. Falta el contraste inverso, Remember Me y completar las combinaciones de Login.
+
+### Continuación del 17 de noviembre
+
+Se confirmó la identidad A en Settings y se consultó Home: conserva `Prueba T09-aislamiento-A-1937` y no muestra `Prueba T09-aislamiento-B-1941`. La separación queda observada en ambos sentidos para esos dos marcadores. El marcador A permanece al retomar al día siguiente. Captura: `evidencias/2026-11-17_T09_A-conserva-marcador-y-no-ve-B.png`.
+
+La sesión se encontró disponible al retomar el perfil, pero el cierre y reapertura entre días no se controlaron como experimento. Esto no sustituye las comprobaciones separadas de Remember Me marcado y sin marcar.
