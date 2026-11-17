@@ -6,7 +6,7 @@
 - **Fecha:** 17 de noviembre de 2026.
 - **Entorno:** Chrome 157.0.8103.51, macOS 26.6.2; perfil aislado `Todo.ly QA cuenta B`.
 - **Precondiciones:** cuenta gratuita A con buzón controlado por quien realiza la prueba; sesión de Todo.ly cerrada en el perfil de QA; correo de recuperación disponible.
-- **Fundamento del esperado:** criterio de seguridad propuesto para revisión: el enlace que autoriza el restablecimiento debe entregarse y abrirse mediante HTTPS. No se presenta como una regla textual confirmada en las diapositivas o en el ticket.
+- **Fundamento del esperado:** **Criterio del equipo**, establecido expresamente por el usuario el 17/11/2026: el enlace de recuperación debe usar HTTPS. No se presenta como una regla textual del producto o de las diapositivas. El hallazgo queda para confirmar durante la ejecución del caso; no se reporta todavía en la planilla de fallas.
 
 ### Pasos para reproducir
 
@@ -23,9 +23,9 @@ El correo recibido a las 11:12 incluye el enlace directo con esquema HTTP. Al ab
 
 La misma ruta y token abiertos con HTTPS muestran el formulario `Please Enter a New Password`, los campos `Enter a New Password` y `Verify New Password`, y el botón `Done`. No se envió una nueva contraseña por el agente.
 
-### Resultado esperado propuesto
+### Resultado esperado — Criterio del equipo
 
-El mensaje entrega enlaces HTTPS; la apertura del enlace de recuperación y del formulario mantiene una conexión segura. La aceptación de este criterio corresponde al equipo.
+El mensaje entrega enlaces HTTPS; la apertura del enlace de recuperación y del formulario mantiene una conexión segura. El criterio fue confirmado por el usuario; falta ejecutar formalmente el caso y registrar su resultado.
 
 ### Impacto y límites de la comprobación
 

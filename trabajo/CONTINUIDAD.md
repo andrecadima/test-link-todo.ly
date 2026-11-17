@@ -2,6 +2,17 @@
 
 Actualización: 17 de noviembre de 2026.
 
+## Prioridad vigente para la demo
+
+- Respaldo inicial realizado: `git push origin master`, seis commits hasta 6ef1597 enviados correctamente el 17/11. Remoto: https://github.com/andrecadima/test-link-todo.ly.git.
+- Orden de principio a fin: T10 → T09 → T11. Exploración adicional aproximada de una hora como máximo por ticket; después declarar dudas pendientes, sin ampliar indefinidamente.
+- Seguir sin los cuatro PDF faltantes y sin releer completos los PDF disponibles.
+- Punto de control por ticket. Mientras el usuario revisa su diseño, explorar el siguiente. Solo con OK registrar ese ticket en TestLink y comentarlo en Jira; después actualizar continuidad, commit y push. Limpieza de marcadores/proyecto al terminar los tres.
+- Borrador local T10 creado: `trabajo/T10/analisis-diseno.md` y diez fichas fuente en `trabajo/T10/casos.json`. Aún NO presentado como diseño cerrado ni aprobado: cinco candidatos de contraseña/correo siguen pendientes de reglas/contrastes; restauración de A pendiente.
+- Settings de A abierto. Intervención manual solicitada al usuario: probar Old Password vacío con New Password igual a la contraseña anterior privada, pulsar Ok y comunicar resultado. Esperar resultado antes de repetir o probar la siguiente combinación. La herramienta exige entrada y envío manuales de credenciales nuevas.
+- Settings no presenta confirmación de contraseña. Nombre vacío enviado una vez: Loading; nueva consulta conserva el nombre original, sin mensaje fiable. No convertirlo en una regla ni continuar buscando fronteras sin evidencia.
+- HTTPS del enlace es ahora Criterio del equipo expreso; T10-10 diseñado para confirmarlo durante ejecución. No reportar aún en la planilla de fallas.
+
 ## Terminado
 
 - Fase 0: contexto y originales locales leídos; commit 6a6b0a3.

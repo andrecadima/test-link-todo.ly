@@ -59,3 +59,15 @@ El usuario confirmó que completó ambos campos y pulsó `Done`, y que actualiz�
 | 11:43–11:44 AM | A | Login con el mismo correo y la contraseña actual; abrir Settings | Se inicia sesión y Profile confirma el correo de A, Andre Cadima y La Paz UTC-04. El nombre guardado inicialmente se conserva también tras una nueva sesión. | Comportamiento observado | Lectura de accesibilidad del área autenticada y de Profile. |
 
 La recuperación permite el acceso con la nueva contraseña y rechaza la anterior en el contraste realizado. No demuestra por sí sola caducidad del token, uso único ni cierre de otras sesiones. **Cambio pendiente de revertir:** la contraseña actual de A continúa siendo la elegida por el usuario durante esta recuperación; la anterior está conservada en el secreto local. Su restauración requerirá nuevamente entrada y envío manuales del usuario.
+
+## Cierre acotado para la demo — continuación del 17 de noviembre
+
+El usuario priorizó terminar por ticket (T10, T09, T11), acotando la exploración restante a aproximadamente una hora por ticket. Inicio de esta continuación: 15:51 UTC. Se hizo push de los seis commits existentes al remoto antes de explorar.
+
+Profile de A volvió a mostrar únicamente Old Password y New Password en Change Password: **no existe un control de confirmación en Settings** en la vista consultada. La validación de confirmación distinta no se atribuye a ese formulario; el control Verify New Password pertenece a recuperación.
+
+Se envió una vez Full Name vacío, conservando correo y configuración, y con los campos de cambio de contraseña vacíos. La vista original quedó en Loading. Una nueva consulta GET y apertura de Profile mostró Andre Cadima, correo de A y La Paz UTC-04. No se obtuvo un mensaje de validación fiable; no se confirma una regla de obligatoriedad del nombre ni se diseña su rechazo como regla del producto. Captura de la vista en proceso: `evidencias/2026-11-17_T10_nombre-vacio-en-proceso.png`.
+
+Se dejó Settings de A abierto para intervención manual solicitada al usuario: Old Password vacío y New Password igual a la contraseña anterior privada, pulsar Ok y comunicar el mensaje. Se pidió realizar solamente ese intento para comprobar el estado antes del siguiente. **Sin respuesta ni resultado confirmado todavía.** Luego corresponden el contraste con Old Password incorrecto y la restauración por el flujo válido. No se introdujo ninguna nueva credencial por el agente.
+
+La instrucción expresa del usuario establece HTTPS como **Criterio del equipo** para el enlace de recuperación. T10-10 lo incorpora como seguridad observable; el comentario de Jira lo mencionará como hallazgo a confirmar durante la ejecución. No se reporta en la planilla de fallas.

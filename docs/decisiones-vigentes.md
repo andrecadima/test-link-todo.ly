@@ -95,3 +95,13 @@ La demostración y el cierre del sprint son el **18 de noviembre de 2026**. Se a
 En T09, Timezone se trata únicamente como campo de Signup: obligatoriedad, valores ofrecidos y posibilidad de dejarlo vacío. No se diseñan en T09 efectos de la zona sobre fechas o vencimientos; corresponden a T12 / PEB-76.
 
 Para las cuentas A y B el usuario solicita America/La_Paz. Signup no muestra identificadores IANA: la opción visible correspondiente a La Paz, Bolivia, es `(UTC-04:00) Georgetown, La Paz, Manaus, San Juan`. Se registrará ese texto exacto en el estado inicial. No se confundirá con `(UTC-07:00) Chihuahua, La Paz, Mazatlan`.
+
+## 13. Priorización para la demo — 17 de noviembre
+
+Instrucción posterior del usuario: trabajar de principio a fin por ticket, en orden T10, T09 y T11. Acotar la exploración pendiente a aproximadamente una hora por ticket y declarar las dudas restantes. Continuar sin los cuatro PDF faltantes, utilizando el formato de la guía y las definiciones ya recuperadas del original de técnicas; no releer completos los PDF.
+
+El punto de control se realiza por ticket: presentar su diseño completo y esperar OK antes de registrarlo en TestLink y documentarlo en Jira. Mientras el usuario revisa, explorar el siguiente ticket. Después del registro y comentario autorizados, actualizar CONTINUIDAD.md, commit y push. La limpieza de los datos temporales se realiza al terminar los tres tickets.
+
+El enlace de recuperación debe usar HTTPS: **Criterio del equipo** establecido expresamente por el usuario. Incluirlo como caso de seguridad observable y mencionar el hallazgo para confirmar durante la ejecución; no reportarlo todavía en la planilla de fallas.
+
+Login: máximo tres intentos fallidos por cuenta en la exploración acotada. Si Remember Me o los arrastres no se pueden operar con la herramienta, pedir ejecución manual al usuario y observar el resultado; no atribuir los fallos de la herramienta a Todo.ly.
