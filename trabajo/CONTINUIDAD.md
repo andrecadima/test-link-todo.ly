@@ -13,7 +13,8 @@ Actualización: 17 de noviembre de 2026.
 ## En curso / pendiente
 
 - La fase 2 NO está terminada. Faltan combinaciones de Login y Remember Me controlado; comprobaciones restantes de perfil/credenciales; proyectos/subproyectos y movimientos.
-- Se pidió al usuario confirmar recepción y contenido del correo de recuperación de A. No acceder al buzón. No almacenar ni publicar un enlace de recuperación con token en los documentos.
+- Recepción del correo de recuperación de A confirmada por captura y consulta del mensaje abierto, autorizada expresamente por el usuario. Formulario HTTPS leído: dos campos de nueva contraseña y botón Done. Se pidió al usuario completar el cambio y actualizar el secreto local conservando la contraseña anterior. Pendiente confirmar resultado y verificar Login. No almacenar ni publicar el token.
+- `trabajo/T10/hallazgos.md` contiene pasos para reproducir la entrega del enlace HTTP y el indicador Not Secure observado. Es una observación de seguridad para revisión, sin explotación ni reporte externo. La carga vacía no se atribuye al producto.
 - La herramienta CUA exige control del usuario antes de introducir nuevas contraseñas u otras credenciales. El usuario ya autorizó crear cuentas y aceptar los términos; no volver a pedir esas autorizaciones. Para cambios de contraseña/correo corresponde un traspaso de control, no permiso repetido.
 - Drag de proyecto devolvió noWindowsAvailable; la consulta siguiente mantuvo el proyecto temporal en raíz. No atribuir una restricción a Todo.ly por esa falla de herramienta.
 - Faltan cuatro PDF de clase, enumerados en 00-contexto.md. No suponer su contenido.
