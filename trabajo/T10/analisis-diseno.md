@@ -1,6 +1,6 @@
 # T10 / PEB-74 — Perfil, credenciales y recuperación de acceso
 
-Fecha: 17 de noviembre de 2026. **OK del usuario recibido; ajustes y revisión independiente en curso antes del registro.** No registrado en TestLink ni publicado en Jira. La exploración adicional comenzó a las 15:51 UTC; el presupuesto aproximado de una hora corresponde al trabajo activo. La espera entre el traspaso manual y la respuesta del usuario se registra separadamente. Las fichas de este archivo se generan a partir de `casos.json`, manteniendo los campos acordados. `casos-listos.json` delimita los seis casos propuestos para registro; `casos-pendientes.json` conserva cuatro candidatos que no se importarán como listos. Los códigos se conservan para trazabilidad, aunque la lista registrable no sea consecutiva.
+Fecha: 17 de noviembre de 2026. **OK del usuario recibido; revisión independiente 04 APTO para los seis casos confirmados, con observaciones resueltas/documentadas antes del registro.** No registrado en TestLink ni publicado en Jira. La exploración adicional comenzó a las 15:51 UTC; el presupuesto aproximado de una hora corresponde al trabajo activo. La espera entre el traspaso manual y la respuesta del usuario se registra separadamente. Las fichas de este archivo se generan a partir de `casos.json`, manteniendo los campos acordados. `casos-listos.json` delimita los seis casos propuestos para registro; `casos-pendientes.json` conserva cuatro candidatos que no se importarán como listos. Los códigos se conservan para trazabilidad, aunque la lista registrable no sea consecutiva.
 
 ## 1. Análisis del área
 
@@ -35,11 +35,11 @@ Valoración cualitativa de diseño, no frecuencia medida: probabilidad P baja=1/
 | Old Password vacío con New Password informado muestra `Invalid Password` | Comportamiento observado | Captura aportada por el usuario del 17/11 a las 14:38; la conservación posterior se contrastó por Login y Profile con la misma credencial previa |
 | Old Password incorrecto y cambio válido desde Settings | Duda pendiente | Segundo contraste manual y restauración solicitados; no confundir el rechazo de vacío con el de incorrecto |
 | Old Password debe corresponder a la vigente para aceptar un cambio | Criterio del equipo | Ajuste 5 expreso del usuario. Vacío ya observado; mensaje de incorrecto y aceptación válida se completan con a/b |
-| Cambio válido de contraseña desde Settings y reversión | Duda pendiente | Existe el control; no se ha acreditado el resultado del flujo |
 | Cancel específico de Email y cambio válido a alias sin verificar por correo | Duda pendiente | No atribuir a Email el contraste realizado únicamente con Full Name |
 | Para recuperación registrada se muestra `Info. An email has been sent with a link where you can change your password.` | Comportamiento observado | Solicitud de A, mensaje recibido y formulario leído |
 | La recuperación completada permite Login con la nueva contraseña y rechaza la reemplazada | Comportamiento observado | Cambio manual del usuario y dos contrastes posteriores de Login |
 | Un correo no registrado produce `Error. Account with this Email address doesn't exist.` | Comportamiento observado | Correo reservado example.com, captura y lectura de interfaz |
+| El enlace recibido, abierto tal como llega, debe mostrar Please Enter a New Password | Criterio del equipo | Corrección expresa del usuario del 17/11, documentada en exploracion.md, Ajustes del usuario antes de registro; no se atribuye a una carga HTTP observada |
 | El enlace de recuperación debe usar HTTPS | Criterio del equipo | Instrucción expresa del usuario del 17/11; caso T10-10 |
 | El correo entregó HTTP y Chrome mostró Not Secure al abrir el enlace directo; la misma ruta por HTTPS cargó el formulario | Comportamiento observado | `hallazgos.md`; hallazgo para confirmar en ejecución, sin reporte en planilla |
 | Plazos de recepción/caducidad, uso único, política de longitud/complejidad y cierre de otras sesiones | Duda pendiente | Sin regla confirmada; no trasladar los límites de los ejemplos docentes |
@@ -87,7 +87,7 @@ No se aplican valores límite: no hay una frontera real confirmada de longitud n
 
 ## 6. Lista resumida de casos
 
-| Caso | Objetivo / riesgo cubierto | Fundamento de la técnica | Importancia | Situación previa al punto de control |
+| Caso | Objetivo / riesgo cubierto | Fundamento de la técnica | Importancia | Situación actual |
 |---|---|---|---|---|
 | T10-01 Cancelar nombre | Descartar una edición; R3 | Alternativa Cancel del UC1, ya contrastada | medium | Preparado |
 | T10-02 Guardar nombre y persistir | Evitar pérdida del perfil; R2 | Principal UC1 con recarga y nueva sesión | high | Preparado |
@@ -102,7 +102,9 @@ No se aplican valores límite: no hay una frontera real confirmada de longitud n
 
 ## 7. Implementación en TestLink
 
-**OK del usuario recibido; pendiente completar ajustes y revisión sin bloqueantes.** Destino: proyecto TL:Todo.ly, suite existente Todo.ly tests, nombres T10-NN, Importance individual y ejecución Manual; Summary con requerimiento/descripción/postcondiciones, Preconditions separado y pasos nativos. XML de entrada con raíz testcases, sin IDs, nuevas suites ni actualización de existentes. No hay registro comprobado todavía.
+**OK del usuario recibido; revisión independiente 04 APTO para seis casos, sin bloqueantes.** Destino: proyecto TL:Todo.ly, suite existente Todo.ly tests, nombres T10-NN, Importance individual y ejecución Manual; Summary con requerimiento/descripción/postcondiciones, Preconditions separado y pasos nativos. XML de entrada con raíz testcases, sin IDs, nuevas suites ni actualización de existentes. No hay registro comprobado todavía.
+
+La exploración se realizó en macOS; la ejecución prevista por la guía §10 es Windows con Chrome, cuya versión y sistema deben identificarse al ejecutar. T10-10 necesita un enlace no utilizado: se ejecuta antes de consumirlo con T10-08 o mediante una solicitud propia, sin reutilizar un token consumido.
 
 El comentario final de Jira contendrá la lista resumida con IDs y enlaces reales y las capturas de registro; las fichas completas estarán en TestLink. La exportación real será testlink-xml/todo-ly-tests.xml y el XML T10 se extraerá de ella mediante script. Los candidatos con resultado principal pendiente no se presentarán como casos listos ni se registrarán sin resolverlos.
 
@@ -116,7 +118,7 @@ No se reporta el hallazgo HTTP en la planilla de fallas: el comentario lo dejar�
 
 ## 9. Estado
 
-Diseño con OK del usuario, ajustes y revisión en curso: **seis casos listos (T10-01/02/03/08/09/10) y cuatro candidatos pendientes (T10-04/05/06/07), excluidos del registro propuesto**. El bloque manual a/b/c completa la cobertura de T10-04/05/06; su resultado aún está pendiente. **No registrado, no publicado y no ejecutado formalmente.** Se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante” únicamente después del registro comprobado. La revisión de Claude no sustituye la revisión de otro integrante.
+Diseño con OK del usuario y revisión independiente APTO del conjunto confirmado: **seis casos listos (T10-01/02/03/08/09/10) y cuatro candidatos pendientes (T10-04/05/06/07), excluidos del registro propuesto**. El bloque manual a/b/c completaría la cobertura de T10-04/05/06; su resultado aún está pendiente. **No registrado, no publicado y no ejecutado formalmente.** Se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante” únicamente después del registro comprobado. La revisión de Claude no sustituye la revisión de otro integrante.
 
 ## Fichas para TestLink — seis casos preparados
 
@@ -217,11 +219,11 @@ Diseño con OK del usuario, ajustes y revisión en curso: **seis casos listos (T
 | 2. Introducir el correo de A y pulsar Send una vez. | Aparece Info. An email has been sent with a link where you can change your password. |
 | 3. Consultar personalmente el buzón controlado y abrir el mensaje Forgot Password correspondiente a esa solicitud; no copiar el token a la evidencia. | Llega un mensaje dirigido a A con instrucciones y enlace de recuperación. No se exige un plazo de recepción no documentado. |
 | 4. Abrir el enlace de recuperación tal como llega en el correo, sin cambiar su esquema ni copiar el token a la evidencia. | Se muestra Please Enter a New Password con Enter a New Password, Verify New Password y Done. Si el enlace recibido no carga el formulario, se registra una falla de este caso; HTTPS se evalúa separadamente en T10-10. |
-| 5. Introducir personalmente la misma nueva contraseña en ambos campos y pulsar Done; actualizar el registro privado. | El cambio permite acceder a A. No se exige un aviso literal posterior a Done porque no se observó su texto. |
+| 5. Introducir personalmente la misma nueva contraseña en ambos campos y pulsar Done; actualizar el registro privado. | Se acepta el envío y A queda accesible; el acceso con la nueva contraseña se confirma en el paso 7. No se exige un aviso literal posterior a Done porque no se observó su texto. |
 | 6. Cerrar sesión y realizar un intento de Login con la contraseña reemplazada. | No se concede acceso; se muestra Wrong email or password dentro del aviso de rechazo observado. |
 | 7. Iniciar sesión con la nueva contraseña y abrir Settings / Profile. | Acceso a A; Full Name y Email conservan el nombre inicial y el correo de A registrados privadamente antes de la recuperación. |
 
-**Postcondiciones:** Cuenta A accesible con la nueva contraseña, que queda vigente y reflejada en el registro privado; identidad y valores de Profile conservados. Sin token ni contraseñas publicados. La restauración de la contraseña original se realiza mediante el cambio válido de Settings y se verifica por Login.
+**Postcondiciones:** Cuenta A accesible con la nueva contraseña, que queda vigente y reflejada en el registro privado; identidad y valores de Profile conservados. Sin token ni contraseñas publicados. La restauración de la contraseña original queda fuera de este caso y se anota en el registro privado; el procedimiento válido de restauración está pendiente de confirmar.
 
 ---
 
@@ -256,8 +258,9 @@ Diseño con OK del usuario, ajustes y revisión en curso: **seis casos listos (T
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
-2. Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta.
-3. Mensaje de recuperación de A disponible con enlace aún no utilizado; sin otras credenciales visibles en pantalla.
+2. Sin sesión iniciada en Todo.ly en el navegador.
+3. Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta.
+4. Mensaje de recuperación de A disponible con enlace aún no utilizado; sin otras credenciales visibles en pantalla.
 
 **Descripción:** Examinar el esquema de los enlaces y la indicación de conexión al abrir el enlace directo, sin introducir una nueva contraseña ni interceptar tráfico.
 

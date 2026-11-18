@@ -1,6 +1,6 @@
 # Continuidad T09–T11
 
-Actualización: 17 de noviembre de 2026. **No se crearon casos en TestLink ni comentarios en Jira.**
+Actualización: 17 de noviembre de 2026. **Se envió UNA importación T10 de seis casos; su resultado todavía NO se pudo verificar. No reenviar: consultar primero el árbol. No se publicaron comentarios en Jira.**
 
 ## Instrucción vigente
 
@@ -17,7 +17,7 @@ El usuario autoriza credenciales de las cuentas de prueba de `.secrets/cuentas-p
 - Claude Code 2.1.327 instalado y autenticado, prueba OK. `.claude/settings.json` tiene los deny solicitados; Edit(path) cubre escrituras aunque la CLI advierta que Write(path) es redundante/no reconocido como regla de archivos.
 - Encargos aislados con Read/Write/Edit/Glob/Grep, MCP vacío, navegador desactivado y sin comandos ni git. Cada encargo autoriza solo su archivo de respuesta. Nunca --continue entre encargos.
 - Jira MCP autenticado, refresco de T09/T10/T11: En revisión (ya estaban así; no lo cambió Codex), responsable Andre, sin adjuntos ni comentarios. No marcar revisión ni modificar estado.
-- TestLink: http://68.211.149.112, proyecto Todo.ly id1, suite Todo.ly tests id3; inventario inicial 48 casos. Recontar y comprobar nombres antes de importar.
+- TestLink: http://68.211.149.112, proyecto Todo.ly id1, suite Todo.ly tests id3. Tras renovación de sesión, árbol completo actual: 64 casos; no hay nombres T09/T10/T11. El inventario de 48 era antiguo. El usuario proporcionó acceso de TestLink y pidió recordarlo: guardado solo en .secrets/cuentas-prueba.local.md, sección TestLink. No copiar los valores a Claude ni a git.
 - `scripts/preparar_importacion_testlink.py` ya genera `<testcases>` y pasos nativos. `scripts/extraer_xml_por_ticket.py` preserva casos/IDs de la exportación real; validado con fixture sintético en tmp, no con el servidor. `scripts/sincronizar_fichas.py` alinea JSON, fichas y borrador.
 
 ## T10 / PEB-74
@@ -26,7 +26,7 @@ Seis listos: 01/02/03/08/09/10 (28 pasos). Cuatro candidatos pendientes: 04/05/0
 
 Observado: Cancel/guardado de nombre y F5, restauración de nombre y persistencia en nueva sesión; recuperación recibida y cambio manual; contraseña reemplazada rechazada y actual aceptada; correo inexistente; Old Password vacío → Invalid Password y Login posterior con contraseña vigente. No se confirmó política de contraseñas ni cambio válido de email.
 
-La revisión `01-T10-revision-respuesta.md` no encontró bloqueantes de contenido en los seis casos listos; objetó la raíz antigua del XML. Corregida a testcases. Resoluciones en `01-T10-resolucion.md`. Tras a/b/c, actualizar diseño, tabla de decisión y lanzar revisión nueva antes de registrar.
+La revisión `01-T10-revision-respuesta.md` no encontró bloqueantes de contenido en los seis casos listos; objetó la raíz antigua del XML. Corregida a testcases. Resoluciones en `01-T10-resolucion.md`. Revisión independiente nueva 04 completada: APTO, sin bloqueantes para los seis casos confirmados. N1–N9 corregidos o documentados en 04-T10-resolucion.md; JSON/fichas/XML sincronizados. El registro parcial no acredita los candidatos pendientes ni cobertura completa. Tras a/b/c, actualizar sus casos y tabla y revisarlos antes de agregarlos.
 
 T10-08 paso 4 abre el enlace **tal como llega**, sin reemplazar HTTP por HTTPS. Si no muestra Please Enter a New Password durante la ejecución, es falla de ese caso. T10-10 exige HTTPS como Criterio del equipo; hallazgo a confirmar, todavía sin planilla de fallas. T10-08 compara únicamente identidad de Profile, no datos no relevados.
 
@@ -58,7 +58,9 @@ Falta exploración focalizada de Cancel, subproyecto, tareas pendientes/completa
 
 El usuario recuperó el perfil e indicó que B estaba autenticada. Se verificó realmente Settings / Profile: identidad B (Andre Cadima 4), email original de B y zona La Paz UTC-04. Se cerró Profile con Cancel y se pulsó Logout. El título pasó a Todo.ly Simple Todo List, pero el contenido quedó vacío: **no se confirmó visualmente la página pública ni se inició sesión en A**. Un GET nuevo y reenlazar Chrome no recuperaron el HTML; la captura siguió vacía y el clic de activación devolvió noWindowsAvailable. No es un fallo confirmado de Todo.ly. No hubo cambios de contraseña, correo ni registro privado en este bloque.
 
-Siguiente paso: el usuario recupera la ventana de QA, abre Login e inicia sesión en A con Cuenta A → Contraseña actual del registro privado; deja Settings / Profile abierto. Desde ahí se retoma la lista a/b/c ya recibida, sin volver a pedir datos ni publicar claves. CUA requiere intervención del usuario antes de introducir y enviar nuevas credenciales. Codex verifica resultado y Login posterior. No operar simultáneamente mientras el usuario completa los cambios.
+El usuario dejó preparado Login de A (21:28). Se pulsó una sola vez. A las 21:32 se recuperó el área autenticada y Settings / Profile confirmó identidad A, nombre inicial y La Paz UTC-04. **Acceso de A confirmado; contraseña original todavía no restaurada.** La nueva captura `2026-11-17_T10_login-A-area-autenticada.png` muestra el área autenticada, no Profile; la identidad se confirmó por AX. El registro privado mantiene actual y anterior distintas.
+
+No repetir Login ni pedir otra vez las claves. A fue confirmada en Settings / Profile, con campos de cambio vacíos; se pulsó Cancel para pasar a TestLink sin cambios. El usuario volvió a pedir automatizar todo; se confirmó el acceso pero CUA exige intervención humana antes de introducir/enviar nuevas credenciales. No hubo cambios de contraseña ni correo. No afirmar resultados a/b/c. Continuar con la revisión y preparación de los seis casos confirmados, manteniendo 04/05/06 como pendientes y 07 excluido, sin declarar T10 completamente cubierto.
 
 El perfil Chrome **Andre** conserva Jira/TestLink/correo y llegó a mostrar A autenticada; no usar su sesión Todo.ly para la exploración. El perfil Todo.ly QA T09-T11 con correo mal escrito está excluido e intacto. No cerrar otros perfiles, no borrar cookies globales.
 
@@ -96,3 +98,11 @@ Registrar y comparar cada caso; obtener IDs/enlaces/capturas; publicar comentari
 - Después Codex verifica Login de A con la original (reemplazada solo un intento si se contrasta) y correo original de B conservado.
 
 **Bloque único ya solicitado al usuario:** incluye Logout B/Login A, a con dato sintético Prueba-T10-04-incorrecta y referencias Cuenta A → Contraseña anterior/original y Contraseña actual; después b, Logout A/Login B y c; dejar Profile de B abierto. Pendiente respuesta, no repetir la solicitud. Si a se acepta inesperadamente, detener y registrar el hecho sin asumir que se rechazó. No operar el navegador mientras el usuario introduce/envía los cambios.
+
+## Siguiente paso de registro T10
+
+Se está abriendo el formulario de importación en el perfil Andre con sesión TestLink renovada. El clic AX sobre Actions no desplegó opciones y el clic por coordenadas falló con noWindowsAvailable. Ruta de formulario contrastada con código oficial tcImport.php: containerID=3 y useRecursion=0; se navegó por la barra de dirección mediante click + setValue + Return, verificando el valor antes de enviarlo. Se abrió realmente Import Test Cases, con encabezado Test Case : Todo.ly tests y XML. Se eligió duplicados por nombre → Do not import the test case. El archivo local se seleccionó sin ayuda mediante diálogo nativo, Go to Folder, ruta absoluta y Open; la pantalla confirmó Choose File: importacion-propuesta.xml. **Se pulsó Upload file UNA sola vez.** La URL pasó a tcImport.php (POST), pero la respuesta quedó sin HTML y la captura mostró solo fondo del navegador. **No repetir Upload ni asumir fracaso: los casos pueden haberse creado.**
+
+Se abrió una nueva consulta GET a lib/general/frmWorkArea.php?feature=editTc para comprobar el árbol, pero la herramienta siguió sin contenido. Antes del envío había 64 casos y ninguno T10. La verificación debe buscar T10-01/02/03/08/09/10, obtener IDs reales y abrirlos, sin reimportar a ciegas. Window → ventana TestLink no recuperó el contenido; el host de navegador sigue no disponible y Dock devolvió timeout. Solicitud concreta pendiente: dejar Chrome TestLink y Orca visibles lado a lado en el mismo escritorio, sin minimizar, y NO pulsar Upload de nuevo. No atribuir este problema a TestLink ni marcar un fallo de importación sin evidencia.
+
+Siguiente paso exacto al recuperar contenido: leer árbol actual y abrir los seis T10 para comparar fichas. Si están ausentes con consulta nueva confirmada, revisar resultado original antes de decidir cualquier reintento. Si existen, guardar IDs/enlaces/capturas y publicar PEB-74 con cobertura pendiente explícita. La guía HTML de Jira y la operación de subir imágenes ya se consultaron; no hubo escritura en Jira.

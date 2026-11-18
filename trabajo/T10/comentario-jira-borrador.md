@@ -35,11 +35,11 @@ Valoración cualitativa de diseño, no frecuencia medida: probabilidad P baja=1/
 | Old Password vacío con New Password informado muestra `Invalid Password` | Comportamiento observado | Captura aportada por el usuario del 17/11 a las 14:38; la conservación posterior se contrastó por Login y Profile con la misma credencial previa |
 | Old Password incorrecto y cambio válido desde Settings | Duda pendiente | Segundo contraste manual y restauración solicitados; no confundir el rechazo de vacío con el de incorrecto |
 | Old Password debe corresponder a la vigente para aceptar un cambio | Criterio del equipo | Ajuste 5 expreso del usuario. Vacío ya observado; mensaje de incorrecto y aceptación válida se completan con a/b |
-| Cambio válido de contraseña desde Settings y reversión | Duda pendiente | Existe el control; no se ha acreditado el resultado del flujo |
 | Cancel específico de Email y cambio válido a alias sin verificar por correo | Duda pendiente | No atribuir a Email el contraste realizado únicamente con Full Name |
 | Para recuperación registrada se muestra `Info. An email has been sent with a link where you can change your password.` | Comportamiento observado | Solicitud de A, mensaje recibido y formulario leído |
 | La recuperación completada permite Login con la nueva contraseña y rechaza la reemplazada | Comportamiento observado | Cambio manual del usuario y dos contrastes posteriores de Login |
 | Un correo no registrado produce `Error. Account with this Email address doesn't exist.` | Comportamiento observado | Correo reservado example.com, captura y lectura de interfaz |
+| El enlace recibido, abierto tal como llega, debe mostrar Please Enter a New Password | Criterio del equipo | Corrección expresa del usuario del 17/11, documentada en exploracion.md, Ajustes del usuario antes de registro; no se atribuye a una carga HTTP observada |
 | El enlace de recuperación debe usar HTTPS | Criterio del equipo | Instrucción expresa del usuario del 17/11; caso T10-10 |
 | El correo entregó HTTP y Chrome mostró Not Secure al abrir el enlace directo; la misma ruta por HTTPS cargó el formulario | Comportamiento observado | `hallazgos.md`; hallazgo para confirmar en ejecución, sin reporte en planilla |
 | Plazos de recepción/caducidad, uso único, política de longitud/complejidad y cierre de otras sesiones | Duda pendiente | Sin regla confirmada; no trasladar los límites de los ejemplos docentes |
@@ -87,7 +87,7 @@ No se aplican valores límite: no hay una frontera real confirmada de longitud n
 
 ## 6. Lista resumida de casos
 
-| Caso | Objetivo / riesgo cubierto | Fundamento de la técnica | Importancia | Situación previa al punto de control |
+| Caso | Objetivo / riesgo cubierto | Fundamento de la técnica | Importancia | Situación actual |
 |---|---|---|---|---|
 | T10-01 Cancelar nombre | Descartar una edición; R3 | Alternativa Cancel del UC1, ya contrastada | medium | Preparado |
 | T10-02 Guardar nombre y persistir | Evitar pérdida del perfil; R2 | Principal UC1 con recarga y nueva sesión | high | Preparado |
@@ -102,7 +102,9 @@ No se aplican valores límite: no hay una frontera real confirmada de longitud n
 
 ## 7. Implementación en TestLink
 
-**OK del usuario recibido; pendiente completar ajustes y revisión sin bloqueantes.** Destino: proyecto TL:Todo.ly, suite existente Todo.ly tests, nombres T10-NN, Importance individual y ejecución Manual; Summary con requerimiento/descripción/postcondiciones, Preconditions separado y pasos nativos. XML de entrada con raíz testcases, sin IDs, nuevas suites ni actualización de existentes. No hay registro comprobado todavía.
+**OK del usuario recibido; revisión independiente 04 APTO para seis casos, sin bloqueantes.** Destino: proyecto TL:Todo.ly, suite existente Todo.ly tests, nombres T10-NN, Importance individual y ejecución Manual; Summary con requerimiento/descripción/postcondiciones, Preconditions separado y pasos nativos. XML de entrada con raíz testcases, sin IDs, nuevas suites ni actualización de existentes. No hay registro comprobado todavía.
+
+La exploración se realizó en macOS; la ejecución prevista por la guía §10 es Windows con Chrome, cuya versión y sistema deben identificarse al ejecutar. T10-10 necesita un enlace no utilizado: se ejecuta antes de consumirlo con T10-08 o mediante una solicitud propia, sin reutilizar un token consumido.
 
 El comentario final de Jira contendrá la lista resumida con IDs y enlaces reales y las capturas de registro; las fichas completas estarán en TestLink. La exportación real será testlink-xml/todo-ly-tests.xml y el XML T10 se extraerá de ella mediante script. Los candidatos con resultado principal pendiente no se presentarán como casos listos ni se registrarán sin resolverlos.
 
@@ -116,4 +118,4 @@ No se reporta el hallazgo HTTP en la planilla de fallas: el comentario lo dejar�
 
 ## 9. Estado
 
-Diseño con OK del usuario, ajustes y revisión en curso: **seis casos listos (T10-01/02/03/08/09/10) y cuatro candidatos pendientes (T10-04/05/06/07), excluidos del registro propuesto**. El bloque manual a/b/c completa la cobertura de T10-04/05/06; su resultado aún está pendiente. **No registrado, no publicado y no ejecutado formalmente.** Se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante” únicamente después del registro comprobado. La revisión de Claude no sustituye la revisión de otro integrante.
+Diseño con OK del usuario y revisión independiente APTO del conjunto confirmado: **seis casos listos (T10-01/02/03/08/09/10) y cuatro candidatos pendientes (T10-04/05/06/07), excluidos del registro propuesto**. El bloque manual a/b/c completaría la cobertura de T10-04/05/06; su resultado aún está pendiente. **No registrado, no publicado y no ejecutado formalmente.** Se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante” únicamente después del registro comprobado. La revisión de Claude no sustituye la revisión de otro integrante.

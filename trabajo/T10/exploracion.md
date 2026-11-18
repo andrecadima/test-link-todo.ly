@@ -98,3 +98,9 @@ El usuario confirmó los ajustes 1–5 y los pasos a/b/c, copiados en CONTINUIDA
 Sobre persistencia de nombre: tras recarga se observó el texto temporal guardado; tras nueva sesión se confirmó el nombre inicial que ya había sido restaurado y guardado con Ok. La expectativa general de persistencia de un valor guardado en nueva sesión se identifica como criterio del equipo en el diseño.
 
 El bloque manual único solicitado contiene a) Old Password incorrecto con New Password original; b) vigente → original y actualización privada; c) alias de Email en B seguido de Cancel. Resultados pendientes de confirmación, sin repetir el Old Password vacío ya acreditado. Se conserva privadamente la clave reemplazada antes de restaurar, sin publicar valores.
+
+## Reanudación: acceso de A confirmado (21:32)
+
+El usuario dejó Login preparado con el correo de A y Password enmascarado. Se pulsó Login una sola vez. Tras una pérdida temporal de contenido en la herramienta, se recuperó el área autenticada y Settings / Profile mostró la identidad de A, el nombre inicial y La Paz UTC-04. La captura `evidencias/2026-11-17_T10_login-A-area-autenticada.png` muestra únicamente el área autenticada y el proyecto temporal; **no muestra Profile**. La identidad se contrastó mediante la lectura AX, no se atribuye a esa imagen.
+
+El registro privado conserva contraseña actual y anterior/original distintas. No se observó aún la restauración desde Settings ni se cambió contraseña o email. T10-04/05/06 permanecen pendientes porque la herramienta exige intervención del usuario al introducir y enviar credenciales nuevas. No se inventan resultados para completarlos. El registro de los seis casos confirmados puede prepararse sin afirmar cierre de esos candidatos.

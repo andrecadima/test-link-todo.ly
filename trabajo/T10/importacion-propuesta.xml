@@ -119,7 +119,7 @@
   </testcase>
   <testcase name="T10-08. Recuperar el acceso de una cuenta registrada mediante su buzón">
     <node_order>4</node_order>
-    <summary>&lt;p&gt;Importancia: high. Cubre pérdida de acceso, aplicación de la nueva credencial y conservación de identidad y datos.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-74 / T10. La recuperación de una cuenta registrada permite establecer una nueva contraseña y volver a acceder.&lt;/p&gt;&lt;p&gt;Descripción: Recorrer solicitud, correo, formulario y Login posterior. Las condiciones de seguridad del transporte se evalúan separadamente en T10-10.&lt;/p&gt;&lt;p&gt;Postcondiciones: Cuenta A accesible con la nueva contraseña, que queda vigente y reflejada en el registro privado; identidad y valores de Profile conservados. Sin token ni contraseñas publicados. La restauración de la contraseña original se realiza mediante el cambio válido de Settings y se verifica por Login.&lt;/p&gt;</summary>
+    <summary>&lt;p&gt;Importancia: high. Cubre pérdida de acceso, aplicación de la nueva credencial y conservación de identidad y datos.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-74 / T10. La recuperación de una cuenta registrada permite establecer una nueva contraseña y volver a acceder.&lt;/p&gt;&lt;p&gt;Descripción: Recorrer solicitud, correo, formulario y Login posterior. Las condiciones de seguridad del transporte se evalúan separadamente en T10-10.&lt;/p&gt;&lt;p&gt;Postcondiciones: Cuenta A accesible con la nueva contraseña, que queda vigente y reflejada en el registro privado; identidad y valores de Profile conservados. Sin token ni contraseñas publicados. La restauración de la contraseña original queda fuera de este caso y se anota en el registro privado; el procedimiento válido de restauración está pendiente de confirmar.&lt;/p&gt;</summary>
     <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta; contraseña inicial conocida y otra contraseña de prueba disponibles en registro privado.&lt;/li&gt;&lt;li&gt;Nombre inicial y correo de A conocidos por quien ejecuta, con sus valores conservados de forma privada para comprobar identidad.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
@@ -151,7 +151,7 @@
       <step>
         <step_number>5</step_number>
         <actions>&lt;p&gt;Introducir personalmente la misma nueva contraseña en ambos campos y pulsar Done; actualizar el registro privado.&lt;/p&gt;</actions>
-        <expectedresults>&lt;p&gt;El cambio permite acceder a A. No se exige un aviso literal posterior a Done porque no se observó su texto.&lt;/p&gt;</expectedresults>
+        <expectedresults>&lt;p&gt;Se acepta el envío y A queda accesible; el acceso con la nueva contraseña se confirma en el paso 7. No se exige un aviso literal posterior a Done porque no se observó su texto.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
       <step>
@@ -184,7 +184,7 @@
       <step>
         <step_number>2</step_number>
         <actions>&lt;p&gt;Introducir prueba-t10-no-registrada-20261117@example.com y pulsar Send una vez.&lt;/p&gt;</actions>
-        <expectedresults>&lt;p&gt;Aparece Error. Account with this Email address doesn&amp;#x27;t exist.; el formulario de recuperación permanece disponible.&lt;/p&gt;</expectedresults>
+        <expectedresults>&lt;p&gt;Aparece Error. Account with this Email address doesn't exist.; el formulario de recuperación permanece disponible.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
       <step>
@@ -198,7 +198,7 @@
   <testcase name="T10-10. Comprobar HTTPS en el enlace de recuperación recibido">
     <node_order>6</node_order>
     <summary>&lt;p&gt;Importancia: high. Detecta exposición observable del token de recuperación mediante una URL HTTP.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-74 / T10. Criterio del equipo: el enlace de recuperación debe usar HTTPS.&lt;/p&gt;&lt;p&gt;Descripción: Examinar el esquema de los enlaces y la indicación de conexión al abrir el enlace directo, sin introducir una nueva contraseña ni interceptar tráfico.&lt;/p&gt;&lt;p&gt;Postcondiciones: Credenciales y datos sin cambios. Resultado del caso pendiente de ejecución formal; hallazgo previo HTTP indicado para confirmar, sin reporte en la planilla de fallas.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta.&lt;/li&gt;&lt;li&gt;Mensaje de recuperación de A disponible con enlace aún no utilizado; sin otras credenciales visibles en pantalla.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta.&lt;/li&gt;&lt;li&gt;Mensaje de recuperación de A disponible con enlace aún no utilizado; sin otras credenciales visibles en pantalla.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
     <steps>

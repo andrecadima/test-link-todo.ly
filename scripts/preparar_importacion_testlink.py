@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 
 
 def paragraph(value):
-    return f"<p>{html.escape(value)}</p>"
+    return f"<p>{html.escape(value, quote=False)}</p>"
 
 
 def prepare(source, output, ticket):
@@ -39,7 +39,7 @@ def prepare(source, output, ticket):
             ]
         )
         ET.SubElement(node, "preconditions").text = "<ol>" + "".join(
-            f"<li>{html.escape(value)}</li>" for value in case["precondiciones"]
+            f"<li>{html.escape(value, quote=False)}</li>" for value in case["precondiciones"]
         ) + "</ol>"
         ET.SubElement(node, "execution_type").text = "1"
         ET.SubElement(node, "importance").text = importance[case["importancia"]]
