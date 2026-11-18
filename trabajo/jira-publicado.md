@@ -2,7 +2,7 @@
 
 ## PEB-73 / T09
 Comentario10227: https://alesalve.atlassian.net/browse/PEB-73?focusedCommentId=10227
-Copia real: [T09/jira-publicado.html](T09/jira-publicado.html). Trececasos TL72–84.
+Copia real: [T09/jira-publicado.html](T09/jira-publicado.html). Trececasos TL72–84. Corrección18/11: fundamento único en casos de uso UC1–UC5, flujos y extensiones; diez tablas, una imagen y trece enlaces. Lectura MCP confirmada.
 
 ## PEB-74 / T10
 Comentario10226: https://alesalve.atlassian.net/browse/PEB-74?focusedCommentId=10226

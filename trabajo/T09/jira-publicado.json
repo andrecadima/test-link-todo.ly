@@ -1,1 +1,12 @@
-{"issue":"PEB-73","commentId":"10227","url":"https://alesalve.atlassian.net/browse/PEB-73?focusedCommentId=10227","created":"2026-11-18T16:22:54.701-0400","updated":"2026-11-18T16:22:54.701-0400","readback":true}
+{
+  "issue": "PEB-73",
+  "commentId": "10227",
+  "url": "https://alesalve.atlassian.net/browse/PEB-73?focusedCommentId=10227",
+  "created": "2026-11-18T16:22:54.701-0400",
+  "updated": "2026-11-18T17:53:39.299-0400",
+  "readback": true,
+  "tecnica_vigente": "Casos de uso UC1–UC5, principal y extensiones ancladas",
+  "tablas": 10,
+  "imagenes": 1,
+  "casos_enlazados": 13
+}

@@ -12,6 +12,8 @@ Hay 29 casos propios, todos Manual y en Draft. Enlace de cada caso: `http://68.2
 | T10 / PEB-74 | 9 | 01→TL-66 · 02→67 · 03→68 · 04→85 · 05→86 · 06→87 · 08→69 · 09→70 · 10→71 | [10226](https://alesalve.atlassian.net/browse/PEB-74?focusedCommentId=10226) |
 | T11 / PEB-75 | 7 | 01→TL-88 · 02→89 · 03→90 · 04→91 · 05→92 · 06→93 · 07→94 | [10228](https://alesalve.atlassian.net/browse/PEB-75?focusedCommentId=10228) |
 
+Corrección posterior T09: el comentario10227 fundamenta sus trece casos únicamente en casos de uso UC1–UC5, con flujos, extensiones y trazabilidad. TestLink y los XML exportados se conservan.
+
 Cada comentario tiene su copia local en `trabajo/T0X/jira-publicado.html`. No se cambiaron estados de Jira ni se marcaron revisiones.
 
 ## 2. Pendientes de diseño (no registrados)

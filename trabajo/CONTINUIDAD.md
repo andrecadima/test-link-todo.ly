@@ -1,3 +1,11 @@
+# Corrección vigente T09 — Jira únicamente, 18/11 17:53
+
+Andre pidió solo casos de uso para fundamentar T09. Comentario10227 de PEB-73 actualizado/leído MCP: UC1Signup parcial/rechazos, UC2Login, UC3Logout/Back/URL, UC4A-B, UC5RememberMe. Secciones5/6 y criterio9 coherentes; diez tablas, una imagen, trece enlaces preservados. Claude15propuso, Codex revisó/resolvió referencias antiguasR1–R5 haciaUC2. T09-08 siguependiente. TestLinkfinal y XMLSINcambios; no reexportar. Diseño/localdraftfundamento sincronizado; resolución15registra ajustes. Decisiones§17rige soloT09.
+
+Sigue pendiente limpiezaB/Home/papelera/captura; permisoirreversibles YArecibido. No repetir verificaciones de casos ni hacerforcepush. Informe yrelevo conservan pendientes reales.
+
+---
+
 # Checkpoint vigente — tras el encargo 14, 18/11
 
 La exportación está TERMINADA (93/29, SHA f17141163f48…, T09 13, T10 9, T11 7); no repetirla. `trabajo/INFORME-FINAL.md` está escrito y declara B pendiente. A está completada. **Siguiente paso exacto, B:** Andre selecciona Home → borrar `Prueba T09-aislamiento-B-1941` → Empty Recycle Bin (confirmación ya recibida) → verificar por AX → UNA captura `trabajo/cierre/B-estado-final.png` → actualizar la columna B de estado-cuentas-final y la §5 del informe → escáner de secretos → commit y push normal (sin force). Siguen pendientes la revisión de otro integrante y la ejecución formal. Detalle en `trabajo/RELEVO-CLAUDE.md`.

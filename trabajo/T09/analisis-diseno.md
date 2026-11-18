@@ -60,91 +60,125 @@ Cancel de Settings y el nombre accesible Submit de Login fueron observados en T1
 
 Positivos: Login válido y recuperación de sesión recordada. Negativos: formulario vacío, correo duplicado y combinaciones de Login que no autentican. Alternativos: Logout seguido de historial/URL, cambio de identidad y reapertura con/sin Remember Me. No se incorpora rendimiento sin umbral ni compatibilidad Firefox/accesibilidad completa sin procedimiento explorado y objetivo justificable.
 
-## 5. Técnicas y artefactos
+## 5. Técnica aplicada: casos de uso
 
-Definiciones ya recuperadas del original `E Tecnicas de Black Box Testing 2025.pdf`: particiones pp. 8–19, estados pp. 32–43, decisión pp. 45–56 y casos de uso pp. 58–66. No se releyó el PDF completo.
+Técnica única: casos de uso (PDF docente pp. 58–62). **A** es el actor (quien opera la interfaz) y **S** el sistema (Todo.ly); se numera el escenario principal y cada extensión parte de un paso existente; un caso de uso puede derivar varios casos. Cuenta A y cuenta B son cuentas de prueba, no el actor. Cada respuesta de S procede de exploracion.md o de un criterio del equipo identificado. No hay límites confirmados ni registro válido observado bajo control: este último queda pendiente.
 
-### 5.1 Particiones de equivalencia
+**UC1 — Preparar Signup y abandonar el envío.** Objetivo: A prepara el formulario y lo abandona sin registrar; antes puede enviarlo vacío o con un correo ya registrado. Precondiciones: sin sesión en Chrome; para 7a, cuenta A con credenciales en el registro privado, contraseña de prueba distinta de la vigente y términos autorizados.
 
-| Variable / condición | Clase y tratamiento esperado | Representante | Casos |
-|---|---|---|---|
-| Conjunto de Signup | Campos vacíos y términos sin aceptar: rechazo conjunto | Full Name/Email/Password vacíos y casilla desmarcada | T09-01 |
-| Correo de Signup | Correo ya registrado: rechazo de duplicado | Correo de la cuenta de prueba A | T09-02 |
-| Opciones de Timezone | Valores del conjunto ofrecido: selección reflejada | Opción La Paz UTC-04 | T09-03; no se fabrica una opción vacía |
-| Presencia de datos en Login | Email/Password ausentes: no autentica | Ambos vacíos, Email vacío o Password vacío | T09-05/06/07; reglas R1–R3 |
-| Identificador conocido no registrado | No identifica una cuenta: no autentica | Correo reservado contrastado en trabajo/T10/exploracion.md, sección Recuperación: solicitud y contraste, 11:13 AM | T09-09; R4 |
-| Correspondencia de Password con la cuenta | No coincide: rechazo / coincide: acceso a esa identidad | Valor de prueba distinto / clave vigente privada | T09-10 / T09-04; R5/R6 |
-
-No se usa el texto sin arroba para afirmar existencia o inexistencia de una cuenta, ni para atribuir un validador sintáctico no confirmado. T09-08 conserva ese contraste como candidato pendiente, fuera de la tabla de reglas confirmadas.
-
-### 5.2 Tabla de decisión de Login
-
-Formato docente: condiciones arriba, acciones abajo y columnas como reglas. `T` verdadero, `F` falso, `X` irrelevante para resolver la regla; `Execute` indica acción esperada. La tabla se reduce por ausencia de un dato necesario: no se necesitan las condiciones de correspondencia cuando faltan campos; una contraseña no tiene correspondencia sin cuenta identificada. X no significa una combinación imposible.
-
-| Condiciones / acciones | R1 | R2 | R3 | R4 | R5 | R6 |
-|---|---|---|---|---|---|---|
-| Email informado | F | F | T | T | T | T |
-| Password informado | F | T | F | T | T | T |
-| Email identifica una cuenta existente | X | X | X | F | T | T |
-| Password corresponde a esa cuenta | X | X | X | X | F | T |
-| **Conceder acceso a la identidad** | — | — | — | — | — | Execute |
-| **Mantener sesión cerrada** | Execute | Execute | Execute | Execute | Execute | — |
-| **Caso derivado** | T09-05 | T09-06 | T09-07 | T09-09 | T09-10 | T09-04 |
-
-El presupuesto de intentos es una restricción de la exploración; no se deriva de esta tabla un número de intentos que bloquee al producto. Los casos con datos de A se distribuyen respetando el presupuesto.
-
-### 5.3 Transición de estados
-
-Estados: **S0** sesión cerrada/perfil abierto; **S1** autenticada con Remember Me desmarcado; **S2** autenticada con Remember Me marcado; **C1** ventanas del perfil cerradas tras S1; **C2** ventanas cerradas tras S2. El navegador puede mantener otros perfiles y su proceso abiertos. Los estados C1/C2 conservan el antecedente que distingue la reapertura.
-
-Matriz docente: filas estado actual, columnas evento, celdas estado siguiente. `—` evento no ejercitado en ese estado; no representa por sí solo una restricción del producto. Reaperturas: S1/C1 observadas con A; S2/C2 con B.
-
-| Estado actual | Login válido sin recordar | Login válido recordando | Login inválido | Logout | Cerrar ventanas QA | Reabrir QA y consultar URL | Atrás / URL tras Logout |
-|---|---|---|---|---|---|---|---|
-| S0 | S1 | S2 | S0 | — | — | — | S0 |
-| S1 | — | — | — | S0 | C1 | — | — |
-| S2 | — | — | — | S0 | C2 | — | — |
-| C1 | — | — | — | — | — | S0, observado | — |
-| C2 | — | — | — | — | — | S2, observado | — |
-
-| Secuencia generada | Caso | Riesgo |
+| Escenario | Paso | Descripción |
 |---|---|---|
-| S0 → Login válido → S1 → Logout → S0 | T09-04 | Identidad y acceso correcto |
-| S0 → Login inválido → S0 | T09-05/06/07/09/10 | Acceso indebido |
-| Sesión autenticada → Logout → S0 → Atrás → S0 → URL directa → S0 | T09-11 | Datos visibles después del cierre |
-| S0 → Login A sin recordar → S1 → cierre → C1 → reapertura → S0 | T09-13 | Persistencia no solicitada |
-| S0 → Login B recordando → S2 → cierre → C2 → reapertura → S2 → Logout → S0 | T09-14 | Recuperación de sesión solicitada e identidad |
+| Principal | 1 | A: abre https://todo.ly/ y pulsa Sign Up Free. |
+| | 2 | S: muestra Signup con Full Name, Email, Password, Timezone, términos y botón Signup. |
+| | 3 | A: despliega Timezone. |
+| | 4 | S: inicial Pacific UTC-08; lista sin entrada vacía con `(UTC-04:00) Georgetown, La Paz, Manaus, San Juan`, distinta de `(UTC-07:00) Chihuahua, La Paz, Mazatlan`. |
+| | 5 | A: selecciona La Paz UTC-04. |
+| | 6 | S: el selector muestra exactamente esa opción. |
+| | 7 | A: abre https://todo.ly/ sin pulsar Signup. |
+| | 8 | S: página pública, sin registro ni sesión. |
+| Extensiones | 3a | A: conserva Timezone, deja Full Name, Email y Password vacíos y términos sin marcar; pulsa Signup. |
+| | 3a.1 | S: no registra; asteriscos en los tres campos y `If you don’t agree you can’t use Todo.ly`; `Error. Please correct the missing fields.` transitorio (AX). Respuesta conjunta, sin obligatoriedad independiente. Sigue en 7. |
+| | 7a | A: en lugar de abandonar, informa Full Name de prueba, Email de la cuenta A y la contraseña de prueba, marca términos y pulsa Signup. |
+| | 7a.1 | S: `Error. Account with this email address already exists!`; no abre sesión nueva. |
+| | 7a.2 | A: inicia sesión con las credenciales vigentes de A y abre Settings / Profile. |
+| | 7a.3 | S: conserva Full Name y Email de A (criterio del equipo). |
 
-No se transforma el intervalo observado en una regla de tiempo. Si cambia la configuración del navegador o se cierra todo su proceso, es otro contexto que deberá registrarse al ejecutar.
+Postcondición: sin cuenta nueva; en 7a, sesión de A con Profile abierto. **Derivación:** principal 1–8 → **T09-03**, recorrido parcial que no cubre el registro completo; 3a → **T09-01**; 7a → **T09-02**.
 
-### 5.4 Flujos de casos de uso
+**UC2 — Iniciar sesión.** Objetivo: A accede con la identidad propia. Precondiciones: sin sesión; cuenta A con credenciales y nombres en el registro privado. Las extensiones 3a–3f sustituyen el paso 3 y continúan con el envío 4; cada rechazo confirmado sustituye la respuesta 5 y finaliza sin sesión. La extensión 3d permanece sin resultado definido.
 
-**UC1 — Enviar Signup.** A abre el formulario; S ofrece campos y condiciones; A envía datos; S acepta o informa rechazo. Alternativas observadas: vacío/términos no aceptados (**T09-01**), correo duplicado (**T09-02**). Selección del campo Timezone antes del envío: **T09-03**. El flujo exitoso completo no se acredita como explorado por el agente y queda como cobertura pendiente.
+| Escenario | Paso | Descripción |
+|---|---|---|
+| Principal | 1 | A: abre https://todo.ly/ y pulsa Login. |
+| | 2 | S: despliega Email, Password, Remember Me y Login. |
+| | 3 | A: informa correo y contraseña vigentes de A, con Remember Me desmarcada. |
+| | 4 | A: pulsa Login una vez. |
+| | 5 | S: área autenticada con Settings y Logout; Profile muestra Full Name y Email de A. |
+| | 6 | A: pulsa Cancel y Logout; S: página pública sin sesión. |
+| Extensiones | 3a | A: deja Email y Password vacíos. |
+| | 3a.1 | S (tras 4): no concede acceso; Login sigue disponible. Sin mensaje literal exigido: no se retuvo. |
+| | 3b | A: Email vacío y Password de prueba. |
+| | 3b.1 | S: sin acceso; aviso genérico `Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.` |
+| | 3c | A: Email de A y Password vacío. |
+| | 3c.1 | S: sin acceso; aviso genérico. |
+| | 3d | A: Email sin arroba y Password de prueba. |
+| | 3d.1 | S: pendiente; las vistas vacías no fijan resultado ni validador. |
+| | 3e | A: correo reservado de example.com sin cuenta (contraste T10) y Password de prueba. |
+| | 3e.1 | S: sin acceso; aviso genérico. |
+| | 3f | A: Email de A y Password de prueba que no le corresponde. |
+| | 3f.1 | S: sin acceso; aviso genérico. |
 
-**UC2 — Consultar datos al cambiar de cuenta.** A inicia sesión, S muestra su identidad y Home; A incorpora un marcador propio, sale e inicia B; S muestra B sin el dato de A; B incorpora su marcador y sale; A vuelve y S conserva solo su dato; B vuelve y S conserva solo el suyo. **T09-12** deriva el recorrido completo de ida/vuelta. Las tareas son datos de preparación, no una repetición del objetivo funcional de T06.
+Postcondición del principal y los rechazos confirmados: sesión cerrada y A sin cambios; un intento negativo por caso. No se atribuye postcondición a 3d, pendiente. **Derivación:** principal → **T09-04**; 3a → **T09-05**; 3b → **T09-06**; 3c → **T09-07**; 3e → **T09-09**; 3f → **T09-10**; 3d → **T09-08** pendiente, sin resultado esperado ni registro.
 
-### 5.5 Valores límite
+**UC3 — Cerrar sesión y navegar después.** Objetivo: A cierra sesión sin que la navegación posterior recupere datos. Precondiciones: sesión de A en https://todo.ly/; Home de A sin `Prueba T09-11 - sesión`.
 
-No aplicados. No se confirmó una frontera de longitud o de intentos del producto. El catálogo discreto de Timezone se aborda como conjunto de valores ofrecidos, no como una frontera numérica de fechas. No se trasladan límites de ATM, ACME u otros ejemplos del docente.
+| Escenario | Paso | Descripción |
+|---|---|---|
+| Principal | 1 | A: añade `Prueba T09-11 - sesión` en Home. |
+| | 2 | S: muestra el marcador en Home de A. |
+| | 3 | A: pulsa Logout. |
+| | 4 | S: página pública con Login y Sign Up Free, sin el marcador. |
+| | 5 | A: pulsa Back de Chrome. |
+| | 6 | S: no restablece sesión ni muestra el marcador. |
+| | 7 | A: abre https://todo.ly/ sin Login. |
+| | 8 | S: página pública con Login, sin el marcador. |
+
+Postcondición: sesión cerrada; marcador pendiente de limpieza. No se extrapola a otras URL internas ni a caducidad. **Derivación:** principal 1–8 → **T09-11**.
+
+**UC4 — Alternar entre cuentas A y B.** Objetivo: cada cuenta muestra solo sus datos. Precondiciones: sin sesión; dos cuentas gratuitas de prueba sin proyectos compartidos (A y B), credenciales y nombres en el registro privado; Home de cada una sin marcadores T09-12.
+
+| Escenario | Paso | Descripción |
+|---|---|---|
+| Principal | 1 | A: inicia sesión con A, confirma Profile y añade `Prueba T09-12 - marcador A` en Home. |
+| | 2 | S: Home de A muestra su marcador. |
+| | 3 | A: Logout; inicia sesión con B, confirma Profile y abre Home. |
+| | 4 | S: Home de B sin el marcador A. |
+| | 5 | A: añade `Prueba T09-12 - marcador B`; Logout; inicia sesión con A y abre Home. |
+| | 6 | S: muestra el marcador A, no el B. |
+| | 7 | A: Logout; inicia sesión con B y abre Home. |
+| | 8 | S: muestra el marcador B, no el A. |
+| | 9 | A: Logout; S: página pública. |
+
+Postcondición: cada marcador en su cuenta, pendiente de limpieza. **Derivación:** principal 1–9 → **T09-12**, ida y vuelta A→B→A→B.
+
+**UC5 — Reabrir el perfil con o sin Remember Me.** Objetivo: A comprueba si la sesión se recuerda al reabrir. Precondiciones: perfil dedicado de Chrome para QA, no incógnito, sin sesión de Todo.ly ni otras ventanas propias; otra ventana de un perfil distinto abierta; configuración de Chrome sin cambios; cuentas A y B en el registro privado.
+
+| Escenario | Paso | Descripción |
+|---|---|---|
+| Principal | 1 | A: abre https://todo.ly/ en el perfil dedicado y pulsa Login. |
+| | 2 | A: deja Remember Me marcada, informa credenciales vigentes de B y pulsa Login. |
+| | 3 | S: área autenticada; Profile confirma la identidad de B. |
+| | 4 | A: anota la hora y cierra todas las ventanas del perfil, sin Logout, sin borrar cookies ni cerrar otros perfiles. |
+| | 5 | A: reabre el mismo perfil desde Profiles, anota la hora y abre https://todo.ly/ sin credenciales. |
+| | 6 | S: Settings y Logout sin nuevo Login; Profile muestra la identidad de B. |
+| | 7 | A: Cancel y Logout; S: página pública. |
+| Extensiones | 2a | A: deja Remember Me desmarcada e inicia sesión con A; sigue 3–5 con A. |
+| | 2a.1 | S (en 6): página pública con Login y Sign Up Free, sin Settings ni Logout. |
+
+Postcondición: sesión de B cerrada; en 2a, perfil abierto sin sesión. Se registra el intervalo sin deducir política de expiración. **Derivación:** principal → **T09-14**; 2a → **T09-13**.
 
 ## 6. Lista resumida de casos
 
-| Caso | Objetivo / riesgo | Fundamento de la técnica | Importancia | Estado |
+| Caso | Objetivo / riesgo | Fundamento | Importancia | TestLink |
 |---|---|---|---|---|
-| T09-01 Signup vacío | Omisiones y términos; R6 | Clase conjunta inválida y alternativa UC1 | medium | Registrado y comparado: [TL-72](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-72) |
-| T09-02 Signup duplicado | Conservar cuenta existente; R5 | Partición correo registrado y alternativa UC1 | high | Registrado y comparado: [TL-73](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-73) |
-| T09-03 Timezone de Signup | Selección correcta; R6 | Valor del conjunto ofrecido; campo del UC1 | medium | Registrado y comparado: [TL-74](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-74) |
-| T09-04 Login válido | Acceso a A; R1 | Regla R6 y secuencia S0→S1→S0 | high | Registrado y comparado: [TL-75](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-75) |
-| T09-05 Login vacío | Denegar sin credenciales; R1 | Regla R1, ausencia de ambos campos | high | Registrado y comparado: [TL-76](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-76) |
-| T09-06 Email vacío | Denegar sin identificador; R1 | Regla R2 | high | Registrado y comparado: [TL-77](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-77) |
-| T09-07 Password vacío | Denegar sin contraseña; R1 | Regla R3 | high | Registrado y comparado: [TL-78](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-78) |
-| T09-08 Email mal formado | Respuesta no resuelta; R1/R6 | Candidato de entrada negativa; regla por confirmar | medium | Pendiente; excluido |
-| T09-09 Cuenta inexistente | Denegar sin cuenta; R1 | Regla R4 y partición no registrada confirmada | high | Registrado y comparado: [TL-79](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-79) |
-| T09-10 Contraseña incorrecta | Denegar correspondencia falsa; R1 | Regla R5 y partición no corresponde | high | Registrado y comparado: [TL-80](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-80) |
-| T09-11 Logout, Atrás y URL | Cerrar acceso a datos; R2 | Secuencia de estados e historial | high | Registrado y comparado: [TL-81](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-81) |
-| T09-12 Aislamiento A/B | Evitar mezcla/exposición; R3 | Flujo UC2 completo con dos marcadores | high | Registrado y comparado: [TL-82](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-82) |
-| T09-13 Remember Me desmarcado | Sesión cerrada al reabrir; R4 | S1→C1→S0 | high | Registrado y comparado: [TL-83](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-83) |
-| T09-14 Remember Me marcado | Recuperar identidad al reabrir; R4 | S2→C2→S2 y cierre posterior | high | Registrado y comparado: [TL-84](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-84) |
+| T09-01 Signup vacío | Omisiones y términos; Riesgo R6 | UC1 ext. 3a | medium | [TL-72](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-72) |
+| T09-02 Signup duplicado | Conservar cuenta; Riesgo R5 | UC1 ext. 7a | high | [TL-73](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-73) |
+| T09-03 Timezone | Selección correcta; Riesgo R6 | UC1 principal, parcial | medium | [TL-74](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-74) |
+| T09-04 Login válido | Acceso a A; Riesgo R1 | UC2 principal | high | [TL-75](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-75) |
+| T09-05 Login vacío | Sin credenciales; Riesgo R1 | UC2 ext. 3a | high | [TL-76](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-76) |
+| T09-06 Email vacío | Sin identificador; Riesgo R1 | UC2 ext. 3b | high | [TL-77](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-77) |
+| T09-07 Password vacío | Sin contraseña; Riesgo R1 | UC2 ext. 3c | high | [TL-78](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-78) |
+| T09-08 Email mal formado | Respuesta no resuelta; Riesgos R1/R6 | UC2 ext. 3d, sin resultado | medium | Pendiente; excluido |
+| T09-09 Cuenta inexistente | Sin cuenta; Riesgo R1 | UC2 ext. 3e | high | [TL-79](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-79) |
+| T09-10 Contraseña incorrecta | Correspondencia falsa; Riesgo R1 | UC2 ext. 3f | high | [TL-80](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-80) |
+| T09-11 Logout, Back y URL | Datos tras cierre; Riesgo R2 | UC3 principal | high | [TL-81](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-81) |
+| T09-12 Aislamiento A/B | Evitar mezcla; Riesgo R3 | UC4 principal | high | [TL-82](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-82) |
+| T09-13 Remember Me desmarcado | Sesión cerrada al reabrir; Riesgo R4 | UC5 ext. 2a | high | [TL-83](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-83) |
+| T09-14 Remember Me marcado | Recuperar identidad; Riesgo R4 | UC5 principal | high | [TL-84](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-84) |
+
+Los trece casos registrados y comparados no cambian; solo se reformula su fundamento.
+
+Referencias anteriores en TestLink: las etiquetas de Login R1→UC2/3a (T09-05), R2→UC2/3b (06), R3→UC2/3c (07), R4→UC2/3e (09) y R5→UC2/3f (10) se conservan solo como correspondencia de lectura de las fichas existentes. Son distintas de los riesgos R1–R6; el fundamento vigente en este comentario son los casos de uso.
 
 ## 7. Implementación en TestLink
 
@@ -169,7 +203,7 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 | Reglas y condiciones del registro/acceso | Documentadas con clasificación de fuente y dudas explícitas. |
 | Tipos de prueba y riesgos | Funcional y seguridad observable, vinculados a riesgos R1–R6. |
 | Escenarios positivos y negativos | Trece casos; formato mal formado y registro válido controlado pendientes explícitos. |
-| Técnicas justificadas | Particiones, decisión, estados y casos de uso con artefactos y trazabilidad; sin límites inventados. |
+| Técnicas justificadas | Casos de uso con flujos principales, extensiones y trazabilidad; cobertura pendiente explícita y sin límites inventados. |
 | Cuentas, sesiones y resultados | Fichas genéricas con estados y resultados observables. |
 | Registro y revisión por otro integrante | Trece registrados y cotejados; revisión de integrante pendiente. |
 
