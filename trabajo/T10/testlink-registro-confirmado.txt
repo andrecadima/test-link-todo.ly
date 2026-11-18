@@ -1,0 +1,7 @@
+													112 link Todo.ly tests (70), Value: javascript:ETS(3)
+														118 link TL-66:T10-01. Cancelar la modificación del nombre conserva el perfil, Value: javascript:ET(211)
+														121 link TL-67:T10-02. Guardar el nombre y conservarlo tras recarga y nueva sesión, Value: javascript:ET(217)
+														124 link TL-68:T10-03. Intentar cambiar la contraseña sin indicar la contraseña actual, Value: javascript:ET(225)
+														127 link TL-69:T10-08. Recuperar el acceso de una cuenta registrada mediante su buzón, Value: javascript:ET(232)
+														130 link TL-70:T10-09. Solicitar recuperación con un correo no registrado, Value: javascript:ET(241)
+														133 link TL-71:T10-10. Comprobar HTTPS en el enlace de recuperación recibido, Value: javascript:ET(246)

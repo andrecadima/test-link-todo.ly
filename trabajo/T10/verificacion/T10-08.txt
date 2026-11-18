@@ -1,0 +1,194 @@
+HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version_id=undefined&edit=testcase&id=232&form_token=[OMITIDO]
+										254 heading Test Case, Value: 1
+											255 text Test Case
+										256 image Show / Hide direct link
+										257 image Actions
+										258 container
+											259 table
+												260 row
+													261 column header 0-5
+														262 text TL-69 : T10-08. Recuperar el acceso de una cuenta registrada mediante su buzón - Version 1 
+														263 image Show ghost string
+														264 image Display Author/Updater
+												265 row
+													266 column header 0-5
+														267 text Summary
+												268 row
+													269 cell 0-5
+														270 text Importancia: high. Cubre pérdida de acceso, aplicación de la nueva credencial y conservación de identidad y datos.
+														271 text Requerimiento: PEB-74 / T10. La recuperación de una cuenta registrada permite establecer una nueva contraseña y volver a acceder.
+														272 text Descripción: Recorrer solicitud, correo, formulario y Login posterior. Las condiciones de seguridad del transporte se evalúan separadamente en T10-10.
+														273 text Postcondiciones: Cuenta A accesible con la nueva contraseña, que queda vigente y reflejada en el registro privado; identidad y valores de Profile conservados. Sin token ni contraseñas publicados. La restauración de la contraseña original queda fuera de este caso y se anota en el registro privado; el procedimiento válido de restauración está pendiente de confirmar.
+												274 row
+													275 column header 0-5
+														276 text Preconditions
+												277 row
+													278 cell 0-5
+														279 content list
+															280 container
+																281 AXListMarker 1. 
+																282 text Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
+															283 container
+																284 AXListMarker 2. 
+																285 text Sin sesión iniciada en Todo.ly en el navegador.
+															286 container
+																287 AXListMarker 3. 
+																288 text Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta; contraseña inicial conocida y otra contraseña de prueba disponibles en registro privado.
+															289 container
+																290 AXListMarker 4. 
+																291 text Nombre inicial y correo de A conocidos por quien ejecuta, con sus valores conservados de forma privada para comprobar identidad.
+												292 row
+													293 column header
+														294 image Show / Hide reorder 
+														295 image Show ghost string
+														296 text #
+													297 column header
+														298 text Step actions
+													299 column header
+														300 text Expected Results
+													301 column header
+														302 text Execution
+												303 row
+													304 cell
+														305 text 1
+													306 cell
+														307 text Abrir Todo.ly, desplegar Login y seleccionar Reset your Password.
+													308 cell
+														309 text Se presenta Enter your email address to reset your password y el control Send.
+													310 cell
+														311 text Manual
+													312 cell
+														313 image Delete step
+													314 cell
+														315 image Insert step
+												316 row
+													317 cell
+														318 text 2
+													319 cell
+														320 text Introducir el correo de A y pulsar Send una vez.
+													321 cell
+														322 text Aparece Info. An email has been sent with a link where you can change your password.
+													323 cell
+														324 text Manual
+													325 cell
+														326 image Delete step
+													327 cell
+														328 image Insert step
+												329 row
+													330 cell
+														331 text 3
+													332 cell
+														333 text Consultar personalmente el buzón controlado y abrir el mensaje Forgot Password correspondiente a esa solicitud; no copiar el token a la evidencia.
+													334 cell
+														335 text Llega un mensaje dirigido a A con instrucciones y enlace de recuperación. No se exige un plazo de recepción no documentado.
+													336 cell
+														337 text Manual
+													338 cell
+														339 image Delete step
+													340 cell
+														341 image Insert step
+												342 row
+													343 cell
+														344 text 4
+													345 cell
+														346 text Abrir el enlace de recuperación tal como llega en el correo, sin cambiar su esquema ni copiar el token a la evidencia.
+													347 cell
+														348 text Se muestra Please Enter a New Password con Enter a New Password, Verify New Password y Done. Si el enlace recibido no carga el formulario, se registra una falla de este caso; HTTPS se evalúa separadamente en T10-10.
+													349 cell
+														350 text Manual
+													351 cell
+														352 image Delete step
+													353 cell
+														354 image Insert step
+												355 row
+													356 cell
+														357 text 5
+													358 cell
+														359 text Introducir personalmente la misma nueva contraseña en ambos campos y pulsar Done; actualizar el registro privado.
+													360 cell
+														361 text Se acepta el envío y A queda accesible; el acceso con la nueva contraseña se confirma en el paso 7. No se exige un aviso literal posterior a Done porque no se observó su texto.
+													362 cell
+														363 text Manual
+													364 cell
+														365 image Delete step
+													366 cell
+														367 image Insert step
+												368 row
+													369 cell
+														370 text 6
+													371 cell
+														372 text Cerrar sesión y realizar un intento de Login con la contraseña reemplazada.
+													373 cell
+														374 text No se concede acceso; se muestra Wrong email or password dentro del aviso de rechazo observado.
+													375 cell
+														376 text Manual
+													377 cell
+														378 image Delete step
+													379 cell
+														380 image Insert step
+												381 row
+													382 cell
+														383 text 7
+													384 cell
+														385 text Iniciar sesión con la nueva contraseña y abrir Settings / Profile.
+													386 cell
+														387 text Acceso a A; Full Name y Email conservan el nombre inicial y el correo de A registrados privadamente antes de la recuperación.
+													388 cell
+														389 text Manual
+													390 cell
+														391 image Delete step
+													392 cell
+														393 image Insert step
+											394 button Create step
+											395 button Resequence Steps
+										396 container
+											397 text Status : 
+											398 pop up button Draft
+												399 (selected) Draft
+											400 text Importance : 
+											401 pop up button High
+												402 (selected) High
+											403 text Execution type : 
+											404 pop up button Manual
+												405 (selected) Manual
+											406 checkbox 0
+											407 text Apply To All Steps
+											408 text Estimated exec. (min) : 
+											409 text field (settable) Estimated exec. duration (min)
+											410 button Save
+										411 container
+											412 container Keywords   Create Keyword  Create & Link 
+												413 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
+												414 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
+												415 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=233%27)
+											416 container None
+												417 text None
+										418 container
+											419 container Platforms:  
+												420 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
+												421 text :  
+											422 container None
+												423 text None
+										424 table
+											425 row
+												426 column header
+													427 text Relations
+											428 row
+												429 cell
+													430 text New relation:  This test case version 
+													431 pop up button is related to
+														432 (selected) is related to
+													433 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID
+													434 button Add
+										435 container Attached files :
+											436 text Attached files :
+										437 container
+											438 text File
+											439 button File: No file chosen
+											440 text Title/name:
+											441 text field (settable)
+											442 button Upload file
+										443 image Max. size of the file is: 1048576 Bytes)
+										444 image Filename must verify this regexp:/^[a-zA-Z0-9_-]{1,20}\.[a-zA-Z0-9]{1,10}$/
+										445 image Allowed files:doc,xls,gif,png,jpg,xlsx,csv
+							446 button

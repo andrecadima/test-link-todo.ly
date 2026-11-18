@@ -1,70 +1,77 @@
 # Continuidad T09–T11
 
-Actualización: 17 de noviembre de 2026. **Se envió UNA importación T10 de seis casos; su resultado todavía NO se pudo verificar. No reenviar: consultar primero el árbol. No se publicaron comentarios en Jira.**
+Actualización: **18/11/2026, demo hoy**. Orden vigente T10 → T09 → T11 → cierre. Rigen PROMPT_ORQUESTACION.md y mensajes posteriores del usuario. **No cambiar estados de Jira ni casos ajenos; revisión de integrante pendiente.**
 
-## Instrucción vigente
+## Estado exacto
 
-Rige `PROMPT_ORQUESTACION.md` y las correcciones posteriores del usuario, por encima de notas antiguas. Orden T10 → T09 → T11 → cierre. T10 tiene OK del usuario. T09/T11 no requieren nuevo punto de control si la revisión independiente no tiene bloqueantes y los demás hallazgos se corrigen o documentan. No cambiar estados de Jira ni casos de otros tickets. Revisar es distinto de ejecutar y de la revisión de otro integrante.
+- **T10 registrado y publicado, cobertura parcial explícita:** seis casos, 28 pasos, TL-66 a TL-71, comparados individualmente sin diferencias. Comentario Jira **10226** en https://alesalve.atlassian.net/browse/PEB-74?focusedCommentId=10226. Tres imágenes adjuntas; seis tablas con anchos corregidos, formato revisado visualmente. Estado Jira En revisión, sin cambios por Codex. Copia real HTML y metadata en trabajo/T10/jira-publicado.* y agregado trabajo/jira-publicado.md.
+- **T09:** trece casos listos, 52 pasos; revisión independiente 03 **APTO**, sin bloqueantes. N1–N7 corregidos/documentados. **Todavía NO importado ni publicado.** T09-08 excluido por resultado sin regla confirmada. No explorar más salvo duda del resultado principal.
+- **T11:** diseño provisional de cuatro casos 01/02/04/05 y candidatos 03/06 pendientes. Falta exploración focalizada, encargo diseno Claude y revisión independiente nueva. No registrarlo como definitivo aún.
+- **Cierre:** limpieza, restauración de A, exportación real, auditoría final e informe todavía pendientes. No afirmar fase 6 completada.
 
-Registrar dentro de la suite existente **Todo.ly tests**, sin nuevas suites ni actualizar casos existentes. XML de entrada con raíz `<testcases>`, nombres T0X-NN, sin IDs. Comprobar duplicados antes de importar y abrir cada caso después. Exportar realmente `testlink-xml/todo-ly-tests.xml` al final y extraer T09/T10/T11 con el script; los XML propuestos no son exportaciones.
+## Siguiente paso inmediato
 
-El usuario autoriza credenciales de las cuentas de prueba de `.secrets/cuentas-prueba.local.md`, pero CUA requiere que el usuario introduzca y envíe las credenciales nuevas. No hay falta de autorización: es una limitación de la herramienta. Inicio de sesión normal y verificaciones sí pueden hacerse. No publicar secretos ni enviar el archivo a Claude.
+1. Respaldar este cierre de T10 con commit + push; comprobar .secrets fuera del índice.
+2. En Chrome Andre, volver a la pestaña TestLink. El filtro T10- está activo y muestra seis: **es contador filtrado, no total global**. Reset Filters antes de comprobar duplicados de T09. Renovar Login si expiró usando el registro privado; no pedir otra vez claves.
+3. Comprobar que no existan T09. Regenerar XML desde casos-listos.json con raíz testcases, suite existente Todo.ly tests id3, duplicados mismo nombre → Do not import the test case. Importar una sola vez y verificar antes de cualquier reintento.
+4. Abrir/comparar los 13, guardar IDs/enlaces/capturas, publicar PEB-73 con técnicas y artefactos, revisar formato y copiar comentario real. Actualizar continuidad, commit + push.
+5. T11: explorar Cancel Editing y preparar datos propios para movimientos. Pedir los arrastres al usuario en **una sola lista por ticket**, con nombres y orden exactos. No atribuir fallas de la herramienta a restricciones del producto. Después Claude diseno y revisión nueva, registro/publicación igual a T09.
 
-## Respaldo y herramientas
+## T10: hechos y cobertura pendiente
 
-- Branch master, remoto https://github.com/andrecadima/test-link-todo.ly.git. Respaldo inicial y preparación enviados; último commit anterior a estas correcciones: 0716dd1.
-- Fase 0: 6a6b0a3; fase 1: 50f74c9. Ambas cuentas fueron creadas por el usuario y sus accesos se comprobaron. Estado inicial y capturas en el repositorio.
-- Claude Code 2.1.327 instalado y autenticado, prueba OK. `.claude/settings.json` tiene los deny solicitados; Edit(path) cubre escrituras aunque la CLI advierta que Write(path) es redundante/no reconocido como regla de archivos.
-- Encargos aislados con Read/Write/Edit/Glob/Grep, MCP vacío, navegador desactivado y sin comandos ni git. Cada encargo autoriza solo su archivo de respuesta. Nunca --continue entre encargos.
-- Jira MCP autenticado, refresco de T09/T10/T11: En revisión (ya estaban así; no lo cambió Codex), responsable Andre, sin adjuntos ni comentarios. No marcar revisión ni modificar estado.
-- TestLink: http://68.211.149.112, proyecto Todo.ly id1, suite Todo.ly tests id3. Tras renovación de sesión, árbol completo actual: 64 casos; no hay nombres T09/T10/T11. El inventario de 48 era antiguo. El usuario proporcionó acceso de TestLink y pidió recordarlo: guardado solo en .secrets/cuentas-prueba.local.md, sección TestLink. No copiar los valores a Claude ni a git.
-- `scripts/preparar_importacion_testlink.py` ya genera `<testcases>` y pasos nativos. `scripts/extraer_xml_por_ticket.py` preserva casos/IDs de la exportación real; validado con fixture sintético en tmp, no con el servidor. `scripts/sincronizar_fichas.py` alinea JSON, fichas y borrador.
+| Caso | ID real | Interno | Pasos |
+|---|---|---|---|
+| T10-01 | TL-66 | 211 | 4 |
+| T10-02 | TL-67 | 217 | 6 |
+| T10-03 | TL-68 | 225 | 5 |
+| T10-08 | TL-69 | 232 | 7 |
+| T10-09 | TL-70 | 241 | 3 |
+| T10-10 | TL-71 | 246 | 3 |
 
-## T10 / PEB-74
+Enlaces reales en trabajo/T10/testlink-registro.json. Summary, Preconditions, pasos/resultados, Importance y Manual coinciden. Estado TestLink **Draft**, sin ejecución formal ni revisión de integrante. Evidencia textual por caso en verificacion/, sin form_token; resultado.json resume comparación. El árbol tenía 64 antes y 70 después de la importación del 17/11. No reimportar los seis.
 
-Seis listos: 01/02/03/08/09/10 (28 pasos). Cuatro candidatos pendientes: 04/05/06/07. El 07 **no se registra**. Las acciones manuales a/b/c completan 04/05/06; no afirmar resultados aún.
+Pendientes **T10-04/05/06**, pasos manuales a/b/c sin observar. **T10-07 no se registra** por instrucción expresa. A aún no se observó restaurada: la última lectura privada tenía contraseña actual distinta de anterior/original. Validar nuevamente antes del cierre por si el usuario actualizó el archivo. Nombre y zona sí estaban restaurados; B conservaba email original. No inventar mensajes ni la tabla Settings sin a/b.
 
-Observado: Cancel/guardado de nombre y F5, restauración de nombre y persistencia en nueva sesión; recuperación recibida y cambio manual; contraseña reemplazada rechazada y actual aceptada; correo inexistente; Old Password vacío → Invalid Password y Login posterior con contraseña vigente. No se confirmó política de contraseñas ni cambio válido de email.
+T10-08 abre enlace como llega, sin sustituir HTTP por HTTPS. Si no carga el formulario en ejecución, falla ese caso. HTTPS es Criterio del equipo separado en T10-10. No reportar aún HTTP en planilla. Restauración de clave fuera de T10-08 y pendiente. No publicar capturas de exploración con correos reales; usar capturas genéricas de TestLink.
 
-La revisión `01-T10-revision-respuesta.md` no encontró bloqueantes de contenido en los seis casos listos; objetó la raíz antigua del XML. Corregida a testcases. Resoluciones en `01-T10-resolucion.md`. Revisión independiente nueva 04 completada: APTO, sin bloqueantes para los seis casos confirmados. N1–N9 corregidos o documentados en 04-T10-resolucion.md; JSON/fichas/XML sincronizados. El registro parcial no acredita los candidatos pendientes ni cobertura completa. Tras a/b/c, actualizar sus casos y tabla y revisarlos antes de agregarlos.
+## T09: contexto ya observado
 
-T10-08 paso 4 abre el enlace **tal como llega**, sin reemplazar HTTP por HTTPS. Si no muestra Please Enter a New Password durante la ejecución, es falla de ese caso. T10-10 exige HTTPS como Criterio del equipo; hallazgo a confirmar, todavía sin planilla de fallas. T10-08 compara únicamente identidad de Profile, no datos no relevados.
+13 listos: 01–07 y 09–14. 08 mal formato pendiente; vistas vacías sin causa confirmada. Registro válido controlado, validaciones aisladas de Signup y límites pendientes. No BVA sin frontera.
 
-A todavía conserva la contraseña posterior a recuperación; **no se restauró la original**. El registro privado tiene actual, anterior/original y una copia de la reemplazada para evitar perder trazabilidad. No se modificó ninguna contraseña desde Settings en este bloque. Nombre y zona sí están restaurados. Después de a/b, distinguir C3 informada en las filas de la tabla: no inferir que guardar Profile con ambos campos vacíos sea inválido.
+Login: vacíos, inexistente e incorrecta documentados. A alcanzó tres rechazos conservadores del trabajo anterior: no añadir negativos innecesarios. Logout/Atrás/URL sin datos autenticados. Marcadores A/B separados. Remember Me: una observación desmarcado A → reapertura sin sesión; marcado B → identidad B restaurada sin nuevo Login. Otros perfiles permanecieron abiertos; no inferir caducidad ni cierre completo de Chrome. Timezone solo campo Signup, La Paz UTC-04, no vencimientos.
 
-## T09 / PEB-73
+## T11: base anterior y alcance
 
-**13 listos**, 01–07 y 09–14, 52 pasos. 08 email mal formado pendiente y excluido. Técnicas: particiones, tabla de decisión de seis reglas, transiciones de sesión y flujos. Sin fronteras confirmadas, no hay valores límite. Registro válido controlado y validaciones aisladas de Signup siguen pendientes.
+En A se creó/seleccionó raíz vacía y se renombró; nombre persistente en GET. Cancel Editing visible, efecto no observado. Portada oficial describe subproyectos y movimientos: reglas documentadas, no arrastres observados. Falta raíz ↔ subproyecto, mover pendiente/completada entre Home/Study y conservación con F5. Sin límite de profundidad confirmado. No tareas padre/subtareas ni eliminación de subproyectos de T08. Máximo una hora activa; dudas de más de 15 minutos se documentan.
 
-`02-T09-revision-respuesta.md`: NO APTO por llamar Submit al botón visible Signup. Corregido y resuelto en `02-T09-resolucion.md`.
+## Accesos y reglas de herramientas
 
-`03-T09-revision-respuesta.md`: **APTO, sin bloqueantes**. Las N1–N7 se corrigieron o documentaron en `03-T09-resolucion.md`. JSON/fichas/XML sincronizados. No publicar las capturas de exploración con correos reales, incluida la fuente cruzada T10; publicar solo árbol y casos genéricos TestLink. Su revisión no sustituye la de otro integrante.
+- Repo master, remoto https://github.com/andrecadima/test-link-todo.ly.git. Último respaldo previo a este cierre: 7607130. Fase 0: 6a6b0a3; fase 1: 50f74c9.
+- Secretos solo .secrets/cuentas-prueba.local.md, ignorado, permiso 600. Cuentas A/B y sección TestLink. El usuario pidió recordar acceso TestLink: ya guardado privadamente, no pedirlo ni copiarlo a Claude, memorias, comentarios o git. La memoria añadida contiene solo el puntero al archivo, ningún valor.
+- CUA exige que el usuario introduzca/envíe nuevas credenciales. Es una limitación de la herramienta, no falta de autorización. **Login con credenciales existentes sí está autorizado**. No cambiar claves por otra vía para eludir la limitación.
+- Jira MCP funciona; escribir solo comentarios/adjuntos en PEB-73/74/75. Mantener estados. Comentarios 73/75 pendientes; 74 publicado.
+- TestLink http://68.211.149.112, proyecto TL:Todo.ly id1, suite existente Todo.ly tests id3. Nunca crear suites ni actualizar casos existentes al importar. Entrada testcases, sin IDs. Exportación real final todo-ly-tests.xml; extraer T09/T10/T11 por script.
+- Claude Code 2.1.327 autenticado, opus. Encargos aislados solo Read/Write/Edit/Glob/Grep, MCP vacío, navegador y comandos desactivados; .claude/settings.json niega .secrets. No --continue. Respuestas 01/02/03/04 disponibles. 03 T09 APTO; 04 T10 APTO seis casos. No sustituye revisión de integrante.
 
-Login: cuenta inexistente, Email vacío, Password vacío e incorrecto observados. A alcanzó el máximo conservador de tres rechazos del trabajo; no añadir negativos. Logout/Atrás/URL observados sin acceso autenticado. Marcadores propios A/B separados en ambos sentidos.
+## CUA: continuidad práctica
 
-Remember Me: desmarcado con A → reapertura sin sesión; marcado con B → reapertura autenticada e identidad B confirmada, sin nuevo Login. Cada recorrido una vez, cuentas distintas, otros perfiles Chrome abiertos. No concluir duración ni cierre completo de Chrome. Timezone solo campo Signup; ambas cuentas base La Paz UTC-04, no efectos en vencimientos.
+El host DOM del navegador no estaba disponible: se usa app nativa Chrome. Perfil Andre para TestLink/Jira; Todo.ly solo perfil dedicado QA, sin usar sesiones personales. El usuario dejó las ventanas en un solo escritorio. Después de compacción, rewriteDocumentation.
 
-## T11 / PEB-75
+**Las coordenadas App.click usan píxeles completos de la captura**, no puntos lógicos: captura 2400×1636. El clic [199,362] enfocó navbar; [398,724] enfocó el campo Title y expuso el iframe de navegación. No dividir las coordenadas Retina por dos. Basarse siempre en captura fresca.
 
-Diseño **provisional**: 01/02/04/05 listos por reglas documentadas y criterio de integridad (22 pasos); 03 Cancel Editing y 06 movimiento de completada pendientes. No afirmar que los arrastres se observaron.
+AX a veces omite iframes que sí aparecen en captura; enfocarlos mediante clic por coordenadas puede exponerlos. No concluir error del sitio por un árbol vacío. El menú Profiles → Andre volvió a mostrar el contenido, pero no siempre fue suficiente. App.getScreenshot puede reflejar una imagen anterior: inspeccionar cada evidencia antes de publicarla. No repetir POST/Upload a ciegas. AX fresco tras acciones y completo tras captura antes de reutilizar índices.
 
-Observado en A: crear/seleccionar proyecto raíz temporal vacío, Options / Edit, Save, nombre persistente tras GET. Cancel Editing visible, efecto pendiente. Arrastre falló en herramienta sin cambio confirmado; no es restricción del producto. Portada oficial documenta subproyectos y movimientos.
+Navegar por barra usando click + setValue + Return resultó más fiable que super+l/typeText. Diálogo de archivos: Choose File → super+shift+g → setValue ruta absoluta → Return → Open; después verificar nombre antes de Upload. La selección funcionó sin ayuda. Direct link del caso: imagen Show / Hide direct link, leer URL real.
 
-Falta exploración focalizada de Cancel, subproyecto, tareas pendientes/completadas entre Home/Study, raíz ↔ subproyecto, conservación después de F5. Preparar una sola lista de arrastres para el usuario. Máximo una hora activa; duda de 15 min queda pendiente. Después encargo **diseno** a Claude (archivos autorizados), verificación por Codex y revisión independiente en llamada nueva. Sin tareas padre/subtareas ni eliminación de subproyectos de T08.
+Ruta del importador contrastada con código oficial: /lib/testcases/tcImport.php?containerID=3&useRecursion=0. Es un formulario UI de sesión autenticada, no un cambio por API. Comprobar destino Todo.ly tests y omitir duplicados. Una sesión vieja puede redirigir a login.php?note=expired; credenciales TestLink disponibles en privado.
 
-## Navegador: bloqueo actual y siguiente paso exacto
+## Jira: publicación y formato
 
-Última identidad comprobada en QA: **B**, Andre Cadima 4. El perfil dedicado es **Todo.ly QA cuenta B**. En esta continuación Chrome presenta Todo.ly vacío, sin árbol HTML; la captura muestra contenido vacío. El intento de activación devolvió `noWindowsAvailable`; reenlazar y recargar por AX no recuperó el contenido. No se completó todavía Logout B / Login A.
+Se consultó getContentFormatGuide para addOrEditJiraIssueComment. HTML con tablas, celdas data-colwidth y data-layout wide para lectura con desplazamiento horizontal. El script preparar_comentario_jira.py convierte el formato acotado local; validar longitud menor a 32767.
 
-El usuario recuperó el perfil e indicó que B estaba autenticada. Se verificó realmente Settings / Profile: identidad B (Andre Cadima 4), email original de B y zona La Paz UTC-04. Se cerró Profile con Cancel y se pulsó Logout. El título pasó a Todo.ly Simple Todo List, pero el contenido quedó vacío: **no se confirmó visualmente la página pública ni se inició sesión en A**. Un GET nuevo y reenlazar Chrome no recuperaron el HTML; la captura siguió vacía y el clic de activación devolvió noWindowsAvailable. No es un fallo confirmado de Todo.ly. No hubo cambios de contraseña, correo ni registro privado en este bloque.
+Adjuntos: discover uploadAttachmentToJiraIssue, fase1 devuelve uploadCommand; ejecutar receta sin registrar tokens; tomar media data.id + collection. Para embeber en HTML, no ejecutar fase2. Los comandos curl pueden agregar progreso después del JSON: parsear el primer objeto balanceado. No reintentar si ya se conserva el ID. Tres medios T10 reales están en comentario10226; metadata en archivos locales. Actualizar copia publicada desde Jira antes de auditoría.
 
-El usuario dejó preparado Login de A (21:28). Se pulsó una sola vez. A las 21:32 se recuperó el área autenticada y Settings / Profile confirmó identidad A, nombre inicial y La Paz UTC-04. **Acceso de A confirmado; contraseña original todavía no restaurada.** La nueva captura `2026-11-17_T10_login-A-area-autenticada.png` muestra el área autenticada, no Profile; la identidad se confirmó por AX. El registro privado mantiene actual y anterior distintas.
-
-No repetir Login ni pedir otra vez las claves. A fue confirmada en Settings / Profile, con campos de cambio vacíos; se pulsó Cancel para pasar a TestLink sin cambios. El usuario volvió a pedir automatizar todo; se confirmó el acceso pero CUA exige intervención humana antes de introducir/enviar nuevas credenciales. No hubo cambios de contraseña ni correo. No afirmar resultados a/b/c. Continuar con la revisión y preparación de los seis casos confirmados, manteniendo 04/05/06 como pendientes y 07 excluido, sin declarar T10 completamente cubierto.
-
-El perfil Chrome **Andre** conserva Jira/TestLink/correo y llegó a mostrar A autenticada; no usar su sesión Todo.ly para la exploración. El perfil Todo.ly QA T09-T11 con correo mal escrito está excluido e intacto. No cerrar otros perfiles, no borrar cookies globales.
-
-CUA: después de compacción, rewriteDocumentation. AX fresco tras acciones; tras captura, AX completo antes de reutilizar índices. Reenlazar al cambiar perfil. Si un POST queda vacío, comprobar con GET nuevo y no reenviar formularios. Finder → Chrome resolvió una vez un timeout tras cerrar QA, pero no los errores posteriores de ventana.
+Editar comentario existente exige lectura HTML previa y conservar todos los nodos. Solo se ajustaron anchos de tablas y se añadió captura del árbol filtrado; imágenes anteriores conservadas. La lectura posterior comprobó seis tablas, 219 celdas dimensionadas, tres imágenes y seis enlaces; captura visual posterior muestra tablas legibles con scroll.
 
 ## Datos reales para limpieza final
 
@@ -74,11 +81,11 @@ CUA: después de compacción, rewriteDocumentation. AX fresco tras acciones; tra
 | B | Home | Prueba T09-aislamiento-B-1941 |
 | A | Raíz | Prueba T11 - proyecto renombrado 1109, vacío |
 
-No se crearon otros datos de T11 en esta preparación. Los nombres de las fichas son diseño, no inventario real. Conservar los proyectos predeterminados y cinco tutoriales de Work. Limpieza al final de los tres tickets, no eliminar cuentas. Comprobar configuración contra `estado-cuentas-inicial.md`, restauración de contraseña A/email B y vaciado de ambas papeleras con confirmación de la herramienta cuando corresponda.
+No confundir nombres de fichas con datos reales. Conservar Work (cinco tutoriales), Sub Project predeterminado, Home, Study, Personal y Shopping List. Baseline Settings: La Paz UTC-04, inicio Work, domingo, Small, vencimiento None, Project Tag marcado, contextMenuRightClick desmarcado, AutoEditNotesOnClick marcado; cotejar estado-cuentas-inicial.md. Limpieza al final, vaciar papeleras con confirmación de herramienta cuando corresponda, no borrar cuentas.
 
-## Fase 6 pendiente
+## Cierre pendiente
 
-Registrar y comparar cada caso; obtener IDs/enlaces/capturas; publicar comentarios solo en PEB-74/73/75 y comprobar formato. No cambiar estados. Guardar comentarios reales en `trabajo/jira-publicado.md`. Exportar suite real y extraer XML. Estado final de cuentas con evidencia, auditoría final independiente Claude y checklist §19, informe final, commit + push.
+Limpiar y documentar estado final con capturas; restauración A/email B y registro privado. Exportar suite real y extraer XML preservando IDs. Copiar comentarios reales (74 ya copiado), auditoría final independiente Claude, checklist §19 y por criterios, INFORME-FINAL, commit + push. El usuario pide al terminar un checklist claro de avanzado y faltante. No declarar fase 6 completa si queda restauración/limpieza sin comprobar.
 
 ## Listas exactas del usuario — T10 (recibidas, no volver a pedir)
 
@@ -98,11 +105,3 @@ Registrar y comparar cada caso; obtener IDs/enlaces/capturas; publicar comentari
 - Después Codex verifica Login de A con la original (reemplazada solo un intento si se contrasta) y correo original de B conservado.
 
 **Bloque único ya solicitado al usuario:** incluye Logout B/Login A, a con dato sintético Prueba-T10-04-incorrecta y referencias Cuenta A → Contraseña anterior/original y Contraseña actual; después b, Logout A/Login B y c; dejar Profile de B abierto. Pendiente respuesta, no repetir la solicitud. Si a se acepta inesperadamente, detener y registrar el hecho sin asumir que se rechazó. No operar el navegador mientras el usuario introduce/envía los cambios.
-
-## Siguiente paso de registro T10
-
-Se está abriendo el formulario de importación en el perfil Andre con sesión TestLink renovada. El clic AX sobre Actions no desplegó opciones y el clic por coordenadas falló con noWindowsAvailable. Ruta de formulario contrastada con código oficial tcImport.php: containerID=3 y useRecursion=0; se navegó por la barra de dirección mediante click + setValue + Return, verificando el valor antes de enviarlo. Se abrió realmente Import Test Cases, con encabezado Test Case : Todo.ly tests y XML. Se eligió duplicados por nombre → Do not import the test case. El archivo local se seleccionó sin ayuda mediante diálogo nativo, Go to Folder, ruta absoluta y Open; la pantalla confirmó Choose File: importacion-propuesta.xml. **Se pulsó Upload file UNA sola vez.** La URL pasó a tcImport.php (POST), pero la respuesta quedó sin HTML y la captura mostró solo fondo del navegador. **No repetir Upload ni asumir fracaso: los casos pueden haberse creado.**
-
-Se abrió una nueva consulta GET a lib/general/frmWorkArea.php?feature=editTc para comprobar el árbol, pero la herramienta siguió sin contenido. Antes del envío había 64 casos y ninguno T10. La verificación debe buscar T10-01/02/03/08/09/10, obtener IDs reales y abrirlos, sin reimportar a ciegas. Window → ventana TestLink no recuperó el contenido; el host de navegador sigue no disponible y Dock devolvió timeout. Solicitud concreta pendiente: dejar Chrome TestLink y Orca visibles lado a lado en el mismo escritorio, sin minimizar, y NO pulsar Upload de nuevo. No atribuir este problema a TestLink ni marcar un fallo de importación sin evidencia.
-
-Siguiente paso exacto al recuperar contenido: leer árbol actual y abrir los seis T10 para comparar fichas. Si están ausentes con consulta nueva confirmada, revisar resultado original antes de decidir cualquier reintento. Si existen, guardar IDs/enlaces/capturas y publicar PEB-74 con cobertura pendiente explícita. La guía HTML de Jira y la operación de subir imágenes ya se consultaron; no hubo escritura en Jira.

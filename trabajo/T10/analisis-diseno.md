@@ -1,6 +1,6 @@
 # T10 / PEB-74 — Perfil, credenciales y recuperación de acceso
 
-Fecha: 17 de noviembre de 2026. **OK del usuario recibido; revisión independiente 04 APTO para los seis casos confirmados, con observaciones resueltas/documentadas antes del registro.** No registrado en TestLink ni publicado en Jira. La exploración adicional comenzó a las 15:51 UTC; el presupuesto aproximado de una hora corresponde al trabajo activo. La espera entre el traspaso manual y la respuesta del usuario se registra separadamente. Las fichas de este archivo se generan a partir de `casos.json`, manteniendo los campos acordados. `casos-listos.json` delimita los seis casos propuestos para registro; `casos-pendientes.json` conserva cuatro candidatos que no se importarán como listos. Los códigos se conservan para trazabilidad, aunque la lista registrable no sea consecutiva.
+Fecha: 17 de noviembre de 2026. **OK del usuario recibido; revisión independiente 04 APTO para los seis casos confirmados, con observaciones resueltas/documentadas antes del registro.** Seis casos registrados y comparados en TestLink; comentario Jira 10226 publicado y comprobado el 18/11/2026. La exploración adicional comenzó a las 15:51 UTC; el presupuesto aproximado de una hora corresponde al trabajo activo. La espera entre el traspaso manual y la respuesta del usuario se registra separadamente. Las fichas de este archivo se generan a partir de `casos.json`, manteniendo los campos acordados. `casos-listos.json` delimita los seis casos propuestos para registro; `casos-pendientes.json` conserva cuatro candidatos que no se importarán como listos. Los códigos se conservan para trazabilidad, aunque la lista registrable no sea consecutiva.
 
 ## 1. Análisis del área
 
@@ -87,26 +87,30 @@ No se aplican valores límite: no hay una frontera real confirmada de longitud n
 
 ## 6. Lista resumida de casos
 
-| Caso | Objetivo / riesgo cubierto | Fundamento de la técnica | Importancia | Situación actual |
-|---|---|---|---|---|
-| T10-01 Cancelar nombre | Descartar una edición; R3 | Alternativa Cancel del UC1, ya contrastada | medium | Preparado |
-| T10-02 Guardar nombre y persistir | Evitar pérdida del perfil; R2 | Principal UC1 con recarga y nueva sesión | high | Preparado |
-| T10-03 Old Password vacío | Proteger cambio de credencial; R1 | Partición inválida vacío y alternativa UC3; aviso Invalid Password observado | high | Preparado; rechazo y conservación de acceso observados |
-| T10-04 Old Password incorrecto | Proteger cambio de credencial; R1 | Partición candidata no corresponde y alternativa UC3 | high | Pendiente de regla/resultado |
-| T10-05 Cambio válido desde Settings | Continuidad del acceso; R1 | Principal UC3, contraste antes/después y reversión | high | Pendiente de exploración |
-| T10-06 Cancelar correo | Conservar identificador descartado; R3 | Alternativa UC4 | high | Pendiente de contraste específico |
-| T10-07 Cambiar correo a alias y restaurar | Evitar pérdida de acceso/datos; R4 | Principal UC4 | high | Pendiente de verificación/activación |
-| T10-08 Recuperar acceso | Acceso con credencial nueva; R1 | Particiones de correo/credencial y UC2 principal | high | Preparado; nueva credencial queda vigente y registrada privadamente |
-| T10-09 Correo no registrado | Distinguir rechazo de envío aceptado; R6 | Partición sin cuenta y alternativa UC2 | medium | Preparado |
-| T10-10 HTTPS del enlace | Transporte del token; R5 | Procedimiento observable sobre entrega/apertura del UC2, criterio del equipo | high | Preparado; hallazgo a confirmar en ejecución |
+| Caso | Objetivo / riesgo cubierto | Fundamento de la técnica | Importancia | TestLink | Situación actual |
+|---|---|---|---|---|---|
+| T10-01 Cancelar nombre | Descartar una edición; R3 | Alternativa Cancel del UC1, ya contrastada | medium | [TL-66](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-66) | Registrado; comparación individual sin diferencias. No ejecutado formalmente. |
+| T10-02 Guardar nombre y persistir | Evitar pérdida del perfil; R2 | Principal UC1 con recarga y nueva sesión | high | [TL-67](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-67) | Registrado; comparación individual sin diferencias. No ejecutado formalmente. |
+| T10-03 Old Password vacío | Proteger cambio de credencial; R1 | Partición inválida vacío y alternativa UC3; aviso Invalid Password observado | high | [TL-68](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-68) | Registrado; comparación individual sin diferencias. No ejecutado formalmente. |
+| T10-04 Old Password incorrecto | Proteger cambio de credencial; R1 | Partición candidata no corresponde y alternativa UC3 | high | No registrado | Pendiente de regla/resultado |
+| T10-05 Cambio válido desde Settings | Continuidad del acceso; R1 | Principal UC3, contraste antes/después y reversión | high | No registrado | Pendiente de exploración |
+| T10-06 Cancelar correo | Conservar identificador descartado; R3 | Alternativa UC4 | high | No registrado | Pendiente de contraste específico |
+| T10-07 Cambiar correo a alias y restaurar | Evitar pérdida de acceso/datos; R4 | Principal UC4 | high | No registrado | Pendiente de verificación/activación |
+| T10-08 Recuperar acceso | Acceso con credencial nueva; R1 | Particiones de correo/credencial y UC2 principal | high | [TL-69](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-69) | Registrado; comparación individual sin diferencias. No ejecutado formalmente. |
+| T10-09 Correo no registrado | Distinguir rechazo de envío aceptado; R6 | Partición sin cuenta y alternativa UC2 | medium | [TL-70](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-70) | Registrado; comparación individual sin diferencias. No ejecutado formalmente. |
+| T10-10 HTTPS del enlace | Transporte del token; R5 | Procedimiento observable sobre entrega/apertura del UC2, criterio del equipo | high | [TL-71](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-71) | Registrado; comparación individual sin diferencias. No ejecutado formalmente. |
 
 ## 7. Implementación en TestLink
 
-**OK del usuario recibido; revisión independiente 04 APTO para seis casos, sin bloqueantes.** Destino: proyecto TL:Todo.ly, suite existente Todo.ly tests, nombres T10-NN, Importance individual y ejecución Manual; Summary con requerimiento/descripción/postcondiciones, Preconditions separado y pasos nativos. XML de entrada con raíz testcases, sin IDs, nuevas suites ni actualización de existentes. No hay registro comprobado todavía.
+Se registraron **seis casos, 28 pasos nativos**, en proyecto **TL:Todo.ly**, suite existente **Todo.ly tests** (id3), sin crear suites ni actualizar casos existentes. Antes del envío había 64 casos y ningún T10; después se observaron 70. El importador omitía duplicados por el mismo nombre.
 
-La exploración se realizó en macOS; la ejecución prevista por la guía §10 es Windows con Chrome, cuya versión y sistema deben identificarse al ejecutar. T10-10 necesita un enlace no utilizado: se ejecuta antes de consumirlo con T10-08 o mediante una solicitud propia, sin reutilizar un token consumido.
+Se abrió cada caso y se compararon título, Summary, Preconditions, todos los pasos y resultados, Importance y ejecución Manual contra el diseño: **sin diferencias**. Summary conserva importancia justificada, requerimiento, descripción y postcondiciones. Los casos están en estado **Draft** de TestLink; no se presentan como ejecutados ni revisados por otro integrante. La lista anterior contiene los seis IDs y enlaces reales.
 
-El comentario final de Jira contendrá la lista resumida con IDs y enlaces reales y las capturas de registro; las fichas completas estarán en TestLink. La exportación real será testlink-xml/todo-ly-tests.xml y el XML T10 se extraerá de ella mediante script. Los candidatos con resultado principal pendiente no se presentarán como casos listos ni se registrarán sin resolverlos.
+La revisión independiente del conjunto confirmado dio APTO, sin bloqueantes; sus observaciones se corrigieron o documentaron. Esta revisión no sustituye la de otro integrante. T10-04/05/06 siguen pendientes de contraste; T10-07 no se registra por instrucción del equipo.
+
+La exploración se realizó en macOS; la ejecución prevista por la guía §10 es Windows con Chrome, cuyas versiones deben registrarse al ejecutar. T10-10 necesita un enlace no utilizado: debe preceder al consumo del enlace en T10-08 o usar una solicitud propia. Las capturas muestran el árbol y una ficha genérica de TestLink; no se adjuntan las capturas de Profile con datos reales. La exportación XML real completa y su extracción por ticket se realizarán en el cierre, sin presentar el XML de entrada como exportación.
+
+Comentario publicado y comprobado: [PEB-74, comentario 10226](https://alesalve.atlassian.net/browse/PEB-74?focusedCommentId=10226). Incluye tres capturas: árbol global, TL-66 abierto y árbol filtrado con los seis IDs. Se comprobó el formato en Jira y se ajustaron anchos de columnas con desplazamiento horizontal; contenido y evidencias conservados. El estado del ticket sigue En revisión.
 
 ## 8. Cobertura pendiente y límites
 
@@ -118,7 +122,19 @@ No se reporta el hallazgo HTTP en la planilla de fallas: el comentario lo dejar�
 
 ## 9. Estado
 
-Diseño con OK del usuario y revisión independiente APTO del conjunto confirmado: **seis casos listos (T10-01/02/03/08/09/10) y cuatro candidatos pendientes (T10-04/05/06/07), excluidos del registro propuesto**. El bloque manual a/b/c completaría la cobertura de T10-04/05/06; su resultado aún está pendiente. **No registrado, no publicado y no ejecutado formalmente.** Se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante” únicamente después del registro comprobado. La revisión de Claude no sustituye la revisión de otro integrante.
+**Diseñados y registrados en TestLink; pendiente de revisión por otro integrante.** Se refiere al conjunto confirmado de seis casos (T10-01/02/03/08/09/10). Los candidatos T10-04/05/06 permanecen pendientes de observación y T10-07 está excluido del registro; **la cobertura completa de T10 no está terminada**. No se ejecutaron formalmente los casos ni se reportó el hallazgo HTTP en la planilla de fallas.
+
+Comprobación de criterios de aceptación, sin modificar el checklist ni el estado del ticket:
+
+| Criterio | Situación |
+|---|---|
+| Reglas y restricciones documentadas | Documentadas, con dudas explícitas. |
+| Tipos de prueba seleccionados y justificados | Funcional y seguridad observable, vinculados a riesgos. |
+| Riesgos de pérdida de acceso y modificación incorrecta | Analizados y trazados; los cambios desde Settings y Email conservan cobertura pendiente. |
+| Cambios válidos, inválidos y cancelaciones | Nombre y recuperación cubiertos; contraste de contraseña válida/incorrecta y Cancel específico de Email pendientes. |
+| Técnicas y procedimientos justificados | Particiones y flujos con artefactos y trazabilidad; sin límites inventados ni tabla Settings declarada sin observar a/b. |
+| Cuentas, buzones, condiciones y resultados en los casos | Fichas genéricas y reproducibles, sin correos reales, claves ni tokens. |
+| Registro en TestLink y revisión de otro integrante | Seis registrados y comparados; revisión de integrante pendiente. |
 
 ## Fichas para TestLink — seis casos preparados
 

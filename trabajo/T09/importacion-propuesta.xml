@@ -204,7 +204,7 @@
   <testcase name="T09-09. Rechazar Login con un correo no registrado">
     <node_order>8</node_order>
     <summary>&lt;p&gt;Importancia: high. Evita acceso sin una combinación de credenciales que corresponda a la cuenta.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. La combinación negativa R4 de la tabla de decisión no concede acceso.&lt;/p&gt;&lt;p&gt;Descripción: Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;La dirección reservada prueba-t10-no-registrada-20261117@example.com no pertenece a una cuenta; contrastado en la exploración de PEB-74 / T10: la recuperación respondió Error. Account with this Email address doesn&amp;#x27;t exist.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;La dirección reservada prueba-t10-no-registrada-20261117@example.com no pertenece a una cuenta; contrastado en la exploración de PEB-74 / T10: la recuperación respondió Error. Account with this Email address doesn't exist.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
     <steps>

@@ -1,0 +1,88 @@
+{
+  "proyecto": "TL:Todo.ly",
+  "suite": "Todo.ly tests",
+  "suite_id": 3,
+  "total_suite_observado": 70,
+  "casos": [
+    {
+      "caso": "T10-01",
+      "id_testlink": "TL-66",
+      "id_interno": 211,
+      "titulo": "Cancelar la modificación del nombre conserva el perfil",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-66",
+      "diferencias": [],
+      "pasos": 4,
+      "importance": "Medium",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T10-02",
+      "id_testlink": "TL-67",
+      "id_interno": 217,
+      "titulo": "Guardar el nombre y conservarlo tras recarga y nueva sesión",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-67",
+      "diferencias": [],
+      "pasos": 6,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T10-03",
+      "id_testlink": "TL-68",
+      "id_interno": 225,
+      "titulo": "Intentar cambiar la contraseña sin indicar la contraseña actual",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-68",
+      "diferencias": [],
+      "pasos": 5,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T10-08",
+      "id_testlink": "TL-69",
+      "id_interno": 232,
+      "titulo": "Recuperar el acceso de una cuenta registrada mediante su buzón",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-69",
+      "diferencias": [],
+      "pasos": 7,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T10-09",
+      "id_testlink": "TL-70",
+      "id_interno": 241,
+      "titulo": "Solicitar recuperación con un correo no registrado",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-70",
+      "diferencias": [],
+      "pasos": 3,
+      "importance": "Medium",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T10-10",
+      "id_testlink": "TL-71",
+      "id_interno": 246,
+      "titulo": "Comprobar HTTPS en el enlace de recuperación recibido",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-71",
+      "diferencias": [],
+      "pasos": 3,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    }
+  ],
+  "verificacion_campos": "Se abrieron y compararon los seis casos: sin diferencias en título, Summary, Preconditions, pasos/resultados, Importance y Manual. No es ejecución de Todo.ly.",
+  "exportacion_real": "pendiente"
+}

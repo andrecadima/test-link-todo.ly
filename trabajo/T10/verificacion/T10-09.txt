@@ -1,0 +1,139 @@
+HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version_id=undefined&edit=testcase&id=241&form_token=[OMITIDO]
+										254 heading Test Case, Value: 1
+											255 text Test Case
+										256 image Show / Hide direct link
+										257 image Actions
+										258 container
+											259 table
+												260 row
+													261 column header 0-5
+														262 text TL-70 : T10-09. Solicitar recuperación con un correo no registrado - Version 1 
+														263 image Show ghost string
+														264 image Display Author/Updater
+												265 row
+													266 column header 0-5
+														267 text Summary
+												268 row
+													269 cell 0-5
+														270 text Importancia: medium. Comprueba la alternativa de una solicitud que no identifica una cuenta recuperable.
+														271 text Requerimiento: PEB-74 / T10. La recuperación informa el rechazo de un correo que no pertenece a una cuenta.
+														272 text Descripción: Comprobar el tratamiento observado para la clase correo no registrado, sin consultar ni crear buzones externos.
+														273 text Postcondiciones: Sin sesión ni cambios de cuenta. Evidencia del rechazo conservada. El comportamiento de revelar existencia de cuenta se documenta, sin convertirlo en una auditoría de seguridad.
+												274 row
+													275 column header 0-5
+														276 text Preconditions
+												277 row
+													278 cell 0-5
+														279 content list
+															280 container
+																281 AXListMarker 1. 
+																282 text Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
+															283 container
+																284 AXListMarker 2. 
+																285 text Sin sesión iniciada en Todo.ly en el navegador.
+															286 container
+																287 AXListMarker 3. 
+																288 text Dirección reservada para ejemplos sin cuenta en Todo.ly: prueba-t10-no-registrada-20261117@example.com.
+												289 row
+													290 column header
+														291 image Show / Hide reorder 
+														292 image Show ghost string
+														293 text #
+													294 column header
+														295 text Step actions
+													296 column header
+														297 text Expected Results
+													298 column header
+														299 text Execution
+												300 row
+													301 cell
+														302 text 1
+													303 cell
+														304 text Abrir Todo.ly, desplegar Login y seleccionar Reset your Password.
+													305 cell
+														306 text Se presenta el campo de correo para recuperación y el control Send.
+													307 cell
+														308 text Manual
+													309 cell
+														310 image Delete step
+													311 cell
+														312 image Insert step
+												313 row
+													314 cell
+														315 text 2
+													316 cell
+														317 text Introducir prueba-t10-no-registrada-20261117@example.com y pulsar Send una vez.
+													318 cell
+														319 text Aparece Error. Account with this Email address doesn't exist.; el formulario de recuperación permanece disponible.
+													320 cell
+														321 text Manual
+													322 cell
+														323 image Delete step
+													324 cell
+														325 image Insert step
+												326 row
+													327 cell
+														328 text 3
+													329 cell
+														330 text Conservar evidencia del aviso sin credenciales y cerrar el panel de Login.
+													331 cell
+														332 text No se inicia una sesión ni se modifica ninguna cuenta A o B.
+													333 cell
+														334 text Manual
+													335 cell
+														336 image Delete step
+													337 cell
+														338 image Insert step
+											339 button Create step
+											340 button Resequence Steps
+										341 container
+											342 text Status : 
+											343 pop up button Draft
+												344 (selected) Draft
+											345 text Importance : 
+											346 pop up button Medium
+												347 (selected) Medium
+											348 text Execution type : 
+											349 pop up button Manual
+												350 (selected) Manual
+											351 checkbox 0
+											352 text Apply To All Steps
+											353 text Estimated exec. (min) : 
+											354 text field (settable) Estimated exec. duration (min)
+											355 button Save
+										356 container
+											357 container Keywords   Create Keyword  Create & Link 
+												358 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
+												359 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
+												360 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=242%27)
+											361 container None
+												362 text None
+										363 container
+											364 container Platforms:  
+												365 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
+												366 text :  
+											367 container None
+												368 text None
+										369 table
+											370 row
+												371 column header
+													372 text Relations
+											373 row
+												374 cell
+													375 text New relation:  This test case version 
+													376 pop up button is related to
+														377 (selected) is related to
+													378 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID
+													379 button Add
+										380 container Attached files :
+											381 text Attached files :
+										382 container
+											383 text File
+											384 button File: No file chosen
+											385 text Title/name:
+											386 text field (settable)
+											387 button Upload file
+										388 image Max. size of the file is: 1048576 Bytes)
+										389 image Filename must verify this regexp:/^[a-zA-Z0-9_-]{1,20}\.[a-zA-Z0-9]{1,10}$/
+										390 image Allowed files:doc,xls,gif,png,jpg,xlsx,csv
+							391 button

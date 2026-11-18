@@ -1,0 +1,165 @@
+HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version_id=undefined&edit=testcase&id=225&form_token=[OMITIDO]
+										254 heading Test Case, Value: 1
+											255 text Test Case
+										256 image Show / Hide direct link
+										257 image Actions
+										258 container
+											259 table
+												260 row
+													261 column header 0-5
+														262 text TL-68 : T10-03. Intentar cambiar la contraseña sin indicar la contraseña actual - Version 1 
+														263 image Show ghost string
+														264 image Display Author/Updater
+												265 row
+													266 column header 0-5
+														267 text Summary
+												268 row
+													269 cell 0-5
+														270 text Importancia: high. Protege frente a sustitución de credenciales desde una sesión sin acreditar la contraseña actual.
+														271 text Requerimiento: PEB-74 / T10. Un intento de cambio con Old Password vacío se rechaza con Invalid Password y conserva la credencial vigente.
+														272 text Descripción: Comprobar el rechazo observado para Old Password vacío con New Password informado y verificar después que la credencial vigente se conserva.
+														273 text Postcondiciones: Contraseña vigente antes del intento conservada y acceso comprobado; nombre, correo y configuración sin cambios. Evidencia del rechazo sin secretos.
+												274 row
+													275 column header 0-5
+														276 text Preconditions
+												277 row
+													278 cell 0-5
+														279 content list
+															280 container
+																281 AXListMarker 1. 
+																282 text Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
+															283 container
+																284 AXListMarker 2. 
+																285 text Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A.
+															286 container
+																287 AXListMarker 3. 
+																288 text Contraseña vigente y contraseña alternativa de prueba conocidas únicamente por quien ejecuta; registro privado disponible.
+												289 row
+													290 column header
+														291 image Show / Hide reorder 
+														292 image Show ghost string
+														293 text #
+													294 column header
+														295 text Step actions
+													296 column header
+														297 text Expected Results
+													298 column header
+														299 text Execution
+												300 row
+													301 cell
+														302 text 1
+													303 cell
+														304 text Abrir Settings / Profile sin modificar nombre, correo ni configuración temporal.
+													305 cell
+														306 text Se muestran Old Password y New Password; no hay campo de confirmación en Settings.
+													307 cell
+														308 text Manual
+													309 cell
+														310 image Delete step
+													311 cell
+														312 image Insert step
+												313 row
+													314 cell
+														315 text 2
+													316 cell
+														317 text Dejar Old Password vacío, introducir personalmente una contraseña alternativa en New Password y pulsar Ok una sola vez.
+													318 cell
+														319 text Aparece un aviso con el texto exacto Invalid Password; el intento no debe sustituir la credencial vigente.
+													320 cell
+														321 text Manual
+													322 cell
+														323 image Delete step
+													324 cell
+														325 image Insert step
+												326 row
+													327 cell
+														328 text 3
+													329 cell
+														330 text Cerrar el aviso con OK y descartar los campos editados con Cancel en Settings.
+													331 cell
+														332 text Se cierra el aviso y luego Settings; la entrada alternativa queda descartada.
+													333 cell
+														334 text Manual
+													335 cell
+														336 image Delete step
+													337 cell
+														338 image Insert step
+												339 row
+													340 cell
+														341 text 4
+													342 cell
+														343 text Pulsar Logout e iniciar sesión con el correo y la contraseña vigentes antes del intento.
+													344 cell
+														345 text Login permite acceder a A con la credencial inicial; no se necesita la contraseña alternativa rechazada.
+													346 cell
+														347 text Manual
+													348 cell
+														349 image Delete step
+													350 cell
+														351 image Insert step
+												352 row
+													353 cell
+														354 text 5
+													355 cell
+														356 text Consultar Profile y conservar evidencia sin secretos.
+													357 cell
+														358 text Se mantienen la identidad y los valores iniciales de A; la evidencia del aviso no revela contraseñas.
+													359 cell
+														360 text Manual
+													361 cell
+														362 image Delete step
+													363 cell
+														364 image Insert step
+											365 button Create step
+											366 button Resequence Steps
+										367 container
+											368 text Status : 
+											369 pop up button Draft
+												370 (selected) Draft
+											371 text Importance : 
+											372 pop up button High
+												373 (selected) High
+											374 text Execution type : 
+											375 pop up button Manual
+												376 (selected) Manual
+											377 checkbox 0
+											378 text Apply To All Steps
+											379 text Estimated exec. (min) : 
+											380 text field (settable) Estimated exec. duration (min)
+											381 button Save
+										382 container
+											383 container Keywords   Create Keyword  Create & Link 
+												384 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
+												385 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
+												386 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=226%27)
+											387 container None
+												388 text None
+										389 container
+											390 container Platforms:  
+												391 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
+												392 text :  
+											393 container None
+												394 text None
+										395 table
+											396 row
+												397 column header
+													398 text Relations
+											399 row
+												400 cell
+													401 text New relation:  This test case version 
+													402 pop up button is related to
+														403 (selected) is related to
+													404 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID
+													405 button Add
+										406 container Attached files :
+											407 text Attached files :
+										408 container
+											409 text File
+											410 button File: No file chosen
+											411 text Title/name:
+											412 text field (settable)
+											413 button Upload file
+										414 image Max. size of the file is: 1048576 Bytes)
+										415 image Filename must verify this regexp:/^[a-zA-Z0-9_-]{1,20}\.[a-zA-Z0-9]{1,10}$/
+										416 image Allowed files:doc,xls,gif,png,jpg,xlsx,csv
+							417 button

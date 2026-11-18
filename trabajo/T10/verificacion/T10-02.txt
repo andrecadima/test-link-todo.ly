@@ -1,0 +1,178 @@
+HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version_id=undefined&edit=testcase&id=217&form_token=[OMITIDO]
+										254 heading Test Case, Value: 1
+											255 text Test Case
+										256 image Show / Hide direct link
+										257 image Actions
+										258 container
+											259 table
+												260 row
+													261 column header 0-5
+														262 text TL-67 : T10-02. Guardar el nombre y conservarlo tras recarga y nueva sesión - Version 1 
+														263 image Show ghost string
+														264 image Display Author/Updater
+												265 row
+													266 column header 0-5
+														267 text Summary
+												268 row
+													269 cell 0-5
+														270 text Importancia: high. Detecta pérdida o aplicación incorrecta de datos de perfil entre consultas y sesiones.
+														271 text Requerimiento: PEB-74 / T10. El nombre guardado persiste tras recarga y nuevo Login.
+														272 text Descripción: Comprobar el guardado y la persistencia del nombre; al terminar se restaura el valor inicial.
+														273 text Postcondiciones: Nombre inicial restaurado y comprobado; correo y configuración temporal sin modificaciones. Sesión A disponible y evidencia de persistencia conservada.
+												274 row
+													275 column header 0-5
+														276 text Preconditions
+												277 row
+													278 cell 0-5
+														279 content list
+															280 container
+																281 AXListMarker 1. 
+																282 text Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
+															283 container
+																284 AXListMarker 2. 
+																285 text Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A.
+															286 container
+																287 AXListMarker 3. 
+																288 text Nombre inicial y credenciales vigentes de A disponibles en un registro privado.
+												289 row
+													290 column header
+														291 image Show / Hide reorder 
+														292 image Show ghost string
+														293 text #
+													294 column header
+														295 text Step actions
+													296 column header
+														297 text Expected Results
+													298 column header
+														299 text Execution
+												300 row
+													301 cell
+														302 text 1
+													303 cell
+														304 text Abrir Settings / Profile y anotar el Full Name inicial.
+													305 cell
+														306 text El perfil corresponde a A y muestra su nombre inicial.
+													307 cell
+														308 text Manual
+													309 cell
+														310 image Delete step
+													311 cell
+														312 image Insert step
+												313 row
+													314 cell
+														315 text 2
+													316 cell
+														317 text Introducir Prueba T10-02 - nombre guardado en Full Name y pulsar Ok.
+													318 cell
+														319 text El guardado termina y Settings se cierra sin aviso de rechazo.
+													320 cell
+														321 text Manual
+													322 cell
+														323 image Delete step
+													324 cell
+														325 image Insert step
+												326 row
+													327 cell
+														328 text 3
+													329 cell
+														330 text Recargar la página y abrir Settings / Profile.
+													331 cell
+														332 text Full Name muestra exactamente Prueba T10-02 - nombre guardado; correo y zona horaria conservan sus valores iniciales.
+													333 cell
+														334 text Manual
+													335 cell
+														336 image Delete step
+													337 cell
+														338 image Insert step
+												339 row
+													340 cell
+														341 text 4
+													342 cell
+														343 text Cerrar Settings con Cancel, pulsar Logout e iniciar sesión nuevamente con las credenciales vigentes de A.
+													344 cell
+														345 text Login permite acceder a la misma cuenta A.
+													346 cell
+														347 text Manual
+													348 cell
+														349 image Delete step
+													350 cell
+														351 image Insert step
+												352 row
+													353 cell
+														354 text 5
+													355 cell
+														356 text Abrir Settings / Profile.
+													357 cell
+														358 text Se conserva Prueba T10-02 - nombre guardado después de la nueva sesión.
+													359 cell
+														360 text Manual
+													361 cell
+														362 image Delete step
+													363 cell
+														364 image Insert step
+												365 row
+													366 cell
+														367 text 6
+													368 cell
+														369 text Restituir el nombre inicial, pulsar Ok, recargar y volver a consultar Profile.
+													370 cell
+														371 text Full Name vuelve al valor inicial; no quedan cambios de nombre de esta prueba.
+													372 cell
+														373 text Manual
+													374 cell
+														375 image Delete step
+													376 cell
+														377 image Insert step
+											378 button Create step
+											379 button Resequence Steps
+										380 container
+											381 text Status : 
+											382 pop up button Draft
+												383 (selected) Draft
+											384 text Importance : 
+											385 pop up button High
+												386 (selected) High
+											387 text Execution type : 
+											388 pop up button Manual
+												389 (selected) Manual
+											390 checkbox 0
+											391 text Apply To All Steps
+											392 text Estimated exec. (min) : 
+											393 text field (settable) Estimated exec. duration (min)
+											394 button Save
+										395 container
+											396 container Keywords   Create Keyword  Create & Link 
+												397 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
+												398 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
+												399 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=218%27)
+											400 container None
+												401 text None
+										402 container
+											403 container Platforms:  
+												404 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
+												405 text :  
+											406 container None
+												407 text None
+										408 table
+											409 row
+												410 column header
+													411 text Relations
+											412 row
+												413 cell
+													414 text New relation:  This test case version 
+													415 pop up button is related to
+														416 (selected) is related to
+													417 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID
+													418 button Add
+										419 container Attached files :
+											420 text Attached files :
+										421 container
+											422 text File
+											423 button File: No file chosen
+											424 text Title/name:
+											425 text field (settable)
+											426 button Upload file
+										427 image Max. size of the file is: 1048576 Bytes)
+										428 image Filename must verify this regexp:/^[a-zA-Z0-9_-]{1,20}\.[a-zA-Z0-9]{1,10}$/
+										429 image Allowed files:doc,xls,gif,png,jpg,xlsx,csv
+							430 button
