@@ -6,25 +6,37 @@
       "source": "revision-testlink/respaldo-20261118-1532.json",
       "encrypted": "trabajo/resguardos-revision/revision-testlink__respaldo-20261118-1532.json.fernet",
       "size": 210696,
-      "cipher_sha256": "80cd1d8a2d5766716f2a9b0858c1fbe0b41a29e72018e917b8900e35ee5b9103"
+      "cipher_sha256": "5a8fab6b1606ec761042f2ade4b060df7729a3fd514ac8002d7c5d5839d98d5a"
     },
     {
       "source": "revision-testlink/propuestas.json",
       "encrypted": "trabajo/resguardos-revision/revision-testlink__propuestas.json.fernet",
-      "size": 345524,
-      "cipher_sha256": "7d3b74190d384f4e05f6f8cf9b7738dd2e45fb93de2a97f7ba7a73962e77aff4"
+      "size": 364175,
+      "cipher_sha256": "37f37f7bbed2550ae5ae90cf47f3b260514afb24fe2a87356369bfa70052103a"
     },
     {
       "source": "revision-testlink/scripts/modelo.py",
       "encrypted": "trabajo/resguardos-revision/revision-testlink__scripts__modelo.py.fernet",
       "size": 6402,
-      "cipher_sha256": "046e48bb18db85e5e4c5d6d916268b35da3b18abcbef3f77979dfa2571b8d4c8"
+      "cipher_sha256": "58e4df033f46ddde248f5531632be74667623a1e4b75c73a40cdc7ea731d58da"
     },
     {
       "source": "revision-testlink/scripts/generar.py",
       "encrypted": "trabajo/resguardos-revision/revision-testlink__scripts__generar.py.fernet",
-      "size": 11416,
-      "cipher_sha256": "e852a331bf9b55fa6c6dbc88c33ba46c1fc11bdf7096409587a522c6fe3ff121"
+      "size": 14373,
+      "cipher_sha256": "a00d071199e349eccb714f96c7fd50b57a2dd336c1911849bdad8c92b021b802"
+    },
+    {
+      "source": "revision-testlink/respaldo-20261118-1618.json",
+      "encrypted": "trabajo/resguardos-revision/revision-testlink__respaldo-20261118-1618.json.fernet",
+      "size": 211201,
+      "cipher_sha256": "f68730a7a56b1f367cfe049ef839a1c8df06ad04af8d07278490368ebe7d18c7"
+    },
+    {
+      "source": "revision-testlink/respaldo-20261118-1620.json",
+      "encrypted": "trabajo/resguardos-revision/revision-testlink__respaldo-20261118-1620.json.fernet",
+      "size": 298519,
+      "cipher_sha256": "8e67854961c1dcfb4d50ed87ff12bea1d93b3ba51b6c6fb5f9f022c8a50bc776"
     }
   ]
 }
