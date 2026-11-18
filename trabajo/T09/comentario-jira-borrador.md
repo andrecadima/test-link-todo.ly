@@ -10,7 +10,7 @@ Signup muestra Full Name, Email, Password, Timezone, términos y el botón visib
 
 Login aceptó credenciales vigentes y rechazó los contrastes legibles de campos vacíos, correo no registrado y contraseña incorrecta. El formato mal formado produjo vistas vacías que no permiten fijar su respuesta específica: T09-08 queda pendiente. Logout, Atrás y URL directa no mostraron los marcadores de la cuenta cerrada. El aislamiento se observó con un marcador de A y otro de B en sus respectivos Home, en ambos sentidos.
 
-Remember Me tiene dos recorridos documentados: A desmarcado → cierre y reapertura asistida → landing sin sesión; B marcado → cierre y reapertura → sesión autenticada de B confirmada en Profile, sin un segundo Login. Chrome conservó otros perfiles abiertos; no se cerró todo el proceso ni se borraron cookies. El intervalo y los fallos de herramienta están anotados en `exploracion.md`.
+Remember Me tiene dos recorridos documentados: A desmarcado → cierre y reapertura asistida → landing sin sesión; B marcado → cierre y reapertura → sesión autenticada de B confirmada en Profile, sin un segundo Login. Chrome conservó otros perfiles abiertos; no se cerró todo el proceso ni se borraron cookies. El intervalo y los fallos de herramienta están anotados en registro de exploración.
 
 No se incluyen pruebas de penetración, API, cuentas ajenas, funciones Pro ni efectos temporales de Timezone. La creación de tareas se usa exclusivamente para preparar marcadores de sesión/aislamiento; creación y edición funcional corresponden a T06.
 
@@ -49,7 +49,7 @@ Valoración cualitativa de diseño, no frecuencia medida: P baja=1/media=2/alta=
 
 ### Fuentes cruzadas de controles y tratamiento de evidencias
 
-Cancel de Settings y el nombre accesible Submit de Login fueron observados en T10 y en las consultas de identidad de A/B: fuente trabajo/T10/exploracion.md y captura de Old Password vacío. La nomenclatura visible de Signup y Sign Up Free fue verificada directamente por Codex en las capturas registro-vacio y remember-off-reapertura-sin-sesion. Se adjuntarán como evidencia de registro únicamente el árbol y casos abiertos de TestLink con fichas genéricas; no capturas de exploración que muestren correos reales.
+Cancel de Settings y el nombre accesible Submit de Login fueron observados en T10 y en las consultas de identidad de A/B: fuente trabajo/T10/exploracion.md y captura de Old Password vacío. La nomenclatura visible de Signup y Sign Up Free fue verificada directamente en las capturas de exploración en las capturas registro-vacio y remember-off-reapertura-sin-sesion. Se adjuntarán como evidencia de registro únicamente el árbol y casos abiertos de TestLink con fichas genéricas; no capturas de exploración que muestren correos reales.
 
 ## 4. Tipos de prueba y escenarios
 
@@ -131,26 +131,28 @@ No aplicados. No se confirmó una frontera de longitud o de intentos del product
 
 | Caso | Objetivo / riesgo | Fundamento de la técnica | Importancia | Estado |
 |---|---|---|---|---|
-| T09-01 Signup vacío | Omisiones y términos; R6 | Clase conjunta inválida y alternativa UC1 | medium | Preparado |
-| T09-02 Signup duplicado | Conservar cuenta existente; R5 | Partición correo registrado y alternativa UC1 | high | Preparado |
-| T09-03 Timezone de Signup | Selección correcta; R6 | Valor del conjunto ofrecido; campo del UC1 | medium | Preparado |
-| T09-04 Login válido | Acceso a A; R1 | Regla R6 y secuencia S0→S1→S0 | high | Preparado |
-| T09-05 Login vacío | Denegar sin credenciales; R1 | Regla R1, ausencia de ambos campos | high | Preparado |
-| T09-06 Email vacío | Denegar sin identificador; R1 | Regla R2 | high | Preparado |
-| T09-07 Password vacío | Denegar sin contraseña; R1 | Regla R3 | high | Preparado |
+| T09-01 Signup vacío | Omisiones y términos; R6 | Clase conjunta inválida y alternativa UC1 | medium | Registrado y comparado: [TL-72](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-72) |
+| T09-02 Signup duplicado | Conservar cuenta existente; R5 | Partición correo registrado y alternativa UC1 | high | Registrado y comparado: [TL-73](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-73) |
+| T09-03 Timezone de Signup | Selección correcta; R6 | Valor del conjunto ofrecido; campo del UC1 | medium | Registrado y comparado: [TL-74](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-74) |
+| T09-04 Login válido | Acceso a A; R1 | Regla R6 y secuencia S0→S1→S0 | high | Registrado y comparado: [TL-75](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-75) |
+| T09-05 Login vacío | Denegar sin credenciales; R1 | Regla R1, ausencia de ambos campos | high | Registrado y comparado: [TL-76](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-76) |
+| T09-06 Email vacío | Denegar sin identificador; R1 | Regla R2 | high | Registrado y comparado: [TL-77](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-77) |
+| T09-07 Password vacío | Denegar sin contraseña; R1 | Regla R3 | high | Registrado y comparado: [TL-78](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-78) |
 | T09-08 Email mal formado | Respuesta no resuelta; R1/R6 | Candidato de entrada negativa; regla por confirmar | medium | Pendiente; excluido |
-| T09-09 Cuenta inexistente | Denegar sin cuenta; R1 | Regla R4 y partición no registrada confirmada | high | Preparado |
-| T09-10 Contraseña incorrecta | Denegar correspondencia falsa; R1 | Regla R5 y partición no corresponde | high | Preparado |
-| T09-11 Logout, Atrás y URL | Cerrar acceso a datos; R2 | Secuencia de estados e historial | high | Preparado |
-| T09-12 Aislamiento A/B | Evitar mezcla/exposición; R3 | Flujo UC2 completo con dos marcadores | high | Preparado |
-| T09-13 Remember Me desmarcado | Sesión cerrada al reabrir; R4 | S1→C1→S0 | high | Preparado |
-| T09-14 Remember Me marcado | Recuperar identidad al reabrir; R4 | S2→C2→S2 y cierre posterior | high | Preparado |
+| T09-09 Cuenta inexistente | Denegar sin cuenta; R1 | Regla R4 y partición no registrada confirmada | high | Registrado y comparado: [TL-79](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-79) |
+| T09-10 Contraseña incorrecta | Denegar correspondencia falsa; R1 | Regla R5 y partición no corresponde | high | Registrado y comparado: [TL-80](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-80) |
+| T09-11 Logout, Atrás y URL | Cerrar acceso a datos; R2 | Secuencia de estados e historial | high | Registrado y comparado: [TL-81](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-81) |
+| T09-12 Aislamiento A/B | Evitar mezcla/exposición; R3 | Flujo UC2 completo con dos marcadores | high | Registrado y comparado: [TL-82](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-82) |
+| T09-13 Remember Me desmarcado | Sesión cerrada al reabrir; R4 | S1→C1→S0 | high | Registrado y comparado: [TL-83](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-83) |
+| T09-14 Remember Me marcado | Recuperar identidad al reabrir; R4 | S2→C2→S2 y cierre posterior | high | Registrado y comparado: [TL-84](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-84) |
 
-## 7. Implementación propuesta en TestLink
+## 7. Implementación en TestLink
 
-Registro autorizado tras revisión sin bloqueantes y tratamiento de observaciones. Proyecto TL:Todo.ly, suite existente Todo.ly tests; XML de entrada testcases, sin crear suites ni actualizar existentes; nombres T09-NN, Importance individual, Manual, Summary con requerimiento/descripción/postcondiciones, Preconditions separado y pasos nativos con resultado por paso. No hay IDs ni enlaces nuevos confirmados. Los trece casos registrables están separados del candidato T09-08.
+Se importaron **13 casos, 171 pasos nativos**, en proyecto TL:Todo.ly y suite existente **Todo.ly tests (id3)**, sin crear suites ni actualizar casos existentes. Filtro T09 antes: 0; total de suite antes: 70, después: 83. El importador omitía duplicados por nombre. IDs reales **TL-72 a TL-84**, disponibles en la lista resumida.
 
-La evidencia real incluirá árbol de suite y un caso abierto; se exportará realmente Todo.ly tests a `testlink-xml/todo-ly-tests.xml` después de verificar el registro; de ella se extraerá `testlink-xml/T09.xml` mediante script. Un XML local preparado para importar no se presenta como esa exportación.
+Se abrió cada caso y se compararon descripción, requerimiento, postcondiciones, precondiciones, todos los pasos/resultados, Importance y Manual: **435 textos comprobados, sin diferencias**. Estado TestLink Draft; no se presenta ejecución formal. Títulos y campos nativos corresponden a cada diseño. La evidencia adjunta muestra el árbol filtrado y TL-84 abierto; la lectura textual del árbol conserva todos los IDs aunque algunos nombres se recorten en la captura.
+
+La revisión independiente 06 concluyó APTO; sus observaciones se resolvieron o documentaron. No sustituye la revisión de un integrante. Summary comienza por descripción y continúa con requerimiento/postcondiciones. Las fichas completas están en TestLink; las cuentas siguen genéricas. La exportación XML real y extracción por ticket se realizan en el cierre; el XML de entrada no se presenta como exportación.
 
 ## 8. Cobertura pendiente y límites
 
@@ -160,4 +162,13 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 ## 9. Estado
 
-**Trece casos diseñados y preparados para revisión; un candidato pendiente y excluido del registro.** Sin registro nuevo, comentario publicado ni ejecución formal. Después de la revisión sin bloqueantes y de verificar TestLink se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante”, manteniendo la cobertura pendiente explícita. No se cambia el estado de Jira ni se marca la revisión de otra persona.
+**Diseñados y registrados en TestLink; pendiente de revisión por otro integrante.** Trece registrados y comparados; T09-08 excluido y dudas de §8 explícitas. Sin ejecución formal ni cambios de estado de Jira.
+
+| Criterio de aceptación | Comprobación |
+|---|---|
+| Reglas y condiciones del registro/acceso | Documentadas con clasificación de fuente y dudas explícitas. |
+| Tipos de prueba y riesgos | Funcional y seguridad observable, vinculados a riesgos R1–R6. |
+| Escenarios positivos y negativos | Trece casos; formato mal formado y registro válido controlado pendientes explícitos. |
+| Técnicas justificadas | Particiones, decisión, estados y casos de uso con artefactos y trazabilidad; sin límites inventados. |
+| Cuentas, sesiones y resultados | Fichas genéricas con estados y resultados observables. |
+| Registro y revisión por otro integrante | Trece registrados y cotejados; revisión de integrante pendiente. |

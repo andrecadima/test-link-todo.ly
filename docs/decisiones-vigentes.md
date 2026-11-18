@@ -117,3 +117,11 @@ Se registra **dentro de la suite existente Todo.ly tests**, sin crear suites por
 El usuario realiza la introducción de credenciales y los arrastres. Codex agrupa los pasos manuales en una sola lista por ticket, con orden y datos vinculados al registro privado, sin publicar secretos. Dudas de más de 15 minutos se declaran pendientes. Tras tres fallos de un paso del navegador se solicita ayuda concreta. La revisión de Claude no sustituye la revisión de otro integrante.
 
 El cierre incluye configuración y cuentas restauradas, datos temporales retirados, papelera vacía, evidencia final, comentarios publicados conservados localmente y auditoría final. No se cambian estados de Jira ni se eliminan cuentas.
+
+## 15. Coordinación y rúbrica — 18 de noviembre
+
+El usuario confirmó que Codex termina T09, T11 y fase 6 y sigue publicando en sus tickets Jira. PROMPT_REVISION_TESTLINK.md es para otro Claude por API; su prohibición de Jira y autorización sobre otros tickets no se trasladan a Codex. No se modifican casos ajenos. Los archivos nuevos de revision-testlink/ se incorporan a los commits sin modificarlos y sin publicar secretos.
+
+Antes de registrar T09/T11: título con funcionalidad, condición y resultado; descripción iniciada con Validar que; precondiciones como estados/datos, sin verbos; una acción por paso con controles/datos exactos destacados y resultados observables. Se conserva objetivo, cobertura, IDs, importancia y Manual. Prevalecen las cuentas genéricas y ausencia de secretos de §7. Summary presenta primero la descripción, después requerimiento y postcondiciones; la importancia y su razón se mantienen en ficha/análisis y su campo nativo. El XML convierte la negrita de los controles a strong.
+
+El usuario solicitó de nuevo una sola lista manual de T10 a/b/c. Cuando confirme resultados, Codex completa 04/05/06, verifica y registra solo esos tres y añade IDs/enlaces al comentario PEB-74 conservando todo su contenido. La restauración de A es necesaria también para el cierre.

@@ -1,6 +1,6 @@
 # T09 / PEB-73 — Registro, acceso y sesión
 
-Fecha: 17 de noviembre de 2026. **Diseño preparado para revisión: trece casos listos y un candidato pendiente de exploración, fuera del registro propuesto.** No registrado en TestLink, no publicado en Jira y no ejecutado formalmente. Fuentes de fichas: `casos-listos.json` y `casos-pendientes.json`; `casos.json` conserva el conjunto completo. Se mantienen los códigos para trazabilidad aunque T09-08 quede reservado.
+Fecha: 18 de noviembre de 2026. Trece casos registrados en TestLink y comparados individualmente; revisión independiente 06 APTO, sin bloqueantes y con observaciones resueltas. T09-08 permanece pendiente y excluido. Sin ejecución formal ni revisión de integrante.
 
 ## 1. Análisis del área
 
@@ -10,7 +10,7 @@ Signup muestra Full Name, Email, Password, Timezone, términos y el botón visib
 
 Login aceptó credenciales vigentes y rechazó los contrastes legibles de campos vacíos, correo no registrado y contraseña incorrecta. El formato mal formado produjo vistas vacías que no permiten fijar su respuesta específica: T09-08 queda pendiente. Logout, Atrás y URL directa no mostraron los marcadores de la cuenta cerrada. El aislamiento se observó con un marcador de A y otro de B en sus respectivos Home, en ambos sentidos.
 
-Remember Me tiene dos recorridos documentados: A desmarcado → cierre y reapertura asistida → landing sin sesión; B marcado → cierre y reapertura → sesión autenticada de B confirmada en Profile, sin un segundo Login. Chrome conservó otros perfiles abiertos; no se cerró todo el proceso ni se borraron cookies. El intervalo y los fallos de herramienta están anotados en `exploracion.md`.
+Remember Me tiene dos recorridos documentados: A desmarcado → cierre y reapertura asistida → landing sin sesión; B marcado → cierre y reapertura → sesión autenticada de B confirmada en Profile, sin un segundo Login. Chrome conservó otros perfiles abiertos; no se cerró todo el proceso ni se borraron cookies. El intervalo y los fallos de herramienta están anotados en registro de exploración.
 
 No se incluyen pruebas de penetración, API, cuentas ajenas, funciones Pro ni efectos temporales de Timezone. La creación de tareas se usa exclusivamente para preparar marcadores de sesión/aislamiento; creación y edición funcional corresponden a T06.
 
@@ -49,7 +49,7 @@ Valoración cualitativa de diseño, no frecuencia medida: P baja=1/media=2/alta=
 
 ### Fuentes cruzadas de controles y tratamiento de evidencias
 
-Cancel de Settings y el nombre accesible Submit de Login fueron observados en T10 y en las consultas de identidad de A/B: fuente trabajo/T10/exploracion.md y captura de Old Password vacío. La nomenclatura visible de Signup y Sign Up Free fue verificada directamente por Codex en las capturas registro-vacio y remember-off-reapertura-sin-sesion. Se adjuntarán como evidencia de registro únicamente el árbol y casos abiertos de TestLink con fichas genéricas; no capturas de exploración que muestren correos reales.
+Cancel de Settings y el nombre accesible Submit de Login fueron observados en T10 y en las consultas de identidad de A/B: fuente trabajo/T10/exploracion.md y captura de Old Password vacío. La nomenclatura visible de Signup y Sign Up Free fue verificada directamente en las capturas de exploración en las capturas registro-vacio y remember-off-reapertura-sin-sesion. Se adjuntarán como evidencia de registro únicamente el árbol y casos abiertos de TestLink con fichas genéricas; no capturas de exploración que muestren correos reales.
 
 ## 4. Tipos de prueba y escenarios
 
@@ -131,26 +131,28 @@ No aplicados. No se confirmó una frontera de longitud o de intentos del product
 
 | Caso | Objetivo / riesgo | Fundamento de la técnica | Importancia | Estado |
 |---|---|---|---|---|
-| T09-01 Signup vacío | Omisiones y términos; R6 | Clase conjunta inválida y alternativa UC1 | medium | Preparado |
-| T09-02 Signup duplicado | Conservar cuenta existente; R5 | Partición correo registrado y alternativa UC1 | high | Preparado |
-| T09-03 Timezone de Signup | Selección correcta; R6 | Valor del conjunto ofrecido; campo del UC1 | medium | Preparado |
-| T09-04 Login válido | Acceso a A; R1 | Regla R6 y secuencia S0→S1→S0 | high | Preparado |
-| T09-05 Login vacío | Denegar sin credenciales; R1 | Regla R1, ausencia de ambos campos | high | Preparado |
-| T09-06 Email vacío | Denegar sin identificador; R1 | Regla R2 | high | Preparado |
-| T09-07 Password vacío | Denegar sin contraseña; R1 | Regla R3 | high | Preparado |
+| T09-01 Signup vacío | Omisiones y términos; R6 | Clase conjunta inválida y alternativa UC1 | medium | Registrado y comparado: [TL-72](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-72) |
+| T09-02 Signup duplicado | Conservar cuenta existente; R5 | Partición correo registrado y alternativa UC1 | high | Registrado y comparado: [TL-73](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-73) |
+| T09-03 Timezone de Signup | Selección correcta; R6 | Valor del conjunto ofrecido; campo del UC1 | medium | Registrado y comparado: [TL-74](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-74) |
+| T09-04 Login válido | Acceso a A; R1 | Regla R6 y secuencia S0→S1→S0 | high | Registrado y comparado: [TL-75](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-75) |
+| T09-05 Login vacío | Denegar sin credenciales; R1 | Regla R1, ausencia de ambos campos | high | Registrado y comparado: [TL-76](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-76) |
+| T09-06 Email vacío | Denegar sin identificador; R1 | Regla R2 | high | Registrado y comparado: [TL-77](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-77) |
+| T09-07 Password vacío | Denegar sin contraseña; R1 | Regla R3 | high | Registrado y comparado: [TL-78](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-78) |
 | T09-08 Email mal formado | Respuesta no resuelta; R1/R6 | Candidato de entrada negativa; regla por confirmar | medium | Pendiente; excluido |
-| T09-09 Cuenta inexistente | Denegar sin cuenta; R1 | Regla R4 y partición no registrada confirmada | high | Preparado |
-| T09-10 Contraseña incorrecta | Denegar correspondencia falsa; R1 | Regla R5 y partición no corresponde | high | Preparado |
-| T09-11 Logout, Atrás y URL | Cerrar acceso a datos; R2 | Secuencia de estados e historial | high | Preparado |
-| T09-12 Aislamiento A/B | Evitar mezcla/exposición; R3 | Flujo UC2 completo con dos marcadores | high | Preparado |
-| T09-13 Remember Me desmarcado | Sesión cerrada al reabrir; R4 | S1→C1→S0 | high | Preparado |
-| T09-14 Remember Me marcado | Recuperar identidad al reabrir; R4 | S2→C2→S2 y cierre posterior | high | Preparado |
+| T09-09 Cuenta inexistente | Denegar sin cuenta; R1 | Regla R4 y partición no registrada confirmada | high | Registrado y comparado: [TL-79](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-79) |
+| T09-10 Contraseña incorrecta | Denegar correspondencia falsa; R1 | Regla R5 y partición no corresponde | high | Registrado y comparado: [TL-80](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-80) |
+| T09-11 Logout, Atrás y URL | Cerrar acceso a datos; R2 | Secuencia de estados e historial | high | Registrado y comparado: [TL-81](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-81) |
+| T09-12 Aislamiento A/B | Evitar mezcla/exposición; R3 | Flujo UC2 completo con dos marcadores | high | Registrado y comparado: [TL-82](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-82) |
+| T09-13 Remember Me desmarcado | Sesión cerrada al reabrir; R4 | S1→C1→S0 | high | Registrado y comparado: [TL-83](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-83) |
+| T09-14 Remember Me marcado | Recuperar identidad al reabrir; R4 | S2→C2→S2 y cierre posterior | high | Registrado y comparado: [TL-84](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-84) |
 
-## 7. Implementación propuesta en TestLink
+## 7. Implementación en TestLink
 
-Registro autorizado tras revisión sin bloqueantes y tratamiento de observaciones. Proyecto TL:Todo.ly, suite existente Todo.ly tests; XML de entrada testcases, sin crear suites ni actualizar existentes; nombres T09-NN, Importance individual, Manual, Summary con requerimiento/descripción/postcondiciones, Preconditions separado y pasos nativos con resultado por paso. No hay IDs ni enlaces nuevos confirmados. Los trece casos registrables están separados del candidato T09-08.
+Se importaron **13 casos, 171 pasos nativos**, en proyecto TL:Todo.ly y suite existente **Todo.ly tests (id3)**, sin crear suites ni actualizar casos existentes. Filtro T09 antes: 0; total de suite antes: 70, después: 83. El importador omitía duplicados por nombre. IDs reales **TL-72 a TL-84**, disponibles en la lista resumida.
 
-La evidencia real incluirá árbol de suite y un caso abierto; se exportará realmente Todo.ly tests a `testlink-xml/todo-ly-tests.xml` después de verificar el registro; de ella se extraerá `testlink-xml/T09.xml` mediante script. Un XML local preparado para importar no se presenta como esa exportación.
+Se abrió cada caso y se compararon descripción, requerimiento, postcondiciones, precondiciones, todos los pasos/resultados, Importance y Manual: **435 textos comprobados, sin diferencias**. Estado TestLink Draft; no se presenta ejecución formal. Títulos y campos nativos corresponden a cada diseño. La evidencia adjunta muestra el árbol filtrado y TL-84 abierto; la lectura textual del árbol conserva todos los IDs aunque algunos nombres se recorten en la captura.
+
+La revisión independiente 06 concluyó APTO; sus observaciones se resolvieron o documentaron. No sustituye la revisión de un integrante. Summary comienza por descripción y continúa con requerimiento/postcondiciones. Las fichas completas están en TestLink; las cuentas siguen genéricas. La exportación XML real y extracción por ticket se realizan en el cierre; el XML de entrada no se presenta como exportación.
 
 ## 8. Cobertura pendiente y límites
 
@@ -160,13 +162,22 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 ## 9. Estado
 
-**Trece casos diseñados y preparados para revisión; un candidato pendiente y excluido del registro.** Sin registro nuevo, comentario publicado ni ejecución formal. Después de la revisión sin bloqueantes y de verificar TestLink se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante”, manteniendo la cobertura pendiente explícita. No se cambia el estado de Jira ni se marca la revisión de otra persona.
+**Diseñados y registrados en TestLink; pendiente de revisión por otro integrante.** Trece registrados y comparados; T09-08 excluido y dudas de §8 explícitas. Sin ejecución formal ni cambios de estado de Jira.
+
+| Criterio de aceptación | Comprobación |
+|---|---|
+| Reglas y condiciones del registro/acceso | Documentadas con clasificación de fuente y dudas explícitas. |
+| Tipos de prueba y riesgos | Funcional y seguridad observable, vinculados a riesgos R1–R6. |
+| Escenarios positivos y negativos | Trece casos; formato mal formado y registro válido controlado pendientes explícitos. |
+| Técnicas justificadas | Particiones, decisión, estados y casos de uso con artefactos y trazabilidad; sin límites inventados. |
+| Cuentas, sesiones y resultados | Fichas genéricas con estados y resultados observables. |
+| Registro y revisión por otro integrante | Trece registrados y cotejados; revisión de integrante pendiente. |
 
 ## Fichas para TestLink — trece casos preparados
 
 <!-- FICHAS_GENERADAS -->
 
-### T09-01. Rechazar Signup con campos vacíos y términos sin aceptar
+### T09-01. Signup con campos vacíos y términos sin aceptar rechaza el envío
 
 **Importancia:** **medium**. Detecta aceptación de un formulario sin los datos necesarios ni el consentimiento indicado.
 
@@ -176,19 +187,26 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sin sesión iniciada en Todo.ly en el navegador.
 
-**Descripción:** Comprobar la combinación vacía observada; no aislar como reglas independientes todas sus condiciones concurrentes.
+**Descripción:** Validar que Signup rechaza el envío con Full Name, Email y Password vacíos y la casilla de términos sin marcar, mostrando las señales de omisión observadas, sin aislar como reglas independientes las condiciones concurrentes.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Abrir https://todo.ly/ y pulsar Sign Up Free para abrir el formulario Signup. | Se muestran Full Name, Email, Password, Timezone, casilla de términos y botón Signup (nombre accesible Submit). |
-| 2. Dejar Full Name, Email y Password vacíos, conservar Timezone predeterminado y dejar los términos sin marcar; pulsar Signup. | Se rechaza el envío. La lectura del aviso transitorio muestra Error. Please correct the missing fields.; se observan asteriscos en nombre, correo y contraseña. Con los términos sin marcar se muestra If you don’t agree you can’t use Todo.ly. El aviso global puede desaparecer antes de conservar la captura. |
-| 3. Conservar evidencia de las señales visibles y volver a https://todo.ly/ sin completar el registro. | La sesión continúa cerrada; no aparece el área de proyectos de una cuenta. |
+| 1. Abrir **https://todo.ly/** en Chrome. | Se muestra la página pública de Todo.ly con **Login** y **Sign Up Free**. |
+| 2. Hacer clic en **Sign Up Free**. | Se abre el formulario **Signup** con **Full Name**, **Email**, **Password**, **Timezone**, la casilla de términos y el botón **Signup** (nombre accesible Submit). |
+| 3. Vaciar el campo **Full Name**. | **Full Name** queda vacío. |
+| 4. Vaciar el campo **Email**. | **Email** queda vacío. |
+| 5. Vaciar el campo **Password**. | **Password** queda vacío. |
+| 6. Leer la selección inicial de **Timezone** sin cambiarla. | **Timezone** conserva su valor inicial del formulario. |
+| 7. Dejar sin marcar la casilla de términos. | La casilla de términos está sin marcar. |
+| 8. Hacer clic una vez en el botón **Signup**. | No se completa el registro; se muestran asteriscos junto a **Full Name**, **Email** y **Password** y el aviso **If you don’t agree you can’t use Todo.ly** junto a los términos sin marcar. Puede aparecer brevemente **Error. Please correct the missing fields.**, identificado por accesibilidad; no se exige ese aviso transitorio en la captura. |
+| 9. Tomar una captura del formulario **Signup**. | La captura muestra los asteriscos y el aviso **If you don’t agree you can’t use Todo.ly**, sin datos personales. |
+| 10. Abrir **https://todo.ly/** en la barra de direcciones, sin completar el registro. | Se muestra la página pública con **Login** y **Sign Up Free**; la sesión continúa cerrada y no aparece el área de proyectos de una cuenta. |
 
 **Postcondiciones:** Sin cuenta nueva ni sesión; evidencia de la combinación vacía, sin atribuir obligatoriedad del servidor a Timezone.
 
 ---
 
-### T09-02. Rechazar el registro con el correo de una cuenta de prueba existente
+### T09-02. Signup con el correo de una cuenta existente muestra error de duplicado
 
 **Importancia:** **high**. Evita sustituir o confundir una cuenta al reutilizar su identificador.
 
@@ -197,22 +215,38 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sin sesión iniciada en Todo.ly en el navegador.
-3. Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.
-4. Datos de registro válidos conocidos para la cuenta de prueba y aceptación de los términos por quien ejecuta.
+3. Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.
+4. Contraseña de prueba para el intento de Signup, distinta de la vigente de A y consignada en el registro privado de credenciales.
+5. Aceptación de los términos de Todo.ly autorizada para las cuentas de prueba.
+6. Nombres de perfil de A consignados en el registro privado de referencia.
 
-**Descripción:** Comprobar el rechazo de un duplicado usando exclusivamente una cuenta propia de prueba.
+**Descripción:** Validar que Signup rechaza el correo de una cuenta de prueba ya registrada con el aviso de duplicado y que la cuenta A conserva su nombre original, usando exclusivamente una cuenta propia de prueba.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Pulsar Sign Up Free para abrir Signup e introducir Prueba T09-02 - duplicado en Full Name, el correo de A en Email y una contraseña de prueba privada distinta de la vigente de A en Password; seleccionar La Paz UTC-04. | Los campos contienen los datos previstos y el correo corresponde a la cuenta de prueba existente. |
-| 2. Quien ejecuta marca los términos que acepta y pulsa Signup. | Aparece Error. Account with this email address already exists!; no se inicia sesión en una cuenta nueva. |
-| 3. Volver a Login e iniciar sesión con las credenciales de A vigentes antes del intento; abrir Settings / Profile. | Se accede a A y se conservan su identidad y nombre originales, sin aplicar el nombre del registro duplicado. |
+| 1. Abrir **https://todo.ly/** en Chrome. | Se muestra la página pública con **Login** y **Sign Up Free**. |
+| 2. Hacer clic en **Sign Up Free**. | Se abre el formulario **Signup** con **Full Name**, **Email**, **Password**, **Timezone**, la casilla de términos y el botón **Signup**. |
+| 3. Escribir **Prueba T09-02 - duplicado** en el campo **Full Name**. | **Full Name** muestra **Prueba T09-02 - duplicado**. |
+| 4. Escribir en el campo **Email** el correo de la cuenta A, tomado del registro privado. | **Email** muestra el correo de la cuenta de prueba A existente. |
+| 5. Escribir en el campo **Password** la contraseña de prueba para Signup del registro privado, distinta de la vigente de A. | **Password** contiene el valor introducido. |
+| 6. Seleccionar **(UTC-04:00) Georgetown, La Paz, Manaus, San Juan** en **Timezone**. | **Timezone** muestra **(UTC-04:00) Georgetown, La Paz, Manaus, San Juan**. |
+| 7. Marcar la casilla de términos del formulario **Signup**. | La casilla de términos queda marcada. |
+| 8. Hacer clic una vez en el botón **Signup**. | Aparece **Error. Account with this email address already exists!**; no se inicia sesión en una cuenta nueva: no aparecen **Settings** ni **Logout**. |
+| 9. Abrir **https://todo.ly/** en la barra de direcciones. | Se muestra la página pública con **Login** y **Sign Up Free**, sin sesión iniciada. |
+| 10. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**. |
+| 11. Escribir en **Email** el correo de la cuenta A del registro privado. | **Email** muestra el correo de A. |
+| 12. Escribir en **Password** la contraseña vigente de A del registro privado, la misma vigente antes del intento de Signup. | **Password** muestra el valor enmascarado. |
+| 13. Hacer clic una vez en el botón **Login** del formulario (nombre accesible Submit). | Se muestra el área autenticada con **Settings** y **Logout**. |
+| 14. Hacer clic en **Settings**. | Se abre **Settings**. |
+| 15. Seleccionar **Profile** en **Settings**. | **Profile** muestra **Full Name** y **Email** de la cuenta con sesión iniciada. |
+| 16. Comparar **Full Name** con el nombre de perfil de A del registro privado. | **Full Name** conserva el nombre inicial de A y no muestra **Prueba T09-02 - duplicado**, según el criterio del equipo de conservación de identidad. |
+| 17. Comparar **Email** con el correo de A del registro privado. | **Email** coincide con el correo de A del registro privado. |
 
-**Postcondiciones:** A conserva sus datos y credenciales; no se crea otra cuenta. Evidencia del rechazo sin contraseñas.
+**Postcondiciones:** A conserva sus datos y credenciales; no se crea otra cuenta. Evidencia del rechazo sin contraseñas. Sesión iniciada en A, con **Profile** abierto.
 
 ---
 
-### T09-03. Consultar y seleccionar Timezone como campo de Signup
+### T09-03. Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada
 
 **Importancia:** **medium**. Evita confundir las opciones de La Paz y atribuir al campo reglas temporales fuera del alcance.
 
@@ -222,20 +256,26 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sin sesión iniciada en Todo.ly en el navegador.
 
-**Descripción:** Comprobar opciones, valor inicial y ausencia de una opción vacía en la interfaz; sin crear cuenta ni evaluar vencimientos.
+**Descripción:** Validar que el campo Timezone de Signup muestra su valor inicial, ofrece la opción de La Paz UTC-04 distinta de la opción mexicana UTC-07, sin una entrada vacía, y refleja la opción seleccionada, sin crear cuenta ni evaluar vencimientos.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Pulsar Sign Up Free para abrir Signup y consultar el valor inicial de Timezone. | El selector muestra la opción Pacific UTC-08; la captura de referencia deja visible (UTC-08:00) Pacific Time (US & Cana… con el texto recortado. |
-| 2. Desplegar el selector y revisar sus opciones, registrando el inventario visible. | La lista incluye (UTC-04:00) Georgetown, La Paz, Manaus, San Juan y la opción mexicana UTC-07 distinta; no ofrece una entrada vacía en el listado observado. El inventario de referencia contiene 101 opciones. |
-| 3. Seleccionar (UTC-04:00) Georgetown, La Paz, Manaus, San Juan. | El selector refleja exactamente la opción UTC-04 elegida. |
-| 4. Volver a https://todo.ly/ sin enviar Signup. | Se muestra la página pública sin registro completado ni sesión iniciada. |
+| 1. Abrir **https://todo.ly/** en Chrome. | Se muestra la página pública con **Login** y **Sign Up Free**. |
+| 2. Hacer clic en **Sign Up Free**. | Se abre el formulario **Signup** con el campo **Timezone**. |
+| 3. Leer el valor inicial de **Timezone** sin desplegarlo. | El selector muestra la opción Pacific UTC-08; la captura de referencia deja visible **(UTC-08:00) Pacific Time (US & Cana…** con el texto recortado. |
+| 4. Hacer clic en el selector **Timezone**. | Se despliega la lista de zonas horarias. |
+| 5. Recorrer la lista completa de **Timezone**. | La lista no ofrece una entrada vacía. |
+| 6. Anotar el número de opciones de **Timezone** en el registro de ejecución. | El inventario queda registrado; el inventario de referencia contiene 101 opciones, sin tratarlo como límite del producto. |
+| 7. Localizar **(UTC-04:00) Georgetown, La Paz, Manaus, San Juan** en la lista. | Aparece la opción correspondiente a La Paz UTC-04. |
+| 8. Localizar **(UTC-07:00) Chihuahua, La Paz, Mazatlan** en la lista. | La opción UTC-07 aparece como entrada distinta de La Paz UTC-04. |
+| 9. Seleccionar **(UTC-04:00) Georgetown, La Paz, Manaus, San Juan**. | El selector **Timezone** muestra exactamente **(UTC-04:00) Georgetown, La Paz, Manaus, San Juan**. |
+| 10. Abrir **https://todo.ly/** en la barra de direcciones, sin hacer clic en **Signup**. | Se muestra la página pública sin registro completado ni sesión iniciada. |
 
 **Postcondiciones:** Formulario descartado sin registro. No se concluye validación de servidor para un Timezone vacío que la interfaz no permite seleccionar.
 
 ---
 
-### T09-04. Iniciar sesión con credenciales que corresponden a A
+### T09-04. Login con credenciales vigentes de A abre la sesión de la cuenta A
 
 **Importancia:** **high**. Protege la operación esencial de acceso a la cuenta correcta.
 
@@ -244,22 +284,31 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sin sesión iniciada en Todo.ly en el navegador.
-3. Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.
+3. Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.
+4. Nombres de perfil de A consignados en el registro privado de referencia.
 
-**Descripción:** Recorrer la regla positiva de la tabla de decisión y comprobar identidad en Profile.
+**Descripción:** Validar que Login con el correo y la contraseña vigentes de A concede acceso a la identidad de A, comprobada en Profile.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Desplegar Login e introducir el correo de A y su contraseña vigente del registro privado; desmarcar Remember Me para este recorrido. | Los datos corresponden a A y la casilla está desmarcada. |
-| 2. Pulsar Login. | Se muestra el área autenticada con Settings y Logout. |
-| 3. Abrir Settings / Profile y comparar identidad con el registro privado. | El nombre y el correo corresponden a A; no se abre otra cuenta. |
-| 4. Cerrar Settings con Cancel y pulsar Logout. | Se vuelve a la página pública, con la sesión cerrada. |
+| 1. Abrir **https://todo.ly/** en Chrome. | Se muestra la página pública con **Login** y **Sign Up Free**. |
+| 2. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**. |
+| 3. Escribir en **Email** el correo de la cuenta A del registro privado. | **Email** muestra el correo de A. |
+| 4. Escribir en **Password** la contraseña vigente de A del registro privado. | **Password** muestra el valor enmascarado. |
+| 5. Dejar desmarcada la casilla **Remember Me**; si aparece marcada, hacer clic en ella una vez. | **Remember Me** está desmarcada. |
+| 6. Hacer clic una vez en el botón **Login** del formulario (nombre accesible Submit). | Se muestra el área autenticada con **Settings** y **Logout**. |
+| 7. Hacer clic en **Settings**. | Se abre **Settings**. |
+| 8. Seleccionar **Profile** en **Settings**. | **Profile** muestra **Full Name** y **Email** de la cuenta con sesión iniciada. |
+| 9. Comparar **Full Name** con el nombre de perfil de A del registro privado. | **Full Name** coincide con el nombre de A. |
+| 10. Comparar **Email** con el correo de A del registro privado. | **Email** coincide con el correo de A del registro privado. |
+| 11. Hacer clic en **Cancel**. | Se cierra **Settings** sin guardar cambios y vuelve a verse el área de proyectos. |
+| 12. Hacer clic en **Logout**. | Se muestra la página pública con **Login** y **Sign Up Free**, con la sesión cerrada. |
 
 **Postcondiciones:** Sesión cerrada y datos de A sin cambios; evidencia de identidad sin secretos.
 
 ---
 
-### T09-05. Rechazar Login con ambos campos vacíos
+### T09-05. Login con Email y Password vacíos no concede acceso
 
 **Importancia:** **high**. Evita acceso sin una combinación de credenciales que corresponda a la cuenta.
 
@@ -269,19 +318,22 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sin sesión iniciada en Todo.ly en el navegador.
 
-**Descripción:** Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.
+**Descripción:** Validar que Login con Email y Password vacíos no concede acceso, en un único intento negativo.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Desplegar Login; dejar Email y Password vacíos; conservar Remember Me sin cambios. | Email y Password están vacíos. |
-| 2. Pulsar Login (nombre accesible Submit) una sola vez. | No se concede acceso. La lectura posterior conserva Login y no muestra datos de proyectos autenticados. |
-| 3. Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales. | Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
+| 1. Abrir **https://todo.ly/** en Chrome. | Se muestra la página pública con **Login** y **Sign Up Free**. |
+| 2. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**. |
+| 3. Revisar los campos sin escribir datos y sin cambiar la casilla **Remember Me**. | **Email** y **Password** están vacíos. |
+| 4. Hacer clic una sola vez en el botón **Login** del formulario (nombre accesible Submit). | No se concede acceso: el formulario de acceso con **Login** sigue disponible y no aparecen **Settings**, **Logout** ni datos de proyectos. |
+| 5. Tomar una captura de la pantalla resultante. | La captura muestra el formulario de acceso sin sesión iniciada. |
+| 6. Abrir **https://todo.ly/** en la barra de direcciones, sin escribir credenciales. | Se muestra la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
 
 **Postcondiciones:** Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.
 
 ---
 
-### T09-06. Rechazar Login con Email vacío y Password informado
+### T09-06. Login con Email vacío y Password informado muestra error y no da acceso
 
 **Importancia:** **high**. Evita acceso sin una combinación de credenciales que corresponda a la cuenta.
 
@@ -291,19 +343,23 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sin sesión iniciada en Todo.ly en el navegador.
 
-**Descripción:** Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.
+**Descripción:** Validar que Login con Email vacío y un Password de prueba no concede acceso y muestra el aviso genérico de credenciales incorrectas, en un único intento negativo.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Desplegar Login; dejar o introducir Email vacío y Prueba-T09-no-valida-17 en Password; conservar Remember Me sin cambios. | Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia. |
-| 2. Pulsar Login (nombre accesible Submit) una sola vez. | No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. |
-| 3. Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales. | Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
+| 1. Abrir **https://todo.ly/** en Chrome. | Se muestra la página pública con **Login** y **Sign Up Free**. |
+| 2. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**. |
+| 3. Revisar el campo **Email** sin escribir datos y sin cambiar la casilla **Remember Me**. | **Email** está vacío. |
+| 4. Escribir **Prueba-T09-no-valida-17** en el campo **Password**. | **Password** muestra el valor enmascarado. |
+| 5. Hacer clic una sola vez en el botón **Login** del formulario (nombre accesible Submit). | No se concede acceso y se muestra **Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.** |
+| 6. Tomar una captura del aviso y del formulario. | La captura muestra el aviso y el formulario de acceso, sin contraseña legible. |
+| 7. Abrir **https://todo.ly/** en la barra de direcciones, sin escribir credenciales. | Se muestra la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
 
 **Postcondiciones:** Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.
 
 ---
 
-### T09-07. Rechazar Login de A con Password vacío
+### T09-07. Login de A con Password vacío muestra error y no concede acceso
 
 **Importancia:** **high**. Evita acceso sin una combinación de credenciales que corresponda a la cuenta.
 
@@ -312,22 +368,27 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sin sesión iniciada en Todo.ly en el navegador.
-3. Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.
-4. Según criterio del equipo, A acumula menos de tres intentos fallidos en la sesión de trabajo (no es una política de Todo.ly); la clave vigente es distinta de Prueba-T09-no-valida-17.
+3. Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.
+4. Cuenta A con menos de tres intentos fallidos de Login en la sesión de trabajo, según criterio operativo del equipo (no es una política de Todo.ly).
+5. Contraseña vigente de A distinta de **Prueba-T09-no-valida-17**.
 
-**Descripción:** Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.
+**Descripción:** Validar que Login con el correo de A y Password vacío no concede acceso y muestra el aviso genérico de credenciales incorrectas, en un único intento negativo.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Desplegar Login; dejar o introducir el correo vigente de A y Password vacío; conservar Remember Me sin cambios. | Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia. |
-| 2. Pulsar Login (nombre accesible Submit) una sola vez. | No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. |
-| 3. Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales. | Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
+| 1. Abrir **https://todo.ly/** en Chrome. | Se muestra la página pública con **Login** y **Sign Up Free**. |
+| 2. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**. |
+| 3. Escribir en **Email** el correo de la cuenta A del registro privado, sin cambiar la casilla **Remember Me**. | **Email** muestra el correo de A. |
+| 4. Revisar el campo **Password** sin escribir datos. | **Password** está vacío. |
+| 5. Hacer clic una sola vez en el botón **Login** del formulario (nombre accesible Submit). | No se concede acceso y se muestra **Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.** |
+| 6. Tomar una captura del aviso y del formulario. | La captura muestra el aviso y el formulario de acceso, sin contraseña legible. |
+| 7. Abrir **https://todo.ly/** en la barra de direcciones, sin escribir credenciales. | Se muestra la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
 
 **Postcondiciones:** Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.
 
 ---
 
-### T09-09. Rechazar Login con un correo no registrado
+### T09-09. Login con un correo no registrado muestra error y no concede acceso
 
 **Importancia:** **high**. Evita acceso sin una combinación de credenciales que corresponda a la cuenta.
 
@@ -336,21 +397,25 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sin sesión iniciada en Todo.ly en el navegador.
-3. La dirección reservada prueba-t10-no-registrada-20261117@example.com no pertenece a una cuenta; contrastado en la exploración de PEB-74 / T10: la recuperación respondió Error. Account with this Email address doesn't exist.
+3. Dirección reservada **prueba-t10-no-registrada-20261117@example.com** sin cuenta asociada en Todo.ly, según el contraste de recuperación de PEB-74 / T10.
 
-**Descripción:** Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.
+**Descripción:** Validar que Login con un correo sin cuenta asociada y un Password de prueba no concede acceso y muestra el aviso genérico de credenciales incorrectas, en un único intento negativo.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Desplegar Login; dejar o introducir prueba-t10-no-registrada-20261117@example.com y Prueba-T09-no-valida-17 en Password; conservar Remember Me sin cambios. | Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia. |
-| 2. Pulsar Login (nombre accesible Submit) una sola vez. | No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. |
-| 3. Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales. | Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
+| 1. Abrir **https://todo.ly/** en Chrome. | Se muestra la página pública con **Login** y **Sign Up Free**. |
+| 2. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**. |
+| 3. Escribir **prueba-t10-no-registrada-20261117@example.com** en el campo **Email**, sin cambiar la casilla **Remember Me**. | **Email** muestra **prueba-t10-no-registrada-20261117@example.com**. |
+| 4. Escribir **Prueba-T09-no-valida-17** en el campo **Password**. | **Password** muestra el valor enmascarado. |
+| 5. Hacer clic una sola vez en el botón **Login** del formulario (nombre accesible Submit). | No se concede acceso y se muestra **Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.** |
+| 6. Tomar una captura del aviso y del formulario. | La captura muestra el aviso y el formulario de acceso, sin contraseña legible. |
+| 7. Abrir **https://todo.ly/** en la barra de direcciones, sin escribir credenciales. | Se muestra la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
 
 **Postcondiciones:** Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.
 
 ---
 
-### T09-10. Rechazar Login de A con contraseña incorrecta
+### T09-10. Login de A con contraseña incorrecta muestra error y no concede acceso
 
 **Importancia:** **high**. Evita acceso sin una combinación de credenciales que corresponda a la cuenta.
 
@@ -359,22 +424,27 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sin sesión iniciada en Todo.ly en el navegador.
-3. Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.
-4. Según criterio del equipo, A acumula menos de tres intentos fallidos en la sesión de trabajo (no es una política de Todo.ly); la clave vigente es distinta de Prueba-T09-no-valida-17.
+3. Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.
+4. Cuenta A con menos de tres intentos fallidos de Login en la sesión de trabajo, según criterio operativo del equipo (no es una política de Todo.ly).
+5. Contraseña vigente de A distinta de **Prueba-T09-no-valida-17**.
 
-**Descripción:** Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.
+**Descripción:** Validar que Login con el correo de A y una contraseña que no le corresponde no concede acceso y muestra el aviso genérico de credenciales incorrectas, en un único intento negativo.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Desplegar Login; dejar o introducir el correo vigente de A y Prueba-T09-no-valida-17 en Password; conservar Remember Me sin cambios. | Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia. |
-| 2. Pulsar Login (nombre accesible Submit) una sola vez. | No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. |
-| 3. Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales. | Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
+| 1. Abrir **https://todo.ly/** en Chrome. | Se muestra la página pública con **Login** y **Sign Up Free**. |
+| 2. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**. |
+| 3. Escribir en **Email** el correo de la cuenta A del registro privado, sin cambiar la casilla **Remember Me**. | **Email** muestra el correo de A. |
+| 4. Escribir **Prueba-T09-no-valida-17** en el campo **Password**. | **Password** muestra el valor enmascarado. |
+| 5. Hacer clic una sola vez en el botón **Login** del formulario (nombre accesible Submit). | No se concede acceso y se muestra **Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.** |
+| 6. Tomar una captura del aviso y del formulario. | La captura muestra el aviso y el formulario de acceso, sin contraseña legible. |
+| 7. Abrir **https://todo.ly/** en la barra de direcciones, sin escribir credenciales. | Se muestra la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
 
 **Postcondiciones:** Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.
 
 ---
 
-### T09-11. Cerrar sesión y proteger datos ante Atrás y URL directa
+### T09-11. Logout impide ver los datos de A con Atrás y con la URL directa
 
 **Importancia:** **high**. Detecta exposición de datos después de Logout por historial o navegación directa.
 
@@ -382,24 +452,27 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.
-3. Sesión iniciada como A; proyecto Home disponible y sin una tarea llamada Prueba T09-11 - sesión.
+2. Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.
+3. Sesión iniciada en Todo.ly con la cuenta A, en **https://todo.ly/**.
+4. Proyecto **Home** de A sin una tarea llamada **Prueba T09-11 - sesión**.
 
-**Descripción:** Comprobar una secuencia de estados con un marcador propio reconocible; la creación de la tarea es preparación para la observación de sesión.
+**Descripción:** Validar que, después de Logout, ni el botón Atrás de Chrome ni la URL directa https://todo.ly/ restablecen la sesión ni muestran un marcador propio de A creado como preparación.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Seleccionar Home y crear mediante Add una tarea Prueba T09-11 - sesión. | Home de A muestra el marcador pendiente para distinguir sus datos. |
-| 2. Pulsar Logout. | Aparece la página pública y el marcador ya no se muestra como dato autenticado. |
-| 3. Usar Atrás del navegador una vez. | No se restablece una sesión autenticada ni se expone el marcador de A. |
-| 4. Introducir directamente https://todo.ly/, URL observada durante la sesión, sin Login. | Se muestra la página pública con acceso a Login; no se expone el marcador. |
-| 5. Conservar evidencia del estado posterior a las dos navegaciones. | La evidencia permite reconocer la ausencia de acceso autenticado sin contener secretos. |
+| 1. Hacer clic en **Home** en el panel izquierdo. | Se muestra la lista de **Home** de A, sin **Prueba T09-11 - sesión**. |
+| 2. Escribir **Prueba T09-11 - sesión** en el campo **Add new Todo**. | El campo **Add new Todo** muestra **Prueba T09-11 - sesión**. |
+| 3. Hacer clic en **Add**. | **Prueba T09-11 - sesión** aparece como tarea pendiente en **Home** de A. |
+| 4. Hacer clic en **Logout**. | Se muestra la página pública con **Login** y **Sign Up Free**; el marcador ya no se muestra como dato autenticado. |
+| 5. Hacer clic una vez en el botón **Back** (Atrás) de Chrome. | No se restablece una sesión autenticada ni se muestra **Prueba T09-11 - sesión**. |
+| 6. Abrir **https://todo.ly/** en la barra de direcciones, sin hacer **Login**. | Se muestra la página pública con **Login**; no se muestra **Prueba T09-11 - sesión**. |
+| 7. Tomar una captura del estado posterior a las dos navegaciones. | La captura permite reconocer la ausencia de acceso autenticado, sin secretos. |
 
 **Postcondiciones:** Sesión cerrada. El marcador permanece en Home de A para la limpieza del lote; datos previos conservados. No se afirma protección de API ni de rutas que no se hayan observado.
 
 ---
 
-### T09-12. Separar los datos propios de A y B al cambiar de cuenta
+### T09-12. Cambio de cuenta entre A y B muestra solo los datos propios de cada una
 
 **Importancia:** **high**. Evita exposición o mezcla de información entre dos cuentas sin proyectos compartidos.
 
@@ -408,26 +481,61 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sin sesión iniciada en Todo.ly en el navegador.
-3. Dos cuentas gratuitas de prueba A y B sin proyectos compartidos; credenciales privadas vigentes y proyectos Home disponibles.
-4. No existen los marcadores Prueba T09-12 - marcador A y Prueba T09-12 - marcador B en sus respectivos Home.
+3. Dos cuentas gratuitas de prueba sin proyectos compartidos (A y B), con correos y contraseñas vigentes consignados en el registro privado de credenciales y proyecto **Home** disponible en cada una.
+4. **Home** de A sin una tarea llamada **Prueba T09-12 - marcador A**; **Home** de B sin una tarea llamada **Prueba T09-12 - marcador B**.
+5. Nombres de perfil de A y B consignados en el registro privado de referencia.
 
-**Descripción:** Comprobar aislamiento en ambos sentidos mediante datos distintos y consultas de identidad.
+**Descripción:** Validar que, al alternar la sesión entre A y B, cada cuenta muestra en Home su propio marcador y no el de la otra, en ambos sentidos.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Iniciar sesión como A y verificar su identidad en Settings; cerrar Settings con Cancel. | El perfil corresponde a A. |
-| 2. Abrir Home y crear Prueba T09-12 - marcador A; pulsar Logout. | El marcador pertenece a Home de A y la sesión queda cerrada. |
-| 3. Iniciar sesión como B, verificar identidad en Settings y consultar Home. | Se abre B; no aparece el marcador de A. |
-| 4. Crear Prueba T09-12 - marcador B en Home de B y pulsar Logout. | B conserva su marcador y la sesión queda cerrada. |
-| 5. Iniciar sesión como A y consultar Home. | A muestra su marcador y no el de B. |
-| 6. Pulsar Logout, iniciar sesión como B y consultar Home. | B muestra su marcador y no el de A. |
-| 7. Conservar evidencia de ambos sentidos y pulsar Logout. | La sesión queda cerrada y los marcadores siguen separados por cuenta. |
+| 1. Abrir **https://todo.ly/** en Chrome. | Se muestra la página pública con **Login** y **Sign Up Free**. |
+| 2. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**. |
+| 3. Escribir en **Email** el correo de la cuenta A del registro privado. | **Email** muestra el correo de A. |
+| 4. Escribir en **Password** la contraseña vigente de A del registro privado. | **Password** muestra el valor enmascarado. |
+| 5. Hacer clic una vez en el botón **Login** del formulario (nombre accesible Submit). | Se muestra el área autenticada con **Settings** y **Logout**. |
+| 6. Hacer clic en **Settings**. | Se abre **Settings**. |
+| 7. Seleccionar **Profile** en **Settings**. | **Profile** muestra **Full Name** y **Email** de la cuenta con sesión iniciada. |
+| 8. Comparar **Full Name** con el nombre de perfil de A del registro privado. | **Full Name** coincide con el nombre de A. |
+| 9. Comparar **Email** con el correo de A del registro privado. | **Email** coincide con el correo de A del registro privado. |
+| 10. Hacer clic en **Cancel**. | Se cierra **Settings** sin guardar cambios y vuelve a verse el área de proyectos. |
+| 11. Hacer clic en **Home** en el panel izquierdo. | Se muestra la lista de **Home** de A, sin **Prueba T09-12 - marcador A** ni **Prueba T09-12 - marcador B**. |
+| 12. Escribir **Prueba T09-12 - marcador A** en el campo **Add new Todo**. | El campo **Add new Todo** muestra **Prueba T09-12 - marcador A**. |
+| 13. Hacer clic en **Add**. | **Prueba T09-12 - marcador A** aparece como tarea pendiente en **Home** de A. |
+| 14. Hacer clic en **Logout**. | Se muestra la página pública con **Login** y **Sign Up Free**; la sesión de A queda cerrada. |
+| 15. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso. |
+| 16. Escribir en **Email** el correo de la cuenta B del registro privado. | **Email** muestra el correo de B. |
+| 17. Escribir en **Password** la contraseña vigente de B del registro privado. | **Password** muestra el valor enmascarado. |
+| 18. Hacer clic una vez en el botón **Login** del formulario (nombre accesible Submit). | Se muestra el área autenticada con **Settings** y **Logout**. |
+| 19. Hacer clic en **Settings**. | Se abre **Settings**. |
+| 20. Seleccionar **Profile** en **Settings**. | **Profile** muestra **Full Name** y **Email** de la cuenta con sesión iniciada. |
+| 21. Comparar **Full Name** con el nombre de perfil de B del registro privado. | **Full Name** coincide con el nombre de B. |
+| 22. Comparar **Email** con el correo de B del registro privado. | **Email** coincide con el correo de B del registro privado. |
+| 23. Hacer clic en **Cancel**. | Se cierra **Settings** sin guardar cambios y vuelve a verse el área de proyectos. |
+| 24. Hacer clic en **Home** en el panel izquierdo. | Se muestra la lista de **Home** de B; no aparece **Prueba T09-12 - marcador A**. |
+| 25. Escribir **Prueba T09-12 - marcador B** en el campo **Add new Todo**. | El campo **Add new Todo** muestra **Prueba T09-12 - marcador B**. |
+| 26. Hacer clic en **Add**. | **Prueba T09-12 - marcador B** aparece como tarea pendiente en **Home** de B. |
+| 27. Hacer clic en **Logout**. | Se muestra la página pública con **Login** y **Sign Up Free**; la sesión de B queda cerrada. |
+| 28. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso. |
+| 29. Escribir en **Email** el correo de la cuenta A del registro privado. | **Email** muestra el correo de A. |
+| 30. Escribir en **Password** la contraseña vigente de A del registro privado. | **Password** muestra el valor enmascarado. |
+| 31. Hacer clic una vez en el botón **Login** del formulario (nombre accesible Submit). | Se muestra el área autenticada con **Settings** y **Logout**. |
+| 32. Hacer clic en **Home** en el panel izquierdo. | **Home** de A muestra **Prueba T09-12 - marcador A** y no muestra **Prueba T09-12 - marcador B**. |
+| 33. Tomar una captura de **Home** de A. | La captura muestra el marcador de A sin el de B, sin secretos. |
+| 34. Hacer clic en **Logout**. | Se muestra la página pública con **Login** y **Sign Up Free**; la sesión de A queda cerrada. |
+| 35. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso. |
+| 36. Escribir en **Email** el correo de la cuenta B del registro privado. | **Email** muestra el correo de B. |
+| 37. Escribir en **Password** la contraseña vigente de B del registro privado. | **Password** muestra el valor enmascarado. |
+| 38. Hacer clic una vez en el botón **Login** del formulario (nombre accesible Submit). | Se muestra el área autenticada con **Settings** y **Logout**. |
+| 39. Hacer clic en **Home** en el panel izquierdo. | **Home** de B muestra **Prueba T09-12 - marcador B** y no muestra **Prueba T09-12 - marcador A**. |
+| 40. Tomar una captura de **Home** de B. | La captura muestra el marcador de B sin el de A, sin secretos. |
+| 41. Hacer clic en **Logout**. | Se muestra la página pública con **Login** y **Sign Up Free**; la sesión queda cerrada y los marcadores siguen separados por cuenta. |
 
 **Postcondiciones:** Marcadores propios en Home de sus cuentas, pendientes de la limpieza del lote; sin proyectos compartidos ni cambios a datos de otras personas.
 
 ---
 
-### T09-13. Reabrir el perfil tras Login con Remember Me desmarcado
+### T09-13. Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada
 
 **Importancia:** **high**. Detecta permanencia de acceso no solicitada al reabrir el perfil de QA.
 
@@ -436,24 +544,39 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sin sesión iniciada en Todo.ly en el navegador.
-3. Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.
-4. Perfil dedicado sin otras ventanas propias; configuración de Chrome estable durante el recorrido y posibilidad de reabrir ese mismo perfil.
+3. Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.
+4. Perfil dedicado de Chrome para QA, sin otras ventanas abiertas de ese perfil y disponible en el selector de perfiles de Chrome para su reapertura.
+5. Configuración de Chrome sin cambios durante todo el recorrido.
+6. Nombres de perfil de A consignados en el registro privado de referencia.
+7. Otra ventana de Chrome de un perfil distinto abierta durante todo el recorrido.
 
-**Descripción:** Repetir el recorrido observado con A, registrando intervalo y cierre de ventanas; no inferir una caducidad de cookies.
+**Descripción:** Validar que, tras Login de A con Remember Me desmarcado y el cierre de las ventanas del perfil dedicado, la reapertura de ese perfil muestra la página pública sin sesión, registrando el intervalo y sin inferir una caducidad de cookies.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Abrir Login y desmarcar Remember Me; conservar evidencia de la casilla desmarcada antes del envío. | Remember Me está desmarcado. |
-| 2. Introducir las credenciales vigentes de A, pulsar Login y confirmar identidad en Profile. | Se inicia sesión en A; Settings y Logout están disponibles y Profile muestra el nombre y el correo de A. |
-| 3. Cerrar todas las ventanas de ese perfil dedicado sin pulsar Logout, sin borrar cookies y sin cerrar otros perfiles. Anotar el intervalo hasta la reapertura. | Las ventanas del perfil QA quedan cerradas; el resto del navegador conserva sus sesiones. |
-| 4. Reabrir el mismo perfil y consultar https://todo.ly/ sin introducir credenciales. | Aparece la página pública con Login y Sign Up Free, sin una sesión autenticada, conforme al recorrido observado. |
-| 5. Conservar evidencia con nombre del perfil y estado de Todo.ly. | La evidencia identifica la reapertura correcta; no se usa otro perfil como prueba. |
+| 1. Abrir **https://todo.ly/** en una ventana del perfil dedicado de Chrome. | Se muestra la página pública con **Login** y **Sign Up Free**. |
+| 2. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**. |
+| 3. Dejar desmarcada la casilla **Remember Me**; si aparece marcada, hacer clic en ella una vez. | **Remember Me** está desmarcada. |
+| 4. Tomar una captura de la casilla **Remember Me** antes del envío. | La captura muestra **Remember Me** desmarcada. |
+| 5. Escribir en **Email** el correo de la cuenta A del registro privado. | **Email** muestra el correo de A. |
+| 6. Escribir en **Password** la contraseña vigente de A del registro privado. | **Password** muestra el valor enmascarado. |
+| 7. Hacer clic una vez en el botón **Login** del formulario (nombre accesible Submit). | Se inicia sesión: se muestra el área autenticada con **Settings** y **Logout**. |
+| 8. Hacer clic en **Settings**. | Se abre **Settings**. |
+| 9. Seleccionar **Profile** en **Settings**. | **Profile** muestra **Full Name** y **Email** de la cuenta con sesión iniciada. |
+| 10. Comparar **Full Name** con el nombre de perfil de A del registro privado. | **Full Name** coincide con el nombre de A. |
+| 11. Comparar **Email** con el correo de A del registro privado. | **Email** coincide con el correo de A del registro privado. |
+| 12. Anotar la hora actual como hora de cierre. | La hora de cierre queda registrada. |
+| 13. Cerrar todas las ventanas del perfil dedicado con su botón de cierre, sin hacer clic en **Logout**, sin borrar cookies y sin cerrar otros perfiles. | Las ventanas del perfil dedicado quedan cerradas; los demás perfiles de Chrome conservan sus ventanas y sesiones. |
+| 14. Abrir de nuevo el mismo perfil dedicado desde el selector de perfiles de Chrome (menú **Profiles** en macOS). | Se abre una ventana nueva del perfil dedicado. |
+| 15. Anotar la hora actual como hora de reapertura. | Queda registrado el intervalo entre el cierre y la reapertura. |
+| 16. Abrir **https://todo.ly/** en la barra de direcciones, sin escribir credenciales. | Se muestra la página pública con **Login** y **Sign Up Free**, sin **Settings** ni **Logout**, conforme al recorrido observado. |
+| 17. Tomar una captura que muestre el nombre del perfil dedicado y el estado de Todo.ly. | La captura identifica el perfil reabierto y la página pública sin sesión; no se usa otro perfil como prueba. |
 
 **Postcondiciones:** Perfil QA abierto con sesión cerrada, datos y credenciales sin cambios; intervalo y cualquier ayuda manual documentados.
 
 ---
 
-### T09-14. Reabrir el perfil tras Login con Remember Me marcado
+### T09-14. Remember Me marcado: al reabrir el perfil se restaura la sesión de B
 
 **Importancia:** **high**. Comprueba recuperación de la sesión solicitada sin confundirla con un nuevo Login.
 
@@ -462,18 +585,39 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sin sesión iniciada en Todo.ly en el navegador.
-3. Cuenta gratuita de prueba B con credenciales privadas vigentes; perfil dedicado sin otras ventanas propias y configuración de Chrome estable.
+3. Cuenta gratuita de prueba (cuenta B) con correo y contraseña vigentes consignados en el registro privado de credenciales.
+4. Perfil dedicado de Chrome para QA, sin otras ventanas abiertas de ese perfil y disponible en el selector de perfiles de Chrome para su reapertura.
+5. Configuración de Chrome sin cambios durante todo el recorrido.
+6. Nombres de perfil de B consignados en el registro privado de referencia.
+7. Otra ventana de Chrome de un perfil distinto abierta durante todo el recorrido.
 
-**Descripción:** Repetir el recorrido observado con B, comprobando la identidad restaurada y cerrando después la sesión.
+**Descripción:** Validar que, tras Login de B con Remember Me marcado y el cierre de las ventanas del perfil dedicado, la reapertura de ese perfil muestra la sesión autenticada de B sin un nuevo Login, cerrando después la sesión.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Abrir Login y marcar Remember Me; conservar evidencia de la casilla antes del envío. | Remember Me está marcado. |
-| 2. Introducir las credenciales vigentes de B, pulsar Login y consultar Profile. | Se inicia sesión y se confirma la identidad de B. |
-| 3. Cerrar todas las ventanas de ese perfil sin Logout, sin borrar cookies y sin cerrar otros perfiles; registrar el intervalo. | Las ventanas QA quedan cerradas conservando la configuración del recorrido. |
-| 4. Reabrir el mismo perfil y consultar https://todo.ly/ sin introducir credenciales. | Aparece el área autenticada con Settings y Logout, sin un nuevo envío de Login. |
-| 5. Abrir Profile y contrastar identidad con el registro privado. | La sesión restaurada corresponde a B, no a A ni a otra cuenta. |
-| 6. Conservar evidencia, cerrar Profile con Cancel y pulsar Logout. | Se vuelve a la página pública y la sesión queda cerrada. |
+| 1. Abrir **https://todo.ly/** en una ventana del perfil dedicado de Chrome. | Se muestra la página pública con **Login** y **Sign Up Free**. |
+| 2. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**. |
+| 3. Dejar marcada la casilla **Remember Me**; si aparece desmarcada, hacer clic en ella una vez. | **Remember Me** está marcada. |
+| 4. Tomar una captura de la casilla **Remember Me** antes del envío. | La captura muestra **Remember Me** marcada. |
+| 5. Escribir en **Email** el correo de la cuenta B del registro privado. | **Email** muestra el correo de B. |
+| 6. Escribir en **Password** la contraseña vigente de B del registro privado. | **Password** muestra el valor enmascarado. |
+| 7. Hacer clic una vez en el botón **Login** del formulario (nombre accesible Submit). | Se inicia sesión: se muestra el área autenticada con **Settings** y **Logout**. |
+| 8. Hacer clic en **Settings**. | Se abre **Settings**. |
+| 9. Seleccionar **Profile** en **Settings**. | **Profile** muestra **Full Name** y **Email** de la cuenta con sesión iniciada. |
+| 10. Comparar **Full Name** con el nombre de perfil de B del registro privado. | **Full Name** coincide con el nombre de B. |
+| 11. Comparar **Email** con el correo de B del registro privado. | **Email** coincide con el correo de B del registro privado. |
+| 12. Anotar la hora actual como hora de cierre. | La hora de cierre queda registrada. |
+| 13. Cerrar todas las ventanas del perfil dedicado con su botón de cierre, sin hacer clic en **Logout**, sin borrar cookies y sin cerrar otros perfiles. | Las ventanas del perfil dedicado quedan cerradas; los demás perfiles de Chrome conservan sus ventanas y sesiones. |
+| 14. Abrir de nuevo el mismo perfil dedicado desde el selector de perfiles de Chrome (menú **Profiles** en macOS). | Se abre una ventana nueva del perfil dedicado. |
+| 15. Anotar la hora actual como hora de reapertura. | Queda registrado el intervalo entre el cierre y la reapertura. |
+| 16. Abrir **https://todo.ly/** en la barra de direcciones, sin escribir credenciales. | Se muestra el área autenticada con **Settings** y **Logout**, sin un nuevo envío de **Login**. |
+| 17. Hacer clic en **Settings**. | Se abre **Settings**. |
+| 18. Seleccionar **Profile** en **Settings**. | **Profile** muestra **Full Name** y **Email** de la cuenta con sesión restaurada. |
+| 19. Comparar **Full Name** con el nombre de perfil de B del registro privado. | **Full Name** coincide con el nombre de B. |
+| 20. Comparar **Email** con el correo de B del registro privado. | **Email** coincide con el correo de B del registro privado. |
+| 21. Tomar una captura del área autenticada restaurada. | La captura muestra el perfil dedicado con la sesión autenticada, sin contraseñas. |
+| 22. Hacer clic en **Cancel**. | Se cierra **Settings** sin guardar cambios y vuelve a verse el área de proyectos. |
+| 23. Hacer clic en **Logout**. | Se muestra la página pública con **Login** y **Sign Up Free**; la sesión queda cerrada. |
 
 **Postcondiciones:** Sesión de B cerrada después de conservar evidencia; datos y credenciales sin cambios. El recorrido no prueba una caducidad ni el cierre completo del proceso Chrome.
 
@@ -483,7 +627,7 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 ---
 
-### T09-08. Investigar Login con Email sin formato de correo
+### T09-08. Login con Email sin formato de correo: respuesta pendiente de confirmar
 
 **Importancia:** **medium**. Identifica una entrada negativa cuya respuesta visible todavía no está resuelta.
 
@@ -493,12 +637,15 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sin sesión iniciada en Todo.ly en el navegador.
 
-**Descripción:** Candidato pendiente: las vistas vacías impiden fijar una respuesta de validación. No registrar como caso listo.
+**Descripción:** Validar que la respuesta de Login ante un Email sin formato de correo queda identificada antes de registrar el caso, sin fijar todavía un resultado esperado, porque las vistas vacías observadas impiden atribuirle una regla de validación; candidato pendiente, no registrar como caso listo.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Abrir Login e introducir PruebaT09SinArroba en Email y Prueba-T09-no-valida-17 en Password. | Los campos contienen los representantes de prueba, sin datos de una cuenta ajena. |
-| 2. Pulsar Login / Submit una sola vez. | PENDIENTE: confirmar el tratamiento visible y el mensaje. La página vacía de la herramienta no demuestra una regla de validación del producto. |
-| 3. Abrir una consulta GET nueva sin introducir credenciales y registrar el estado. | Se documenta si aparece la página pública o una sesión autenticada; no se atribuye el resultado a una regla sintáctica sin confirmarla. |
+| 1. Abrir **https://todo.ly/** en Chrome. | Se muestra la página pública con **Login** y **Sign Up Free**. |
+| 2. Hacer clic en **Login** en la página pública. | Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**. |
+| 3. Escribir **PruebaT09SinArroba** en el campo **Email**. | **Email** muestra **PruebaT09SinArroba**, sin datos de una cuenta ajena. |
+| 4. Escribir **Prueba-T09-no-valida-17** en el campo **Password**. | **Password** muestra el valor enmascarado. |
+| 5. Hacer clic una sola vez en el botón **Login** del formulario (nombre accesible Submit). | PENDIENTE: confirmar el tratamiento visible y el mensaje. La página vacía de la herramienta no demuestra una regla de validación del producto. |
+| 6. Abrir **https://todo.ly/** en la barra de direcciones, sin escribir credenciales, y anotar el estado mostrado. | Se documenta si aparece la página pública o una sesión autenticada; no se atribuye el resultado a una regla sintáctica sin confirmarla. |
 
 **Postcondiciones:** Candidato fuera del registro propuesto; sin cambios de credencial y con la causa de la vista vacía pendiente.

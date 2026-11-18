@@ -1,13 +1,28 @@
+## T09 cerrado registro/publicación — vigente
+13 casos TL-72 a TL-84,171pasos,435 textos comparados sin diferencias; comentarioPEB-73 **10227** publicado y leído porMCP, tablas ymedia presentes. CapturavisualJirapendientever. No reimportarT09.
+
+# Actualización vigente — 18/11/2026, 16:20
+
+- Usuario completó T10 a/b/c. Capturas originales convertidas y leídas: a Invalid Password; b Settings cerrado, aceptación reportada sin mensaje literal; c B Email original conservado, AX completo contrastado con registro privado.
+- A: un intento con reemplazada rechazado; Login con original aceptado e identidad Profile verificada. `.secrets` actual = original, actualizado sin publicar claves. Evidencia y AX en T10.
+- Claude encargo07 diseña SOLO 04/05/06 y actualiza análisis T10; no editar sus archivos hasta terminar. Después revisión independiente08, importar SOLO esos tres y actualizar comentario10226 conservando nodos/media.
+- T09 revisión06 APTO, no bloqueantes resueltos en06-resolucion. XML13 casos171pasos. Ausencia previa comprobada filtroT09→0; global70. Importación enviada UNA vez en suite3 con omitirduplicados. **Resultado todavía por observar: no volver a pulsar Upload sin comprobar árbol.**
+- T11 Cancel Editing observado: nombre temporal descartado y original en árbol. Recarga dejó contenido omitido por herramienta; persistencia tras recarga aún por comprobar. No atribuir a producto.
+- Navegador liberado por usuario; Chrome Andre TestLink import result actual, Incognito A autenticada despuésrecarga. Solo arrastres humanos pendientes T11.
+- Revision-testlink con cuatro archivos contienen credencial heredada; intactos y excluidos exactamente. Copias cifradas y manifiesto en trabajo/resguardos-revision, clave solo.secrets; restauraciónbyteporbyteprobada. Archivos segurosdelotroagenteincluirmanteniéndolosintactos.
+
+---
+
 # Continuidad T09–T11
 
 Actualización: **18/11/2026, demo hoy**. Orden vigente T10 → T09 → T11 → cierre. Rigen PROMPT_ORQUESTACION.md y mensajes posteriores del usuario. **No cambiar estados de Jira ni casos ajenos; revisión de integrante pendiente.**
 
-**Prioridad por aclarar:** se encontró PROMPT_REVISION_TESTLINK.md con una tarea distinta y se consultó al usuario. Leer la última sección antes de importar T09 o editar casos ajenos. El registro/publicación de los seis confirmados de T10 está en punto seguro.
+**Prioridad resuelta por el usuario:** terminar T09, T11 y fase 6. PROMPT_REVISION_TESTLINK.md pertenece a otro agente Claude que trabaja por API; no limita nuestras publicaciones en Jira. Codex no modifica casos de otros tickets. Aplicar su rúbrica solo a fichas T09/T11 antes del registro. Incluir archivos nuevos de revision-testlink/ en commits sin modificarlos, respetando la prohibición de publicar secretos. Se solicitó nuevamente el bloque manual T10 a/b/c el 18/11 por instrucción expresa; faltan resultados. No repetirlo hasta que responda.
 
 ## Estado exacto
 
 - **T10 registrado y publicado, cobertura parcial explícita:** seis casos, 28 pasos, TL-66 a TL-71, comparados individualmente sin diferencias. Comentario Jira **10226** en https://alesalve.atlassian.net/browse/PEB-74?focusedCommentId=10226. Tres imágenes adjuntas; seis tablas con anchos corregidos, formato revisado visualmente. Estado Jira En revisión, sin cambios por Codex. Copia real HTML y metadata en trabajo/T10/jira-publicado.* y agregado trabajo/jira-publicado.md.
-- **T09:** trece casos listos, 52 pasos; revisión independiente 03 **APTO**, sin bloqueantes. N1–N7 corregidos/documentados. **Todavía NO importado ni publicado.** T09-08 excluido por resultado sin regla confirmada. No explorar más salvo duda del resultado principal.
+- **T09:** trece casos listos, 171 pasos tras la nueva rúbrica; revisión 03 anterior APTO y nueva revisión 06 en curso, sin bloqueantes. N1–N7 corregidos/documentados. **Todavía NO importado ni publicado.** T09-08 excluido por resultado sin regla confirmada. No explorar más salvo duda del resultado principal.
 - **T11:** diseño provisional de cuatro casos 01/02/04/05 y candidatos 03/06 pendientes. Falta exploración focalizada, encargo diseno Claude y revisión independiente nueva. No registrarlo como definitivo aún.
 - **Cierre:** limpieza, restauración de A, exportación real, auditoría final e informe todavía pendientes. No afirmar fase 6 completada.
 
@@ -117,3 +132,13 @@ El nuevo ejemplo se leyó visualmente completo: una sola página, Successful Pro
 El archivo .secrets/testlink-api.local.md mencionado por el prompt **no existe**. Si el usuario activa la revisión global, usar navegador según su fallback, sin pedir otra vez el acceso de TestLink ya guardado. Antes de toda modificación: respaldo completo, propuestas y OK del punto de control. Cualquier respaldo/propuesta con credenciales preexistentes debe quedar privado o redactado para evitar subir secretos a git. El archivo de ejemplo del docente y el nuevo prompt permanecen intactos y sin incluir en nuestros commits hasta aclarar la tarea.
 
 La visualización de PEB-74 ya se comprobó en Chrome: tablas legibles con desplazamiento horizontal después del ajuste de 219 celdas. TestLink sigue en la primera pestaña, filtro T10- (seis casos); Jira PEB-74 está en la segunda pestaña. La copia real publicada contiene seis tablas, tres imágenes y los seis enlaces. Este punto seguro no es cierre de T09/T11 ni fase 6.
+
+## Coordinación actual — 18/11
+
+El otro Claude es el único autor de revision-testlink/ y revisa por API casos existentes de otros tickets. Codex registra T09/T11 y publica en Jira. No editar archivos de revision-testlink; incluir sus archivos nuevos en commits solo tras comprobar que no contienen secretos. No interpretar sus instrucciones de no Jira como reglas para Codex.
+
+Rúbrica T09/T11: título funcionalidad+condición+resultado (aprox. 90 caracteres), descripción iniciada con Validar que, precondiciones únicamente estados/datos sin infinitivos ni formas conjugadas, una acción por paso con controles/datos exactos en negrita y resultados observables. Se conservan IDs, objetivo, importancia, alcance y dudas. Cuenta/correo/contraseña siguen genéricos mediante registro privado, por decisiones §7.
+
+El bloque manual T10 fue solicitado en una sola lista: a incorrecta Prueba-T10-04-incorrecta + New original, detener si acepta; b vigente → original y actualizar secreto tras aceptación; c B cambia Email al alias indicado y Cancel, nunca Ok, reabrir y capturar. Mientras el usuario introduce credenciales no operar el navegador; avanzar con archivos. Tras confirmación: verificar Login A original y Email B original, completar/revisar 04/05/06, importar SOLO esos tres sin repetir los seis existentes y añadir IDs/enlaces al comentario 10226 preservando su HTML/media.
+
+**Navegador cedido por instrucción expresa del usuario:** no usar ninguna pestaña, ventana ni CUA hasta que avise que terminó T10. Trabajo local permitido. T09 diseño05 integrado, 171 pasos; revisión06 Claude en curso. El respaldo/propuestas y dos scripts de revision-testlink contienen una credencial preexistente: intactos y excluidos de Git, pendiente resguardo cifrado para respaldarlos sin exponer valores.

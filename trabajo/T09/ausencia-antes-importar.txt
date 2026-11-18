@@ -1,0 +1,197 @@
+Window: "TestLink 1.9.20 [DEV]", App: Google Chrome.
+0 standard window TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php?caller=login&viewer=, Secondary Actions: Raise
+	1 container TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php?caller=login&viewer=
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button Not Secure
+					9 text field (settable) Address and search bar, Value: 68.211.149.112/index.php?caller=login&viewer=, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 container
+					12 pop up button iCloud Bookmarks
+					13 pop up button Google Translate
+
+Left-click to translate!
+Right-click for options.
+Has access to this site
+					14 pop up button Video Downloader
+Has access to this site
+					15 pop up button vidIQ Vision for YouTube
+Has access to this site
+					16 pop up button Disconnected
+Has access to this site
+					17 pop up button Chile
+Has access to this site
+					18 pop up button Wappalyzer
+Has access to this site
+					19 pop up button Open Claude
+Has access to this site
+					20 pop up button Extensions
+				21 button Paused
+				22 pop up button Chrome
+			23 toolbar Bookmarks
+				24 toolbar Saved Tab Groups
+					25 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					26 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					27 button Tab groups
+				28 splitter Separator
+				29 bookmark button Sample Tank MAX 4-0-9 WiN-MAC - AUDIOTOOLS
+				30 bookmark button Downloads
+				31 bookmark button Flameboy Tutorials
+				32 bookmark button Media Monopoly: Secure Checkout
+				33 pop up button Menu containing hidden bookmarks
+				34 bookmark folder button All Bookmarks
+				35 splitter Separator
+			36 container
+				37 scroll area
+					38 HTML content TestLink 1.9.20 [DEV], URL: 68.211.149.112/index.php?caller=login&viewer=
+						39 container
+							40 HTML content TestLink, URL: 68.211.149.112/lib/general/navBar.php?tproject_id=0&tplan_id=0&updateMainPage=1
+								41 link Company logo, Value: 68.211.149.112/index.php
+								42 container
+									43 text admin [admin]
+									44 link My Settings, Value: 68.211.149.112/lib/usermanagement/userInfo.php
+									45 link Logout, Value: 68.211.149.112/logout.php?viewer=
+								46 container
+									47 container
+										48 text Test Project 
+										49 pop up button TL:Todo.ly
+											50 (selected) TL:Todo.ly
+									51 link Desktop, Value: 68.211.149.112/index.php
+									52 link Test Specification, Value: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+									53 link Users/Roles, Value: 68.211.149.112/lib/usermanagement/usersView.php
+									54 link Events, Value: 68.211.149.112/lib/events/eventviewer.php
+									55 link Plugins, Value: 68.211.149.112/lib/plugins/pluginView.php
+									56 text field (settable) Search Test Case by ID, Value: TL-
+									57 image Search Test Case by ID
+									58 text field (settable) Full Text Search
+									59 image Full Text Search
+							60 HTML content TestLink Inner Frame, URL: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+								61 container
+									62 HTML content TestLink, URL: 68.211.149.112/lib/testcases/listTestCases.php?feature=edit_tc
+										63 container
+											64 heading Navigator - Test Specification, Value: 1
+												65 text Navigator - Test Specification
+											66 container
+												67 text Settings
+												68 container
+													69 container Update tree after every operation
+														70 text Update tree after every operation
+													71 checkbox 1
+											72 container
+												73 text Filters
+												74 container
+													75 container
+														76 container Test Case ID
+															77 text Test Case ID
+														78 container TL-
+															79 text field (settable) TL-
+													80 container
+														81 container Test Case Title
+															82 text Test Case Title
+														83 container T09-
+															84 text field (settable) T09-
+													85 container
+														86 container Test Suite
+															87 text Test Suite
+														88 container Select an Option
+															89 container
+																90 text Select an Option
+																91 text field (settable)
+																92 content list
+													93 container
+														94 container Platforms
+															95 text Platforms
+														96 container Select Some Options
+															97 container
+																98 content list
+																	99 text field (settable) Select Some Options
+																100 content list
+													101 container
+														102 container Status
+															103 text Status
+														104 container Select Some Options
+															105 container
+																106 content list
+																	107 text field (settable) Select Some Options
+																108 content list
+													109 container
+														110 container Importance
+															111 text Importance
+														112 container Select Some Options
+															113 container
+																114 content list
+																	115 text field (settable) Select Some Options
+																116 content list
+													117 container
+														118 container Execution type
+															119 text Execution type
+														120 container [Any]
+															121 container
+																122 text [Any]
+																123 text field (settable)
+																124 content list
+													125 button Apply
+													126 button Reset Filters
+											127 button Expand tree
+											128 button Collapse tree
+											129 content list
+												130 container
+													131 link Todo.ly (0), Value: javascript:EP(1)
+									132 HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?edit=testproject&id=1
+										133 heading Test Project : Todo.ly, Value: 1
+											134 text Test Project : Todo.ly
+										135 image Actions
+										136 table
+											137 row
+												138 column header
+													139 text Test Project Name
+											140 row
+												141 cell
+													142 link Todo.ly, Help: Edit Test Project basic data, Value: 68.211.149.112/lib/project/projectView.php
+											143 row
+												144 column header
+													145 text Description
+											146 row
+												147 cell
+													148 text Todo.ly tests proyect
+										149 container Attached files :
+											150 text Attached files :
+										151 container
+											152 text File
+											153 button File: No file chosen
+											154 text Title/name:
+											155 text field (settable)
+											156 button Upload file
+										157 image Max. size of the file is: 1048576 Bytes)
+										158 image Filename must verify this regexp:/^[a-zA-Z0-9_-]{1,20}\.[a-zA-Z0-9]{1,10}$/
+										159 image Allowed files:doc,xls,gif,png,jpg,xlsx,csv
+							160 button
+			161 pop up button Tab search
+			162 container
+				163 tab group
+					164 tab (selected, settable, boolean) TestLink 1.9.20 [DEV] - Memory usage - 309 MB, Value: on
+						165 button Close
+					166 tab (settable, boolean) Value: off, [PEB-74] T10 — Analizar, diseñar y registrar pruebas de perfil y recuperación de acceso - Jira - Memory usage - 477 MB
+						167 button Close
+			168 button New Tab
+			169 button Open Gemini in Chrome
+	170 close button
+	171 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	172 minimize button
+173 menu bar
+	174 Chrome
+	175 File
+	176 Edit
+	177 View
+	178 History
+	179 Bookmarks
+	180 Profiles
+	181 Tab
+	182 Window
+	183 Help
+
+The focused UI element is 62 HTML content TestLink, URL: 68.211.149.112/lib/testcases/listTestCases.php?feature=edit_tc

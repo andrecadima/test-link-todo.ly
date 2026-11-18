@@ -1,0 +1,426 @@
+Window: "TestLink 1.9.20 [DEV]", App: Google Chrome.
+0 standard window TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php, Secondary Actions: Raise
+	1 container TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button Not Secure
+					9 text field (settable) Address and search bar, Value: 68.211.149.112/index.php, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 container
+					12 pop up button iCloud Bookmarks
+					13 pop up button Google Translate
+
+Left-click to translate!
+Right-click for options.
+Has access to this site
+					14 pop up button Video Downloader
+Has access to this site
+					15 pop up button vidIQ Vision for YouTube
+Has access to this site
+					16 pop up button Disconnected
+Has access to this site
+					17 pop up button Chile
+Has access to this site
+					18 pop up button Wappalyzer
+Has access to this site
+					19 pop up button Open Claude
+Has access to this site
+					20 pop up button Extensions
+				21 button Paused
+				22 pop up button Chrome
+			23 toolbar Bookmarks
+				24 toolbar Saved Tab Groups
+					25 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					26 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					27 button Tab groups
+				28 splitter Separator
+				29 bookmark button Sample Tank MAX 4-0-9 WiN-MAC - AUDIOTOOLS
+				30 bookmark button Downloads
+				31 bookmark button Flameboy Tutorials
+				32 bookmark button Media Monopoly: Secure Checkout
+				33 pop up button Menu containing hidden bookmarks
+				34 bookmark folder button All Bookmarks
+				35 splitter Separator
+			36 container
+				37 scroll area
+					38 HTML content TestLink 1.9.20 [DEV], URL: 68.211.149.112/index.php
+						39 container
+							40 HTML content TestLink, URL: 68.211.149.112/lib/general/navBar.php?tproject_id=0&tplan_id=0&updateMainPage=1
+								41 link Company logo, Value: 68.211.149.112/index.php
+								42 container
+									43 text admin [admin]
+									44 link My Settings, Value: 68.211.149.112/lib/usermanagement/userInfo.php
+									45 link Logout, Value: 68.211.149.112/logout.php?viewer=
+								46 container
+									47 container
+										48 text Test Project 
+										49 pop up button TL:Todo.ly
+											50 (selected) TL:Todo.ly
+									51 link Desktop, Value: 68.211.149.112/index.php
+									52 link Test Specification, Value: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+									53 link Users/Roles, Value: 68.211.149.112/lib/usermanagement/usersView.php
+									54 link Events, Value: 68.211.149.112/lib/events/eventviewer.php
+									55 link Plugins, Value: 68.211.149.112/lib/plugins/pluginView.php
+									56 text field (settable) Search Test Case by ID, Value: TL-
+									57 image Search Test Case by ID
+									58 text field (settable) Full Text Search
+									59 image Full Text Search
+							60 HTML content TestLink Inner Frame, URL: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+								61 container
+									62 HTML content TestLink, URL: 68.211.149.112/lib/testcases/listTestCases.php?feature=edit_tc
+										63 container
+											64 heading Navigator - Test Specification, Value: 1
+												65 text Navigator - Test Specification
+											66 container
+												67 text Settings
+												68 container
+													69 container Update tree after every operation
+														70 text Update tree after every operation
+													71 checkbox 1
+											72 container
+												73 text Filters
+												74 container
+													75 container
+														76 container Test Case ID
+															77 text Test Case ID
+														78 container TL-
+															79 text field (settable) TL-
+													80 container
+														81 container Test Case Title
+															82 text Test Case Title
+														83 container T09-
+															84 text field (settable) T09-
+													85 container
+														86 container Test Suite
+															87 text Test Suite
+														88 container Select an Option
+															89 container
+																90 text Select an Option
+																91 text field (settable)
+																92 content list
+													93 container
+														94 container Platforms
+															95 text Platforms
+														96 container Select Some Options
+															97 container
+																98 content list
+																	99 text field (settable) Select Some Options
+																100 content list
+													101 container
+														102 container Status
+															103 text Status
+														104 container Select Some Options
+															105 container
+																106 content list
+																	107 text field (settable) Select Some Options
+																108 content list
+													109 container
+														110 container Importance
+															111 text Importance
+														112 container Select Some Options
+															113 container
+																114 content list
+																	115 text field (settable) Select Some Options
+																116 content list
+													117 container
+														118 container Execution type
+															119 text Execution type
+														120 container [Any]
+															121 container
+																122 text [Any]
+																123 text field (settable)
+																124 content list
+													125 button Apply
+													126 button Reset Filters
+											127 button Expand tree
+											128 button Collapse tree
+											129 content list
+												130 container
+													131 link Todo.ly (13), Value: javascript:EP(1)
+													132 content list
+														133 container
+															134 link Todo.ly tests (13), Value: javascript:ETS(3)
+															135 content list
+																136 link TL-72:T09-01. Signup con campos vacíos y términos sin aceptar rechaza el envío, Value: javascript:ET(251)
+																137 link TL-73:T09-02. Signup con el correo de una cuenta existente muestra error de duplicado, Value: javascript:ET(263)
+																138 link TL-74:T09-03. Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada, Value: javascript:ET(282)
+																139 link TL-75:T09-04. Login con credenciales vigentes de A abre la sesión de la cuenta A, Value: javascript:ET(294)
+																140 link TL-76:T09-05. Login con Email y Password vacíos no concede acceso, Value: javascript:ET(308)
+																141 link TL-77:T09-06. Login con Email vacío y Password informado muestra error y no da acceso, Value: javascript:ET(316)
+																142 link TL-78:T09-07. Login de A con Password vacío muestra error y no concede acceso, Value: javascript:ET(325)
+																143 link TL-79:T09-09. Login con un correo no registrado muestra error y no concede acceso, Value: javascript:ET(334)
+																144 link TL-80:T09-10. Login de A con contraseña incorrecta muestra error y no concede acceso, Value: javascript:ET(343)
+																145 link TL-81:T09-11. Logout impide ver los datos de A con Atrás y con la URL directa, Value: javascript:ET(352)
+																146 link TL-82:T09-12. Cambio de cuenta entre A y B muestra solo los datos propios de cada una, Value: javascript:ET(361)
+																147 link TL-83:T09-13. Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada, Value: javascript:ET(404)
+																148 link TL-84:T09-14. Remember Me marcado: al reabrir el perfil se restaura la sesión de B, Value: javascript:ET(423)
+									149 HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version_id=undefined&edit=testcase&id=282&form_token=[REDACTADO]
+										150 heading Test Case, Value: 1
+											151 text Test Case
+										152 image Show / Hide direct link
+										153 image Actions
+										154 container
+											155 table
+												156 row
+													157 column header 0-5
+														158 text TL-74 : T09-03. Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada - Version 1 
+														159 image Show ghost string
+														160 image Display Author/Updater
+												161 row
+													162 column header 0-5
+														163 text Summary
+												164 row
+													165 cell 0-5
+														166 text Validar que el campo Timezone de Signup muestra su valor inicial, ofrece la opción de La Paz UTC-04 distinta de la opción mexicana UTC-07, sin una entrada vacía, y refleja la opción seleccionada, sin crear cuenta ni evaluar vencimientos.
+														167 text Requerimiento: PEB-73 / T09. Signup ofrece selección de zona y refleja la opción elegida en el formulario.
+														168 text Postcondiciones: Formulario descartado sin registro. No se concluye validación de servidor para un Timezone vacío que la interfaz no permite seleccionar.
+												169 row
+													170 column header 0-5
+														171 text Preconditions
+												172 row
+													173 cell 0-5
+														174 content list
+															175 container
+																176 AXListMarker 1. 
+																177 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
+															178 container
+																179 AXListMarker 2. 
+																180 text Sin sesión iniciada en Todo.ly en el navegador.
+												181 row
+													182 column header
+														183 image Show / Hide reorder 
+														184 image Show ghost string
+														185 text #
+													186 column header
+														187 text Step actions
+													188 column header
+														189 text Expected Results
+													190 column header
+														191 text Execution
+												192 row
+													193 cell
+														194 text 1
+													195 cell
+														196 container
+															197 text Abrir  https://todo.ly/  en Chrome.
+													198 cell
+														199 container
+															200 text Se muestra la página pública con  Login  y  Sign Up Free .
+													201 cell
+														202 text Manual
+													203 cell
+														204 image Delete step
+													205 cell
+														206 image Insert step
+												207 row
+													208 cell
+														209 text 2
+													210 cell
+														211 container
+															212 text Hacer clic en  Sign Up Free .
+													213 cell
+														214 container
+															215 text Se abre el formulario  Signup  con el campo  Timezone .
+													216 cell
+														217 text Manual
+													218 cell
+														219 image Delete step
+													220 cell
+														221 image Insert step
+												222 row
+													223 cell
+														224 text 3
+													225 cell
+														226 container
+															227 text Leer el valor inicial de  Timezone  sin desplegarlo.
+													228 cell
+														229 container
+															230 text El selector muestra la opción Pacific UTC-08; la captura de referencia deja visible  (UTC-08:00) Pacific Time (US & Cana…  con el texto recortado.
+													231 cell
+														232 text Manual
+													233 cell
+														234 image Delete step
+													235 cell
+														236 image Insert step
+												237 row
+													238 cell
+														239 text 4
+													240 cell
+														241 container
+															242 text Hacer clic en el selector  Timezone .
+													243 cell
+														244 text Se despliega la lista de zonas horarias.
+													245 cell
+														246 text Manual
+													247 cell
+														248 image Delete step
+													249 cell
+														250 image Insert step
+												251 row
+													252 cell
+														253 text 5
+													254 cell
+														255 container
+															256 text Recorrer la lista completa de  Timezone .
+													257 cell
+														258 text La lista no ofrece una entrada vacía.
+													259 cell
+														260 text Manual
+													261 cell
+														262 image Delete step
+													263 cell
+														264 image Insert step
+												265 row
+													266 cell
+														267 text 6
+													268 cell
+														269 container
+															270 text Anotar el número de opciones de  Timezone  en el registro de ejecución.
+													271 cell
+														272 text El inventario queda registrado; el inventario de referencia contiene 101 opciones, sin tratarlo como límite del producto.
+													273 cell
+														274 text Manual
+													275 cell
+														276 image Delete step
+													277 cell
+														278 image Insert step
+												279 row
+													280 cell
+														281 text 7
+													282 cell
+														283 container
+															284 text Localizar  (UTC-04:00) Georgetown, La Paz, Manaus, San Juan  en la lista.
+													285 cell
+														286 text Aparece la opción correspondiente a La Paz UTC-04.
+													287 cell
+														288 text Manual
+													289 cell
+														290 image Delete step
+													291 cell
+														292 image Insert step
+												293 row
+													294 cell
+														295 text 8
+													296 cell
+														297 container
+															298 text Localizar  (UTC-07:00) Chihuahua, La Paz, Mazatlan  en la lista.
+													299 cell
+														300 text La opción UTC-07 aparece como entrada distinta de La Paz UTC-04.
+													301 cell
+														302 text Manual
+													303 cell
+														304 image Delete step
+													305 cell
+														306 image Insert step
+												307 row
+													308 cell
+														309 text 9
+													310 cell
+														311 container
+															312 text Seleccionar  (UTC-04:00) Georgetown, La Paz, Manaus, San Juan .
+													313 cell
+														314 container
+															315 text El selector  Timezone  muestra exactamente  (UTC-04:00) Georgetown, La Paz, Manaus, San Juan .
+													316 cell
+														317 text Manual
+													318 cell
+														319 image Delete step
+													320 cell
+														321 image Insert step
+												322 row
+													323 cell
+														324 text 10
+													325 cell
+														326 container
+															327 text Abrir  https://todo.ly/  en la barra de direcciones, sin hacer clic en  Signup .
+													328 cell
+														329 text Se muestra la página pública sin registro completado ni sesión iniciada.
+													330 cell
+														331 text Manual
+													332 cell
+														333 image Delete step
+													334 cell
+														335 image Insert step
+											336 button Create step
+											337 button Resequence Steps
+										338 container
+											339 text Status : 
+											340 pop up button Draft
+												341 (selected) Draft
+											342 text Importance : 
+											343 pop up button Medium
+												344 (selected) Medium
+											345 text Execution type : 
+											346 pop up button Manual
+												347 (selected) Manual
+											348 checkbox 0
+											349 text Apply To All Steps
+											350 text Estimated exec. (min) : 
+											351 text field (settable) Estimated exec. duration (min)
+											352 button Save
+										353 container
+											354 container Keywords   Create Keyword  Create & Link 
+												355 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
+												356 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
+												357 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=283%27)
+											358 container None
+												359 text None
+										360 container
+											361 container Platforms:  
+												362 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
+												363 text :  
+											364 container None
+												365 text None
+										366 table
+											367 row
+												368 column header
+													369 text Relations
+											370 row
+												371 cell
+													372 text New relation:  This test case version 
+													373 pop up button is related to
+														374 (selected) is related to
+													375 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID
+													376 button Add
+										377 container Attached files :
+											378 text Attached files :
+										379 container
+											380 text File
+											381 button File: No file chosen
+											382 text Title/name:
+											383 text field (settable)
+											384 button Upload file
+										385 image Max. size of the file is: 1048576 Bytes)
+										386 image Filename must verify this regexp:/^[a-zA-Z0-9_-]{1,20}\.[a-zA-Z0-9]{1,10}$/
+										387 image Allowed files:doc,xls,gif,png,jpg,xlsx,csv
+							388 button
+			389 pop up button Tab search
+			390 container
+				391 tab group
+					392 tab (selected, settable, boolean) TestLink 1.9.20 [DEV] - Memory usage - 303 MB, Value: on
+						393 button Close
+					394 tab (settable, boolean) Value: off, [PEB-74] T10 — Analizar, diseñar y registrar pruebas de perfil y recuperación de acceso - Jira - Memory usage - 477 MB
+						395 button Close
+			396 button New Tab
+			397 button Open Gemini in Chrome
+		398 text javascript:ET(282)
+	399 close button
+	400 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	401 minimize button
+402 menu bar
+	403 Chrome
+	404 File
+	405 Edit
+	406 View
+	407 History
+	408 Bookmarks
+	409 Profiles
+	410 Tab
+	411 Window
+	412 Help
+
+The focused UI element is 138 link TL-74:T09-03. Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada, Value: javascript:ET(282)

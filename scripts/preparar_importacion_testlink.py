@@ -3,12 +3,18 @@
 import argparse
 import html
 import json
+import re
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
 
+def formatted(value):
+    escaped = html.escape(value, quote=False)
+    return re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", escaped)
+
+
 def paragraph(value):
-    return f"<p>{html.escape(value, quote=False)}</p>"
+    return "<p>" + formatted(value) + "</p>"
 
 
 def prepare(source, output, ticket):
@@ -29,17 +35,15 @@ def prepare(source, output, ticket):
             raise ValueError(f"Nombre mayor al formato estándar de TestLink: {case['id']}")
         node = ET.SubElement(suite, "testcase", {"name": name})
         ET.SubElement(node, "node_order").text = str(position)
-        ET.SubElement(node, "summary").text = "".join(
-            paragraph(label + value)
-            for label, value in [
-                ("Importancia: ", case["importancia"] + ". " + case["razon"]),
-                ("Requerimiento: ", case["requerimiento"]),
-                ("Descripción: ", case["descripcion"]),
-                ("Postcondiciones: ", case["postcondiciones"]),
-            ]
-        )
+        if ticket in {"T09", "T11"} and not case["descripcion"].startswith("Validar que"):
+            raise ValueError(f"Descripción fuera de rúbrica: {case['id']}")
+        ET.SubElement(node, "summary").text = "".join([
+            paragraph(case["descripcion"]),
+            paragraph("Requerimiento: " + case["requerimiento"]),
+            paragraph("Postcondiciones: " + case["postcondiciones"]),
+        ])
         ET.SubElement(node, "preconditions").text = "<ol>" + "".join(
-            f"<li>{html.escape(value, quote=False)}</li>" for value in case["precondiciones"]
+            f"<li>{formatted(value)}</li>" for value in case["precondiciones"]
         ) + "</ol>"
         ET.SubElement(node, "execution_type").text = "1"
         ET.SubElement(node, "importance").text = importance[case["importancia"]]

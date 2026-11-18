@@ -1,0 +1,544 @@
+Window: "TestLink 1.9.20 [DEV]", App: Google Chrome.
+0 standard window TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php, Secondary Actions: Raise
+	1 container TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button Not Secure
+					9 text field (settable) Address and search bar, Value: 68.211.149.112/index.php, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 container
+					12 pop up button iCloud Bookmarks
+					13 pop up button Google Translate
+
+Left-click to translate!
+Right-click for options.
+Has access to this site
+					14 pop up button Video Downloader
+Has access to this site
+					15 pop up button vidIQ Vision for YouTube
+Has access to this site
+					16 pop up button Disconnected
+Has access to this site
+					17 pop up button Chile
+Has access to this site
+					18 pop up button Wappalyzer
+Has access to this site
+					19 pop up button Open Claude
+Has access to this site
+					20 pop up button Extensions
+				21 button Paused
+				22 pop up button Chrome
+			23 toolbar Bookmarks
+				24 toolbar Saved Tab Groups
+					25 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					26 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					27 button Tab groups
+				28 splitter Separator
+				29 bookmark button Sample Tank MAX 4-0-9 WiN-MAC - AUDIOTOOLS
+				30 bookmark button Downloads
+				31 bookmark button Flameboy Tutorials
+				32 bookmark button Media Monopoly: Secure Checkout
+				33 pop up button Menu containing hidden bookmarks
+				34 bookmark folder button All Bookmarks
+				35 splitter Separator
+			36 container
+				37 scroll area
+					38 HTML content TestLink 1.9.20 [DEV], URL: 68.211.149.112/index.php
+						39 container
+							40 HTML content TestLink, URL: 68.211.149.112/lib/general/navBar.php?tproject_id=0&tplan_id=0&updateMainPage=1
+								41 link Company logo, Value: 68.211.149.112/index.php
+								42 container
+									43 text admin [admin]
+									44 link My Settings, Value: 68.211.149.112/lib/usermanagement/userInfo.php
+									45 link Logout, Value: 68.211.149.112/logout.php?viewer=
+								46 container
+									47 container
+										48 text Test Project 
+										49 pop up button TL:Todo.ly
+											50 (selected) TL:Todo.ly
+									51 link Desktop, Value: 68.211.149.112/index.php
+									52 link Test Specification, Value: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+									53 link Users/Roles, Value: 68.211.149.112/lib/usermanagement/usersView.php
+									54 link Events, Value: 68.211.149.112/lib/events/eventviewer.php
+									55 link Plugins, Value: 68.211.149.112/lib/plugins/pluginView.php
+									56 text field (settable) Search Test Case by ID, Value: TL-
+									57 image Search Test Case by ID
+									58 text field (settable) Full Text Search
+									59 image Full Text Search
+							60 HTML content TestLink Inner Frame, URL: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+								61 container
+									62 HTML content TestLink, URL: 68.211.149.112/lib/testcases/listTestCases.php?feature=edit_tc
+										63 container
+											64 heading Navigator - Test Specification, Value: 1
+												65 text Navigator - Test Specification
+											66 container
+												67 text Settings
+												68 container
+													69 container Update tree after every operation
+														70 text Update tree after every operation
+													71 checkbox 1
+											72 container
+												73 text Filters
+												74 container
+													75 container
+														76 container Test Case ID
+															77 text Test Case ID
+														78 container TL-
+															79 text field (settable) TL-
+													80 container
+														81 container Test Case Title
+															82 text Test Case Title
+														83 container T09-
+															84 text field (settable) T09-
+													85 container
+														86 container Test Suite
+															87 text Test Suite
+														88 container Select an Option
+															89 container
+																90 text Select an Option
+																91 text field (settable)
+																92 content list
+													93 container
+														94 container Platforms
+															95 text Platforms
+														96 container Select Some Options
+															97 container
+																98 content list
+																	99 text field (settable) Select Some Options
+																100 content list
+													101 container
+														102 container Status
+															103 text Status
+														104 container Select Some Options
+															105 container
+																106 content list
+																	107 text field (settable) Select Some Options
+																108 content list
+													109 container
+														110 container Importance
+															111 text Importance
+														112 container Select Some Options
+															113 container
+																114 content list
+																	115 text field (settable) Select Some Options
+																116 content list
+													117 container
+														118 container Execution type
+															119 text Execution type
+														120 container [Any]
+															121 container
+																122 text [Any]
+																123 text field (settable)
+																124 content list
+													125 button Apply
+													126 button Reset Filters
+											127 button Expand tree
+											128 button Collapse tree
+											129 content list
+												130 container
+													131 link Todo.ly (13), Value: javascript:EP(1)
+													132 content list
+														133 container
+															134 link Todo.ly tests (13), Value: javascript:ETS(3)
+															135 content list
+																136 link TL-72:T09-01. Signup con campos vacíos y términos sin aceptar rechaza el envío, Value: javascript:ET(251)
+																137 link TL-73:T09-02. Signup con el correo de una cuenta existente muestra error de duplicado, Value: javascript:ET(263)
+																138 link TL-74:T09-03. Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada, Value: javascript:ET(282)
+																139 link TL-75:T09-04. Login con credenciales vigentes de A abre la sesión de la cuenta A, Value: javascript:ET(294)
+																140 link TL-76:T09-05. Login con Email y Password vacíos no concede acceso, Value: javascript:ET(308)
+																141 link TL-77:T09-06. Login con Email vacío y Password informado muestra error y no da acceso, Value: javascript:ET(316)
+																142 link TL-78:T09-07. Login de A con Password vacío muestra error y no concede acceso, Value: javascript:ET(325)
+																143 link TL-79:T09-09. Login con un correo no registrado muestra error y no concede acceso, Value: javascript:ET(334)
+																144 link TL-80:T09-10. Login de A con contraseña incorrecta muestra error y no concede acceso, Value: javascript:ET(343)
+																145 link TL-81:T09-11. Logout impide ver los datos de A con Atrás y con la URL directa, Value: javascript:ET(352)
+																146 link TL-82:T09-12. Cambio de cuenta entre A y B muestra solo los datos propios de cada una, Value: javascript:ET(361)
+																147 link TL-83:T09-13. Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada, Value: javascript:ET(404)
+																148 link TL-84:T09-14. Remember Me marcado: al reabrir el perfil se restaura la sesión de B, Value: javascript:ET(423)
+									149 HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version_id=undefined&edit=testcase&id=404&form_token=[REDACTADO]
+										150 heading Test Case, Value: 1
+											151 text Test Case
+										152 image Show / Hide direct link
+										153 image Actions
+										154 container
+											155 table
+												156 row
+													157 column header 0-5
+														158 text TL-83 : T09-13. Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada - Version 1 
+														159 image Show ghost string
+														160 image Display Author/Updater
+												161 row
+													162 column header 0-5
+														163 text Summary
+												164 row
+													165 cell 0-5
+														166 text Validar que, tras Login de A con Remember Me desmarcado y el cierre de las ventanas del perfil dedicado, la reapertura de ese perfil muestra la página pública sin sesión, registrando el intervalo y sin inferir una caducidad de cookies.
+														167 text Requerimiento: PEB-73 / T09. El recorrido observado sin Remember Me vuelve a la página pública al reabrir.
+														168 text Postcondiciones: Perfil QA abierto con sesión cerrada, datos y credenciales sin cambios; intervalo y cualquier ayuda manual documentados.
+												169 row
+													170 column header 0-5
+														171 text Preconditions
+												172 row
+													173 cell 0-5
+														174 content list
+															175 container
+																176 AXListMarker 1. 
+																177 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
+															178 container
+																179 AXListMarker 2. 
+																180 text Sin sesión iniciada en Todo.ly en el navegador.
+															181 container
+																182 AXListMarker 3. 
+																183 text Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.
+															184 container
+																185 AXListMarker 4. 
+																186 text Perfil dedicado de Chrome para QA, sin otras ventanas abiertas de ese perfil y disponible en el selector de perfiles de Chrome para su reapertura.
+															187 container
+																188 AXListMarker 5. 
+																189 text Configuración de Chrome sin cambios durante todo el recorrido.
+															190 container
+																191 AXListMarker 6. 
+																192 text Nombres de perfil de A consignados en el registro privado de referencia.
+															193 container
+																194 AXListMarker 7. 
+																195 text Otra ventana de Chrome de un perfil distinto abierta durante todo el recorrido.
+												196 row
+													197 column header
+														198 image Show / Hide reorder 
+														199 image Show ghost string
+														200 text #
+													201 column header
+														202 text Step actions
+													203 column header
+														204 text Expected Results
+													205 column header
+														206 text Execution
+												207 row
+													208 cell
+														209 text 1
+													210 cell
+														211 container
+															212 text Abrir  https://todo.ly/  en una ventana del perfil dedicado de Chrome.
+													213 cell
+														214 container
+															215 text Se muestra la página pública con  Login  y  Sign Up Free .
+													216 cell
+														217 text Manual
+													218 cell
+														219 image Delete step
+													220 cell
+														221 image Insert step
+												222 row
+													223 cell
+														224 text 2
+													225 cell
+														226 container
+															227 text Hacer clic en  Login  en la página pública.
+													228 cell
+														229 container
+															230 text Se despliega el formulario de acceso con  Email ,  Password , la casilla  Remember Me  y el botón  Login .
+													231 cell
+														232 text Manual
+													233 cell
+														234 image Delete step
+													235 cell
+														236 image Insert step
+												237 row
+													238 cell
+														239 text 3
+													240 cell
+														241 container
+															242 text Dejar desmarcada la casilla  Remember Me ; si aparece marcada, hacer clic en ella una vez.
+													243 cell
+														244 container
+															245 text Remember Me  está desmarcada.
+													246 cell
+														247 text Manual
+													248 cell
+														249 image Delete step
+													250 cell
+														251 image Insert step
+												252 row
+													253 cell
+														254 text 4
+													255 cell
+														256 container
+															257 text Tomar una captura de la casilla  Remember Me  antes del envío.
+													258 cell
+														259 container
+															260 text La captura muestra  Remember Me  desmarcada.
+													261 cell
+														262 text Manual
+													263 cell
+														264 image Delete step
+													265 cell
+														266 image Insert step
+												267 row
+													268 cell
+														269 text 5
+													270 cell
+														271 container
+															272 text Escribir en  Email  el correo de la cuenta A del registro privado.
+													273 cell
+														274 container
+															275 text Email  muestra el correo de A.
+													276 cell
+														277 text Manual
+													278 cell
+														279 image Delete step
+													280 cell
+														281 image Insert step
+												282 row
+													283 cell
+														284 text 6
+													285 cell
+														286 container
+															287 text Escribir en  Password  la contraseña vigente de A del registro privado.
+													288 cell
+														289 container
+															290 text Password  muestra el valor enmascarado.
+													291 cell
+														292 text Manual
+													293 cell
+														294 image Delete step
+													295 cell
+														296 image Insert step
+												297 row
+													298 cell
+														299 text 7
+													300 cell
+														301 container
+															302 text Hacer clic una vez en el botón  Login  del formulario (nombre accesible Submit).
+													303 cell
+														304 container
+															305 text Se inicia sesión: se muestra el área autenticada con  Settings  y  Logout .
+													306 cell
+														307 text Manual
+													308 cell
+														309 image Delete step
+													310 cell
+														311 image Insert step
+												312 row
+													313 cell
+														314 text 8
+													315 cell
+														316 container
+															317 text Hacer clic en  Settings .
+													318 cell
+														319 container
+															320 text Se abre  Settings .
+													321 cell
+														322 text Manual
+													323 cell
+														324 image Delete step
+													325 cell
+														326 image Insert step
+												327 row
+													328 cell
+														329 text 9
+													330 cell
+														331 container
+															332 text Seleccionar  Profile  en  Settings .
+													333 cell
+														334 container
+															335 text Profile  muestra  Full Name  y  Email  de la cuenta con sesión iniciada.
+													336 cell
+														337 text Manual
+													338 cell
+														339 image Delete step
+													340 cell
+														341 image Insert step
+												342 row
+													343 cell
+														344 text 10
+													345 cell
+														346 container
+															347 text Comparar  Full Name  con el nombre de perfil de A del registro privado.
+													348 cell
+														349 container
+															350 text Full Name  coincide con el nombre de A.
+													351 cell
+														352 text Manual
+													353 cell
+														354 image Delete step
+													355 cell
+														356 image Insert step
+												357 row
+													358 cell
+														359 text 11
+													360 cell
+														361 container
+															362 text Comparar  Email  con el correo de A del registro privado.
+													363 cell
+														364 container
+															365 text Email  coincide con el correo de A del registro privado.
+													366 cell
+														367 text Manual
+													368 cell
+														369 image Delete step
+													370 cell
+														371 image Insert step
+												372 row
+													373 cell
+														374 text 12
+													375 cell
+														376 text Anotar la hora actual como hora de cierre.
+													377 cell
+														378 text La hora de cierre queda registrada.
+													379 cell
+														380 text Manual
+													381 cell
+														382 image Delete step
+													383 cell
+														384 image Insert step
+												385 row
+													386 cell
+														387 text 13
+													388 cell
+														389 container
+															390 text Cerrar todas las ventanas del perfil dedicado con su botón de cierre, sin hacer clic en  Logout , sin borrar cookies y sin cerrar otros perfiles.
+													391 cell
+														392 text Las ventanas del perfil dedicado quedan cerradas; los demás perfiles de Chrome conservan sus ventanas y sesiones.
+													393 cell
+														394 text Manual
+													395 cell
+														396 image Delete step
+													397 cell
+														398 image Insert step
+												399 row
+													400 cell
+														401 text 14
+													402 cell
+														403 container
+															404 text Abrir de nuevo el mismo perfil dedicado desde el selector de perfiles de Chrome (menú  Profiles  en macOS).
+													405 cell
+														406 text Se abre una ventana nueva del perfil dedicado.
+													407 cell
+														408 text Manual
+													409 cell
+														410 image Delete step
+													411 cell
+														412 image Insert step
+												413 row
+													414 cell
+														415 text 15
+													416 cell
+														417 text Anotar la hora actual como hora de reapertura.
+													418 cell
+														419 text Queda registrado el intervalo entre el cierre y la reapertura.
+													420 cell
+														421 text Manual
+													422 cell
+														423 image Delete step
+													424 cell
+														425 image Insert step
+												426 row
+													427 cell
+														428 text 16
+													429 cell
+														430 container
+															431 text Abrir  https://todo.ly/  en la barra de direcciones, sin escribir credenciales.
+													432 cell
+														433 container
+															434 text Se muestra la página pública con  Login  y  Sign Up Free , sin  Settings  ni  Logout , conforme al recorrido observado.
+													435 cell
+														436 text Manual
+													437 cell
+														438 image Delete step
+													439 cell
+														440 image Insert step
+												441 row
+													442 cell
+														443 text 17
+													444 cell
+														445 text Tomar una captura que muestre el nombre del perfil dedicado y el estado de Todo.ly.
+													446 cell
+														447 text La captura identifica el perfil reabierto y la página pública sin sesión; no se usa otro perfil como prueba.
+													448 cell
+														449 text Manual
+													450 cell
+														451 image Delete step
+													452 cell
+														453 image Insert step
+											454 button Create step
+											455 button Resequence Steps
+										456 container
+											457 text Status : 
+											458 pop up button Draft
+												459 (selected) Draft
+											460 text Importance : 
+											461 pop up button High
+												462 (selected) High
+											463 text Execution type : 
+											464 pop up button Manual
+												465 (selected) Manual
+											466 checkbox 0
+											467 text Apply To All Steps
+											468 text Estimated exec. (min) : 
+											469 text field (settable) Estimated exec. duration (min)
+											470 button Save
+										471 container
+											472 container Keywords   Create Keyword  Create & Link 
+												473 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
+												474 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
+												475 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=405%27)
+											476 container None
+												477 text None
+										478 container
+											479 container Platforms:  
+												480 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
+												481 text :  
+											482 container None
+												483 text None
+										484 table
+											485 row
+												486 column header
+													487 text Relations
+											488 row
+												489 cell
+													490 text New relation:  This test case version 
+													491 pop up button is related to
+														492 (selected) is related to
+													493 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID
+													494 button Add
+										495 container Attached files :
+											496 text Attached files :
+										497 container
+											498 text File
+											499 button File: No file chosen
+											500 text Title/name:
+											501 text field (settable)
+											502 button Upload file
+										503 image Max. size of the file is: 1048576 Bytes)
+										504 image Filename must verify this regexp:/^[a-zA-Z0-9_-]{1,20}\.[a-zA-Z0-9]{1,10}$/
+										505 image Allowed files:doc,xls,gif,png,jpg,xlsx,csv
+							506 button
+			507 pop up button Tab search
+			508 container
+				509 tab group
+					510 tab (selected, settable, boolean) TestLink 1.9.20 [DEV] - Memory usage - 303 MB, Value: on
+						511 button Close
+					512 tab (settable, boolean) Value: off, [PEB-74] T10 — Analizar, diseñar y registrar pruebas de perfil y recuperación de acceso - Jira - Memory usage - 477 MB
+						513 button Close
+			514 button New Tab
+			515 button Open Gemini in Chrome
+		516 text javascript:ET(325)
+	517 close button
+	518 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	519 minimize button
+520 menu bar
+	521 Chrome
+	522 File
+	523 Edit
+	524 View
+	525 History
+	526 Bookmarks
+	527 Profiles
+	528 Tab
+	529 Window
+	530 Help
+
+The focused UI element is 147 link TL-83:T09-13. Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada, Value: javascript:ET(404)

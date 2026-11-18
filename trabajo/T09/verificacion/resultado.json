@@ -1,0 +1,93 @@
+[
+  {
+    "caso": "T09-01",
+    "campos": 25,
+    "faltantes": [],
+    "nativos": true,
+    "pasos": 10
+  },
+  {
+    "caso": "T09-02",
+    "campos": 43,
+    "faltantes": [],
+    "nativos": true,
+    "pasos": 17
+  },
+  {
+    "caso": "T09-03",
+    "campos": 25,
+    "faltantes": [],
+    "nativos": true,
+    "pasos": 10
+  },
+  {
+    "caso": "T09-04",
+    "campos": 31,
+    "faltantes": [],
+    "nativos": true,
+    "pasos": 12
+  },
+  {
+    "caso": "T09-05",
+    "campos": 17,
+    "faltantes": [],
+    "nativos": true,
+    "pasos": 6
+  },
+  {
+    "caso": "T09-06",
+    "campos": 19,
+    "faltantes": [],
+    "nativos": true,
+    "pasos": 7
+  },
+  {
+    "caso": "T09-07",
+    "campos": 22,
+    "faltantes": [],
+    "nativos": true,
+    "pasos": 7
+  },
+  {
+    "caso": "T09-09",
+    "campos": 20,
+    "faltantes": [],
+    "nativos": true,
+    "pasos": 7
+  },
+  {
+    "caso": "T09-10",
+    "campos": 22,
+    "faltantes": [],
+    "nativos": true,
+    "pasos": 7
+  },
+  {
+    "caso": "T09-11",
+    "campos": 21,
+    "faltantes": [],
+    "nativos": true,
+    "pasos": 7
+  },
+  {
+    "caso": "T09-12",
+    "campos": 90,
+    "faltantes": [],
+    "nativos": true,
+    "pasos": 41
+  },
+  {
+    "caso": "T09-13",
+    "campos": 44,
+    "faltantes": [],
+    "nativos": true,
+    "pasos": 17
+  },
+  {
+    "caso": "T09-14",
+    "campos": 56,
+    "faltantes": [],
+    "nativos": true,
+    "pasos": 23
+  }
+]

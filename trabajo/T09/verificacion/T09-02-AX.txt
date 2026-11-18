@@ -1,0 +1,549 @@
+Window: "TestLink 1.9.20 [DEV]", App: Google Chrome.
+0 standard window TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php, Secondary Actions: Raise
+	1 container TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button Not Secure
+					9 text field (settable) Address and search bar, Value: 68.211.149.112/index.php, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 container
+					12 pop up button iCloud Bookmarks
+					13 pop up button Google Translate
+
+Left-click to translate!
+Right-click for options.
+Has access to this site
+					14 pop up button Video Downloader
+Has access to this site
+					15 pop up button vidIQ Vision for YouTube
+Has access to this site
+					16 pop up button Disconnected
+Has access to this site
+					17 pop up button Chile
+Has access to this site
+					18 pop up button Wappalyzer
+Has access to this site
+					19 pop up button Open Claude
+Has access to this site
+					20 pop up button Extensions
+				21 button Paused
+				22 pop up button Chrome
+			23 toolbar Bookmarks
+				24 toolbar Saved Tab Groups
+					25 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					26 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					27 button Tab groups
+				28 splitter Separator
+				29 bookmark button Sample Tank MAX 4-0-9 WiN-MAC - AUDIOTOOLS
+				30 bookmark button Downloads
+				31 bookmark button Flameboy Tutorials
+				32 bookmark button Media Monopoly: Secure Checkout
+				33 pop up button Menu containing hidden bookmarks
+				34 bookmark folder button All Bookmarks
+				35 splitter Separator
+			36 container
+				37 scroll area
+					38 HTML content TestLink 1.9.20 [DEV], URL: 68.211.149.112/index.php
+						39 container
+							40 HTML content TestLink, URL: 68.211.149.112/lib/general/navBar.php?tproject_id=0&tplan_id=0&updateMainPage=1
+								41 link Company logo, Value: 68.211.149.112/index.php
+								42 container
+									43 text admin [admin]
+									44 link My Settings, Value: 68.211.149.112/lib/usermanagement/userInfo.php
+									45 link Logout, Value: 68.211.149.112/logout.php?viewer=
+								46 container
+									47 container
+										48 text Test Project 
+										49 pop up button TL:Todo.ly
+											50 (selected) TL:Todo.ly
+									51 link Desktop, Value: 68.211.149.112/index.php
+									52 link Test Specification, Value: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+									53 link Users/Roles, Value: 68.211.149.112/lib/usermanagement/usersView.php
+									54 link Events, Value: 68.211.149.112/lib/events/eventviewer.php
+									55 link Plugins, Value: 68.211.149.112/lib/plugins/pluginView.php
+									56 text field (settable) Search Test Case by ID, Value: TL-
+									57 image Search Test Case by ID
+									58 text field (settable) Full Text Search
+									59 image Full Text Search
+							60 HTML content TestLink Inner Frame, URL: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+								61 container
+									62 HTML content TestLink, URL: 68.211.149.112/lib/testcases/listTestCases.php?feature=edit_tc
+										63 container
+											64 heading Navigator - Test Specification, Value: 1
+												65 text Navigator - Test Specification
+											66 container
+												67 text Settings
+												68 container
+													69 container Update tree after every operation
+														70 text Update tree after every operation
+													71 checkbox 1
+											72 container
+												73 text Filters
+												74 container
+													75 container
+														76 container Test Case ID
+															77 text Test Case ID
+														78 container TL-
+															79 text field (settable) TL-
+													80 container
+														81 container Test Case Title
+															82 text Test Case Title
+														83 container T09-
+															84 text field (settable) T09-
+													85 container
+														86 container Test Suite
+															87 text Test Suite
+														88 container Select an Option
+															89 container
+																90 text Select an Option
+																91 text field (settable)
+																92 content list
+													93 container
+														94 container Platforms
+															95 text Platforms
+														96 container Select Some Options
+															97 container
+																98 content list
+																	99 text field (settable) Select Some Options
+																100 content list
+													101 container
+														102 container Status
+															103 text Status
+														104 container Select Some Options
+															105 container
+																106 content list
+																	107 text field (settable) Select Some Options
+																108 content list
+													109 container
+														110 container Importance
+															111 text Importance
+														112 container Select Some Options
+															113 container
+																114 content list
+																	115 text field (settable) Select Some Options
+																116 content list
+													117 container
+														118 container Execution type
+															119 text Execution type
+														120 container [Any]
+															121 container
+																122 text [Any]
+																123 text field (settable)
+																124 content list
+													125 button Apply
+													126 button Reset Filters
+											127 button Expand tree
+											128 button Collapse tree
+											129 content list
+												130 container
+													131 link Todo.ly (13), Value: javascript:EP(1)
+													132 content list
+														133 container
+															134 link Todo.ly tests (13), Value: javascript:ETS(3)
+															135 content list
+																136 link TL-72:T09-01. Signup con campos vacíos y términos sin aceptar rechaza el envío, Value: javascript:ET(251)
+																137 link TL-73:T09-02. Signup con el correo de una cuenta existente muestra error de duplicado, Value: javascript:ET(263)
+																138 link TL-74:T09-03. Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada, Value: javascript:ET(282)
+																139 link TL-75:T09-04. Login con credenciales vigentes de A abre la sesión de la cuenta A, Value: javascript:ET(294)
+																140 link TL-76:T09-05. Login con Email y Password vacíos no concede acceso, Value: javascript:ET(308)
+																141 link TL-77:T09-06. Login con Email vacío y Password informado muestra error y no da acceso, Value: javascript:ET(316)
+																142 link TL-78:T09-07. Login de A con Password vacío muestra error y no concede acceso, Value: javascript:ET(325)
+																143 link TL-79:T09-09. Login con un correo no registrado muestra error y no concede acceso, Value: javascript:ET(334)
+																144 link TL-80:T09-10. Login de A con contraseña incorrecta muestra error y no concede acceso, Value: javascript:ET(343)
+																145 link TL-81:T09-11. Logout impide ver los datos de A con Atrás y con la URL directa, Value: javascript:ET(352)
+																146 link TL-82:T09-12. Cambio de cuenta entre A y B muestra solo los datos propios de cada una, Value: javascript:ET(361)
+																147 link TL-83:T09-13. Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada, Value: javascript:ET(404)
+																148 link TL-84:T09-14. Remember Me marcado: al reabrir el perfil se restaura la sesión de B, Value: javascript:ET(423)
+									149 HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version_id=undefined&edit=testcase&id=263&form_token=[REDACTADO]
+										150 heading Test Case, Value: 1
+											151 text Test Case
+										152 image Show / Hide direct link
+										153 image Actions
+										154 container
+											155 table
+												156 row
+													157 column header 0-5
+														158 text TL-73 : T09-02. Signup con el correo de una cuenta existente muestra error de duplicado - Version 1 
+														159 image Show ghost string
+														160 image Display Author/Updater
+												161 row
+													162 column header 0-5
+														163 text Summary
+												164 row
+													165 cell 0-5
+														166 text Validar que Signup rechaza el correo de una cuenta de prueba ya registrada con el aviso de duplicado y que la cuenta A conserva su nombre original, usando exclusivamente una cuenta propia de prueba.
+														167 text Requerimiento: PEB-73 / T09. Signup rechaza un correo ya registrado sin sustituir la cuenta existente.
+														168 container
+															169 text Postcondiciones: A conserva sus datos y credenciales; no se crea otra cuenta. Evidencia del rechazo sin contraseñas. Sesión iniciada en A, con  Profile  abierto.
+												170 row
+													171 column header 0-5
+														172 text Preconditions
+												173 row
+													174 cell 0-5
+														175 content list
+															176 container
+																177 AXListMarker 1. 
+																178 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
+															179 container
+																180 AXListMarker 2. 
+																181 text Sin sesión iniciada en Todo.ly en el navegador.
+															182 container
+																183 AXListMarker 3. 
+																184 text Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.
+															185 container
+																186 AXListMarker 4. 
+																187 text Contraseña de prueba para el intento de Signup, distinta de la vigente de A y consignada en el registro privado de credenciales.
+															188 container
+																189 AXListMarker 5. 
+																190 text Aceptación de los términos de Todo.ly autorizada para las cuentas de prueba.
+															191 container
+																192 AXListMarker 6. 
+																193 text Nombres de perfil de A consignados en el registro privado de referencia.
+												194 row
+													195 column header
+														196 image Show / Hide reorder 
+														197 image Show ghost string
+														198 text #
+													199 column header
+														200 text Step actions
+													201 column header
+														202 text Expected Results
+													203 column header
+														204 text Execution
+												205 row
+													206 cell
+														207 text 1
+													208 cell
+														209 container
+															210 text Abrir  https://todo.ly/  en Chrome.
+													211 cell
+														212 container
+															213 text Se muestra la página pública con  Login  y  Sign Up Free .
+													214 cell
+														215 text Manual
+													216 cell
+														217 image Delete step
+													218 cell
+														219 image Insert step
+												220 row
+													221 cell
+														222 text 2
+													223 cell
+														224 container
+															225 text Hacer clic en  Sign Up Free .
+													226 cell
+														227 container
+															228 text Se abre el formulario  Signup  con  Full Name ,  Email ,  Password ,  Timezone , la casilla de términos y el botón  Signup .
+													229 cell
+														230 text Manual
+													231 cell
+														232 image Delete step
+													233 cell
+														234 image Insert step
+												235 row
+													236 cell
+														237 text 3
+													238 cell
+														239 container
+															240 text Escribir  Prueba T09-02 - duplicado  en el campo  Full Name .
+													241 cell
+														242 container
+															243 text Full Name  muestra  Prueba T09-02 - duplicado .
+													244 cell
+														245 text Manual
+													246 cell
+														247 image Delete step
+													248 cell
+														249 image Insert step
+												250 row
+													251 cell
+														252 text 4
+													253 cell
+														254 container
+															255 text Escribir en el campo  Email  el correo de la cuenta A, tomado del registro privado.
+													256 cell
+														257 container
+															258 text Email  muestra el correo de la cuenta de prueba A existente.
+													259 cell
+														260 text Manual
+													261 cell
+														262 image Delete step
+													263 cell
+														264 image Insert step
+												265 row
+													266 cell
+														267 text 5
+													268 cell
+														269 container
+															270 text Escribir en el campo  Password  la contraseña de prueba para Signup del registro privado, distinta de la vigente de A.
+													271 cell
+														272 container
+															273 text Password  contiene el valor introducido.
+													274 cell
+														275 text Manual
+													276 cell
+														277 image Delete step
+													278 cell
+														279 image Insert step
+												280 row
+													281 cell
+														282 text 6
+													283 cell
+														284 container
+															285 text Seleccionar  (UTC-04:00) Georgetown, La Paz, Manaus, San Juan  en  Timezone .
+													286 cell
+														287 container
+															288 text Timezone  muestra  (UTC-04:00) Georgetown, La Paz, Manaus, San Juan .
+													289 cell
+														290 text Manual
+													291 cell
+														292 image Delete step
+													293 cell
+														294 image Insert step
+												295 row
+													296 cell
+														297 text 7
+													298 cell
+														299 container
+															300 text Marcar la casilla de términos del formulario  Signup .
+													301 cell
+														302 text La casilla de términos queda marcada.
+													303 cell
+														304 text Manual
+													305 cell
+														306 image Delete step
+													307 cell
+														308 image Insert step
+												309 row
+													310 cell
+														311 text 8
+													312 cell
+														313 container
+															314 text Hacer clic una vez en el botón  Signup .
+													315 cell
+														316 container
+															317 text Aparece  Error. Account with this email address already exists! ; no se inicia sesión en una cuenta nueva: no aparecen  Settings  ni  Logout .
+													318 cell
+														319 text Manual
+													320 cell
+														321 image Delete step
+													322 cell
+														323 image Insert step
+												324 row
+													325 cell
+														326 text 9
+													327 cell
+														328 container
+															329 text Abrir  https://todo.ly/  en la barra de direcciones.
+													330 cell
+														331 container
+															332 text Se muestra la página pública con  Login  y  Sign Up Free , sin sesión iniciada.
+													333 cell
+														334 text Manual
+													335 cell
+														336 image Delete step
+													337 cell
+														338 image Insert step
+												339 row
+													340 cell
+														341 text 10
+													342 cell
+														343 container
+															344 text Hacer clic en  Login  en la página pública.
+													345 cell
+														346 container
+															347 text Se despliega el formulario de acceso con  Email ,  Password , la casilla  Remember Me  y el botón  Login .
+													348 cell
+														349 text Manual
+													350 cell
+														351 image Delete step
+													352 cell
+														353 image Insert step
+												354 row
+													355 cell
+														356 text 11
+													357 cell
+														358 container
+															359 text Escribir en  Email  el correo de la cuenta A del registro privado.
+													360 cell
+														361 container
+															362 text Email  muestra el correo de A.
+													363 cell
+														364 text Manual
+													365 cell
+														366 image Delete step
+													367 cell
+														368 image Insert step
+												369 row
+													370 cell
+														371 text 12
+													372 cell
+														373 container
+															374 text Escribir en  Password  la contraseña vigente de A del registro privado, la misma vigente antes del intento de Signup.
+													375 cell
+														376 container
+															377 text Password  muestra el valor enmascarado.
+													378 cell
+														379 text Manual
+													380 cell
+														381 image Delete step
+													382 cell
+														383 image Insert step
+												384 row
+													385 cell
+														386 text 13
+													387 cell
+														388 container
+															389 text Hacer clic una vez en el botón  Login  del formulario (nombre accesible Submit).
+													390 cell
+														391 container
+															392 text Se muestra el área autenticada con  Settings  y  Logout .
+													393 cell
+														394 text Manual
+													395 cell
+														396 image Delete step
+													397 cell
+														398 image Insert step
+												399 row
+													400 cell
+														401 text 14
+													402 cell
+														403 container
+															404 text Hacer clic en  Settings .
+													405 cell
+														406 container
+															407 text Se abre  Settings .
+													408 cell
+														409 text Manual
+													410 cell
+														411 image Delete step
+													412 cell
+														413 image Insert step
+												414 row
+													415 cell
+														416 text 15
+													417 cell
+														418 container
+															419 text Seleccionar  Profile  en  Settings .
+													420 cell
+														421 container
+															422 text Profile  muestra  Full Name  y  Email  de la cuenta con sesión iniciada.
+													423 cell
+														424 text Manual
+													425 cell
+														426 image Delete step
+													427 cell
+														428 image Insert step
+												429 row
+													430 cell
+														431 text 16
+													432 cell
+														433 container
+															434 text Comparar  Full Name  con el nombre de perfil de A del registro privado.
+													435 cell
+														436 container
+															437 text Full Name  conserva el nombre inicial de A y no muestra  Prueba T09-02 - duplicado , según el criterio del equipo de conservación de identidad.
+													438 cell
+														439 text Manual
+													440 cell
+														441 image Delete step
+													442 cell
+														443 image Insert step
+												444 row
+													445 cell
+														446 text 17
+													447 cell
+														448 container
+															449 text Comparar  Email  con el correo de A del registro privado.
+													450 cell
+														451 container
+															452 text Email  coincide con el correo de A del registro privado.
+													453 cell
+														454 text Manual
+													455 cell
+														456 image Delete step
+													457 cell
+														458 image Insert step
+											459 button Create step
+											460 button Resequence Steps
+										461 container
+											462 text Status : 
+											463 pop up button Draft
+												464 (selected) Draft
+											465 text Importance : 
+											466 pop up button High
+												467 (selected) High
+											468 text Execution type : 
+											469 pop up button Manual
+												470 (selected) Manual
+											471 checkbox 0
+											472 text Apply To All Steps
+											473 text Estimated exec. (min) : 
+											474 text field (settable) Estimated exec. duration (min)
+											475 button Save
+										476 container
+											477 container Keywords   Create Keyword  Create & Link 
+												478 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
+												479 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
+												480 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=264%27)
+											481 container None
+												482 text None
+										483 container
+											484 container Platforms:  
+												485 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
+												486 text :  
+											487 container None
+												488 text None
+										489 table
+											490 row
+												491 column header
+													492 text Relations
+											493 row
+												494 cell
+													495 text New relation:  This test case version 
+													496 pop up button is related to
+														497 (selected) is related to
+													498 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID
+													499 button Add
+										500 container Attached files :
+											501 text Attached files :
+										502 container
+											503 text File
+											504 button File: No file chosen
+											505 text Title/name:
+											506 text field (settable)
+											507 button Upload file
+										508 image Max. size of the file is: 1048576 Bytes)
+										509 image Filename must verify this regexp:/^[a-zA-Z0-9_-]{1,20}\.[a-zA-Z0-9]{1,10}$/
+										510 image Allowed files:doc,xls,gif,png,jpg,xlsx,csv
+							511 button
+			512 pop up button Tab search
+			513 container
+				514 tab group
+					515 tab (selected, settable, boolean) TestLink 1.9.20 [DEV] - Memory usage - 303 MB, Value: on
+						516 button Close
+					517 tab (settable, boolean) Value: off, [PEB-74] T10 — Analizar, diseñar y registrar pruebas de perfil y recuperación de acceso - Jira - Memory usage - 477 MB
+						518 button Close
+			519 button New Tab
+			520 button Open Gemini in Chrome
+		521 text javascript:ET(263)
+	522 close button
+	523 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	524 minimize button
+525 menu bar
+	526 Chrome
+	527 File
+	528 Edit
+	529 View
+	530 History
+	531 Bookmarks
+	532 Profiles
+	533 Tab
+	534 Window
+	535 Help
+
+The focused UI element is 137 link TL-73:T09-02. Signup con el correo de una cuenta existente muestra error de duplicado, Value: javascript:ET(263)

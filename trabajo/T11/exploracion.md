@@ -30,3 +30,7 @@ Se pidió al usuario dejar el Mac desbloqueado y Chrome visible en el perfil QA,
 Como fuente independiente de resultados esperados se consultó la [portada oficial de Todo.ly](https://todo.ly/), que documenta arrastre de proyectos para anidar y movimiento de tareas entre proyectos. Se clasifica como **Regla documentada**, sin presentarlo como comportamiento observado en A/B. El texto no confirma un procedimiento de retorno a raíz ni la posibilidad específica de mover completadas. El criterio de conservar contenido, estado, atributos y relaciones procede expresamente del usuario.
 
 Se preparó un diseño provisional con T11-01/02 basados en observación previa y persistencia solicitada, T11-04/05 basados en documentación y conservación solicitada, y T11-03/06 como candidatos pendientes. Los datos de esas fichas todavía no se crearon. La consulta pública no inicia sesión ni utiliza la API de Todo.ly.
+
+## Fuente confirmada del equipo sobre completadas
+
+La guía vigente §13 documenta expresamente: el usuario confirmó que las tareas de Done Items no se pueden arrastrar desde esa sección del proyecto. Clasificación: **Regla documentada / reporte previo del equipo**, no conclusión derivada de una falla de nuestra herramienta. No prueba que no exista otro mecanismo de movimiento ni sustituye observarlo en A. La guía §14 distingue ese comportamiento de la recuperación de completadas desde Recycle Bin, que pertenece a T08 y no se duplica aquí.

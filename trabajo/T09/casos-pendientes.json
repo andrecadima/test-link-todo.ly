@@ -1,7 +1,7 @@
 [
   {
     "id": "T09-08",
-    "titulo": "Investigar Login con Email sin formato de correo",
+    "titulo": "Login con Email sin formato de correo: respuesta pendiente de confirmar",
     "importancia": "medium",
     "razon": "Identifica una entrada negativa cuya respuesta visible todavía no está resuelta.",
     "requerimiento": "PEB-73 / T09. Tratamiento del Email mal formado, pendiente de fijar resultado visible.",
@@ -9,18 +9,30 @@
       "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
       "Sin sesión iniciada en Todo.ly en el navegador."
     ],
-    "descripcion": "Candidato pendiente: las vistas vacías impiden fijar una respuesta de validación. No registrar como caso listo.",
+    "descripcion": "Validar que la respuesta de Login ante un Email sin formato de correo queda identificada antes de registrar el caso, sin fijar todavía un resultado esperado, porque las vistas vacías observadas impiden atribuirle una regla de validación; candidato pendiente, no registrar como caso listo.",
     "pasos": [
       [
-        "Abrir Login e introducir PruebaT09SinArroba en Email y Prueba-T09-no-valida-17 en Password.",
-        "Los campos contienen los representantes de prueba, sin datos de una cuenta ajena."
+        "Abrir **https://todo.ly/** en Chrome.",
+        "Se muestra la página pública con **Login** y **Sign Up Free**."
       ],
       [
-        "Pulsar Login / Submit una sola vez.",
+        "Hacer clic en **Login** en la página pública.",
+        "Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**."
+      ],
+      [
+        "Escribir **PruebaT09SinArroba** en el campo **Email**.",
+        "**Email** muestra **PruebaT09SinArroba**, sin datos de una cuenta ajena."
+      ],
+      [
+        "Escribir **Prueba-T09-no-valida-17** en el campo **Password**.",
+        "**Password** muestra el valor enmascarado."
+      ],
+      [
+        "Hacer clic una sola vez en el botón **Login** del formulario (nombre accesible Submit).",
         "PENDIENTE: confirmar el tratamiento visible y el mensaje. La página vacía de la herramienta no demuestra una regla de validación del producto."
       ],
       [
-        "Abrir una consulta GET nueva sin introducir credenciales y registrar el estado.",
+        "Abrir **https://todo.ly/** en la barra de direcciones, sin escribir credenciales, y anotar el estado mostrado.",
         "Se documenta si aparece la página pública o una sesión autenticada; no se atribuye el resultado a una regla sintáctica sin confirmarla."
       ]
     ],

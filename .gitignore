@@ -9,3 +9,9 @@ desktop.ini
 
 # Extracciones y renders temporales de lectura
 tmp/
+
+# Artefactos intactos de la revisión paralela con credenciales preexistentes
+/revision-testlink/propuestas.json
+/revision-testlink/respaldo-20261118-1532.json
+/revision-testlink/scripts/generar.py
+/revision-testlink/scripts/modelo.py

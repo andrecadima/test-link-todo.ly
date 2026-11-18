@@ -42,4 +42,5 @@ Actualizado 18/11/2026. No representa ejecución formal ni revisión de otro int
 
 - [x] Nuevo prompt de revisión global y ejemplo del docente leídos, sin modificar archivos del usuario.
 - [x] T10 dejado en punto seguro y respaldado: 89ec619 enviado.
-- [ ] Elección del usuario: continuar T09–T11 o priorizar la revisión global de todos los casos. Esta última exige respaldo, propuestas y OK antes de aplicar cambios.
+- [x] Prioridad confirmada: Codex termina T09–T11 y fase 6; otro Claude revisa los demás casos por API. Rúbrica aplicada a T09/T11 antes de registrar.
+- [x] Bloque manual T10 a/b/c solicitado nuevamente por instrucción expresa; pendientes sus resultados.

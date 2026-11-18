@@ -1,0 +1,901 @@
+Window: "TestLink 1.9.20 [DEV]", App: Google Chrome.
+0 standard window TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php, Secondary Actions: Raise
+	1 container TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button Not Secure
+					9 text field (settable) Address and search bar, Value: 68.211.149.112/index.php, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 container
+					12 pop up button iCloud Bookmarks
+					13 pop up button Google Translate
+
+Left-click to translate!
+Right-click for options.
+Has access to this site
+					14 pop up button Video Downloader
+Has access to this site
+					15 pop up button vidIQ Vision for YouTube
+Has access to this site
+					16 pop up button Disconnected
+Has access to this site
+					17 pop up button Chile
+Has access to this site
+					18 pop up button Wappalyzer
+Has access to this site
+					19 pop up button Open Claude
+Has access to this site
+					20 pop up button Extensions
+				21 button Paused
+				22 pop up button Chrome
+			23 toolbar Bookmarks
+				24 toolbar Saved Tab Groups
+					25 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					26 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					27 button Tab groups
+				28 splitter Separator
+				29 bookmark button Sample Tank MAX 4-0-9 WiN-MAC - AUDIOTOOLS
+				30 bookmark button Downloads
+				31 bookmark button Flameboy Tutorials
+				32 bookmark button Media Monopoly: Secure Checkout
+				33 pop up button Menu containing hidden bookmarks
+				34 bookmark folder button All Bookmarks
+				35 splitter Separator
+			36 container
+				37 scroll area
+					38 HTML content TestLink 1.9.20 [DEV], URL: 68.211.149.112/index.php
+						39 container
+							40 HTML content TestLink, URL: 68.211.149.112/lib/general/navBar.php?tproject_id=0&tplan_id=0&updateMainPage=1
+								41 link Company logo, Value: 68.211.149.112/index.php
+								42 container
+									43 text admin [admin]
+									44 link My Settings, Value: 68.211.149.112/lib/usermanagement/userInfo.php
+									45 link Logout, Value: 68.211.149.112/logout.php?viewer=
+								46 container
+									47 container
+										48 text Test Project 
+										49 pop up button TL:Todo.ly
+											50 (selected) TL:Todo.ly
+									51 link Desktop, Value: 68.211.149.112/index.php
+									52 link Test Specification, Value: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+									53 link Users/Roles, Value: 68.211.149.112/lib/usermanagement/usersView.php
+									54 link Events, Value: 68.211.149.112/lib/events/eventviewer.php
+									55 link Plugins, Value: 68.211.149.112/lib/plugins/pluginView.php
+									56 text field (settable) Search Test Case by ID, Value: TL-
+									57 image Search Test Case by ID
+									58 text field (settable) Full Text Search
+									59 image Full Text Search
+							60 HTML content TestLink Inner Frame, URL: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+								61 container
+									62 HTML content TestLink, URL: 68.211.149.112/lib/testcases/listTestCases.php?feature=edit_tc
+										63 container
+											64 heading Navigator - Test Specification, Value: 1
+												65 text Navigator - Test Specification
+											66 container
+												67 text Settings
+												68 container
+													69 container Update tree after every operation
+														70 text Update tree after every operation
+													71 checkbox 1
+											72 container
+												73 text Filters
+												74 container
+													75 container
+														76 container Test Case ID
+															77 text Test Case ID
+														78 container TL-
+															79 text field (settable) TL-
+													80 container
+														81 container Test Case Title
+															82 text Test Case Title
+														83 container T09-
+															84 text field (settable) T09-
+													85 container
+														86 container Test Suite
+															87 text Test Suite
+														88 container Select an Option
+															89 container
+																90 text Select an Option
+																91 text field (settable)
+																92 content list
+													93 container
+														94 container Platforms
+															95 text Platforms
+														96 container Select Some Options
+															97 container
+																98 content list
+																	99 text field (settable) Select Some Options
+																100 content list
+													101 container
+														102 container Status
+															103 text Status
+														104 container Select Some Options
+															105 container
+																106 content list
+																	107 text field (settable) Select Some Options
+																108 content list
+													109 container
+														110 container Importance
+															111 text Importance
+														112 container Select Some Options
+															113 container
+																114 content list
+																	115 text field (settable) Select Some Options
+																116 content list
+													117 container
+														118 container Execution type
+															119 text Execution type
+														120 container [Any]
+															121 container
+																122 text [Any]
+																123 text field (settable)
+																124 content list
+													125 button Apply
+													126 button Reset Filters
+											127 button Expand tree
+											128 button Collapse tree
+											129 content list
+												130 container
+													131 link Todo.ly (13), Value: javascript:EP(1)
+													132 content list
+														133 container
+															134 link Todo.ly tests (13), Value: javascript:ETS(3)
+															135 content list
+																136 link TL-72:T09-01. Signup con campos vacíos y términos sin aceptar rechaza el envío, Value: javascript:ET(251)
+																137 link TL-73:T09-02. Signup con el correo de una cuenta existente muestra error de duplicado, Value: javascript:ET(263)
+																138 link TL-74:T09-03. Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada, Value: javascript:ET(282)
+																139 link TL-75:T09-04. Login con credenciales vigentes de A abre la sesión de la cuenta A, Value: javascript:ET(294)
+																140 link TL-76:T09-05. Login con Email y Password vacíos no concede acceso, Value: javascript:ET(308)
+																141 link TL-77:T09-06. Login con Email vacío y Password informado muestra error y no da acceso, Value: javascript:ET(316)
+																142 link TL-78:T09-07. Login de A con Password vacío muestra error y no concede acceso, Value: javascript:ET(325)
+																143 link TL-79:T09-09. Login con un correo no registrado muestra error y no concede acceso, Value: javascript:ET(334)
+																144 link TL-80:T09-10. Login de A con contraseña incorrecta muestra error y no concede acceso, Value: javascript:ET(343)
+																145 link TL-81:T09-11. Logout impide ver los datos de A con Atrás y con la URL directa, Value: javascript:ET(352)
+																146 link TL-82:T09-12. Cambio de cuenta entre A y B muestra solo los datos propios de cada una, Value: javascript:ET(361)
+																147 link TL-83:T09-13. Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada, Value: javascript:ET(404)
+																148 link TL-84:T09-14. Remember Me marcado: al reabrir el perfil se restaura la sesión de B, Value: javascript:ET(423)
+									149 HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version_id=undefined&edit=testcase&id=361&form_token=[REDACTADO]
+										150 heading Test Case, Value: 1
+											151 text Test Case
+										152 image Show / Hide direct link
+										153 image Actions
+										154 container
+											155 table
+												156 row
+													157 column header 0-5
+														158 text TL-82 : T09-12. Cambio de cuenta entre A y B muestra solo los datos propios de cada una - Version 1 
+														159 image Show ghost string
+														160 image Display Author/Updater
+												161 row
+													162 column header 0-5
+														163 text Summary
+												164 row
+													165 cell 0-5
+														166 text Validar que, al alternar la sesión entre A y B, cada cuenta muestra en Home su propio marcador y no el de la otra, en ambos sentidos.
+														167 text Requerimiento: PEB-73 / T09. Cada cuenta muestra sus propios datos de Home después de cambiar de identidad.
+														168 text Postcondiciones: Marcadores propios en Home de sus cuentas, pendientes de la limpieza del lote; sin proyectos compartidos ni cambios a datos de otras personas.
+												169 row
+													170 column header 0-5
+														171 text Preconditions
+												172 row
+													173 cell 0-5
+														174 content list
+															175 container
+																176 AXListMarker 1. 
+																177 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
+															178 container
+																179 AXListMarker 2. 
+																180 text Sin sesión iniciada en Todo.ly en el navegador.
+															181 container
+																182 AXListMarker 3. 
+																183 text Dos cuentas gratuitas de prueba sin proyectos compartidos (A y B), con correos y contraseñas vigentes consignados en el registro privado de credenciales y proyecto  Home  disponible en cada una.
+															184 container
+																185 AXListMarker 4. 
+																186 text Home  de A sin una tarea llamada  Prueba T09-12 - marcador A ;  Home  de B sin una tarea llamada  Prueba T09-12 - marcador B .
+															187 container
+																188 AXListMarker 5. 
+																189 text Nombres de perfil de A y B consignados en el registro privado de referencia.
+												190 row
+													191 column header
+														192 image Show / Hide reorder 
+														193 image Show ghost string
+														194 text #
+													195 column header
+														196 text Step actions
+													197 column header
+														198 text Expected Results
+													199 column header
+														200 text Execution
+												201 row
+													202 cell
+														203 text 1
+													204 cell
+														205 container
+															206 text Abrir  https://todo.ly/  en Chrome.
+													207 cell
+														208 container
+															209 text Se muestra la página pública con  Login  y  Sign Up Free .
+													210 cell
+														211 text Manual
+													212 cell
+														213 image Delete step
+													214 cell
+														215 image Insert step
+												216 row
+													217 cell
+														218 text 2
+													219 cell
+														220 container
+															221 text Hacer clic en  Login  en la página pública.
+													222 cell
+														223 container
+															224 text Se despliega el formulario de acceso con  Email ,  Password , la casilla  Remember Me  y el botón  Login .
+													225 cell
+														226 text Manual
+													227 cell
+														228 image Delete step
+													229 cell
+														230 image Insert step
+												231 row
+													232 cell
+														233 text 3
+													234 cell
+														235 container
+															236 text Escribir en  Email  el correo de la cuenta A del registro privado.
+													237 cell
+														238 container
+															239 text Email  muestra el correo de A.
+													240 cell
+														241 text Manual
+													242 cell
+														243 image Delete step
+													244 cell
+														245 image Insert step
+												246 row
+													247 cell
+														248 text 4
+													249 cell
+														250 container
+															251 text Escribir en  Password  la contraseña vigente de A del registro privado.
+													252 cell
+														253 container
+															254 text Password  muestra el valor enmascarado.
+													255 cell
+														256 text Manual
+													257 cell
+														258 image Delete step
+													259 cell
+														260 image Insert step
+												261 row
+													262 cell
+														263 text 5
+													264 cell
+														265 container
+															266 text Hacer clic una vez en el botón  Login  del formulario (nombre accesible Submit).
+													267 cell
+														268 container
+															269 text Se muestra el área autenticada con  Settings  y  Logout .
+													270 cell
+														271 text Manual
+													272 cell
+														273 image Delete step
+													274 cell
+														275 image Insert step
+												276 row
+													277 cell
+														278 text 6
+													279 cell
+														280 container
+															281 text Hacer clic en  Settings .
+													282 cell
+														283 container
+															284 text Se abre  Settings .
+													285 cell
+														286 text Manual
+													287 cell
+														288 image Delete step
+													289 cell
+														290 image Insert step
+												291 row
+													292 cell
+														293 text 7
+													294 cell
+														295 container
+															296 text Seleccionar  Profile  en  Settings .
+													297 cell
+														298 container
+															299 text Profile  muestra  Full Name  y  Email  de la cuenta con sesión iniciada.
+													300 cell
+														301 text Manual
+													302 cell
+														303 image Delete step
+													304 cell
+														305 image Insert step
+												306 row
+													307 cell
+														308 text 8
+													309 cell
+														310 container
+															311 text Comparar  Full Name  con el nombre de perfil de A del registro privado.
+													312 cell
+														313 container
+															314 text Full Name  coincide con el nombre de A.
+													315 cell
+														316 text Manual
+													317 cell
+														318 image Delete step
+													319 cell
+														320 image Insert step
+												321 row
+													322 cell
+														323 text 9
+													324 cell
+														325 container
+															326 text Comparar  Email  con el correo de A del registro privado.
+													327 cell
+														328 container
+															329 text Email  coincide con el correo de A del registro privado.
+													330 cell
+														331 text Manual
+													332 cell
+														333 image Delete step
+													334 cell
+														335 image Insert step
+												336 row
+													337 cell
+														338 text 10
+													339 cell
+														340 container
+															341 text Hacer clic en  Cancel .
+													342 cell
+														343 container
+															344 text Se cierra  Settings  sin guardar cambios y vuelve a verse el área de proyectos.
+													345 cell
+														346 text Manual
+													347 cell
+														348 image Delete step
+													349 cell
+														350 image Insert step
+												351 row
+													352 cell
+														353 text 11
+													354 cell
+														355 container
+															356 text Hacer clic en  Home  en el panel izquierdo.
+													357 cell
+														358 container
+															359 text Se muestra la lista de  Home  de A, sin  Prueba T09-12 - marcador A  ni  Prueba T09-12 - marcador B .
+													360 cell
+														361 text Manual
+													362 cell
+														363 image Delete step
+													364 cell
+														365 image Insert step
+												366 row
+													367 cell
+														368 text 12
+													369 cell
+														370 container
+															371 text Escribir  Prueba T09-12 - marcador A  en el campo  Add new Todo .
+													372 cell
+														373 container
+															374 text El campo  Add new Todo  muestra  Prueba T09-12 - marcador A .
+													375 cell
+														376 text Manual
+													377 cell
+														378 image Delete step
+													379 cell
+														380 image Insert step
+												381 row
+													382 cell
+														383 text 13
+													384 cell
+														385 container
+															386 text Hacer clic en  Add .
+													387 cell
+														388 container
+															389 text Prueba T09-12 - marcador A  aparece como tarea pendiente en  Home  de A.
+													390 cell
+														391 text Manual
+													392 cell
+														393 image Delete step
+													394 cell
+														395 image Insert step
+												396 row
+													397 cell
+														398 text 14
+													399 cell
+														400 container
+															401 text Hacer clic en  Logout .
+													402 cell
+														403 container
+															404 text Se muestra la página pública con  Login  y  Sign Up Free ; la sesión de A queda cerrada.
+													405 cell
+														406 text Manual
+													407 cell
+														408 image Delete step
+													409 cell
+														410 image Insert step
+												411 row
+													412 cell
+														413 text 15
+													414 cell
+														415 container
+															416 text Hacer clic en  Login  en la página pública.
+													417 cell
+														418 text Se despliega el formulario de acceso.
+													419 cell
+														420 text Manual
+													421 cell
+														422 image Delete step
+													423 cell
+														424 image Insert step
+												425 row
+													426 cell
+														427 text 16
+													428 cell
+														429 container
+															430 text Escribir en  Email  el correo de la cuenta B del registro privado.
+													431 cell
+														432 container
+															433 text Email  muestra el correo de B.
+													434 cell
+														435 text Manual
+													436 cell
+														437 image Delete step
+													438 cell
+														439 image Insert step
+												440 row
+													441 cell
+														442 text 17
+													443 cell
+														444 container
+															445 text Escribir en  Password  la contraseña vigente de B del registro privado.
+													446 cell
+														447 container
+															448 text Password  muestra el valor enmascarado.
+													449 cell
+														450 text Manual
+													451 cell
+														452 image Delete step
+													453 cell
+														454 image Insert step
+												455 row
+													456 cell
+														457 text 18
+													458 cell
+														459 container
+															460 text Hacer clic una vez en el botón  Login  del formulario (nombre accesible Submit).
+													461 cell
+														462 container
+															463 text Se muestra el área autenticada con  Settings  y  Logout .
+													464 cell
+														465 text Manual
+													466 cell
+														467 image Delete step
+													468 cell
+														469 image Insert step
+												470 row
+													471 cell
+														472 text 19
+													473 cell
+														474 container
+															475 text Hacer clic en  Settings .
+													476 cell
+														477 container
+															478 text Se abre  Settings .
+													479 cell
+														480 text Manual
+													481 cell
+														482 image Delete step
+													483 cell
+														484 image Insert step
+												485 row
+													486 cell
+														487 text 20
+													488 cell
+														489 container
+															490 text Seleccionar  Profile  en  Settings .
+													491 cell
+														492 container
+															493 text Profile  muestra  Full Name  y  Email  de la cuenta con sesión iniciada.
+													494 cell
+														495 text Manual
+													496 cell
+														497 image Delete step
+													498 cell
+														499 image Insert step
+												500 row
+													501 cell
+														502 text 21
+													503 cell
+														504 container
+															505 text Comparar  Full Name  con el nombre de perfil de B del registro privado.
+													506 cell
+														507 container
+															508 text Full Name  coincide con el nombre de B.
+													509 cell
+														510 text Manual
+													511 cell
+														512 image Delete step
+													513 cell
+														514 image Insert step
+												515 row
+													516 cell
+														517 text 22
+													518 cell
+														519 container
+															520 text Comparar  Email  con el correo de B del registro privado.
+													521 cell
+														522 container
+															523 text Email  coincide con el correo de B del registro privado.
+													524 cell
+														525 text Manual
+													526 cell
+														527 image Delete step
+													528 cell
+														529 image Insert step
+												530 row
+													531 cell
+														532 text 23
+													533 cell
+														534 container
+															535 text Hacer clic en  Cancel .
+													536 cell
+														537 container
+															538 text Se cierra  Settings  sin guardar cambios y vuelve a verse el área de proyectos.
+													539 cell
+														540 text Manual
+													541 cell
+														542 image Delete step
+													543 cell
+														544 image Insert step
+												545 row
+													546 cell
+														547 text 24
+													548 cell
+														549 container
+															550 text Hacer clic en  Home  en el panel izquierdo.
+													551 cell
+														552 container
+															553 text Se muestra la lista de  Home  de B; no aparece  Prueba T09-12 - marcador A .
+													554 cell
+														555 text Manual
+													556 cell
+														557 image Delete step
+													558 cell
+														559 image Insert step
+												560 row
+													561 cell
+														562 text 25
+													563 cell
+														564 container
+															565 text Escribir  Prueba T09-12 - marcador B  en el campo  Add new Todo .
+													566 cell
+														567 container
+															568 text El campo  Add new Todo  muestra  Prueba T09-12 - marcador B .
+													569 cell
+														570 text Manual
+													571 cell
+														572 image Delete step
+													573 cell
+														574 image Insert step
+												575 row
+													576 cell
+														577 text 26
+													578 cell
+														579 container
+															580 text Hacer clic en  Add .
+													581 cell
+														582 container
+															583 text Prueba T09-12 - marcador B  aparece como tarea pendiente en  Home  de B.
+													584 cell
+														585 text Manual
+													586 cell
+														587 image Delete step
+													588 cell
+														589 image Insert step
+												590 row
+													591 cell
+														592 text 27
+													593 cell
+														594 container
+															595 text Hacer clic en  Logout .
+													596 cell
+														597 container
+															598 text Se muestra la página pública con  Login  y  Sign Up Free ; la sesión de B queda cerrada.
+													599 cell
+														600 text Manual
+													601 cell
+														602 image Delete step
+													603 cell
+														604 image Insert step
+												605 row
+													606 cell
+														607 text 28
+													608 cell
+														609 container
+															610 text Hacer clic en  Login  en la página pública.
+													611 cell
+														612 text Se despliega el formulario de acceso.
+													613 cell
+														614 text Manual
+													615 cell
+														616 image Delete step
+													617 cell
+														618 image Insert step
+												619 row
+													620 cell
+														621 text 29
+													622 cell
+														623 container
+															624 text Escribir en  Email  el correo de la cuenta A del registro privado.
+													625 cell
+														626 container
+															627 text Email  muestra el correo de A.
+													628 cell
+														629 text Manual
+													630 cell
+														631 image Delete step
+													632 cell
+														633 image Insert step
+												634 row
+													635 cell
+														636 text 30
+													637 cell
+														638 container
+															639 text Escribir en  Password  la contraseña vigente de A del registro privado.
+													640 cell
+														641 container
+															642 text Password  muestra el valor enmascarado.
+													643 cell
+														644 text Manual
+													645 cell
+														646 image Delete step
+													647 cell
+														648 image Insert step
+												649 row
+													650 cell
+														651 text 31
+													652 cell
+														653 container
+															654 text Hacer clic una vez en el botón  Login  del formulario (nombre accesible Submit).
+													655 cell
+														656 container
+															657 text Se muestra el área autenticada con  Settings  y  Logout .
+													658 cell
+														659 text Manual
+													660 cell
+														661 image Delete step
+													662 cell
+														663 image Insert step
+												664 row
+													665 cell
+														666 text 32
+													667 cell
+														668 container
+															669 text Hacer clic en  Home  en el panel izquierdo.
+													670 cell
+														671 container
+															672 text Home  de A muestra  Prueba T09-12 - marcador A  y no muestra  Prueba T09-12 - marcador B .
+													673 cell
+														674 text Manual
+													675 cell
+														676 image Delete step
+													677 cell
+														678 image Insert step
+												679 row
+													680 cell
+														681 text 33
+													682 cell
+														683 container
+															684 text Tomar una captura de  Home  de A.
+													685 cell
+														686 text La captura muestra el marcador de A sin el de B, sin secretos.
+													687 cell
+														688 text Manual
+													689 cell
+														690 image Delete step
+													691 cell
+														692 image Insert step
+												693 row
+													694 cell
+														695 text 34
+													696 cell
+														697 container
+															698 text Hacer clic en  Logout .
+													699 cell
+														700 container
+															701 text Se muestra la página pública con  Login  y  Sign Up Free ; la sesión de A queda cerrada.
+													702 cell
+														703 text Manual
+													704 cell
+														705 image Delete step
+													706 cell
+														707 image Insert step
+												708 row
+													709 cell
+														710 text 35
+													711 cell
+														712 container
+															713 text Hacer clic en  Login  en la página pública.
+													714 cell
+														715 text Se despliega el formulario de acceso.
+													716 cell
+														717 text Manual
+													718 cell
+														719 image Delete step
+													720 cell
+														721 image Insert step
+												722 row
+													723 cell
+														724 text 36
+													725 cell
+														726 container
+															727 text Escribir en  Email  el correo de la cuenta B del registro privado.
+													728 cell
+														729 container
+															730 text Email  muestra el correo de B.
+													731 cell
+														732 text Manual
+													733 cell
+														734 image Delete step
+													735 cell
+														736 image Insert step
+												737 row
+													738 cell
+														739 text 37
+													740 cell
+														741 container
+															742 text Escribir en  Password  la contraseña vigente de B del registro privado.
+													743 cell
+														744 container
+															745 text Password  muestra el valor enmascarado.
+													746 cell
+														747 text Manual
+													748 cell
+														749 image Delete step
+													750 cell
+														751 image Insert step
+												752 row
+													753 cell
+														754 text 38
+													755 cell
+														756 container
+															757 text Hacer clic una vez en el botón  Login  del formulario (nombre accesible Submit).
+													758 cell
+														759 container
+															760 text Se muestra el área autenticada con  Settings  y  Logout .
+													761 cell
+														762 text Manual
+													763 cell
+														764 image Delete step
+													765 cell
+														766 image Insert step
+												767 row
+													768 cell
+														769 text 39
+													770 cell
+														771 container
+															772 text Hacer clic en  Home  en el panel izquierdo.
+													773 cell
+														774 container
+															775 text Home  de B muestra  Prueba T09-12 - marcador B  y no muestra  Prueba T09-12 - marcador A .
+													776 cell
+														777 text Manual
+													778 cell
+														779 image Delete step
+													780 cell
+														781 image Insert step
+												782 row
+													783 cell
+														784 text 40
+													785 cell
+														786 container
+															787 text Tomar una captura de  Home  de B.
+													788 cell
+														789 text La captura muestra el marcador de B sin el de A, sin secretos.
+													790 cell
+														791 text Manual
+													792 cell
+														793 image Delete step
+													794 cell
+														795 image Insert step
+												796 row
+													797 cell
+														798 text 41
+													799 cell
+														800 container
+															801 text Hacer clic en  Logout .
+													802 cell
+														803 container
+															804 text Se muestra la página pública con  Login  y  Sign Up Free ; la sesión queda cerrada y los marcadores siguen separados por cuenta.
+													805 cell
+														806 text Manual
+													807 cell
+														808 image Delete step
+													809 cell
+														810 image Insert step
+											811 button Create step
+											812 button Resequence Steps
+										813 container
+											814 text Status : 
+											815 pop up button Draft
+												816 (selected) Draft
+											817 text Importance : 
+											818 pop up button High
+												819 (selected) High
+											820 text Execution type : 
+											821 pop up button Manual
+												822 (selected) Manual
+											823 checkbox 0
+											824 text Apply To All Steps
+											825 text Estimated exec. (min) : 
+											826 text field (settable) Estimated exec. duration (min)
+											827 button Save
+										828 container
+											829 container Keywords   Create Keyword  Create & Link 
+												830 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
+												831 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
+												832 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=362%27)
+											833 container None
+												834 text None
+										835 container
+											836 container Platforms:  
+												837 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
+												838 text :  
+											839 container None
+												840 text None
+										841 table
+											842 row
+												843 column header
+													844 text Relations
+											845 row
+												846 cell
+													847 text New relation:  This test case version 
+													848 pop up button is related to
+														849 (selected) is related to
+													850 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID
+													851 button Add
+										852 container Attached files :
+											853 text Attached files :
+										854 container
+											855 text File
+											856 button File: No file chosen
+											857 text Title/name:
+											858 text field (settable)
+											859 button Upload file
+										860 image Max. size of the file is: 1048576 Bytes)
+										861 image Filename must verify this regexp:/^[a-zA-Z0-9_-]{1,20}\.[a-zA-Z0-9]{1,10}$/
+										862 image Allowed files:doc,xls,gif,png,jpg,xlsx,csv
+							863 button
+			864 pop up button Tab search
+			865 container
+				866 tab group
+					867 tab (selected, settable, boolean) TestLink 1.9.20 [DEV] - Memory usage - 303 MB, Value: on
+						868 button Close
+					869 tab (settable, boolean) Value: off, [PEB-74] T10 — Analizar, diseñar y registrar pruebas de perfil y recuperación de acceso - Jira - Memory usage - 477 MB
+						870 button Close
+			871 button New Tab
+			872 button Open Gemini in Chrome
+		873 text javascript:ET(325)
+	874 close button
+	875 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	876 minimize button
+877 menu bar
+	878 Chrome
+	879 File
+	880 Edit
+	881 View
+	882 History
+	883 Bookmarks
+	884 Profiles
+	885 Tab
+	886 Window
+	887 Help
+
+The focused UI element is 146 link TL-82:T09-12. Cambio de cuenta entre A y B muestra solo los datos propios de cada una, Value: javascript:ET(361)
