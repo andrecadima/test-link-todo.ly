@@ -1,0 +1,583 @@
+{
+  "procedencia": "Reconstrucción desde XML-RPC (no exportación nativa)",
+  "url_api": "http://68.211.149.112/lib/api/xmlrpc/v1/xmlrpc.php",
+  "metodos": [
+    "tl.checkDevKey",
+    "tl.getProjects",
+    "tl.getTestCase",
+    "tl.getTestCasesForTestSuite",
+    "tl.getTestSuiteByID",
+    "tl.getTestSuitesForTestSuite"
+  ],
+  "fecha_utc": "2026-11-18T21:39:30+00:00",
+  "proyecto_id": 1,
+  "prefijo": "TL",
+  "suite_id": 3,
+  "suites": 1,
+  "casos_total": 93,
+  "casos_propios": 29,
+  "casos_propios_esperados": 29,
+  "diferencias": [],
+  "archivo": "testlink-xml/todo-ly-tests.xml",
+  "sha256": "f17141163f48abf8ed6de3304fbb52c39b70e77f33b2197cbd26727d0ece93eb",
+  "casos": [
+    {
+      "internalid": 83,
+      "externalid": "TL-40",
+      "version": 1,
+      "pasos": 13
+    },
+    {
+      "internalid": 85,
+      "externalid": "TL-2",
+      "version": 1,
+      "pasos": 11
+    },
+    {
+      "internalid": 87,
+      "externalid": "TL-3",
+      "version": 1,
+      "pasos": 11
+    },
+    {
+      "internalid": 89,
+      "externalid": "TL-4",
+      "version": 1,
+      "pasos": 11
+    },
+    {
+      "internalid": 91,
+      "externalid": "TL-5",
+      "version": 1,
+      "pasos": 14
+    },
+    {
+      "internalid": 93,
+      "externalid": "TL-6",
+      "version": 1,
+      "pasos": 14
+    },
+    {
+      "internalid": 95,
+      "externalid": "TL-7",
+      "version": 1,
+      "pasos": 11
+    },
+    {
+      "internalid": 97,
+      "externalid": "TL-8",
+      "version": 1,
+      "pasos": 17
+    },
+    {
+      "internalid": 99,
+      "externalid": "TL-9",
+      "version": 1,
+      "pasos": 15
+    },
+    {
+      "internalid": 101,
+      "externalid": "TL-10",
+      "version": 1,
+      "pasos": 11
+    },
+    {
+      "internalid": 103,
+      "externalid": "TL-11",
+      "version": 1,
+      "pasos": 12
+    },
+    {
+      "internalid": 105,
+      "externalid": "TL-12",
+      "version": 1,
+      "pasos": 15
+    },
+    {
+      "internalid": 107,
+      "externalid": "TL-13",
+      "version": 1,
+      "pasos": 10
+    },
+    {
+      "internalid": 109,
+      "externalid": "TL-14",
+      "version": 1,
+      "pasos": 16
+    },
+    {
+      "internalid": 111,
+      "externalid": "TL-15",
+      "version": 1,
+      "pasos": 8
+    },
+    {
+      "internalid": 113,
+      "externalid": "TL-16",
+      "version": 1,
+      "pasos": 8
+    },
+    {
+      "internalid": 115,
+      "externalid": "TL-17",
+      "version": 1,
+      "pasos": 10
+    },
+    {
+      "internalid": 117,
+      "externalid": "TL-18",
+      "version": 1,
+      "pasos": 10
+    },
+    {
+      "internalid": 119,
+      "externalid": "TL-19",
+      "version": 1,
+      "pasos": 10
+    },
+    {
+      "internalid": 121,
+      "externalid": "TL-20",
+      "version": 1,
+      "pasos": 14
+    },
+    {
+      "internalid": 123,
+      "externalid": "TL-21",
+      "version": 1,
+      "pasos": 9
+    },
+    {
+      "internalid": 125,
+      "externalid": "TL-22",
+      "version": 1,
+      "pasos": 9
+    },
+    {
+      "internalid": 127,
+      "externalid": "TL-23",
+      "version": 1,
+      "pasos": 16
+    },
+    {
+      "internalid": 129,
+      "externalid": "TL-24",
+      "version": 1,
+      "pasos": 19
+    },
+    {
+      "internalid": 131,
+      "externalid": "TL-25",
+      "version": 1,
+      "pasos": 9
+    },
+    {
+      "internalid": 133,
+      "externalid": "TL-26",
+      "version": 1,
+      "pasos": 18
+    },
+    {
+      "internalid": 135,
+      "externalid": "TL-27",
+      "version": 1,
+      "pasos": 22
+    },
+    {
+      "internalid": 137,
+      "externalid": "TL-28",
+      "version": 1,
+      "pasos": 9
+    },
+    {
+      "internalid": 139,
+      "externalid": "TL-29",
+      "version": 1,
+      "pasos": 9
+    },
+    {
+      "internalid": 141,
+      "externalid": "TL-30",
+      "version": 1,
+      "pasos": 7
+    },
+    {
+      "internalid": 143,
+      "externalid": "TL-31",
+      "version": 1,
+      "pasos": 5
+    },
+    {
+      "internalid": 145,
+      "externalid": "TL-32",
+      "version": 1,
+      "pasos": 10
+    },
+    {
+      "internalid": 147,
+      "externalid": "TL-33",
+      "version": 1,
+      "pasos": 6
+    },
+    {
+      "internalid": 149,
+      "externalid": "TL-34",
+      "version": 1,
+      "pasos": 6
+    },
+    {
+      "internalid": 151,
+      "externalid": "TL-35",
+      "version": 1,
+      "pasos": 9
+    },
+    {
+      "internalid": 153,
+      "externalid": "TL-36",
+      "version": 1,
+      "pasos": 8
+    },
+    {
+      "internalid": 155,
+      "externalid": "TL-37",
+      "version": 1,
+      "pasos": 8
+    },
+    {
+      "internalid": 157,
+      "externalid": "TL-38",
+      "version": 1,
+      "pasos": 7
+    },
+    {
+      "internalid": 159,
+      "externalid": "TL-39",
+      "version": 1,
+      "pasos": 22
+    },
+    {
+      "internalid": 161,
+      "externalid": "TL-41",
+      "version": 1,
+      "pasos": 5
+    },
+    {
+      "internalid": 163,
+      "externalid": "TL-42",
+      "version": 1,
+      "pasos": 5
+    },
+    {
+      "internalid": 165,
+      "externalid": "TL-43",
+      "version": 1,
+      "pasos": 7
+    },
+    {
+      "internalid": 167,
+      "externalid": "TL-44",
+      "version": 1,
+      "pasos": 11
+    },
+    {
+      "internalid": 169,
+      "externalid": "TL-45",
+      "version": 1,
+      "pasos": 7
+    },
+    {
+      "internalid": 171,
+      "externalid": "TL-46",
+      "version": 1,
+      "pasos": 7
+    },
+    {
+      "internalid": 173,
+      "externalid": "TL-47",
+      "version": 1,
+      "pasos": 12
+    },
+    {
+      "internalid": 175,
+      "externalid": "TL-48",
+      "version": 1,
+      "pasos": 7
+    },
+    {
+      "internalid": 177,
+      "externalid": "TL-49",
+      "version": 1,
+      "pasos": 8
+    },
+    {
+      "internalid": 179,
+      "externalid": "TL-50",
+      "version": 1,
+      "pasos": 10
+    },
+    {
+      "internalid": 181,
+      "externalid": "TL-51",
+      "version": 1,
+      "pasos": 9
+    },
+    {
+      "internalid": 183,
+      "externalid": "TL-52",
+      "version": 1,
+      "pasos": 15
+    },
+    {
+      "internalid": 185,
+      "externalid": "TL-53",
+      "version": 1,
+      "pasos": 15
+    },
+    {
+      "internalid": 187,
+      "externalid": "TL-54",
+      "version": 1,
+      "pasos": 13
+    },
+    {
+      "internalid": 189,
+      "externalid": "TL-55",
+      "version": 1,
+      "pasos": 11
+    },
+    {
+      "internalid": 191,
+      "externalid": "TL-56",
+      "version": 1,
+      "pasos": 14
+    },
+    {
+      "internalid": 193,
+      "externalid": "TL-57",
+      "version": 1,
+      "pasos": 10
+    },
+    {
+      "internalid": 195,
+      "externalid": "TL-58",
+      "version": 1,
+      "pasos": 18
+    },
+    {
+      "internalid": 197,
+      "externalid": "TL-59",
+      "version": 1,
+      "pasos": 9
+    },
+    {
+      "internalid": 199,
+      "externalid": "TL-60",
+      "version": 1,
+      "pasos": 12
+    },
+    {
+      "internalid": 201,
+      "externalid": "TL-61",
+      "version": 1,
+      "pasos": 16
+    },
+    {
+      "internalid": 203,
+      "externalid": "TL-62",
+      "version": 1,
+      "pasos": 12
+    },
+    {
+      "internalid": 205,
+      "externalid": "TL-63",
+      "version": 1,
+      "pasos": 14
+    },
+    {
+      "internalid": 207,
+      "externalid": "TL-64",
+      "version": 1,
+      "pasos": 16
+    },
+    {
+      "internalid": 209,
+      "externalid": "TL-65",
+      "version": 1,
+      "pasos": 16
+    },
+    {
+      "internalid": 211,
+      "externalid": "TL-66",
+      "version": 1,
+      "pasos": 5
+    },
+    {
+      "internalid": 217,
+      "externalid": "TL-67",
+      "version": 1,
+      "pasos": 8
+    },
+    {
+      "internalid": 225,
+      "externalid": "TL-68",
+      "version": 1,
+      "pasos": 7
+    },
+    {
+      "internalid": 232,
+      "externalid": "TL-69",
+      "version": 1,
+      "pasos": 11
+    },
+    {
+      "internalid": 241,
+      "externalid": "TL-70",
+      "version": 1,
+      "pasos": 4
+    },
+    {
+      "internalid": 246,
+      "externalid": "TL-71",
+      "version": 1,
+      "pasos": 4
+    },
+    {
+      "internalid": 251,
+      "externalid": "TL-72",
+      "version": 1,
+      "pasos": 10
+    },
+    {
+      "internalid": 263,
+      "externalid": "TL-73",
+      "version": 1,
+      "pasos": 17
+    },
+    {
+      "internalid": 282,
+      "externalid": "TL-74",
+      "version": 1,
+      "pasos": 10
+    },
+    {
+      "internalid": 294,
+      "externalid": "TL-75",
+      "version": 1,
+      "pasos": 12
+    },
+    {
+      "internalid": 308,
+      "externalid": "TL-76",
+      "version": 1,
+      "pasos": 6
+    },
+    {
+      "internalid": 316,
+      "externalid": "TL-77",
+      "version": 1,
+      "pasos": 7
+    },
+    {
+      "internalid": 325,
+      "externalid": "TL-78",
+      "version": 1,
+      "pasos": 7
+    },
+    {
+      "internalid": 334,
+      "externalid": "TL-79",
+      "version": 1,
+      "pasos": 7
+    },
+    {
+      "internalid": 343,
+      "externalid": "TL-80",
+      "version": 1,
+      "pasos": 7
+    },
+    {
+      "internalid": 352,
+      "externalid": "TL-81",
+      "version": 1,
+      "pasos": 7
+    },
+    {
+      "internalid": 361,
+      "externalid": "TL-82",
+      "version": 1,
+      "pasos": 41
+    },
+    {
+      "internalid": 404,
+      "externalid": "TL-83",
+      "version": 1,
+      "pasos": 17
+    },
+    {
+      "internalid": 423,
+      "externalid": "TL-84",
+      "version": 1,
+      "pasos": 23
+    },
+    {
+      "internalid": 969,
+      "externalid": "TL-85",
+      "version": 1,
+      "pasos": 18
+    },
+    {
+      "internalid": 989,
+      "externalid": "TL-86",
+      "version": 1,
+      "pasos": 23
+    },
+    {
+      "internalid": 1014,
+      "externalid": "TL-87",
+      "version": 1,
+      "pasos": 10
+    },
+    {
+      "internalid": 1026,
+      "externalid": "TL-88",
+      "version": 1,
+      "pasos": 7
+    },
+    {
+      "internalid": 1035,
+      "externalid": "TL-89",
+      "version": 1,
+      "pasos": 11
+    },
+    {
+      "internalid": 1048,
+      "externalid": "TL-90",
+      "version": 1,
+      "pasos": 11
+    },
+    {
+      "internalid": 1061,
+      "externalid": "TL-91",
+      "version": 1,
+      "pasos": 14
+    },
+    {
+      "internalid": 1077,
+      "externalid": "TL-92",
+      "version": 1,
+      "pasos": 16
+    },
+    {
+      "internalid": 1095,
+      "externalid": "TL-93",
+      "version": 1,
+      "pasos": 12
+    },
+    {
+      "internalid": 1340,
+      "externalid": "TL-94",
+      "version": 1,
+      "pasos": 6
+    }
+  ]
+}

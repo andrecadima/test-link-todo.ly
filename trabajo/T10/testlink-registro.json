@@ -123,5 +123,5 @@
     }
   ],
   "verificacion_campos": "Se abrieron y compararon los seis casos: sin diferencias en título, Summary, Preconditions, pasos/resultados, Importance y Manual. No es ejecución de Todo.ly.",
-  "exportacion_real": "pendiente"
+  "exportacion_real": "testlink-xml/T10.xml (extraído de suite final API, 18/11/2026)"
 }

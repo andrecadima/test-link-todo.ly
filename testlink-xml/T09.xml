@@ -1,0 +1,1210 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testcases><testcase internalid="251" name="T09-01 - Signup con campos vacíos y términos sin aceptar rechaza el envío">
+    <node_order>1</node_order>
+    <externalid>72</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que Signup rechaza el envío con Full Name, Email y Password vacíos y la casilla de términos sin marcar, mostrando las señales de omisión observadas, sin aislar como reglas independientes las condiciones concurrentes.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. Signup informa las omisiones observadas y no concede acceso.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin cuenta nueva ni sesión; evidencia de la combinación vacía, sin atribuir obligatoriedad del servidor a Timezone.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>2</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en Chrome.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública de Todo.ly con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre el formulario &lt;strong&gt;Signup&lt;/strong&gt; con &lt;strong&gt;Full Name&lt;/strong&gt;, &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, &lt;strong&gt;Timezone&lt;/strong&gt;, la casilla de términos y el botón &lt;strong&gt;Signup&lt;/strong&gt; (nombre accesible Submit).&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Vaciar el campo &lt;strong&gt;Full Name&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Full Name&lt;/strong&gt; queda vacío.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Vaciar el campo &lt;strong&gt;Email&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; queda vacío.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Vaciar el campo &lt;strong&gt;Password&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; queda vacío.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Leer la selección inicial de &lt;strong&gt;Timezone&lt;/strong&gt; sin cambiarla.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Timezone&lt;/strong&gt; conserva su valor inicial del formulario.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Dejar sin marcar la casilla de términos.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La casilla de términos está sin marcar.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en el botón &lt;strong&gt;Signup&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;No se completa el registro; se muestran asteriscos junto a &lt;strong&gt;Full Name&lt;/strong&gt;, &lt;strong&gt;Email&lt;/strong&gt; y &lt;strong&gt;Password&lt;/strong&gt; y el aviso &lt;strong&gt;If you don’t agree you can’t use Todo.ly&lt;/strong&gt; junto a los términos sin marcar. Puede aparecer brevemente &lt;strong&gt;Error. Please correct the missing fields.&lt;/strong&gt;, identificado por accesibilidad; no se exige ese aviso transitorio en la captura.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Tomar una captura del formulario &lt;strong&gt;Signup&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra los asteriscos y el aviso &lt;strong&gt;If you don’t agree you can’t use Todo.ly&lt;/strong&gt;, sin datos personales.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en la barra de direcciones, sin completar el registro.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;; la sesión continúa cerrada y no aparece el área de proyectos de una cuenta.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="263" name="T09-02 - Signup con el correo de una cuenta existente muestra error de duplicado">
+    <node_order>2</node_order>
+    <externalid>73</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que Signup rechaza el correo de una cuenta de prueba ya registrada con el aviso de duplicado y que la cuenta A conserva su nombre original, usando exclusivamente una cuenta propia de prueba.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. Signup rechaza un correo ya registrado sin sustituir la cuenta existente.&lt;/p&gt;&lt;p&gt;Postcondiciones: A conserva sus datos y credenciales; no se crea otra cuenta. Evidencia del rechazo sin contraseñas. Sesión iniciada en A, con &lt;strong&gt;Profile&lt;/strong&gt; abierto.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.&lt;/li&gt;&lt;li&gt;Contraseña de prueba para el intento de Signup, distinta de la vigente de A y consignada en el registro privado de credenciales.&lt;/li&gt;&lt;li&gt;Aceptación de los términos de Todo.ly autorizada para las cuentas de prueba.&lt;/li&gt;&lt;li&gt;Nombres de perfil de A consignados en el registro privado de referencia.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en Chrome.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre el formulario &lt;strong&gt;Signup&lt;/strong&gt; con &lt;strong&gt;Full Name&lt;/strong&gt;, &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, &lt;strong&gt;Timezone&lt;/strong&gt;, la casilla de términos y el botón &lt;strong&gt;Signup&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba T09-02 - duplicado&lt;/strong&gt; en el campo &lt;strong&gt;Full Name&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Full Name&lt;/strong&gt; muestra &lt;strong&gt;Prueba T09-02 - duplicado&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Escribir en el campo &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta A, tomado del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de la cuenta de prueba A existente.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Escribir en el campo &lt;strong&gt;Password&lt;/strong&gt; la contraseña de prueba para Signup del registro privado, distinta de la vigente de A.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; contiene el valor introducido.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;(UTC-04:00) Georgetown, La Paz, Manaus, San Juan&lt;/strong&gt; en &lt;strong&gt;Timezone&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Timezone&lt;/strong&gt; muestra &lt;strong&gt;(UTC-04:00) Georgetown, La Paz, Manaus, San Juan&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Marcar la casilla de términos del formulario &lt;strong&gt;Signup&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La casilla de términos queda marcada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en el botón &lt;strong&gt;Signup&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Aparece &lt;strong&gt;Error. Account with this email address already exists!&lt;/strong&gt;; no se inicia sesión en una cuenta nueva: no aparecen &lt;strong&gt;Settings&lt;/strong&gt; ni &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en la barra de direcciones.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;, sin sesión iniciada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso con &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; y el botón &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>11</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>12</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Password&lt;/strong&gt; la contraseña vigente de A del registro privado, la misma vigente antes del intento de Signup.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>13</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra el área autenticada con &lt;strong&gt;Settings&lt;/strong&gt; y &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>14</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>15</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;Profile&lt;/strong&gt; en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Profile&lt;/strong&gt; muestra &lt;strong&gt;Full Name&lt;/strong&gt; y &lt;strong&gt;Email&lt;/strong&gt; de la cuenta con sesión iniciada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>16</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Full Name&lt;/strong&gt; con el nombre de perfil de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Full Name&lt;/strong&gt; conserva el nombre inicial de A y no muestra &lt;strong&gt;Prueba T09-02 - duplicado&lt;/strong&gt;, según el criterio del equipo de conservación de identidad.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>17</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Email&lt;/strong&gt; con el correo de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; coincide con el correo de A del registro privado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="282" name="T09-03 - Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada">
+    <node_order>3</node_order>
+    <externalid>74</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que el campo Timezone de Signup muestra su valor inicial, ofrece la opción de La Paz UTC-04 distinta de la opción mexicana UTC-07, sin una entrada vacía, y refleja la opción seleccionada, sin crear cuenta ni evaluar vencimientos.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. Signup ofrece selección de zona y refleja la opción elegida en el formulario.&lt;/p&gt;&lt;p&gt;Postcondiciones: Formulario descartado sin registro. No se concluye validación de servidor para un Timezone vacío que la interfaz no permite seleccionar.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>2</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en Chrome.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre el formulario &lt;strong&gt;Signup&lt;/strong&gt; con el campo &lt;strong&gt;Timezone&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Leer el valor inicial de &lt;strong&gt;Timezone&lt;/strong&gt; sin desplegarlo.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El selector muestra la opción Pacific UTC-08; la captura de referencia deja visible &lt;strong&gt;(UTC-08:00) Pacific Time (US &amp;amp; Cana…&lt;/strong&gt; con el texto recortado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Hacer clic en el selector &lt;strong&gt;Timezone&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega la lista de zonas horarias.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Recorrer la lista completa de &lt;strong&gt;Timezone&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La lista no ofrece una entrada vacía.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Anotar el número de opciones de &lt;strong&gt;Timezone&lt;/strong&gt; en el registro de ejecución.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El inventario queda registrado; el inventario de referencia contiene 101 opciones, sin tratarlo como límite del producto.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Localizar &lt;strong&gt;(UTC-04:00) Georgetown, La Paz, Manaus, San Juan&lt;/strong&gt; en la lista.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Aparece la opción correspondiente a La Paz UTC-04.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Localizar &lt;strong&gt;(UTC-07:00) Chihuahua, La Paz, Mazatlan&lt;/strong&gt; en la lista.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La opción UTC-07 aparece como entrada distinta de La Paz UTC-04.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;(UTC-04:00) Georgetown, La Paz, Manaus, San Juan&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El selector &lt;strong&gt;Timezone&lt;/strong&gt; muestra exactamente &lt;strong&gt;(UTC-04:00) Georgetown, La Paz, Manaus, San Juan&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en la barra de direcciones, sin hacer clic en &lt;strong&gt;Signup&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública sin registro completado ni sesión iniciada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="294" name="T09-04 - Login con credenciales vigentes de A abre la sesión de la cuenta A">
+    <node_order>4</node_order>
+    <externalid>75</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que Login con el correo y la contraseña vigentes de A concede acceso a la identidad de A, comprobada en Profile.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. Credenciales vigentes que corresponden a una cuenta permiten acceso a esa identidad.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sesión cerrada y datos de A sin cambios; evidencia de identidad sin secretos.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.&lt;/li&gt;&lt;li&gt;Nombres de perfil de A consignados en el registro privado de referencia.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en Chrome.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso con &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; y el botón &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Password&lt;/strong&gt; la contraseña vigente de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Dejar desmarcada la casilla &lt;strong&gt;Remember Me&lt;/strong&gt;; si aparece marcada, hacer clic en ella una vez.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Remember Me&lt;/strong&gt; está desmarcada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra el área autenticada con &lt;strong&gt;Settings&lt;/strong&gt; y &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;Profile&lt;/strong&gt; en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Profile&lt;/strong&gt; muestra &lt;strong&gt;Full Name&lt;/strong&gt; y &lt;strong&gt;Email&lt;/strong&gt; de la cuenta con sesión iniciada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Full Name&lt;/strong&gt; con el nombre de perfil de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Full Name&lt;/strong&gt; coincide con el nombre de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Email&lt;/strong&gt; con el correo de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; coincide con el correo de A del registro privado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>11</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Cancel&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se cierra &lt;strong&gt;Settings&lt;/strong&gt; sin guardar cambios y vuelve a verse el área de proyectos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>12</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;, con la sesión cerrada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="308" name="T09-05 - Login con Email y Password vacíos no concede acceso">
+    <node_order>5</node_order>
+    <externalid>76</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que Login con Email y Password vacíos no concede acceso, en un único intento negativo.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. La combinación negativa R1 de la tabla de decisión no concede acceso.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en Chrome.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso con &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; y el botón &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Revisar los campos sin escribir datos y sin cambiar la casilla &lt;strong&gt;Remember Me&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; y &lt;strong&gt;Password&lt;/strong&gt; están vacíos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;No se concede acceso: el formulario de acceso con &lt;strong&gt;Login&lt;/strong&gt; sigue disponible y no aparecen &lt;strong&gt;Settings&lt;/strong&gt;, &lt;strong&gt;Logout&lt;/strong&gt; ni datos de proyectos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Tomar una captura de la pantalla resultante.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra el formulario de acceso sin sesión iniciada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en la barra de direcciones, sin escribir credenciales.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública; la sesión sigue cerrada y no se exponen datos de A o B.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="316" name="T09-06 - Login con Email vacío y Password informado muestra error y no da acceso">
+    <node_order>6</node_order>
+    <externalid>77</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que Login con Email vacío y un Password de prueba no concede acceso y muestra el aviso genérico de credenciales incorrectas, en un único intento negativo.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. La combinación negativa R2 de la tabla de decisión no concede acceso.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en Chrome.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso con &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; y el botón &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Revisar el campo &lt;strong&gt;Email&lt;/strong&gt; sin escribir datos y sin cambiar la casilla &lt;strong&gt;Remember Me&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; está vacío.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba-T09-no-valida-17&lt;/strong&gt; en el campo &lt;strong&gt;Password&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;No se concede acceso y se muestra &lt;strong&gt;Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.&lt;/strong&gt;&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Tomar una captura del aviso y del formulario.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra el aviso y el formulario de acceso, sin contraseña legible.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en la barra de direcciones, sin escribir credenciales.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública; la sesión sigue cerrada y no se exponen datos de A o B.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="325" name="T09-07 - Login de A con Password vacío muestra error y no concede acceso">
+    <node_order>7</node_order>
+    <externalid>78</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que Login con el correo de A y Password vacío no concede acceso y muestra el aviso genérico de credenciales incorrectas, en un único intento negativo.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. La combinación negativa R3 de la tabla de decisión no concede acceso.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.&lt;/li&gt;&lt;li&gt;Cuenta A con menos de tres intentos fallidos de Login en la sesión de trabajo, según criterio operativo del equipo (no es una política de Todo.ly).&lt;/li&gt;&lt;li&gt;Contraseña vigente de A distinta de &lt;strong&gt;Prueba-T09-no-valida-17&lt;/strong&gt;.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en Chrome.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso con &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; y el botón &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta A del registro privado, sin cambiar la casilla &lt;strong&gt;Remember Me&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Revisar el campo &lt;strong&gt;Password&lt;/strong&gt; sin escribir datos.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; está vacío.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;No se concede acceso y se muestra &lt;strong&gt;Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.&lt;/strong&gt;&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Tomar una captura del aviso y del formulario.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra el aviso y el formulario de acceso, sin contraseña legible.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en la barra de direcciones, sin escribir credenciales.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública; la sesión sigue cerrada y no se exponen datos de A o B.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="334" name="T09-09 - Login con un correo no registrado muestra error y no concede acceso">
+    <node_order>8</node_order>
+    <externalid>79</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que Login con un correo sin cuenta asociada y un Password de prueba no concede acceso y muestra el aviso genérico de credenciales incorrectas, en un único intento negativo.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. La combinación negativa R4 de la tabla de decisión no concede acceso.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Dirección reservada &lt;strong&gt;prueba-t10-no-registrada-20261117@example.com&lt;/strong&gt; sin cuenta asociada en Todo.ly, según el contraste de recuperación de PEB-74 / T10.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en Chrome.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso con &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; y el botón &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;prueba-t10-no-registrada-20261117@example.com&lt;/strong&gt; en el campo &lt;strong&gt;Email&lt;/strong&gt;, sin cambiar la casilla &lt;strong&gt;Remember Me&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra &lt;strong&gt;prueba-t10-no-registrada-20261117@example.com&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba-T09-no-valida-17&lt;/strong&gt; en el campo &lt;strong&gt;Password&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;No se concede acceso y se muestra &lt;strong&gt;Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.&lt;/strong&gt;&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Tomar una captura del aviso y del formulario.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra el aviso y el formulario de acceso, sin contraseña legible.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en la barra de direcciones, sin escribir credenciales.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública; la sesión sigue cerrada y no se exponen datos de A o B.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="343" name="T09-10 - Login de A con contraseña incorrecta muestra error y no concede acceso">
+    <node_order>9</node_order>
+    <externalid>80</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que Login con el correo de A y una contraseña que no le corresponde no concede acceso y muestra el aviso genérico de credenciales incorrectas, en un único intento negativo.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. La combinación negativa R5 de la tabla de decisión no concede acceso.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.&lt;/li&gt;&lt;li&gt;Cuenta A con menos de tres intentos fallidos de Login en la sesión de trabajo, según criterio operativo del equipo (no es una política de Todo.ly).&lt;/li&gt;&lt;li&gt;Contraseña vigente de A distinta de &lt;strong&gt;Prueba-T09-no-valida-17&lt;/strong&gt;.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en Chrome.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso con &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; y el botón &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta A del registro privado, sin cambiar la casilla &lt;strong&gt;Remember Me&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba-T09-no-valida-17&lt;/strong&gt; en el campo &lt;strong&gt;Password&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;No se concede acceso y se muestra &lt;strong&gt;Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.&lt;/strong&gt;&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Tomar una captura del aviso y del formulario.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra el aviso y el formulario de acceso, sin contraseña legible.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en la barra de direcciones, sin escribir credenciales.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública; la sesión sigue cerrada y no se exponen datos de A o B.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="352" name="T09-11 - Logout impide ver los datos de A con Atrás y con la URL directa">
+    <node_order>10</node_order>
+    <externalid>81</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que, después de Logout, ni el botón Atrás de Chrome ni la URL directa https://todo.ly/ restablecen la sesión ni muestran un marcador propio de A creado como preparación.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. Logout deja sin acceso autenticado el historial y la URL previamente observada.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sesión cerrada. El marcador permanece en Home de A para la limpieza del lote; datos previos conservados. No se afirma protección de API ni de rutas que no se hayan observado.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.&lt;/li&gt;&lt;li&gt;Sesión iniciada en Todo.ly con la cuenta A, en &lt;strong&gt;https://todo.ly/&lt;/strong&gt;.&lt;/li&gt;&lt;li&gt;Proyecto &lt;strong&gt;Home&lt;/strong&gt; de A sin una tarea llamada &lt;strong&gt;Prueba T09-11 - sesión&lt;/strong&gt;.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en el panel izquierdo.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la lista de &lt;strong&gt;Home&lt;/strong&gt; de A, sin &lt;strong&gt;Prueba T09-11 - sesión&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba T09-11 - sesión&lt;/strong&gt; en el campo &lt;strong&gt;Add new Todo&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El campo &lt;strong&gt;Add new Todo&lt;/strong&gt; muestra &lt;strong&gt;Prueba T09-11 - sesión&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Add&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Prueba T09-11 - sesión&lt;/strong&gt; aparece como tarea pendiente en &lt;strong&gt;Home&lt;/strong&gt; de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;; el marcador ya no se muestra como dato autenticado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en el botón &lt;strong&gt;Back&lt;/strong&gt; (Atrás) de Chrome.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;No se restablece una sesión autenticada ni se muestra &lt;strong&gt;Prueba T09-11 - sesión&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en la barra de direcciones, sin hacer &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt;; no se muestra &lt;strong&gt;Prueba T09-11 - sesión&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Tomar una captura del estado posterior a las dos navegaciones.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura permite reconocer la ausencia de acceso autenticado, sin secretos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="361" name="T09-12 - Cambio de cuenta entre A y B muestra solo los datos propios de cada una">
+    <node_order>11</node_order>
+    <externalid>82</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que, al alternar la sesión entre A y B, cada cuenta muestra en Home su propio marcador y no el de la otra, en ambos sentidos.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. Cada cuenta muestra sus propios datos de Home después de cambiar de identidad.&lt;/p&gt;&lt;p&gt;Postcondiciones: Marcadores propios en Home de sus cuentas, pendientes de la limpieza del lote; sin proyectos compartidos ni cambios a datos de otras personas.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Dos cuentas gratuitas de prueba sin proyectos compartidos (A y B), con correos y contraseñas vigentes consignados en el registro privado de credenciales y proyecto &lt;strong&gt;Home&lt;/strong&gt; disponible en cada una.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Home&lt;/strong&gt; de A sin una tarea llamada &lt;strong&gt;Prueba T09-12 - marcador A&lt;/strong&gt;; &lt;strong&gt;Home&lt;/strong&gt; de B sin una tarea llamada &lt;strong&gt;Prueba T09-12 - marcador B&lt;/strong&gt;.&lt;/li&gt;&lt;li&gt;Nombres de perfil de A y B consignados en el registro privado de referencia.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en Chrome.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso con &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; y el botón &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Password&lt;/strong&gt; la contraseña vigente de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra el área autenticada con &lt;strong&gt;Settings&lt;/strong&gt; y &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;Profile&lt;/strong&gt; en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Profile&lt;/strong&gt; muestra &lt;strong&gt;Full Name&lt;/strong&gt; y &lt;strong&gt;Email&lt;/strong&gt; de la cuenta con sesión iniciada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Full Name&lt;/strong&gt; con el nombre de perfil de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Full Name&lt;/strong&gt; coincide con el nombre de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Email&lt;/strong&gt; con el correo de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; coincide con el correo de A del registro privado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Cancel&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se cierra &lt;strong&gt;Settings&lt;/strong&gt; sin guardar cambios y vuelve a verse el área de proyectos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>11</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en el panel izquierdo.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la lista de &lt;strong&gt;Home&lt;/strong&gt; de A, sin &lt;strong&gt;Prueba T09-12 - marcador A&lt;/strong&gt; ni &lt;strong&gt;Prueba T09-12 - marcador B&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>12</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba T09-12 - marcador A&lt;/strong&gt; en el campo &lt;strong&gt;Add new Todo&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El campo &lt;strong&gt;Add new Todo&lt;/strong&gt; muestra &lt;strong&gt;Prueba T09-12 - marcador A&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>13</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Add&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Prueba T09-12 - marcador A&lt;/strong&gt; aparece como tarea pendiente en &lt;strong&gt;Home&lt;/strong&gt; de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>14</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;; la sesión de A queda cerrada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>15</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>16</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de B.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>17</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Password&lt;/strong&gt; la contraseña vigente de B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>18</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra el área autenticada con &lt;strong&gt;Settings&lt;/strong&gt; y &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>19</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>20</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;Profile&lt;/strong&gt; en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Profile&lt;/strong&gt; muestra &lt;strong&gt;Full Name&lt;/strong&gt; y &lt;strong&gt;Email&lt;/strong&gt; de la cuenta con sesión iniciada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>21</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Full Name&lt;/strong&gt; con el nombre de perfil de B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Full Name&lt;/strong&gt; coincide con el nombre de B.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>22</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Email&lt;/strong&gt; con el correo de B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; coincide con el correo de B del registro privado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>23</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Cancel&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se cierra &lt;strong&gt;Settings&lt;/strong&gt; sin guardar cambios y vuelve a verse el área de proyectos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>24</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en el panel izquierdo.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la lista de &lt;strong&gt;Home&lt;/strong&gt; de B; no aparece &lt;strong&gt;Prueba T09-12 - marcador A&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>25</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba T09-12 - marcador B&lt;/strong&gt; en el campo &lt;strong&gt;Add new Todo&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El campo &lt;strong&gt;Add new Todo&lt;/strong&gt; muestra &lt;strong&gt;Prueba T09-12 - marcador B&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>26</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Add&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Prueba T09-12 - marcador B&lt;/strong&gt; aparece como tarea pendiente en &lt;strong&gt;Home&lt;/strong&gt; de B.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>27</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;; la sesión de B queda cerrada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>28</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>29</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>30</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Password&lt;/strong&gt; la contraseña vigente de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>31</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra el área autenticada con &lt;strong&gt;Settings&lt;/strong&gt; y &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>32</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en el panel izquierdo.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Home&lt;/strong&gt; de A muestra &lt;strong&gt;Prueba T09-12 - marcador A&lt;/strong&gt; y no muestra &lt;strong&gt;Prueba T09-12 - marcador B&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>33</step_number>
+        <actions>&lt;p&gt;Tomar una captura de &lt;strong&gt;Home&lt;/strong&gt; de A.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra el marcador de A sin el de B, sin secretos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>34</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;; la sesión de A queda cerrada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>35</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>36</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de B.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>37</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Password&lt;/strong&gt; la contraseña vigente de B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>38</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra el área autenticada con &lt;strong&gt;Settings&lt;/strong&gt; y &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>39</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en el panel izquierdo.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Home&lt;/strong&gt; de B muestra &lt;strong&gt;Prueba T09-12 - marcador B&lt;/strong&gt; y no muestra &lt;strong&gt;Prueba T09-12 - marcador A&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>40</step_number>
+        <actions>&lt;p&gt;Tomar una captura de &lt;strong&gt;Home&lt;/strong&gt; de B.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra el marcador de B sin el de A, sin secretos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>41</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;; la sesión queda cerrada y los marcadores siguen separados por cuenta.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="404" name="T09-13 - Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada">
+    <node_order>12</node_order>
+    <externalid>83</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que, tras Login de A con Remember Me desmarcado y el cierre de las ventanas del perfil dedicado, la reapertura de ese perfil muestra la página pública sin sesión, registrando el intervalo y sin inferir una caducidad de cookies.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. El recorrido observado sin Remember Me vuelve a la página pública al reabrir.&lt;/p&gt;&lt;p&gt;Postcondiciones: Perfil QA abierto con sesión cerrada, datos y credenciales sin cambios; intervalo y cualquier ayuda manual documentados.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.&lt;/li&gt;&lt;li&gt;Perfil dedicado de Chrome para QA, sin otras ventanas abiertas de ese perfil y disponible en el selector de perfiles de Chrome para su reapertura.&lt;/li&gt;&lt;li&gt;Configuración de Chrome sin cambios durante todo el recorrido.&lt;/li&gt;&lt;li&gt;Nombres de perfil de A consignados en el registro privado de referencia.&lt;/li&gt;&lt;li&gt;Otra ventana de Chrome de un perfil distinto abierta durante todo el recorrido.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en una ventana del perfil dedicado de Chrome.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso con &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; y el botón &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Dejar desmarcada la casilla &lt;strong&gt;Remember Me&lt;/strong&gt;; si aparece marcada, hacer clic en ella una vez.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Remember Me&lt;/strong&gt; está desmarcada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Tomar una captura de la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; antes del envío.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra &lt;strong&gt;Remember Me&lt;/strong&gt; desmarcada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Password&lt;/strong&gt; la contraseña vigente de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se inicia sesión: se muestra el área autenticada con &lt;strong&gt;Settings&lt;/strong&gt; y &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;Profile&lt;/strong&gt; en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Profile&lt;/strong&gt; muestra &lt;strong&gt;Full Name&lt;/strong&gt; y &lt;strong&gt;Email&lt;/strong&gt; de la cuenta con sesión iniciada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Full Name&lt;/strong&gt; con el nombre de perfil de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Full Name&lt;/strong&gt; coincide con el nombre de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>11</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Email&lt;/strong&gt; con el correo de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; coincide con el correo de A del registro privado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>12</step_number>
+        <actions>&lt;p&gt;Anotar la hora actual como hora de cierre.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La hora de cierre queda registrada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>13</step_number>
+        <actions>&lt;p&gt;Cerrar todas las ventanas del perfil dedicado con su botón de cierre, sin hacer clic en &lt;strong&gt;Logout&lt;/strong&gt;, sin borrar cookies y sin cerrar otros perfiles.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Las ventanas del perfil dedicado quedan cerradas; los demás perfiles de Chrome conservan sus ventanas y sesiones.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>14</step_number>
+        <actions>&lt;p&gt;Abrir de nuevo el mismo perfil dedicado desde el selector de perfiles de Chrome (menú &lt;strong&gt;Profiles&lt;/strong&gt; en macOS).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre una ventana nueva del perfil dedicado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>15</step_number>
+        <actions>&lt;p&gt;Anotar la hora actual como hora de reapertura.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Queda registrado el intervalo entre el cierre y la reapertura.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>16</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en la barra de direcciones, sin escribir credenciales.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;, sin &lt;strong&gt;Settings&lt;/strong&gt; ni &lt;strong&gt;Logout&lt;/strong&gt;, conforme al recorrido observado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>17</step_number>
+        <actions>&lt;p&gt;Tomar una captura que muestre el nombre del perfil dedicado y el estado de Todo.ly.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura identifica el perfil reabierto y la página pública sin sesión; no se usa otro perfil como prueba.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="423" name="T09-14 - Remember Me marcado: al reabrir el perfil se restaura la sesión de B">
+    <node_order>13</node_order>
+    <externalid>84</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que, tras Login de B con Remember Me marcado y el cierre de las ventanas del perfil dedicado, la reapertura de ese perfil muestra la sesión autenticada de B sin un nuevo Login, cerrando después la sesión.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. El recorrido observado con Remember Me conserva la identidad autenticada al reabrir.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sesión de B cerrada después de conservar evidencia; datos y credenciales sin cambios. El recorrido no prueba una caducidad ni el cierre completo del proceso Chrome.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba (cuenta B) con correo y contraseña vigentes consignados en el registro privado de credenciales.&lt;/li&gt;&lt;li&gt;Perfil dedicado de Chrome para QA, sin otras ventanas abiertas de ese perfil y disponible en el selector de perfiles de Chrome para su reapertura.&lt;/li&gt;&lt;li&gt;Configuración de Chrome sin cambios durante todo el recorrido.&lt;/li&gt;&lt;li&gt;Nombres de perfil de B consignados en el registro privado de referencia.&lt;/li&gt;&lt;li&gt;Otra ventana de Chrome de un perfil distinto abierta durante todo el recorrido.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en una ventana del perfil dedicado de Chrome.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso con &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; y el botón &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Dejar marcada la casilla &lt;strong&gt;Remember Me&lt;/strong&gt;; si aparece desmarcada, hacer clic en ella una vez.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Remember Me&lt;/strong&gt; está marcada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Tomar una captura de la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; antes del envío.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra &lt;strong&gt;Remember Me&lt;/strong&gt; marcada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de B.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Password&lt;/strong&gt; la contraseña vigente de B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se inicia sesión: se muestra el área autenticada con &lt;strong&gt;Settings&lt;/strong&gt; y &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;Profile&lt;/strong&gt; en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Profile&lt;/strong&gt; muestra &lt;strong&gt;Full Name&lt;/strong&gt; y &lt;strong&gt;Email&lt;/strong&gt; de la cuenta con sesión iniciada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Full Name&lt;/strong&gt; con el nombre de perfil de B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Full Name&lt;/strong&gt; coincide con el nombre de B.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>11</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Email&lt;/strong&gt; con el correo de B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; coincide con el correo de B del registro privado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>12</step_number>
+        <actions>&lt;p&gt;Anotar la hora actual como hora de cierre.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La hora de cierre queda registrada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>13</step_number>
+        <actions>&lt;p&gt;Cerrar todas las ventanas del perfil dedicado con su botón de cierre, sin hacer clic en &lt;strong&gt;Logout&lt;/strong&gt;, sin borrar cookies y sin cerrar otros perfiles.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Las ventanas del perfil dedicado quedan cerradas; los demás perfiles de Chrome conservan sus ventanas y sesiones.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>14</step_number>
+        <actions>&lt;p&gt;Abrir de nuevo el mismo perfil dedicado desde el selector de perfiles de Chrome (menú &lt;strong&gt;Profiles&lt;/strong&gt; en macOS).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre una ventana nueva del perfil dedicado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>15</step_number>
+        <actions>&lt;p&gt;Anotar la hora actual como hora de reapertura.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Queda registrado el intervalo entre el cierre y la reapertura.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>16</step_number>
+        <actions>&lt;p&gt;Abrir &lt;strong&gt;https://todo.ly/&lt;/strong&gt; en la barra de direcciones, sin escribir credenciales.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra el área autenticada con &lt;strong&gt;Settings&lt;/strong&gt; y &lt;strong&gt;Logout&lt;/strong&gt;, sin un nuevo envío de &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>17</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>18</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;Profile&lt;/strong&gt; en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Profile&lt;/strong&gt; muestra &lt;strong&gt;Full Name&lt;/strong&gt; y &lt;strong&gt;Email&lt;/strong&gt; de la cuenta con sesión restaurada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>19</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Full Name&lt;/strong&gt; con el nombre de perfil de B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Full Name&lt;/strong&gt; coincide con el nombre de B.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>20</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Email&lt;/strong&gt; con el correo de B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; coincide con el correo de B del registro privado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>21</step_number>
+        <actions>&lt;p&gt;Tomar una captura del área autenticada restaurada.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra el perfil dedicado con la sesión autenticada, sin contraseñas.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>22</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Cancel&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se cierra &lt;strong&gt;Settings&lt;/strong&gt; sin guardar cambios y vuelve a verse el área de proyectos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>23</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;; la sesión queda cerrada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  </testcases>

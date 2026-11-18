@@ -1,0 +1,562 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testcases><testcase internalid="1026" name="T11-01 - Add New Project con nombre nuevo crea un proyecto raíz vacío que persiste tras F5">
+    <node_order>1</node_order>
+    <externalid>88</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que Add New Project con un nombre nuevo crea una sola entrada raíz al final de Projects, que al seleccionarla muestra un proyecto vacío y que tras F5 conserva nombre, ubicación y contenido sin alterar los proyectos iniciales.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-75 / T11. Add New Project crea una sola entrada raíz que puede seleccionarse vacía y se conserva tras recarga.&lt;/p&gt;&lt;p&gt;Postcondiciones: Proyecto raíz vacío Prueba T11-01 - proyecto vacío conservado en A para la limpieza final del lote; proyectos iniciales sin cambios. Evidencia de la consulta posterior a F5.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).&lt;/li&gt;&lt;li&gt;Lista inicial de &lt;strong&gt;Projects&lt;/strong&gt; de A consignada en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Ausencia de proyectos con el nombre &lt;strong&gt;Prueba T11-01 - proyecto vacío&lt;/strong&gt;.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Add New Project&lt;/strong&gt;, debajo de la lista de &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Aparecen un campo de nombre y el botón &lt;strong&gt;Add&lt;/strong&gt; debajo de la lista de &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba T11-01 - proyecto vacío&lt;/strong&gt; en el campo de nombre.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El campo muestra &lt;strong&gt;Prueba T11-01 - proyecto vacío&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en &lt;strong&gt;Add&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Sin recargar, al terminar la operación &lt;strong&gt;Projects&lt;/strong&gt; muestra una sola entrada nueva que comienza por &lt;strong&gt;Prueba T11-01&lt;/strong&gt; al final de la lista raíz; el panel puede abreviar el nombre con «…» y los proyectos iniciales permanecen. La vista abandona &lt;strong&gt;Loading&lt;/strong&gt; según el criterio de actualización visual del equipo; una entrada visible únicamente tras recarga no satisface este paso.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Hacer clic en la entrada nueva en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La entrada queda resaltada y el área principal muestra el título &lt;strong&gt;Prueba T11-01 - proyecto vacío&lt;/strong&gt;, el texto &lt;strong&gt;There are no items to display&lt;/strong&gt; y &lt;strong&gt;0 Done Items&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Presionar &lt;strong&gt;F5&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La página se recarga y &lt;strong&gt;Projects&lt;/strong&gt; muestra la entrada una sola vez en la raíz, sin sangría bajo otro proyecto; los proyectos iniciales del registro permanecen.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Hacer clic en la entrada &lt;strong&gt;Prueba T11-01 - proyecto vacío&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Prueba T11-01 - proyecto vacío&lt;/strong&gt;, &lt;strong&gt;There are no items to display&lt;/strong&gt; y &lt;strong&gt;0 Done Items&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Tomar una captura de &lt;strong&gt;Projects&lt;/strong&gt; y del proyecto seleccionado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra la entrada raíz única y el proyecto vacío, sin datos personales.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="1340" name="T11-07 - Subproyecto movido a raíz entre Study y Personal conserva ubicación y tarea">
+    <node_order>1</node_order>
+    <externalid>94</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que un subproyecto temporal arrastrado a la raíz entre Study y Personal aparece una sola vez en esa posición y conserva su nombre y tarea pendiente tras F5.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-75 / T11. Retorno de un subproyecto a raíz entre Study y Personal y ubicación tras F5 respaldados por el reporte manual; conservación de la tarea como criterio del equipo.&lt;/p&gt;&lt;p&gt;Postcondiciones: Proyecto temporal Prueba T11-07 - retorno en la raíz entre Study y Personal, con su tarea pendiente, conservado para la limpieza final del lote; proyectos y tareas iniciales sin cambios.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).&lt;/li&gt;&lt;li&gt;Lista inicial de &lt;strong&gt;Projects&lt;/strong&gt; de A consignada en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Subproyecto temporal &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; debajo de &lt;strong&gt;Home&lt;/strong&gt;, con la tarea pendiente &lt;strong&gt;Prueba T11-07 - dato del retorno&lt;/strong&gt;.&lt;/li&gt;&lt;li&gt;Tareas pendientes iniciales de &lt;strong&gt;Home&lt;/strong&gt; consignadas en el registro de ejecución.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Home&lt;/strong&gt;, &lt;strong&gt;Study&lt;/strong&gt; y &lt;strong&gt;Personal&lt;/strong&gt; como proyectos raíz de A, con &lt;strong&gt;Study&lt;/strong&gt; inmediatamente antes de &lt;strong&gt;Personal&lt;/strong&gt;; &lt;strong&gt;Home&lt;/strong&gt; desplegado en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Arrastrar el asa de puntos de &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; desde debajo de &lt;strong&gt;Home&lt;/strong&gt; y soltarla entre las entradas raíz &lt;strong&gt;Study&lt;/strong&gt; y &lt;strong&gt;Personal&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; aparece una sola vez en la raíz, entre &lt;strong&gt;Study&lt;/strong&gt; y &lt;strong&gt;Personal&lt;/strong&gt;, alineado con ellos y sin sangría bajo &lt;strong&gt;Home&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Presionar &lt;strong&gt;F5&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La lista &lt;strong&gt;Projects&lt;/strong&gt; conserva &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; una sola vez en la raíz, entre &lt;strong&gt;Study&lt;/strong&gt; y &lt;strong&gt;Personal&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; y &lt;strong&gt;Prueba T11-07 - dato del retorno&lt;/strong&gt; una sola vez, con su checkbox sin marcar.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra &lt;strong&gt;Home&lt;/strong&gt; con sus tareas iniciales del registro; &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; permanece en la raíz del árbol y no como hijo de &lt;strong&gt;Home&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; y &lt;strong&gt;Prueba T11-07 - dato del retorno&lt;/strong&gt; una sola vez, con su checkbox sin marcar.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Tomar una captura de &lt;strong&gt;Projects&lt;/strong&gt; y del proyecto seleccionado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura identifica el proyecto raíz entre &lt;strong&gt;Study&lt;/strong&gt; y &lt;strong&gt;Personal&lt;/strong&gt; y su tarea pendiente conservada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="1035" name="T11-02 - Edit con Save en un proyecto aplica el nombre nuevo y lo conserva tras F5">
+    <node_order>2</node_order>
+    <externalid>89</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que Edit con el icono Save aplica el nombre nuevo a un proyecto temporal y que, tras F5, Projects muestra una sola entrada con ese nombre y ninguna con el nombre anterior.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-75 / T11. Edit y Save aplican el nombre nuevo a un proyecto y, tras recarga, existe una sola entrada con ese nombre.&lt;/p&gt;&lt;p&gt;Postcondiciones: Proyecto raíz vacío Prueba T11-02 - renombrado conservado en A para la limpieza final del lote; proyectos iniciales sin cambios.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).&lt;/li&gt;&lt;li&gt;Lista inicial de &lt;strong&gt;Projects&lt;/strong&gt; de A consignada en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Ausencia de proyectos con nombres que comiencen por &lt;strong&gt;Prueba T11-02&lt;/strong&gt;.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>2</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Add New Project&lt;/strong&gt;, debajo de la lista de &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Aparecen un campo de nombre y el botón &lt;strong&gt;Add&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba T11-02 - original&lt;/strong&gt; en el campo de nombre.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El campo muestra &lt;strong&gt;Prueba T11-02 - original&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en &lt;strong&gt;Add&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Projects&lt;/strong&gt; muestra una sola entrada nueva que comienza por &lt;strong&gt;Prueba T11-02&lt;/strong&gt; al final de la lista raíz.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Hacer clic en la entrada nueva en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Prueba T11-02 - original&lt;/strong&gt; y &lt;strong&gt;There are no items to display&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Situar el puntero sobre la entrada del proyecto en &lt;strong&gt;Projects&lt;/strong&gt; y hacer clic en el icono de opciones de su lado derecho.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega un menú con &lt;strong&gt;Edit&lt;/strong&gt;, &lt;strong&gt;Add item above&lt;/strong&gt;, &lt;strong&gt;Add item below&lt;/strong&gt;, &lt;strong&gt;Delete&lt;/strong&gt; y &lt;strong&gt;Share&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Edit&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La entrada se convierte en un campo editable con &lt;strong&gt;Prueba T11-02 - original&lt;/strong&gt;, el icono &lt;strong&gt;Save&lt;/strong&gt; y &lt;strong&gt;Cancel Editing&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Sustituir el contenido del campo por &lt;strong&gt;Prueba T11-02 - renombrado&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El campo muestra &lt;strong&gt;Prueba T11-02 - renombrado&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Hacer clic en el icono &lt;strong&gt;Save&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se cierra el campo editable y la entrada de &lt;strong&gt;Projects&lt;/strong&gt; muestra el nombre nuevo (el panel puede abreviarlo con «…»).&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Presionar &lt;strong&gt;F5&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La página se recarga; &lt;strong&gt;Projects&lt;/strong&gt; muestra una sola entrada del proyecto, con el nombre nuevo, y ninguna con &lt;strong&gt;Prueba T11-02 - original&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Hacer clic en la entrada del proyecto renombrado en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Prueba T11-02 - renombrado&lt;/strong&gt; y &lt;strong&gt;There are no items to display&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>11</step_number>
+        <actions>&lt;p&gt;Tomar una captura de &lt;strong&gt;Projects&lt;/strong&gt; y del proyecto seleccionado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra el nombre nuevo como entrada única.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="1048" name="T11-03 - Cancel Editing en Edit de proyecto descarta el nombre nuevo y conserva el original">
+    <node_order>3</node_order>
+    <externalid>90</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que, tras sustituir el nombre de un proyecto en Edit y pulsar Cancel Editing, Projects vuelve a mostrar el nombre original y lo conserva tras F5, sin entrada con el nombre descartado.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-75 / T11. Cancel Editing descarta el nombre editado de un proyecto; el nombre original se conserva tras recarga.&lt;/p&gt;&lt;p&gt;Postcondiciones: Proyecto raíz vacío Prueba T11-03 - original conservado en A para la limpieza final del lote; proyectos iniciales sin cambios.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).&lt;/li&gt;&lt;li&gt;Lista inicial de &lt;strong&gt;Projects&lt;/strong&gt; de A consignada en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Ausencia de proyectos con nombres que comiencen por &lt;strong&gt;Prueba T11-03&lt;/strong&gt;.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>2</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Add New Project&lt;/strong&gt;, debajo de la lista de &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Aparecen un campo de nombre y el botón &lt;strong&gt;Add&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba T11-03 - original&lt;/strong&gt; en el campo de nombre.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El campo muestra &lt;strong&gt;Prueba T11-03 - original&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en &lt;strong&gt;Add&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Projects&lt;/strong&gt; muestra una sola entrada nueva que comienza por &lt;strong&gt;Prueba T11-03&lt;/strong&gt; al final de la lista raíz.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Hacer clic en la entrada nueva en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Prueba T11-03 - original&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Situar el puntero sobre la entrada del proyecto en &lt;strong&gt;Projects&lt;/strong&gt; y hacer clic en el icono de opciones de su lado derecho.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega un menú con &lt;strong&gt;Edit&lt;/strong&gt;, &lt;strong&gt;Add item above&lt;/strong&gt;, &lt;strong&gt;Add item below&lt;/strong&gt;, &lt;strong&gt;Delete&lt;/strong&gt; y &lt;strong&gt;Share&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Edit&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La entrada se convierte en un campo editable con &lt;strong&gt;Prueba T11-03 - original&lt;/strong&gt;, el icono &lt;strong&gt;Save&lt;/strong&gt; y &lt;strong&gt;Cancel Editing&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Sustituir el contenido del campo por &lt;strong&gt;Prueba T11-03 - descartado&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El campo muestra &lt;strong&gt;Prueba T11-03 - descartado&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Cancel Editing&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se cierra el campo editable y la entrada de &lt;strong&gt;Projects&lt;/strong&gt; vuelve a mostrar &lt;strong&gt;Prueba T11-03 - original&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Presionar &lt;strong&gt;F5&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La página se recarga; &lt;strong&gt;Projects&lt;/strong&gt; muestra una sola entrada con &lt;strong&gt;Prueba T11-03 - original&lt;/strong&gt; y ninguna con &lt;strong&gt;Prueba T11-03 - descartado&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Hacer clic en la entrada &lt;strong&gt;Prueba T11-03 - original&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Prueba T11-03 - original&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>11</step_number>
+        <actions>&lt;p&gt;Tomar una captura de &lt;strong&gt;Projects&lt;/strong&gt; y del proyecto seleccionado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra el nombre original como entrada única.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="1061" name="T11-04 - Arrastrar un proyecto temporal sobre Home lo anida como subproyecto con su tarea">
+    <node_order>4</node_order>
+    <externalid>91</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que arrastrar por su asa un proyecto temporal raíz con una tarea pendiente y soltarlo sobre Home lo presenta como subproyecto de Home y que, tras F5, se conservan relación, nombre y tarea pendiente sin alterar las tareas iniciales de Home.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-75 / T11. Soltar un proyecto raíz sobre Home lo convierte en subproyecto de Home; la relación, su nombre y su tarea pendiente se conservan tras recarga.&lt;/p&gt;&lt;p&gt;Postcondiciones: Subproyecto temporal Prueba T11-04 - subproyecto bajo Home, con su tarea pendiente, conservado para la limpieza final del lote; tareas iniciales de Home sin cambios. No incluye eliminación del subproyecto (T08) ni retorno a la raíz (T11-07).&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).&lt;/li&gt;&lt;li&gt;Lista inicial de &lt;strong&gt;Projects&lt;/strong&gt; de A consignada en el registro de ejecución.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Home&lt;/strong&gt; como proyecto raíz de A, con sus tareas pendientes iniciales consignadas en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Ausencia de proyectos y tareas con nombres que comiencen por &lt;strong&gt;Prueba T11-04&lt;/strong&gt;.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Add New Project&lt;/strong&gt;, debajo de la lista de &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Aparecen un campo de nombre y el botón &lt;strong&gt;Add&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba T11-04 - subproyecto&lt;/strong&gt; en el campo de nombre.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El campo muestra &lt;strong&gt;Prueba T11-04 - subproyecto&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en &lt;strong&gt;Add&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Projects&lt;/strong&gt; muestra una sola entrada nueva que comienza por &lt;strong&gt;Prueba T11-04&lt;/strong&gt; al final de la lista raíz.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Hacer clic en la entrada nueva en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Prueba T11-04 - subproyecto&lt;/strong&gt; y &lt;strong&gt;There are no items to display&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba T11-04 - dato del subproyecto&lt;/strong&gt; en el campo &lt;strong&gt;Add new Todo, type here...&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El campo muestra &lt;strong&gt;Prueba T11-04 - dato del subproyecto&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en &lt;strong&gt;Add&lt;/strong&gt;, a la derecha del campo.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La tarea &lt;strong&gt;Prueba T11-04 - dato del subproyecto&lt;/strong&gt; aparece una sola vez en el proyecto, con su checkbox sin marcar.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Arrastrar el asa de puntos situada delante de &lt;strong&gt;Prueba T11-04 - subproyecto&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt; y soltarla sobre &lt;strong&gt;Home&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La entrada deja de mostrarse al final de la lista raíz y aparece sangrada debajo de &lt;strong&gt;Home&lt;/strong&gt;, que muestra un triángulo de despliegue; ningún proyecto desaparece ni se duplica.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Prueba T11-04 - subproyecto&lt;/strong&gt;, debajo de &lt;strong&gt;Home&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Prueba T11-04 - subproyecto&lt;/strong&gt; y la tarea &lt;strong&gt;Prueba T11-04 - dato del subproyecto&lt;/strong&gt; una sola vez, con su checkbox sin marcar.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Presionar &lt;strong&gt;F5&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La página se recarga; &lt;strong&gt;Home&lt;/strong&gt; conserva su triángulo de despliegue en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Desplegar &lt;strong&gt;Home&lt;/strong&gt; mediante su triángulo si aparece plegado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Prueba T11-04 - subproyecto&lt;/strong&gt; aparece sangrado bajo &lt;strong&gt;Home&lt;/strong&gt;, una sola vez en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>11</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Prueba T11-04 - subproyecto&lt;/strong&gt;, debajo de &lt;strong&gt;Home&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se conservan el título y la tarea &lt;strong&gt;Prueba T11-04 - dato del subproyecto&lt;/strong&gt; una sola vez, con el mismo texto y el checkbox sin marcar.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>12</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Home&lt;/strong&gt; y conserva sus tareas pendientes iniciales del registro.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>13</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Prueba T11-04 - subproyecto&lt;/strong&gt;, debajo de &lt;strong&gt;Home&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra su título y &lt;strong&gt;Prueba T11-04 - dato del subproyecto&lt;/strong&gt; pendiente.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>14</step_number>
+        <actions>&lt;p&gt;Tomar una captura de &lt;strong&gt;Projects&lt;/strong&gt; y del subproyecto seleccionado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra la relación bajo &lt;strong&gt;Home&lt;/strong&gt; y la tarea conservada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="1077" name="T11-05 - Arrastrar una pendiente Home–Study conserva texto, estado y ubicación tras F5">
+    <node_order>5</node_order>
+    <externalid>92</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que una tarea pendiente arrastrada por su asa desde Home hasta Study, y después de vuelta a Home, aparece una sola vez en el proyecto de destino con el mismo texto y su checkbox sin marcar, deja de estar en el origen y conserva esa ubicación tras F5, sin alterar las tareas preexistentes.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-75 / T11. Arrastrar una tarea pendiente sobre otro proyecto la traslada a ese proyecto con el mismo texto y estado, sin duplicarla ni alterar las tareas preexistentes, también tras recarga.&lt;/p&gt;&lt;p&gt;Postcondiciones: Tarea pendiente Prueba T11-05 - mover pendiente en Home para la limpieza final del lote; Study y tareas iniciales de ambos proyectos sin cambios. Prioridad, vencimiento y otros atributos no se preparan ni se comprueban en este caso.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Home&lt;/strong&gt; y &lt;strong&gt;Study&lt;/strong&gt; como proyectos raíz de A, con sus tareas pendientes iniciales consignadas en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Orden &lt;strong&gt;Sort By: Order&lt;/strong&gt; en &lt;strong&gt;Home&lt;/strong&gt; y &lt;strong&gt;Study&lt;/strong&gt;.&lt;/li&gt;&lt;li&gt;Ausencia de tareas con el nombre &lt;strong&gt;Prueba T11-05 - mover pendiente&lt;/strong&gt;.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Study&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Study&lt;/strong&gt; y sus tareas pendientes iniciales del registro.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Home&lt;/strong&gt; y sus tareas pendientes iniciales del registro.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba T11-05 - mover pendiente&lt;/strong&gt; en el campo &lt;strong&gt;Add new Todo, type here...&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El campo muestra &lt;strong&gt;Prueba T11-05 - mover pendiente&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en &lt;strong&gt;Add&lt;/strong&gt;, a la derecha del campo.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Home&lt;/strong&gt; muestra &lt;strong&gt;Prueba T11-05 - mover pendiente&lt;/strong&gt; una sola vez, con su checkbox sin marcar, junto a sus tareas iniciales.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Arrastrar el asa de puntos situada delante de &lt;strong&gt;Prueba T11-05 - mover pendiente&lt;/strong&gt; y soltarla sobre &lt;strong&gt;Study&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;, no sobre otra tarea.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La tarea deja de mostrarse en &lt;strong&gt;Home&lt;/strong&gt; y las tareas iniciales permanecen; la tarea movida no aparece sangrada bajo otra tarea.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Study&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Study&lt;/strong&gt; muestra &lt;strong&gt;Prueba T11-05 - mover pendiente&lt;/strong&gt; una sola vez, con el mismo texto y su checkbox sin marcar, junto a sus tareas iniciales.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Presionar &lt;strong&gt;F5&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La página se recarga sin cerrar la sesión.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Study&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Study&lt;/strong&gt; conserva &lt;strong&gt;Prueba T11-05 - mover pendiente&lt;/strong&gt; una sola vez, pendiente y con el mismo texto, y sus tareas iniciales.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Home&lt;/strong&gt; no muestra &lt;strong&gt;Prueba T11-05 - mover pendiente&lt;/strong&gt; y conserva sus tareas iniciales.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Study&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Study&lt;/strong&gt; muestra &lt;strong&gt;Prueba T11-05 - mover pendiente&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>11</step_number>
+        <actions>&lt;p&gt;Arrastrar el asa de puntos situada delante de &lt;strong&gt;Prueba T11-05 - mover pendiente&lt;/strong&gt; y soltarla sobre &lt;strong&gt;Home&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;, no sobre otra tarea.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La tarea deja de mostrarse en &lt;strong&gt;Study&lt;/strong&gt;; las tareas iniciales de &lt;strong&gt;Study&lt;/strong&gt; permanecen.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>12</step_number>
+        <actions>&lt;p&gt;Presionar &lt;strong&gt;F5&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La página se recarga sin cerrar la sesión.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>13</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Home&lt;/strong&gt; muestra &lt;strong&gt;Prueba T11-05 - mover pendiente&lt;/strong&gt; una sola vez, con el mismo texto y su checkbox sin marcar, junto a sus tareas iniciales.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>14</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Study&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Study&lt;/strong&gt; muestra únicamente sus tareas iniciales del registro, sin &lt;strong&gt;Prueba T11-05 - mover pendiente&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>15</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Home&lt;/strong&gt; muestra &lt;strong&gt;Prueba T11-05 - mover pendiente&lt;/strong&gt; una sola vez, con el mismo texto y su checkbox sin marcar.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>16</step_number>
+        <actions>&lt;p&gt;Tomar una captura de &lt;strong&gt;Home&lt;/strong&gt; con la tarea devuelta.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura permite reconocer la tarea con su texto y estado pendiente en &lt;strong&gt;Home&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase internalid="1095" name="T11-06 - Intento de arrastrar una completada desde Done Items conserva proyecto y estado">
+    <node_order>6</node_order>
+    <externalid>93</externalid>
+    <version>1</version>
+    <summary>&lt;p&gt;Validar que, al intentar arrastrar desde la sección de completadas de Home una tarea completada y soltarla sobre Study, la tarea permanece una sola vez entre las completadas de Home con su checkbox marcado, no aparece en Study ni en pendientes y conserva ese estado tras F5.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-75 / T11. Una tarea de la sección de completadas de un proyecto no se traslada al intentar arrastrarla a otro proyecto; permanece completada en su proyecto de origen, también tras recarga.&lt;/p&gt;&lt;p&gt;Postcondiciones: Tarea Prueba T11-06 - completada en Done Items completada en Home para la limpieza final del lote; Study y tareas iniciales sin cambios. La recuperación desde Recycle Bin no forma parte de este caso (T08).&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Home&lt;/strong&gt; y &lt;strong&gt;Study&lt;/strong&gt; como proyectos raíz de A, con sus tareas pendientes y completadas iniciales consignadas en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Orden &lt;strong&gt;Sort By: Order&lt;/strong&gt; en &lt;strong&gt;Home&lt;/strong&gt; y &lt;strong&gt;Study&lt;/strong&gt;.&lt;/li&gt;&lt;li&gt;Ausencia de tareas con el nombre &lt;strong&gt;Prueba T11-06 - completada en Done Items&lt;/strong&gt;.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <status>1</status>
+    <active>1</active>
+    <is_open>1</is_open>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Home&lt;/strong&gt; y sus tareas pendientes iniciales del registro.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba T11-06 - completada en Done Items&lt;/strong&gt; en el campo &lt;strong&gt;Add new Todo, type here...&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El campo muestra &lt;strong&gt;Prueba T11-06 - completada en Done Items&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en &lt;strong&gt;Add&lt;/strong&gt;, a la derecha del campo.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Home&lt;/strong&gt; muestra la tarea una sola vez entre las pendientes, con su checkbox sin marcar.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Marcar el checkbox de &lt;strong&gt;Prueba T11-06 - completada en Done Items&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La tarea deja de mostrarse entre las pendientes de &lt;strong&gt;Home&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Desplegar las completadas de &lt;strong&gt;Home&lt;/strong&gt; mediante &lt;strong&gt;See all&lt;/strong&gt; si la sección está oculta.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega la sección de completadas de &lt;strong&gt;Home&lt;/strong&gt; con &lt;strong&gt;Prueba T11-06 - completada en Done Items&lt;/strong&gt; una sola vez y su checkbox marcado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Arrastrar &lt;strong&gt;Prueba T11-06 - completada en Done Items&lt;/strong&gt; desde la sección de completadas de &lt;strong&gt;Home&lt;/strong&gt; y soltarla sobre &lt;strong&gt;Study&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La tarea no se traslada: permanece una sola vez en las completadas de &lt;strong&gt;Home&lt;/strong&gt;, con su checkbox marcado, y no aparece entre las pendientes. No se exige un mensaje, porque no se ha identificado ninguno.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Study&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Study&lt;/strong&gt; muestra únicamente sus tareas pendientes iniciales, sin &lt;strong&gt;Prueba T11-06 - completada en Done Items&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Desplegar las completadas de &lt;strong&gt;Study&lt;/strong&gt; mediante &lt;strong&gt;See all&lt;/strong&gt; si la sección está oculta.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Las completadas de &lt;strong&gt;Study&lt;/strong&gt; coinciden con las iniciales del registro, sin &lt;strong&gt;Prueba T11-06 - completada en Done Items&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Presionar &lt;strong&gt;F5&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La página se recarga sin cerrar la sesión.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Home&lt;/strong&gt; muestra sus tareas pendientes iniciales, sin &lt;strong&gt;Prueba T11-06 - completada en Done Items&lt;/strong&gt; entre ellas.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>11</step_number>
+        <actions>&lt;p&gt;Desplegar las completadas de &lt;strong&gt;Home&lt;/strong&gt; mediante &lt;strong&gt;See all&lt;/strong&gt; si la sección está oculta.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Las completadas de &lt;strong&gt;Home&lt;/strong&gt; muestran &lt;strong&gt;Prueba T11-06 - completada en Done Items&lt;/strong&gt; una sola vez, con el mismo texto y su checkbox marcado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>12</step_number>
+        <actions>&lt;p&gt;Tomar una captura de las completadas de &lt;strong&gt;Home&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra la tarea completada en &lt;strong&gt;Home&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  </testcases>

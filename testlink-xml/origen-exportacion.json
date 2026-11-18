@@ -1,0 +1,172 @@
+{
+  "source": "/Users/andrecadima/orca/test-link-todo.ly/testlink-xml/todo-ly-tests.xml",
+  "source_sha256": "f17141163f48abf8ed6de3304fbb52c39b70e77f33b2197cbd26727d0ece93eb",
+  "tickets": {
+    "T09": {
+      "file": "/Users/andrecadima/orca/test-link-todo.ly/testlink-xml/T09.xml",
+      "sha256": "9135d1b195e7b9dc10f03efc758873c4680b2e4b8a595c793373918b9b555a6c",
+      "count": 13,
+      "cases": [
+        {
+          "name": "T09-01 - Signup con campos vacíos y términos sin aceptar rechaza el envío",
+          "internalid": "251",
+          "externalid": "72"
+        },
+        {
+          "name": "T09-02 - Signup con el correo de una cuenta existente muestra error de duplicado",
+          "internalid": "263",
+          "externalid": "73"
+        },
+        {
+          "name": "T09-03 - Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada",
+          "internalid": "282",
+          "externalid": "74"
+        },
+        {
+          "name": "T09-04 - Login con credenciales vigentes de A abre la sesión de la cuenta A",
+          "internalid": "294",
+          "externalid": "75"
+        },
+        {
+          "name": "T09-05 - Login con Email y Password vacíos no concede acceso",
+          "internalid": "308",
+          "externalid": "76"
+        },
+        {
+          "name": "T09-06 - Login con Email vacío y Password informado muestra error y no da acceso",
+          "internalid": "316",
+          "externalid": "77"
+        },
+        {
+          "name": "T09-07 - Login de A con Password vacío muestra error y no concede acceso",
+          "internalid": "325",
+          "externalid": "78"
+        },
+        {
+          "name": "T09-09 - Login con un correo no registrado muestra error y no concede acceso",
+          "internalid": "334",
+          "externalid": "79"
+        },
+        {
+          "name": "T09-10 - Login de A con contraseña incorrecta muestra error y no concede acceso",
+          "internalid": "343",
+          "externalid": "80"
+        },
+        {
+          "name": "T09-11 - Logout impide ver los datos de A con Atrás y con la URL directa",
+          "internalid": "352",
+          "externalid": "81"
+        },
+        {
+          "name": "T09-12 - Cambio de cuenta entre A y B muestra solo los datos propios de cada una",
+          "internalid": "361",
+          "externalid": "82"
+        },
+        {
+          "name": "T09-13 - Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada",
+          "internalid": "404",
+          "externalid": "83"
+        },
+        {
+          "name": "T09-14 - Remember Me marcado: al reabrir el perfil se restaura la sesión de B",
+          "internalid": "423",
+          "externalid": "84"
+        }
+      ]
+    },
+    "T10": {
+      "file": "/Users/andrecadima/orca/test-link-todo.ly/testlink-xml/T10.xml",
+      "sha256": "800f3888aa83994f61e55451c3baa701d82f039ba4297633fd2d46b3fd190a0a",
+      "count": 9,
+      "cases": [
+        {
+          "name": "T10-01 - Cancelar la modificación del nombre conserva el perfil",
+          "internalid": "211",
+          "externalid": "66"
+        },
+        {
+          "name": "T10-04 - Settings con Old Password incorrecto muestra Invalid Password y conserva la clave",
+          "internalid": "969",
+          "externalid": "85"
+        },
+        {
+          "name": "T10-02 - Guardar un nombre nuevo con Ok lo conserva tras recarga y nueva sesión",
+          "internalid": "217",
+          "externalid": "67"
+        },
+        {
+          "name": "T10-05 - Settings con Old Password vigente cambia la clave y permite Login con la nueva",
+          "internalid": "989",
+          "externalid": "86"
+        },
+        {
+          "name": "T10-03 - Old Password vacío muestra Invalid Password y conserva la contraseña vigente",
+          "internalid": "225",
+          "externalid": "68"
+        },
+        {
+          "name": "T10-06 - Profile con Email editado y Cancel conserva el correo original de B",
+          "internalid": "1014",
+          "externalid": "87"
+        },
+        {
+          "name": "T10-08 - Recuperar el acceso por correo permite entrar con la nueva contraseña",
+          "internalid": "232",
+          "externalid": "69"
+        },
+        {
+          "name": "T10-09 - Pedir Reset your Password con un correo no registrado muestra un error",
+          "internalid": "241",
+          "externalid": "70"
+        },
+        {
+          "name": "T10-10 - El enlace de recuperación recibido por correo usa HTTPS",
+          "internalid": "246",
+          "externalid": "71"
+        }
+      ]
+    },
+    "T11": {
+      "file": "/Users/andrecadima/orca/test-link-todo.ly/testlink-xml/T11.xml",
+      "sha256": "9334dc2985137ec416da4909924f19128657b278bab8515e2c5042ed4562539f",
+      "count": 7,
+      "cases": [
+        {
+          "name": "T11-01 - Add New Project con nombre nuevo crea un proyecto raíz vacío que persiste tras F5",
+          "internalid": "1026",
+          "externalid": "88"
+        },
+        {
+          "name": "T11-07 - Subproyecto movido a raíz entre Study y Personal conserva ubicación y tarea",
+          "internalid": "1340",
+          "externalid": "94"
+        },
+        {
+          "name": "T11-02 - Edit con Save en un proyecto aplica el nombre nuevo y lo conserva tras F5",
+          "internalid": "1035",
+          "externalid": "89"
+        },
+        {
+          "name": "T11-03 - Cancel Editing en Edit de proyecto descarta el nombre nuevo y conserva el original",
+          "internalid": "1048",
+          "externalid": "90"
+        },
+        {
+          "name": "T11-04 - Arrastrar un proyecto temporal sobre Home lo anida como subproyecto con su tarea",
+          "internalid": "1061",
+          "externalid": "91"
+        },
+        {
+          "name": "T11-05 - Arrastrar una pendiente Home–Study conserva texto, estado y ubicación tras F5",
+          "internalid": "1077",
+          "externalid": "92"
+        },
+        {
+          "name": "T11-06 - Intento de arrastrar una completada desde Done Items conserva proyecto y estado",
+          "internalid": "1095",
+          "externalid": "93"
+        }
+      ]
+    }
+  }
+}

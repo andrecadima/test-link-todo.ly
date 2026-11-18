@@ -1,4 +1,10 @@
-# Cierre mínimo — checkpoint vigente
+# Checkpoint vigente — tras el encargo 14, 18/11
+
+La exportación está TERMINADA (93/29, SHA f17141163f48…, T09 13, T10 9, T11 7); no repetirla. `trabajo/INFORME-FINAL.md` está escrito y declara B pendiente. A está completada. **Siguiente paso exacto, B:** Andre selecciona Home → borrar `Prueba T09-aislamiento-B-1941` → Empty Recycle Bin (confirmación ya recibida) → verificar por AX → UNA captura `trabajo/cierre/B-estado-final.png` → actualizar la columna B de estado-cuentas-final y la §5 del informe → escáner de secretos → commit y push normal (sin force). Siguen pendientes la revisión de otro integrante y la ejecución formal. Detalle en `trabajo/RELEVO-CLAUDE.md`.
+
+---
+
+# Cierre mínimo — checkpoint anterior
 
 A limpiada, temporal eliminado, Trashvacía confirmado AX+únicacaptura. B Profileemail/nombre/zona y Defaults Work/Sunday/Small/None coinciden; falta marcadorHome+Trash. Tres intentos Homefallidos: se pidió Andre seleccionarHome; esperar. Confirmaciónirreversibles A/B YA recibida. No pedirotra. CasillasnolegiblesAX; registrar límite sin inventar. trabajo/estado-cuentas-final.md parcial y RELEVO actualizados.
 
