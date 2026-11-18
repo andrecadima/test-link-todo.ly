@@ -57,7 +57,7 @@ Has access to this site
 									45 link Logout, Value: 68.211.149.112/logout.php?viewer=
 								46 container
 									47 container
-										48 text Test Project 
+										48 text Test Project
 										49 pop up button TL:Todo.ly
 											50 (selected) TL:Todo.ly
 									51 link Desktop, Value: 68.211.149.112/index.php
@@ -167,7 +167,7 @@ Has access to this site
 											155 table
 												156 row
 													157 column header 0-5
-														158 text TL-82 : T09-12. Cambio de cuenta entre A y B muestra solo los datos propios de cada una - Version 1 
+														158 text TL-82 : T09-12. Cambio de cuenta entre A y B muestra solo los datos propios de cada una - Version 1
 														159 image Show ghost string
 														160 image Display Author/Updater
 												161 row
@@ -185,23 +185,23 @@ Has access to this site
 													173 cell 0-5
 														174 content list
 															175 container
-																176 AXListMarker 1. 
+																176 AXListMarker 1.
 																177 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 															178 container
-																179 AXListMarker 2. 
+																179 AXListMarker 2.
 																180 text Sin sesión iniciada en Todo.ly en el navegador.
 															181 container
-																182 AXListMarker 3. 
+																182 AXListMarker 3.
 																183 text Dos cuentas gratuitas de prueba sin proyectos compartidos (A y B), con correos y contraseñas vigentes consignados en el registro privado de credenciales y proyecto  Home  disponible en cada una.
 															184 container
-																185 AXListMarker 4. 
+																185 AXListMarker 4.
 																186 text Home  de A sin una tarea llamada  Prueba T09-12 - marcador A ;  Home  de B sin una tarea llamada  Prueba T09-12 - marcador B .
 															187 container
-																188 AXListMarker 5. 
+																188 AXListMarker 5.
 																189 text Nombres de perfil de A y B consignados en el registro privado de referencia.
 												190 row
 													191 column header
-														192 image Show / Hide reorder 
+														192 image Show / Hide reorder
 														193 image Show ghost string
 														194 text #
 													195 column header
@@ -823,31 +823,31 @@ Has access to this site
 											811 button Create step
 											812 button Resequence Steps
 										813 container
-											814 text Status : 
+											814 text Status :
 											815 pop up button Draft
 												816 (selected) Draft
-											817 text Importance : 
+											817 text Importance :
 											818 pop up button High
 												819 (selected) High
-											820 text Execution type : 
+											820 text Execution type :
 											821 pop up button Manual
 												822 (selected) Manual
 											823 checkbox 0
 											824 text Apply To All Steps
-											825 text Estimated exec. (min) : 
+											825 text Estimated exec. (min) :
 											826 text field (settable) Estimated exec. duration (min)
 											827 button Save
 										828 container
-											829 container Keywords   Create Keyword  Create & Link 
+											829 container Keywords   Create Keyword  Create & Link
 												830 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
 												831 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
 												832 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=362%27)
 											833 container None
 												834 text None
 										835 container
-											836 container Platforms:  
+											836 container Platforms:
 												837 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
-												838 text :  
+												838 text :
 											839 container None
 												840 text None
 										841 table
@@ -856,7 +856,7 @@ Has access to this site
 													844 text Relations
 											845 row
 												846 cell
-													847 text New relation:  This test case version 
+													847 text New relation:  This test case version
 													848 pop up button is related to
 														849 (selected) is related to
 													850 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID

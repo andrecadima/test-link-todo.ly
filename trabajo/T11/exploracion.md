@@ -34,3 +34,12 @@ Se preparó un diseño provisional con T11-01/02 basados en observación previa 
 ## Fuente confirmada del equipo sobre completadas
 
 La guía vigente §13 documenta expresamente: el usuario confirmó que las tareas de Done Items no se pueden arrastrar desde esa sección del proyecto. Clasificación: **Regla documentada / reporte previo del equipo**, no conclusión derivada de una falla de nuestra herramienta. No prueba que no exista otro mecanismo de movimiento ni sustituye observarlo en A. La guía §14 distingue ese comportamiento de la recuperación de completadas desde Recycle Bin, que pertenece a T08 y no se duplica aquí.
+
+
+## Exploración acotada del 18/11 — cuenta A
+
+A fue autenticada por Login original restaurado y confirmada en Profile. Se seleccionó el proyecto temporal, se abrió Options → Edit, se sustituyó el texto por `Prueba T11 - nombre descartado 1816` y se pulsó **Cancel Editing**. La consulta AX siguiente mostró otra vez `Prueba T11 - proyecto renombrado 1109`, sin editor: descarte observado. Clasificación: Comportamiento observado.
+
+La recarga posterior dejó la ventana sin contenido HTML y con pantalla gris. Reabrir la URL y recuperar navegación no lo resolvió en tres intentos. No se concluye que haya fallado la persistencia del producto ni se declara comprobada la recarga. El archivo `Cancel-tras-recarga-AX.txt` registra falta de contenido, no una verificación exitosa. Se pidió al usuario recuperar la ventana y realizar un bloque único de arrastres; respuesta pendiente.
+
+Bloque manual solicitado: crear `Prueba T11 - mover pendiente 1811` en Home y moverla a Study, recargar/contrastar origen-destino; crear `Prueba T11 - mover completada 1811` en Study, completar y comprobar intento de arrastre desde Done Items hacia Home sin papelera; anidar proyecto temporal renombrado bajo Home y devolverlo a raíz entre Study y Personal, con recarga y capturas en cada transición. No se presenta ese bloque como observado hasta recibir respuesta y contrastarla.

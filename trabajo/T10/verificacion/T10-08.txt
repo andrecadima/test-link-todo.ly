@@ -7,7 +7,7 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 											259 table
 												260 row
 													261 column header 0-5
-														262 text TL-69 : T10-08. Recuperar el acceso de una cuenta registrada mediante su buzón - Version 1 
+														262 text TL-69 : T10-08. Recuperar el acceso de una cuenta registrada mediante su buzón - Version 1
 														263 image Show ghost string
 														264 image Display Author/Updater
 												265 row
@@ -26,20 +26,20 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 													278 cell 0-5
 														279 content list
 															280 container
-																281 AXListMarker 1. 
+																281 AXListMarker 1.
 																282 text Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
 															283 container
-																284 AXListMarker 2. 
+																284 AXListMarker 2.
 																285 text Sin sesión iniciada en Todo.ly en el navegador.
 															286 container
-																287 AXListMarker 3. 
+																287 AXListMarker 3.
 																288 text Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta; contraseña inicial conocida y otra contraseña de prueba disponibles en registro privado.
 															289 container
-																290 AXListMarker 4. 
+																290 AXListMarker 4.
 																291 text Nombre inicial y correo de A conocidos por quien ejecuta, con sus valores conservados de forma privada para comprobar identidad.
 												292 row
 													293 column header
-														294 image Show / Hide reorder 
+														294 image Show / Hide reorder
 														295 image Show ghost string
 														296 text #
 													297 column header
@@ -142,31 +142,31 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 											394 button Create step
 											395 button Resequence Steps
 										396 container
-											397 text Status : 
+											397 text Status :
 											398 pop up button Draft
 												399 (selected) Draft
-											400 text Importance : 
+											400 text Importance :
 											401 pop up button High
 												402 (selected) High
-											403 text Execution type : 
+											403 text Execution type :
 											404 pop up button Manual
 												405 (selected) Manual
 											406 checkbox 0
 											407 text Apply To All Steps
-											408 text Estimated exec. (min) : 
+											408 text Estimated exec. (min) :
 											409 text field (settable) Estimated exec. duration (min)
 											410 button Save
 										411 container
-											412 container Keywords   Create Keyword  Create & Link 
+											412 container Keywords   Create Keyword  Create & Link
 												413 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
 												414 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
 												415 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=233%27)
 											416 container None
 												417 text None
 										418 container
-											419 container Platforms:  
+											419 container Platforms:
 												420 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
-												421 text :  
+												421 text :
 											422 container None
 												423 text None
 										424 table
@@ -175,7 +175,7 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 													427 text Relations
 											428 row
 												429 cell
-													430 text New relation:  This test case version 
+													430 text New relation:  This test case version
 													431 pop up button is related to
 														432 (selected) is related to
 													433 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID

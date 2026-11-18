@@ -57,7 +57,7 @@ Has access to this site
 									45 link Logout, Value: 68.211.149.112/logout.php?viewer=
 								46 container
 									47 container
-										48 text Test Project 
+										48 text Test Project
 										49 pop up button TL:Todo.ly
 											50 (selected) TL:Todo.ly
 									51 link Desktop, Value: 68.211.149.112/index.php
@@ -167,7 +167,7 @@ Has access to this site
 											155 table
 												156 row
 													157 column header 0-5
-														158 text TL-75 : T09-04. Login con credenciales vigentes de A abre la sesión de la cuenta A - Version 1 
+														158 text TL-75 : T09-04. Login con credenciales vigentes de A abre la sesión de la cuenta A - Version 1
 														159 image Show ghost string
 														160 image Display Author/Updater
 												161 row
@@ -185,20 +185,20 @@ Has access to this site
 													173 cell 0-5
 														174 content list
 															175 container
-																176 AXListMarker 1. 
+																176 AXListMarker 1.
 																177 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 															178 container
-																179 AXListMarker 2. 
+																179 AXListMarker 2.
 																180 text Sin sesión iniciada en Todo.ly en el navegador.
 															181 container
-																182 AXListMarker 3. 
+																182 AXListMarker 3.
 																183 text Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.
 															184 container
-																185 AXListMarker 4. 
+																185 AXListMarker 4.
 																186 text Nombres de perfil de A consignados en el registro privado de referencia.
 												187 row
 													188 column header
-														189 image Show / Hide reorder 
+														189 image Show / Hide reorder
 														190 image Show ghost string
 														191 text #
 													192 column header
@@ -390,31 +390,31 @@ Has access to this site
 											378 button Create step
 											379 button Resequence Steps
 										380 container
-											381 text Status : 
+											381 text Status :
 											382 pop up button Draft
 												383 (selected) Draft
-											384 text Importance : 
+											384 text Importance :
 											385 pop up button High
 												386 (selected) High
-											387 text Execution type : 
+											387 text Execution type :
 											388 pop up button Manual
 												389 (selected) Manual
 											390 checkbox 0
 											391 text Apply To All Steps
-											392 text Estimated exec. (min) : 
+											392 text Estimated exec. (min) :
 											393 text field (settable) Estimated exec. duration (min)
 											394 button Save
 										395 container
-											396 container Keywords   Create Keyword  Create & Link 
+											396 container Keywords   Create Keyword  Create & Link
 												397 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
 												398 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
 												399 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=295%27)
 											400 container None
 												401 text None
 										402 container
-											403 container Platforms:  
+											403 container Platforms:
 												404 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
-												405 text :  
+												405 text :
 											406 container None
 												407 text None
 										408 table
@@ -423,7 +423,7 @@ Has access to this site
 													411 text Relations
 											412 row
 												413 cell
-													414 text New relation:  This test case version 
+													414 text New relation:  This test case version
 													415 pop up button is related to
 														416 (selected) is related to
 													417 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID

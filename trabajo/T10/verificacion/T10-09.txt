@@ -7,7 +7,7 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 											259 table
 												260 row
 													261 column header 0-5
-														262 text TL-70 : T10-09. Solicitar recuperación con un correo no registrado - Version 1 
+														262 text TL-70 : T10-09. Solicitar recuperación con un correo no registrado - Version 1
 														263 image Show ghost string
 														264 image Display Author/Updater
 												265 row
@@ -26,17 +26,17 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 													278 cell 0-5
 														279 content list
 															280 container
-																281 AXListMarker 1. 
+																281 AXListMarker 1.
 																282 text Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
 															283 container
-																284 AXListMarker 2. 
+																284 AXListMarker 2.
 																285 text Sin sesión iniciada en Todo.ly en el navegador.
 															286 container
-																287 AXListMarker 3. 
+																287 AXListMarker 3.
 																288 text Dirección reservada para ejemplos sin cuenta en Todo.ly: prueba-t10-no-registrada-20261117@example.com.
 												289 row
 													290 column header
-														291 image Show / Hide reorder 
+														291 image Show / Hide reorder
 														292 image Show ghost string
 														293 text #
 													294 column header
@@ -87,31 +87,31 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 											339 button Create step
 											340 button Resequence Steps
 										341 container
-											342 text Status : 
+											342 text Status :
 											343 pop up button Draft
 												344 (selected) Draft
-											345 text Importance : 
+											345 text Importance :
 											346 pop up button Medium
 												347 (selected) Medium
-											348 text Execution type : 
+											348 text Execution type :
 											349 pop up button Manual
 												350 (selected) Manual
 											351 checkbox 0
 											352 text Apply To All Steps
-											353 text Estimated exec. (min) : 
+											353 text Estimated exec. (min) :
 											354 text field (settable) Estimated exec. duration (min)
 											355 button Save
 										356 container
-											357 container Keywords   Create Keyword  Create & Link 
+											357 container Keywords   Create Keyword  Create & Link
 												358 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
 												359 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
 												360 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=242%27)
 											361 container None
 												362 text None
 										363 container
-											364 container Platforms:  
+											364 container Platforms:
 												365 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
-												366 text :  
+												366 text :
 											367 container None
 												368 text None
 										369 table
@@ -120,7 +120,7 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 													372 text Relations
 											373 row
 												374 cell
-													375 text New relation:  This test case version 
+													375 text New relation:  This test case version
 													376 pop up button is related to
 														377 (selected) is related to
 													378 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID

@@ -57,7 +57,7 @@ Has access to this site
 									45 link Logout, Value: 68.211.149.112/logout.php?viewer=
 								46 container
 									47 container
-										48 text Test Project 
+										48 text Test Project
 										49 pop up button TL:Todo.ly
 											50 (selected) TL:Todo.ly
 									51 link Desktop, Value: 68.211.149.112/index.php
@@ -167,7 +167,7 @@ Has access to this site
 											155 table
 												156 row
 													157 column header 0-5
-														158 text TL-83 : T09-13. Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada - Version 1 
+														158 text TL-83 : T09-13. Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada - Version 1
 														159 image Show ghost string
 														160 image Display Author/Updater
 												161 row
@@ -185,29 +185,29 @@ Has access to this site
 													173 cell 0-5
 														174 content list
 															175 container
-																176 AXListMarker 1. 
+																176 AXListMarker 1.
 																177 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 															178 container
-																179 AXListMarker 2. 
+																179 AXListMarker 2.
 																180 text Sin sesión iniciada en Todo.ly en el navegador.
 															181 container
-																182 AXListMarker 3. 
+																182 AXListMarker 3.
 																183 text Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.
 															184 container
-																185 AXListMarker 4. 
+																185 AXListMarker 4.
 																186 text Perfil dedicado de Chrome para QA, sin otras ventanas abiertas de ese perfil y disponible en el selector de perfiles de Chrome para su reapertura.
 															187 container
-																188 AXListMarker 5. 
+																188 AXListMarker 5.
 																189 text Configuración de Chrome sin cambios durante todo el recorrido.
 															190 container
-																191 AXListMarker 6. 
+																191 AXListMarker 6.
 																192 text Nombres de perfil de A consignados en el registro privado de referencia.
 															193 container
-																194 AXListMarker 7. 
+																194 AXListMarker 7.
 																195 text Otra ventana de Chrome de un perfil distinto abierta durante todo el recorrido.
 												196 row
 													197 column header
-														198 image Show / Hide reorder 
+														198 image Show / Hide reorder
 														199 image Show ghost string
 														200 text #
 													201 column header
@@ -466,31 +466,31 @@ Has access to this site
 											454 button Create step
 											455 button Resequence Steps
 										456 container
-											457 text Status : 
+											457 text Status :
 											458 pop up button Draft
 												459 (selected) Draft
-											460 text Importance : 
+											460 text Importance :
 											461 pop up button High
 												462 (selected) High
-											463 text Execution type : 
+											463 text Execution type :
 											464 pop up button Manual
 												465 (selected) Manual
 											466 checkbox 0
 											467 text Apply To All Steps
-											468 text Estimated exec. (min) : 
+											468 text Estimated exec. (min) :
 											469 text field (settable) Estimated exec. duration (min)
 											470 button Save
 										471 container
-											472 container Keywords   Create Keyword  Create & Link 
+											472 container Keywords   Create Keyword  Create & Link
 												473 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
 												474 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
 												475 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=405%27)
 											476 container None
 												477 text None
 										478 container
-											479 container Platforms:  
+											479 container Platforms:
 												480 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
-												481 text :  
+												481 text :
 											482 container None
 												483 text None
 										484 table
@@ -499,7 +499,7 @@ Has access to this site
 													487 text Relations
 											488 row
 												489 cell
-													490 text New relation:  This test case version 
+													490 text New relation:  This test case version
 													491 pop up button is related to
 														492 (selected) is related to
 													493 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID

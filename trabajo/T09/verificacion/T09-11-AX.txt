@@ -57,7 +57,7 @@ Has access to this site
 									45 link Logout, Value: 68.211.149.112/logout.php?viewer=
 								46 container
 									47 container
-										48 text Test Project 
+										48 text Test Project
 										49 pop up button TL:Todo.ly
 											50 (selected) TL:Todo.ly
 									51 link Desktop, Value: 68.211.149.112/index.php
@@ -167,7 +167,7 @@ Has access to this site
 											155 table
 												156 row
 													157 column header 0-5
-														158 text TL-81 : T09-11. Logout impide ver los datos de A con Atrás y con la URL directa - Version 1 
+														158 text TL-81 : T09-11. Logout impide ver los datos de A con Atrás y con la URL directa - Version 1
 														159 image Show ghost string
 														160 image Display Author/Updater
 												161 row
@@ -185,20 +185,20 @@ Has access to this site
 													173 cell 0-5
 														174 content list
 															175 container
-																176 AXListMarker 1. 
+																176 AXListMarker 1.
 																177 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 															178 container
-																179 AXListMarker 2. 
+																179 AXListMarker 2.
 																180 text Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.
 															181 container
-																182 AXListMarker 3. 
+																182 AXListMarker 3.
 																183 text Sesión iniciada en Todo.ly con la cuenta A, en  https://todo.ly/ .
 															184 container
-																185 AXListMarker 4. 
+																185 AXListMarker 4.
 																186 text Proyecto  Home  de A sin una tarea llamada  Prueba T09-11 - sesión .
 												187 row
 													188 column header
-														189 image Show / Hide reorder 
+														189 image Show / Hide reorder
 														190 image Show ghost string
 														191 text #
 													192 column header
@@ -313,31 +313,31 @@ Has access to this site
 											301 button Create step
 											302 button Resequence Steps
 										303 container
-											304 text Status : 
+											304 text Status :
 											305 pop up button Draft
 												306 (selected) Draft
-											307 text Importance : 
+											307 text Importance :
 											308 pop up button High
 												309 (selected) High
-											310 text Execution type : 
+											310 text Execution type :
 											311 pop up button Manual
 												312 (selected) Manual
 											313 checkbox 0
 											314 text Apply To All Steps
-											315 text Estimated exec. (min) : 
+											315 text Estimated exec. (min) :
 											316 text field (settable) Estimated exec. duration (min)
 											317 button Save
 										318 container
-											319 container Keywords   Create Keyword  Create & Link 
+											319 container Keywords   Create Keyword  Create & Link
 												320 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
 												321 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
 												322 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=353%27)
 											323 container None
 												324 text None
 										325 container
-											326 container Platforms:  
+											326 container Platforms:
 												327 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
-												328 text :  
+												328 text :
 											329 container None
 												330 text None
 										331 table
@@ -346,7 +346,7 @@ Has access to this site
 													334 text Relations
 											335 row
 												336 cell
-													337 text New relation:  This test case version 
+													337 text New relation:  This test case version
 													338 pop up button is related to
 														339 (selected) is related to
 													340 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID

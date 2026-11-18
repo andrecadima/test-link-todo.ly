@@ -1,3 +1,7 @@
 2026-11-18T16:23:15 INICIO ids=TL-50 respaldo=respaldo-20261118-1620.json
 2026-11-18T16:23:16 TL-50 v1 OK (10 pasos)
 2026-11-18T16:23:16 FIN {'OK': 1, 'ERROR': 0, 'OMITIDO': 0}
+2026-11-18T16:23:32 INICIO ids=TL-50 respaldo=respaldo-20261118-1620.json
+2026-11-18T16:23:32 TL-50 v1 OK (10 pasos)
+2026-11-18T16:23:32 FIN {'OK': 1, 'ERROR': 0, 'OMITIDO': 0}
+2026-11-18T16:23:38 PRUEBA revertir.py --aplicar TL-50: RESTAURADO OK y reaplicado OK (ida y vuelta)

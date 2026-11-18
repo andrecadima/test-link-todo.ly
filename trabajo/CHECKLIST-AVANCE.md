@@ -8,16 +8,16 @@ Actualizado 18/11/2026. No representa ejecución formal ni revisión de otro int
 - [x] Registro TL-66 a TL-71: seis casos, 28 pasos nativos.
 - [x] Comparación individual de campos, pasos/resultados, Importance y Manual: sin diferencias.
 - [x] Comentario 10226 publicado con IDs, enlaces, tres capturas y tablas corregidas; estado Jira conservado.
-- [ ] T10-04/05/06: resultados de los pasos de credenciales y Cancel de Email pendientes.
+- [x] T10-04/05/06: resultados manuales y Login restaurado verificados; diseño/revisión08 APTO; registro externo pendiente.
 - [x] T10-07 excluido del registro por instrucción expresa; cobertura pendiente documentada.
 - [ ] Revisión por otro integrante y ejecución formal.
 
 ## T09 / PEB-73
 
-- [x] Diseño de 13 casos / 52 pasos; revisión independiente APTO y observaciones atendidas.
-- [ ] Registro y comparación individual en TestLink.
-- [ ] Comentario Jira con técnicas, IDs, enlaces y capturas.
-- [ ] T09-08 y cobertura adicional sin regla confirmada, documentadas como pendientes.
+- [x] Diseño de 13 casos / 171 pasos; revisión independiente APTO y observaciones atendidas.
+- [x] Registro y comparación individual en TestLink: TL-72 a TL-84,435 textos sin diferencias.
+- [x] Comentario Jira10227 con técnicas,IDs,enlaces y captura.
+- [x] T09-08 y cobertura adicional sin regla confirmada, documentadas como pendientes.
 - [ ] Revisión por otro integrante y ejecución formal.
 
 ## T11 / PEB-75
@@ -31,7 +31,7 @@ Actualizado 18/11/2026. No representa ejecución formal ni revisión de otro int
 ## Cierre
 
 - [ ] Cuentas limpias y Settings comparados con baseline.
-- [ ] Contraseña original de A y email original de B confirmados.
+- [x] Contraseña original de A y email original de B confirmados, registro privado actualizado.
 - [ ] Papeleras vacías y estado final con capturas, sin eliminar cuentas.
 - [ ] Exportación XML real de suite y extracción por ticket.
 - [ ] Auditoría final, checklist de la guía §19 e INFORME-FINAL.
@@ -43,4 +43,4 @@ Actualizado 18/11/2026. No representa ejecución formal ni revisión de otro int
 - [x] Nuevo prompt de revisión global y ejemplo del docente leídos, sin modificar archivos del usuario.
 - [x] T10 dejado en punto seguro y respaldado: 89ec619 enviado.
 - [x] Prioridad confirmada: Codex termina T09–T11 y fase 6; otro Claude revisa los demás casos por API. Rúbrica aplicada a T09/T11 antes de registrar.
-- [x] Bloque manual T10 a/b/c solicitado nuevamente por instrucción expresa; pendientes sus resultados.
+- [x] Bloque manual T10 a/b/c solicitado nuevamente por instrucción expresa; resultados recibidos y verificados.

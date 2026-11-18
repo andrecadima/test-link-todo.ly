@@ -57,7 +57,7 @@ Has access to this site
 									45 link Logout, Value: 68.211.149.112/logout.php?viewer=
 								46 container
 									47 container
-										48 text Test Project 
+										48 text Test Project
 										49 pop up button TL:Todo.ly
 											50 (selected) TL:Todo.ly
 									51 link Desktop, Value: 68.211.149.112/index.php
@@ -167,7 +167,7 @@ Has access to this site
 											155 table
 												156 row
 													157 column header 0-5
-														158 text TL-72 : T09-01. Signup con campos vacíos y términos sin aceptar rechaza el envío - Version 1 
+														158 text TL-72 : T09-01. Signup con campos vacíos y términos sin aceptar rechaza el envío - Version 1
 														159 image Show ghost string
 														160 image Display Author/Updater
 												161 row
@@ -185,14 +185,14 @@ Has access to this site
 													173 cell 0-5
 														174 content list
 															175 container
-																176 AXListMarker 1. 
+																176 AXListMarker 1.
 																177 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 															178 container
-																179 AXListMarker 2. 
+																179 AXListMarker 2.
 																180 text Sin sesión iniciada en Todo.ly en el navegador.
 												181 row
 													182 column header
-														183 image Show / Hide reorder 
+														183 image Show / Hide reorder
 														184 image Show ghost string
 														185 text #
 													186 column header
@@ -352,31 +352,31 @@ Has access to this site
 											340 button Create step
 											341 button Resequence Steps
 										342 container
-											343 text Status : 
+											343 text Status :
 											344 pop up button Draft
 												345 (selected) Draft
-											346 text Importance : 
+											346 text Importance :
 											347 pop up button Medium
 												348 (selected) Medium
-											349 text Execution type : 
+											349 text Execution type :
 											350 pop up button Manual
 												351 (selected) Manual
 											352 checkbox 0
 											353 text Apply To All Steps
-											354 text Estimated exec. (min) : 
+											354 text Estimated exec. (min) :
 											355 text field (settable) Estimated exec. duration (min)
 											356 button Save
 										357 container
-											358 container Keywords   Create Keyword  Create & Link 
+											358 container Keywords   Create Keyword  Create & Link
 												359 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
 												360 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
 												361 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=252%27)
 											362 container None
 												363 text None
 										364 container
-											365 container Platforms:  
+											365 container Platforms:
 												366 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
-												367 text :  
+												367 text :
 											368 container None
 												369 text None
 										370 table
@@ -385,7 +385,7 @@ Has access to this site
 													373 text Relations
 											374 row
 												375 cell
-													376 text New relation:  This test case version 
+													376 text New relation:  This test case version
 													377 pop up button is related to
 														378 (selected) is related to
 													379 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID

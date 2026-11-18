@@ -7,7 +7,7 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 											259 table
 												260 row
 													261 column header 0-5
-														262 text TL-71 : T10-10. Comprobar HTTPS en el enlace de recuperación recibido - Version 1 
+														262 text TL-71 : T10-10. Comprobar HTTPS en el enlace de recuperación recibido - Version 1
 														263 image Show ghost string
 														264 image Display Author/Updater
 												265 row
@@ -26,20 +26,20 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 													278 cell 0-5
 														279 content list
 															280 container
-																281 AXListMarker 1. 
+																281 AXListMarker 1.
 																282 text Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
 															283 container
-																284 AXListMarker 2. 
+																284 AXListMarker 2.
 																285 text Sin sesión iniciada en Todo.ly en el navegador.
 															286 container
-																287 AXListMarker 3. 
+																287 AXListMarker 3.
 																288 text Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta.
 															289 container
-																290 AXListMarker 4. 
+																290 AXListMarker 4.
 																291 text Mensaje de recuperación de A disponible con enlace aún no utilizado; sin otras credenciales visibles en pantalla.
 												292 row
 													293 column header
-														294 image Show / Hide reorder 
+														294 image Show / Hide reorder
 														295 image Show ghost string
 														296 text #
 													297 column header
@@ -90,31 +90,31 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 											342 button Create step
 											343 button Resequence Steps
 										344 container
-											345 text Status : 
+											345 text Status :
 											346 pop up button Draft
 												347 (selected) Draft
-											348 text Importance : 
+											348 text Importance :
 											349 pop up button High
 												350 (selected) High
-											351 text Execution type : 
+											351 text Execution type :
 											352 pop up button Manual
 												353 (selected) Manual
 											354 checkbox 0
 											355 text Apply To All Steps
-											356 text Estimated exec. (min) : 
+											356 text Estimated exec. (min) :
 											357 text field (settable) Estimated exec. duration (min)
 											358 button Save
 										359 container
-											360 container Keywords   Create Keyword  Create & Link 
+											360 container Keywords   Create Keyword  Create & Link
 												361 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
 												362 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
 												363 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=247%27)
 											364 container None
 												365 text None
 										366 container
-											367 container Platforms:  
+											367 container Platforms:
 												368 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
-												369 text :  
+												369 text :
 											370 container None
 												371 text None
 										372 table
@@ -123,7 +123,7 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 													375 text Relations
 											376 row
 												377 cell
-													378 text New relation:  This test case version 
+													378 text New relation:  This test case version
 													379 pop up button is related to
 														380 (selected) is related to
 													381 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID

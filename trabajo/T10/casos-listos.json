@@ -108,6 +108,266 @@
     "postcondiciones": "Contraseña vigente antes del intento conservada y acceso comprobado; nombre, correo y configuración sin cambios. Evidencia del rechazo sin secretos."
   },
   {
+    "id": "T10-04",
+    "titulo": "Settings con Old Password incorrecto muestra Invalid Password y conserva la clave",
+    "importancia": "high",
+    "razon": "Detecta sustitución de credenciales sin acreditar la contraseña vigente de la cuenta.",
+    "requerimiento": "PEB-74 / T10. Old Password incorrecto muestra Invalid Password; criterio del equipo: la contraseña vigente conserva el acceso tras el rechazo.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).",
+      "Correo y contraseña vigente de A consignados en el registro privado de credenciales.",
+      "Contraseña vigente de A distinta de **Prueba-T10-04-incorrecta**.",
+      "Contraseña objetivo de prueba para A, distinta de la vigente, consignada en el registro privado de credenciales.",
+      "Nombre de perfil y correo de A consignados en el registro privado de referencia."
+    ],
+    "descripcion": "Validar que Settings rechaza con el aviso Invalid Password un cambio de contraseña cuyo Old Password no coincide con la vigente y que A sigue accediendo con su contraseña vigente.",
+    "pasos": [
+      [
+        "Hacer clic en **Settings**.",
+        "Se abre **Settings**."
+      ],
+      [
+        "Seleccionar **Profile** en **Settings**.",
+        "**Profile** muestra **Full Name**, **Email**, **Time zone**, **Old Password**, **New Password** y los botones **Ok** y **Cancel**; no hay campo de confirmación de contraseña."
+      ],
+      [
+        "Escribir **Prueba-T10-04-incorrecta** en el campo **Old Password**.",
+        "**Old Password** muestra el valor enmascarado."
+      ],
+      [
+        "Escribir en **New Password** la contraseña objetivo de A del registro privado.",
+        "**New Password** muestra el valor enmascarado."
+      ],
+      [
+        "Hacer clic una sola vez en **Ok**.",
+        "Aparece un aviso con el texto exacto **Invalid Password** y el botón **OK**; **Profile** sigue visible detrás del aviso."
+      ],
+      [
+        "Tomar una captura del aviso y de **Profile**.",
+        "La captura muestra **Invalid Password** con las contraseñas enmascaradas; se conserva como evidencia privada, sin publicar el correo de A."
+      ],
+      [
+        "Hacer clic en **OK** del aviso.",
+        "Se cierra el aviso y **Profile** sigue abierto."
+      ],
+      [
+        "Hacer clic en **Cancel**.",
+        "Se cierra **Settings** sin guardar cambios y vuelve a verse el área de proyectos."
+      ],
+      [
+        "Hacer clic en **Logout**.",
+        "Se muestra la página pública con **Login** y **Sign Up Free**, con la sesión cerrada."
+      ],
+      [
+        "Hacer clic en **Login** en la página pública.",
+        "Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**."
+      ],
+      [
+        "Escribir en **Email** el correo de la cuenta A del registro privado.",
+        "**Email** muestra el correo de A."
+      ],
+      [
+        "Escribir en **Password** la contraseña vigente de A del registro privado, la misma vigente antes del intento.",
+        "**Password** muestra el valor enmascarado."
+      ],
+      [
+        "Hacer clic una vez en el botón **Login** del formulario (nombre accesible Submit).",
+        "Se muestra el área autenticada con **Settings** y **Logout**; la contraseña vigente sigue dando acceso."
+      ],
+      [
+        "Hacer clic en **Settings**.",
+        "Se abre **Settings**."
+      ],
+      [
+        "Seleccionar **Profile** en **Settings**.",
+        "**Profile** muestra **Full Name** y **Email** de la cuenta con sesión iniciada."
+      ],
+      [
+        "Comparar **Full Name** con el nombre de perfil de A del registro privado.",
+        "**Full Name** coincide con el nombre de A."
+      ],
+      [
+        "Comparar **Email** con el correo de A del registro privado.",
+        "**Email** coincide con el correo de A del registro privado."
+      ],
+      [
+        "Hacer clic en **Cancel**.",
+        "Se cierra **Settings** sin guardar cambios y vuelve a verse el área de proyectos."
+      ]
+    ],
+    "postcondiciones": "Contraseña vigente de A conservada y acceso comprobado; la contraseña objetivo no se aplicó. Sesión A iniciada, sin cambios de nombre, correo ni zona horaria. Evidencia del rechazo sin contraseñas legibles ni correos publicados."
+  },
+  {
+    "id": "T10-05",
+    "titulo": "Settings con Old Password vigente cambia la clave y permite Login con la nueva",
+    "importancia": "high",
+    "razon": "Protege la continuidad del acceso y la invalidación de la credencial reemplazada tras un cambio voluntario.",
+    "requerimiento": "PEB-74 / T10. Un cambio con Old Password vigente y New Password informado se acepta: Login rechaza la contraseña reemplazada y concede acceso a A con la nueva.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).",
+      "Correo y contraseña vigente de A consignados en el registro privado de credenciales.",
+      "Contraseña objetivo de A distinta de la vigente, consignada en el registro privado; contraseña original como objetivo para el recorrido de restauración.",
+      "Nombre de perfil, correo y zona horaria de A consignados en el registro privado de referencia.",
+      "Cuenta A con menos de tres intentos fallidos de Login en la sesión de trabajo, según criterio operativo del equipo (no es una política de Todo.ly)."
+    ],
+    "descripcion": "Validar que un cambio de contraseña en Settings con Old Password vigente cierra Settings sin aviso de rechazo, que Login rechaza después la contraseña reemplazada y que concede acceso a la identidad de A con la contraseña objetivo.",
+    "pasos": [
+      [
+        "Hacer clic en **Settings**.",
+        "Se abre **Settings**."
+      ],
+      [
+        "Seleccionar **Profile** en **Settings**.",
+        "**Profile** muestra **Full Name**, **Email**, **Time zone**, **Old Password**, **New Password** y los botones **Ok** y **Cancel**."
+      ],
+      [
+        "Comparar **Full Name** con el nombre de perfil de A del registro privado.",
+        "**Full Name** coincide con el nombre de A."
+      ],
+      [
+        "Comparar **Email** con el correo de A del registro privado.",
+        "**Email** coincide con el correo de A del registro privado."
+      ],
+      [
+        "Escribir en **Old Password** la contraseña vigente de A del registro privado.",
+        "**Old Password** muestra el valor enmascarado."
+      ],
+      [
+        "Escribir en **New Password** la contraseña objetivo de A del registro privado.",
+        "**New Password** muestra el valor enmascarado."
+      ],
+      [
+        "Hacer clic una sola vez en **Ok**.",
+        "Se cierra **Settings** sin el aviso **Invalid Password** y vuelve a verse el área de proyectos con **Settings** y **Logout**. No se exige un mensaje de éxito, porque no se observó ninguno."
+      ],
+      [
+        "Hacer clic en **Logout**.",
+        "Se muestra la página pública con **Login** y **Sign Up Free**, con la sesión cerrada."
+      ],
+      [
+        "Hacer clic en **Login** en la página pública.",
+        "Se despliega el formulario de acceso con **Email**, **Password**, la casilla **Remember Me** y el botón **Login**."
+      ],
+      [
+        "Escribir en **Email** el correo de la cuenta A del registro privado.",
+        "**Email** muestra el correo de A."
+      ],
+      [
+        "Escribir en **Password** la contraseña reemplazada de A, vigente antes del paso 7, tomada del registro privado.",
+        "**Password** muestra el valor enmascarado."
+      ],
+      [
+        "Hacer clic una sola vez en el botón **Login** del formulario (nombre accesible Submit).",
+        "No se concede acceso y se muestra **Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.**"
+      ],
+      [
+        "Escribir en **Email** el correo de la cuenta A del registro privado, sustituyendo cualquier contenido del campo.",
+        "**Email** muestra el correo de A."
+      ],
+      [
+        "Escribir en **Password** la contraseña objetivo de A del registro privado.",
+        "**Password** muestra el valor enmascarado."
+      ],
+      [
+        "Hacer clic una vez en el botón **Login** del formulario (nombre accesible Submit).",
+        "Se muestra el área autenticada con **Settings** y **Logout**."
+      ],
+      [
+        "Hacer clic en **Settings**.",
+        "Se abre **Settings**."
+      ],
+      [
+        "Seleccionar **Profile** en **Settings**.",
+        "**Profile** muestra **Full Name**, **Email** y **Time zone** de la cuenta con sesión iniciada."
+      ],
+      [
+        "Comparar **Full Name** con el nombre de perfil de A del registro privado.",
+        "**Full Name** coincide con el nombre de A."
+      ],
+      [
+        "Comparar **Email** con el correo de A del registro privado.",
+        "**Email** coincide con el correo de A del registro privado."
+      ],
+      [
+        "Comparar **Time zone** con la zona horaria de A del registro privado.",
+        "**Time zone** conserva la zona horaria de A del registro privado."
+      ],
+      [
+        "Tomar una captura de **Profile**.",
+        "La captura muestra la identidad de A con los campos de contraseña sin valores legibles; se conserva como evidencia privada, sin publicar el correo de A."
+      ],
+      [
+        "Hacer clic en **Cancel**.",
+        "Se cierra **Settings** sin guardar cambios y vuelve a verse el área de proyectos."
+      ],
+      [
+        "Anotar en el registro privado la contraseña objetivo como vigente de A.",
+        "El registro privado identifica la contraseña objetivo como vigente y la reemplazada como anterior."
+      ]
+    ],
+    "postcondiciones": "Contraseña objetivo vigente en A, comprobada por Login, y registro privado actualizado; cuando la objetivo es la original, A queda restaurada sin un segundo cambio de contraseña. Un único intento fallido de Login con la contraseña reemplazada. Nombre, correo y zona horaria sin cambios; sesión A iniciada. Evidencias sin contraseñas legibles ni correos publicados."
+  },
+  {
+    "id": "T10-06",
+    "titulo": "Profile con Email editado y Cancel conserva el correo original de B",
+    "importancia": "high",
+    "razon": "Evita pérdida de acceso por aplicar un identificador de cuenta que la persona decidió descartar.",
+    "requerimiento": "PEB-74 / T10. Cancel descarta una edición de Email en Profile y el correo original de B permanece al reabrir Profile.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta B).",
+      "Correo original de B consignado en el registro privado de referencia.",
+      "Dirección de correo alternativa elegida por quien ejecuta, distinta del correo original de B, consignada en el registro privado de referencia.",
+      "Profile de B sin cambios pendientes."
+    ],
+    "descripcion": "Validar que, tras sustituir Email por una dirección alternativa y pulsar Cancel sin Ok, Profile de B vuelve a mostrar exactamente el correo original.",
+    "pasos": [
+      [
+        "Hacer clic en **Settings**.",
+        "Se abre **Settings**."
+      ],
+      [
+        "Seleccionar **Profile** en **Settings**.",
+        "**Profile** muestra **Full Name**, **Email**, **Time zone** y los botones **Ok** y **Cancel**."
+      ],
+      [
+        "Comparar **Email** con el correo original de B del registro privado.",
+        "**Email** coincide con el correo original de B."
+      ],
+      [
+        "Sustituir el contenido de **Email** por la dirección alternativa del registro privado.",
+        "**Email** muestra la dirección alternativa."
+      ],
+      [
+        "Hacer clic una vez en **Cancel**, sin hacer clic en **Ok**.",
+        "Se cierra **Settings** sin guardar cambios y vuelve a verse el área de proyectos."
+      ],
+      [
+        "Hacer clic en **Settings**.",
+        "Se abre **Settings**."
+      ],
+      [
+        "Seleccionar **Profile** en **Settings**.",
+        "**Profile** muestra **Full Name** y **Email** de la cuenta con sesión iniciada."
+      ],
+      [
+        "Comparar **Email** con el correo original de B del registro privado.",
+        "**Email** coincide exactamente con el correo original de B y no muestra la dirección alternativa."
+      ],
+      [
+        "Tomar una captura de **Profile**.",
+        "La captura muestra **Email** con el correo original de B; se conserva como evidencia privada, sin publicar direcciones reales."
+      ],
+      [
+        "Hacer clic en **Cancel**.",
+        "Se cierra **Settings** sin guardar cambios y vuelve a verse el área de proyectos."
+      ]
+    ],
+    "postcondiciones": "B conserva su correo original y su sesión iniciada; no se envió ningún cambio de Email. Este caso no incluye Login: su objetivo es el descarte de la edición. El cambio válido de Email sigue pendiente en T10-07."
+  },
+  {
     "id": "T10-08",
     "titulo": "Recuperar el acceso de una cuenta registrada mediante su buzón",
     "importancia": "high",

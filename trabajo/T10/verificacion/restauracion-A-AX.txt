@@ -1,0 +1,226 @@
+Window: "Todo.ly", App: Google Chrome.
+0 standard window Todo.ly - Google Chrome (Incognito), URL: todo.ly/, Secondary Actions: Raise
+	1 container Todo.ly - Google Chrome (Incognito), URL: todo.ly/
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button View site information
+					9 text field (settable) Address and search bar, Value: todo.ly, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 container
+					12 pop up button vidIQ Vision for YouTube
+Has access to this site
+					13 pop up button Extensions
+				14 button Incognito
+				15 pop up button Chrome
+			16 toolbar Bookmarks
+				17 bookmark button Sample Tank MAX 4-0-9 WiN-MAC - AUDIOTOOLS
+				18 bookmark button Downloads
+				19 bookmark button Flameboy Tutorials
+				20 bookmark button Media Monopoly: Secure Checkout
+				21 bookmark button Twitch Inspector
+				22 bookmark button Account | Output | Virtual Software Instruments
+				23 bookmark button Account | Output | Virtual Software Instruments
+				24 pop up button Menu containing hidden bookmarks
+				25 bookmark folder button All Bookmarks
+				26 splitter Separator
+			27 container
+				28 scroll area
+					29 HTML content Todo.ly, URL: todo.ly/
+						30 container
+							31 container
+								32 container iPhone App |Upgrade to Pro |Settings | Logout Wednesday, November 18, 2026 | 4:15 PM Refresh  |  Print
+									33 container
+										34 link iPhone App, Value: itunes.apple.com/us/app/todo.ly/id645869046?mt=8
+										35 text |
+										36 link Upgrade to Pro, Value: todo.ly/Upgrade
+										37 text |
+										38 link Settings, Value: javascript:OpenSettingsDialog();
+										39 text |
+										40 link Logout, Value: javascript:WebForm_DoPostBackWithOptions(new%20WebForm_PostBackOptions(%22ctl00$HeaderTopControl1$LinkButtonLogout%22,%20%22%22,%20true,%20%22%22,%20%22%22,%20false,%20true))
+									41 container
+										42 link To get missing image descriptions, open the context menu., Value: todo.ly/
+										43 container Wednesday, November 18, 2026 | 4:15 PM Refresh  |  Print
+											44 text Wednesday, November 18, 2026 | 4:15 PM
+											45 container
+												46 text Refresh
+												47 Unlabeled image /refresh.png
+												48 text  |  Print
+												49 Unlabeled image /print2.png
+								50 container Filters Inbox Today Next Projects Work 5 Sub Project Home 1 Study
+									51 container
+										52 container
+											53 container Filters Inbox Today Next Projects Work 5 Sub Project Home 1 Study
+												54 text Filters
+												55 content list
+													56 container
+														57 container Inbox
+															58 text Inbox
+													59 container
+														60 container Today
+															61 text Today
+													62 container
+														63 container Next
+															64 text Next
+												65 text Projects
+												66 content list
+													67 container
+														68 container
+															69 Unlabeled image /grippy.png
+															70 container Work
+																71 text Work
+															72 container 5
+																73 text 5
+														74 content list
+															75 container
+																76 Unlabeled image /grippy.png
+																77 container Sub Project
+																	78 text Sub Project
+													79 container
+														80 Unlabeled image /grippy.png
+														81 container Home
+															82 text Home
+														83 container 1
+															84 text 1
+													85 container
+														86 Unlabeled image /grippy.png
+														87 container Study
+															88 text Study
+													89 container
+														90 Unlabeled image /grippy.png
+														91 container Personal
+															92 text Personal
+													93 container
+														94 Unlabeled image /grippy.png
+														95 container Shopping List
+															96 text Shopping List
+													97 container
+														98 Unlabeled image /grippy.png
+														99 container Prueba T11 - proyecto renombrado 1109
+															100 text Prueba T11 - proyecto renombrado 1109
+												101 container
+													102 container Add New Project
+														103 text Add New Project
+												104 content list
+													105 container
+														106 container Recycle Bin
+															107 text Recycle Bin
+											108 container Sort By: Order | Notes: Hidden Work Add new tasks using the field below Move items to different project using drag and drop. (Drag the small handler in front of the task) Hover your mouse over a project or item and click the icon on the right side of the item for more options Try to drag and reorder items You can drag and drop task on each other to create sub tasks, like this
+												109 container
+													110 container
+														111 text Sort By:
+														112 text Order
+														113 text | Notes:  Hidden
+													114 text Work
+													115 content list
+														116 container
+															117 Unlabeled image /grippy.png
+															118 checkbox 0
+															119 container Add new tasks using the field below
+																120 text Add new tasks using the field below
+														121 container
+															122 Unlabeled image /grippy.png
+															123 checkbox 0
+															124 container Move items to different project using drag and drop. (Drag the small handler in front of the task)
+																125 text Move items to different project using drag and drop. (Drag the small handler in front of the task)
+														126 container
+															127 Unlabeled image /grippy.png
+															128 checkbox 0
+															129 container Hover your mouse over a project or item and click the icon on the right side of the item for more options
+																130 text Hover your mouse over a project or item and click the icon on the right side of the item for more options
+														131 container
+															132 container
+																133 Unlabeled image /grippy.png
+																134 checkbox 0
+																135 container Try to drag and reorder items
+																	136 text Try to drag and reorder items
+															137 content list
+																138 container
+																	139 Unlabeled image /grippy.png
+																	140 checkbox 0
+																	141 container You can drag and drop task on each other to create sub tasks, like this
+																		142 text You can drag and drop task on each other to create sub tasks, like this
+													143 container
+														144 container
+															145 Unlabeled image /AddItemChecbox.png
+															146 text entry area (settable)
+														147 Unlabeled image /AddItemBoxMoreNew.png
+														148 container Add
+															149 button Add
+													150 container
+														151 link 0, Value: javascript:ShowDoneItems()
+														152 link Done Items  |  , Value: javascript:ShowDoneItems()
+														153 link See all, Value: javascript:ShowDoneItems()
+														154 link   |  Delete all, Value: javascript:DeleteDoneItems()
+								155 container © 2026 Todo.ly All rights reserved. A SixType Product. Email tasks Public API Blog Email us Terms Privacy Policy
+									156 container
+										157 text © 2026 Todo.ly All rights reserved. A
+										158 link SixType, Value: sixtype.com/
+										159 text  Product.
+										160 link Email tasks, Value: mailto:todo@todo.ly
+										161 link Public API, Value: todo.ly/ApiWiki/
+										162 link Blog, Value: todo.ly/Blog
+										163 link Email us, Value: mailto:mail@todo.ly
+										164 link Terms, Value: todo.ly/Terms
+										165 link Privacy Policy, Value: todo.ly/Privacy
+							166 container
+								167 content list
+									168 link Profile, Value: todo.ly/#settings_Profile
+									169 link Default Settings, Value: todo.ly/#settings_basicPanel
+									170 link Share, Value: todo.ly/#settings_sharePanel
+									171 link Pro, Value: todo.ly/#settings_ProPanel
+									172 link Account, Value: todo.ly/#settings_Account
+									173 button close
+								174 container
+									175 container Personal Settings
+										176 text Personal Settings
+									177 container Full Name
+										178 text Full Name
+									179 container Andre Cadima
+										180 text field (settable) Andre Cadima
+									181 container Email
+										182 text Email
+									183 container ricardo.cadima@ucb.edu.bo
+										184 text field (settable) ricardo.cadima@ucb.edu.bo
+									185 container Time zone
+										186 text Time zone
+									187 container (UTC-04:00) Georgetown, La Paz, Manaus, San Juan
+										188 pop up button (UTC-04:00) Georgetown, La Paz, Manaus, San Juan
+											189 (selected) (UTC-04:00) Georgetown, La Paz, Manaus, San Juan
+									190 container Change Password
+										191 text Change Password
+									192 container Old Password
+										193 text Old Password
+									194 secure text field (settable)
+									195 container New Password
+										196 text New Password
+									197 secure text field (settable)
+							198 container
+								199 button Ok
+								200 button Cancel
+			201 pop up button Tab search
+			202 container
+				203 tab group
+					204 tab (selected, settable, boolean) Todo.ly - Memory usage - 45.2 MB, Value: on
+						205 button Close
+			206 button New Tab
+		207 text javascript:OpenSettingsDialog();
+	208 close button
+	209 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	210 minimize button
+211 menu bar
+	212 Chrome
+	213 File
+	214 Edit
+	215 View
+	216 History
+	217 Bookmarks
+	218 Profiles
+	219 Tab
+	220 Window
+	221 Help
+
+The focused UI element is 168 link Profile, Value: todo.ly/#settings_Profile

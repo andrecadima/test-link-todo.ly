@@ -1,0 +1,336 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testcases>
+  <testcase name="T10-04. Settings con Old Password incorrecto muestra Invalid Password y conserva la clave">
+    <node_order>1</node_order>
+    <summary>&lt;p&gt;Validar que Settings rechaza con el aviso Invalid Password un cambio de contraseña cuyo Old Password no coincide con la vigente y que A sigue accediendo con su contraseña vigente.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-74 / T10. Old Password incorrecto muestra Invalid Password; criterio del equipo: la contraseña vigente conserva el acceso tras el rechazo.&lt;/p&gt;&lt;p&gt;Postcondiciones: Contraseña vigente de A conservada y acceso comprobado; la contraseña objetivo no se aplicó. Sesión A iniciada, sin cambios de nombre, correo ni zona horaria. Evidencia del rechazo sin contraseñas legibles ni correos publicados.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).&lt;/li&gt;&lt;li&gt;Correo y contraseña vigente de A consignados en el registro privado de credenciales.&lt;/li&gt;&lt;li&gt;Contraseña vigente de A distinta de &lt;strong&gt;Prueba-T10-04-incorrecta&lt;/strong&gt;.&lt;/li&gt;&lt;li&gt;Contraseña objetivo de prueba para A, distinta de la vigente, consignada en el registro privado de credenciales.&lt;/li&gt;&lt;li&gt;Nombre de perfil y correo de A consignados en el registro privado de referencia.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;Profile&lt;/strong&gt; en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Profile&lt;/strong&gt; muestra &lt;strong&gt;Full Name&lt;/strong&gt;, &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Time zone&lt;/strong&gt;, &lt;strong&gt;Old Password&lt;/strong&gt;, &lt;strong&gt;New Password&lt;/strong&gt; y los botones &lt;strong&gt;Ok&lt;/strong&gt; y &lt;strong&gt;Cancel&lt;/strong&gt;; no hay campo de confirmación de contraseña.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Escribir &lt;strong&gt;Prueba-T10-04-incorrecta&lt;/strong&gt; en el campo &lt;strong&gt;Old Password&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Old Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;New Password&lt;/strong&gt; la contraseña objetivo de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;New Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en &lt;strong&gt;Ok&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Aparece un aviso con el texto exacto &lt;strong&gt;Invalid Password&lt;/strong&gt; y el botón &lt;strong&gt;OK&lt;/strong&gt;; &lt;strong&gt;Profile&lt;/strong&gt; sigue visible detrás del aviso.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Tomar una captura del aviso y de &lt;strong&gt;Profile&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra &lt;strong&gt;Invalid Password&lt;/strong&gt; con las contraseñas enmascaradas; se conserva como evidencia privada, sin publicar el correo de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;OK&lt;/strong&gt; del aviso.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se cierra el aviso y &lt;strong&gt;Profile&lt;/strong&gt; sigue abierto.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Cancel&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se cierra &lt;strong&gt;Settings&lt;/strong&gt; sin guardar cambios y vuelve a verse el área de proyectos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;, con la sesión cerrada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso con &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; y el botón &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>11</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>12</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Password&lt;/strong&gt; la contraseña vigente de A del registro privado, la misma vigente antes del intento.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>13</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra el área autenticada con &lt;strong&gt;Settings&lt;/strong&gt; y &lt;strong&gt;Logout&lt;/strong&gt;; la contraseña vigente sigue dando acceso.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>14</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>15</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;Profile&lt;/strong&gt; en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Profile&lt;/strong&gt; muestra &lt;strong&gt;Full Name&lt;/strong&gt; y &lt;strong&gt;Email&lt;/strong&gt; de la cuenta con sesión iniciada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>16</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Full Name&lt;/strong&gt; con el nombre de perfil de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Full Name&lt;/strong&gt; coincide con el nombre de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>17</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Email&lt;/strong&gt; con el correo de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; coincide con el correo de A del registro privado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>18</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Cancel&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se cierra &lt;strong&gt;Settings&lt;/strong&gt; sin guardar cambios y vuelve a verse el área de proyectos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase name="T10-05. Settings con Old Password vigente cambia la clave y permite Login con la nueva">
+    <node_order>2</node_order>
+    <summary>&lt;p&gt;Validar que un cambio de contraseña en Settings con Old Password vigente cierra Settings sin aviso de rechazo, que Login rechaza después la contraseña reemplazada y que concede acceso a la identidad de A con la contraseña objetivo.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-74 / T10. Un cambio con Old Password vigente y New Password informado se acepta: Login rechaza la contraseña reemplazada y concede acceso a A con la nueva.&lt;/p&gt;&lt;p&gt;Postcondiciones: Contraseña objetivo vigente en A, comprobada por Login, y registro privado actualizado; cuando la objetivo es la original, A queda restaurada sin un segundo cambio de contraseña. Un único intento fallido de Login con la contraseña reemplazada. Nombre, correo y zona horaria sin cambios; sesión A iniciada. Evidencias sin contraseñas legibles ni correos publicados.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).&lt;/li&gt;&lt;li&gt;Correo y contraseña vigente de A consignados en el registro privado de credenciales.&lt;/li&gt;&lt;li&gt;Contraseña objetivo de A distinta de la vigente, consignada en el registro privado; contraseña original como objetivo para el recorrido de restauración.&lt;/li&gt;&lt;li&gt;Nombre de perfil, correo y zona horaria de A consignados en el registro privado de referencia.&lt;/li&gt;&lt;li&gt;Cuenta A con menos de tres intentos fallidos de Login en la sesión de trabajo, según criterio operativo del equipo (no es una política de Todo.ly).&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;Profile&lt;/strong&gt; en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Profile&lt;/strong&gt; muestra &lt;strong&gt;Full Name&lt;/strong&gt;, &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Time zone&lt;/strong&gt;, &lt;strong&gt;Old Password&lt;/strong&gt;, &lt;strong&gt;New Password&lt;/strong&gt; y los botones &lt;strong&gt;Ok&lt;/strong&gt; y &lt;strong&gt;Cancel&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Full Name&lt;/strong&gt; con el nombre de perfil de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Full Name&lt;/strong&gt; coincide con el nombre de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Email&lt;/strong&gt; con el correo de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; coincide con el correo de A del registro privado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Old Password&lt;/strong&gt; la contraseña vigente de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Old Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;New Password&lt;/strong&gt; la contraseña objetivo de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;New Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en &lt;strong&gt;Ok&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se cierra &lt;strong&gt;Settings&lt;/strong&gt; sin el aviso &lt;strong&gt;Invalid Password&lt;/strong&gt; y vuelve a verse el área de proyectos con &lt;strong&gt;Settings&lt;/strong&gt; y &lt;strong&gt;Logout&lt;/strong&gt;. No se exige un mensaje de éxito, porque no se observó ninguno.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra la página pública con &lt;strong&gt;Login&lt;/strong&gt; y &lt;strong&gt;Sign Up Free&lt;/strong&gt;, con la sesión cerrada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Login&lt;/strong&gt; en la página pública.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se despliega el formulario de acceso con &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Password&lt;/strong&gt;, la casilla &lt;strong&gt;Remember Me&lt;/strong&gt; y el botón &lt;strong&gt;Login&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>11</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Password&lt;/strong&gt; la contraseña reemplazada de A, vigente antes del paso 7, tomada del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>12</step_number>
+        <actions>&lt;p&gt;Hacer clic una sola vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;No se concede acceso y se muestra &lt;strong&gt;Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.&lt;/strong&gt;&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>13</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Email&lt;/strong&gt; el correo de la cuenta A del registro privado, sustituyendo cualquier contenido del campo.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra el correo de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>14</step_number>
+        <actions>&lt;p&gt;Escribir en &lt;strong&gt;Password&lt;/strong&gt; la contraseña objetivo de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt; muestra el valor enmascarado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>15</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en el botón &lt;strong&gt;Login&lt;/strong&gt; del formulario (nombre accesible Submit).&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra el área autenticada con &lt;strong&gt;Settings&lt;/strong&gt; y &lt;strong&gt;Logout&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>16</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>17</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;Profile&lt;/strong&gt; en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Profile&lt;/strong&gt; muestra &lt;strong&gt;Full Name&lt;/strong&gt;, &lt;strong&gt;Email&lt;/strong&gt; y &lt;strong&gt;Time zone&lt;/strong&gt; de la cuenta con sesión iniciada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>18</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Full Name&lt;/strong&gt; con el nombre de perfil de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Full Name&lt;/strong&gt; coincide con el nombre de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>19</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Email&lt;/strong&gt; con el correo de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; coincide con el correo de A del registro privado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>20</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Time zone&lt;/strong&gt; con la zona horaria de A del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Time zone&lt;/strong&gt; conserva la zona horaria de A del registro privado.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>21</step_number>
+        <actions>&lt;p&gt;Tomar una captura de &lt;strong&gt;Profile&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra la identidad de A con los campos de contraseña sin valores legibles; se conserva como evidencia privada, sin publicar el correo de A.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>22</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Cancel&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se cierra &lt;strong&gt;Settings&lt;/strong&gt; sin guardar cambios y vuelve a verse el área de proyectos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>23</step_number>
+        <actions>&lt;p&gt;Anotar en el registro privado la contraseña objetivo como vigente de A.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El registro privado identifica la contraseña objetivo como vigente y la reemplazada como anterior.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+  <testcase name="T10-06. Profile con Email editado y Cancel conserva el correo original de B">
+    <node_order>3</node_order>
+    <summary>&lt;p&gt;Validar que, tras sustituir Email por una dirección alternativa y pulsar Cancel sin Ok, Profile de B vuelve a mostrar exactamente el correo original.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-74 / T10. Cancel descarta una edición de Email en Profile y el correo original de B permanece al reabrir Profile.&lt;/p&gt;&lt;p&gt;Postcondiciones: B conserva su correo original y su sesión iniciada; no se envió ningún cambio de Email. Este caso no incluye Login: su objetivo es el descarte de la edición. El cambio válido de Email sigue pendiente en T10-07.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta B).&lt;/li&gt;&lt;li&gt;Correo original de B consignado en el registro privado de referencia.&lt;/li&gt;&lt;li&gt;Dirección de correo alternativa elegida por quien ejecuta, distinta del correo original de B, consignada en el registro privado de referencia.&lt;/li&gt;&lt;li&gt;Profile de B sin cambios pendientes.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;Profile&lt;/strong&gt; en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Profile&lt;/strong&gt; muestra &lt;strong&gt;Full Name&lt;/strong&gt;, &lt;strong&gt;Email&lt;/strong&gt;, &lt;strong&gt;Time zone&lt;/strong&gt; y los botones &lt;strong&gt;Ok&lt;/strong&gt; y &lt;strong&gt;Cancel&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Email&lt;/strong&gt; con el correo original de B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; coincide con el correo original de B.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Sustituir el contenido de &lt;strong&gt;Email&lt;/strong&gt; por la dirección alternativa del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; muestra la dirección alternativa.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Hacer clic una vez en &lt;strong&gt;Cancel&lt;/strong&gt;, sin hacer clic en &lt;strong&gt;Ok&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se cierra &lt;strong&gt;Settings&lt;/strong&gt; sin guardar cambios y vuelve a verse el área de proyectos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se abre &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>7</step_number>
+        <actions>&lt;p&gt;Seleccionar &lt;strong&gt;Profile&lt;/strong&gt; en &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Profile&lt;/strong&gt; muestra &lt;strong&gt;Full Name&lt;/strong&gt; y &lt;strong&gt;Email&lt;/strong&gt; de la cuenta con sesión iniciada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>8</step_number>
+        <actions>&lt;p&gt;Comparar &lt;strong&gt;Email&lt;/strong&gt; con el correo original de B del registro privado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt; coincide exactamente con el correo original de B y no muestra la dirección alternativa.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>9</step_number>
+        <actions>&lt;p&gt;Tomar una captura de &lt;strong&gt;Profile&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura muestra &lt;strong&gt;Email&lt;/strong&gt; con el correo original de B; se conserva como evidencia privada, sin publicar direcciones reales.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>10</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Cancel&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se cierra &lt;strong&gt;Settings&lt;/strong&gt; sin guardar cambios y vuelve a verse el área de proyectos.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
+</testcases>

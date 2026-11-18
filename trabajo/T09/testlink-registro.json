@@ -1,80 +1,177 @@
-[
-  {
-    "caso": "T09-01",
-    "id": "TL-72",
-    "interno": 251,
-    "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-72"
-  },
-  {
-    "caso": "T09-02",
-    "id": "TL-73",
-    "interno": 263,
-    "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-73"
-  },
-  {
-    "caso": "T09-03",
-    "id": "TL-74",
-    "interno": 282,
-    "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-74"
-  },
-  {
-    "caso": "T09-04",
-    "id": "TL-75",
-    "interno": 294,
-    "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-75"
-  },
-  {
-    "caso": "T09-05",
-    "id": "TL-76",
-    "interno": 308,
-    "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-76"
-  },
-  {
-    "caso": "T09-06",
-    "id": "TL-77",
-    "interno": 316,
-    "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-77"
-  },
-  {
-    "caso": "T09-07",
-    "id": "TL-78",
-    "interno": 325,
-    "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-78"
-  },
-  {
-    "caso": "T09-09",
-    "id": "TL-79",
-    "interno": 334,
-    "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-79"
-  },
-  {
-    "caso": "T09-10",
-    "id": "TL-80",
-    "interno": 343,
-    "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-80"
-  },
-  {
-    "caso": "T09-11",
-    "id": "TL-81",
-    "interno": 352,
-    "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-81"
-  },
-  {
-    "caso": "T09-12",
-    "id": "TL-82",
-    "interno": 361,
-    "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-82"
-  },
-  {
-    "caso": "T09-13",
-    "id": "TL-83",
-    "interno": 404,
-    "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-83"
-  },
-  {
-    "caso": "T09-14",
-    "id": "TL-84",
-    "interno": 423,
-    "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-84"
-  }
-]
+{
+  "proyecto": "TL:Todo.ly",
+  "suite": "Todo.ly tests",
+  "suite_id": 3,
+  "total_suite_observado": 83,
+  "casos": [
+    {
+      "caso": "T09-01",
+      "id_testlink": "TL-72",
+      "id_interno": 251,
+      "titulo": "Signup con campos vacíos y términos sin aceptar rechaza el envío",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-72",
+      "diferencias": [],
+      "pasos": 10,
+      "importance": "Medium",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T09-02",
+      "id_testlink": "TL-73",
+      "id_interno": 263,
+      "titulo": "Signup con el correo de una cuenta existente muestra error de duplicado",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-73",
+      "diferencias": [],
+      "pasos": 17,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T09-03",
+      "id_testlink": "TL-74",
+      "id_interno": 282,
+      "titulo": "Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-74",
+      "diferencias": [],
+      "pasos": 10,
+      "importance": "Medium",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T09-04",
+      "id_testlink": "TL-75",
+      "id_interno": 294,
+      "titulo": "Login con credenciales vigentes de A abre la sesión de la cuenta A",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-75",
+      "diferencias": [],
+      "pasos": 12,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T09-05",
+      "id_testlink": "TL-76",
+      "id_interno": 308,
+      "titulo": "Login con Email y Password vacíos no concede acceso",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-76",
+      "diferencias": [],
+      "pasos": 6,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T09-06",
+      "id_testlink": "TL-77",
+      "id_interno": 316,
+      "titulo": "Login con Email vacío y Password informado muestra error y no da acceso",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-77",
+      "diferencias": [],
+      "pasos": 7,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T09-07",
+      "id_testlink": "TL-78",
+      "id_interno": 325,
+      "titulo": "Login de A con Password vacío muestra error y no concede acceso",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-78",
+      "diferencias": [],
+      "pasos": 7,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T09-09",
+      "id_testlink": "TL-79",
+      "id_interno": 334,
+      "titulo": "Login con un correo no registrado muestra error y no concede acceso",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-79",
+      "diferencias": [],
+      "pasos": 7,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T09-10",
+      "id_testlink": "TL-80",
+      "id_interno": 343,
+      "titulo": "Login de A con contraseña incorrecta muestra error y no concede acceso",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-80",
+      "diferencias": [],
+      "pasos": 7,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T09-11",
+      "id_testlink": "TL-81",
+      "id_interno": 352,
+      "titulo": "Logout impide ver los datos de A con Atrás y con la URL directa",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-81",
+      "diferencias": [],
+      "pasos": 7,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T09-12",
+      "id_testlink": "TL-82",
+      "id_interno": 361,
+      "titulo": "Cambio de cuenta entre A y B muestra solo los datos propios de cada una",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-82",
+      "diferencias": [],
+      "pasos": 41,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T09-13",
+      "id_testlink": "TL-83",
+      "id_interno": 404,
+      "titulo": "Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-83",
+      "diferencias": [],
+      "pasos": 17,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T09-14",
+      "id_testlink": "TL-84",
+      "id_interno": 423,
+      "titulo": "Remember Me marcado: al reabrir el perfil se restaura la sesión de B",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-84",
+      "diferencias": [],
+      "pasos": 23,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    }
+  ]
+}

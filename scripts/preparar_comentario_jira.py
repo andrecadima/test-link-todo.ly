@@ -103,4 +103,4 @@ if __name__ == '__main__':
     items = json.loads(args.media_json.read_text()) if args.media_json else []
     body = render(args.source.read_text(), items)
     args.output.write_text(body + '\n')
-    print(f'HTML local: {len(body)} caracteres, {body.count("<table>")} tablas, {len(items)} imágenes. Sin publicación.')
+    print(f'HTML local: {len(body)} caracteres, {body.count("<table ")} tablas, {len(items)} imágenes. Sin publicación.')

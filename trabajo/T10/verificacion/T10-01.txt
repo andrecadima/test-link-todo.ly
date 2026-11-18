@@ -8,7 +8,7 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 											260 table
 												261 row
 													262 column header 0-5
-														263 text TL-66 : T10-01. Cancelar la modificación del nombre conserva el perfil - Version 1 
+														263 text TL-66 : T10-01. Cancelar la modificación del nombre conserva el perfil - Version 1
 														264 image Show ghost string
 														265 image Display Author/Updater
 												266 row
@@ -27,17 +27,17 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 													279 cell 0-5
 														280 content list
 															281 container
-																282 AXListMarker 1. 
+																282 AXListMarker 1.
 																283 text Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
 															284 container
-																285 AXListMarker 2. 
+																285 AXListMarker 2.
 																286 text Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A.
 															287 container
-																288 AXListMarker 3. 
+																288 AXListMarker 3.
 																289 text Nombre inicial de A conocido por quien ejecuta; datos de acceso conservados en un registro privado.
 												290 row
 													291 column header
-														292 image Show / Hide reorder 
+														292 image Show / Hide reorder
 														293 image Show ghost string
 														294 text #
 													295 column header
@@ -101,31 +101,31 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 											353 button Create step
 											354 button Resequence Steps
 										355 container
-											356 text Status : 
+											356 text Status :
 											357 pop up button Draft
 												358 (selected) Draft
-											359 text Importance : 
+											359 text Importance :
 											360 pop up button Medium
 												361 (selected) Medium
-											362 text Execution type : 
+											362 text Execution type :
 											363 pop up button Manual
 												364 (selected) Manual
 											365 checkbox 0
 											366 text Apply To All Steps
-											367 text Estimated exec. (min) : 
+											367 text Estimated exec. (min) :
 											368 text field (settable) Estimated exec. duration (min)
 											369 button Save
 										370 container
-											371 container Keywords   Create Keyword  Create & Link 
+											371 container Keywords   Create Keyword  Create & Link
 												372 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
 												373 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
 												374 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=212%27)
 											375 container None
 												376 text None
 										377 container
-											378 container Platforms:  
+											378 container Platforms:
 												379 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
-												380 text :  
+												380 text :
 											381 container None
 												382 text None
 										383 table
@@ -134,7 +134,7 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 													386 text Relations
 											387 row
 												388 cell
-													389 text New relation:  This test case version 
+													389 text New relation:  This test case version
 													390 pop up button is related to
 														391 (selected) is related to
 													392 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID

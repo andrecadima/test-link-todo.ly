@@ -57,7 +57,7 @@ Has access to this site
 									45 link Logout, Value: 68.211.149.112/logout.php?viewer=
 								46 container
 									47 container
-										48 text Test Project 
+										48 text Test Project
 										49 pop up button TL:Todo.ly
 											50 (selected) TL:Todo.ly
 									51 link Desktop, Value: 68.211.149.112/index.php
@@ -167,7 +167,7 @@ Has access to this site
 											155 table
 												156 row
 													157 column header 0-5
-														158 text TL-73 : T09-02. Signup con el correo de una cuenta existente muestra error de duplicado - Version 1 
+														158 text TL-73 : T09-02. Signup con el correo de una cuenta existente muestra error de duplicado - Version 1
 														159 image Show ghost string
 														160 image Display Author/Updater
 												161 row
@@ -186,26 +186,26 @@ Has access to this site
 													174 cell 0-5
 														175 content list
 															176 container
-																177 AXListMarker 1. 
+																177 AXListMarker 1.
 																178 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 															179 container
-																180 AXListMarker 2. 
+																180 AXListMarker 2.
 																181 text Sin sesión iniciada en Todo.ly en el navegador.
 															182 container
-																183 AXListMarker 3. 
+																183 AXListMarker 3.
 																184 text Cuenta gratuita de prueba (cuenta A) con correo y contraseña vigentes consignados en el registro privado de credenciales.
 															185 container
-																186 AXListMarker 4. 
+																186 AXListMarker 4.
 																187 text Contraseña de prueba para el intento de Signup, distinta de la vigente de A y consignada en el registro privado de credenciales.
 															188 container
-																189 AXListMarker 5. 
+																189 AXListMarker 5.
 																190 text Aceptación de los términos de Todo.ly autorizada para las cuentas de prueba.
 															191 container
-																192 AXListMarker 6. 
+																192 AXListMarker 6.
 																193 text Nombres de perfil de A consignados en el registro privado de referencia.
 												194 row
 													195 column header
-														196 image Show / Hide reorder 
+														196 image Show / Hide reorder
 														197 image Show ghost string
 														198 text #
 													199 column header
@@ -471,31 +471,31 @@ Has access to this site
 											459 button Create step
 											460 button Resequence Steps
 										461 container
-											462 text Status : 
+											462 text Status :
 											463 pop up button Draft
 												464 (selected) Draft
-											465 text Importance : 
+											465 text Importance :
 											466 pop up button High
 												467 (selected) High
-											468 text Execution type : 
+											468 text Execution type :
 											469 pop up button Manual
 												470 (selected) Manual
 											471 checkbox 0
 											472 text Apply To All Steps
-											473 text Estimated exec. (min) : 
+											473 text Estimated exec. (min) :
 											474 text field (settable) Estimated exec. duration (min)
 											475 button Save
 										476 container
-											477 container Keywords   Create Keyword  Create & Link 
+											477 container Keywords   Create Keyword  Create & Link
 												478 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
 												479 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
 												480 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=264%27)
 											481 container None
 												482 text None
 										483 container
-											484 container Platforms:  
+											484 container Platforms:
 												485 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
-												486 text :  
+												486 text :
 											487 container None
 												488 text None
 										489 table
@@ -504,7 +504,7 @@ Has access to this site
 													492 text Relations
 											493 row
 												494 cell
-													495 text New relation:  This test case version 
+													495 text New relation:  This test case version
 													496 pop up button is related to
 														497 (selected) is related to
 													498 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID

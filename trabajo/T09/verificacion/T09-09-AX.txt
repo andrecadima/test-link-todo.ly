@@ -57,7 +57,7 @@ Has access to this site
 									45 link Logout, Value: 68.211.149.112/logout.php?viewer=
 								46 container
 									47 container
-										48 text Test Project 
+										48 text Test Project
 										49 pop up button TL:Todo.ly
 											50 (selected) TL:Todo.ly
 									51 link Desktop, Value: 68.211.149.112/index.php
@@ -167,7 +167,7 @@ Has access to this site
 											155 table
 												156 row
 													157 column header 0-5
-														158 text TL-79 : T09-09. Login con un correo no registrado muestra error y no concede acceso - Version 1 
+														158 text TL-79 : T09-09. Login con un correo no registrado muestra error y no concede acceso - Version 1
 														159 image Show ghost string
 														160 image Display Author/Updater
 												161 row
@@ -185,17 +185,17 @@ Has access to this site
 													173 cell 0-5
 														174 content list
 															175 container
-																176 AXListMarker 1. 
+																176 AXListMarker 1.
 																177 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 															178 container
-																179 AXListMarker 2. 
+																179 AXListMarker 2.
 																180 text Sin sesión iniciada en Todo.ly en el navegador.
 															181 container
-																182 AXListMarker 3. 
+																182 AXListMarker 3.
 																183 text Dirección reservada  prueba-t10-no-registrada-20261117@example.com  sin cuenta asociada en Todo.ly, según el contraste de recuperación de PEB-74 / T10.
 												184 row
 													185 column header
-														186 image Show / Hide reorder 
+														186 image Show / Hide reorder
 														187 image Show ghost string
 														188 text #
 													189 column header
@@ -309,31 +309,31 @@ Has access to this site
 											297 button Create step
 											298 button Resequence Steps
 										299 container
-											300 text Status : 
+											300 text Status :
 											301 pop up button Draft
 												302 (selected) Draft
-											303 text Importance : 
+											303 text Importance :
 											304 pop up button High
 												305 (selected) High
-											306 text Execution type : 
+											306 text Execution type :
 											307 pop up button Manual
 												308 (selected) Manual
 											309 checkbox 0
 											310 text Apply To All Steps
-											311 text Estimated exec. (min) : 
+											311 text Estimated exec. (min) :
 											312 text field (settable) Estimated exec. duration (min)
 											313 button Save
 										314 container
-											315 container Keywords   Create Keyword  Create & Link 
+											315 container Keywords   Create Keyword  Create & Link
 												316 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
 												317 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
 												318 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=335%27)
 											319 container None
 												320 text None
 										321 container
-											322 container Platforms:  
+											322 container Platforms:
 												323 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
-												324 text :  
+												324 text :
 											325 container None
 												326 text None
 										327 table
@@ -342,7 +342,7 @@ Has access to this site
 													330 text Relations
 											331 row
 												332 cell
-													333 text New relation:  This test case version 
+													333 text New relation:  This test case version
 													334 pop up button is related to
 														335 (selected) is related to
 													336 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID

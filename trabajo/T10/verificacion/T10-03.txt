@@ -7,7 +7,7 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 											259 table
 												260 row
 													261 column header 0-5
-														262 text TL-68 : T10-03. Intentar cambiar la contraseña sin indicar la contraseña actual - Version 1 
+														262 text TL-68 : T10-03. Intentar cambiar la contraseña sin indicar la contraseña actual - Version 1
 														263 image Show ghost string
 														264 image Display Author/Updater
 												265 row
@@ -26,17 +26,17 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 													278 cell 0-5
 														279 content list
 															280 container
-																281 AXListMarker 1. 
+																281 AXListMarker 1.
 																282 text Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.
 															283 container
-																284 AXListMarker 2. 
+																284 AXListMarker 2.
 																285 text Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A.
 															286 container
-																287 AXListMarker 3. 
+																287 AXListMarker 3.
 																288 text Contraseña vigente y contraseña alternativa de prueba conocidas únicamente por quien ejecuta; registro privado disponible.
 												289 row
 													290 column header
-														291 image Show / Hide reorder 
+														291 image Show / Hide reorder
 														292 image Show ghost string
 														293 text #
 													294 column header
@@ -113,31 +113,31 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 											365 button Create step
 											366 button Resequence Steps
 										367 container
-											368 text Status : 
+											368 text Status :
 											369 pop up button Draft
 												370 (selected) Draft
-											371 text Importance : 
+											371 text Importance :
 											372 pop up button High
 												373 (selected) High
-											374 text Execution type : 
+											374 text Execution type :
 											375 pop up button Manual
 												376 (selected) Manual
 											377 checkbox 0
 											378 text Apply To All Steps
-											379 text Estimated exec. (min) : 
+											379 text Estimated exec. (min) :
 											380 text field (settable) Estimated exec. duration (min)
 											381 button Save
 										382 container
-											383 container Keywords   Create Keyword  Create & Link 
+											383 container Keywords   Create Keyword  Create & Link
 												384 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
 												385 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
 												386 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=226%27)
 											387 container None
 												388 text None
 										389 container
-											390 container Platforms:  
+											390 container Platforms:
 												391 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
-												392 text :  
+												392 text :
 											393 container None
 												394 text None
 										395 table
@@ -146,7 +146,7 @@ HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version
 													398 text Relations
 											399 row
 												400 cell
-													401 text New relation:  This test case version 
+													401 text New relation:  This test case version
 													402 pop up button is related to
 														403 (selected) is related to
 													404 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID

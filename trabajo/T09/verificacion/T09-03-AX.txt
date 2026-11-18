@@ -57,7 +57,7 @@ Has access to this site
 									45 link Logout, Value: 68.211.149.112/logout.php?viewer=
 								46 container
 									47 container
-										48 text Test Project 
+										48 text Test Project
 										49 pop up button TL:Todo.ly
 											50 (selected) TL:Todo.ly
 									51 link Desktop, Value: 68.211.149.112/index.php
@@ -167,7 +167,7 @@ Has access to this site
 											155 table
 												156 row
 													157 column header 0-5
-														158 text TL-74 : T09-03. Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada - Version 1 
+														158 text TL-74 : T09-03. Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada - Version 1
 														159 image Show ghost string
 														160 image Display Author/Updater
 												161 row
@@ -185,14 +185,14 @@ Has access to this site
 													173 cell 0-5
 														174 content list
 															175 container
-																176 AXListMarker 1. 
+																176 AXListMarker 1.
 																177 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 															178 container
-																179 AXListMarker 2. 
+																179 AXListMarker 2.
 																180 text Sin sesión iniciada en Todo.ly en el navegador.
 												181 row
 													182 column header
-														183 image Show / Hide reorder 
+														183 image Show / Hide reorder
 														184 image Show ghost string
 														185 text #
 													186 column header
@@ -348,31 +348,31 @@ Has access to this site
 											336 button Create step
 											337 button Resequence Steps
 										338 container
-											339 text Status : 
+											339 text Status :
 											340 pop up button Draft
 												341 (selected) Draft
-											342 text Importance : 
+											342 text Importance :
 											343 pop up button Medium
 												344 (selected) Medium
-											345 text Execution type : 
+											345 text Execution type :
 											346 pop up button Manual
 												347 (selected) Manual
 											348 checkbox 0
 											349 text Apply To All Steps
-											350 text Estimated exec. (min) : 
+											350 text Estimated exec. (min) :
 											351 text field (settable) Estimated exec. duration (min)
 											352 button Save
 										353 container
-											354 container Keywords   Create Keyword  Create & Link 
+											354 container Keywords   Create Keyword  Create & Link
 												355 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
 												356 link  Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
 												357 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=283%27)
 											358 container None
 												359 text None
 										360 container
-											361 container Platforms:  
+											361 container Platforms:
 												362 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
-												363 text :  
+												363 text :
 											364 container None
 												365 text None
 										366 table
@@ -381,7 +381,7 @@ Has access to this site
 													369 text Relations
 											370 row
 												371 cell
-													372 text New relation:  This test case version 
+													372 text New relation:  This test case version
 													373 pop up button is related to
 														374 (selected) is related to
 													375 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID
