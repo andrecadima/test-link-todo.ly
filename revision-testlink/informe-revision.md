@@ -1,6 +1,6 @@
 # Informe de revisión de casos de TestLink — Todo.ly
 
-Proyecto **TL:Todo.ly**, suite **Todo.ly tests**. Respaldo usado: `respaldo-20261118-1620.json` (83 casos, última versión de cada uno, con pasos).
+Proyecto **TL:Todo.ly**, suite **Todo.ly tests**. Respaldo usado: `respaldo-20261118-1653.json` (86 casos, última versión de cada uno, con pasos).
 
 Regla aplicada: se cambia cómo está escrito cada caso, nunca qué prueba. No se tocan IDs, importancia, tipo de ejecución, estado ni suite.
 
@@ -12,12 +12,12 @@ Regla aplicada: se cambia cómo está escrito cada caso, nunca qué prueba. No s
 | T07 | PEB-71 | 6 | 0 | 6 | 0 | 0 |  |
 | T08 | PEB-72 | 10 | 0 | 10 | 0 | 0 |  |
 | T09 | PEB-73 | 13 | 0 | 0 | 0 | 13 | Codex los está registrando; se revisarán cuando termine. |
-| T10 | PEB-74 | 6 | 0 | 6 | 0 | 0 | Propuestas preparadas, **bloqueadas**: Codex sigue registrando T10-04 a T10-06. |
+| T10 | PEB-74 | 9 | 0 | 6 | 0 | 3 | Propuestas preparadas, **bloqueadas**: Codex sigue registrando T10-04 a T10-06. |
 | T11 | PEB-75 | 0 | 0 | 0 | 0 | 0 | Codex los está registrando; se revisarán cuando termine. |
-| T12 | PEB-76 | 14 | 0 | 14 | 0 | 0 | 7 casos con **conflicto**: `admin` los editó en TestLink después del primer respaldo; no se aplican sin tu decisión. |
+| T12 | PEB-76 | 14 | 0 | 14 | 0 | 0 |  |
 | T13 | PEB-77 | 13 | 0 | 12 | 1 | 0 |  |
 | T14 | PEB-78 | 12 | 0 | 5 | 7 | 0 |  |
-| **Total** | | **83** | **0** | **61** | **9** | **13** | |
+| **Total** | | **86** | **0** | **61** | **9** | **16** | |
 
 Clasificación:
 
@@ -39,25 +39,25 @@ Códigos de problema: **T** Título genérico o sin el resultado esperado; **PF*
 
 | ID | Ticket | Clasif. | Título antes | Título después | Problemas | Cambios |
 |---|---|---|---|---|---|---|
-| TL-2 | T12 | EDITAR | TL-002: Escribir el vencimiento con la palabra today | T12-02 - Escribir today asigna Today 10:00 AM y ubica la tarea en Today | PV, PS, RS, VQ, PC, NB, T | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Se añaden las consultas de Inbox y Next que el resultado original ya exigía («no aparece en Inbox ni en Next») |
-| TL-3 | T12 | EDITAR | TL-003: Escribir el vencimiento con la palabra tomorrow | T12-03 - Escribir tomorrow asigna Tomorrow 10:00 AM y ubica la tarea en Next | PV, PS, RS, VQ, PC, NB, T | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Se añade la consulta de Inbox que el resultado original ya exigía |
-| TL-4 | T12 | EDITAR | TL-004: Escribir el vencimiento con el nombre de un día de la semana | T12-04 - Escribir Friday como vencimiento asigna el próximo viernes a las 10:00 AM | PV, PS, RS, VQ, PC, NB, T | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; El calendario real pasa de los pasos a las precondiciones como recurso disponible |
-| TL-5 | T12 | EDITAR | TL-005: Cambiar un vencimiento ya guardado | T12-05 - Cambiar el vencimiento de tomorrow a today mueve la tarea de Next a Today | PV, PS, RS, VQ, PC, NB, T, MA | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos |
-| TL-6 | T12 | EDITAR | TL-006: Quitar el vencimiento de una tarea | T12-06 - Borrar el vencimiento deja la tarea sin fecha y la devuelve a Inbox | PV, PS, RS, VQ, PC, NB, T, MA | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos |
-| TL-7 | T12 | EDITAR | TL-007: Aceptar una fecha pasada y marcarla como vencida | T12-07 - Una fecha pasada (yesterday) se acepta y la tarea se marca como 1 day overdue | PV, PS, RS, VQ, PC, NB, T | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado |
-| TL-8 | T12 | EDITAR | TL-008: Revisar los límites entre hoy y mañana | T12-08 - Una tarea de hoy 23:59 queda en Today y una de mañana 00:00 queda en Next | PV, PS, RS, VQ, PC, NB, T, MA | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos |
-| TL-9 | T12 | EDITAR | TL-009: Postergar una tarea 1 día y 1 semana | T12-09 - Postpone 1 week y 1 day adelantan la fecha y conservan la hora 10:00 AM | PV, PS, RS, VQ, PC, NB, T, MA | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos |
-| TL-10 | T12 | EDITAR | TL-010: Escribir una fecha sin indicar la hora | T12-10 - Una fecha sin hora se guarda sin error con la hora por defecto 10:00 AM | PV, PS, RS, VQ, PC, NB, T, RV | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Parte vaga conservada con su redacción original (ver dudas) |
-| TL-11 | T12 | EDITAR | TL-011: Rechazar una fecha inválida | T12-11 - Una fecha inválida muestra un aviso y no cambia el vencimiento de la tarea | PV, PS, RS, VQ, PC, NB, T, MA, RV | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos; Parte vaga conservada con su redacción original (ver dudas) |
-| TL-12 | T12 | EDITAR | TL-012: Aplicar un vencimiento por defecto a las tareas nuevas | T12-12 - New Task Due Date en Tomorrow asigna esa fecha a las tareas nuevas; None no | PV, PS, RS, VQ, PC, NB, T, MA | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos |
-| TL-13 | T12 | EDITAR | TL-013: Mostrar el año cuando el vencimiento es de otro año | T12-13 - Un vencimiento de otro año muestra el año en la etiqueta de la tarea | PV, PS, RS, VQ, PC, NB, T | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado |
-| TL-14 | T12 | EDITAR | TL-014: Comprobar la coherencia entre la zona horaria y la hora mostrada | T12-14 - Cambiar Time Zone en Profile ajusta la hora mostrada del vencimiento | PV, PS, RS, VQ, PC, NB, T, MA | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos |
-| TL-15 | T13 | EDITAR | TL-015: Una tarea nueva sin fecha aparece en Inbox | T13-15 - Una tarea nueva sin fecha aparece en Inbox | PV, PS, RS, VQ, PC, NB, DA | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Estado inicial concreto en precondiciones; Se añade a las precondiciones el proyecto Work, que el caso consulta |
-| TL-16 | T13 | EDITAR | TL-016: Una tarea dentro de un proyecto no aparece en Inbox | T13-16 - Una tarea sin fecha creada en el proyecto Work no aparece en Inbox | PV, PS, RS, VQ, PC, NB, T | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado |
+| TL-2 | T12 | EDITAR | TL-002: Escribir el vencimiento con la palabra today | T12-02 - Escribir today asigna Today 10:00 AM y ubica la tarea en Today | PS, RS, VQ, PC, NB, T, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…»; Se añaden las consultas de Inbox y Next que el resultado original ya exigía («no aparece en Inbox ni en Next») |
+| TL-3 | T12 | EDITAR | TL-003: Escribir el vencimiento con la palabra tomorrow | T12-03 - Escribir tomorrow asigna Tomorrow 10:00 AM y ubica la tarea en Next | PS, RS, VQ, PC, NB, T, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…»; Se añade la consulta de Inbox que el resultado original ya exigía |
+| TL-4 | T12 | EDITAR | TL-004: Escribir el vencimiento con el nombre de un día de la semana | T12-04 - Escribir Friday como vencimiento asigna el próximo viernes a las 10:00 AM | PS, RS, VQ, PC, NB, T, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…»; El calendario real pasa de los pasos a las precondiciones como recurso disponible |
+| TL-5 | T12 | EDITAR | TL-005: Cambiar un vencimiento ya guardado | T12-05 - Cambiar el vencimiento de tomorrow a today mueve la tarea de Next a Today | PS, RS, VQ, PC, NB, T, MA, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
+| TL-6 | T12 | EDITAR | TL-006: Quitar el vencimiento de una tarea | T12-06 - Borrar el vencimiento deja la tarea sin fecha y la devuelve a Inbox | PS, RS, VQ, PC, NB, T, MA, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
+| TL-7 | T12 | EDITAR | TL-007: Aceptar una fecha pasada y marcarla como vencida | T12-07 - Una fecha pasada (yesterday) se acepta y la tarea se marca como 1 day overdue | PS, RS, VQ, PC, NB, T, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
+| TL-8 | T12 | EDITAR | TL-008: Revisar los límites entre hoy y mañana | T12-08 - Una tarea de hoy 23:59 queda en Today y una de mañana 00:00 queda en Next | PS, RS, VQ, PC, NB, T, MA, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
+| TL-9 | T12 | EDITAR | TL-009: Postergar una tarea 1 día y 1 semana | T12-09 - Postpone 1 week y 1 day adelantan la fecha y conservan la hora 10:00 AM | PS, RS, VQ, PC, NB, T, MA, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
+| TL-10 | T12 | EDITAR | TL-010: Escribir una fecha sin indicar la hora | T12-10 - Una fecha sin hora se guarda sin error con la hora por defecto 10:00 AM | PS, RS, VQ, PC, NB, T, RV, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Parte vaga conservada con su redacción original (ver dudas); Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
+| TL-11 | T12 | EDITAR | TL-011: Rechazar una fecha inválida | T12-11 - Una fecha inválida muestra un aviso y no cambia el vencimiento de la tarea | PS, RS, VQ, PC, NB, T, MA, RV, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos; Parte vaga conservada con su redacción original (ver dudas); Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
+| TL-12 | T12 | EDITAR | TL-012: Aplicar un vencimiento por defecto a las tareas nuevas | T12-12 - New Task Due Date en Tomorrow asigna esa fecha a las tareas nuevas; None no | PS, RS, VQ, PC, NB, T, MA, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
+| TL-13 | T12 | EDITAR | TL-013: Mostrar el año cuando el vencimiento es de otro año | T12-13 - Un vencimiento de otro año muestra el año en la etiqueta de la tarea | PS, RS, VQ, PC, NB, T, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
+| TL-14 | T12 | EDITAR | TL-014: Comprobar la coherencia entre la zona horaria y la hora mostrada | T12-14 - Cambiar Time Zone en Profile ajusta la hora mostrada del vencimiento | PS, RS, VQ, PC, NB, T, MA, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
+| TL-15 | T13 | EDITAR | TL-015: Una tarea nueva sin fecha aparece en Inbox | T13-15 - Una tarea nueva sin fecha aparece en Inbox | PS, RS, VQ, PC, NB, DA, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Estado inicial concreto en precondiciones; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-77 / T13 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…»; Se añade a las precondiciones el proyecto Work, que el caso consulta |
+| TL-16 | T13 | EDITAR | TL-016: Una tarea dentro de un proyecto no aparece en Inbox | T13-16 - Una tarea dentro de un proyecto no aparece en Inbox | PS, RS, VQ, PC, NB, T, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-77 / T13 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
 | TL-17 | T13 | EDITAR | TL-017: Al asignar la fecha de hoy la tarea pasa de Inbox a Today | T13-17 - Al asignar la fecha de hoy la tarea pasa de Inbox a Today | PV, PS, RS, VQ, PC, NB | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita |
-| TL-18 | T13 | EDITAR | TL-018: Al asignar la fecha de mañana la tarea pasa a Next | T13-18 - Al asignar la fecha de mañana la tarea pasa a Next | PV, PS, RS, VQ, PC, NB | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita |
-| TL-19 | T13 | EDITAR | TL-019: Al asignar una fecha pasada la tarea aparece en Today como vencida | T13-19 - Al asignar una fecha pasada la tarea aparece en Today como vencida | PV, PS, RS, VQ, PC, NB | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita |
-| TL-20 | T13 | EDITAR | TL-020: Al quitar la fecha la tarea vuelve a Inbox | T13-20 - Al quitar la fecha la tarea vuelve a Inbox | PV, PS, RS, VQ, PC, NB, MA | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Acciones separadas en pasos |
+| TL-18 | T13 | EDITAR | TL-018: Al asignar la fecha de mañana la tarea pasa a Next | T13-18 - Al asignar la fecha de mañana la tarea pasa a Next | PS, RS, VQ, PC, NB, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-77 / T13 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
+| TL-19 | T13 | EDITAR | TL-019: Al asignar una fecha pasada la tarea aparece en Today como vencida | T13-19 - Al asignar una fecha pasada la tarea aparece en Today como vencida | PS, RS, VQ, PC, NB, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-77 / T13 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
+| TL-20 | T13 | EDITAR | TL-020: Al quitar la fecha la tarea vuelve a Inbox | T13-20 - Al quitar la fecha la tarea vuelve a Inbox | PS, RS, VQ, PC, NB, MA, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Acciones separadas en pasos; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-77 / T13 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
 | TL-21 | T13 | EDITAR | TL-021: Al mover una tarea de Inbox a un proyecto deja de ser parte de Inbox | T13-21 - Arrastrar una tarea de Inbox al proyecto Work la saca de Inbox sin duplicarla | PV, PS, RS, VQ, PC, NB, T | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado |
 | TL-22 | T13 | EDITAR | TL-022: Completar una tarea la saca del filtro y la envía a Done Items | T13-22 - Completar una tarea la saca del filtro y la envía a Done Items | PV, PS, RS, VQ, PC, NB | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita |
 | TL-23 | T13 | EDITAR | TL-023: Los contadores de Inbox, Today y Next se actualizan correctamente | T13-23 - Crear y fechar una tarea cambia en 1 los contadores de Inbox, Today y Next | PV, PS, RS, VQ, PC, NB, T | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Se añade abrir Today antes de cambiar la fecha: con fecha de hoy la tarea ya no está en Inbox (T13-17); «Sin número = 0» tomado de la guía §11 (la interfaz puede ocultar la insignia) |
@@ -77,7 +77,7 @@ Códigos de problema: **T** Título genérico o sin el resultado esperado; **PF*
 | TL-37 | T14 | EDITAR | TL-037: Reconocer la prioridad sin depender únicamente del color | T14-37 - Reconocer la prioridad sin depender únicamente del color | PV, PS, RS, VQ, PC, NB, RV | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Parte vaga conservada con su redacción original (ver dudas) |
 | TL-38 | T14 | DUDA | TL-038: Cambiar la prioridad mientras la lista está ordenada por Priority | T14-38 - Con Sort By Priority, subir una tarea a prioridad 1 la reubica sin recargar | PV, PS, RS, VQ, PC, NB, T, DA | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Estado inicial concreto en precondiciones; Mensaje literal de Sort by Priority tomado de la guía §15 |
 | TL-39 | T14 | EDITAR | TL-039: La prioridad no cambia el filtro donde aparece la tarea | T14-39 - La prioridad no cambia el filtro donde aparece la tarea | PV, PS, RS, VQ, PC, NB, MA | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Acciones separadas en pasos; Se indica en qué filtro está la tarea antes de cada cambio de fecha, porque sale de Inbox al tener fecha (T13-17) |
-| TL-40 | T12 | EDITAR | TL-001: Asignar un vencimiento con fecha y hora | T12-01 - Asignar fecha y hora de vencimiento las muestra en la tarea y la ubica en Next | PV, PS, RS, VQ, PC, NB, T | Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Postcondición «la cuenta queda como estaba» precisada: la tarea eliminada queda en Recycle Bin (guía §14.1 y §17) |
+| TL-40 | T12 | EDITAR | TL-001: Asignar un vencimiento con fecha y hora | T12-01 - Asignar fecha y hora de vencimiento las muestra en la tarea y la ubica en Next | PS, RS, VQ, PC, NB, T, PV | Pasos migrados a Steps nativos; Cada paso con su resultado esperado; Descripción en una oración «Validar que…»; Postcondiciones explícitas al final del Summary; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Precondiciones reescritas como estados, una por línea; Se conservan «Credenciales Válidas: …» y el texto de requerimiento de la autora; Se vuelve a anteponer PEB-76 / T12 al requerimiento (rúbrica); Precondiciones numeradas; se añade «Sesión iniciada…» como estado; «La cuenta no tiene…» pasa a «Ninguna tarea existente…» |
 | TL-41 | T06 | EDITAR | Crear una tarea mediante Add | T06-01 - Crear una tarea con Add la agrega una sola vez a Home y se conserva tras F5 | PF, PV, PS, VQ, NB, T | Prefijo de ticket añadido; Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Descripción en una oración «Validar que…»; Controles y datos en negrita; Título con funcionalidad, condición y resultado |
 | TL-42 | T06 | EDITAR | Crear una tarea mediante Enter | T06-02 - Crear una tarea con Enter la agrega una sola vez a Home y se conserva tras F5 | PF, PV, PS, VQ, NB, T, RQ | Prefijo de ticket añadido; Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Descripción en una oración «Validar que…»; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Requerimiento PEB-XX / TXX añadido |
 | TL-43 | T06 | EDITAR | Editar directamente una tarea y guardar | T06-03 - Editar una tarea con clic sobre su nombre y Enter guarda el nombre nuevo tras F5 | PF, PV, PS, VQ, NB, T, RQ, MA | Prefijo de ticket añadido; Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Descripción en una oración «Validar que…»; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Requerimiento PEB-XX / TXX añadido; Acciones separadas en pasos |
@@ -128,7 +128,7 @@ Códigos de problema: **T** Título genérico o sin el resultado esperado; **PF*
 | TL-13 | TL-013: Mostrar el año cuando el vencimiento es de otro año | T12-13 - Un vencimiento de otro año muestra el año en la etiqueta de la tarea |
 | TL-14 | TL-014: Comprobar la coherencia entre la zona horaria y la hora mostrada | T12-14 - Cambiar Time Zone en Profile ajusta la hora mostrada del vencimiento |
 | TL-15 | TL-015: Una tarea nueva sin fecha aparece en Inbox | T13-15 - Una tarea nueva sin fecha aparece en Inbox |
-| TL-16 | TL-016: Una tarea dentro de un proyecto no aparece en Inbox | T13-16 - Una tarea sin fecha creada en el proyecto Work no aparece en Inbox |
+| TL-16 | TL-016: Una tarea dentro de un proyecto no aparece en Inbox | T13-16 - Una tarea dentro de un proyecto no aparece en Inbox |
 | TL-17 | TL-017: Al asignar la fecha de hoy la tarea pasa de Inbox a Today | T13-17 - Al asignar la fecha de hoy la tarea pasa de Inbox a Today |
 | TL-18 | TL-018: Al asignar la fecha de mañana la tarea pasa a Next | T13-18 - Al asignar la fecha de mañana la tarea pasa a Next |
 | TL-19 | TL-019: Al asignar una fecha pasada la tarea aparece en Today como vencida | T13-19 - Al asignar una fecha pasada la tarea aparece en Today como vencida |
@@ -329,35 +329,37 @@ Se dispone de un medio para tomar notas. Si un paso falla, se conservará la evi
 | 9 | Pasar el mouse sobre **Prueba T07-01 - completar**, abrir su menú de opciones y seleccionar **Delete**. | La tarea desaparece de la lista activa. |
 | 10 | Pasar el mouse sobre **Prueba T07-01 - control**, abrir su menú de opciones y seleccionar **Delete**. | Las dos tareas han desaparecido de la lista activa. **Home** queda sin pendientes y **Done Items** muestra **0**. |
 
-### 3b.3. Pasos dentro del Summary: TL-15
+### 3b.3. Pasos dentro del Summary: TL-17
 
 #### Antes
 
-**Título:** TL-015: Una tarea nueva sin fecha aparece en Inbox
+**Título:** TL-017: Al asignar la fecha de hoy la tarea pasa de Inbox a Today
 
 **Summary:**
 
 ```
-**Requerimiento:** PEB-77 / T13 — Inbox, Today y Next. Inbox debe recibir las tareas que todavía no tienen fecha ni proyecto.
+**Requerimiento:** PEB-77 / T13 — Inbox, Today y Next. El cambio de fecha debe mover la tarea entre filtros de forma automática.
 
 **Pasos:**
 
-1. En el panel de la izquierda, haz clic en _Inbox_.
-2. En la parte inferior de la lista, haz clic en el campo _Add new task_.
-3. Escribe el nombre exacto: **Prueba T13 - sin fecha**
-4. Presiona **Enter**. La tarea aparece en la lista sin ninguna fecha a la derecha.
-5. Abre _Today_ y busca la tarea.
-6. Abre _Next_ y busca la tarea.
-7. Abre el proyecto _Work_ y busca la tarea.
-8. Vuelve a _Inbox_ y recarga con **F5**.
-9. Al terminar, elimina la tarea con el menú de la derecha, opción _Delete_.
+1. Haz clic en _Inbox_.
+2. Crea la tarea **Prueba T13 - pasa a Today** y presiona **Enter**.
+3. Confirma que la tarea está en _Inbox_ y que no tiene fecha.
+4. Pasa el mouse sobre la tarea y haz clic en _Set Due Date_.
+5. Escribe en el campo: **today**
+6. Haz clic en _Save_.
+7. Abre _Inbox_ y busca la tarea.
+8. Abre _Today_ y busca la tarea.
+9. Abre _Next_ y busca la tarea.
+10. Recarga con **F5**.
+11. Al terminar, elimina la tarea con el menú de la derecha, opción _Delete_.
 
 **Resultados esperados:**
 
-1. La tarea **Prueba T13 - sin fecha** aparece en _Inbox_ inmediatamente después de presionar Enter.
-2. La tarea no muestra ninguna fecha de vencimiento.
-3. La tarea no aparece en _Today_, ni en _Next_, ni dentro de ningún proyecto.
-4. Después de recargar, la tarea sigue en _Inbox_.
+1. La tarea desaparece de _Inbox_.
+2. La tarea aparece en _Today_ con la etiqueta **Today 10:00 AM**.
+3. La tarea no aparece en _Next_.
+4. Después de recargar, la tarea sigue en _Today_ con la misma fecha.
 5. Al final la tarea de prueba queda eliminada.
 ```
 
@@ -373,35 +375,36 @@ La cuenta no tiene tareas con los nombres que se crean en este caso, para que no
 
 #### Después
 
-**Título:** T13-15 - Una tarea nueva sin fecha aparece en Inbox
+**Título:** T13-17 - Al asignar la fecha de hoy la tarea pasa de Inbox a Today
 
 **Summary:**
 
-- **Descripción:** Validar que una tarea creada en Inbox sin fecha ni proyecto aparece solo en Inbox, no en Today, Next ni Work, y sigue allí después de recargar.
-- **Requerimiento:** PEB-77 / T13 — Inbox, Today y Next. Inbox debe recibir las tareas que todavía no tienen fecha ni proyecto.
+- **Descripción:** Validar que asignar today a una tarea de Inbox la saca de Inbox y la muestra solo en Today con la etiqueta Today 10:00 AM.
+- **Requerimiento:** PEB-77 / T13 — Inbox, Today y Next. El cambio de fecha debe mover la tarea entre filtros de forma automática.
 - **Postcondiciones:**
-  1. La tarea **Prueba T13 - sin fecha** está eliminada mediante **Delete** y ya no aparece en Inbox, Today, Next ni en los proyectos (queda en **Recycle Bin**).
+  1. La tarea **Prueba T13 - pasa a Today** está eliminada mediante **Delete** y ya no aparece en Inbox, Today, Next ni en los proyectos (queda en **Recycle Bin**).
   2. Las demás tareas de la cuenta conservan su información.
 
 **Preconditions:**
 
 1. Cuenta de Todo.ly registrada: correo **camila@gmail.com** / contraseña [oculta] (sitio https://todo.ly/).
 2. Sesión iniciada en Todo.ly con esa cuenta.
-3. Proyecto **Work** existente en el panel izquierdo.
-4. Ninguna tarea existente con los nombres que se crean en este caso, para que no se confundan entre sí.
+3. Ninguna tarea existente con los nombres que se crean en este caso, para que no se confundan entre sí.
 
 **Steps nativos:**
 
 | # | Acción | Resultado esperado |
 |---|---|---|
 | 1 | Hacer clic en **Inbox** en el panel izquierdo. | Se muestra la lista **Inbox**. |
-| 2 | Escribir **Prueba T13 - sin fecha** en el campo **Add new task** y presionar **Enter**. | La tarea **Prueba T13 - sin fecha** aparece en **Inbox** inmediatamente después de presionar **Enter**, sin ninguna fecha de vencimiento a la derecha. |
-| 3 | Hacer clic en **Today** en el panel izquierdo. | La tarea no aparece en **Today**. |
-| 4 | Hacer clic en **Next** en el panel izquierdo. | La tarea no aparece en **Next**. |
-| 5 | Hacer clic en el proyecto **Work**, dentro de **Projects**, en el panel izquierdo. | La tarea no aparece dentro del proyecto **Work**. |
-| 6 | Hacer clic en **Inbox** en el panel izquierdo. | La tarea sigue en **Inbox**. |
-| 7 | Presionar **F5** para recargar la página. | Después de recargar, la tarea sigue en **Inbox**. |
-| 8 | Pasar el mouse sobre **Prueba T13 - sin fecha**, abrir el menú de opciones de la derecha y seleccionar **Delete**. | La tarea **Prueba T13 - sin fecha** desaparece de **Inbox**. |
+| 2 | Escribir **Prueba T13 - pasa a Today** en el campo **Add new task** y presionar **Enter**. | La tarea **Prueba T13 - pasa a Today** aparece en **Inbox** sin fecha. |
+| 3 | Pasar el mouse sobre la tarea y hacer clic en **Set Due Date**. | Se abre debajo de la tarea el panel de vencimiento, con un campo de texto, un calendario y el botón **Postpone**. |
+| 4 | Escribir **today** en el campo de fecha. | El campo de fecha contiene **today**. |
+| 5 | Hacer clic en **Save**. | El panel de vencimiento se cierra. |
+| 6 | Hacer clic en **Inbox** en el panel izquierdo. | La tarea desaparece de **Inbox**. |
+| 7 | Hacer clic en **Next** en el panel izquierdo. | La tarea no aparece en **Next**. |
+| 8 | Hacer clic en **Today** en el panel izquierdo. | La tarea aparece en **Today** con la etiqueta **Today 10:00 AM**. |
+| 9 | Presionar **F5** para recargar la página. | Después de recargar, la tarea sigue en **Today** con la misma fecha. |
+| 10 | Pasar el mouse sobre **Prueba T13 - pasa a Today**, abrir el menú de opciones de la derecha y seleccionar **Delete**. | La tarea **Prueba T13 - pasa a Today** desaparece de **Today**. |
 
 ## 4. Pendientes para la autora del caso (casos DUDA)
 
@@ -432,11 +435,11 @@ Estos casos se aplican con la parte dudosa en su redacción original. Queda pend
 - **TL-47** (T06): El paso de Set Due Date no fija la fecha a asignar («un vencimiento»); se conserva así y se pide anotarla. Si se quiere un dato fijo, lo debe definir el equipo.
 - **TL-49** (T06): La guía (§12) indica que el rechazo de adjuntos es criterio del equipo, no regla oficial; el resultado «puede ignorar la entrada o informar que no está admitida» se conserva tal cual.
 - **TL-65** (T08): No se conoce el texto de la confirmación de Empty Recycle Bin; se conserva «completar la confirmación si aparece».
-- **Ediciones concurrentes:** después del primer respaldo (15:32), el usuario `admin` de TestLink modificó TL-66 (2026-11-18 20:11:39), TL-40 (2026-11-18 20:10:29), TL-2 (2026-11-18 20:11:00), TL-3 (2026-11-18 20:15:25), TL-4 (2026-11-18 20:15:49), TL-5 (2026-11-18 20:16:14), TL-6 (2026-11-18 20:19:19), TL-7 (2026-11-18 20:19:54) (hora del servidor). En T12 quitó «Requerimiento: PEB-76 / T12 —» del Summary y cambió «Iniciar sesión:» por «Credenciales Válidas:». Aplicar la propuesta sobrescribiría esos cambios; quedan sin aplicar hasta que decidas.
+- **Ediciones concurrentes:** después del primer respaldo (15:32), el usuario `admin` de TestLink modificó TL-66 (2026-11-18 20:11:39) (hora del servidor). En T12 quitó «Requerimiento: PEB-76 / T12 —» del Summary y cambió «Iniciar sesión:» por «Credenciales Válidas:». Aplicar la propuesta sobrescribiría esos cambios; quedan sin aplicar hasta que decidas.
 - **Renumeración T12–T14:** los títulos pasan de `TL-0NN:` a `T12-NN -`/`T13-NN -`/`T14-NN -`. El comentario de PEB-76 cita los nombres antiguos (TL-001…TL-039); la tabla de la sección 3 sirve de correspondencia.
 - **T12–T13 (general):** el campo de creación figura como **Add new task**, mientras que T06–T08 y la guía §11 usan **Add new Todo, type here…**. Puede ser que el texto cambie entre Inbox y un proyecto; se conserva el de cada caso.
 - **T06–T08 (general):** las precondiciones citan la cuenta de Camila con «la contraseña de pruebas indicada» (sin contraseña) y TL-41 la trae explícita. Se conservan como están; decisiones-vigentes §6–7 piden cuentas genéricas solo para T09–T11.
-- **T09, T10 (T10-04 a T10-06) y T11:** Codex sigue registrándolos; no se revisan ni se editan hasta que termine. En el respaldo hay 13 casos sin revisar: TL-72, TL-73, TL-74, TL-75, TL-76, TL-77, TL-78, TL-79, TL-80, TL-81, TL-82, TL-83, TL-84.
+- **T09, T10 (T10-04 a T10-06) y T11:** Codex sigue registrándolos; no se revisan ni se editan hasta que termine. En el respaldo hay 16 casos sin revisar: TL-72, TL-73, TL-74, TL-75, TL-76, TL-77, TL-78, TL-79, TL-80, TL-81, TL-82, TL-83, TL-84, TL-85, TL-86, TL-87.
 
 ## 5. Aplicación
 
@@ -444,16 +447,18 @@ Pendiente: se aplica después del OK del usuario (Fase 3).
 
 ## 6. Cómo revertir
 
-El respaldo `respaldo-20261118-1620.json` contiene nombre, summary, preconditions y pasos de los 83 casos antes de cualquier cambio.
+El respaldo `respaldo-20261118-1653.json` contiene nombre, summary, preconditions y pasos de los 86 casos antes de cualquier cambio.
 
 ```bash
 cd revision-testlink/scripts
 # Simulación (no escribe): muestra qué casos difieren del respaldo
-python3 revertir.py --respaldo ../respaldo-20261118-1620.json --todos
+python3 revertir.py --respaldo ../respaldo-20261118-1653.json --todos
 # Restaurar casos concretos
-python3 revertir.py --respaldo ../respaldo-20261118-1620.json --ids TL-41,TL-42 --aplicar
+python3 revertir.py --respaldo ../respaldo-20261118-1653.json --ids TL-41,TL-42 --aplicar
 # Restaurar todo
-python3 revertir.py --respaldo ../respaldo-20261118-1620.json --todos --aplicar
+python3 revertir.py --respaldo ../respaldo-20261118-1653.json --todos --aplicar
 ```
+
+Para deshacer solo esta pasada, usar `--ids` con los casos de la sección 5 marcados como aplicados. **No** usar `--todos`: también revertiría las ediciones que `admin` hizo después del respaldo (T12, TL-15, TL-16, TL-18, TL-19, TL-20, TL-66). El respaldo `respaldo-20261118-1532.json` conserva el estado anterior a esas ediciones.
 
 La clave de la API se lee de `TESTLINK_DEVKEY`. Con `--aplicar`, el script vuelve a leer cada caso y confirma que coincide con el respaldo.

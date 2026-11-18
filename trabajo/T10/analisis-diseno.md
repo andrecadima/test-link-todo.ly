@@ -1,14 +1,14 @@
 # T10 / PEB-74 — Perfil, credenciales y recuperación de acceso
 
-Fecha: 17 de noviembre de 2026; actualizado el 18 de noviembre de 2026 con los contrastes manuales a/b/c. **OK del usuario recibido; revisión independiente (encargo 04) APTO para los seis casos confirmados, con observaciones resueltas/documentadas antes del registro.** Seis casos registrados y comparados en TestLink; comentario Jira 10226 publicado y comprobado el 18/11/2026. **Nueve casos diseñados:** seis registrados (T10-01/02/03/08/09/10) y tres listos para registro (T10-04/05/06), sin ID de TestLink hasta su registro y verificación. La exploración adicional comenzó a las 15:51 UTC; el presupuesto aproximado de una hora corresponde al trabajo activo. La espera entre el traspaso manual y la respuesta del usuario se registra separadamente. Las fichas de este archivo se generan a partir de `casos.json`, manteniendo los campos acordados. `casos-listos.json` contiene los nueve casos diseñados (los seis registrados sin modificar y los tres nuevos); `casos-pendientes.json` conserva únicamente T10-07, que no se importará. Los códigos se conservan para trazabilidad, aunque la lista registrable no sea consecutiva.
+Fecha:18/11/2026. Nueve casos registrados y comparados en TestLink,79pasos. Comentario10226 actualizado y leído por MCP con casos de uso/decisión revisados y los tres IDs adicionales TL-85/86/87. T10-07 continúa pendiente y no se registra. Sin ejecución formal ni revisión de integrante.
 
 ## 1. Análisis del área
 
-Se analizaron Settings / Profile, guardado con Ok, descarte con Cancel y recuperación: Login → Reset your Password → Send → correo Forgot Password → formulario → nuevo Login. Entorno: Chrome157.0.8103.51/macOS26.6.2, cuentas gratuitas propias A/B y navegador aislado; exploración, sin ejecución formal.
+Se analizaron Settings / Profile, guardado con Ok, descarte con Cancel y recuperación: Login → Reset your Password → Send → correo Forgot Password → formulario → nuevo Login. Entorno: Chrome 157.0.8103.51/macOS 26.6.2, cuentas gratuitas propias A/B y navegador aislado; exploración, sin ejecución formal.
 
 Profile ofrece Full Name, Email, Time zone, Old Password y New Password; **sin confirmación de contraseña**. Recuperación sí ofrece Enter a New Password, Verify New Password y Done. Se comprobaron nombre guardado/descartado, persistencia tras recarga y nombre inicial restaurado tras nueva sesión; recuperación de A y contraste de claves; recuperación inexistente rechazada.
 
-El18/11: a) Old incorrecto→Invalid Password; b) cambio válido desde Settings/restauración, reemplazada rechazada y original aceptada con identidad conservada; c) Email editado de B descartado por Cancel conserva original. Capturas manuales y contraste posterior en registro de exploración. No se inventa mensaje de éxito. Email válido07 y New Password vacío pendientes. Zona horaria, vencimientos, eliminación de cuenta y funciones Pro quedan fuera; sesión completa en T09.
+El 18/11: a) Old incorrecto→Invalid Password; b) cambio válido desde Settings/restauración, reemplazada rechazada y original aceptada con identidad conservada; c) Email editado de B descartado por Cancel conserva original. Capturas manuales y contraste posterior en registro de exploración. No se inventa mensaje de éxito. Email válido07 y New Password vacío pendientes. Zona horaria, vencimientos, eliminación de cuenta y funciones Pro quedan fuera; sesión completa en T09.
 
 ## 2. Riesgos que orientan el diseño
 
@@ -25,28 +25,20 @@ Valoración cualitativa de diseño, no frecuencia medida: probabilidad P baja=1/
 
 ## 3. Reglas, restricciones y dudas
 
-| Regla o duda | Clasificación | Fundamento |
+| Regla / condición | Clasificación | Fundamento |
 |---|---|---|
-| Ok guarda el nombre y Cancel conserva el anterior; tras recarga persiste el nombre de prueba y tras nueva sesión se conserva el nombre inicial restaurado | Comportamiento observado | `exploracion.md`, consultas de Profile del 17/11; no se atribuye a una nueva sesión el texto temporal |
-| Un nombre guardado conserva su valor en nuevas sesiones | Criterio del equipo | Encargo de persistencia del usuario; T10-02 contrasta el valor de prueba en ese recorrido |
-| Settings tiene Old Password y New Password, sin confirmación | Comportamiento observado | Consulta del formulario del 17/11 |
-| Old Password vacío con New Password informado muestra `Invalid Password` | Comportamiento observado | Captura aportada por el usuario del 17/11 a las 14:38; la conservación posterior se contrastó por Login y Profile con la misma credencial previa |
-| Old Password incorrecto con New Password informado muestra `Invalid Password` | Comportamiento observado | Contraste manual a), 18/11, 15:56: aviso con Profile detrás. |
-| La contraseña vigente conserva el acceso tras el rechazo de Old Password incorrecto | Criterio del equipo | Respaldo indirecto: b) aceptó la vigente inmediatamente después. Login directo tras a) no se observó; T10-04 lo comprueba en ejecución. |
-| Old Password vigente con New Password informado: Settings se cierra sin aviso de rechazo ni mensaje literal de éxito | Comportamiento observado | Contraste b) 15:58; captura manual 18/11,15:58 (Work autenticada). No se inventa un mensaje de éxito |
-| Tras el cambio válido, Login rechaza la contraseña reemplazada con `Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.` y acepta la nueva, conservando la identidad de A | Comportamiento observado | Un único intento, aviso transitorio leído por AX (`contraste-restauracion.txt`); Login aceptado y Profile en `verificacion/restauracion-A-AX.txt` y `evidencias/2026-11-18_T10_Login-original-A-verificado.png` |
-| Old Password debe corresponder a la vigente para aceptar un cambio | Criterio del equipo, ya contrastado | Ajuste 5 expreso del usuario; vacío, incorrecto y vigente observados (03/04/05) |
-| New Password vacío en Settings | Duda pendiente | No observado; no se diseña su rechazo ni su aceptación |
-| Email editado y descartado con Cancel conserva el correo original al reabrir Profile | Comportamiento observado | Contraste c) en B, 15:59; captura manual 18/11,15:59 y comparación AX con el registro privado. La dirección alternativa es distinta del original; no se afirma que sea alias del mismo buzón. No se hizo Login de B en ese recorrido |
-| Cambio válido de Email y necesidad de verificación por correo | Duda pendiente | No observado; T10-07 se conserva fuera del registro |
-| Para recuperación registrada se muestra `Info. An email has been sent with a link where you can change your password.` | Comportamiento observado | Solicitud de A, mensaje recibido y formulario leído |
-| La recuperación completada permite Login con la nueva contraseña y rechaza la reemplazada | Comportamiento observado | Cambio manual del usuario y dos contrastes posteriores de Login |
-| Un correo no registrado produce `Error. Account with this Email address doesn't exist.` | Comportamiento observado | Correo reservado example.com, captura y lectura de interfaz |
-| El enlace recibido, abierto tal como llega, debe mostrar Please Enter a New Password | Criterio del equipo | Corrección expresa del usuario del 17/11, documentada en exploracion.md, Ajustes del usuario antes de registro; no se atribuye a una carga HTTP observada |
-| El enlace de recuperación debe usar HTTPS | Criterio del equipo | Instrucción expresa del usuario del 17/11; caso T10-10 |
-| El correo entregó HTTP y Chrome mostró Not Secure al abrir el enlace directo; la misma ruta por HTTPS cargó el formulario | Comportamiento observado | `hallazgos.md`; hallazgo para confirmar en ejecución, sin reporte en planilla |
-| Plazos de recepción/caducidad, uso único, política de longitud/complejidad y cierre de otras sesiones | Duda pendiente | Sin regla confirmada; no trasladar los límites de los ejemplos docentes |
-| Precondiciones describen estados; no contienen acciones ni datos reales de cuenta | Regla documentada / decisión vigente | Decisiones §7 y guía de diseño |
+| Ok guarda Full Name; Cancel lo descarta; nombre guardado persiste tras recarga | Comportamiento observado | Profile del 17/11; tras nueva sesión se comprobó el nombre inicial restaurado, no el texto temporal. |
+| El nombre temporal guardado persiste también en nueva sesión | Criterio del equipo | Persistencia solicitada; contraste previsto en 02. |
+| Settings ofrece Old Password y New Password, sin confirmación | Comportamiento observado | Formulario de Profile. |
+| Old Password vacío o incorrecto, con New Password informado, muestra Invalid Password | Comportamiento observado | Capturas manuales 17/11,14:38 y 18/11,15:56. |
+| El rechazo conserva la credencial vigente | Observado para 03; criterio del equipo para 04 |03: Login directo;04: respaldo indirecto de b), Login posterior previsto en su ficha. |
+| Old vigente y New informado: Settings cierra, reemplazada rechazada y objetivo aceptada; identidad conservada | Comportamiento observado | b),18/11 y Login/Profile posterior; A restaurada y registro privado actualizado. Sin literal de éxito. |
+| Email editado y Cancel conserva correo original de B | Comportamiento observado | c),18/11,15:59 y AX; alternativo no se afirma del mismo buzón. |
+| Recuperación registrada informa Info. An email has been sent with a link where you can change your password.; cambio permite nueva clave y rechaza reemplazada | Comportamiento observado | Solicitud, correo, cambio manual y Login posterior de A. |
+| Recuperación no registrada muestra Error. Account with this Email address doesn't exist. | Comportamiento observado | Dirección example.com contrastada. |
+| Enlace recibido sin modificar debe abrir Please Enter a New Password y usar HTTPS | Criterio del equipo | Instrucciones expresas;08 funcional y10 transporte. |
+| Correo entregó HTTP; Chrome mostró Not Secure; misma ruta HTTPS cargó el formulario | Comportamiento observado | Hallazgo exploratorio para confirmar al ejecutar; sin reporte en planilla. |
+| New Password vacío, Email válido, política de clave, fronteras, caducidad/uso único y sesiones paralelas | Duda pendiente | Sin regla confirmada; no se copian reglas de ejemplos ACME. |
 
 ## 4. Tipos de prueba y escenarios seleccionados
 
@@ -59,54 +51,96 @@ Positivos: guardar nombre, cambio válido de contraseña desde Settings (T10-05)
 
 ## 5. Técnicas aplicadas y artefactos
 
-Definiciones del original `E Tecnicas de Black Box Testing 2025.pdf`, ya leídas en fase 0: particiones pp. 8–19, tablas de decisión pp. 45–56 y casos de uso pp. 58–66. No se releyó completo el PDF.
+Se aplican **casos de uso** a los recorridos secuenciales de perfil y recuperación: escenario principal, actor/sistema y extensiones con casos derivados (PDF docente pp. 58–62). Particiones agrupa entradas de tratamiento equivalente; decisión combina condiciones y acciones (pp.8–9 y45–48). Aquí una lista de clases no explica los recorridos completos, por lo que no se atribuye particiones. Las reglas desconocidas permanecen pendientes.
 
-### 5.1 Particiones de equivalencia
+### 5.1 Casos de uso: actor, sistema y extensiones
 
-Una clase agrupa datos con el mismo tratamiento esperado; se elige un representante. No se crean clases por nombres arbitrarios ni por valores de contraseña todavía sin regla.
+**A (actor):** persona que opera la interfaz; **S (sistema):** Todo.ly. Cuenta A y cuenta B identifican las cuentas de prueba, no al actor. Según el docente, un caso de uso puede derivar varios casos de prueba; cada extensión siguiente identifica el paso del que se separa. Las cuentas, valores privados y controles se concretan en las fichas de TestLink.
 
-| Variable | Clase / tratamiento | Válida o inválida para la operación | Representante genérico | Caso y estado |
-|---|---|---|---|---|
-| Correo solicitado en recuperación | Correo de una cuenta registrada: solicitud aceptada y mensaje al buzón | Válida | Correo de A, conocido por quien ejecuta | T10-08, regla observada |
-| Correo solicitado en recuperación | Correo sin cuenta: rechazo explícito | Inválida para recuperar una cuenta | `prueba-t10-no-registrada-20261117@example.com` | T10-09, regla observada |
-| Credencial en Login posterior a recuperación | Contraseña vigente: acceso a A | Válida | Nueva contraseña privada de A | T10-08, contraste del flujo de recuperación |
-| Credencial en Login posterior a recuperación | Contraseña reemplazada: rechazo | Inválida | Contraseña privada anterior de A | T10-08, contraste del flujo de recuperación |
-| Old Password al cambiar desde Settings | Vacío con New Password informado: aviso Invalid Password | Inválida, rechazo observado | Campo vacío y alternativa privada no vacía | T10-03, rechazo y conservación de acceso observados |
-| Old Password al cambiar desde Settings | No coincide con la vigente: aviso Invalid Password | Inválida, rechazo observado | `Prueba-T10-04-incorrecta` | T10-04 |
-| Old Password al cambiar desde Settings | Coincide con la vigente: cambio aceptado | Válida, aceptación observada | Contraseña vigente privada | T10-05 |
-| New Password al cambiar desde Settings | Informado | Válida para las tres reglas observadas | Contraseña alternativa u objetivo privada | T10-03/04/05 |
-| New Password al cambiar desde Settings | Vacío | **Duda pendiente**, sin caso | — | Sin caso |
-| Credencial en Login posterior al cambio desde Settings | Contraseña reemplazada: rechazo / contraseña objetivo: acceso a A | Inválida / válida | Anterior y objetivo privadas | T10-05 |
-| Email en Profile antes de Cancel | Dirección alternativa distinta del original, descartada | Edición descartada: se conserva el original | Dirección alternativa indicada por la persona usuaria | T10-06 |
+**UC1 — Modificar el nombre de perfil.** Previo: sesión de la cuenta A y nombre inicial conocido.
 
-### 5.2 Tabla de decisión de Change Password en Settings
+| Escenario | Paso | Descripción |
+|---|---|---|
+| Principal | 1 | A: abre Settings / Profile. |
+| Principal | 2 | S: muestra Full Name y los controles Ok / Cancel. |
+| Principal | 3 | A: sustituye Full Name por el nombre de prueba. |
+| Principal | 4 | A: pulsa Ok. |
+| Principal | 5 | S: cierra Settings y conserva el nombre guardado. |
+| Principal | 6 | A: consulta Profile tras recarga y nueva sesión. |
+| Principal | 7 | S: muestra el nombre guardado; persistencia en nueva sesión como criterio del equipo. |
+| Extensión | 4a | A: pulsa Cancel en lugar de Ok. |
+| Extensión | 4a.1 | S: cierra Settings sin guardar; al reabrir Profile muestra el nombre inicial. |
 
-Formato docente: condiciones arriba, acciones abajo y columnas como reglas. **N.A.** indica que la condición no se evalúa porque no hay valor que comparar. Las tres reglas son combinaciones observadas el 17/11 y el 18/11; la combinación con New Password vacío no se incluye porque no se observó (duda pendiente) y no se completa la tabla con resultados inventados.
+**Derivación:** principal 1–7 → **T10-02**; extensión 4a → **T10-01**. La ficha02 restaura el nombre inicial al terminar.
 
-| Condiciones / acciones | R1 | R2 | R3 |
-|---|---|---|---|
-| C1: Old Password informado | No | Sí | Sí |
-| C2: Old Password coincide con la vigente | N.A. | No | Sí |
-| C3: New Password informado | Sí | Sí | Sí |
-| **Mostrar Invalid Password y conservar la vigente** | X | X | — |
-| **Aceptar el cambio: Settings se cierra; Login rechaza la reemplazada y acepta la nueva** | — | — | X |
-| **Caso derivado** | T10-03 | T10-04 | T10-05 |
+**UC2 — Recuperar acceso mediante el buzón controlado.** Previo: sin sesión y buzón de la cuenta A controlado por quien ejecuta.
 
-La conservación de la vigente en R1 se contrastó por Login (17/11); en R2 es criterio de seguridad del equipo respaldado de forma indirecta, porque el Old Password vigente fue aceptado inmediatamente después en R3. T10-04 incorpora el Login con la vigente para comprobarlo directamente en ejecución.
+| Escenario | Paso | Descripción |
+|---|---|---|
+| Principal | 1 | A: abre Login → Reset your Password. |
+| Principal | 2 | S: muestra el campo de correo y Send. |
+| Principal | 3 | A: informa el correo registrado de A y pulsa Send. |
+| Principal | 4 | S: informa el envío del enlace; llega el mensaje al buzón. |
+| Principal | 5 | A: abre el enlace tal como llega en el correo. |
+| Principal | 6 | S: muestra Please Enter a New Password; criterio del equipo para el enlace recibido, sin sustituir HTTP manualmente. |
+| Principal | 7 | A: introduce personalmente la nueva contraseña y su confirmación, y pulsa Done. |
+| Principal | 8 | S: acepta el cambio, sin exigir un mensaje literal de éxito no observado. |
+| Principal | 9 | A: contrasta Login con la reemplazada y con la nueva, y consulta Profile. |
+| Principal | 10 | S: rechaza la reemplazada, acepta la nueva y conserva la identidad. |
+| Extensión | 4a | A: informa el correo no registrado de example.com y pulsa Send. |
+| Extensión | 4a.1 | S: muestra Error. Account with this Email address doesn't exist.; no se solicita abrir ningún buzón. |
 
-### 5.3 Flujos de casos de uso
+**Derivación:** principal 1–10 → **T10-08**; extensión 4a → **T10-09**. **T10-10** comprueba transversalmente el transporte en el paso 5: HTTPS como criterio del equipo, sin modificar el enlace para hacer pasar08. El hallazgo HTTP sigue por confirmar en ejecución y fuera de la planilla de fallas. La restauración posterior se realizó mediante05/b), no dentro de08.
 
-**UC1 — Editar nombre.** Actor: persona con sesión A. Flujo principal: A abre Profile; S muestra valores; A edita Full Name y pulsa Ok; S conserva el nombre; A recarga y abre nueva sesión; S muestra el valor guardado. Alternativa: A pulsa Cancel y S conserva el anterior. Recorridos derivados: **T10-02 principal; T10-01 alternativa**. El flujo incluye restauración del dato al terminar.
+**UC3 — Cambiar la contraseña desde Settings.** Previo: sesión de la cuenta A, credencial vigente y objetivo distintos en registro privado.
 
-**UC2 — Recuperar acceso.** Actor: persona que controla el buzón de A. Principal: A abre Reset your Password e informa su correo; S confirma envío; A consulta el buzón y abre el enlace tal como llega; S ofrece formulario; A introduce personalmente y confirma nueva contraseña; S permite acceso con ella; A contrasta credencial reemplazada y datos de A. Alternativa: correo sin cuenta → S rechaza la solicitud y mantiene el formulario. Derivación: **T10-08 principal y T10-09 alternativa**. La comprobación de HTTPS se separa como objetivo de seguridad observable **T10-10**, derivado del punto de entrega/apertura del enlace y del criterio expreso del equipo.
+| Escenario | Paso | Descripción |
+|---|---|---|
+| Principal | 1 | A: abre Settings / Profile. |
+| Principal | 2 | S: muestra Old Password, New Password y Ok; sin confirmación adicional en Settings. |
+| Principal | 3 | A: informa la vigente en Old Password y la objetivo en New Password. |
+| Principal | 4 | A: pulsa Ok. |
+| Principal | 5 | S: cierra Settings sin Invalid Password. |
+| Principal | 6 | A: cierra sesión y contrasta Login con la reemplazada y con la objetivo. |
+| Principal | 7 | S: rechaza la reemplazada y concede acceso con la objetivo, conservando Profile. |
+| Extensión | 5a | A: deja Old Password vacío, con New Password informado, y pulsa Ok. |
+| Extensión | 5a.1 | S: muestra Invalid Password; la vigente conserva el acceso, contrastado por Login. |
+| Extensión | 5b | A: informa Old Password incorrecto, con New Password informado, y pulsa Ok. |
+| Extensión | 5b.1 | S: muestra Invalid Password; conservación de acceso como criterio del equipo, respaldada indirectamente por b) y por verificar directamente en el caso04. |
 
-**UC3 — Cambiar contraseña desde Settings.** Actor: persona con sesión A. Principal: A abre Profile, informa la contraseña vigente en Old Password y la objetivo en New Password y pulsa Ok; S cierra Settings sin aviso de rechazo; A cierra sesión e intenta una vez Login con la reemplazada; S lo rechaza; A inicia sesión con la objetivo; S concede acceso y Profile conserva la identidad; A actualiza su registro privado. Cuando la objetivo es la original, este mismo recorrido restaura A, sin un segundo cambio. Alternativas: Old Password incorrecto → Invalid Password y la vigente sigue dando acceso; Old Password vacío → Invalid Password. Derivación: **T10-05 principal; T10-04 y T10-03 alternativas**, coincidentes con las reglas R3, R2 y R1 de la tabla 5.2.
+**Derivación:** principal → **T10-05**;5a → **T10-03**;5b → **T10-04**. Cuando la objetivo es la original, el principal sirve de restauración sin un segundo cambio. New Password vacío queda pendiente: no se le asigna una extensión de resultado inventado.
 
-**UC4 — Editar Email de B.** Actor: persona con sesión B. Alternativa observada: B sustituye Email por una dirección alternativa y pulsa Cancel; S cierra Settings y, al reabrir Profile, muestra el correo original → **T10-06**. Principal: B guarda un Email nuevo y S lo aplica con la activación que corresponda → **T10-07, pendiente**: la necesidad de verificar el correo y el momento de activación no se observaron; no se impone una secuencia no observada.
+**UC4 — Descartar la edición de Email.** Previo: sesión de la cuenta B, correo original y alternativo privados.
 
-### 5.4 Técnicas no aplicadas
+| Escenario | Paso | Descripción |
+|---|---|---|
+| Principal | 1 | A: con sesión de la cuenta B, abre Settings / Profile. |
+| Principal | 2 | S: muestra Email original. |
+| Principal | 3 | A: sustituye Email por el alternativo y pulsa Cancel, sin Ok. |
+| Principal | 4 | S: cierra Settings sin aplicar el cambio. |
+| Principal | 5 | A: vuelve a abrir Profile. |
+| Principal | 6 | S: muestra exactamente el correo original. |
 
-No se aplican valores límite: no hay una frontera real confirmada de longitud ni una granularidad establecida. La tabla de decisión se reserva para Change Password, donde tres condiciones combinadas producen resultados distintos; no se fuerza sobre guardar/cancelar del nombre o del Email, que se representan como casos de uso, conforme a la guía §7.4. No se aplica transición formal de estados. La sesión y Remember Me se modelan en T09; raíz/subproyecto corresponde a T11.
+**Derivación:** recorrido de descarte → **T10-06**. Guardar un cambio válido de Email es otro recorrido todavía pendiente (**T10-07**); no se supone activación inmediata ni ausencia de verificación por correo.
+
+### 5.2 Tabla de decisión de Settings — alcance confirmado y pendientes
+
+Se conserva por el acuerdo previo del equipo. Condiciones arriba, acciones debajo y reglas por columna, como pp.46/48/53. **T/F** verdadero/falso; **N.A.** correspondencia no evaluable si Old Password está vacío; **Execute** acción esperada; **?** resultado sin confirmar, no caso listo. C2 no es una condición independiente cuando C1=F: no se crean combinaciones imposibles de correspondencia con una entrada ausente.
+
+| Condiciones / acciones | Regla 1 | Regla 2 | Regla 3 | Regla 4 pendiente | Regla 5 pendiente | Regla 6 pendiente |
+|---|---|---|---|---|---|---|
+| C1: Old Password informado | F | T | T | F | T | T |
+| C2: Old Password coincide con la vigente | N.A. | F | T | N.A. | F | T |
+| C3: New Password informado | T | T | T | F | F | F |
+| Mostrar Invalid Password | Execute | Execute | — | ? | ? | ? |
+| Aceptar cambio de contraseña | — | — | Execute | ? | ? | ? |
+| Caso derivado / situación | T10-03 | T10-04 | T10-05 | Sin caso | Sin caso | Sin caso |
+
+Las tres reglas confirmadas respaldan los recorridos de UC3; **no se afirma cobertura completa de las seis combinaciones factibles**. Reglas 4–6 no se ejecutaron como intentos de cambio y no se deducen del guardado normal de Full Name. La conservación tras rechazo se comprueba en03/04; en04 es criterio del equipo con respaldo indirecto.
+
+### 5.3 Técnicas no aplicadas
+
+No se atribuyen particiones de equivalencia a T10 tras esta corrección. No se aplican valores límite sin frontera confirmada. La transición de sesión y Remember Me se trata en T09; raíz/subproyecto en T11. La tabla de decisión apoya solo 03/04/05, y los casos de uso derivan los recorridos descritos; no se agregan técnicas para aumentar su cantidad.
 
 ## 6. Lista resumida de casos
 
@@ -114,36 +148,34 @@ No se aplican valores límite: no hay una frontera real confirmada de longitud n
 |---|---|---|---|---|---|
 | T10-01 Cancelar nombre | Descartar una edición; R3 | Alternativa Cancel del UC1, ya contrastada | medium | [TL-66](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-66) | Registrado y comparado. |
 | T10-02 Guardar nombre y persistir | Evitar pérdida del perfil; R2 | Principal UC1 con recarga y nueva sesión | high | [TL-67](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-67) | Registrado y comparado. |
-| T10-03 Old Password vacío | Proteger cambio de credencial; R1 | Partición inválida vacío y alternativa UC3; aviso Invalid Password observado | high | [TL-68](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-68) | Registrado y comparado. |
-| T10-04 Old Password incorrecto | Proteger cambio de credencial; R1 | Regla R2 de la tabla 5.2, partición no coincide y alternativa UC3 | high | Sin ID | Listo; sin ID todavía |
-| T10-05 Cambio válido desde Settings | Continuidad del acceso e invalidación de la reemplazada; R1 | Regla R3 de la tabla 5.2, partición coincide y principal UC3; sirve como restauración | high | Sin ID | Listo; sin ID todavía |
-| T10-06 Cancelar correo | Conservar identificador descartado; R3 | Alternativa Cancel del UC4 | high | Sin ID | Listo; sin ID todavía |
-| T10-07 Cambiar correo a alias y restaurar | Evitar pérdida de acceso/datos; R4 | Principal UC4 | high | No registrado | Pendiente de verificación/activación |
-| T10-08 Recuperar acceso | Acceso con credencial nueva; R1 | Particiones de correo/credencial y UC2 principal | high | [TL-69](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-69) | Registrado y comparado. |
-| T10-09 Correo no registrado | Distinguir rechazo de envío aceptado; R6 | Partición sin cuenta y alternativa UC2 | medium | [TL-70](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-70) | Registrado y comparado. |
+| T10-03 Old Password vacío | Proteger cambio de credencial; R1 | Extensión5a de UC3 y Regla 1; Invalid Password observado | high | [TL-68](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-68) | Registrado y comparado. |
+| T10-04 Old Password incorrecto | Proteger cambio de credencial; R1 | Extensión5b de UC3 y Regla 2; rechazo observado | high | [TL-85](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-85) | Registrado y comparado. |
+| T10-05 Cambio válido desde Settings | Continuidad del acceso e invalidación de la reemplazada; R1 | Principal UC3 y Regla 3; acceso con objetivo e invalidación de reemplazada | high | [TL-86](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-86) | Registrado y comparado. |
+| T10-06 Cancelar correo | Conservar identificador descartado; R3 | Principal de descarte UC4, pasos1–6 | high | [TL-87](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-87) | Registrado y comparado. |
+| T10-07 Cambiar correo a alias y restaurar | Evitar pérdida de acceso/datos; R4 | Recorrido de guardado de Email, pendiente | high | No registrado | Pendiente de verificación/activación |
+| T10-08 Recuperar acceso | Acceso con credencial nueva; R1 | Principal UC2: solicitud, enlace recibido, cambio y Login | high | [TL-69](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-69) | Registrado y comparado. |
+| T10-09 Correo no registrado | Distinguir rechazo de envío aceptado; R6 | Extensión4a de UC2: correo no registrado y rechazo | medium | [TL-70](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-70) | Registrado y comparado. |
 | T10-10 HTTPS del enlace | Transporte del token; R5 | Procedimiento observable sobre entrega/apertura del UC2, criterio del equipo | high | [TL-71](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-71) | Registrado y comparado. |
 
 ## 7. Implementación en TestLink
 
 Se registraron **seis casos, 28 pasos**, en **TL:Todo.ly → Todo.ly tests (id3)**: TL-66 a TL-71. Suite:64 antes,70 después; sin T10 previo, duplicados omitidos por nombre, sin suites nuevas ni actualización de existentes. Cada título, Summary, Preconditions, paso/resultado, Importance y Manual fue cotejado: **sin diferencias**. Estado TestLink **Draft**.
 
-T10-04/05/06: **listos para registro**,51pasos; revisión independiente08 APTO, observaciones atendidas. Se incorporarán únicamente estos tres y sus IDs se añadirán tras verificarlos. T10-07 queda fuera. La revisión independiente no sustituye la de otro integrante.
+Se añadieron únicamente T10-04/05/06: **TL-85, TL-86 y TL-87**,51 pasos;128 textos y campos nativos cotejados sin diferencias. Total T10: **nueve casos,79 pasos**. Revisiones08 y11 APTO, observaciones resueltas; no sustituyen la revisión de otro integrante. T10-07 fuera del registro.
 
-La exploración fue macOS/Chrome; guía§10 prevé ejecución Windows/Chrome con versiones reales anotadas. T10-10 requiere enlace no utilizado: antes de T10-08 o con solicitud propia. Evidencias externas: árbol y ficha genérica TestLink; no capturas de Profile con correos reales. Exportación real y extracción por ticket pendientes del cierre.
+La exploración fue macOS/Chrome; guía §10 prevé ejecución Windows/Chrome con versiones reales anotadas. T10-10 requiere enlace no utilizado: antes de T10-08 o con solicitud propia. Evidencias externas: árbol y ficha genérica TestLink; no capturas de Profile con correos reales. Exportación real y extracción por ticket pendientes del cierre.
 
-Comentario [PEB-74 / 10226](https://alesalve.atlassian.net/browse/PEB-74?focusedCommentId=10226): tres capturas conservadas (árbol global, TL-66 abierto y filtro de seis casos), tablas legibles con desplazamiento horizontal. Estado Jira conservado.
+Comentario [PEB-74 / 10226](https://alesalve.atlassian.net/browse/PEB-74?focusedCommentId=10226): cuatro capturas (tres anteriores conservadas y nueva vista de nueve casos con TL-87 abierto), tablas legibles con desplazamiento horizontal. Estado Jira conservado.
 
 ## 8. Cobertura pendiente y límites
 
-Pendientes: cambio válido de Email de B, New Password vacío en Settings, política de contraseña, fronteras de campos, token de uso único/caducidad y sesiones paralelas. Los pasos manuales a/b/c se realizaron el 18/11 y completaron T10-04/05/06; la restauración de la contraseña original de A quedó hecha y verificada mediante el cambio b), y el registro privado se actualizó. T10-07 se conserva exclusivamente como cobertura pendiente y no se registra, por instrucción expresa. No se afirma que el producto exija verificación de correo: esa regla no se alcanzó a consultar mediante un cambio válido. Los cuatro PDF faltantes se excluyen expresamente como fuentes por instrucción del usuario.
+T10-07 (Email válido) no se registra. New Password vacío, políticas de clave, fronteras, caducidad/uso único y sesiones paralelas siguen pendientes. A quedó restaurada por 05/b), con Login verificado; B conserva Email original. Los cuatro PDF faltantes no se usan como fuentes.
 
-El nombre vacío se envió una vez con credenciales de cambio vacías: la vista quedó en Loading y una nueva consulta conservó el nombre inicial de A. No hubo una validación visible fiable; no se establece obligatoriedad ni se genera un caso de rechazo basándose solo en ese intento. No se repite la exploración para buscar límites arbitrarios.
-
-No se reporta el hallazgo HTTP en la planilla de fallas: el comentario lo dejará para confirmar durante la ejecución. La revisión por otro integrante permanece pendiente y no se marcará por el agente.
+Nombre vacío produjo Loading y después conservó el nombre inicial, sin validador legible: no se deduce obligatoriedad. HTTP queda como hallazgo a confirmar durante ejecución, sin planilla de fallas. La revisión por integrante y ejecución formal permanecen pendientes.
 
 ## 9. Estado
 
-**Nueve casos diseñados: seis registrados en TestLink (T10-01/02/03/08/09/10) y tres por registrar (T10-04/05/06) hasta su registro y verificación; pendiente de revisión por otro integrante.** T10-07 está excluido del registro; **la cobertura completa de T10 no está terminada**. No se ejecutaron formalmente los casos ni se reportó el hallazgo HTTP en la planilla de fallas.
+**Diseñados y registrados en TestLink; pendiente de revisión por otro integrante.** Nueve casos,79 pasos. T10-07 excluido; cobertura completa y ejecución formal pendientes. Sin reporte de HTTP en planilla.
 
 Comprobación de criterios de aceptación, sin modificar el checklist ni el estado del ticket:
 
@@ -153,11 +185,11 @@ Comprobación de criterios de aceptación, sin modificar el checklist ni el esta
 | Tipos de prueba seleccionados y justificados | Funcional y seguridad observable, vinculados a riesgos. |
 | Riesgos de pérdida de acceso y modificación incorrecta | R1–R6 trazados; Settings03/04/05 y Cancel06 cubiertos; Email válido07 pendiente. |
 | Cambios válidos, inválidos y cancelaciones | Nombre, recuperación, contraseña y Cancel cubiertos; Email válido pendiente. |
-| Técnicas y procedimientos justificados | Particiones, decisión y flujos con artefactos/trazas; sin límites inventados. |
+| Técnicas y procedimientos justificados | Casos de uso con extensiones/trazas; decisión Settings con pendientes explícitos; sin límites inventados. |
 | Cuentas, buzones, condiciones y resultados en los casos | Fichas genéricas; única contraseña literal: dato sintético inválido de04. |
-| Registro en TestLink y revisión de otro integrante | Seis registrados, tres por registrar; revisión de integrante pendiente. |
+| Registro en TestLink y revisión de otro integrante | Nueve registrados y comparados; revisión de integrante pendiente. |
 
-## Fichas para TestLink — seis casos registrados y tres listos para registro
+## Fichas para TestLink — nueve casos registrados
 
 <!-- FICHAS_GENERADAS -->
 

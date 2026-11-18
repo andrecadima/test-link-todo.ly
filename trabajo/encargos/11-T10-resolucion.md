@@ -1,0 +1,3 @@
+# Resolución11 — técnicas T10
+
+APTO sin bloqueantes. Actor A identificado expresamente como persona; cuentas A/B nombradas como cuentas, especialmente UC4. Columnas Regla1–6 separadas de riesgosR1–6. Se explica elección de flujos completos como fundamento y diferencia de clases/decisión, sin afirmar que las particiones necesiten rangos. Extensiones UC2 ancladas alpaso4 y UC3 alpaso5 como en ejemplo docente; trazas actualizadas. New Password vacío continúa sin oráculo, separado de guardar Full Name. N.A./? con leyenda, sin inventar resultados ni políticas ACME. Fichas/IDs no cambian por esta corrección;128 textos nuevos cotejados. No equivale a revisión de integrante.

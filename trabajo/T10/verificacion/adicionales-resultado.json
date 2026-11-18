@@ -1,0 +1,23 @@
+[
+  {
+    "caso": "T10-04",
+    "campos": 45,
+    "pasos": 18,
+    "faltantes": [],
+    "nativos": true
+  },
+  {
+    "caso": "T10-05",
+    "campos": 55,
+    "pasos": 23,
+    "faltantes": [],
+    "nativos": true
+  },
+  {
+    "caso": "T10-06",
+    "campos": 28,
+    "pasos": 10,
+    "faltantes": [],
+    "nativos": true
+  }
+]

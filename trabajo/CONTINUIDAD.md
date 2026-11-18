@@ -1,3 +1,15 @@
+# Actualización prioritaria — 18/11, después del feedback de técnicas
+
+- Usuario dijo continuar. Navegador retomado; no se asumen resultados del bloque manual T11.
+- **T10 terminado en registro/publicación:** nueve casos,79pasos. Se añadieron04/05/06 comoTL-85/86/87,128textos y camposnativos cotejados sin diferencias; originalesseisno reimportados. Jira10226 corregido tras feedback: UC1–4Actor/Sistema+extensiones, decisiónSettingsseparada con seis combinacionesfactibles (tres confirmadas, tresNewvacío?), sin atribuirEPaT10. Revisión11APTO; observaciones resueltas. Dieztablas,cuatroimágenespreviasconservadas/nueva agregada,nueveIDs. HTML realcopiado/metadataactualizadosyvisualcomprobado.
+- **T11:** diseño09/revisión10terminados, APTOsinbloqueantes. Resolución10 aplicóHomeexpandcondicional,Seeallcondicional,listaProjects,matrizsinresultadodesconocido,capturasselecciónprevia. Seislistos71pasos,07pendiente; **NO importados todavía**. XMLregenerado. Siguiente: comprobarT11ausente,importar6,comparartodos,publicarPEB75.
+- ChromeIncognito A volvió a cargar; Home muestra marcadorT09 y **Prueba T07-01 - completar**,dato nuevo no creado porCodex. RootT11temporal siguevisible. No haydatosmanualesT11confirmados. No usarT07comoobservaciónpropia ni inferirarrastres.
+- **Incidencia de secreto heredado:** dos respaldos nuevosdelotroClaude1618/1620 conteníanpasswordnumérica heredada6dígitos que elscannerde clavesactuales no detectó; se subieron ena31215c. Codex lo informó, no usóesa cuenta. Quitadosdelárbol rastreado e ignorados, originalesintactos, copiascifradasseisarchivos. Commit962a262pushed? verificar61746 (pushnormalcorrección).
+- Preparada rama local **resguardo-sin-credenciales** rehaciendo trescommitspostbd0329e sin esosdospaths;árboligualmaster962a262. Planenresguardos-revision/plan-retiro-historial.md. **Permisoasyncpara push--force-with-lease pendiente; NO autorizado por “continúa”. No ejecutarforce ni resetear árbol.** Siaprueba,rehacerpropuesta desdeúltimomaster paraincluirnuevoscommitsypreservartodo,verificarárbolidéntico;pushleaseexplicit. Credencialpodríaquedaren cachés;propietariodebe rotarlasi vigente,no tocaCodexesa cuenta.
+- Próximocommit: T10registrado/correccióntécnicas,T11diseñorevisado,evidenciasyarchivossegurosrevision-testlinkintactos. Scanner debe incluiractuales Y heredadanumérica derivadaprivadamente deCAMILA_PW enmodelo.py ignorado. No imprimirvalores.
+
+---
+
 # Continuidad T09–T11 — 18/11/2026
 
 La demo es hoy. Rigen AGENTS.md, decisiones-vigentes y PROMPT_ORQUESTACION, con las últimas instrucciones del chat. No cambiar estados Jira, ni editar casos ajenos; revisión por otro integrante pendiente.

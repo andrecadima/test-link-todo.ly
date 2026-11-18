@@ -1,0 +1,90 @@
+Window: "TestLink", App: Google Chrome.
+0 standard window TestLink - Google Chrome - Andre, URL: 68.211.149.112/lib/testcases/tcImport.php, Secondary Actions: Raise
+	1 container TestLink - Google Chrome - Andre, URL: 68.211.149.112/lib/testcases/tcImport.php
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button Not Secure
+					9 text field (settable) Address and search bar, Value: 68.211.149.112/lib/testcases/tcImport.php, Placeholder: Ask Google or type a URL
+					10 button Zoom: 75%
+					11 button Bookmark this tab
+				12 container
+					13 pop up button iCloud Bookmarks
+					14 pop up button Google Translate
+
+Left-click to translate!
+Right-click for options.
+Has access to this site
+					15 pop up button Video Downloader
+Has access to this site
+					16 pop up button vidIQ Vision for YouTube
+Has access to this site
+					17 pop up button Disconnected
+Has access to this site
+					18 pop up button Chile
+Has access to this site
+					19 pop up button Wappalyzer
+Has access to this site
+					20 pop up button Open Claude
+Has access to this site
+					21 pop up button Extensions
+				22 button Paused
+				23 pop up button Chrome
+			24 toolbar Bookmarks
+				25 toolbar Saved Tab Groups
+					26 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					27 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					28 button Tab groups
+				29 splitter Separator
+				30 bookmark button Sample Tank MAX 4-0-9 WiN-MAC - AUDIOTOOLS
+				31 bookmark button Downloads
+				32 bookmark button Flameboy Tutorials
+				33 bookmark button Media Monopoly: Secure Checkout
+				34 pop up button Menu containing hidden bookmarks
+				35 bookmark folder button All Bookmarks
+				36 splitter Separator
+			37 container
+				38 scroll area
+					39 HTML content TestLink, URL: 68.211.149.112/lib/testcases/tcImport.php
+						40 heading Test Case : Todo.ly tests, Value: 1
+							41 text Test Case : Todo.ly tests
+						42 heading Import Test Cases, Value: 1
+							43 text Import Test Cases
+						44 text Test Case :
+						45 text T10-04. Settings con Old Password incorrecto muestra Invalid Password y conserva la clave
+						46 text  : ok
+						47 text Test Case :
+						48 text T10-05. Settings con Old Password vigente cambia la clave y permite Login con la nueva
+						49 text  : ok
+						50 text Test Case :
+						51 text T10-06. Profile con Email editado y Cancel conserva el correo original de B
+						52 text  : ok
+						53 button
+			54 pop up button Tab search
+			55 container
+				56 tab group
+					57 tab (selected, settable, boolean) TestLink - Memory usage - 289 MB, Value: on
+						58 button Close
+					59 tab (settable, boolean) Value: off, [PEB-74] T10 — Analizar, diseñar y registrar pruebas de perfil y recuperación de acceso - Jira - Memory usage - 477 MB
+						60 button Close
+			61 button New Tab
+			62 button Open Gemini in Chrome
+	63 close button
+	64 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	65 minimize button
+66 menu bar
+	67 Chrome
+	68 File
+	69 Edit
+	70 View
+	71 History
+	72 Bookmarks
+	73 Profiles
+	74 Tab
+	75 Window
+	76 Help
+
+The focused UI element is 39 HTML content TestLink, URL: 68.211.149.112/lib/testcases/tcImport.php

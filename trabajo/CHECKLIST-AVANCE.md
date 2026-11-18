@@ -7,8 +7,8 @@ Actualizado 18/11/2026. No representa ejecución formal ni revisión de otro int
 - [x] Diseño de seis casos confirmados, revisión Claude APTO y observaciones atendidas.
 - [x] Registro TL-66 a TL-71: seis casos, 28 pasos nativos.
 - [x] Comparación individual de campos, pasos/resultados, Importance y Manual: sin diferencias.
-- [x] Comentario 10226 publicado con IDs, enlaces, tres capturas y tablas corregidas; estado Jira conservado.
-- [x] T10-04/05/06: resultados manuales y Login restaurado verificados; diseño/revisión08 APTO; registro externo pendiente.
+- [x] Comentario10226 actualizado con nueveIDs, cuatrocapturas, casosdeuso/decisión corregidos y revisión11APTO; visualmente comprobado; estadoJira conservado.
+- [x] T10-04/05/06 registrados TL-85/86/87,51pasos,128textos sin diferencias; nueveT10 totales,79pasos.
 - [x] T10-07 excluido del registro por instrucción expresa; cobertura pendiente documentada.
 - [ ] Revisión por otro integrante y ejecución formal.
 
@@ -24,7 +24,7 @@ Actualizado 18/11/2026. No representa ejecución formal ni revisión de otro int
 
 - [x] Contexto y diseño provisional; creación/renombrado de raíz observados.
 - [ ] Exploración focalizada de cancelación, jerarquía y movimientos, con conservación tras F5.
-- [ ] Diseño y revisión independiente de Claude.
+- [x] Diseño T11 seis casos71pasos; revisión10APTO y observaciones resueltas;07pendiente.
 - [ ] Registro, comparación y comentario Jira con evidencias.
 - [ ] Revisión por otro integrante y ejecución formal.
 

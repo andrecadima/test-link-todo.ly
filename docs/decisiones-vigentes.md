@@ -125,3 +125,10 @@ El usuario confirmó que Codex termina T09, T11 y fase 6 y sigue publicando en s
 Antes de registrar T09/T11: título con funcionalidad, condición y resultado; descripción iniciada con Validar que; precondiciones como estados/datos, sin verbos; una acción por paso con controles/datos exactos destacados y resultados observables. Se conserva objetivo, cobertura, IDs, importancia y Manual. Prevalecen las cuentas genéricas y ausencia de secretos de §7. Summary presenta primero la descripción, después requerimiento y postcondiciones; la importancia y su razón se mantienen en ficha/análisis y su campo nativo. El XML convierte la negrita de los controles a strong.
 
 El usuario solicitó de nuevo una sola lista manual de T10 a/b/c. Cuando confirme resultados, Codex completa 04/05/06, verifica y registra solo esos tres y añade IDs/enlaces al comentario PEB-74 conservando todo su contenido. La restauración de A es necesaria también para el cierre.
+
+
+## 16. Corrección de fundamento de técnicas — 18 de noviembre
+
+El usuario observó que la tabla publicada de T10 no explicaba con claridad la técnica y aportó ejemplos docentes de decisión y casos de uso. Se contrastaron nuevamente las secciones del PDF original, sin releer otros materiales completos. No se conserva una etiqueta de técnica por apariencia de tabla. Para T10 se adopta casos de uso como fundamento principal: actor A, sistema S, escenario de éxito, extensiones ancladas al paso y casos derivados explícitos. Las condiciones inciertas siguen pendientes: casos de uso no autoriza inventar sus resultados.
+
+La tabla de Settings solicitada anteriormente se mantiene separada, en formato docente: condiciones arriba, acciones debajo, columnas como reglas, T/F y Execute. Las combinaciones factibles con New Password vacío se muestran como pendientes; no se presentan como reglas confirmadas ni generan casos listos. No se fuerza particiones de equivalencia en T10. La instrucción no elimina técnicas justificadas de T09/T11 ni permite retocar casos ajenos.

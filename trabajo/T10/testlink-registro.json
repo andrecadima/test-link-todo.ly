@@ -2,7 +2,7 @@
   "proyecto": "TL:Todo.ly",
   "suite": "Todo.ly tests",
   "suite_id": 3,
-  "total_suite_observado": 70,
+  "total_suite_observado": 86,
   "casos": [
     {
       "caso": "T10-01",
@@ -39,6 +39,45 @@
       "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-68",
       "diferencias": [],
       "pasos": 5,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T10-04",
+      "id_testlink": "TL-85",
+      "id_interno": 969,
+      "titulo": "Settings con Old Password incorrecto muestra Invalid Password y conserva la clave",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-85",
+      "diferencias": [],
+      "pasos": 18,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T10-05",
+      "id_testlink": "TL-86",
+      "id_interno": 989,
+      "titulo": "Settings con Old Password vigente cambia la clave y permite Login con la nueva",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-86",
+      "diferencias": [],
+      "pasos": 23,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T10-06",
+      "id_testlink": "TL-87",
+      "id_interno": 1014,
+      "titulo": "Profile con Email editado y Cancel conserva el correo original de B",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-87",
+      "diferencias": [],
+      "pasos": 10,
       "importance": "High",
       "execution_type": "Manual",
       "estado_testlink": "Draft"

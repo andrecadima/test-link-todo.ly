@@ -1,155 +1,391 @@
 [
   {
     "id": "T11-01",
-    "titulo": "Crear y seleccionar un proyecto raíz vacío",
+    "titulo": "Add New Project con nombre nuevo crea un proyecto raíz vacío que persiste tras F5",
     "importancia": "high",
-    "razon": "Protege la creación y localización de un contenedor sin perder proyectos existentes.",
-    "requerimiento": "PEB-75 / T11. Un proyecto nuevo aparece una sola vez y puede seleccionarse conservando su identidad.",
+    "razon": "Protege la creación y localización de un contenedor sin duplicarlo ni alterar los proyectos existentes.",
+    "requerimiento": "PEB-75 / T11. Add New Project crea una sola entrada raíz que puede seleccionarse vacía y se conserva tras recarga.",
     "precondiciones": [
       "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
-      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A en un perfil dedicado.",
-      "No existe un proyecto llamado Prueba T11-01 - proyecto; proyectos iniciales de la cuenta conocidos."
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).",
+      "Lista inicial de **Projects** de A consignada en el registro de ejecución.",
+      "Ausencia de proyectos con el nombre **Prueba T11-01 - proyecto vacío**."
     ],
-    "descripcion": "Comprobar creación, selección y conservación tras recarga de un proyecto propio vacío.",
+    "descripcion": "Validar que Add New Project con un nombre nuevo crea una sola entrada raíz al final de Projects, que al seleccionarla muestra un proyecto vacío y que tras F5 conserva nombre, ubicación y contenido sin alterar los proyectos iniciales.",
     "pasos": [
       [
-        "Consultar el árbol inicial, pulsar Add New Project e introducir Prueba T11-01 - proyecto; pulsar Add una vez.",
-        "Aparece una sola entrada con ese nombre en la raíz; los proyectos iniciales permanecen."
+        "Hacer clic en **Add New Project**, debajo de la lista de **Projects**.",
+        "Aparecen un campo de nombre y el botón **Add** debajo de la lista de **Projects**."
       ],
       [
-        "Seleccionar Prueba T11-01 - proyecto.",
-        "El área principal muestra su nombre, There are no items to display y 0 Done Items."
+        "Escribir **Prueba T11-01 - proyecto vacío** en el campo de nombre.",
+        "El campo muestra **Prueba T11-01 - proyecto vacío**."
       ],
       [
-        "Recargar con F5 y volver a seleccionar el proyecto si fuera necesario.",
-        "La entrada raíz conserva el nombre y sigue vacía, sin duplicación; los proyectos iniciales permanecen."
+        "Hacer clic una sola vez en **Add**.",
+        "Sin recargar, al terminar la operación **Projects** muestra una sola entrada nueva que comienza por **Prueba T11-01** al final de la lista raíz; el panel puede abreviar el nombre con «…» y los proyectos iniciales permanecen. La vista abandona **Loading** según el criterio de actualización visual del equipo; una entrada visible únicamente tras recarga no satisface este paso."
       ],
       [
-        "Conservar evidencia del árbol y del proyecto seleccionado.",
-        "La evidencia permite identificar el contenedor creado y su estado vacío."
+        "Hacer clic en la entrada nueva en **Projects**.",
+        "La entrada queda resaltada y el área principal muestra el título **Prueba T11-01 - proyecto vacío**, el texto **There are no items to display** y **0 Done Items**."
+      ],
+      [
+        "Presionar **F5**.",
+        "La página se recarga y **Projects** muestra la entrada una sola vez en la raíz, sin sangría bajo otro proyecto; los proyectos iniciales del registro permanecen."
+      ],
+      [
+        "Hacer clic en la entrada **Prueba T11-01 - proyecto vacío** en **Projects**.",
+        "El área principal muestra el título **Prueba T11-01 - proyecto vacío**, **There are no items to display** y **0 Done Items**."
+      ],
+      [
+        "Tomar una captura de **Projects** y del proyecto seleccionado.",
+        "La captura muestra la entrada raíz única y el proyecto vacío, sin datos personales."
       ]
     ],
-    "postcondiciones": "Proyecto raíz temporal vacío conservado para la limpieza final del lote; proyectos iniciales intactos."
+    "postcondiciones": "Proyecto raíz vacío Prueba T11-01 - proyecto vacío conservado en A para la limpieza final del lote; proyectos iniciales sin cambios. Evidencia de la consulta posterior a F5."
   },
   {
     "id": "T11-02",
-    "titulo": "Renombrar un proyecto propio y conservarlo tras recarga",
+    "titulo": "Edit con Save en un proyecto aplica el nombre nuevo y lo conserva tras F5",
     "importancia": "medium",
-    "razon": "Evita confundir o perder un proyecto al cambiar su nombre.",
-    "requerimiento": "PEB-75 / T11. Save aplica el nombre nuevo y conserva el proyecto y su contenido tras recarga.",
+    "razon": "Evita perder o confundir un proyecto al cambiar su nombre.",
+    "requerimiento": "PEB-75 / T11. Edit y Save aplican el nombre nuevo a un proyecto y, tras recarga, existe una sola entrada con ese nombre.",
     "precondiciones": [
       "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
-      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A en un perfil dedicado.",
-      "No existen los proyectos Prueba T11-02 - original ni Prueba T11-02 - renombrado."
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).",
+      "Lista inicial de **Projects** de A consignada en el registro de ejecución.",
+      "Ausencia de proyectos con nombres que comiencen por **Prueba T11-02**."
     ],
-    "descripcion": "Comprobar el guardado del nombre sobre un proyecto temporal, sin imponer unicidad como regla del producto.",
+    "descripcion": "Validar que Edit con el icono Save aplica el nombre nuevo a un proyecto temporal y que, tras F5, Projects muestra una sola entrada con ese nombre y ninguna con el nombre anterior.",
     "pasos": [
       [
-        "Crear una vez el proyecto raíz Prueba T11-02 - original mediante Add New Project y Add.",
-        "El árbol muestra el proyecto temporal una sola vez."
+        "Hacer clic en **Add New Project**, debajo de la lista de **Projects**.",
+        "Aparecen un campo de nombre y el botón **Add**."
       ],
       [
-        "Seleccionar el proyecto, abrir su menú Options y elegir Edit.",
-        "Aparece el campo editable con el nombre original y los controles Save y Cancel Editing."
+        "Escribir **Prueba T11-02 - original** en el campo de nombre.",
+        "El campo muestra **Prueba T11-02 - original**."
       ],
       [
-        "Introducir Prueba T11-02 - renombrado y pulsar el icono Save.",
-        "La entrada del proyecto y el título de la vista seleccionada muestran el nombre nuevo."
+        "Hacer clic una sola vez en **Add**.",
+        "**Projects** muestra una sola entrada nueva que comienza por **Prueba T11-02** al final de la lista raíz."
       ],
       [
-        "Recargar con F5 y volver a seleccionar el proyecto.",
-        "El nombre renombrado persiste y no aparece una segunda entrada que represente la versión anterior."
+        "Hacer clic en la entrada nueva en **Projects**.",
+        "El área principal muestra el título **Prueba T11-02 - original** y **There are no items to display**."
       ],
       [
-        "Conservar evidencia de nombre y ubicación.",
-        "Queda documentada la identidad del proyecto renombrado."
+        "Situar el puntero sobre la entrada del proyecto en **Projects** y hacer clic en el icono de opciones de su lado derecho.",
+        "Se despliega un menú con **Edit**, **Add item above**, **Add item below**, **Delete** y **Share**."
+      ],
+      [
+        "Hacer clic en **Edit**.",
+        "La entrada se convierte en un campo editable con **Prueba T11-02 - original**, el icono **Save** y **Cancel Editing**."
+      ],
+      [
+        "Sustituir el contenido del campo por **Prueba T11-02 - renombrado**.",
+        "El campo muestra **Prueba T11-02 - renombrado**."
+      ],
+      [
+        "Hacer clic en el icono **Save**.",
+        "Se cierra el campo editable y la entrada de **Projects** muestra el nombre nuevo (el panel puede abreviarlo con «…»)."
+      ],
+      [
+        "Presionar **F5**.",
+        "La página se recarga; **Projects** muestra una sola entrada del proyecto, con el nombre nuevo, y ninguna con **Prueba T11-02 - original**."
+      ],
+      [
+        "Hacer clic en la entrada del proyecto renombrado en **Projects**.",
+        "El área principal muestra el título **Prueba T11-02 - renombrado** y **There are no items to display**."
+      ],
+      [
+        "Tomar una captura de **Projects** y del proyecto seleccionado.",
+        "La captura muestra el nombre nuevo como entrada única."
       ]
     ],
-    "postcondiciones": "Proyecto temporal conservado con el nombre renombrado para limpieza final; no se alteraron proyectos predeterminados."
+    "postcondiciones": "Proyecto raíz vacío Prueba T11-02 - renombrado conservado en A para la limpieza final del lote; proyectos iniciales sin cambios."
+  },
+  {
+    "id": "T11-03",
+    "titulo": "Cancel Editing en Edit de proyecto descarta el nombre nuevo y conserva el original",
+    "importancia": "medium",
+    "razon": "Evita aplicar un nombre que la persona decidió descartar.",
+    "requerimiento": "PEB-75 / T11. Cancel Editing descarta el nombre editado de un proyecto; el nombre original se conserva tras recarga.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).",
+      "Lista inicial de **Projects** de A consignada en el registro de ejecución.",
+      "Ausencia de proyectos con nombres que comiencen por **Prueba T11-03**."
+    ],
+    "descripcion": "Validar que, tras sustituir el nombre de un proyecto en Edit y pulsar Cancel Editing, Projects vuelve a mostrar el nombre original y lo conserva tras F5, sin entrada con el nombre descartado.",
+    "pasos": [
+      [
+        "Hacer clic en **Add New Project**, debajo de la lista de **Projects**.",
+        "Aparecen un campo de nombre y el botón **Add**."
+      ],
+      [
+        "Escribir **Prueba T11-03 - original** en el campo de nombre.",
+        "El campo muestra **Prueba T11-03 - original**."
+      ],
+      [
+        "Hacer clic una sola vez en **Add**.",
+        "**Projects** muestra una sola entrada nueva que comienza por **Prueba T11-03** al final de la lista raíz."
+      ],
+      [
+        "Hacer clic en la entrada nueva en **Projects**.",
+        "El área principal muestra el título **Prueba T11-03 - original**."
+      ],
+      [
+        "Situar el puntero sobre la entrada del proyecto en **Projects** y hacer clic en el icono de opciones de su lado derecho.",
+        "Se despliega un menú con **Edit**, **Add item above**, **Add item below**, **Delete** y **Share**."
+      ],
+      [
+        "Hacer clic en **Edit**.",
+        "La entrada se convierte en un campo editable con **Prueba T11-03 - original**, el icono **Save** y **Cancel Editing**."
+      ],
+      [
+        "Sustituir el contenido del campo por **Prueba T11-03 - descartado**.",
+        "El campo muestra **Prueba T11-03 - descartado**."
+      ],
+      [
+        "Hacer clic en **Cancel Editing**.",
+        "Se cierra el campo editable y la entrada de **Projects** vuelve a mostrar **Prueba T11-03 - original**."
+      ],
+      [
+        "Presionar **F5**.",
+        "La página se recarga; **Projects** muestra una sola entrada con **Prueba T11-03 - original** y ninguna con **Prueba T11-03 - descartado**."
+      ],
+      [
+        "Hacer clic en la entrada **Prueba T11-03 - original** en **Projects**.",
+        "El área principal muestra el título **Prueba T11-03 - original**."
+      ],
+      [
+        "Tomar una captura de **Projects** y del proyecto seleccionado.",
+        "La captura muestra el nombre original como entrada única."
+      ]
+    ],
+    "postcondiciones": "Proyecto raíz vacío Prueba T11-03 - original conservado en A para la limpieza final del lote; proyectos iniciales sin cambios."
   },
   {
     "id": "T11-04",
-    "titulo": "Crear un subproyecto por arrastre y conservar su contenido",
+    "titulo": "Arrastrar un proyecto temporal sobre Home lo anida como subproyecto con su tarea",
     "importancia": "high",
-    "razon": "Protege la relación padre/hijo de proyectos y los datos del contenedor movido.",
-    "requerimiento": "PEB-75 / T11. El arrastre documentado anida proyectos propios; la relación y los datos se conservan tras recarga.",
+    "razon": "Protege la relación padre/hijo entre proyectos y los datos del proyecto que cambia de ubicación.",
+    "requerimiento": "PEB-75 / T11. Soltar un proyecto raíz sobre Home lo convierte en subproyecto de Home; la relación, su nombre y su tarea pendiente se conservan tras recarga.",
     "precondiciones": [
       "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
-      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A en un perfil dedicado.",
-      "No existen Prueba T11-04 - padre ni Prueba T11-04 - hijo; no existen tareas con el marcador de este caso."
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).",
+      "Lista inicial de **Projects** de A consignada en el registro de ejecución.",
+      "**Home** como proyecto raíz de A, con sus tareas pendientes iniciales consignadas en el registro de ejecución.",
+      "Ausencia de proyectos y tareas con nombres que comiencen por **Prueba T11-04**."
     ],
-    "descripcion": "Diseño basado en la función documentada de subproyectos y el criterio del equipo de conservar información; arrastre aún no comprobado en las cuentas.",
+    "descripcion": "Validar que arrastrar por su asa un proyecto temporal raíz con una tarea pendiente y soltarlo sobre Home lo presenta como subproyecto de Home y que, tras F5, se conservan relación, nombre y tarea pendiente sin alterar las tareas iniciales de Home.",
     "pasos": [
       [
-        "Crear en la raíz Prueba T11-04 - padre y Prueba T11-04 - hijo mediante Add New Project / Add, una vez cada uno.",
-        "El árbol muestra ambos proyectos como raíces distintas."
+        "Hacer clic en **Add New Project**, debajo de la lista de **Projects**.",
+        "Aparecen un campo de nombre y el botón **Add**."
       ],
       [
-        "Seleccionar el hijo y crear una tarea pendiente Prueba T11-04 - dato del hijo mediante Add.",
-        "El hijo contiene el marcador con ese texto y estado pendiente."
+        "Escribir **Prueba T11-04 - subproyecto** en el campo de nombre.",
+        "El campo muestra **Prueba T11-04 - subproyecto**."
       ],
       [
-        "Arrastrar el manejador del proyecto hijo sobre el proyecto padre, usando los proyectos temporales del caso.",
-        "El hijo queda anidado bajo el padre según la función de subproyectos documentada; no desaparece ni se duplica ninguno."
+        "Hacer clic una sola vez en **Add**.",
+        "**Projects** muestra una sola entrada nueva que comienza por **Prueba T11-04** al final de la lista raíz."
       ],
       [
-        "Seleccionar el hijo dentro del árbol.",
-        "Se mantiene el título del hijo y su marcador pendiente con el texto original; sigue asociado al hijo."
+        "Hacer clic en la entrada nueva en **Projects**.",
+        "El área principal muestra el título **Prueba T11-04 - subproyecto** y **There are no items to display**."
       ],
       [
-        "Recargar con F5 y volver a seleccionar el hijo bajo el padre.",
-        "Se conserva la relación padre/hijo y el marcador con su contenido y estado."
+        "Escribir **Prueba T11-04 - dato del subproyecto** en el campo **Add new Todo, type here...**.",
+        "El campo muestra **Prueba T11-04 - dato del subproyecto**."
       ],
       [
-        "Conservar evidencia del árbol y de la vista del hijo.",
-        "La evidencia permite comprobar relación y datos. No se crean tareas padre/subtareas."
+        "Hacer clic una sola vez en **Add**, a la derecha del campo.",
+        "La tarea **Prueba T11-04 - dato del subproyecto** aparece una sola vez en el proyecto, con su checkbox sin marcar."
+      ],
+      [
+        "Arrastrar el asa de puntos situada delante de **Prueba T11-04 - subproyecto** en **Projects** y soltarla sobre **Home**.",
+        "La entrada deja de mostrarse al final de la lista raíz y aparece sangrada debajo de **Home**, que muestra un triángulo de despliegue; ningún proyecto desaparece ni se duplica."
+      ],
+      [
+        "Hacer clic en **Prueba T11-04 - subproyecto**, debajo de **Home**.",
+        "El área principal muestra el título **Prueba T11-04 - subproyecto** y la tarea **Prueba T11-04 - dato del subproyecto** una sola vez, con su checkbox sin marcar."
+      ],
+      [
+        "Presionar **F5**.",
+        "La página se recarga; **Home** conserva su triángulo de despliegue en **Projects**."
+      ],
+      [
+        "Desplegar **Home** mediante su triángulo si aparece plegado.",
+        "**Prueba T11-04 - subproyecto** aparece sangrado bajo **Home**, una sola vez en **Projects**."
+      ],
+      [
+        "Hacer clic en **Prueba T11-04 - subproyecto**, debajo de **Home**.",
+        "Se conservan el título y la tarea **Prueba T11-04 - dato del subproyecto** una sola vez, con el mismo texto y el checkbox sin marcar."
+      ],
+      [
+        "Hacer clic en **Home** en **Projects**.",
+        "El área principal muestra el título **Home** y conserva sus tareas pendientes iniciales del registro."
+      ],
+      [
+        "Hacer clic en **Prueba T11-04 - subproyecto**, debajo de **Home**.",
+        "El área principal muestra su título y **Prueba T11-04 - dato del subproyecto** pendiente."
+      ],
+      [
+        "Tomar una captura de **Projects** y del subproyecto seleccionado.",
+        "La captura muestra la relación bajo **Home** y la tarea conservada."
       ]
     ],
-    "postcondiciones": "Proyecto temporal padre con hijo y marcador pendiente conservados para limpieza final; proyectos predeterminados intactos. No incluye eliminación del subproyecto ni retorno a raíz."
+    "postcondiciones": "Subproyecto temporal Prueba T11-04 - subproyecto bajo Home, con su tarea pendiente, conservado para la limpieza final del lote; tareas iniciales de Home sin cambios. No incluye eliminación del subproyecto (T08) ni retorno a la raíz (T11-07)."
   },
   {
     "id": "T11-05",
-    "titulo": "Mover una tarea pendiente entre Home y Study conservando sus datos",
+    "titulo": "Arrastrar una pendiente Home–Study conserva texto, estado y ubicación tras F5",
     "importancia": "high",
-    "razon": "Detecta pérdida, duplicación, cambio de estado o ubicación incorrecta al mover.",
-    "requerimiento": "PEB-75 / T11. El movimiento documentado cambia de proyecto sin alterar el contenido ni el estado de la tarea.",
+    "razon": "Detecta pérdida, duplicación, cambio de estado o ubicación incorrecta al mover una tarea entre proyectos.",
+    "requerimiento": "PEB-75 / T11. Arrastrar una tarea pendiente sobre otro proyecto la traslada a ese proyecto con el mismo texto y estado, sin duplicarla ni alterar las tareas preexistentes, también tras recarga.",
     "precondiciones": [
       "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
-      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A en un perfil dedicado.",
-      "Home y Study son proyectos raíz independientes de la misma cuenta; su contenido inicial es conocido.",
-      "No existe una tarea llamada Prueba T11-05 - mover pendiente."
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).",
+      "**Home** y **Study** como proyectos raíz de A, con sus tareas pendientes iniciales consignadas en el registro de ejecución.",
+      "Orden **Sort By: Order** en **Home** y **Study**.",
+      "Ausencia de tareas con el nombre **Prueba T11-05 - mover pendiente**."
     ],
-    "descripcion": "Comprobar ida y vuelta entre proyectos y persistencia con F5. El contenido y estado son criterios del equipo; no se modifican fechas ni preferencias temporales.",
+    "descripcion": "Validar que una tarea pendiente arrastrada por su asa desde Home hasta Study, y después de vuelta a Home, aparece una sola vez en el proyecto de destino con el mismo texto y su checkbox sin marcar, deja de estar en el origen y conserva esa ubicación tras F5, sin alterar las tareas preexistentes.",
     "pasos": [
       [
-        "Consultar Home y Study y registrar sus contenidos iniciales y cantidades visibles de pendientes.",
-        "Queda una referencia del contenido previo de cada proyecto, sin modificarlo."
+        "Hacer clic en **Study** en **Projects**.",
+        "El área principal muestra el título **Study** y sus tareas pendientes iniciales del registro."
       ],
       [
-        "Seleccionar Home y crear Prueba T11-05 - mover pendiente mediante Add; registrar su estado y atributos que estén visibles.",
-        "Home contiene el nuevo marcador pendiente una sola vez; su texto y atributos visibles quedan como referencia."
+        "Hacer clic en **Home** en **Projects**.",
+        "El área principal muestra el título **Home** y sus tareas pendientes iniciales del registro."
       ],
       [
-        "Arrastrar el pequeño manejador de esa tarea sobre Study en el árbol de proyectos, sin soltarla sobre otra tarea.",
-        "La tarea queda en Study, con el texto, estado pendiente y atributos visibles conservados; no se crea una subtarea."
+        "Escribir **Prueba T11-05 - mover pendiente** en el campo **Add new Todo, type here...**.",
+        "El campo muestra **Prueba T11-05 - mover pendiente**."
       ],
       [
-        "Seleccionar Study y después Home para comprobar origen y destino.",
-        "Study muestra una copia del marcador; Home deja de mostrarlo. Los datos previos de ambos proyectos permanecen."
+        "Hacer clic una sola vez en **Add**, a la derecha del campo.",
+        "**Home** muestra **Prueba T11-05 - mover pendiente** una sola vez, con su checkbox sin marcar, junto a sus tareas iniciales."
       ],
       [
-        "Recargar con F5 y consultar de nuevo Study y Home.",
-        "Se conserva la pertenencia a Study y la ausencia en Home, sin pérdida, duplicación ni cambio del contenido/estado."
+        "Arrastrar el asa de puntos situada delante de **Prueba T11-05 - mover pendiente** y soltarla sobre **Study** en **Projects**, no sobre otra tarea.",
+        "La tarea deja de mostrarse en **Home** y las tareas iniciales permanecen; la tarea movida no aparece sangrada bajo otra tarea."
       ],
       [
-        "Seleccionar Study y arrastrar el mismo marcador de vuelta a Home; recargar y consultar Home.",
-        "El marcador vuelve a Home con el contenido y estado iniciales; Study recupera sus datos previos."
+        "Hacer clic en **Study** en **Projects**.",
+        "**Study** muestra **Prueba T11-05 - mover pendiente** una sola vez, con el mismo texto y su checkbox sin marcar, junto a sus tareas iniciales."
       ],
       [
-        "Conservar evidencia de origen, destino y consulta posterior.",
-        "La evidencia permite reconocer el mismo marcador y los datos conservados."
+        "Presionar **F5**.",
+        "La página se recarga sin cerrar la sesión."
+      ],
+      [
+        "Hacer clic en **Study** en **Projects**.",
+        "**Study** conserva **Prueba T11-05 - mover pendiente** una sola vez, pendiente y con el mismo texto, y sus tareas iniciales."
+      ],
+      [
+        "Hacer clic en **Home** en **Projects**.",
+        "**Home** no muestra **Prueba T11-05 - mover pendiente** y conserva sus tareas iniciales."
+      ],
+      [
+        "Hacer clic en **Study** en **Projects**.",
+        "**Study** muestra **Prueba T11-05 - mover pendiente**."
+      ],
+      [
+        "Arrastrar el asa de puntos situada delante de **Prueba T11-05 - mover pendiente** y soltarla sobre **Home** en **Projects**, no sobre otra tarea.",
+        "La tarea deja de mostrarse en **Study**; las tareas iniciales de **Study** permanecen."
+      ],
+      [
+        "Presionar **F5**.",
+        "La página se recarga sin cerrar la sesión."
+      ],
+      [
+        "Hacer clic en **Home** en **Projects**.",
+        "**Home** muestra **Prueba T11-05 - mover pendiente** una sola vez, con el mismo texto y su checkbox sin marcar, junto a sus tareas iniciales."
+      ],
+      [
+        "Hacer clic en **Study** en **Projects**.",
+        "**Study** muestra únicamente sus tareas iniciales del registro, sin **Prueba T11-05 - mover pendiente**."
+      ],
+      [
+        "Hacer clic en **Home** en **Projects**.",
+        "**Home** muestra **Prueba T11-05 - mover pendiente** una sola vez, con el mismo texto y su checkbox sin marcar."
+      ],
+      [
+        "Tomar una captura de **Home** con la tarea devuelta.",
+        "La captura permite reconocer la tarea con su texto y estado pendiente en **Home**."
       ]
     ],
-    "postcondiciones": "Marcador temporal pendiente en Home para limpieza final; Study y datos previos de ambos proyectos conservados. Atributos no visibles ni preparados quedan fuera de la comprobación, explícitamente pendientes de cobertura."
+    "postcondiciones": "Tarea pendiente Prueba T11-05 - mover pendiente en Home para la limpieza final del lote; Study y tareas iniciales de ambos proyectos sin cambios. Prioridad, vencimiento y otros atributos no se preparan ni se comprueban en este caso."
+  },
+  {
+    "id": "T11-06",
+    "titulo": "Intento de arrastrar una completada desde Done Items conserva proyecto y estado",
+    "importancia": "high",
+    "razon": "Evita que una tarea completada se pierda, cambie de proyecto parcialmente o se reactive al intentar moverla desde su sección.",
+    "requerimiento": "PEB-75 / T11. Una tarea de la sección de completadas de un proyecto no se traslada al intentar arrastrarla a otro proyecto; permanece completada en su proyecto de origen, también tras recarga.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).",
+      "**Home** y **Study** como proyectos raíz de A, con sus tareas pendientes y completadas iniciales consignadas en el registro de ejecución.",
+      "Orden **Sort By: Order** en **Home** y **Study**.",
+      "Ausencia de tareas con el nombre **Prueba T11-06 - completada en Done Items**."
+    ],
+    "descripcion": "Validar que, al intentar arrastrar desde la sección de completadas de Home una tarea completada y soltarla sobre Study, la tarea permanece una sola vez entre las completadas de Home con su checkbox marcado, no aparece en Study ni en pendientes y conserva ese estado tras F5.",
+    "pasos": [
+      [
+        "Hacer clic en **Home** en **Projects**.",
+        "El área principal muestra el título **Home** y sus tareas pendientes iniciales del registro."
+      ],
+      [
+        "Escribir **Prueba T11-06 - completada en Done Items** en el campo **Add new Todo, type here...**.",
+        "El campo muestra **Prueba T11-06 - completada en Done Items**."
+      ],
+      [
+        "Hacer clic una sola vez en **Add**, a la derecha del campo.",
+        "**Home** muestra la tarea una sola vez entre las pendientes, con su checkbox sin marcar."
+      ],
+      [
+        "Marcar el checkbox de **Prueba T11-06 - completada en Done Items**.",
+        "La tarea deja de mostrarse entre las pendientes de **Home**."
+      ],
+      [
+        "Desplegar las completadas de **Home** mediante **See all** si la sección está oculta.",
+        "Se despliega la sección de completadas de **Home** con **Prueba T11-06 - completada en Done Items** una sola vez y su checkbox marcado."
+      ],
+      [
+        "Arrastrar **Prueba T11-06 - completada en Done Items** desde la sección de completadas de **Home** y soltarla sobre **Study** en **Projects**.",
+        "La tarea no se traslada: permanece una sola vez en las completadas de **Home**, con su checkbox marcado, y no aparece entre las pendientes. No se exige un mensaje, porque no se ha identificado ninguno."
+      ],
+      [
+        "Hacer clic en **Study** en **Projects**.",
+        "**Study** muestra únicamente sus tareas pendientes iniciales, sin **Prueba T11-06 - completada en Done Items**."
+      ],
+      [
+        "Desplegar las completadas de **Study** mediante **See all** si la sección está oculta.",
+        "Las completadas de **Study** coinciden con las iniciales del registro, sin **Prueba T11-06 - completada en Done Items**."
+      ],
+      [
+        "Presionar **F5**.",
+        "La página se recarga sin cerrar la sesión."
+      ],
+      [
+        "Hacer clic en **Home** en **Projects**.",
+        "**Home** muestra sus tareas pendientes iniciales, sin **Prueba T11-06 - completada en Done Items** entre ellas."
+      ],
+      [
+        "Desplegar las completadas de **Home** mediante **See all** si la sección está oculta.",
+        "Las completadas de **Home** muestran **Prueba T11-06 - completada en Done Items** una sola vez, con el mismo texto y su checkbox marcado."
+      ],
+      [
+        "Tomar una captura de las completadas de **Home**.",
+        "La captura muestra la tarea completada en **Home**."
+      ]
+    ],
+    "postcondiciones": "Tarea Prueba T11-06 - completada en Done Items completada en Home para la limpieza final del lote; Study y tareas iniciales sin cambios. La recuperación desde Recycle Bin no forma parte de este caso (T08)."
   }
 ]

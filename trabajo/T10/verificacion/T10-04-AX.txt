@@ -1,0 +1,685 @@
+Window: "TestLink 1.9.20 [DEV]", App: Google Chrome.
+0 standard window TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php, Secondary Actions: Raise
+	1 container TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button Not Secure
+					9 text field (settable) Address and search bar, Value: 68.211.149.112/index.php, Placeholder: Ask Google or type a URL
+					10 button Zoom: 75%
+					11 button Bookmark this tab
+				12 container
+					13 pop up button iCloud Bookmarks
+					14 pop up button Google Translate
+
+Left-click to translate!
+Right-click for options.
+Has access to this site
+					15 pop up button Video Downloader
+Has access to this site
+					16 pop up button vidIQ Vision for YouTube
+Has access to this site
+					17 pop up button Disconnected
+Has access to this site
+					18 pop up button Chile
+Has access to this site
+					19 pop up button Wappalyzer
+Has access to this site
+					20 pop up button Open Claude
+Has access to this site
+					21 pop up button Extensions
+				22 button Paused
+				23 pop up button Chrome
+			24 toolbar Bookmarks
+				25 toolbar Saved Tab Groups
+					26 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					27 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					28 button Tab groups
+				29 splitter Separator
+				30 bookmark button Sample Tank MAX 4-0-9 WiN-MAC - AUDIOTOOLS
+				31 bookmark button Downloads
+				32 bookmark button Flameboy Tutorials
+				33 bookmark button Media Monopoly: Secure Checkout
+				34 pop up button Menu containing hidden bookmarks
+				35 bookmark folder button All Bookmarks
+				36 splitter Separator
+			37 container
+				38 scroll area
+					39 HTML content TestLink 1.9.20 [DEV], URL: 68.211.149.112/index.php
+						40 container
+							41 HTML content TestLink, URL: 68.211.149.112/lib/general/navBar.php?tproject_id=0&tplan_id=0&updateMainPage=1
+								42 link Company logo, Value: 68.211.149.112/index.php
+								43 container
+									44 text admin [admin]
+									45 link My Settings, Value: 68.211.149.112/lib/usermanagement/userInfo.php
+									46 link Logout, Value: 68.211.149.112/logout.php?viewer=
+								47 container
+									48 container
+										49 text Test Project
+										50 pop up button TL:Todo.ly
+											51 (selected) TL:Todo.ly
+									52 link Desktop, Value: 68.211.149.112/index.php
+									53 link Test Specification, Value: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+									54 link Users/Roles, Value: 68.211.149.112/lib/usermanagement/usersView.php
+									55 link Events, Value: 68.211.149.112/lib/events/eventviewer.php
+									56 link Plugins, Value: 68.211.149.112/lib/plugins/pluginView.php
+									57 text field (settable) Search Test Case by ID, Value: TL-
+									58 image Search Test Case by ID
+									59 text field (settable) Full Text Search
+									60 image Full Text Search
+							61 HTML content TestLink Inner Frame, URL: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+								62 container
+									63 HTML content TestLink, URL: 68.211.149.112/lib/testcases/listTestCases.php?feature=edit_tc
+										64 container
+											65 heading Navigator - Test Specification, Value: 1
+												66 text Navigator - Test Specification
+											67 container
+												68 text Settings
+												69 container
+													70 container Update tree after every operation
+														71 text Update tree after every operation
+													72 checkbox 1
+											73 container
+												74 text Filters
+												75 container
+													76 container
+														77 container Test Case ID
+															78 text Test Case ID
+														79 container TL-
+															80 text field (settable) TL-
+													81 container
+														82 container Test Case Title
+															83 text Test Case Title
+														84 text field (settable)
+													85 container
+														86 container Test Suite
+															87 text Test Suite
+														88 container Select an Option
+															89 container
+																90 text Select an Option
+																91 text field (settable)
+																92 content list
+													93 container
+														94 container Platforms
+															95 text Platforms
+														96 container Select Some Options
+															97 container
+																98 content list
+																	99 text field (settable) Select Some Options
+																100 content list
+													101 container
+														102 container Status
+															103 text Status
+														104 container Select Some Options
+															105 container
+																106 content list
+																	107 text field (settable) Select Some Options
+																108 content list
+													109 container
+														110 container Importance
+															111 text Importance
+														112 container Select Some Options
+															113 container
+																114 content list
+																	115 text field (settable) Select Some Options
+																116 content list
+													117 container
+														118 container Execution type
+															119 text Execution type
+														120 container [Any]
+															121 container
+																122 text [Any]
+																123 text field (settable)
+																124 content list
+													125 button Apply
+													126 button Reset Filters
+											127 button Expand tree
+											128 button Collapse tree
+											129 content list
+												130 container
+													131 link Todo.ly (86), Value: javascript:EP(1)
+													132 content list
+														133 container
+															134 link Todo.ly tests (86), Value: javascript:ETS(3)
+															135 content list
+																136 container
+																	137 link TL-40:TL-001: Asignar un vencimiento con fecha y hora, Value: javascript:ET(83)
+																138 container
+																	139 link TL-2:TL-002: Escribir el vencimiento con la palabra today, Value: javascript:ET(85)
+																140 link TL-66:T10-01. Cancelar la modificación del nombre conserva el perfil, Value: javascript:ET(211)
+																141 link TL-72:T09-01. Signup con campos vacíos y términos sin aceptar rechaza el envío, Value: javascript:ET(251)
+																142 link TL-85:T10-04. Settings con Old Password incorrecto muestra Invalid Password y conserva la clave, Value: javascript:ET(969)
+																143 container
+																	144 link TL-3:TL-003: Escribir el vencimiento con la palabra tomorrow, Value: javascript:ET(87)
+																145 link TL-67:T10-02. Guardar el nombre y conservarlo tras recarga y nueva sesión, Value: javascript:ET(217)
+																146 link TL-73:T09-02. Signup con el correo de una cuenta existente muestra error de duplicado, Value: javascript:ET(263)
+																147 link TL-86:T10-05. Settings con Old Password vigente cambia la clave y permite Login con la nueva, Value: javascript:ET(989)
+																148 container
+																	149 link TL-4:TL-004: Escribir el vencimiento con el nombre de un día de la semana, Value: javascript:ET(89)
+																150 link TL-68:T10-03. Intentar cambiar la contraseña sin indicar la contraseña actual, Value: javascript:ET(225)
+																151 link TL-74:T09-03. Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada, Value: javascript:ET(282)
+																152 link TL-87:T10-06. Profile con Email editado y Cancel conserva el correo original de B, Value: javascript:ET(1014)
+																153 container
+																	154 link TL-5:TL-005: Cambiar un vencimiento ya guardado, Value: javascript:ET(91)
+																155 link TL-69:T10-08. Recuperar el acceso de una cuenta registrada mediante su buzón, Value: javascript:ET(232)
+																156 link TL-75:T09-04. Login con credenciales vigentes de A abre la sesión de la cuenta A, Value: javascript:ET(294)
+																157 container
+																	158 link TL-6:TL-006: Quitar el vencimiento de una tarea, Value: javascript:ET(93)
+																159 link TL-70:T10-09. Solicitar recuperación con un correo no registrado, Value: javascript:ET(241)
+																160 link TL-76:T09-05. Login con Email y Password vacíos no concede acceso, Value: javascript:ET(308)
+																161 container
+																	162 link TL-7:TL-007: Aceptar una fecha pasada y marcarla como vencida, Value: javascript:ET(95)
+																163 link TL-71:T10-10. Comprobar HTTPS en el enlace de recuperación recibido, Value: javascript:ET(246)
+																164 link TL-77:T09-06. Login con Email vacío y Password informado muestra error y no da acceso, Value: javascript:ET(316)
+																165 container
+																	166 link TL-8:TL-008: Revisar los límites entre hoy y mañana, Value: javascript:ET(97)
+																167 link TL-78:T09-07. Login de A con Password vacío muestra error y no concede acceso, Value: javascript:ET(325)
+																168 container
+																	169 link TL-9:TL-009: Postergar una tarea 1 día y 1 semana, Value: javascript:ET(99)
+																170 link TL-79:T09-09. Login con un correo no registrado muestra error y no concede acceso, Value: javascript:ET(334)
+																171 container
+																	172 link TL-10:TL-010: Escribir una fecha sin indicar la hora, Value: javascript:ET(101)
+																173 link TL-80:T09-10. Login de A con contraseña incorrecta muestra error y no concede acceso, Value: javascript:ET(343)
+																174 container
+																	175 link TL-11:TL-011: Rechazar una fecha inválida, Value: javascript:ET(103)
+																176 link TL-81:T09-11. Logout impide ver los datos de A con Atrás y con la URL directa, Value: javascript:ET(352)
+																177 container
+																	178 link TL-12:TL-012: Aplicar un vencimiento por defecto a las tareas nuevas, Value: javascript:ET(105)
+																179 link TL-82:T09-12. Cambio de cuenta entre A y B muestra solo los datos propios de cada una, Value: javascript:ET(361)
+																180 container
+																	181 link TL-13:TL-013: Mostrar el año cuando el vencimiento es de otro año, Value: javascript:ET(107)
+																182 link TL-83:T09-13. Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada, Value: javascript:ET(404)
+																183 container
+																	184 link TL-14:TL-014: Comprobar la coherencia entre la zona horaria y la hora mostrada, Value: javascript:ET(109)
+																185 link TL-84:T09-14. Remember Me marcado: al reabrir el perfil se restaura la sesión de B, Value: javascript:ET(423)
+																186 container
+																	187 link TL-15:TL-015: Una tarea nueva sin fecha aparece en Inbox, Value: javascript:ET(111)
+																188 container
+																	189 link TL-16:TL-016: Una tarea dentro de un proyecto no aparece en Inbox, Value: javascript:ET(113)
+																190 container
+																	191 link TL-17:T13-17 - Al asignar la fecha de hoy la tarea pasa de Inbox a Today, Value: javascript:ET(115)
+																192 container
+																	193 link TL-18:TL-018: Al asignar la fecha de mañana la tarea pasa a Next, Value: javascript:ET(117)
+																194 container
+																	195 link TL-19:TL-019: Al asignar una fecha pasada la tarea aparece en Today como vencida, Value: javascript:ET(119)
+																196 container
+																	197 link TL-20:TL-020: Al quitar la fecha la tarea vuelve a Inbox, Value: javascript:ET(121)
+																198 container
+																	199 link TL-21:T13-21 - Arrastrar una tarea de Inbox al proyecto Work la saca de Inbox sin duplicarla, Value: javascript:ET(123)
+																200 container
+																	201 link TL-22:T13-22 - Completar una tarea la saca del filtro y la envía a Done Items, Value: javascript:ET(125)
+																202 container
+																	203 link TL-23:T13-23 - Crear y fechar una tarea cambia en 1 los contadores de Inbox, Today y Next, Value: javascript:ET(127)
+																204 container
+																	205 link TL-24:T13-24 - Cambiar solo la fecha mueve la tarea entre Today y Next y conserva su prioridad, Value: javascript:ET(129)
+																206 container
+																	207 link TL-25:T13-25 - Una tarea con fecha de mañana sin hora muestra una etiqueta coherente con Next, Value: javascript:ET(131)
+																208 container
+																	209 link TL-26:T13-26 - El orden de las tareas en Today y Next coincide con el criterio de Sort By, Value: javascript:ET(133)
+																210 container
+																	211 link TL-27:T13-27 - Completar tareas las saca de Inbox, Today y Next y baja en 1 cada contador, Value: javascript:ET(135)
+																212 container
+																	213 link TL-28:T14-28 - Asignar la prioridad 1 muestra la tarea en rojo y negrita y se conserva tras F5, Value: javascript:ET(137)
+																214 container
+																	215 link TL-29:T14-29 - Las prioridades 1 a 4 se distinguen por color y negrita y se conservan tras F5, Value: javascript:ET(139)
+																216 container
+																	217 link TL-30:T14-30 - Con Sort By Order, arrastrar una tarea al primer lugar la reordena y se conserva, Value: javascript:ET(141)
+																218 container
+																	219 link TL-31:T14-31 - Sort By Priority ordena las tareas de la prioridad 1 a la prioridad 4, Value: javascript:ET(143)
+																220 container
+																	221 link TL-32:T14-32 - Las tareas con la misma prioridad mantienen un orden estable, Value: javascript:ET(145)
+																222 container
+																	223 link TL-33:T14-33 - Sort By Due Date ordena las tareas de la fecha más cercana a la más lejana, Value: javascript:ET(147)
+																224 container
+																	225 link TL-34:T14-34 - Con Sort By Due Date, las tareas sin vencimiento quedan en una posición estable, Value: javascript:ET(149)
+																226 container
+																	227 link TL-35:T14-35 - Sort By muestra el criterio elegido (Order, Priority o Due Date) tras F5, Value: javascript:ET(151)
+																228 container
+																	229 link TL-41:T06-01 - Crear una tarea con Add la agrega una sola vez a Home y se conserva tras F5, Value: javascript:ET(161)
+																230 container
+																	231 link TL-36:T14-36 - En Priority y Due Date no se puede reordenar arrastrando, Value: javascript:ET(153)
+																232 container
+																	233 link TL-37:T14-37 - Reconocer la prioridad sin depender únicamente del color, Value: javascript:ET(155)
+																234 container
+																	235 link TL-38:T14-38 - Con Sort By Priority, subir una tarea a prioridad 1 la reubica sin recargar, Value: javascript:ET(157)
+																236 container
+																	237 link TL-39:T14-39 - La prioridad no cambia el filtro donde aparece la tarea, Value: javascript:ET(159)
+																238 container
+																	239 link TL-42:T06-02 - Crear una tarea con Enter la agrega una sola vez a Home y se conserva tras F5, Value: javascript:ET(163)
+																240 container
+																	241 link TL-43:T06-03 - Editar una tarea con clic sobre su nombre y Enter guarda el nombre nuevo tras F5, Value: javascript:ET(165)
+																242 container
+																	243 link TL-44:T06-04 - Editar con Edit del menú de opciones cambia solo la tarea elegida, Value: javascript:ET(167)
+																244 container
+																	245 link TL-45:T06-05 - Hacer clic fuera del editor guarda la edición de una tarea y se conserva tras F5, Value: javascript:ET(169)
+																246 container
+																	247 link TL-46:T06-06 - Presionar Escape durante la edición descarta el cambio y conserva el texto original, Value: javascript:ET(171)
+																248 container
+																	249 link TL-47:T06-07 - Editar el nombre conserva prioridad, vencimiento y estado tras F5 y nueva sesión, Value: javascript:ET(173)
+																250 container
+																	251 link TL-48:T06-08 - Pulsar Add con el campo vacío o con cinco espacios no crea ninguna tarea, Value: javascript:ET(175)
+																252 container
+																	253 link TL-49:T06-09 - Arrastrar un archivo al campo de creación no adjunta archivos ni crea tareas, Value: javascript:ET(177)
+																254 link TL-50:T07-01 - Completar una tarea la pasa a Done Items sin afectar a otra pendiente, Value: javascript:ET(179)
+																255 link TL-51:T07-02 - Reactivar una tarea completada la devuelve a pendientes, Value: javascript:ET(181)
+																256 link TL-52:T07-03 - See all, Done Items y el contador muestran las completadas; Hide las oculta, Value: javascript:ET(183)
+																257 link TL-53:T07-04 - Completar una tarea en Home no cambia estados ni contadores de Study, Value: javascript:ET(185)
+																258 link TL-54:T07-09 - Estados e indicadores se conservan tras F5 y tras cerrar e iniciar sesión, Value: javascript:ET(187)
+																259 link TL-55:T07-10 - Dos ciclos de completar y reactivar dejan una sola tarea pendiente, Value: javascript:ET(189)
+																260 link TL-56:T08-01 - Eliminar una pendiente la envía a Recycle Bin sin afectar a otras tareas, Value: javascript:ET(191)
+																261 link TL-57:T08-02 - Eliminar una tarea completada la retira de Done Items y la envía a Recycle Bin, Value: javascript:ET(193)
+																262 link TL-58:T08-03 - Delete all elimina solo las completadas del proyecto seleccionado, Value: javascript:ET(195)
+																263 link TL-59:T08-04 - Delete all sin tareas completadas no elimina ninguna tarea pendiente, Value: javascript:ET(197)
+																264 link TL-60:T08-05 - Arrastrar una pendiente de Recycle Bin a Home la recupera como pendiente, Value: javascript:ET(199)
+																265 link TL-61:T08-06 - Recuperar en Study una completada eliminada de Home conserva su estado, Value: javascript:ET(201)
+																266 link TL-62:T08-07 - Una tarea eliminada sigue fuera de Home tras F5 y tras iniciar sesión otra vez, Value: javascript:ET(203)
+																267 link TL-63:T08-08 - Cancelar la eliminación de un subproyecto conserva el subproyecto y sus tareas, Value: javascript:ET(205)
+																268 link TL-64:T08-09 - Eliminar un subproyecto envía sus tareas a Recycle Bin y una se puede recuperar, Value: javascript:ET(207)
+																269 link TL-65:T08-10 - Empty Recycle Bin vacía la papelera sin afectar a las tareas de Home, Value: javascript:ET(209)
+									270 HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version_id=undefined&edit=testcase&id=969&form_token=[REDACTADO]
+										271 heading Test Case, Value: 1
+											272 text Test Case
+										273 image Show / Hide direct link
+										274 image Actions
+										275 container
+											276 table
+												277 row
+													278 column header 0-5
+														279 text TL-85 : T10-04. Settings con Old Password incorrecto muestra Invalid Password y conserva la clave - Version 1
+														280 image Show ghost string
+														281 image Display Author/Updater
+												282 row
+													283 column header 0-5
+														284 text Summary
+												285 row
+													286 cell 0-5
+														287 text Validar que Settings rechaza con el aviso Invalid Password un cambio de contraseña cuyo Old Password no coincide con la vigente y que A sigue accediendo con su contraseña vigente.
+														288 text Requerimiento: PEB-74 / T10. Old Password incorrecto muestra Invalid Password; criterio del equipo: la contraseña vigente conserva el acceso tras el rechazo.
+														289 text Postcondiciones: Contraseña vigente de A conservada y acceso comprobado; la contraseña objetivo no se aplicó. Sesión A iniciada, sin cambios de nombre, correo ni zona horaria. Evidencia del rechazo sin contraseñas legibles ni correos publicados.
+												290 row
+													291 column header 0-5
+														292 text Preconditions
+												293 row
+													294 cell 0-5
+														295 content list
+															296 container
+																297 AXListMarker 1.
+																298 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
+															299 container
+																300 AXListMarker 2.
+																301 text Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).
+															302 container
+																303 AXListMarker 3.
+																304 text Correo y contraseña vigente de A consignados en el registro privado de credenciales.
+															305 container
+																306 AXListMarker 4.
+																307 text Contraseña vigente de A distinta de  Prueba-T10-04-incorrecta .
+															308 container
+																309 AXListMarker 5.
+																310 text Contraseña objetivo de prueba para A, distinta de la vigente, consignada en el registro privado de credenciales.
+															311 container
+																312 AXListMarker 6.
+																313 text Nombre de perfil y correo de A consignados en el registro privado de referencia.
+												314 row
+													315 column header
+														316 image Show / Hide reorder
+														317 image Show ghost string
+														318 text #
+													319 column header
+														320 text Step actions
+													321 column header
+														322 text Expected Results
+													323 column header
+														324 text Execution
+												325 row
+													326 cell
+														327 text 1
+													328 cell
+														329 container
+															330 text Hacer clic en  Settings .
+													331 cell
+														332 container
+															333 text Se abre  Settings .
+													334 cell
+														335 text Manual
+													336 cell
+														337 image Delete step
+													338 cell
+														339 image Insert step
+												340 row
+													341 cell
+														342 text 2
+													343 cell
+														344 container
+															345 text Seleccionar  Profile  en  Settings .
+													346 cell
+														347 container
+															348 text Profile  muestra  Full Name ,  Email ,  Time zone ,  Old Password ,  New Password  y los botones  Ok  y  Cancel ; no hay campo de confirmación de contraseña.
+													349 cell
+														350 text Manual
+													351 cell
+														352 image Delete step
+													353 cell
+														354 image Insert step
+												355 row
+													356 cell
+														357 text 3
+													358 cell
+														359 container
+															360 text Escribir  Prueba-T10-04-incorrecta  en el campo  Old Password .
+													361 cell
+														362 container
+															363 text Old Password  muestra el valor enmascarado.
+													364 cell
+														365 text Manual
+													366 cell
+														367 image Delete step
+													368 cell
+														369 image Insert step
+												370 row
+													371 cell
+														372 text 4
+													373 cell
+														374 container
+															375 text Escribir en  New Password  la contraseña objetivo de A del registro privado.
+													376 cell
+														377 container
+															378 text New Password  muestra el valor enmascarado.
+													379 cell
+														380 text Manual
+													381 cell
+														382 image Delete step
+													383 cell
+														384 image Insert step
+												385 row
+													386 cell
+														387 text 5
+													388 cell
+														389 container
+															390 text Hacer clic una sola vez en  Ok .
+													391 cell
+														392 container
+															393 text Aparece un aviso con el texto exacto  Invalid Password  y el botón  OK ;  Profile  sigue visible detrás del aviso.
+													394 cell
+														395 text Manual
+													396 cell
+														397 image Delete step
+													398 cell
+														399 image Insert step
+												400 row
+													401 cell
+														402 text 6
+													403 cell
+														404 container
+															405 text Tomar una captura del aviso y de  Profile .
+													406 cell
+														407 container
+															408 text La captura muestra  Invalid Password  con las contraseñas enmascaradas; se conserva como evidencia privada, sin publicar el correo de A.
+													409 cell
+														410 text Manual
+													411 cell
+														412 image Delete step
+													413 cell
+														414 image Insert step
+												415 row
+													416 cell
+														417 text 7
+													418 cell
+														419 container
+															420 text Hacer clic en  OK  del aviso.
+													421 cell
+														422 container
+															423 text Se cierra el aviso y  Profile  sigue abierto.
+													424 cell
+														425 text Manual
+													426 cell
+														427 image Delete step
+													428 cell
+														429 image Insert step
+												430 row
+													431 cell
+														432 text 8
+													433 cell
+														434 container
+															435 text Hacer clic en  Cancel .
+													436 cell
+														437 container
+															438 text Se cierra  Settings  sin guardar cambios y vuelve a verse el área de proyectos.
+													439 cell
+														440 text Manual
+													441 cell
+														442 image Delete step
+													443 cell
+														444 image Insert step
+												445 row
+													446 cell
+														447 text 9
+													448 cell
+														449 container
+															450 text Hacer clic en  Logout .
+													451 cell
+														452 container
+															453 text Se muestra la página pública con  Login  y  Sign Up Free , con la sesión cerrada.
+													454 cell
+														455 text Manual
+													456 cell
+														457 image Delete step
+													458 cell
+														459 image Insert step
+												460 row
+													461 cell
+														462 text 10
+													463 cell
+														464 container
+															465 text Hacer clic en  Login  en la página pública.
+													466 cell
+														467 container
+															468 text Se despliega el formulario de acceso con  Email ,  Password , la casilla  Remember Me  y el botón  Login .
+													469 cell
+														470 text Manual
+													471 cell
+														472 image Delete step
+													473 cell
+														474 image Insert step
+												475 row
+													476 cell
+														477 text 11
+													478 cell
+														479 container
+															480 text Escribir en  Email  el correo de la cuenta A del registro privado.
+													481 cell
+														482 container
+															483 text Email  muestra el correo de A.
+													484 cell
+														485 text Manual
+													486 cell
+														487 image Delete step
+													488 cell
+														489 image Insert step
+												490 row
+													491 cell
+														492 text 12
+													493 cell
+														494 container
+															495 text Escribir en  Password  la contraseña vigente de A del registro privado, la misma vigente antes del intento.
+													496 cell
+														497 container
+															498 text Password  muestra el valor enmascarado.
+													499 cell
+														500 text Manual
+													501 cell
+														502 image Delete step
+													503 cell
+														504 image Insert step
+												505 row
+													506 cell
+														507 text 13
+													508 cell
+														509 container
+															510 text Hacer clic una vez en el botón  Login  del formulario (nombre accesible Submit).
+													511 cell
+														512 container
+															513 text Se muestra el área autenticada con  Settings  y  Logout ; la contraseña vigente sigue dando acceso.
+													514 cell
+														515 text Manual
+													516 cell
+														517 image Delete step
+													518 cell
+														519 image Insert step
+												520 row
+													521 cell
+														522 text 14
+													523 cell
+														524 container
+															525 text Hacer clic en  Settings .
+													526 cell
+														527 container
+															528 text Se abre  Settings .
+													529 cell
+														530 text Manual
+													531 cell
+														532 image Delete step
+													533 cell
+														534 image Insert step
+												535 row
+													536 cell
+														537 text 15
+													538 cell
+														539 container
+															540 text Seleccionar  Profile  en  Settings .
+													541 cell
+														542 container
+															543 text Profile  muestra  Full Name  y  Email  de la cuenta con sesión iniciada.
+													544 cell
+														545 text Manual
+													546 cell
+														547 image Delete step
+													548 cell
+														549 image Insert step
+												550 row
+													551 cell
+														552 text 16
+													553 cell
+														554 container
+															555 text Comparar  Full Name  con el nombre de perfil de A del registro privado.
+													556 cell
+														557 container
+															558 text Full Name  coincide con el nombre de A.
+													559 cell
+														560 text Manual
+													561 cell
+														562 image Delete step
+													563 cell
+														564 image Insert step
+												565 row
+													566 cell
+														567 text 17
+													568 cell
+														569 container
+															570 text Comparar  Email  con el correo de A del registro privado.
+													571 cell
+														572 container
+															573 text Email  coincide con el correo de A del registro privado.
+													574 cell
+														575 text Manual
+													576 cell
+														577 image Delete step
+													578 cell
+														579 image Insert step
+												580 row
+													581 cell
+														582 text 18
+													583 cell
+														584 container
+															585 text Hacer clic en  Cancel .
+													586 cell
+														587 container
+															588 text Se cierra  Settings  sin guardar cambios y vuelve a verse el área de proyectos.
+													589 cell
+														590 text Manual
+													591 cell
+														592 image Delete step
+													593 cell
+														594 image Insert step
+											595 button Create step
+											596 button Resequence Steps
+										597 container
+											598 text Status :
+											599 pop up button Draft
+												600 (selected) Draft
+											601 text Importance :
+											602 pop up button High
+												603 (selected) High
+											604 text Execution type :
+											605 pop up button Manual
+												606 (selected) Manual
+											607 checkbox 0
+											608 text Apply To All Steps
+											609 text Estimated exec. (min) :
+											610 text field (settable) Estimated exec. duration (min)
+											611 button Save
+										612 container
+											613 container Keywords   Create Keyword  Create & Link
+												614 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
+												615 link Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
+												616 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=970%27)
+											617 container None
+												618 text None
+										619 container
+											620 container Platforms:
+												621 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
+												622 text :
+											623 container None
+												624 text None
+										625 table
+											626 row
+												627 column header
+													628 text Relations
+											629 row
+												630 cell
+													631 text New relation:  This test case version
+													632 pop up button is related to
+														633 (selected) is related to
+													634 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID), Placeholder: PREFIX-ID
+													635 button Add
+										636 container Attached files :
+											637 text Attached files :
+										638 container
+											639 text File
+											640 button File: No file chosen
+											641 text Title/name:
+											642 text field (settable)
+											643 button Upload file
+										644 image Max. size of the file is: 1048576 Bytes)
+										645 image Filename must verify this regexp:/^[a-zA-Z0-9_-]{1,20}\.[a-zA-Z0-9]{1,10}$/
+										646 image Allowed files:doc,xls,gif,png,jpg,xlsx,csv
+							647 button
+			648 pop up button Tab search
+			649 container
+				650 tab group
+					651 tab (selected, settable, boolean) TestLink 1.9.20 [DEV] - Memory usage - 254 MB, Value: on
+						652 button Close
+					653 tab (settable, boolean) Value: off, [PEB-74] T10 — Analizar, diseñar y registrar pruebas de perfil y recuperación de acceso - Jira - Memory usage - 477 MB
+						654 button Close
+			655 button New Tab
+			656 button Open Gemini in Chrome
+		657 text javascript:ET(969)
+	658 close button
+	659 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	660 minimize button
+661 menu bar
+	662 Chrome
+	663 File
+	664 Edit
+	665 View
+	666 History
+	667 Bookmarks
+	668 Profiles
+	669 Tab
+	670 Window
+	671 Help
+
+The focused UI element is 142 link TL-85:T10-04. Settings con Old Password incorrecto muestra Invalid Password y conserva la clave, Value: javascript:ET(969)
