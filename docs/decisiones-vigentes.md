@@ -105,3 +105,15 @@ El punto de control se realiza por ticket: presentar su diseño completo y esper
 El enlace de recuperación debe usar HTTPS: **Criterio del equipo** establecido expresamente por el usuario. Incluirlo como caso de seguridad observable y mencionar el hallazgo para confirmar durante la ejecución; no reportarlo todavía en la planilla de fallas.
 
 Login: máximo tres intentos fallidos por cuenta en la exploración acotada. Si Remember Me o los arrastres no se pueden operar con la herramienta, pedir ejecución manual al usuario y observar el resultado; no atribuir los fallos de la herramienta a Todo.ly.
+
+## 14. Orquestación y autorización de registro — 17 de noviembre, 19:45
+
+Rige `PROMPT_ORQUESTACION.md`, proporcionado expresamente por el usuario. Codex conserva navegador, Jira MCP, secretos y git. Claude Code CLI propone diseños y revisiones, sin navegador, Jira, TestLink, git ni acceso a `.secrets/`; cada encargo limita los archivos que puede escribir.
+
+T10 tiene OK del usuario, sujeto a aplicar los ajustes indicados y revisar el diseño. T09/T11 pueden registrarse y publicarse sin otro punto de control del usuario cuando la revisión independiente no tenga bloqueantes y las observaciones no bloqueantes se resuelvan o documenten. Si Claude no está instalado o autenticado, Codex realiza esa revisión con el checklist de la guía §19 y lo informa.
+
+Se registra **dentro de la suite existente Todo.ly tests**, sin crear suites por ticket. El XML de entrada usa raíz `<testcases>`, sin IDs asignados y sin actualizar casos existentes. Se comprueba el árbol antes de importar y cada caso después. La exportación real final es `testlink-xml/todo-ly-tests.xml`; de ella se extraen los XML por ticket mediante script.
+
+El usuario realiza la introducción de credenciales y los arrastres. Codex agrupa los pasos manuales en una sola lista por ticket, con orden y datos vinculados al registro privado, sin publicar secretos. Dudas de más de 15 minutos se declaran pendientes. Tras tres fallos de un paso del navegador se solicita ayuda concreta. La revisión de Claude no sustituye la revisión de otro integrante.
+
+El cierre incluye configuración y cuentas restauradas, datos temporales retirados, papelera vacía, evidencia final, comentarios publicados conservados localmente y auditoría final. No se cambian estados de Jira ni se eliminan cuentas.
