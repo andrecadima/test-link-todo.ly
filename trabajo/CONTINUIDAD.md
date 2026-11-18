@@ -2,6 +2,8 @@
 
 Actualización: **18/11/2026, demo hoy**. Orden vigente T10 → T09 → T11 → cierre. Rigen PROMPT_ORQUESTACION.md y mensajes posteriores del usuario. **No cambiar estados de Jira ni casos ajenos; revisión de integrante pendiente.**
 
+**Prioridad por aclarar:** se encontró PROMPT_REVISION_TESTLINK.md con una tarea distinta y se consultó al usuario. Leer la última sección antes de importar T09 o editar casos ajenos. El registro/publicación de los seis confirmados de T10 está en punto seguro.
+
 ## Estado exacto
 
 - **T10 registrado y publicado, cobertura parcial explícita:** seis casos, 28 pasos, TL-66 a TL-71, comparados individualmente sin diferencias. Comentario Jira **10226** en https://alesalve.atlassian.net/browse/PEB-74?focusedCommentId=10226. Tres imágenes adjuntas; seis tablas con anchos corregidos, formato revisado visualmente. Estado Jira En revisión, sin cambios por Codex. Copia real HTML y metadata en trabajo/T10/jira-publicado.* y agregado trabajo/jira-publicado.md.
@@ -11,7 +13,7 @@ Actualización: **18/11/2026, demo hoy**. Orden vigente T10 → T09 → T11 → 
 
 ## Siguiente paso inmediato
 
-1. Respaldar este cierre de T10 con commit + push; comprobar .secrets fuera del índice.
+1. Hecho: cierre de registro/publicación T10 respaldado y enviado en 89ec619, sin .secrets.
 2. En Chrome Andre, volver a la pestaña TestLink. El filtro T10- está activo y muestra seis: **es contador filtrado, no total global**. Reset Filters antes de comprobar duplicados de T09. Renovar Login si expiró usando el registro privado; no pedir otra vez claves.
 3. Comprobar que no existan T09. Regenerar XML desde casos-listos.json con raíz testcases, suite existente Todo.ly tests id3, duplicados mismo nombre → Do not import the test case. Importar una sola vez y verificar antes de cualquier reintento.
 4. Abrir/comparar los 13, guardar IDs/enlaces/capturas, publicar PEB-73 con técnicas y artefactos, revisar formato y copiar comentario real. Actualizar continuidad, commit + push.
@@ -46,7 +48,7 @@ En A se creó/seleccionó raíz vacía y se renombró; nombre persistente en GET
 
 ## Accesos y reglas de herramientas
 
-- Repo master, remoto https://github.com/andrecadima/test-link-todo.ly.git. Último respaldo previo a este cierre: 7607130. Fase 0: 6a6b0a3; fase 1: 50f74c9.
+- Repo master, remoto https://github.com/andrecadima/test-link-todo.ly.git. Último cierre respaldado y enviado: 89ec619 (T10 registrado y publicado). Fase 0: 6a6b0a3; fase 1: 50f74c9.
 - Secretos solo .secrets/cuentas-prueba.local.md, ignorado, permiso 600. Cuentas A/B y sección TestLink. El usuario pidió recordar acceso TestLink: ya guardado privadamente, no pedirlo ni copiarlo a Claude, memorias, comentarios o git. La memoria añadida contiene solo el puntero al archivo, ningún valor.
 - CUA exige que el usuario introduzca/envíe nuevas credenciales. Es una limitación de la herramienta, no falta de autorización. **Login con credenciales existentes sí está autorizado**. No cambiar claves por otra vía para eludir la limitación.
 - Jira MCP funciona; escribir solo comentarios/adjuntos en PEB-73/74/75. Mantener estados. Comentarios 73/75 pendientes; 74 publicado.
@@ -105,3 +107,13 @@ Limpiar y documentar estado final con capturas; restauración A/email B y regist
 - Después Codex verifica Login de A con la original (reemplazada solo un intento si se contrasta) y correo original de B conservado.
 
 **Bloque único ya solicitado al usuario:** incluye Logout B/Login A, a con dato sintético Prueba-T10-04-incorrecta y referencias Cuenta A → Contraseña anterior/original y Contraseña actual; después b, Logout A/Login B y c; dejar Profile de B abierto. Pendiente respuesta, no repetir la solicitud. Si a se acepta inesperadamente, detener y registrar el hecho sin asumir que se rechazó. No operar el navegador mientras el usuario introduce/envía los cambios.
+
+## Punto seguro — prioridad por aclarar antes de T09
+
+Después de cerrar T10 y enviar 89ec619 se encontraron dos archivos nuevos del usuario, no incluidos en ese commit: `PROMPT_REVISION_TESTLINK.md` y `docs/ejemplo-caso-de-prueba.pdf`. El prompt propone una tarea nueva prioritaria: revisión de todos los casos, excepción de alcance a AGENTS, ninguna escritura en Jira y punto de control antes de aplicar propuestas. **No se ha tratado el archivo no invocado como autorización automática para editar casos ajenos.** Se preguntó al usuario si prioriza terminar T09–T11 o revisar primero todos los casos. Falta respuesta; no repetir la pregunta ni nuevas solicitudes de claves. Mientras se aclara, solo lecturas y respaldos de trabajo propio; no se importó T09 ni se modificaron otros casos.
+
+El nuevo ejemplo se leyó visualmente completo: una sola página, Successful Product Purchase. La extracción de texto está vacía porque es una imagen; render en tmp/pdfs/ejemplo-docente/pagina-1.png. Se observan descripción iniciada con Validar que, precondición como dato/estado, acciones separadas con controles concretos, respuesta por paso y postcondiciones. No atribuirle nuevas reglas de Todo.ly. No se releyeron los PDF previos. Se aplicó la habilidad PDF para esta lectura.
+
+El archivo .secrets/testlink-api.local.md mencionado por el prompt **no existe**. Si el usuario activa la revisión global, usar navegador según su fallback, sin pedir otra vez el acceso de TestLink ya guardado. Antes de toda modificación: respaldo completo, propuestas y OK del punto de control. Cualquier respaldo/propuesta con credenciales preexistentes debe quedar privado o redactado para evitar subir secretos a git. El archivo de ejemplo del docente y el nuevo prompt permanecen intactos y sin incluir en nuestros commits hasta aclarar la tarea.
+
+La visualización de PEB-74 ya se comprobó en Chrome: tablas legibles con desplazamiento horizontal después del ajuste de 219 celdas. TestLink sigue en la primera pestaña, filtro T10- (seis casos); Jira PEB-74 está en la segunda pestaña. La copia real publicada contiene seis tablas, tres imágenes y los seis enlaces. Este punto seguro no es cierre de T09/T11 ni fase 6.

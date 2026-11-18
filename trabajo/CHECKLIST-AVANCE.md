@@ -37,3 +37,9 @@ Actualizado 18/11/2026. No representa ejecución formal ni revisión de otro int
 - [ ] Auditoría final, checklist de la guía §19 e INFORME-FINAL.
 - [ ] Commit y push finales.
 - [x] Secretos en archivo ignorado; no se modificaron estados Jira ni casos ajenos.
+
+## Prioridad pendiente de aclaración
+
+- [x] Nuevo prompt de revisión global y ejemplo del docente leídos, sin modificar archivos del usuario.
+- [x] T10 dejado en punto seguro y respaldado: 89ec619 enviado.
+- [ ] Elección del usuario: continuar T09–T11 o priorizar la revisión global de todos los casos. Esta última exige respaldo, propuestas y OK antes de aplicar cambios.
