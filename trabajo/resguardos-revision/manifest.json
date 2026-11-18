@@ -6,37 +6,49 @@
       "source": "revision-testlink/respaldo-20261118-1532.json",
       "encrypted": "trabajo/resguardos-revision/revision-testlink__respaldo-20261118-1532.json.fernet",
       "size": 210696,
-      "cipher_sha256": "5a8fab6b1606ec761042f2ade4b060df7729a3fd514ac8002d7c5d5839d98d5a"
+      "cipher_sha256": "d06343d4a7f3f45212c637a3e323bfff133693c97993fedb6da6982501caa74e"
     },
     {
       "source": "revision-testlink/propuestas.json",
       "encrypted": "trabajo/resguardos-revision/revision-testlink__propuestas.json.fernet",
-      "size": 364175,
-      "cipher_sha256": "37f37f7bbed2550ae5ae90cf47f3b260514afb24fe2a87356369bfa70052103a"
+      "size": 372046,
+      "cipher_sha256": "026caa1c6d8626f7538dbdce35622cc631c92693dbee98c4e7746d9dd9bd1a5f"
     },
     {
       "source": "revision-testlink/scripts/modelo.py",
       "encrypted": "trabajo/resguardos-revision/revision-testlink__scripts__modelo.py.fernet",
       "size": 6402,
-      "cipher_sha256": "58e4df033f46ddde248f5531632be74667623a1e4b75c73a40cdc7ea731d58da"
+      "cipher_sha256": "84b5f2ffa838e82efd5693c6c9902bb60d43a0dde44a2868aeddc5d7081f2ee9"
     },
     {
       "source": "revision-testlink/scripts/generar.py",
       "encrypted": "trabajo/resguardos-revision/revision-testlink__scripts__generar.py.fernet",
-      "size": 14373,
-      "cipher_sha256": "a00d071199e349eccb714f96c7fd50b57a2dd336c1911849bdad8c92b021b802"
+      "size": 14884,
+      "cipher_sha256": "1b5a107852150a470cc6bcf29e3f41c627f493165cdf2d09432ca593b5584e13"
     },
     {
       "source": "revision-testlink/respaldo-20261118-1618.json",
       "encrypted": "trabajo/resguardos-revision/revision-testlink__respaldo-20261118-1618.json.fernet",
       "size": 211201,
-      "cipher_sha256": "f68730a7a56b1f367cfe049ef839a1c8df06ad04af8d07278490368ebe7d18c7"
+      "cipher_sha256": "1c9ce65ef1751871ac19bf389fed9a524ad657d7f2e95e7f81d74b10b087f4ee"
     },
     {
       "source": "revision-testlink/respaldo-20261118-1620.json",
       "encrypted": "trabajo/resguardos-revision/revision-testlink__respaldo-20261118-1620.json.fernet",
       "size": 298519,
-      "cipher_sha256": "8e67854961c1dcfb4d50ed87ff12bea1d93b3ba51b6c6fb5f9f022c8a50bc776"
+      "cipher_sha256": "32bb0d0a110227aa4ecfc67be98b0727409e2f4e4834cfb3c17dac66fe3a8e93"
+    },
+    {
+      "source": "revision-testlink/respaldo-20261118-1653.json",
+      "encrypted": "trabajo/resguardos-revision/revision-testlink__respaldo-20261118-1653.json.fernet",
+      "size": 470479,
+      "cipher_sha256": "d722935aa5923f171d403975615a155132ebff08c44f9a286ef3fcae6e22e9e6"
+    },
+    {
+      "source": "revision-testlink/scripts/prop_reevaluados.py",
+      "encrypted": "trabajo/resguardos-revision/revision-testlink__scripts__prop_reevaluados.py.fernet",
+      "size": 2948,
+      "cipher_sha256": "5a02bb1c25359ab838ef094e74ba0f09264f265b3ba094532cb3bb75d68c3800"
     }
   ]
 }
