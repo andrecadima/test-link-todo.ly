@@ -67,6 +67,8 @@ def render(source, media):
             widths = [280] + [140 if width >= 7 else 240] * (width - 1)
             if [cell.strip() for cell in rows[0]] == ['Escenario', 'Paso', 'Descripción']:
                 widths = [100, 60, 420]
+            elif [cell.strip() for cell in rows[0]] == ['Paso', 'Actor', 'Sistema']:
+                widths = [90, 280, 340]
             out.append('<table data-layout="wide" data-display-mode="fixed"><thead><tr>' + ''.join(f'<th data-colwidth="{w}">' + inline(c.strip()) + '</th>' for c, w in zip(rows[0], widths)) + '</tr></thead><tbody>')
             out.extend('<tr>' + ''.join(f'<td data-colwidth="{w}">' + inline(c.strip()) + '</td>' for c, w in zip(row, widths)) + '</tr>' for row in rows[2:])
             out.append('</tbody></table>')

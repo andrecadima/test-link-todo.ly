@@ -1,8 +1,6 @@
 # T11 / PEB-75 — Proyectos, subproyectos y movimientos
 
-Fecha: 18 de noviembre de 2026. **Diseño final acotado: siete casos diseñados; seis listos para registro (T11-01 a T11-06) y un candidato pendiente (T11-07).** No registrado en TestLink, no publicado en Jira y sin ejecución formal. Los resultados esperados se apoyan en observación, documentación o criterio del equipo identificado; un caso listo no significa que su procedimiento ya se haya ejecutado. `casos.json` es la fuente de las fichas; `casos-listos.json` contiene T11-01 a T11-06 y `casos-pendientes.json` contiene T11-07, que no se importará.
-
-**Ejecución manual en espera.** El 18/11 se pidió al usuario recuperar la ventana de Chrome de A y realizar en un único bloque los arrastres (pendiente Home → Study, intento con completada desde Done Items, anidación del proyecto temporal y retorno a la raíz). Al cerrar este diseño no hay respuesta: **ningún arrastre se presenta como observado** y la sección del 18/11 de `exploracion.md` lo mantiene pendiente.
+Fecha:18/11/2026. Siete casos registrados TL-88 a TL-94,77 pasos;208 textos y campos nativos cotejados sin diferencias. Revisiones10/12 APTO, observaciones resueltas; revisión de integrante y ejecución formal pendientes. Evidencias manuales y de TestLink conservadas; comentario PEB-75/10228 publicado y leído por MCP.
 
 ## 1. Análisis del área
 
@@ -15,6 +13,10 @@ Observado en A (18/11): **Cancel Editing** descartó `Prueba T11 - nombre descar
 Documentación: la [portada oficial](https://todo.ly/) documenta el anidamiento de proyectos por arrastre y el movimiento de tareas entre proyectos. Las tareas de tutorial de la propia interfaz indican `Move items to different project using drag and drop. (Drag the small handler in front of the task)` y `Hover your mouse over a project or item and click the icon on the right side of the item for more options`. La guía §13 recoge el reporte previo expreso del usuario: las tareas de Done Items no se pueden arrastrar desde esa sección del proyecto. Este reporte no procede de un fallo de la herramienta y no demuestra que no exista otro mecanismo para mover completadas. La recuperación desde Recycle Bin es otra operación (guía §14, T08).
 
 Fuera de alcance: tareas padre/subtareas (decisiones §5), eliminación de subproyectos (T08, casos 15–16), recuperación desde Recycle Bin (T08), orden de tareas y Sort By (T14), filtros (T13), colaboración/Share (decisiones §10).
+
+### Contraste manual del18/11
+
+La pendiente Home→Study persistió tras F5 y quedó fuera de Home. Desde Done Items de Study la completada no se dejó arrastrar a Home, conforme al reporte previo de la guía; no se generaliza a mecanismos distintos. El usuario reporta anidación bajo Home tras F5; la captura4 muestra además una posición intermedia bajo Work/Sub Project. La última captura confirma el proyecto devuelto a raíz entre Study y Personal. T11-07 se completa con esa fuente; conservar su tarea es criterio del equipo, no una observación sobre el temporal vacío. No se repiten estos recorridos.
 
 ## 2. Riesgos que orientan el diseño
 
@@ -29,7 +31,7 @@ Valoración cualitativa de diseño, no frecuencia medida: probabilidad P baja=1/
 | R5: el nombre guardado no persiste o genera otra entrada | Proyecto difícil de identificar o duplicado | 2: edición, Save y consulta posterior | 2 | 4, medio | T11-02 |
 | R6: Cancel Editing aplica o recupera el nombre descartado | Nombre modificado sin intención | 2: descarte observado; persistencia tras F5 sin observar | 2 | 4, medio | T11-03 |
 | R7: el intento de arrastrar una completada desde Done Items la traslada parcialmente, la reactiva o la pierde | Completada fuera de lugar, reactivada o desaparecida | 1: restricción reportada por el equipo | 3 | 3, medio | T11-06 |
-| R8: devolver un subproyecto a la raíz o reordenar la raíz lo pierde o lo coloca en otra posición | Proyecto desubicado o ausente | 2: procedimiento no confirmado | 3 | 6, alto | T11-07, pendiente |
+| R8: devolver un subproyecto a una posición raíz concreta lo pierde o lo coloca en otra posición | Proyecto desubicado o ausente | 2: cambio de ubicación con destino concreto; retorno confirmado por reporte y captura | 3 | 6, alto | T11-07 |
 
 ## 3. Reglas, restricciones y dudas
 
@@ -50,7 +52,7 @@ Valoración cualitativa de diseño, no frecuencia medida: probabilidad P baja=1/
 | Existencia de otro mecanismo para mover completadas | Duda pendiente | No se concluye que no exista |
 | Recuperación de completadas desde Recycle Bin | Fuera de alcance (T08) | Guía §14; la restricción de Done Items no se extiende a la papelera |
 | Marcar el checkbox retira la tarea de pendientes; See all despliega las completadas | Regla documentada (guía, reglas de T07) | Guía §13; aquí se usa solo como preparación |
-| Retorno de un subproyecto a la raíz y reordenación de proyectos | Duda pendiente | Procedimiento sin confirmar; T11-07 pendiente del reporte manual |
+| Retorno del subproyecto a la raíz entre Study y Personal | Comportamiento observado por reporte y captura | manual-5-50528.png y confirmación del usuario; la captura4 es una posición intermedia bajo Work/Sub Project |
 | Conservación de prioridad, vencimiento u otros atributos al mover | Duda pendiente | No se observaron en T11 los controles para prepararlos; queda separado y no bloquea la conservación de texto, estado y ubicación |
 | Unicidad de nombres, longitud máxima, profundidad máxima y ciclos de anidación | Duda pendiente | Sin regla ni frontera; PEB-75 pide expresamente no imponerlas |
 | Tareas padre/subtareas y eliminación de subproyectos | Fuera de alcance | Decisiones §5 y §9 |
@@ -62,7 +64,7 @@ Valoración cualitativa de diseño, no frecuencia medida: probabilidad P baja=1/
 | Funcional: creación, selección y nombre | Identificar y conservar el contenedor; R4–R6 | Projects, título del área principal, Edit/Save/Cancel Editing y F5 | Una sola entrada con el nombre esperado, en la raíz, que persiste tras F5 |
 | Funcional: conservación al cambiar de ubicación | Evitar pérdida, duplicación, cambio de estado o ubicación incorrecta; R1–R3, R7 | Tarea marcadora con nombre único; contraste de origen y destino con tareas preexistentes consignadas; relación en el árbol; F5 | Destino y origen esperados; texto y checkbox conservados; tareas preexistentes sin cambios |
 
-Positivos: crear y seleccionar un proyecto vacío (01), guardar un nombre (02), anidar bajo Home (04) y mover una pendiente Home ↔ Study (05). Alternativos: Cancel Editing (03) y retorno a la raíz/reordenación (07, pendiente). Negativo controlado: intentar arrastrar una completada desde Done Items, que no debe trasladarla, reactivarla ni perderla (06). No se diseñan negativos de nombre duplicado, ciclos o exceso de profundidad sin una regla. No se seleccionan pruebas no funcionales (facilidad de arrastre, accesibilidad, compatibilidad o tiempos de respuesta): no hay un procedimiento ni un criterio acordados, y los fallos de la herramienta no se atribuyen al producto. Queda señalado como riesgo sin cobertura.
+Positivos: crear y seleccionar un proyecto vacío (01), guardar un nombre (02), anidar bajo Home (04) y mover una pendiente Home ↔ Study (05). Alternativos: Cancel Editing (03) y retorno a raíz entre Study y Personal (07). Negativo controlado: intentar arrastrar una completada desde Done Items, que no debe trasladarla, reactivarla ni perderla (06). No se diseñan negativos de nombre duplicado, ciclos o exceso de profundidad sin una regla. No se seleccionan pruebas no funcionales (facilidad de arrastre, accesibilidad, compatibilidad o tiempos de respuesta): no hay un procedimiento ni un criterio acordados, y los fallos de la herramienta no se atribuyen al producto. Queda señalado como riesgo sin cobertura.
 
 ## 5. Técnicas aplicadas y artefactos
 
@@ -101,9 +103,9 @@ Traza: principal 3a → **T11-02**; alternativa 3b → **T11-03**.
 | 2 | Arrastra el asa del proyecto y la suelta sobre Home | Muestra el proyecto sangrado bajo Home, con triángulo de despliegue |
 | 3 | Selecciona el subproyecto | Muestra su título y su tarea pendiente |
 | 4 | Presiona F5, consulta el subproyecto y Home | Conserva la relación, la tarea y las tareas iniciales de Home |
-| A1 (alternativa) | Arrastra el subproyecto a la raíz entre Study y Personal | **Pendiente**: procedimiento sin confirmar |
+| A1 (alternativa) | Arrastra el subproyecto a la raíz entre Study y Personal | Devuelve el proyecto a la raíz entre Study y Personal (reporte y captura manual) |
 
-Traza: principal → **T11-04**; A1 → **T11-07, pendiente**.
+Traza: principal → **T11-04**; A1 → **T11-07**.
 
 **UC4 — Mover una tarea entre proyectos.**
 
@@ -125,15 +127,15 @@ Estados: **—** sin proyecto; **R** proyecto raíz; **H** subproyecto bajo Home
 | Estado actual | E0 | E1 | E2 | E3 |
 |---|---|---|---|---|
 | — | R (O) | No aplica | No aplica | No aplica |
-| R | No aplica | H (D), datos conservados (C) | R (O) | R reordenado: Pendiente |
-| H | No aplica | No ejercitado; sin fuente | H con relación y datos (C) | R: Pendiente |
+| R | No aplica | H (D), datos conservados (C) | R (O) | No ejercitado como operación independiente |
+| H | No aplica | No ejercitado; sin fuente | H con relación y datos (C) | R (observación manual); persistencia según reporte |
 
 | Secuencia | Caso | Fundamento |
 |---|---|---|
 | — →E0→ R →E2→ R | T11-01 | Creación y persistencia observadas; vista inmediata como criterio |
 | R →(Edit/Save o Cancel Editing)→ R →E2→ R | T11-02, T11-03 | Cambio de nombre sin cambio de estado de ubicación |
 | — →E0→ R →E1→ H →E2→ H | T11-04 | Anidación documentada y conservación como criterio |
-| H →E3→ R →E2→ R | T11-07, pendiente | Procedimiento sin confirmar |
+| H →E3→ R →E2→ R | T11-07 | Retorno y ubicación reportados, posición raíz visible en captura; conservación de tarea como criterio |
 
 ### 5.3 Particiones de equivalencia: situación de la tarea al arrastrarla
 
@@ -153,34 +155,46 @@ No se aplican valores límite: no hay una frontera confirmada de longitud, profu
 
 | Caso | Objetivo / riesgo | Fundamento de la técnica | Importancia | Situación |
 |---|---|---|---|---|
-| T11-01 Crear y seleccionar un proyecto raíz vacío | Identidad y unicidad del contenedor; R4 | UC1 principal; transición — →E0→ R →E2→ R | high | Listo para registro |
-| T11-02 Renombrar con Save | Persistencia del nombre; R5 | UC2 principal | medium | Listo para registro |
-| T11-03 Renombrar con Cancel Editing | Descarte del nombre; R6 | UC2 alternativa, descarte observado el 18/11; F5 como criterio | medium | Listo para registro |
-| T11-04 Anidar bajo Home | Relación y contenido; R2, R3 | UC3 principal; transición R →E1→ H →E2→ H | high | Listo para registro; arrastre documentado, no observado |
-| T11-05 Mover una pendiente Home ↔ Study | Pérdida, duplicación y ubicación; R1, R3 | UC4 principal; partición «pendiente» | high | Listo para registro; arrastre documentado, no observado |
-| T11-06 Intento con una completada desde Done Items | Conservar proyecto y estado; R3, R7 | UC4 alternativa; partición «completada en Done Items» | high | Listo para registro; restricción reportada por el equipo |
-| T11-07 Retorno a la raíz y reordenación | Ubicación y contenido del subproyecto; R8 | UC3 alternativa; transición H →E3→ R | high | Pendiente; no se registra |
+| T11-01 Crear y seleccionar un proyecto raíz vacío | Identidad y unicidad del contenedor; R4 | UC1 principal; transición — →E0→ R →E2→ R | high | Registrado y comparado: [TL-88](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-88) |
+| T11-02 Renombrar con Save | Persistencia del nombre; R5 | UC2 principal | medium | Registrado y comparado: [TL-89](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-89) |
+| T11-03 Renombrar con Cancel Editing | Descarte del nombre; R6 | UC2 alternativa, descarte observado el 18/11; F5 como criterio | medium | Registrado y comparado: [TL-90](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-90) |
+| T11-04 Anidar bajo Home | Relación y contenido; R2, R3 | UC3 principal; transición R →E1→ H →E2→ H | high | Registrado y comparado: [TL-91](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-91) |
+| T11-05 Mover una pendiente Home ↔ Study | Pérdida, duplicación y ubicación; R1, R3 | UC4 principal; partición «pendiente» | high | Registrado y comparado: [TL-92](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-92) |
+| T11-06 Intento con una completada desde Done Items | Conservar proyecto y estado; R3, R7 | UC4 alternativa; partición «completada en Done Items» | high | Registrado y comparado: [TL-93](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-93) |
+| T11-07 Retorno a raíz entre Study y Personal | Ubicación y contenido del subproyecto; R8 | UC3 alternativa; transición H →E3→ R | high | Registrado y comparado: [TL-94](http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-94) |
 
 ## 7. Implementación en TestLink
 
-Por registrar. Seis casos listos (T11-01 a T11-06) para la suite existente **Todo.ly tests** del proyecto TL:Todo.ly, como casos Manual con su Importance. **Sin IDs**, no publicados en Jira y sin ejecución formal. T11-07 no se importa.
+Se registraron **siete casos,77 pasos**, **TL-88 a TL-94**, en TL:Todo.ly → suite existente **Todo.ly tests (id3)**. Seis se incorporaron primero y07 después de confirmar el retorno a raíz. Ausencia previa comprobada para ambos conjuntos; suite86 antes,92 tras seis y93 tras el adicional. Sin suites nuevas, reimportación de anteriores ni actualización de casos ajenos.
+
+Se abrió cada ficha: **208 textos**, Importance y Manual cotejados sin diferencias. TestLink Draft, sin ejecución formal ni revisión de integrante. Revisiones independientes10/12 APTO con observaciones atendidas; no sustituyen a otro integrante. Capturas: árbol filtrado y TL-93/TL-94 abiertos. Las fichas completas permanecen en TestLink; los enlaces reales están en la lista. Exportación XML real después del último registro, sin presentar el XML de entrada como exportación.
 
 ## 8. Cobertura pendiente y límites
 
-- **T11-07:** retorno de un subproyecto a la raíz y reordenación de proyectos, pendientes del reporte manual solicitado.
+- El retorno a raíz y posición entre Study/Personal quedó confirmado. No se explora reordenación independiente adicional ni se atribuye profundidad máxima.
 - **Atributos al mover:** la conservación de prioridad, vencimiento u otros atributos queda pendiente por separado, porque en T11 no se observaron controles para prepararlos. No bloquea la conservación de texto, estado y ubicación.
 - **Mover completadas:** se desconoce si existe otro mecanismo además del arrastre desde Done Items. La recuperación desde Recycle Bin corresponde a T08.
 - **Fronteras y validaciones de nombres:** unicidad, longitud, profundidad y ciclos quedan sin regla. No se diseñan casos sobre ellas.
 - **Pruebas no funcionales:** facilidad del arrastre, accesibilidad de alternativas, compatibilidad y tiempos de respuesta quedan sin cobertura y se señalan al equipo.
 - **Herramienta:** los errores `noWindowsAvailable` y `cgWindowNotFound` y la pantalla gris del 18/11 no demuestran restricciones ni fallos de Todo.ly.
 
-Datos temporales actuales en A: el proyecto raíz `Prueba T11 - proyecto renombrado 1109`. Los nombres de las fichas son datos de diseño todavía no creados. Los datos del bloque manual, si el usuario lo realiza, se anotarán en `exploracion.md`. La limpieza se hace al terminar los tres tickets. El subproyecto temporal se retira mediante Delete únicamente como limpieza de datos propios, sin declarar ejecución de T08; sus tareas se retiran de Recycle Bin en el cierre. Las completadas de prueba se reactivan y eliminan según guía§17.
+Datos temporales actuales en A: el proyecto raíz `Prueba T11 - proyecto renombrado 1109`. Los nombres de las fichas son datos de diseño; los datos reales del bloque manual están inventariados en exploracion.md. El temporal real termina en la raíz entre Study y Personal. La limpieza se hace al terminar los tres tickets. El proyecto temporal se retira mediante Delete únicamente como limpieza de datos propios, sin declarar ejecución de T08; sus tareas se retiran de Recycle Bin en el cierre. Las completadas de prueba se reactivan y eliminan según guía§17.
 
 ## 9. Estado
 
-**Siete casos diseñados: seis listos para registro (T11-01 a T11-06) y uno pendiente (T11-07).** No hay casos registrados, publicados ni ejecutados formalmente, y la revisión de otro integrante sigue pendiente. Los arrastres de T11-04, 05 y 06 se basan en documentación y en el reporte del equipo, no en observación propia. La respuesta manual del 18/11 sigue pendiente.
+**Diseñados y registrados en TestLink; pendiente de revisión por otro integrante.** Siete casos,77 pasos. La exploración manual se distingue de ejecución formal. No se cambia el estado ni se marca la revisión del integrante en Jira.
 
-## Fichas para TestLink — seis listas para registro y un candidato pendiente
+| Criterio de aceptación | Comprobación |
+|---|---|
+| Operaciones y restricciones | Creación, edición, anidación y arrastre documentados; dudas explícitas. |
+| Tipos de prueba justificados | Funcional y conservación, vinculados a riesgos. |
+| Cobertura creación, selección, jerarquías y movimientos | Siete casos; límites y atributos adicionales pendientes. |
+| Pérdida, duplicación y ubicación incorrecta | Riesgos y resultados trazados en casos01–07. |
+| Escenarios válidos, negativos y alternativos | Guardar/cancelar, mover pendiente y restricción de Done Items. |
+| Origen, destino, datos y resultados | Fichas nominales con datos/control y resultado por paso. |
+| Registro y revisión de integrante | Siete registrados y cotejados; revisión de integrante pendiente. |
+
+## Fichas para TestLink — siete diseños
 
 <!-- FICHAS_GENERADAS -->
 
@@ -384,28 +398,29 @@ Datos temporales actuales en A: el proyecto raíz `Prueba T11 - proyecto renombr
 
 ---
 
-## Candidatos pendientes — no registrar todavía
+### T11-07. Subproyecto movido a raíz entre Study y Personal conserva ubicación y tarea
 
----
+**Importancia:** **high**. Protege el proyecto y su contenido al deshacer una anidación y devolverlo a una posición raíz concreta.
 
-### T11-07. Subproyecto devuelto a la raíz entre Study y Personal conserva nombre y tarea
-
-**Importancia:** **high**. Protege el proyecto y su contenido al deshacer una anidación y reordenar la raíz.
-
-**Requerimiento:** PEB-75 / T11. Procedimiento de retorno de un subproyecto a la raíz y de reordenación pendiente de confirmar; la conservación de nombre y tarea es criterio del equipo.
+**Requerimiento:** PEB-75 / T11. Retorno de un subproyecto a raíz entre Study y Personal y ubicación tras F5 respaldados por el reporte manual; conservación de la tarea como criterio del equipo.
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
 2. Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).
 3. Lista inicial de **Projects** de A consignada en el registro de ejecución.
 4. Subproyecto temporal **Prueba T11-07 - retorno** debajo de **Home**, con la tarea pendiente **Prueba T11-07 - dato del retorno**.
+5. Tareas pendientes iniciales de **Home** consignadas en el registro de ejecución.
+6. **Home**, **Study** y **Personal** como proyectos raíz de A, con **Study** inmediatamente antes de **Personal**; **Home** desplegado en **Projects**.
 
-**Descripción:** Validar que un subproyecto temporal llevado de Home a la raíz, entre Study y Personal, aparece una sola vez en esa posición y conserva nombre y tarea pendiente tras F5; candidato pendiente hasta confirmar el procedimiento.
+**Descripción:** Validar que un subproyecto temporal arrastrado a la raíz entre Study y Personal aparece una sola vez en esa posición y conserva su nombre y tarea pendiente tras F5.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. PENDIENTE: arrastrar el asa de puntos de **Prueba T11-07 - retorno** y soltarla en la raíz entre **Study** y **Personal**, según el procedimiento que confirme la ejecución manual solicitada. | PENDIENTE: fijar la ubicación resultante observada; no se presupone que el arrastre permita volver a la raíz ni el punto exacto de inserción. |
-| 2. Presionar **F5**. | PENDIENTE: confirmar que la ubicación obtenida se conserva y que el proyecto aparece una sola vez. |
-| 3. Hacer clic en **Prueba T11-07 - retorno** en **Projects**. | Se conservan el título y la tarea **Prueba T11-07 - dato del retorno**, pendiente (criterio del equipo). |
+| 1. Arrastrar el asa de puntos de **Prueba T11-07 - retorno** desde debajo de **Home** y soltarla entre las entradas raíz **Study** y **Personal**. | **Prueba T11-07 - retorno** aparece una sola vez en la raíz, entre **Study** y **Personal**, alineado con ellos y sin sangría bajo **Home**. |
+| 2. Presionar **F5**. | La lista **Projects** conserva **Prueba T11-07 - retorno** una sola vez en la raíz, entre **Study** y **Personal**. |
+| 3. Hacer clic en **Prueba T11-07 - retorno** en **Projects**. | El área principal muestra el título **Prueba T11-07 - retorno** y **Prueba T11-07 - dato del retorno** una sola vez, con su checkbox sin marcar. |
+| 4. Hacer clic en **Home** en **Projects**. | El área principal muestra **Home** con sus tareas iniciales del registro; **Prueba T11-07 - retorno** permanece en la raíz del árbol y no como hijo de **Home**. |
+| 5. Hacer clic en **Prueba T11-07 - retorno** en **Projects**. | El área principal muestra el título **Prueba T11-07 - retorno** y **Prueba T11-07 - dato del retorno** una sola vez, con su checkbox sin marcar. |
+| 6. Tomar una captura de **Projects** y del proyecto seleccionado. | La captura identifica el proyecto raíz entre **Study** y **Personal** y su tarea pendiente conservada. |
 
-**Postcondiciones:** Candidato fuera del registro; procedimiento de retorno a la raíz y de reordenación pendiente del reporte manual. Datos temporales para la limpieza final del lote.
+**Postcondiciones:** Proyecto temporal Prueba T11-07 - retorno en la raíz entre Study y Personal, con su tarea pendiente, conservado para la limpieza final del lote; proyectos y tareas iniciales sin cambios.

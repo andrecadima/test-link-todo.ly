@@ -1,0 +1,419 @@
+Window: "TestLink 1.9.20 [DEV]", App: Google Chrome.
+0 standard window TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php, Secondary Actions: Raise
+	1 container TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button Not Secure
+					9 text field (settable) Address and search bar, Value: 68.211.149.112/index.php, Placeholder: Ask Google or type a URL
+					10 button Zoom: 75%
+					11 button Bookmark this tab
+				12 container
+					13 pop up button iCloud Bookmarks
+					14 pop up button Google Translate
+
+Left-click to translate!
+Right-click for options.
+Has access to this site
+					15 pop up button Video Downloader
+Has access to this site
+					16 pop up button vidIQ Vision for YouTube
+Has access to this site
+					17 pop up button Disconnected
+Has access to this site
+					18 pop up button Chile
+Has access to this site
+					19 pop up button Wappalyzer
+Has access to this site
+					20 pop up button Open Claude
+Has access to this site
+					21 pop up button Extensions
+				22 button Paused
+				23 pop up button Chrome
+			24 toolbar Bookmarks
+				25 toolbar Saved Tab Groups
+					26 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					27 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					28 button Tab groups
+				29 splitter Separator
+				30 bookmark button Sample Tank MAX 4-0-9 WiN-MAC - AUDIOTOOLS
+				31 bookmark button Downloads
+				32 bookmark button Flameboy Tutorials
+				33 bookmark button Media Monopoly: Secure Checkout
+				34 pop up button Menu containing hidden bookmarks
+				35 bookmark folder button All Bookmarks
+				36 splitter Separator
+			37 container
+				38 scroll area
+					39 HTML content TestLink 1.9.20 [DEV], URL: 68.211.149.112/index.php
+						40 container
+							41 HTML content TestLink, URL: 68.211.149.112/lib/general/navBar.php?tproject_id=0&tplan_id=0&updateMainPage=1
+								42 link Company logo, Value: 68.211.149.112/index.php
+								43 container
+									44 text admin [admin]
+									45 link My Settings, Value: 68.211.149.112/lib/usermanagement/userInfo.php
+									46 link Logout, Value: 68.211.149.112/logout.php?viewer=
+								47 container
+									48 container
+										49 text Test Project
+										50 pop up button TL:Todo.ly
+											51 (selected) TL:Todo.ly
+									52 link Desktop, Value: 68.211.149.112/index.php
+									53 link Test Specification, Value: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+									54 link Users/Roles, Value: 68.211.149.112/lib/usermanagement/usersView.php
+									55 link Events, Value: 68.211.149.112/lib/events/eventviewer.php
+									56 link Plugins, Value: 68.211.149.112/lib/plugins/pluginView.php
+									57 text field (settable) Search Test Case by ID, Value: TL-
+									58 image Search Test Case by ID
+									59 text field (settable) Full Text Search
+									60 image Full Text Search
+							61 HTML content TestLink Inner Frame, URL: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+								62 container
+									63 HTML content TestLink, URL: 68.211.149.112/lib/testcases/listTestCases.php?feature=edit_tc
+										64 container
+											65 heading Navigator - Test Specification
+												66 text Navigator - Test Specification
+											67 container
+												68 text Settings
+												69 container
+													70 container Update tree after every operation
+														71 text Update tree after every operation
+													72 checkbox
+											73 container
+												74 text Filters
+												75 container
+													76 container
+														77 container Test Case ID
+															78 text Test Case ID
+														79 container TL-
+															80 text field (settable) TL-
+													81 container
+														82 container Test Case Title
+															83 text Test Case Title
+														84 container T11-
+															85 text field (settable) T11-
+													86 container
+														87 container Test Suite
+															88 text Test Suite
+														89 container Select an Option
+															90 container
+																91 text Select an Option
+																92 text field (settable)
+													93 container
+														94 container Platforms
+															95 text Platforms
+														96 container Select Some Options
+															97 container
+																98 content list
+																	99 text field (settable) Select Some Options
+													100 container
+														101 container Status
+															102 text Status
+														103 container Select Some Options
+															104 container
+																105 content list
+																	106 text field (settable) Select Some Options
+													107 container
+														108 container Importance
+															109 text Importance
+														110 container Select Some Options
+															111 container
+																112 content list
+																	113 text field (settable) Select Some Options
+													114 container
+														115 container Execution type
+															116 text Execution type
+														117 container [Any]
+															118 container
+																119 text [Any]
+																120 text field (settable)
+													121 button Apply
+													122 button Reset Filters
+											123 button Expand tree
+											124 button Collapse tree
+											125 content list
+												126 container
+													127 link Todo.ly (0), Value: javascript:EP(1)
+									128 HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version_id=undefined&edit=testcase&id=1014&form_token=[REDACTADO]
+										129 heading Test Case
+											130 text Test Case
+										131 image Show / Hide direct link
+										132 image Actions
+										133 container
+											134 table
+												135 row
+													136 column header
+														137 text TL-87 : T10-06. Profile con Email editado y Cancel conserva el correo original de B - Version 1
+														138 image Show ghost string
+														139 image Display Author/Updater
+												140 row
+													141 column header
+														142 text Summary
+												143 row
+													144 cell
+														145 text Validar que, tras sustituir Email por una dirección alternativa y pulsar Cancel sin Ok, Profile de B vuelve a mostrar exactamente el correo original.
+														146 text Requerimiento: PEB-74 / T10. Cancel descarta una edición de Email en Profile y el correo original de B permanece al reabrir Profile.
+														147 text Postcondiciones: B conserva su correo original y su sesión iniciada; no se envió ningún cambio de Email. Este caso no incluye Login: su objetivo es el descarte de la edición. El cambio válido de Email sigue pendiente en T10-07.
+												148 row
+													149 column header
+														150 text Preconditions
+												151 row
+													152 cell
+														153 content list
+															154 container
+																155 AXListMarker 1.
+																156 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
+															157 container
+																158 AXListMarker 2.
+																159 text Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta B).
+															160 container
+																161 AXListMarker 3.
+																162 text Correo original de B consignado en el registro privado de referencia.
+															163 container
+																164 AXListMarker 4.
+																165 text Dirección de correo alternativa elegida por quien ejecuta, distinta del correo original de B, consignada en el registro privado de referencia.
+															166 container
+																167 AXListMarker 5.
+																168 text Profile de B sin cambios pendientes.
+												169 row
+													170 column header
+														171 image Show / Hide reorder
+														172 image Show ghost string
+														173 text #
+													174 column header
+														175 text Step actions
+													176 column header
+														177 text Expected Results
+													178 column header
+														179 text Execution
+												180 row
+													181 cell
+														182 text 1
+													183 cell
+														184 container
+															185 text Hacer clic en  Settings .
+													186 cell
+														187 container
+															188 text Se abre  Settings .
+													189 cell
+														190 text Manual
+													191 cell
+														192 image Delete step
+													193 cell
+														194 image Insert step
+												195 row
+													196 cell
+														197 text 2
+													198 cell
+														199 container
+															200 text Seleccionar  Profile  en  Settings .
+													201 cell
+														202 container
+															203 text Profile  muestra  Full Name ,  Email ,  Time zone  y los botones  Ok  y  Cancel .
+													204 cell
+														205 text Manual
+													206 cell
+														207 image Delete step
+													208 cell
+														209 image Insert step
+												210 row
+													211 cell
+														212 text 3
+													213 cell
+														214 container
+															215 text Comparar  Email  con el correo original de B del registro privado.
+													216 cell
+														217 container
+															218 text Email  coincide con el correo original de B.
+													219 cell
+														220 text Manual
+													221 cell
+														222 image Delete step
+													223 cell
+														224 image Insert step
+												225 row
+													226 cell
+														227 text 4
+													228 cell
+														229 container
+															230 text Sustituir el contenido de  Email  por la dirección alternativa del registro privado.
+													231 cell
+														232 container
+															233 text Email  muestra la dirección alternativa.
+													234 cell
+														235 text Manual
+													236 cell
+														237 image Delete step
+													238 cell
+														239 image Insert step
+												240 row
+													241 cell
+														242 text 5
+													243 cell
+														244 container
+															245 text Hacer clic una vez en  Cancel , sin hacer clic en  Ok .
+													246 cell
+														247 container
+															248 text Se cierra  Settings  sin guardar cambios y vuelve a verse el área de proyectos.
+													249 cell
+														250 text Manual
+													251 cell
+														252 image Delete step
+													253 cell
+														254 image Insert step
+												255 row
+													256 cell
+														257 text 6
+													258 cell
+														259 container
+															260 text Hacer clic en  Settings .
+													261 cell
+														262 container
+															263 text Se abre  Settings .
+													264 cell
+														265 text Manual
+													266 cell
+														267 image Delete step
+													268 cell
+														269 image Insert step
+												270 row
+													271 cell
+														272 text 7
+													273 cell
+														274 container
+															275 text Seleccionar  Profile  en  Settings .
+													276 cell
+														277 container
+															278 text Profile  muestra  Full Name  y  Email  de la cuenta con sesión iniciada.
+													279 cell
+														280 text Manual
+													281 cell
+														282 image Delete step
+													283 cell
+														284 image Insert step
+												285 row
+													286 cell
+														287 text 8
+													288 cell
+														289 container
+															290 text Comparar  Email  con el correo original de B del registro privado.
+													291 cell
+														292 container
+															293 text Email  coincide exactamente con el correo original de B y no muestra la dirección alternativa.
+													294 cell
+														295 text Manual
+													296 cell
+														297 image Delete step
+													298 cell
+														299 image Insert step
+												300 row
+													301 cell
+														302 text 9
+													303 cell
+														304 container
+															305 text Tomar una captura de  Profile .
+													306 cell
+														307 container
+															308 text La captura muestra  Email  con el correo original de B; se conserva como evidencia privada, sin publicar direcciones reales.
+													309 cell
+														310 text Manual
+													311 cell
+														312 image Delete step
+													313 cell
+														314 image Insert step
+												315 row
+													316 cell
+														317 text 10
+													318 cell
+														319 container
+															320 text Hacer clic en  Cancel .
+													321 cell
+														322 container
+															323 text Se cierra  Settings  sin guardar cambios y vuelve a verse el área de proyectos.
+													324 cell
+														325 text Manual
+													326 cell
+														327 image Delete step
+													328 cell
+														329 image Insert step
+											330 button Create step
+											331 button Resequence Steps
+										332 container
+											333 text Status :
+											334 pop up button Draft
+												335 (selected) Draft
+											336 text Importance :
+											337 pop up button High
+												338 (selected) High
+											339 text Execution type :
+											340 pop up button Manual
+												341 (selected) Manual
+											342 checkbox
+											343 text Apply To All Steps
+											344 text Estimated exec. (min) :
+											345 text field (settable) Estimated exec. duration (min)
+											346 button Save
+										347 container
+											348 container Keywords   Create Keyword  Create & Link
+												349 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
+												350 link Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
+												351 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=1015%27)
+											352 container None
+												353 text None
+										354 container
+											355 container Platforms:
+												356 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
+												357 text :
+											358 container None
+												359 text None
+										360 table
+											361 row
+												362 column header
+													363 text Relations
+											364 row
+												365 cell
+													366 text New relation:  This test case version
+													367 pop up button is related to
+														368 (selected) is related to
+													369 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID)
+													370 button Add
+										371 container Attached files :
+											372 text Attached files :
+										373 container
+											374 text File
+											375 button File: No file chosen
+											376 text Title/name:
+											377 text field (settable)
+											378 button Upload file
+										379 image Max. size of the file is: 1048576 Bytes)
+										380 image Filename must verify this regexp:/^[a-zA-Z0-9_-]{1,20}\.[a-zA-Z0-9]{1,10}$/
+										381 image Allowed files:doc,xls,gif,png,jpg,xlsx,csv
+							382 button
+			383 pop up button Tab search
+			384 container
+				385 tab group
+					386 tab (selected, settable, boolean) TestLink 1.9.20 [DEV] - Memory usage - 199 MB, Value: on
+						387 button Close
+					388 tab (settable, boolean) Value: off, [PEB-74] T10 — Analizar, diseñar y registrar pruebas de perfil y recuperación de acceso - Jira - Memory usage - 620 MB
+						389 button Close
+			390 button New Tab
+			391 button Open Gemini in Chrome
+	392 close button
+	393 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	394 minimize button
+395 menu bar
+	396 Chrome
+	397 File
+	398 Edit
+	399 View
+	400 History
+	401 Bookmarks
+	402 Profiles
+	403 Tab
+	404 Window
+	405 Help
+
+The focused UI element is 63 HTML content TestLink, URL: 68.211.149.112/lib/testcases/listTestCases.php?feature=edit_tc

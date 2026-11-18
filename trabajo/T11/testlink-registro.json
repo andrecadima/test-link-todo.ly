@@ -1,0 +1,99 @@
+{
+  "proyecto": "TL:Todo.ly",
+  "suite": "Todo.ly tests",
+  "suite_id": 3,
+  "total_suite_observado": 93,
+  "casos": [
+    {
+      "caso": "T11-01",
+      "id_testlink": "TL-88",
+      "id_interno": 1026,
+      "titulo": "Add New Project con nombre nuevo crea un proyecto raíz vacío que persiste tras F5",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-88",
+      "diferencias": [],
+      "pasos": 7,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T11-02",
+      "id_testlink": "TL-89",
+      "id_interno": 1035,
+      "titulo": "Edit con Save en un proyecto aplica el nombre nuevo y lo conserva tras F5",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-89",
+      "diferencias": [],
+      "pasos": 11,
+      "importance": "Medium",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T11-03",
+      "id_testlink": "TL-90",
+      "id_interno": 1048,
+      "titulo": "Cancel Editing en Edit de proyecto descarta el nombre nuevo y conserva el original",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-90",
+      "diferencias": [],
+      "pasos": 11,
+      "importance": "Medium",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T11-04",
+      "id_testlink": "TL-91",
+      "id_interno": 1061,
+      "titulo": "Arrastrar un proyecto temporal sobre Home lo anida como subproyecto con su tarea",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-91",
+      "diferencias": [],
+      "pasos": 14,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T11-05",
+      "id_testlink": "TL-92",
+      "id_interno": 1077,
+      "titulo": "Arrastrar una pendiente Home–Study conserva texto, estado y ubicación tras F5",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-92",
+      "diferencias": [],
+      "pasos": 16,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T11-06",
+      "id_testlink": "TL-93",
+      "id_interno": 1095,
+      "titulo": "Intento de arrastrar una completada desde Done Items conserva proyecto y estado",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-93",
+      "diferencias": [],
+      "pasos": 12,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    },
+    {
+      "caso": "T11-07",
+      "id_testlink": "TL-94",
+      "id_interno": 1340,
+      "titulo": "Subproyecto movido a raíz entre Study y Personal conserva ubicación y tarea",
+      "comparado_con_diseno": true,
+      "url": "http://68.211.149.112/linkto.php?tprojectPrefix=TL&item=testcase&id=TL-94",
+      "diferencias": [],
+      "pasos": 6,
+      "importance": "High",
+      "execution_type": "Manual",
+      "estado_testlink": "Draft"
+    }
+  ]
+}

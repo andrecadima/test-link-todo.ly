@@ -1,0 +1,51 @@
+[
+  {
+    "caso": "T11-01",
+    "campos": 21,
+    "pasos": 7,
+    "faltantes": [],
+    "nativos": true
+  },
+  {
+    "caso": "T11-02",
+    "campos": 29,
+    "pasos": 11,
+    "faltantes": [],
+    "nativos": true
+  },
+  {
+    "caso": "T11-03",
+    "campos": 29,
+    "pasos": 11,
+    "faltantes": [],
+    "nativos": true
+  },
+  {
+    "caso": "T11-04",
+    "campos": 36,
+    "pasos": 14,
+    "faltantes": [],
+    "nativos": true
+  },
+  {
+    "caso": "T11-05",
+    "campos": 40,
+    "pasos": 16,
+    "faltantes": [],
+    "nativos": true
+  },
+  {
+    "caso": "T11-06",
+    "campos": 32,
+    "pasos": 12,
+    "faltantes": [],
+    "nativos": true
+  },
+  {
+    "caso": "T11-07",
+    "campos": 21,
+    "pasos": 6,
+    "faltantes": [],
+    "nativos": true
+  }
+]

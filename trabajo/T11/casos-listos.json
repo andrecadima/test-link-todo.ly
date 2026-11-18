@@ -387,5 +387,48 @@
       ]
     ],
     "postcondiciones": "Tarea Prueba T11-06 - completada en Done Items completada en Home para la limpieza final del lote; Study y tareas iniciales sin cambios. La recuperación desde Recycle Bin no forma parte de este caso (T08)."
+  },
+  {
+    "id": "T11-07",
+    "titulo": "Subproyecto movido a raíz entre Study y Personal conserva ubicación y tarea",
+    "importancia": "high",
+    "razon": "Protege el proyecto y su contenido al deshacer una anidación y devolverlo a una posición raíz concreta.",
+    "requerimiento": "PEB-75 / T11. Retorno de un subproyecto a raíz entre Study y Personal y ubicación tras F5 respaldados por el reporte manual; conservación de la tarea como criterio del equipo.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).",
+      "Lista inicial de **Projects** de A consignada en el registro de ejecución.",
+      "Subproyecto temporal **Prueba T11-07 - retorno** debajo de **Home**, con la tarea pendiente **Prueba T11-07 - dato del retorno**.",
+      "Tareas pendientes iniciales de **Home** consignadas en el registro de ejecución.",
+      "**Home**, **Study** y **Personal** como proyectos raíz de A, con **Study** inmediatamente antes de **Personal**; **Home** desplegado en **Projects**."
+    ],
+    "descripcion": "Validar que un subproyecto temporal arrastrado a la raíz entre Study y Personal aparece una sola vez en esa posición y conserva su nombre y tarea pendiente tras F5.",
+    "pasos": [
+      [
+        "Arrastrar el asa de puntos de **Prueba T11-07 - retorno** desde debajo de **Home** y soltarla entre las entradas raíz **Study** y **Personal**.",
+        "**Prueba T11-07 - retorno** aparece una sola vez en la raíz, entre **Study** y **Personal**, alineado con ellos y sin sangría bajo **Home**."
+      ],
+      [
+        "Presionar **F5**.",
+        "La lista **Projects** conserva **Prueba T11-07 - retorno** una sola vez en la raíz, entre **Study** y **Personal**."
+      ],
+      [
+        "Hacer clic en **Prueba T11-07 - retorno** en **Projects**.",
+        "El área principal muestra el título **Prueba T11-07 - retorno** y **Prueba T11-07 - dato del retorno** una sola vez, con su checkbox sin marcar."
+      ],
+      [
+        "Hacer clic en **Home** en **Projects**.",
+        "El área principal muestra **Home** con sus tareas iniciales del registro; **Prueba T11-07 - retorno** permanece en la raíz del árbol y no como hijo de **Home**."
+      ],
+      [
+        "Hacer clic en **Prueba T11-07 - retorno** en **Projects**.",
+        "El área principal muestra el título **Prueba T11-07 - retorno** y **Prueba T11-07 - dato del retorno** una sola vez, con su checkbox sin marcar."
+      ],
+      [
+        "Tomar una captura de **Projects** y del proyecto seleccionado.",
+        "La captura identifica el proyecto raíz entre **Study** y **Personal** y su tarea pendiente conservada."
+      ]
+    ],
+    "postcondiciones": "Proyecto temporal Prueba T11-07 - retorno en la raíz entre Study y Personal, con su tarea pendiente, conservado para la limpieza final del lote; proyectos y tareas iniciales sin cambios."
   }
 ]

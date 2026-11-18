@@ -1,0 +1,448 @@
+Window: "TestLink 1.9.20 [DEV]", App: Google Chrome.
+0 standard window TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php, Secondary Actions: Raise
+	1 container TestLink 1.9.20 [DEV] - Google Chrome - Andre, URL: 68.211.149.112/index.php
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button Not Secure
+					9 text field (settable) Address and search bar, Value: 68.211.149.112/index.php, Placeholder: Ask Google or type a URL
+					10 button Zoom: 75%
+					11 button Bookmark this tab
+				12 container
+					13 pop up button iCloud Bookmarks
+					14 pop up button Google Translate
+
+Left-click to translate!
+Right-click for options.
+Has access to this site
+					15 pop up button Video Downloader
+Has access to this site
+					16 pop up button vidIQ Vision for YouTube
+Has access to this site
+					17 pop up button Disconnected
+Has access to this site
+					18 pop up button Chile
+Has access to this site
+					19 pop up button Wappalyzer
+Has access to this site
+					20 pop up button Open Claude
+Has access to this site
+					21 pop up button Extensions
+				22 button Paused
+				23 pop up button Chrome
+			24 toolbar Bookmarks
+				25 toolbar Saved Tab Groups
+					26 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					27 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					28 button Tab groups
+				29 splitter Separator
+				30 bookmark button Sample Tank MAX 4-0-9 WiN-MAC - AUDIOTOOLS
+				31 bookmark button Downloads
+				32 bookmark button Flameboy Tutorials
+				33 bookmark button Media Monopoly: Secure Checkout
+				34 pop up button Menu containing hidden bookmarks
+				35 bookmark folder button All Bookmarks
+				36 splitter Separator
+			37 container
+				38 scroll area
+					39 HTML content TestLink 1.9.20 [DEV], URL: 68.211.149.112/index.php
+						40 container
+							41 HTML content TestLink, URL: 68.211.149.112/lib/general/navBar.php?tproject_id=0&tplan_id=0&updateMainPage=1
+								42 link Company logo, Value: 68.211.149.112/index.php
+								43 container
+									44 text admin [admin]
+									45 link My Settings, Value: 68.211.149.112/lib/usermanagement/userInfo.php
+									46 link Logout, Value: 68.211.149.112/logout.php?viewer=
+								47 container
+									48 container
+										49 text Test Project
+										50 pop up button TL:Todo.ly
+											51 (selected) TL:Todo.ly
+									52 link Desktop, Value: 68.211.149.112/index.php
+									53 link Test Specification, Value: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+									54 link Users/Roles, Value: 68.211.149.112/lib/usermanagement/usersView.php
+									55 link Events, Value: 68.211.149.112/lib/events/eventviewer.php
+									56 link Plugins, Value: 68.211.149.112/lib/plugins/pluginView.php
+									57 text field (settable) Search Test Case by ID, Value: TL-
+									58 image Search Test Case by ID
+									59 text field (settable) Full Text Search
+									60 image Full Text Search
+							61 HTML content TestLink Inner Frame, URL: 68.211.149.112/lib/general/frmWorkArea.php?feature=editTc
+								62 container
+									63 HTML content TestLink, URL: 68.211.149.112/lib/testcases/listTestCases.php?feature=edit_tc
+										64 container
+											65 heading Navigator - Test Specification
+												66 text Navigator - Test Specification
+											67 container
+												68 text Settings
+												69 container
+													70 container Update tree after every operation
+														71 text Update tree after every operation
+													72 checkbox
+											73 container
+												74 text Filters
+												75 container
+													76 container
+														77 container Test Case ID
+															78 text Test Case ID
+														79 container TL-
+															80 text field (settable) TL-
+													81 container
+														82 container Test Case Title
+															83 text Test Case Title
+														84 container T11-07
+															85 text field (settable) T11-07
+													86 container
+														87 container Test Suite
+															88 text Test Suite
+														89 container Select an Option
+															90 container
+																91 text Select an Option
+																92 text field (settable)
+													93 container
+														94 container Platforms
+															95 text Platforms
+														96 container Select Some Options
+															97 container
+																98 content list
+																	99 text field (settable) Select Some Options
+													100 container
+														101 container Status
+															102 text Status
+														103 container Select Some Options
+															104 container
+																105 content list
+																	106 text field (settable) Select Some Options
+													107 container
+														108 container Importance
+															109 text Importance
+														110 container Select Some Options
+															111 container
+																112 content list
+																	113 text field (settable) Select Some Options
+													114 container
+														115 container Execution type
+															116 text Execution type
+														117 container [Any]
+															118 container
+																119 text [Any]
+																120 text field (settable)
+													121 button Apply
+													122 button Reset Filters
+											123 button Expand tree
+											124 button Collapse tree
+											125 content list
+												126 container
+													127 link Todo.ly (0), Value: javascript:EP(1)
+									128 HTML content TestLink, URL: 68.211.149.112/lib/testcases/archiveData.php?version_id=undefined&edit=testcase&id=1095&form_token=[REDACTADO]
+										129 heading Test Case
+											130 text Test Case
+										131 image Show / Hide direct link
+										132 image Actions
+										133 container
+											134 table
+												135 row
+													136 column header
+														137 text TL-93 : T11-06. Intento de arrastrar una completada desde Done Items conserva proyecto y estado - Version 1
+														138 image Show ghost string
+														139 image Display Author/Updater
+												140 row
+													141 column header
+														142 text Summary
+												143 row
+													144 cell
+														145 text Validar que, al intentar arrastrar desde la sección de completadas de Home una tarea completada y soltarla sobre Study, la tarea permanece una sola vez entre las completadas de Home con su checkbox marcado, no aparece en Study ni en pendientes y conserva ese estado tras F5.
+														146 text Requerimiento: PEB-75 / T11. Una tarea de la sección de completadas de un proyecto no se traslada al intentar arrastrarla a otro proyecto; permanece completada en su proyecto de origen, también tras recarga.
+														147 text Postcondiciones: Tarea Prueba T11-06 - completada en Done Items completada en Home para la limpieza final del lote; Study y tareas iniciales sin cambios. La recuperación desde Recycle Bin no forma parte de este caso (T08).
+												148 row
+													149 column header
+														150 text Preconditions
+												151 row
+													152 cell
+														153 content list
+															154 container
+																155 AXListMarker 1.
+																156 text Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
+															157 container
+																158 AXListMarker 2.
+																159 text Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).
+															160 container
+																161 AXListMarker 3.
+																162 text Home  y  Study  como proyectos raíz de A, con sus tareas pendientes y completadas iniciales consignadas en el registro de ejecución.
+															163 container
+																164 AXListMarker 4.
+																165 text Orden  Sort By: Order  en  Home  y  Study .
+															166 container
+																167 AXListMarker 5.
+																168 text Ausencia de tareas con el nombre  Prueba T11-06 - completada en Done Items .
+												169 row
+													170 column header
+														171 image Show / Hide reorder
+														172 image Show ghost string
+														173 text #
+													174 column header
+														175 text Step actions
+													176 column header
+														177 text Expected Results
+													178 column header
+														179 text Execution
+												180 row
+													181 cell
+														182 text 1
+													183 cell
+														184 container
+															185 text Hacer clic en  Home  en  Projects .
+													186 cell
+														187 container
+															188 text El área principal muestra el título  Home  y sus tareas pendientes iniciales del registro.
+													189 cell
+														190 text Manual
+													191 cell
+														192 image Delete step
+													193 cell
+														194 image Insert step
+												195 row
+													196 cell
+														197 text 2
+													198 cell
+														199 container
+															200 text Escribir  Prueba T11-06 - completada en Done Items  en el campo  Add new Todo, type here... .
+													201 cell
+														202 container
+															203 text El campo muestra  Prueba T11-06 - completada en Done Items .
+													204 cell
+														205 text Manual
+													206 cell
+														207 image Delete step
+													208 cell
+														209 image Insert step
+												210 row
+													211 cell
+														212 text 3
+													213 cell
+														214 container
+															215 text Hacer clic una sola vez en  Add , a la derecha del campo.
+													216 cell
+														217 container
+															218 text Home  muestra la tarea una sola vez entre las pendientes, con su checkbox sin marcar.
+													219 cell
+														220 text Manual
+													221 cell
+														222 image Delete step
+													223 cell
+														224 image Insert step
+												225 row
+													226 cell
+														227 text 4
+													228 cell
+														229 container
+															230 text Marcar el checkbox de  Prueba T11-06 - completada en Done Items .
+													231 cell
+														232 container
+															233 text La tarea deja de mostrarse entre las pendientes de  Home .
+													234 cell
+														235 text Manual
+													236 cell
+														237 image Delete step
+													238 cell
+														239 image Insert step
+												240 row
+													241 cell
+														242 text 5
+													243 cell
+														244 container
+															245 text Desplegar las completadas de  Home  mediante  See all  si la sección está oculta.
+													246 cell
+														247 container
+															248 text Se despliega la sección de completadas de  Home  con  Prueba T11-06 - completada en Done Items  una sola vez y su checkbox marcado.
+													249 cell
+														250 text Manual
+													251 cell
+														252 image Delete step
+													253 cell
+														254 image Insert step
+												255 row
+													256 cell
+														257 text 6
+													258 cell
+														259 container
+															260 text Arrastrar  Prueba T11-06 - completada en Done Items  desde la sección de completadas de  Home  y soltarla sobre  Study  en  Projects .
+													261 cell
+														262 container
+															263 text La tarea no se traslada: permanece una sola vez en las completadas de  Home , con su checkbox marcado, y no aparece entre las pendientes. No se exige un mensaje, porque no se ha identificado ninguno.
+													264 cell
+														265 text Manual
+													266 cell
+														267 image Delete step
+													268 cell
+														269 image Insert step
+												270 row
+													271 cell
+														272 text 7
+													273 cell
+														274 container
+															275 text Hacer clic en  Study  en  Projects .
+													276 cell
+														277 container
+															278 text Study  muestra únicamente sus tareas pendientes iniciales, sin  Prueba T11-06 - completada en Done Items .
+													279 cell
+														280 text Manual
+													281 cell
+														282 image Delete step
+													283 cell
+														284 image Insert step
+												285 row
+													286 cell
+														287 text 8
+													288 cell
+														289 container
+															290 text Desplegar las completadas de  Study  mediante  See all  si la sección está oculta.
+													291 cell
+														292 container
+															293 text Las completadas de  Study  coinciden con las iniciales del registro, sin  Prueba T11-06 - completada en Done Items .
+													294 cell
+														295 text Manual
+													296 cell
+														297 image Delete step
+													298 cell
+														299 image Insert step
+												300 row
+													301 cell
+														302 text 9
+													303 cell
+														304 container
+															305 text Presionar  F5 .
+													306 cell
+														307 text La página se recarga sin cerrar la sesión.
+													308 cell
+														309 text Manual
+													310 cell
+														311 image Delete step
+													312 cell
+														313 image Insert step
+												314 row
+													315 cell
+														316 text 10
+													317 cell
+														318 container
+															319 text Hacer clic en  Home  en  Projects .
+													320 cell
+														321 container
+															322 text Home  muestra sus tareas pendientes iniciales, sin  Prueba T11-06 - completada en Done Items  entre ellas.
+													323 cell
+														324 text Manual
+													325 cell
+														326 image Delete step
+													327 cell
+														328 image Insert step
+												329 row
+													330 cell
+														331 text 11
+													332 cell
+														333 container
+															334 text Desplegar las completadas de  Home  mediante  See all  si la sección está oculta.
+													335 cell
+														336 container
+															337 text Las completadas de  Home  muestran  Prueba T11-06 - completada en Done Items  una sola vez, con el mismo texto y su checkbox marcado.
+													338 cell
+														339 text Manual
+													340 cell
+														341 image Delete step
+													342 cell
+														343 image Insert step
+												344 row
+													345 cell
+														346 text 12
+													347 cell
+														348 container
+															349 text Tomar una captura de las completadas de  Home .
+													350 cell
+														351 container
+															352 text La captura muestra la tarea completada en  Home .
+													353 cell
+														354 text Manual
+													355 cell
+														356 image Delete step
+													357 cell
+														358 image Insert step
+											359 button Create step
+											360 button Resequence Steps
+										361 container
+											362 text Status :
+											363 pop up button Draft
+												364 (selected) Draft
+											365 text Importance :
+											366 pop up button High
+												367 (selected) High
+											368 text Execution type :
+											369 pop up button Manual
+												370 (selected) Manual
+											371 checkbox
+											372 text Apply To All Steps
+											373 text Estimated exec. (min) :
+											374 text field (settable) Estimated exec. duration (min)
+											375 button Save
+										376 container
+											377 container Keywords   Create Keyword  Create & Link
+												378 link Keywords, Value: javascript:open_popup('lib/keywords/keywordsView.php?tproject_id=1&openByKWInc=1%27)
+												379 link Create Keyword, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=create&tproject_id=1&directAccess=1%27)
+												380 link Create & Link, Value: javascript:open_popup('lib/keywords/keywordsEdit.php?doAction=cfl&tproject_id=1&directAccess=1&tcversion_id=1096%27)
+											381 container None
+												382 text None
+										383 container
+											384 container Platforms:
+												385 link Platforms, Help: Platform Management, Value: 68.211.149.112/lib/platforms/platformsView.php?tproject_id=1
+												386 text :
+											387 container None
+												388 text None
+										389 table
+											390 row
+												391 column header
+													392 text Relations
+											393 row
+												394 cell
+													395 text New relation:  This test case version
+													396 pop up button is related to
+														397 (selected) is related to
+													398 text field (settable) (if you are linking to a test on same test project, you can write ONLY the ID)
+													399 button Add
+										400 container Attached files :
+											401 text Attached files :
+										402 container
+											403 text File
+											404 button File: No file chosen
+											405 text Title/name:
+											406 text field (settable)
+											407 button Upload file
+										408 image Max. size of the file is: 1048576 Bytes)
+										409 image Filename must verify this regexp:/^[a-zA-Z0-9_-]{1,20}\.[a-zA-Z0-9]{1,10}$/
+										410 image Allowed files:doc,xls,gif,png,jpg,xlsx,csv
+							411 button
+			412 pop up button Tab search
+			413 container
+				414 tab group
+					415 tab (selected, settable, boolean) TestLink 1.9.20 [DEV] - Memory usage - 182 MB, Value: on
+						416 button Close
+					417 tab (settable, boolean) Value: off, [PEB-74] T10 — Analizar, diseñar y registrar pruebas de perfil y recuperación de acceso - Jira - Memory usage - 620 MB
+						418 button Close
+			419 button New Tab
+			420 button Open Gemini in Chrome
+	421 close button
+	422 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	423 minimize button
+424 menu bar
+	425 Chrome
+	426 File
+	427 Edit
+	428 View
+	429 History
+	430 Bookmarks
+	431 Profiles
+	432 Tab
+	433 Window
+	434 Help
+
+The focused UI element is 63 HTML content TestLink, URL: 68.211.149.112/lib/testcases/listTestCases.php?feature=edit_tc

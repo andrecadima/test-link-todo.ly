@@ -480,4 +480,49 @@
       </step>
     </steps>
   </testcase>
+  <testcase name="T11-07. Subproyecto movido a raíz entre Study y Personal conserva ubicación y tarea">
+    <node_order>7</node_order>
+    <summary>&lt;p&gt;Validar que un subproyecto temporal arrastrado a la raíz entre Study y Personal aparece una sola vez en esa posición y conserva su nombre y tarea pendiente tras F5.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-75 / T11. Retorno de un subproyecto a raíz entre Study y Personal y ubicación tras F5 respaldados por el reporte manual; conservación de la tarea como criterio del equipo.&lt;/p&gt;&lt;p&gt;Postcondiciones: Proyecto temporal Prueba T11-07 - retorno en la raíz entre Study y Personal, con su tarea pendiente, conservado para la limpieza final del lote; proyectos y tareas iniciales sin cambios.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión iniciada en Todo.ly con una cuenta gratuita de prueba (cuenta A).&lt;/li&gt;&lt;li&gt;Lista inicial de &lt;strong&gt;Projects&lt;/strong&gt; de A consignada en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Subproyecto temporal &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; debajo de &lt;strong&gt;Home&lt;/strong&gt;, con la tarea pendiente &lt;strong&gt;Prueba T11-07 - dato del retorno&lt;/strong&gt;.&lt;/li&gt;&lt;li&gt;Tareas pendientes iniciales de &lt;strong&gt;Home&lt;/strong&gt; consignadas en el registro de ejecución.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Home&lt;/strong&gt;, &lt;strong&gt;Study&lt;/strong&gt; y &lt;strong&gt;Personal&lt;/strong&gt; como proyectos raíz de A, con &lt;strong&gt;Study&lt;/strong&gt; inmediatamente antes de &lt;strong&gt;Personal&lt;/strong&gt;; &lt;strong&gt;Home&lt;/strong&gt; desplegado en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <execution_type>1</execution_type>
+    <importance>3</importance>
+    <steps>
+      <step>
+        <step_number>1</step_number>
+        <actions>&lt;p&gt;Arrastrar el asa de puntos de &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; desde debajo de &lt;strong&gt;Home&lt;/strong&gt; y soltarla entre las entradas raíz &lt;strong&gt;Study&lt;/strong&gt; y &lt;strong&gt;Personal&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;&lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; aparece una sola vez en la raíz, entre &lt;strong&gt;Study&lt;/strong&gt; y &lt;strong&gt;Personal&lt;/strong&gt;, alineado con ellos y sin sangría bajo &lt;strong&gt;Home&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>2</step_number>
+        <actions>&lt;p&gt;Presionar &lt;strong&gt;F5&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La lista &lt;strong&gt;Projects&lt;/strong&gt; conserva &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; una sola vez en la raíz, entre &lt;strong&gt;Study&lt;/strong&gt; y &lt;strong&gt;Personal&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>3</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; y &lt;strong&gt;Prueba T11-07 - dato del retorno&lt;/strong&gt; una sola vez, con su checkbox sin marcar.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>4</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Home&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra &lt;strong&gt;Home&lt;/strong&gt; con sus tareas iniciales del registro; &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; permanece en la raíz del árbol y no como hijo de &lt;strong&gt;Home&lt;/strong&gt;.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>5</step_number>
+        <actions>&lt;p&gt;Hacer clic en &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; en &lt;strong&gt;Projects&lt;/strong&gt;.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El área principal muestra el título &lt;strong&gt;Prueba T11-07 - retorno&lt;/strong&gt; y &lt;strong&gt;Prueba T11-07 - dato del retorno&lt;/strong&gt; una sola vez, con su checkbox sin marcar.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+      <step>
+        <step_number>6</step_number>
+        <actions>&lt;p&gt;Tomar una captura de &lt;strong&gt;Projects&lt;/strong&gt; y del proyecto seleccionado.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;La captura identifica el proyecto raíz entre &lt;strong&gt;Study&lt;/strong&gt; y &lt;strong&gt;Personal&lt;/strong&gt; y su tarea pendiente conservada.&lt;/p&gt;</expectedresults>
+        <execution_type>1</execution_type>
+      </step>
+    </steps>
+  </testcase>
 </testcases>

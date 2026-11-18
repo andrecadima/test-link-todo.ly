@@ -1,0 +1,1 @@
+El selector de duplicados no quedó corroborado en el último envío de teclado de los seis casos. Ausencia previa T11=0; se crearon exactamente seis únicos, sin actualización de existentes ni repetición del envío. Se registran los hechos sin atribuir un fallo al producto.

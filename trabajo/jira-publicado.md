@@ -9,4 +9,5 @@ Comentario10226: https://alesalve.atlassian.net/browse/PEB-74?focusedCommentId=1
 Copia real actual: [T10/jira-publicado.html](T10/jira-publicado.html). Actualizado despuésdel feedbacktécnico: nuevecasos, diez tablas, cuatroimágenes. Comprobaciónvisual18/11.
 
 ## PEB-75 / T11
-Todavía sin publicación. No presentar borrador como comentario real.
+Comentario10228: https://alesalve.atlassian.net/browse/PEB-75?focusedCommentId=10228
+Copia real: [T11/jira-publicado.html](T11/jira-publicado.html). Siete casos TL-88–94; doce tablas, una imagen.

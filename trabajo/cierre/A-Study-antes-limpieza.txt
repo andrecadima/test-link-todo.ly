@@ -1,0 +1,170 @@
+Window: "Todo.ly", App: Google Chrome.
+0 standard window Todo.ly - Google Chrome (Incognito), URL: todo.ly/, Secondary Actions: Raise
+	1 container Todo.ly - Google Chrome (Incognito), URL: todo.ly/
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button View site information
+					9 text field (settable) Address and search bar, Value: todo.ly, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 container
+					12 pop up button vidIQ Vision for YouTube
+Has access to this site
+					13 pop up button Extensions
+				14 button Incognito
+				15 pop up button Chrome
+			16 toolbar Bookmarks
+				17 bookmark button Sample Tank MAX 4-0-9 WiN-MAC - AUDIOTOOLS
+				18 bookmark button Downloads
+				19 bookmark button Flameboy Tutorials
+				20 bookmark button Media Monopoly: Secure Checkout
+				21 bookmark button Twitch Inspector
+				22 bookmark button Account | Output | Virtual Software Instruments
+				23 bookmark button Account | Output | Virtual Software Instruments
+				24 pop up button Menu containing hidden bookmarks
+				25 bookmark folder button All Bookmarks
+				26 splitter Separator
+			27 container
+				28 scroll area
+					29 HTML content Todo.ly, URL: todo.ly/
+						30 container
+							31 container
+								32 container iPhone App |Upgrade to Pro |Settings | Logout Wednesday, November 18, 2026 | 5:16 PM Refresh  |  Print
+									33 container
+										34 link iPhone App, Value: itunes.apple.com/us/app/todo.ly/id645869046?mt=8
+										35 text |
+										36 link Upgrade to Pro, Value: todo.ly/Upgrade
+										37 text |
+										38 link Settings, Value: javascript:OpenSettingsDialog();
+										39 text |
+										40 link Logout, Value: javascript:WebForm_DoPostBackWithOptions(new%20WebForm_PostBackOptions(%22ctl00$HeaderTopControl1$LinkButtonLogout%22,%20%22%22,%20true,%20%22%22,%20%22%22,%20false,%20true))
+									41 container
+										42 link To get missing image descriptions, open the context menu., Value: todo.ly/
+										43 container Wednesday, November 18, 2026 | 5:16 PM Refresh  |  Print
+											44 text Wednesday, November 18, 2026 | 5:16 PM
+											45 container
+												46 text Refresh
+												47 Unlabeled image /refresh.png
+												48 text  |  Print
+												49 Unlabeled image /print2.png
+								50 container Filters Inbox Today Next Projects Work 5 Sub Project Home Study Options
+									51 container
+										52 container
+											53 container Filters Inbox Today Next Projects Work 5 Sub Project Home Study Options
+												54 text Filters
+												55 content list
+													56 container
+														57 container Inbox
+															58 text Inbox
+													59 container
+														60 container Today
+															61 text Today
+													62 container
+														63 container Next
+															64 text Next
+												65 text Projects
+												66 content list
+													67 container
+														68 container
+															69 Unlabeled image /grippy.png
+															70 container Work
+																71 text Work
+															72 container 5
+																73 text 5
+														74 content list
+															75 container
+																76 Unlabeled image /grippy.png
+																77 container Sub Project
+																	78 text Sub Project
+													79 container
+														80 Unlabeled image /grippy.png
+														81 container Home
+															82 text Home
+													83 container
+														84 Unlabeled image /grippy.png
+														85 container Study
+															86 text Study
+														87 container Options
+															88 image Options
+													89 container
+														90 Unlabeled image /grippy.png
+														91 container Personal
+															92 text Personal
+													93 container
+														94 Unlabeled image /grippy.png
+														95 container Shopping List
+															96 text Shopping List
+													97 container
+														98 Unlabeled image /grippy.png
+														99 container Prueba T11 - proyecto renombrado 1109
+															100 text Prueba T11 - proyecto renombrado 1109
+												101 container
+													102 container Add New Project
+														103 text Add New Project
+												104 content list
+													105 container
+														106 container Recycle Bin
+															107 text Recycle Bin
+														108 container 2
+															109 text 2
+											110 container Sort By: Order | Notes: Hidden Study Prueba T11 - mover completada 1811 Add 1 Done Items  |   See all  |  Delete all
+												111 container
+													112 container
+														113 text Sort By:
+														114 text Order
+														115 text | Notes:  Hidden
+													116 text Study
+													117 content list
+														118 container
+															119 Unlabeled image /grippy.png
+															120 checkbox
+															121 container Prueba T11 - mover completada 1811
+																122 text Prueba T11 - mover completada 1811
+													123 container
+														124 container
+															125 Unlabeled image /AddItemChecbox.png
+															126 text entry area (settable)
+														127 Unlabeled image /AddItemBoxMoreNew.png
+														128 container Add
+															129 button Add
+													130 container
+														131 link 1, Value: javascript:ShowDoneItems()
+														132 link Done Items  |  , Value: javascript:ShowDoneItems()
+														133 link See all, Value: javascript:ShowDoneItems()
+														134 link   |  Delete all, Value: javascript:DeleteDoneItems()
+								135 container © 2026 Todo.ly All rights reserved. A SixType Product. Email tasks Public API Blog Email us Terms Privacy Policy
+									136 container
+										137 text © 2026 Todo.ly All rights reserved. A
+										138 link SixType, Value: sixtype.com/
+										139 text  Product.
+										140 link Email tasks, Value: mailto:todo@todo.ly
+										141 link Public API, Value: todo.ly/ApiWiki/
+										142 link Blog, Value: todo.ly/Blog
+										143 link Email us, Value: mailto:mail@todo.ly
+										144 link Terms, Value: todo.ly/Terms
+										145 link Privacy Policy, Value: todo.ly/Privacy
+			146 pop up button Tab search
+			147 container
+				148 tab group
+					149 tab (selected, settable, boolean) Todo.ly - Memory usage - 50.8 MB, Value: on
+						150 button Close
+			151 button New Tab
+	152 close button
+	153 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	154 minimize button
+155 menu bar
+	156 Chrome
+	157 File
+	158 Edit
+	159 View
+	160 History
+	161 Bookmarks
+	162 Profiles
+	163 Tab
+	164 Window
+	165 Help
+
+The focused UI element is 29 HTML content Todo.ly, URL: todo.ly/

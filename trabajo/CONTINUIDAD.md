@@ -1,3 +1,29 @@
+# Punto vigente — tres tickets registrados y publicados
+
+T09:13casos171pasos TL72–84, comentario10227. T10:9casos79pasos TL66–71 y85–87, comentario10226 corregido UC/decisión yvisualcomprobado. T11:7casos77pasos TL88–94, comentario **10228** publicado yleídoMCP12tablas1imagen7IDs. 29casos/327pasos total. No repetircomparaciones ni reimportar. Nuevocasos07T11seis pasos21textos cotejados; revisión12APTO trascorregirR8. Archivosrealpublicadospor3ticketsyagregadojira-publicado.md.
+
+ManualT11cincoPNGcopiadosleídos: finalproyectoROOTentreStudyPersonal;4intermedioWork→SubProject,noHome;HomeanidadoF5solo reportado porusuario. DoneStudy noarrastrable. Pendiente inicial1811másluegootraetiquetacompletadaenpendientes;noatribuirbug. Noexplorarmás.
+
+Fase6ENPROCESO: AIncognitoHome marcadoresT09/T07 completados yDeleteallconfirmado→Home0Done ysinpendientes. Están enTrash. AStudy inventarioactualuna pendientePruebaT11-movercompletada1811 yunaDoneconmismonombre. Todavía NO retiradas. TemporalRoot1109vacíoentreStudyPersonalpendienteDelete. BHomeT09markerpendiente. Próximo: terminartrasladorecuperabletasks aTrash;compararSettingsbaselineyregistrarfinal;pedirunaconfirmaciónCUAal momentoparaEmptyTrashA/B yDeleteprojecttemporalvacío (posiblementenorecuperable), sin borrarcuentas.
+
+Exportaciónreal suite ypor3tickets todavía NOhecha. Despuésúltimoregistro93casos ensuite. Exportarlatestversions preferiblemente; siXMLcontienecredencialesheredadas, conservarrawprivadoignoradoconcopia cifrada,noexponer. AuditoríaClaude13o14final yreporte.
+
+**No force push:** usuario lo negó expresamente. Historialcontienecuatrofilesrawheredadosintroducidosporerroresanteriores. Árbolactualsinellos y8cifradoslocalpreservaoriginales. Hookprecommit/scripts/verificar_secretos_git.py bloqueaA/B yclavenumérica heredada. ShelloperacionesgitporPythoncheck=True, nuncamulticomandossinabortarfallo. Patrónignore /revision-testlink/respaldo-*.json añadido. No volverapedirforce. Informarlimitaciónhistorialencierre.
+
+---
+
+# Instrucción más reciente — 18/11, aceleración
+
+Usuario PROHÍBE force push por ahora. No ejecutar ni preguntar otra vez. No repetir verificaciones ni explorar más. Prioridad todoscasosTestLink/Jira yfase6. T10-04/05/06 yahechosTL85–87 yJira10226 actualizado; no reimportar. .gitignore patrón /revision-testlink/respaldo-*.json añadido.
+
+Usuario confirmó bloque manualT11 y dio cinco HEICescritorio4.59.34,5.00.15,5.01.05,5.04.51,5.05.28PM: copiados/convertidosPNG. Pendiente lectura para incorporararrastresyresolver07siubicaciónfinalclara; si no, pendiente yregistrarresto. SeisT11yaimportadosTL88–93,71pasos,187textos nativos comparados sin diferencias, capturaárbol/caso93 guardada. No reimportaresos6. FaltaJiraPEB75.
+
+Resultadosmanualreportados: pending1811Home→Study persisteF5yfueraHome; completada1811enStudyDoneItemsnoarrastrable; roottemporal1109→HomechildpersisteF5; retornoraízposiblepero ubicaciónfinalhayqueconfirmarencaptura. Datosquedanparalimpieza. Navegadorliberado.
+
+No consultasvisualesextra ni repetircomparacioneshechas. Soloestadosnecesariospararegistro/limpieza/exportación. Fase6completa después: cleanupA/B,Trashconconfirmaciónal momento,estadofinal,capturas,XMLreal3tickets,Claudeauditoría,informe,pushnormal. Últimoremitidoeb55cef;historialantiguocontienecredencialheredada;usuario NO autoriza reescribirlo. Árbolactualsinraw8archivos,cifrados,precommithook yscanner efectivos.
+
+---
+
 # Actualización prioritaria — 18/11, después del feedback de técnicas
 
 - Usuario dijo continuar. Navegador retomado; no se asumen resultados del bloque manual T11.

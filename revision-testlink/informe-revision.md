@@ -435,7 +435,7 @@ Estos casos se aplican con la parte dudosa en su redacción original. Queda pend
 - **TL-47** (T06): El paso de Set Due Date no fija la fecha a asignar («un vencimiento»); se conserva así y se pide anotarla. Si se quiere un dato fijo, lo debe definir el equipo.
 - **TL-49** (T06): La guía (§12) indica que el rechazo de adjuntos es criterio del equipo, no regla oficial; el resultado «puede ignorar la entrada o informar que no está admitida» se conserva tal cual.
 - **TL-65** (T08): No se conoce el texto de la confirmación de Empty Recycle Bin; se conserva «completar la confirmación si aparece».
-- **Ediciones concurrentes:** después del primer respaldo (15:32), el usuario `admin` de TestLink modificó TL-66 (2026-11-18 20:11:39) (hora del servidor). En T12 quitó «Requerimiento: PEB-76 / T12 —» del Summary y cambió «Iniciar sesión:» por «Credenciales Válidas:». Aplicar la propuesta sobrescribiría esos cambios; quedan sin aplicar hasta que decidas.
+- **Ediciones de la autora durante la revisión:** entre las 20:10 y las 20:33 (hora del servidor), el usuario `admin` editó T12 (TL-40, TL-2 a TL-14), TL-15, TL-16, TL-18, TL-19, TL-20 y TL-66: quitó el rótulo «Requerimiento: PEB-XX / TXX —» y cambió «Iniciar sesión:» por «Credenciales Válidas:». Los casos de T12 y T13 se reevaluaron sobre esa versión y se aplicaron en la segunda pasada conservando sus mejoras. TL-66 (T10) sigue bloqueado; su propuesta deberá reevaluarse sobre la versión actual antes de aplicarla.
 - **Renumeración T12–T14:** los títulos pasan de `TL-0NN:` a `T12-NN -`/`T13-NN -`/`T14-NN -`. El comentario de PEB-76 cita los nombres antiguos (TL-001…TL-039); la tabla de la sección 3 sirve de correspondencia.
 - **T12–T13 (general):** el campo de creación figura como **Add new task**, mientras que T06–T08 y la guía §11 usan **Add new Todo, type here…**. Puede ser que el texto cambie entre Inbox y un proyecto; se conserva el de cada caso.
 - **T06–T08 (general):** las precondiciones citan la cuenta de Camila con «la contraseña de pruebas indicada» (sin contraseña) y TL-41 la trae explícita. Se conservan como están; decisiones-vigentes §6–7 piden cuentas genéricas solo para T09–T11.
@@ -443,8 +443,23 @@ Estos casos se aplican con la parte dudosa en su redacción original. Queda pend
 
 ## 5. Aplicación
 
-Pendiente: se aplica después del OK del usuario (Fase 3).
+Fecha: 18/11/2026. Registro detallado en `aplicado.log`.
 
+| Resultado | Casos | Detalle |
+|---|---|---|
+| **Aplicados y verificados** | 64 | T06 (9): TL-41, TL-42, TL-43, TL-44, TL-45, TL-46, TL-47, TL-48, TL-49; T07 (6): TL-50, TL-51, TL-52, TL-53, TL-54, TL-55; T08 (10): TL-56, TL-57, TL-58, TL-59, TL-60, TL-61, TL-62, TL-63, TL-64, TL-65; T12 (14): TL-2, TL-3, TL-4, TL-5, TL-6, TL-7, TL-8, TL-9, TL-10, TL-11, TL-12, TL-13, TL-14, TL-40; T13 (13): TL-15, TL-16, TL-17, TL-18, TL-19, TL-20, TL-21, TL-22, TL-23, TL-24, TL-25, TL-26, TL-27; T14 (12): TL-28, TL-29, TL-30, TL-31, TL-32, TL-33, TL-34, TL-35, TL-36, TL-37, TL-38, TL-39. Releídos por la API al final: nombre, summary, preconditions y cada paso coinciden exactamente con lo escrito; importancia, tipo de ejecución, estado, versión y suite sin cambios. |
+| Primera pasada (16:23–16:33) | 45 | Piloto TL-50 y lote de T06, T07, T08 y parte de T13/T14. Se verificó `revertir.py --aplicar` con ida y vuelta en TL-50. |
+| Segunda pasada (17:09), reevaluados | 19 | T12 completo (TL-40, TL-2 a TL-14) y TL-15, TL-16, TL-18, TL-19, TL-20 de T13. Se evaluó la versión actual que había editado la autora: se conservaron literalmente «**Credenciales Válidas:** …» y su texto de requerimiento, anteponiendo el código (`Requerimiento: PEB-76 / T12. <texto de la autora>` y `PEB-77 / T13` en T13), por decisión del usuario. TL-20 había quedado mezclado en la primera pasada (la autora guardó 1 s después) y ahora está completo. |
+| Fallidos | 0 | Ningún error de la API ni diferencia en la verificación. |
+| Bloqueados (Codex sigue trabajando) | 9 | T10: TL-66 a TL-71 (con propuesta preparada) y TL-85 a TL-87 (sin revisar). Verificado que no se modificaron. |
+| Sin revisar | 13 | T09: TL-72 a TL-84. Verificado que no se modificaron. T11: sin casos en TestLink todavía. |
+
+**Pendientes:**
+
+1. T09, T10 y T11: revisar y aplicar cuando Codex termine (respaldo nuevo antes de escribir).
+2. Casos DUDA (sección 4): la parte dudosa sigue con su redacción original, pendiente de la autora del caso. Se mantienen también las dudas de T12-10, T12-11, T12-12 y T12-14 (sección 4b).
+
+**Respaldos:** `respaldo-20261118-1532.json` (estado original, antes de toda edición), `respaldo-20261118-1620.json` (antes de la primera pasada), `respaldo-20261118-1653.json` (antes de la segunda pasada; incluye las ediciones de la autora en T12/T13).
 ## 6. Cómo revertir
 
 El respaldo `respaldo-20261118-1653.json` contiene nombre, summary, preconditions y pasos de los 86 casos antes de cualquier cambio.
@@ -459,6 +474,6 @@ python3 revertir.py --respaldo ../respaldo-20261118-1653.json --ids TL-41,TL-42 
 python3 revertir.py --respaldo ../respaldo-20261118-1653.json --todos --aplicar
 ```
 
-Para deshacer solo esta pasada, usar `--ids` con los casos de la sección 5 marcados como aplicados. **No** usar `--todos`: también revertiría las ediciones que `admin` hizo después del respaldo (T12, TL-15, TL-16, TL-18, TL-19, TL-20, TL-66). El respaldo `respaldo-20261118-1532.json` conserva el estado anterior a esas ediciones.
+Elegir el respaldo según lo que se quiera recuperar: `respaldo-20261118-1653.json` devuelve T12 y TL-15/16/18/19/20 a la versión editada por la autora (con sus dos mejoras) y deshace también la primera pasada en los 45 casos; `respaldo-20261118-1620.json` deshace solo la primera pasada; `respaldo-20261118-1532.json` es el estado original. Usar siempre `--ids` con los casos que se quieren restaurar: con `--todos` también se tocarían T09 y T10, que Codex está editando.
 
 La clave de la API se lee de `TESTLINK_DEVKEY`. Con `--aplicar`, el script vuelve a leer cada caso y confirma que coincide con el respaldo.

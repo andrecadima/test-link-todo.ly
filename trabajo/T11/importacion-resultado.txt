@@ -1,0 +1,99 @@
+Window: "TestLink", App: Google Chrome.
+0 standard window TestLink - Google Chrome - Andre, URL: 68.211.149.112/lib/testcases/tcImport.php, Secondary Actions: Raise
+	1 container TestLink - Google Chrome - Andre, URL: 68.211.149.112/lib/testcases/tcImport.php
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button Not Secure
+					9 text field (settable) Address and search bar, Value: 68.211.149.112/lib/testcases/tcImport.php, Placeholder: Ask Google or type a URL
+					10 button Zoom: 75%
+					11 button Bookmark this tab
+				12 container
+					13 pop up button iCloud Bookmarks
+					14 pop up button Google Translate
+
+Left-click to translate!
+Right-click for options.
+Has access to this site
+					15 pop up button Video Downloader
+Has access to this site
+					16 pop up button vidIQ Vision for YouTube
+Has access to this site
+					17 pop up button Disconnected
+Has access to this site
+					18 pop up button Chile
+Has access to this site
+					19 pop up button Wappalyzer
+Has access to this site
+					20 pop up button Open Claude
+Has access to this site
+					21 pop up button Extensions
+				22 button Paused
+				23 pop up button Chrome
+			24 toolbar Bookmarks
+				25 toolbar Saved Tab Groups
+					26 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					27 saved tab group button  🔎 TDDLab smoke QA group - Closed
+					28 button Tab groups
+				29 splitter Separator
+				30 bookmark button Sample Tank MAX 4-0-9 WiN-MAC - AUDIOTOOLS
+				31 bookmark button Downloads
+				32 bookmark button Flameboy Tutorials
+				33 bookmark button Media Monopoly: Secure Checkout
+				34 pop up button Menu containing hidden bookmarks
+				35 bookmark folder button All Bookmarks
+				36 splitter Separator
+			37 container
+				38 scroll area
+					39 HTML content TestLink, URL: 68.211.149.112/lib/testcases/tcImport.php
+						40 heading Test Case : Todo.ly tests
+							41 text Test Case : Todo.ly tests
+						42 heading Import Test Cases
+							43 text Import Test Cases
+						44 text Test Case :
+						45 text T11-01. Add New Project con nombre nuevo crea un proyecto raíz vacío que persiste tras F5
+						46 text  : ok
+						47 text Test Case :
+						48 text T11-02. Edit con Save en un proyecto aplica el nombre nuevo y lo conserva tras F5
+						49 text  : ok
+						50 text Test Case :
+						51 text T11-03. Cancel Editing en Edit de proyecto descarta el nombre nuevo y conserva el original
+						52 text  : ok
+						53 text Test Case :
+						54 text T11-04. Arrastrar un proyecto temporal sobre Home lo anida como subproyecto con su tarea
+						55 text  : ok
+						56 text Test Case :
+						57 text T11-05. Arrastrar una pendiente Home–Study conserva texto, estado y ubicación tras F5
+						58 text  : ok
+						59 text Test Case :
+						60 text T11-06. Intento de arrastrar una completada desde Done Items conserva proyecto y estado
+						61 text  : ok
+						62 button
+			63 pop up button Tab search
+			64 container
+				65 tab group
+					66 tab (selected, settable, boolean) TestLink - Memory usage - 225 MB, Value: on
+						67 button Close
+					68 tab (settable, boolean) Value: off, [PEB-74] T10 — Analizar, diseñar y registrar pruebas de perfil y recuperación de acceso - Jira - Memory usage - 620 MB
+						69 button Close
+			70 button New Tab
+			71 button Open Gemini in Chrome
+	72 close button
+	73 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	74 minimize button
+75 menu bar
+	76 Chrome
+	77 File
+	78 Edit
+	79 View
+	80 History
+	81 Bookmarks
+	82 Profiles
+	83 Tab
+	84 Window
+	85 Help
+
+The focused UI element is 39 HTML content TestLink, URL: 68.211.149.112/lib/testcases/tcImport.php

@@ -1,5 +1,7 @@
-# Retirada preparada del historial
+# Historial: reescritura no autorizada
 
-Se preparó la rama local `resguardo-sin-credenciales`, reconstruyendo únicamente los commits posteriores a bd0329e y omitiendo los dos respaldos de texto que contenían una credencial heredada. El árbol final es idéntico al de master actual; no se borraron ni modificaron los originales locales y sus copias cifradas siguen disponibles.
+El usuario denegó expresamente el force push el18/11. No se ejecuta ni se vuelve a pedir. Las ramas remotas se respaldan mediante push normal.
 
-Pendiente autorización para actualizar master remoto con `--force-with-lease`. No se ha ejecutado ese push. La corrección no garantiza eliminación de cachés/referencias antiguas del proveedor; si la credencial heredada sigue vigente, su propietario debe cambiarla. Codex no la utilizó ni accede a esa cuenta.
+El árbol vigente excluye los ocho archivos con credencial heredada, mantiene originales locales intactos y copias cifradas. Los commits anteriores todavía contienen cuatro archivos que se incorporaron antes de corregir el control: respaldos1618/1620/1653 y scripts/prop_reevaluados.py. Retirarlos del árbol no los retira del historial.
+
+Existe una propuesta local anterior de historial saneado, pero está desactualizada y no se usa. No se garantiza borrado de cachés/referencias del proveedor. Si la credencial heredada sigue vigente, su propietario debe cambiarla. Codex no la usó ni accede a esa cuenta.

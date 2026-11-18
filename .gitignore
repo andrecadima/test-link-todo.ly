@@ -11,6 +11,7 @@ desktop.ini
 tmp/
 
 # Artefactos intactos de la revisión paralela con credenciales preexistentes
+/revision-testlink/respaldo-*.json
 /revision-testlink/propuestas.json
 /revision-testlink/respaldo-20261118-1532.json
 /revision-testlink/scripts/generar.py

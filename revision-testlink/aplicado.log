@@ -57,3 +57,25 @@
 2026-11-18T16:33:52 TL-39 v1 OK (22 pasos)
 2026-11-18T16:33:52 FIN {'OK': 45, 'ERROR': 0, 'OMITIDO': 4}
 2026-11-18T16:34:50 TL-20 v1 REVERTIDO PARCIAL: admin guardó name/summary/preconditions 1 s después de la escritura; se retiraron los 14 pasos nativos añadidos para dejar su versión intacta (pasos ahora: 0)
+2026-11-18T17:09:04 INICIO ids=TL-40,TL-2,TL-3,TL-4,TL-5,TL-6,TL-7,TL-8,TL-9,TL-10,TL-11,TL-12,TL-13,TL-14,TL-15,TL-16,TL-18,TL-19,TL-20 respaldo=respaldo-20261118-1653.json
+2026-11-18T17:09:05 TL-40 v1 OK (13 pasos)
+2026-11-18T17:09:06 TL-2 v1 OK (11 pasos)
+2026-11-18T17:09:07 TL-3 v1 OK (11 pasos)
+2026-11-18T17:09:08 TL-4 v1 OK (11 pasos)
+2026-11-18T17:09:09 TL-5 v1 OK (14 pasos)
+2026-11-18T17:09:10 TL-6 v1 OK (14 pasos)
+2026-11-18T17:09:11 TL-7 v1 OK (11 pasos)
+2026-11-18T17:09:12 TL-8 v1 OK (17 pasos)
+2026-11-18T17:09:13 TL-9 v1 OK (15 pasos)
+2026-11-18T17:09:14 TL-10 v1 OK (11 pasos)
+2026-11-18T17:09:14 TL-11 v1 OK (12 pasos)
+2026-11-18T17:09:15 TL-12 v1 OK (15 pasos)
+2026-11-18T17:09:16 TL-13 v1 OK (10 pasos)
+2026-11-18T17:09:17 TL-14 v1 OK (16 pasos)
+2026-11-18T17:09:18 TL-15 v1 OK (8 pasos)
+2026-11-18T17:09:19 TL-16 v1 OK (8 pasos)
+2026-11-18T17:09:20 TL-18 v1 OK (10 pasos)
+2026-11-18T17:09:21 TL-19 v1 OK (10 pasos)
+2026-11-18T17:09:22 TL-20 v1 OK (14 pasos)
+2026-11-18T17:09:22 FIN {'OK': 19, 'ERROR': 0, 'OMITIDO': 0}
+2026-11-18T17:10:16 VERIFICACIÓN releídos por API: 19 reevaluados y 45 previos; diferencias: ninguna; T09/T10 sin cambios: True

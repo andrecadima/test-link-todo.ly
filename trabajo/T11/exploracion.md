@@ -45,3 +45,21 @@ La recarga posterior dejó la ventana sin contenido HTML y con pantalla gris. Re
 Bloque manual solicitado: crear `Prueba T11 - mover pendiente 1811` en Home y moverla a Study, recargar/contrastar origen-destino; crear `Prueba T11 - mover completada 1811` en Study, completar y comprobar intento de arrastre desde Done Items hacia Home sin papelera; anidar proyecto temporal renombrado bajo Home y devolverlo a raíz entre Study y Personal, con recarga y capturas en cada transición. No se presenta ese bloque como observado hasta recibir respuesta y contrastarla.
 
 Aclaración de fuente: la pantalla gris tras recarga es una limitación de la observación con causa sin confirmar; no se ha diagnosticado si procede de herramienta, navegador, red o aplicación. No acredita un fallo de persistencia ni una restricción. El destino pedido para anidación manual es Home, no Study; la respuesta09 contiene un error editorial al respecto y no se usa como evidencia.
+
+
+## Bloque manual confirmado — 18/11, 16:59–17:06, cuenta A
+
+El usuario confirmó su finalización y liberó el navegador. Se copiaron a evidencias cinco capturas mediante conversión sips y se leyeron visualmente, sin repetir exploración.
+
+| Fuente | Contenido leído / alcance | Clasificación |
+|---|---|---|
+| manual-1-45934.png | Home conserva marcador T09 y Prueba T07-01 - completar; aviso exacto Info. Item has been moved to project: Study. Study indica una pendiente. | Comportamiento observado en captura del usuario |
+| manual-2-50015.png | Study muestra Prueba T11 - mover pendiente 1811 pendiente. Usuario confirma persistencia después de F5 y ausencia en Home. | Captura + reporte manual del usuario |
+| manual-3-50105.png | Study muestra la pendiente anterior y una completada independiente Prueba T11 - mover completada 1811, marcada y tachada; 1 Done Items. Usuario reporta intento de arrastre a Home sin traslado. | Captura + reporte manual; restricción desde Done Items, sin afirmar inexistencia de otros mecanismos |
+| Reporte del usuario | El proyecto temporal se anidó bajo Home y persistió tras F5. | Comportamiento observado mediante reporte manual; esa ubicación concreta no se muestra en la captura4 |
+| manual-4-50451.png | Jerarquía intermedia visible Work → Sub Project → proyecto temporal. No es Home. Acredita otra anidación del mismo temporal, sin atribuir una profundidad máxima. | Comportamiento observado en captura |
+| manual-5-50528.png | El proyecto temporal está en la raíz, entre Study y Personal, con la misma alineación que ambos y fuera de Work/Sub Project. Usuario confirma retorno y recarga del bloque. El menú superpuesto con opciones de importación pertenece a TestLink/Chrome, no a Todo.ly, y no se usa como control de Todo.ly. | Captura + reporte manual; retorno a raíz y posición confirmados |
+
+La captura4/5 muestra además una pendiente con el texto de la completada, junto a otra copia completada; no se atribuye esa edición/preparación manual a un defecto ni a la operación de movimiento. El estado actual se inventaría únicamente para la limpieza. No se repiten arrastres ni se añaden exploraciones.
+
+Datos para retirar: marcador T09 en Home de A; Prueba T07-01 - completar visible y temporal de la práctica; tarea pendiente y completada T11 en Study según el estado actual; proyecto temporal raíz entre Study y Personal. B conserva el marcador T09. No borrar tutoriales ni proyectos predeterminados.
