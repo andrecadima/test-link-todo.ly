@@ -1,3 +1,17 @@
+# Último pedido — relevo y cierre mínimo
+
+Andre confirmó18/11 borrar proyecto temporal vacío de A y vaciar ambas papeleras, soloA/B. Solicita comparaciónbaseline y UNA captura final porcuenta. Relevo máximo40líneas en trabajo/RELEVO-CLAUDE.md. Claude13prepara scriptAPI+informe SIN ejecutar exportación; requiere aviso de revisiónfinalizada. Codex solo navegador para limpieza.
+
+# Prioridad vigente — cierre mínimo, 18/11
+
+T09/T10/T11 completos: 29 casos creados y tres comentarios Jira. Respaldo confirmado: 0eba354 en origin/master. No volver a comparar ni corregir fichas: otro Claude revisa por API y TestLink es la versión final.
+
+**NO EXPORTAR XML hasta aviso explícito de Andre de que Claude terminó.** Después una sola exportación real de suite completa a testlink-xml/todo-ly-tests.xml y scripts/extraer_xml_por_ticket.py para T09/T10/T11. Las diferencias de redacción local son esperadas; citar revision-testlink/informe-revision.md en el informe. No consulta visual10227 ni capturas adicionales. No force push.
+
+Limpieza: Home A ya vacío; Study A sus dos datos temporales trasladados a papelera, vista0Done/sinpendientes confirmada. Proyecto temporal vacío todavía presente. B marcadorHome todavía pendiente. Se pidió UNA confirmación agrupada para borrar proyecto temporal y vaciar ambas papeleras; esperar respuesta antes de acciones irreversibles. Settings final por comparar. Informe breve y commit/push normal al cierre; si falta aviso exportación, checkpoint y siguiente paso exacto.
+
+---
+
 # Punto vigente — tres tickets registrados y publicados
 
 T09:13casos171pasos TL72–84, comentario10227. T10:9casos79pasos TL66–71 y85–87, comentario10226 corregido UC/decisión yvisualcomprobado. T11:7casos77pasos TL88–94, comentario **10228** publicado yleídoMCP12tablas1imagen7IDs. 29casos/327pasos total. No repetircomparaciones ni reimportar. Nuevocasos07T11seis pasos21textos cotejados; revisión12APTO trascorregirR8. Archivosrealpublicadospor3ticketsyagregadojira-publicado.md.
