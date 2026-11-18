@@ -6,12 +6,12 @@
 5. Otro Claude revisa TestLink por API; su versión será final. Esperar aviso explícito de Andre antes de exportar.
 6. Codex está limpiando Todo.ly. Si no continúa, Andre realiza los pasos7–11 manualmente, solo en A/B.
 7. A: Home ya vacío; dos marcadores T09/T07 enviados a papelera. Study ya vacío; dos tareas temporales T11 enviadas a papelera.
-8. A: borrar el proyecto vacío Prueba T11 - proyecto renombrado 1109. No borrar Work/Sub Project/Home/Study/Personal/Shopping List.
-9. B: borrar de Home Prueba T09-aislamiento-B-1941; comprobar que no quedan datos Prueba.
+8. A COMPLETADA: proyecto vacío eliminado y papelera vaciada; captura cierre/A-estado-final.png y AX cierre/A-final-AX.txt.
+9. B PENDIENTE: seleccionar Home (herramienta no lo logró tras3intentos; se pidió ayuda), borrar Prueba T09-aislamiento-B-1941 y vaciar Recycle Bin.
 10. Vaciar Recycle Bin en A y B. Andre confirmó expresamente estas tres acciones en el chat18/11. Nunca usar Camila ni borrar cuentas.
 11. Comparar Profile/Default Settings con trabajo/estado-cuentas-inicial.md: nombresA Andre Cadima/B Andre Cadima4, emailoriginal privado, LaPazUTC04, Work/Sunday/Small/None, casillas sí/no/sí; Order/Hidden y cinco tutorialesWork conservados.
 12. Contraseña originalA ya restaurada/verificada; B emailoriginal conservado. No repetir Login ni cambios de credenciales.
-13. Captura final UNA por cuenta, según último pedido de Andre; escribir trabajo/estado-cuentas-final.md con límites reales.
+13. estado-cuentas-final.md registra Acompleta/Bpendiente. Captura finalA guardada; faltaB. Defaults desplegables coinciden; AX no expone marcas de casillas.
 14. Claude puede preparar solo con archivos el script API de exportación/extracción y borrador de informe. No navegador/Jira/git/.secrets ni lectura de respaldos con credenciales.
 15. El script recibe API key por variable privada de entorno; jamás incrustarla/imprimirla. Codex/Andre la suministra fuera de git al ejecutar.
 16. NO EJECUTAR exportación hasta aviso de Andre. Luego exportar suiteid3, proyectoid1, últimas versiones, a testlink-xml/todo-ly-tests.xml.

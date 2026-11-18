@@ -60,7 +60,11 @@ def main():
             live = escritura.read_case(ext, p["version"])
             if escritura.compare(live, snapshot(resp[ext])):
                 log(f"{ext} OMITIDO cambió en TestLink desde {os.path.basename(resp_path)}"); res["OMITIDO"] += 1; continue
-            escritura.write_case(ext, p["version"], p["name"], p["summary"], p["preconditions"], p["steps"])
+            if p.get("solo_nombre"):
+                import tl
+                escritura._check(tl.call("tl.updateTestCase", testcaseexternalid=ext, version=int(p["version"]), testcasename=p["name"]), "updateTestCase")
+            else:
+                escritura.write_case(ext, p["version"], p["name"], p["summary"], p["preconditions"], p["steps"])
             after = escritura.read_case(ext, p["version"])
             d = escritura.compare(after, {"name": p["name"], "summary": p["summary"], "preconditions": p["preconditions"],
                                           "steps": p["steps"], "importance": live["importance"],
@@ -68,7 +72,7 @@ def main():
             if d:
                 log(f"{ext} v{p['version']} ERROR verificación: {', '.join(d)}"); res["ERROR"] += 1
             else:
-                log(f"{ext} v{p['version']} OK ({len(p['steps'])} pasos)"); res["OK"] += 1
+                log(f"{ext} v{p['version']} OK ({'solo título' if p.get('solo_nombre') else str(len(p['steps'])) + ' pasos'})"); res["OK"] += 1
         except Exception as e:
             log(f"{ext} v{p.get('version')} ERROR {type(e).__name__}: {str(e)[:200]}"); res["ERROR"] += 1
     log(f"FIN {res}")

@@ -1,3 +1,9 @@
+# Cierre mínimo — checkpoint vigente
+
+A limpiada, temporal eliminado, Trashvacía confirmado AX+únicacaptura. B Profileemail/nombre/zona y Defaults Work/Sunday/Small/None coinciden; falta marcadorHome+Trash. Tres intentos Homefallidos: se pidió Andre seleccionarHome; esperar. Confirmaciónirreversibles A/B YA recibida. No pedirotra. CasillasnolegiblesAX; registrar límite sin inventar. trabajo/estado-cuentas-final.md parcial y RELEVO actualizados.
+
+Claude13 terminóscriptexportAPI y borradorinforme; sintaxisASTválida; NO ejecutado ni red. Esperar avisoexpreso revisiónClaudeAPIterminada antesexportar, TestLinkfinalserefleja sinrevertir. Leer respuesta13. Próximo: HomeBseleccionado→retirarmarcador→EmptyTrash→capturaB; exportaciónsoloaviso, extracción, completarinforme, commit/push.
+
 # Último pedido — relevo y cierre mínimo
 
 Andre confirmó18/11 borrar proyecto temporal vacío de A y vaciar ambas papeleras, soloA/B. Solicita comparaciónbaseline y UNA captura final porcuenta. Relevo máximo40líneas en trabajo/RELEVO-CLAUDE.md. Claude13prepara scriptAPI+informe SIN ejecutar exportación; requiere aviso de revisiónfinalizada. Codex solo navegador para limpieza.

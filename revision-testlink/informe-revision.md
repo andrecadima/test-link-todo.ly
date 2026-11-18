@@ -1,6 +1,6 @@
 # Informe de revisión de casos de TestLink — Todo.ly
 
-Proyecto **TL:Todo.ly**, suite **Todo.ly tests**. Respaldo usado: `respaldo-20261118-1653.json` (86 casos, última versión de cada uno, con pasos).
+Proyecto **TL:Todo.ly**, suite **Todo.ly tests**. Respaldo usado: `respaldo-20261118-1724.json` (93 casos, última versión de cada uno, con pasos).
 
 Regla aplicada: se cambia cómo está escrito cada caso, nunca qué prueba. No se tocan IDs, importancia, tipo de ejecución, estado ni suite.
 
@@ -11,13 +11,13 @@ Regla aplicada: se cambia cómo está escrito cada caso, nunca qué prueba. No s
 | T06 | PEB-70 | 9 | 0 | 8 | 1 | 0 |  |
 | T07 | PEB-71 | 6 | 0 | 6 | 0 | 0 |  |
 | T08 | PEB-72 | 10 | 0 | 10 | 0 | 0 |  |
-| T09 | PEB-73 | 13 | 0 | 0 | 0 | 13 | Codex los está registrando; se revisarán cuando termine. |
-| T10 | PEB-74 | 9 | 0 | 6 | 0 | 3 | Propuestas preparadas, **bloqueadas**: Codex sigue registrando T10-04 a T10-06. |
-| T11 | PEB-75 | 0 | 0 | 0 | 0 | 0 | Codex los está registrando; se revisarán cuando termine. |
+| T09 | PEB-73 | 13 | 0 | 13 | 0 | 0 | Cumplían la rúbrica; solo se ajustó el prefijo del título. |
+| T10 | PEB-74 | 9 | 0 | 9 | 0 | 0 | T10-04 a T10-06: solo prefijo del título. T10-01 a T10-03 y T10-08 a T10-10: descripción, negritas, pasos y título. |
+| T11 | PEB-75 | 7 | 0 | 7 | 0 | 0 | Cumplían la rúbrica; solo se ajustó el prefijo del título. |
 | T12 | PEB-76 | 14 | 0 | 14 | 0 | 0 |  |
 | T13 | PEB-77 | 13 | 0 | 12 | 1 | 0 |  |
 | T14 | PEB-78 | 12 | 0 | 5 | 7 | 0 |  |
-| **Total** | | **86** | **0** | **61** | **9** | **16** | |
+| **Total** | | **93** | **0** | **84** | **9** | **0** | |
 
 Clasificación:
 
@@ -35,7 +35,7 @@ Clasificación:
 
 ## 2. Tabla de casos
 
-Códigos de problema: **T** Título genérico o sin el resultado esperado; **PF** Título sin prefijo de ticket; **PV** Precondiciones con verbos de acción; **PS** Pasos escritos dentro del Summary; Steps nativos vacíos; **RS** Resultados esperados en una lista aparte, sin correspondencia paso a paso; **VQ** Descripción que no empieza con «Validar que…»; **RQ** Falta el requerimiento PEB-XX / TXX; **PC** Postcondiciones ausentes o incompletas; **NB** Controles y datos sin negrita; **MA** Varias acciones en un mismo paso; **DA** Datos o estado inicial no especificados; **RV** Resultado esperado vago o condicional.
+Códigos de problema: **T** Título genérico o sin el resultado esperado; **PF** Título sin prefijo de ticket; **PV** Precondiciones con verbos de acción; **PS** Pasos escritos dentro del Summary; Steps nativos vacíos; **RS** Resultados esperados en una lista aparte, sin correspondencia paso a paso; **VQ** Descripción que no empieza con «Validar que…»; **RQ** Falta el requerimiento PEB-XX / TXX; **PC** Postcondiciones ausentes o incompletas; **NB** Controles y datos sin negrita; **MA** Varias acciones en un mismo paso; **DA** Datos o estado inicial no especificados; **RV** Resultado esperado vago o condicional; **TF** Prefijo de título fuera del formato «TXX-NN - ».
 
 | ID | Ticket | Clasif. | Título antes | Título después | Problemas | Cambios |
 |---|---|---|---|---|---|---|
@@ -103,12 +103,35 @@ Códigos de problema: **T** Título genérico o sin el resultado esperado; **PF*
 | TL-63 | T08 | EDITAR | Cancelar la eliminación de un subproyecto con tareas | T08-08 - Cancelar la eliminación de un subproyecto conserva el subproyecto y sus tareas | PF, PV, PS, VQ, RQ, NB, T, MA | Prefijo de ticket añadido; Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Descripción en una oración «Validar que…»; Requerimiento PEB-XX / TXX añadido; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos |
 | TL-64 | T08 | EDITAR | Confirmar la eliminación de un subproyecto y recuperar una tarea | T08-09 - Eliminar un subproyecto envía sus tareas a Recycle Bin y una se puede recuperar | PF, PV, PS, VQ, RQ, NB, T, MA, DA | Prefijo de ticket añadido; Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Descripción en una oración «Validar que…»; Requerimiento PEB-XX / TXX añadido; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos; Estado inicial concreto en precondiciones; Precondición «Proyecto Work existente» añadida: el caso coloca el subproyecto dentro de Work |
 | TL-65 | T08 | EDITAR | Vaciar la papelera sin afectar a tareas de los proyectos | T08-10 - Empty Recycle Bin vacía la papelera sin afectar a las tareas de Home | PF, PV, PS, VQ, RQ, NB, T, MA, DA | Prefijo de ticket añadido; Precondiciones reescritas como estados, una por línea; Pasos migrados a Steps nativos; Descripción en una oración «Validar que…»; Requerimiento PEB-XX / TXX añadido; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos; Estado inicial concreto en precondiciones; Precondición de proyecto sin pendientes ni completadas añadida porque el caso espera cantidades exactas (guía §10); Precondición «Recycle Bin solo con contenido desechable» tomada de la guía §14.6 |
-| TL-66 | T10 | EDITAR (bloqueado) | T10-01. Cancelar la modificación del nombre conserva el perfil | T10-01 - Cancelar la modificación del nombre conserva el perfil | VQ, NB, MA | Descripción en una oración «Validar que…»; Controles y datos en negrita; Acciones separadas en pasos |
-| TL-67 | T10 | EDITAR (bloqueado) | T10-02. Guardar el nombre y conservarlo tras recarga y nueva sesión | T10-02 - Guardar un nombre nuevo con Ok lo conserva tras recarga y nueva sesión | VQ, NB, T, MA | Descripción en una oración «Validar que…»; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos |
-| TL-68 | T10 | EDITAR (bloqueado) | T10-03. Intentar cambiar la contraseña sin indicar la contraseña actual | T10-03 - Old Password vacío al cambiar la contraseña muestra Invalid Password y no la cambia | VQ, NB, T, MA | Descripción en una oración «Validar que…»; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos |
-| TL-69 | T10 | EDITAR (bloqueado) | T10-08. Recuperar el acceso de una cuenta registrada mediante su buzón | T10-08 - Recuperar el acceso por correo permite entrar con la nueva contraseña | VQ, NB, T | Descripción en una oración «Validar que…»; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Descripción técnica previa («Recorrer solicitud, correo, formulario y Login posterior. Las condiciones de seguridad…») resumida en la oración «Validar que…» |
-| TL-70 | T10 | EDITAR (bloqueado) | T10-09. Solicitar recuperación con un correo no registrado | T10-09 - Pedir Reset your Password con un correo no registrado muestra un error | VQ, NB, T | Descripción en una oración «Validar que…»; Controles y datos en negrita; Título con funcionalidad, condición y resultado |
-| TL-71 | T10 | EDITAR (bloqueado) | T10-10. Comprobar HTTPS en el enlace de recuperación recibido | T10-10 - El enlace de recuperación recibido por correo usa HTTPS | VQ, NB, T | Descripción en una oración «Validar que…»; Controles y datos en negrita; Título con funcionalidad, condición y resultado |
+| TL-66 | T10 | EDITAR | T10-01. Cancelar la modificación del nombre conserva el perfil | T10-01 - Cancelar la modificación del nombre conserva el perfil | VQ, NB, MA, RQ, TF | Descripción en una oración «Validar que…»; Controles y datos en negrita; Acciones separadas en pasos; Requerimiento PEB-XX / TXX añadido; Prefijo de título al formato «TXX-NN - »; Se conservan Preconditions, «Importancia», requerimiento y «Postcondiciones» tal como están; La autora quitó el rótulo del requerimiento: se antepone «Requerimiento: PEB-74 / T10.» a su texto (misma decisión que en T12/T13) |
+| TL-67 | T10 | EDITAR | T10-02. Guardar el nombre y conservarlo tras recarga y nueva sesión | T10-02 - Guardar un nombre nuevo con Ok lo conserva tras recarga y nueva sesión | VQ, NB, T, MA, TF | Descripción en una oración «Validar que…»; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos; Prefijo de título al formato «TXX-NN - »; Se conservan Preconditions, «Importancia», requerimiento y «Postcondiciones» tal como están |
+| TL-68 | T10 | EDITAR | T10-03. Intentar cambiar la contraseña sin indicar la contraseña actual | T10-03 - Old Password vacío muestra Invalid Password y conserva la contraseña vigente | VQ, NB, T, MA, TF | Descripción en una oración «Validar que…»; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Acciones separadas en pasos; Prefijo de título al formato «TXX-NN - »; Se conservan Preconditions, «Importancia», requerimiento y «Postcondiciones» tal como están |
+| TL-69 | T10 | EDITAR | T10-08. Recuperar el acceso de una cuenta registrada mediante su buzón | T10-08 - Recuperar el acceso por correo permite entrar con la nueva contraseña | VQ, NB, T, TF | Descripción en una oración «Validar que…»; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Prefijo de título al formato «TXX-NN - »; Se conservan Preconditions, «Importancia», requerimiento y «Postcondiciones» tal como están |
+| TL-70 | T10 | EDITAR | T10-09. Solicitar recuperación con un correo no registrado | T10-09 - Pedir Reset your Password con un correo no registrado muestra un error | VQ, NB, T, TF | Descripción en una oración «Validar que…»; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Prefijo de título al formato «TXX-NN - »; Se conservan Preconditions, «Importancia», requerimiento y «Postcondiciones» tal como están |
+| TL-71 | T10 | EDITAR | T10-10. Comprobar HTTPS en el enlace de recuperación recibido | T10-10 - El enlace de recuperación recibido por correo usa HTTPS | VQ, NB, T, TF | Descripción en una oración «Validar que…»; Controles y datos en negrita; Título con funcionalidad, condición y resultado; Prefijo de título al formato «TXX-NN - »; Se conservan Preconditions, «Importancia», requerimiento y «Postcondiciones» tal como están |
+| TL-72 | T09 | EDITAR | T09-01. Signup con campos vacíos y términos sin aceptar rechaza el envío | T09-01 - Signup con campos vacíos y términos sin aceptar rechaza el envío | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-73 | T09 | EDITAR | T09-02. Signup con el correo de una cuenta existente muestra error de duplicado | T09-02 - Signup con el correo de una cuenta existente muestra error de duplicado | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-74 | T09 | EDITAR | T09-03. Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada | T09-03 - Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-75 | T09 | EDITAR | T09-04. Login con credenciales vigentes de A abre la sesión de la cuenta A | T09-04 - Login con credenciales vigentes de A abre la sesión de la cuenta A | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-76 | T09 | EDITAR | T09-05. Login con Email y Password vacíos no concede acceso | T09-05 - Login con Email y Password vacíos no concede acceso | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-77 | T09 | EDITAR | T09-06. Login con Email vacío y Password informado muestra error y no da acceso | T09-06 - Login con Email vacío y Password informado muestra error y no da acceso | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-78 | T09 | EDITAR | T09-07. Login de A con Password vacío muestra error y no concede acceso | T09-07 - Login de A con Password vacío muestra error y no concede acceso | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-79 | T09 | EDITAR | T09-09. Login con un correo no registrado muestra error y no concede acceso | T09-09 - Login con un correo no registrado muestra error y no concede acceso | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-80 | T09 | EDITAR | T09-10. Login de A con contraseña incorrecta muestra error y no concede acceso | T09-10 - Login de A con contraseña incorrecta muestra error y no concede acceso | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-81 | T09 | EDITAR | T09-11. Logout impide ver los datos de A con Atrás y con la URL directa | T09-11 - Logout impide ver los datos de A con Atrás y con la URL directa | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-82 | T09 | EDITAR | T09-12. Cambio de cuenta entre A y B muestra solo los datos propios de cada una | T09-12 - Cambio de cuenta entre A y B muestra solo los datos propios de cada una | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-83 | T09 | EDITAR | T09-13. Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada | T09-13 - Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-84 | T09 | EDITAR | T09-14. Remember Me marcado: al reabrir el perfil se restaura la sesión de B | T09-14 - Remember Me marcado: al reabrir el perfil se restaura la sesión de B | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-85 | T10 | EDITAR | T10-04. Settings con Old Password incorrecto muestra Invalid Password y conserva la clave | T10-04 - Settings con Old Password incorrecto muestra Invalid Password y conserva la clave | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-86 | T10 | EDITAR | T10-05. Settings con Old Password vigente cambia la clave y permite Login con la nueva | T10-05 - Settings con Old Password vigente cambia la clave y permite Login con la nueva | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-87 | T10 | EDITAR | T10-06. Profile con Email editado y Cancel conserva el correo original de B | T10-06 - Profile con Email editado y Cancel conserva el correo original de B | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-88 | T11 | EDITAR | T11-01. Add New Project con nombre nuevo crea un proyecto raíz vacío que persiste tras F5 | T11-01 - Add New Project con nombre nuevo crea un proyecto raíz vacío que persiste tras F5 | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-89 | T11 | EDITAR | T11-02. Edit con Save en un proyecto aplica el nombre nuevo y lo conserva tras F5 | T11-02 - Edit con Save en un proyecto aplica el nombre nuevo y lo conserva tras F5 | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-90 | T11 | EDITAR | T11-03. Cancel Editing en Edit de proyecto descarta el nombre nuevo y conserva el original | T11-03 - Cancel Editing en Edit de proyecto descarta el nombre nuevo y conserva el original | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-91 | T11 | EDITAR | T11-04. Arrastrar un proyecto temporal sobre Home lo anida como subproyecto con su tarea | T11-04 - Arrastrar un proyecto temporal sobre Home lo anida como subproyecto con su tarea | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-92 | T11 | EDITAR | T11-05. Arrastrar una pendiente Home–Study conserva texto, estado y ubicación tras F5 | T11-05 - Arrastrar una pendiente Home–Study conserva texto, estado y ubicación tras F5 | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-93 | T11 | EDITAR | T11-06. Intento de arrastrar una completada desde Done Items conserva proyecto y estado | T11-06 - Intento de arrastrar una completada desde Done Items conserva proyecto y estado | TF | Prefijo de título al formato «TXX-NN - » |
+| TL-94 | T11 | EDITAR | T11-07. Subproyecto movido a raíz entre Study y Personal conserva ubicación y tarea | T11-07 - Subproyecto movido a raíz entre Study y Personal conserva ubicación y tarea | TF | Prefijo de título al formato «TXX-NN - » |
 
 ## 3. Correspondencia de títulos
 
@@ -180,10 +203,33 @@ Códigos de problema: **T** Título genérico o sin el resultado esperado; **PF*
 | TL-65 | Vaciar la papelera sin afectar a tareas de los proyectos | T08-10 - Empty Recycle Bin vacía la papelera sin afectar a las tareas de Home |
 | TL-66 | T10-01. Cancelar la modificación del nombre conserva el perfil | T10-01 - Cancelar la modificación del nombre conserva el perfil |
 | TL-67 | T10-02. Guardar el nombre y conservarlo tras recarga y nueva sesión | T10-02 - Guardar un nombre nuevo con Ok lo conserva tras recarga y nueva sesión |
-| TL-68 | T10-03. Intentar cambiar la contraseña sin indicar la contraseña actual | T10-03 - Old Password vacío al cambiar la contraseña muestra Invalid Password y no la cambia |
+| TL-68 | T10-03. Intentar cambiar la contraseña sin indicar la contraseña actual | T10-03 - Old Password vacío muestra Invalid Password y conserva la contraseña vigente |
 | TL-69 | T10-08. Recuperar el acceso de una cuenta registrada mediante su buzón | T10-08 - Recuperar el acceso por correo permite entrar con la nueva contraseña |
 | TL-70 | T10-09. Solicitar recuperación con un correo no registrado | T10-09 - Pedir Reset your Password con un correo no registrado muestra un error |
 | TL-71 | T10-10. Comprobar HTTPS en el enlace de recuperación recibido | T10-10 - El enlace de recuperación recibido por correo usa HTTPS |
+| TL-72 | T09-01. Signup con campos vacíos y términos sin aceptar rechaza el envío | T09-01 - Signup con campos vacíos y términos sin aceptar rechaza el envío |
+| TL-73 | T09-02. Signup con el correo de una cuenta existente muestra error de duplicado | T09-02 - Signup con el correo de una cuenta existente muestra error de duplicado |
+| TL-74 | T09-03. Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada | T09-03 - Timezone de Signup ofrece La Paz UTC-04 y refleja la opción seleccionada |
+| TL-75 | T09-04. Login con credenciales vigentes de A abre la sesión de la cuenta A | T09-04 - Login con credenciales vigentes de A abre la sesión de la cuenta A |
+| TL-76 | T09-05. Login con Email y Password vacíos no concede acceso | T09-05 - Login con Email y Password vacíos no concede acceso |
+| TL-77 | T09-06. Login con Email vacío y Password informado muestra error y no da acceso | T09-06 - Login con Email vacío y Password informado muestra error y no da acceso |
+| TL-78 | T09-07. Login de A con Password vacío muestra error y no concede acceso | T09-07 - Login de A con Password vacío muestra error y no concede acceso |
+| TL-79 | T09-09. Login con un correo no registrado muestra error y no concede acceso | T09-09 - Login con un correo no registrado muestra error y no concede acceso |
+| TL-80 | T09-10. Login de A con contraseña incorrecta muestra error y no concede acceso | T09-10 - Login de A con contraseña incorrecta muestra error y no concede acceso |
+| TL-81 | T09-11. Logout impide ver los datos de A con Atrás y con la URL directa | T09-11 - Logout impide ver los datos de A con Atrás y con la URL directa |
+| TL-82 | T09-12. Cambio de cuenta entre A y B muestra solo los datos propios de cada una | T09-12 - Cambio de cuenta entre A y B muestra solo los datos propios de cada una |
+| TL-83 | T09-13. Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada | T09-13 - Remember Me desmarcado: al reabrir el perfil la sesión de A queda cerrada |
+| TL-84 | T09-14. Remember Me marcado: al reabrir el perfil se restaura la sesión de B | T09-14 - Remember Me marcado: al reabrir el perfil se restaura la sesión de B |
+| TL-85 | T10-04. Settings con Old Password incorrecto muestra Invalid Password y conserva la clave | T10-04 - Settings con Old Password incorrecto muestra Invalid Password y conserva la clave |
+| TL-86 | T10-05. Settings con Old Password vigente cambia la clave y permite Login con la nueva | T10-05 - Settings con Old Password vigente cambia la clave y permite Login con la nueva |
+| TL-87 | T10-06. Profile con Email editado y Cancel conserva el correo original de B | T10-06 - Profile con Email editado y Cancel conserva el correo original de B |
+| TL-88 | T11-01. Add New Project con nombre nuevo crea un proyecto raíz vacío que persiste tras F5 | T11-01 - Add New Project con nombre nuevo crea un proyecto raíz vacío que persiste tras F5 |
+| TL-89 | T11-02. Edit con Save en un proyecto aplica el nombre nuevo y lo conserva tras F5 | T11-02 - Edit con Save en un proyecto aplica el nombre nuevo y lo conserva tras F5 |
+| TL-90 | T11-03. Cancel Editing en Edit de proyecto descarta el nombre nuevo y conserva el original | T11-03 - Cancel Editing en Edit de proyecto descarta el nombre nuevo y conserva el original |
+| TL-91 | T11-04. Arrastrar un proyecto temporal sobre Home lo anida como subproyecto con su tarea | T11-04 - Arrastrar un proyecto temporal sobre Home lo anida como subproyecto con su tarea |
+| TL-92 | T11-05. Arrastrar una pendiente Home–Study conserva texto, estado y ubicación tras F5 | T11-05 - Arrastrar una pendiente Home–Study conserva texto, estado y ubicación tras F5 |
+| TL-93 | T11-06. Intento de arrastrar una completada desde Done Items conserva proyecto y estado | T11-06 - Intento de arrastrar una completada desde Done Items conserva proyecto y estado |
+| TL-94 | T11-07. Subproyecto movido a raíz entre Study y Personal conserva ubicación y tarea | T11-07 - Subproyecto movido a raíz entre Study y Personal conserva ubicación y tarea |
 
 ## 3b. Ejemplos completos de antes y después
 
@@ -435,11 +481,10 @@ Estos casos se aplican con la parte dudosa en su redacción original. Queda pend
 - **TL-47** (T06): El paso de Set Due Date no fija la fecha a asignar («un vencimiento»); se conserva así y se pide anotarla. Si se quiere un dato fijo, lo debe definir el equipo.
 - **TL-49** (T06): La guía (§12) indica que el rechazo de adjuntos es criterio del equipo, no regla oficial; el resultado «puede ignorar la entrada o informar que no está admitida» se conserva tal cual.
 - **TL-65** (T08): No se conoce el texto de la confirmación de Empty Recycle Bin; se conserva «completar la confirmación si aparece».
-- **Ediciones de la autora durante la revisión:** entre las 20:10 y las 20:33 (hora del servidor), el usuario `admin` editó T12 (TL-40, TL-2 a TL-14), TL-15, TL-16, TL-18, TL-19, TL-20 y TL-66: quitó el rótulo «Requerimiento: PEB-XX / TXX —» y cambió «Iniciar sesión:» por «Credenciales Válidas:». Los casos de T12 y T13 se reevaluaron sobre esa versión y se aplicaron en la segunda pasada conservando sus mejoras. TL-66 (T10) sigue bloqueado; su propuesta deberá reevaluarse sobre la versión actual antes de aplicarla.
 - **Renumeración T12–T14:** los títulos pasan de `TL-0NN:` a `T12-NN -`/`T13-NN -`/`T14-NN -`. El comentario de PEB-76 cita los nombres antiguos (TL-001…TL-039); la tabla de la sección 3 sirve de correspondencia.
 - **T12–T13 (general):** el campo de creación figura como **Add new task**, mientras que T06–T08 y la guía §11 usan **Add new Todo, type here…**. Puede ser que el texto cambie entre Inbox y un proyecto; se conserva el de cada caso.
 - **T06–T08 (general):** las precondiciones citan la cuenta de Camila con «la contraseña de pruebas indicada» (sin contraseña) y TL-41 la trae explícita. Se conservan como están; decisiones-vigentes §6–7 piden cuentas genéricas solo para T09–T11.
-- **T09, T10 (T10-04 a T10-06) y T11:** Codex sigue registrándolos; no se revisan ni se editan hasta que termine. En el respaldo hay 16 casos sin revisar: TL-72, TL-73, TL-74, TL-75, TL-76, TL-77, TL-78, TL-79, TL-80, TL-81, TL-82, TL-83, TL-84, TL-85, TL-86, TL-87.
+- **T09, T10 y T11:** revisados sobre la versión registrada por Codex (respaldo de las 17:24). Se respetó su redacción: en 23 casos solo se cambió el prefijo del título; en los 6 casos antiguos de T10 se conservaron precondiciones, importancia, requerimiento y postcondiciones.
 
 ## 5. Aplicación
 
@@ -447,33 +492,31 @@ Fecha: 18/11/2026. Registro detallado en `aplicado.log`.
 
 | Resultado | Casos | Detalle |
 |---|---|---|
-| **Aplicados y verificados** | 64 | T06 (9): TL-41, TL-42, TL-43, TL-44, TL-45, TL-46, TL-47, TL-48, TL-49; T07 (6): TL-50, TL-51, TL-52, TL-53, TL-54, TL-55; T08 (10): TL-56, TL-57, TL-58, TL-59, TL-60, TL-61, TL-62, TL-63, TL-64, TL-65; T12 (14): TL-2, TL-3, TL-4, TL-5, TL-6, TL-7, TL-8, TL-9, TL-10, TL-11, TL-12, TL-13, TL-14, TL-40; T13 (13): TL-15, TL-16, TL-17, TL-18, TL-19, TL-20, TL-21, TL-22, TL-23, TL-24, TL-25, TL-26, TL-27; T14 (12): TL-28, TL-29, TL-30, TL-31, TL-32, TL-33, TL-34, TL-35, TL-36, TL-37, TL-38, TL-39. Releídos por la API al final: nombre, summary, preconditions y cada paso coinciden exactamente con lo escrito; importancia, tipo de ejecución, estado, versión y suite sin cambios. |
+| **Aplicados y verificados** | 93 | T06 (9): TL-41, TL-42, TL-43, TL-44, TL-45, TL-46, TL-47, TL-48, TL-49; T07 (6): TL-50, TL-51, TL-52, TL-53, TL-54, TL-55; T08 (10): TL-56, TL-57, TL-58, TL-59, TL-60, TL-61, TL-62, TL-63, TL-64, TL-65; T09 (13): TL-72, TL-73, TL-74, TL-75, TL-76, TL-77, TL-78, TL-79, TL-80, TL-81, TL-82, TL-83, TL-84; T10 (9): TL-66, TL-67, TL-68, TL-69, TL-70, TL-71, TL-85, TL-86, TL-87; T11 (7): TL-88, TL-89, TL-90, TL-91, TL-92, TL-93, TL-94; T12 (14): TL-2, TL-3, TL-4, TL-5, TL-6, TL-7, TL-8, TL-9, TL-10, TL-11, TL-12, TL-13, TL-14, TL-40; T13 (13): TL-15, TL-16, TL-17, TL-18, TL-19, TL-20, TL-21, TL-22, TL-23, TL-24, TL-25, TL-26, TL-27; T14 (12): TL-28, TL-29, TL-30, TL-31, TL-32, TL-33, TL-34, TL-35, TL-36, TL-37, TL-38, TL-39. Verificación final de los 93 casos por la API: coinciden exactamente con lo escrito (`propuestas.json`); importancia, tipo de ejecución, estado, versión y suite sin cambios; todos los títulos con el formato «TXX-NN - ». |
 | Primera pasada (16:23–16:33) | 45 | Piloto TL-50 y lote de T06, T07, T08 y parte de T13/T14. Se verificó `revertir.py --aplicar` con ida y vuelta en TL-50. |
 | Segunda pasada (17:09), reevaluados | 19 | T12 completo (TL-40, TL-2 a TL-14) y TL-15, TL-16, TL-18, TL-19, TL-20 de T13. Se evaluó la versión actual que había editado la autora: se conservaron literalmente «**Credenciales Válidas:** …» y su texto de requerimiento, anteponiendo el código (`Requerimiento: PEB-76 / T12. <texto de la autora>` y `PEB-77 / T13` en T13), por decisión del usuario. TL-20 había quedado mezclado en la primera pasada (la autora guardó 1 s después) y ahora está completo. |
+| Tercera pasada (17:27), T09/T10/T11 | 29 | Versión registrada por Codex (respaldo 17:24). **Solo título** (23): T09 TL-72 a TL-84, T10 TL-85 a TL-87, T11 TL-88 a TL-94 — cumplían la rúbrica; «TXX-NN.» pasa a «TXX-NN - ». Se usó `tl.updateTestCase` solo con el nombre y se verificó que summary, preconditions y pasos (incluidos sus IDs) no cambiaron. **Completos** (6): T10 TL-66 a TL-71 — descripción «Validar que…», negritas, acción probada en paso propio y título con resultado; preconditions, «Importancia», requerimiento y «Postcondiciones» conservados. TL-66: «Requerimiento: PEB-74 / T10. <texto de la autora>». |
 | Fallidos | 0 | Ningún error de la API ni diferencia en la verificación. |
-| Bloqueados (Codex sigue trabajando) | 9 | T10: TL-66 a TL-71 (con propuesta preparada) y TL-85 a TL-87 (sin revisar). Verificado que no se modificaron. |
-| Sin revisar | 13 | T09: TL-72 a TL-84. Verificado que no se modificaron. T11: sin casos en TestLink todavía. |
 
 **Pendientes:**
 
-1. T09, T10 y T11: revisar y aplicar cuando Codex termine (respaldo nuevo antes de escribir).
-2. Casos DUDA (sección 4): la parte dudosa sigue con su redacción original, pendiente de la autora del caso. Se mantienen también las dudas de T12-10, T12-11, T12-12 y T12-14 (sección 4b).
+1. Casos DUDA (sección 4): la parte dudosa sigue con su redacción original, pendiente de la autora del caso. Se mantienen también las dudas de T12-10, T12-11, T12-12 y T12-14 (sección 4b).
 
-**Respaldos:** `respaldo-20261118-1532.json` (estado original, antes de toda edición), `respaldo-20261118-1620.json` (antes de la primera pasada), `respaldo-20261118-1653.json` (antes de la segunda pasada; incluye las ediciones de la autora en T12/T13).
+**Respaldos:** `respaldo-20261118-1532.json` (estado original, antes de toda edición), `respaldo-20261118-1620.json` (antes de la primera pasada), `respaldo-20261118-1653.json` (antes de la segunda pasada; incluye las ediciones de la autora en T12/T13), `respaldo-20261118-1724.json` (antes de la tercera pasada; T09, T10 y T11 tal como los registró Codex).
 ## 6. Cómo revertir
 
-El respaldo `respaldo-20261118-1653.json` contiene nombre, summary, preconditions y pasos de los 86 casos antes de cualquier cambio.
+El respaldo `respaldo-20261118-1724.json` contiene nombre, summary, preconditions y pasos de los 93 casos antes de cualquier cambio.
 
 ```bash
 cd revision-testlink/scripts
 # Simulación (no escribe): muestra qué casos difieren del respaldo
-python3 revertir.py --respaldo ../respaldo-20261118-1653.json --todos
+python3 revertir.py --respaldo ../respaldo-20261118-1724.json --todos
 # Restaurar casos concretos
-python3 revertir.py --respaldo ../respaldo-20261118-1653.json --ids TL-41,TL-42 --aplicar
+python3 revertir.py --respaldo ../respaldo-20261118-1724.json --ids TL-41,TL-42 --aplicar
 # Restaurar todo
-python3 revertir.py --respaldo ../respaldo-20261118-1653.json --todos --aplicar
+python3 revertir.py --respaldo ../respaldo-20261118-1724.json --todos --aplicar
 ```
 
-Elegir el respaldo según lo que se quiera recuperar: `respaldo-20261118-1653.json` devuelve T12 y TL-15/16/18/19/20 a la versión editada por la autora (con sus dos mejoras) y deshace también la primera pasada en los 45 casos; `respaldo-20261118-1620.json` deshace solo la primera pasada; `respaldo-20261118-1532.json` es el estado original. Usar siempre `--ids` con los casos que se quieren restaurar: con `--todos` también se tocarían T09 y T10, que Codex está editando.
+Elegir el respaldo según lo que se quiera recuperar: `respaldo-20261118-1724.json` deshace la tercera pasada (T09, T10 y T11 vuelven a la versión de Codex); `respaldo-20261118-1653.json` devuelve T12 y TL-15/16/18/19/20 a la versión editada por la autora (con sus dos mejoras) y deshace también la primera pasada en los 45 casos; `respaldo-20261118-1620.json` deshace solo la primera pasada; `respaldo-20261118-1532.json` es el estado original. Usar `--ids` con los casos que se quieren restaurar; `--todos` restaura los 93 casos al estado de ese respaldo.
 
 La clave de la API se lee de `TESTLINK_DEVKEY`. Con `--aplicar`, el script vuelve a leer cada caso y confirma que coincide con el respaldo.
