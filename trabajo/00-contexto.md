@@ -130,7 +130,7 @@ Hay 14 imágenes en el listado de adjuntos de PEB-76. Las imágenes se identific
 - T06: IDs reales TL-41...TL-49, títulos sin prefijo T06.
 - Se abrieron TL-41 (id interno 161) y TL-40 (id interno 83). Ambos tienen Requirement dentro de Summary y Preconditions separado. Ambos muestran Create step: no hay pasos nativos registrados. En T06 hay una tabla de pasos dentro de Summary; en T12 listas de pasos y resultados separados dentro de Summary. T06 contiene postcondiciones al final de Summary; el caso T12 incluye limpieza en la lista de pasos, sin campo separado de postcondiciones.
 - TL-41: Draft, Importance High, Execution type Manual. TL-40: Ready for review, High, Manual; duración 10.00 min. No se alteraron los selectores ni Save.
-- Para el trabajo nuevo: suites por T09/T10/T11 dentro de la organización existente, sin mover otros casos, títulos T0X-NN, ID automático real de TestLink y pasos nativos Step actions / Expected results. Esta adaptación obedece al super prompt.
+- La decisión inicial de suites por T09/T10/T11 quedó superada por decisiones §14 y PROMPT_ORQUESTACION.md: el destino actual es la suite existente Todo.ly tests, sin nuevas suites ni cambios a otros casos, títulos T0X-NN, ID automático real de TestLink y pasos nativos Step actions / Expected results. Esta adaptación obedece al super prompt.
 - Enlaces verificables por IDs observados: http://68.211.149.112/lib/testcases/archiveData.php?edit=testcase&id=161 y http://68.211.149.112/lib/testcases/archiveData.php?edit=testcase&id=83 . Requieren sesión; enlaces finales se comprobarán después del registro.
 
 ### Mapeo de campos

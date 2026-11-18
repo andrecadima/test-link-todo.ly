@@ -256,9 +256,9 @@
     "requerimiento": "PEB-74 / T10. La recuperación de una cuenta registrada permite establecer una nueva contraseña y volver a acceder.",
     "precondiciones": [
       "Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.",
-      "Sesión de Todo.ly cerrada en el perfil dedicado de QA.",
+      "Sin sesión iniciada en Todo.ly en el navegador.",
       "Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta; contraseña inicial conocida y otra contraseña de prueba disponibles en registro privado.",
-      "Nombre y un dato representativo de A conocidos para comprobar identidad y conservación."
+      "Nombre inicial y correo de A conocidos por quien ejecuta, con sus valores conservados de forma privada para comprobar identidad."
     ],
     "descripcion": "Recorrer solicitud, correo, formulario y Login posterior. Las condiciones de seguridad del transporte se evalúan separadamente en T10-10.",
     "pasos": [
@@ -275,8 +275,8 @@
         "Llega un mensaje dirigido a A con instrucciones y enlace de recuperación. No se exige un plazo de recepción no documentado."
       ],
       [
-        "Abrir el enlace de recuperación en el perfil de QA mediante HTTPS.",
-        "Se muestra Please Enter a New Password con Enter a New Password, Verify New Password y Done."
+        "Abrir el enlace de recuperación tal como llega en el correo, sin cambiar su esquema ni copiar el token a la evidencia.",
+        "Se muestra Please Enter a New Password con Enter a New Password, Verify New Password y Done. Si el enlace recibido no carga el formulario, se registra una falla de este caso; HTTPS se evalúa separadamente en T10-10."
       ],
       [
         "Introducir personalmente la misma nueva contraseña en ambos campos y pulsar Done; actualizar el registro privado.",
@@ -287,11 +287,11 @@
         "No se concede acceso; se muestra Wrong email or password dentro del aviso de rechazo observado."
       ],
       [
-        "Iniciar sesión con la nueva contraseña y consultar Profile y el dato representativo.",
-        "Acceso a A; se conservan identidad y datos anteriores a la recuperación."
+        "Iniciar sesión con la nueva contraseña y abrir Settings / Profile.",
+        "Acceso a A; Full Name y Email conservan el nombre inicial y el correo de A registrados privadamente antes de la recuperación."
       ]
     ],
-    "postcondiciones": "Cuenta A accesible con la nueva contraseña, que queda vigente y reflejada en el registro privado; identidad y datos conservados. Sin token ni contraseñas publicados. La restauración de la contraseña anterior queda identificada como actividad pendiente del entorno, separada de este caso de recuperación."
+    "postcondiciones": "Cuenta A accesible con la nueva contraseña, que queda vigente y reflejada en el registro privado; identidad y valores de Profile conservados. Sin token ni contraseñas publicados. La restauración de la contraseña original se realiza mediante el cambio válido de Settings y se verifica por Login."
   },
   {
     "id": "T10-09",
@@ -301,7 +301,7 @@
     "requerimiento": "PEB-74 / T10. La recuperación informa el rechazo de un correo que no pertenece a una cuenta.",
     "precondiciones": [
       "Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.",
-      "Sesión de Todo.ly cerrada en el perfil dedicado de QA.",
+      "Sin sesión iniciada en Todo.ly en el navegador.",
       "Dirección reservada para ejemplos sin cuenta en Todo.ly: prueba-t10-no-registrada-20261117@example.com."
     ],
     "descripcion": "Comprobar el tratamiento observado para la clase correo no registrado, sin consultar ni crear buzones externos.",
@@ -339,7 +339,7 @@
         "Los enlaces de recuperación utilizan HTTPS según el criterio del equipo. Un enlace HTTP constituye una discrepancia a registrar en la ejecución."
       ],
       [
-        "Abrir el enlace directo en el perfil dedicado de QA sin introducir contraseñas; consultar la indicación de conexión de Chrome.",
+        "Abrir el enlace directo recibido en el navegador sin introducir contraseñas; consultar la indicación de conexión de Chrome.",
         "El recorrido de recuperación utiliza una conexión segura; Chrome no presenta Not Secure para la página de recuperación."
       ],
       [

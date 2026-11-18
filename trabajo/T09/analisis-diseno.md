@@ -6,7 +6,7 @@ Fecha: 17 de noviembre de 2026. **Diseño preparado para revisión: trece casos 
 
 Se analizaron Signup, Login, Remember Me, Logout y el cambio entre dos cuentas gratuitas propias de la práctica. El entorno observado fue macOS 26.6.2 y Chrome 157.0.8103.51, con el perfil aislado Todo.ly QA cuenta B. El nombre del perfil no identifica la cuenta: la identidad se verificó desde Settings / Profile.
 
-Signup muestra Full Name, Email, Password, Timezone, términos y Submit. El envío completamente vacío y sin términos fue rechazado; el correo ya registrado también tuvo un rechazo específico. Timezone ofrece un valor predeterminado y una lista sin opción vacía visible; se identificó La Paz UTC-04 y su diferencia con la opción mexicana UTC-07. Esto no demuestra validación de servidor ante un Timezone vacío ni reglas de fechas.
+Signup muestra Full Name, Email, Password, Timezone, términos y el botón visible Signup (nombre accesible Submit). Se abre desde Sign Up Free. El envío completamente vacío y sin términos fue rechazado; el correo ya registrado también tuvo un rechazo específico. Timezone ofrece un valor predeterminado y una lista sin opción vacía visible; se identificó La Paz UTC-04 y su diferencia con la opción mexicana UTC-07. Esto no demuestra validación de servidor ante un Timezone vacío ni reglas de fechas.
 
 Login aceptó credenciales vigentes y rechazó los contrastes legibles de campos vacíos, correo no registrado y contraseña incorrecta. El formato mal formado produjo vistas vacías que no permiten fijar su respuesta específica: T09-08 queda pendiente. Logout, Atrás y URL directa no mostraron los marcadores de la cuenta cerrada. El aislamiento se observó con un marcador de A y otro de B en sus respectivos Home, en ambos sentidos.
 
@@ -31,8 +31,9 @@ Valoración cualitativa de diseño, no frecuencia medida: P baja=1/media=2/alta=
 
 | Regla o duda | Clasificación | Fundamento |
 |---|---|---|
-| Signup vacío y sin términos muestra `Error. Please correct the missing fields.`, asteriscos y aviso de términos | Comportamiento observado | Captura y AX del 16/11. Es una combinación conjunta, no validaciones aisladas de cada campo |
+| Signup vacío y sin términos muestra `Error. Please correct the missing fields.`, asteriscos y aviso de términos | Comportamiento observado | Mensaje global leído por AX; la captura muestra asteriscos y aviso junto a términos. Combinación conjunta, no validaciones aisladas |
 | Signup duplicado muestra `Error. Account with this email address already exists!` | Comportamiento observado | Registro intentado después de que el usuario hubiera creado la candidata anterior; no demuestra que fuera una cuenta preexistente a la práctica |
+| El registro duplicado no sustituye la identidad ni los datos de la cuenta existente | Criterio del equipo | Riesgo de pérdida/alteración del identificador; el contraste posterior a ese intento se ejecutará en T09-02, no se presenta como ya observado |
 | Timezone predeterminado Pacific UTC-08; lista observada de 101 opciones sin entrada vacía | Comportamiento observado | Listado completo consultado en Signup |
 | La Paz de Bolivia corresponde a `(UTC-04:00) Georgetown, La Paz, Manaus, San Juan` | Comportamiento observado / decisión de preparación | Selector y decisión vigente §12; se excluyen efectos sobre vencimientos |
 | Login válido abre la identidad correspondiente | Comportamiento observado | A y B verificadas desde Profile con las credenciales privadas actuales |
@@ -45,6 +46,10 @@ Valoración cualitativa de diseño, no frecuencia medida: P baja=1/media=2/alta=
 | Máximo tres intentos fallidos por cuenta durante la exploración | Criterio del equipo | Instrucción expresa del usuario; no es una política de bloqueo de Todo.ly |
 | CAPTCHA, límites de intentos del producto, caducidad de sesión y longitudes de campos | Duda pendiente | No se comprobaron ni se deducen de los ejemplos de clase |
 | Registro válido completo bajo control del agente | Duda pendiente de cobertura | Las cuentas iniciales fueron registradas por el usuario; su existencia y Login sí fueron comprobados |
+
+### Fuentes cruzadas de controles y tratamiento de evidencias
+
+Cancel de Settings y el nombre accesible Submit de Login fueron observados en T10 y en las consultas de identidad de A/B: fuente trabajo/T10/exploracion.md y captura de Old Password vacío. La nomenclatura visible de Signup y Sign Up Free fue verificada directamente por Codex en las capturas registro-vacio y remember-off-reapertura-sin-sesion. Se adjuntarán como evidencia de registro únicamente el árbol y casos abiertos de TestLink con fichas genéricas; no capturas de exploración que muestren correos reales.
 
 ## 4. Tipos de prueba y escenarios
 
@@ -67,7 +72,7 @@ Definiciones ya recuperadas del original `E Tecnicas de Black Box Testing 2025.p
 | Correo de Signup | Correo ya registrado: rechazo de duplicado | Correo de la cuenta de prueba A | T09-02 |
 | Opciones de Timezone | Valores del conjunto ofrecido: selección reflejada | Opción La Paz UTC-04 | T09-03; no se fabrica una opción vacía |
 | Presencia de datos en Login | Email/Password ausentes: no autentica | Ambos vacíos, Email vacío o Password vacío | T09-05/06/07; reglas R1–R3 |
-| Identificador conocido no registrado | No identifica una cuenta: no autentica | Correo reservado contrastado por recuperación | T09-09; R4 |
+| Identificador conocido no registrado | No identifica una cuenta: no autentica | Correo reservado contrastado en trabajo/T10/exploracion.md, sección Recuperación: solicitud y contraste, 11:13 AM | T09-09; R4 |
 | Correspondencia de Password con la cuenta | No coincide: rechazo / coincide: acceso a esa identidad | Valor de prueba distinto / clave vigente privada | T09-10 / T09-04; R5/R6 |
 
 No se usa el texto sin arroba para afirmar existencia o inexistencia de una cuenta, ni para atribuir un validador sintáctico no confirmado. T09-08 conserva ese contraste como candidato pendiente, fuera de la tabla de reglas confirmadas.
@@ -143,9 +148,9 @@ No aplicados. No se confirmó una frontera de longitud o de intentos del product
 
 ## 7. Implementación propuesta en TestLink
 
-Pendiente de punto de control y OK. Proyecto TL:Todo.ly, suite T09 sin alterar otros tickets; nombres T09-NN, Importance individual, Manual, Summary con requerimiento/descripción/postcondiciones, Preconditions separado y pasos nativos con resultado por paso. No hay IDs ni enlaces nuevos confirmados. Los trece casos registrables están separados del candidato T09-08.
+Registro autorizado tras revisión sin bloqueantes y tratamiento de observaciones. Proyecto TL:Todo.ly, suite existente Todo.ly tests; XML de entrada testcases, sin crear suites ni actualizar existentes; nombres T09-NN, Importance individual, Manual, Summary con requerimiento/descripción/postcondiciones, Preconditions separado y pasos nativos con resultado por paso. No hay IDs ni enlaces nuevos confirmados. Los trece casos registrables están separados del candidato T09-08.
 
-La evidencia real incluirá árbol de suite y un caso abierto; la exportación final se guardará en `testlink-xml/T09.xml` después de verificar el registro. Un XML local preparado para importar no se presenta como esa exportación.
+La evidencia real incluirá árbol de suite y un caso abierto; se exportará realmente Todo.ly tests a `testlink-xml/todo-ly-tests.xml` después de verificar el registro; de ella se extraerá `testlink-xml/T09.xml` mediante script. Un XML local preparado para importar no se presenta como esa exportación.
 
 ## 8. Cobertura pendiente y límites
 
@@ -155,7 +160,7 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 ## 9. Estado
 
-**Trece casos diseñados y preparados para revisión; un candidato pendiente y excluido del registro.** Sin registro nuevo, comentario publicado ni ejecución formal. Después del OK y de verificar TestLink se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante”, manteniendo la cobertura pendiente explícita. No se cambia el estado de Jira ni se marca la revisión de otra persona.
+**Trece casos diseñados y preparados para revisión; un candidato pendiente y excluido del registro.** Sin registro nuevo, comentario publicado ni ejecución formal. Después de la revisión sin bloqueantes y de verificar TestLink se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante”, manteniendo la cobertura pendiente explícita. No se cambia el estado de Jira ni se marca la revisión de otra persona.
 
 ## Fichas para TestLink — trece casos preparados
 
@@ -169,14 +174,14 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.
+2. Sin sesión iniciada en Todo.ly en el navegador.
 
 **Descripción:** Comprobar la combinación vacía observada; no aislar como reglas independientes todas sus condiciones concurrentes.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Abrir https://todo.ly/ y desplegar Signup. | Se muestran Full Name, Email, Password, Timezone, casilla de términos y Submit. |
-| 2. Dejar Full Name, Email y Password vacíos, conservar Timezone predeterminado y dejar los términos sin marcar; pulsar Submit. | Se rechaza el envío con Error. Please correct the missing fields.; aparecen asteriscos en nombre, correo y contraseña, y el aviso If you don’t agree you can’t use Todo.ly. |
+| 1. Abrir https://todo.ly/ y pulsar Sign Up Free para abrir el formulario Signup. | Se muestran Full Name, Email, Password, Timezone, casilla de términos y botón Signup (nombre accesible Submit). |
+| 2. Dejar Full Name, Email y Password vacíos, conservar Timezone predeterminado y dejar los términos sin marcar; pulsar Signup. | Se rechaza el envío. La lectura del aviso transitorio muestra Error. Please correct the missing fields.; se observan asteriscos en nombre, correo y contraseña. Con los términos sin marcar se muestra If you don’t agree you can’t use Todo.ly. El aviso global puede desaparecer antes de conservar la captura. |
 | 3. Conservar evidencia de las señales visibles y volver a https://todo.ly/ sin completar el registro. | La sesión continúa cerrada; no aparece el área de proyectos de una cuenta. |
 
 **Postcondiciones:** Sin cuenta nueva ni sesión; evidencia de la combinación vacía, sin atribuir obligatoriedad del servidor a Timezone.
@@ -191,7 +196,7 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.
+2. Sin sesión iniciada en Todo.ly en el navegador.
 3. Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.
 4. Datos de registro válidos conocidos para la cuenta de prueba y aceptación de los términos por quien ejecuta.
 
@@ -199,8 +204,8 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Abrir Signup e introducir Prueba T09-02 - duplicado en Full Name, el correo de A en Email y una contraseña de prueba privada válida en Password; seleccionar La Paz UTC-04. | Los campos contienen los datos previstos y el correo corresponde a la cuenta de prueba existente. |
-| 2. Quien ejecuta marca los términos que acepta y pulsa Submit. | Aparece Error. Account with this email address already exists!; no se registra una segunda cuenta con ese correo. |
+| 1. Pulsar Sign Up Free para abrir Signup e introducir Prueba T09-02 - duplicado en Full Name, el correo de A en Email y una contraseña de prueba privada distinta de la vigente de A en Password; seleccionar La Paz UTC-04. | Los campos contienen los datos previstos y el correo corresponde a la cuenta de prueba existente. |
+| 2. Quien ejecuta marca los términos que acepta y pulsa Signup. | Aparece Error. Account with this email address already exists!; no se inicia sesión en una cuenta nueva. |
 | 3. Volver a Login e iniciar sesión con las credenciales de A vigentes antes del intento; abrir Settings / Profile. | Se accede a A y se conservan su identidad y nombre originales, sin aplicar el nombre del registro duplicado. |
 
 **Postcondiciones:** A conserva sus datos y credenciales; no se crea otra cuenta. Evidencia del rechazo sin contraseñas.
@@ -215,16 +220,16 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.
+2. Sin sesión iniciada en Todo.ly en el navegador.
 
 **Descripción:** Comprobar opciones, valor inicial y ausencia de una opción vacía en la interfaz; sin crear cuenta ni evaluar vencimientos.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Abrir Signup y consultar el valor inicial de Timezone. | El selector muestra (UTC-08:00) Pacific Time (US & Canada), según la referencia observada. |
+| 1. Pulsar Sign Up Free para abrir Signup y consultar el valor inicial de Timezone. | El selector muestra la opción Pacific UTC-08; la captura de referencia deja visible (UTC-08:00) Pacific Time (US & Cana… con el texto recortado. |
 | 2. Desplegar el selector y revisar sus opciones, registrando el inventario visible. | La lista incluye (UTC-04:00) Georgetown, La Paz, Manaus, San Juan y la opción mexicana UTC-07 distinta; no ofrece una entrada vacía en el listado observado. El inventario de referencia contiene 101 opciones. |
 | 3. Seleccionar (UTC-04:00) Georgetown, La Paz, Manaus, San Juan. | El selector refleja exactamente la opción UTC-04 elegida. |
-| 4. Volver a https://todo.ly/ sin enviar Signup. | No se crea cuenta ni se modifica la configuración de A o B. |
+| 4. Volver a https://todo.ly/ sin enviar Signup. | Se muestra la página pública sin registro completado ni sesión iniciada. |
 
 **Postcondiciones:** Formulario descartado sin registro. No se concluye validación de servidor para un Timezone vacío que la interfaz no permite seleccionar.
 
@@ -238,7 +243,7 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.
+2. Sin sesión iniciada en Todo.ly en el navegador.
 3. Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.
 
 **Descripción:** Recorrer la regla positiva de la tabla de decisión y comprobar identidad en Profile.
@@ -246,7 +251,7 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 | Paso | Resultado esperado |
 |---|---|
 | 1. Desplegar Login e introducir el correo de A y su contraseña vigente del registro privado; desmarcar Remember Me para este recorrido. | Los datos corresponden a A y la casilla está desmarcada. |
-| 2. Pulsar Login, cuyo nombre accesible es Submit. | Se muestra el área autenticada con Settings y Logout. |
+| 2. Pulsar Login. | Se muestra el área autenticada con Settings y Logout. |
 | 3. Abrir Settings / Profile y comparar identidad con el registro privado. | El nombre y el correo corresponden a A; no se abre otra cuenta. |
 | 4. Cerrar Settings con Cancel y pulsar Logout. | Se vuelve a la página pública, con la sesión cerrada. |
 
@@ -262,14 +267,14 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.
+2. Sin sesión iniciada en Todo.ly en el navegador.
 
 **Descripción:** Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.
 
 | Paso | Resultado esperado |
 |---|---|
-| 1. Desplegar Login; dejar o introducir Email vacío y Password vacío; conservar Remember Me sin cambios. | Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia. |
-| 2. Pulsar Login / Submit una sola vez. | No se concede acceso. La lectura posterior conserva Login y no muestra datos de proyectos autenticados. |
+| 1. Desplegar Login; dejar Email y Password vacíos; conservar Remember Me sin cambios. | Email y Password están vacíos. |
+| 2. Pulsar Login (nombre accesible Submit) una sola vez. | No se concede acceso. La lectura posterior conserva Login y no muestra datos de proyectos autenticados. |
 | 3. Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales. | Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
 
 **Postcondiciones:** Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.
@@ -284,14 +289,14 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.
+2. Sin sesión iniciada en Todo.ly en el navegador.
 
 **Descripción:** Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.
 
 | Paso | Resultado esperado |
 |---|---|
 | 1. Desplegar Login; dejar o introducir Email vacío y Prueba-T09-no-valida-17 en Password; conservar Remember Me sin cambios. | Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia. |
-| 2. Pulsar Login / Submit una sola vez. | No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. |
+| 2. Pulsar Login (nombre accesible Submit) una sola vez. | No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. |
 | 3. Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales. | Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
 
 **Postcondiciones:** Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.
@@ -306,16 +311,16 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.
+2. Sin sesión iniciada en Todo.ly en el navegador.
 3. Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.
-4. Menos de tres intentos fallidos asociados a A en la exploración del lote; la clave vigente es distinta de Prueba-T09-no-valida-17.
+4. Según criterio del equipo, A acumula menos de tres intentos fallidos en la sesión de trabajo (no es una política de Todo.ly); la clave vigente es distinta de Prueba-T09-no-valida-17.
 
 **Descripción:** Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.
 
 | Paso | Resultado esperado |
 |---|---|
 | 1. Desplegar Login; dejar o introducir el correo vigente de A y Password vacío; conservar Remember Me sin cambios. | Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia. |
-| 2. Pulsar Login / Submit una sola vez. | No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. |
+| 2. Pulsar Login (nombre accesible Submit) una sola vez. | No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. |
 | 3. Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales. | Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
 
 **Postcondiciones:** Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.
@@ -330,15 +335,15 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.
-3. El correo reservado prueba-t10-no-registrada-20261117@example.com no pertenece a una cuenta; esta condición fue contrastada mediante recuperación en la exploración.
+2. Sin sesión iniciada en Todo.ly en el navegador.
+3. La dirección reservada prueba-t10-no-registrada-20261117@example.com no pertenece a una cuenta; contrastado en la exploración de PEB-74 / T10: la recuperación respondió Error. Account with this Email address doesn't exist.
 
 **Descripción:** Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.
 
 | Paso | Resultado esperado |
 |---|---|
 | 1. Desplegar Login; dejar o introducir prueba-t10-no-registrada-20261117@example.com y Prueba-T09-no-valida-17 en Password; conservar Remember Me sin cambios. | Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia. |
-| 2. Pulsar Login / Submit una sola vez. | No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. |
+| 2. Pulsar Login (nombre accesible Submit) una sola vez. | No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. |
 | 3. Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales. | Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
 
 **Postcondiciones:** Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.
@@ -353,16 +358,16 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.
+2. Sin sesión iniciada en Todo.ly en el navegador.
 3. Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.
-4. Menos de tres intentos fallidos asociados a A en la exploración del lote; la clave vigente es distinta de Prueba-T09-no-valida-17.
+4. Según criterio del equipo, A acumula menos de tres intentos fallidos en la sesión de trabajo (no es una política de Todo.ly); la clave vigente es distinta de Prueba-T09-no-valida-17.
 
 **Descripción:** Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.
 
 | Paso | Resultado esperado |
 |---|---|
 | 1. Desplegar Login; dejar o introducir el correo vigente de A y Prueba-T09-no-valida-17 en Password; conservar Remember Me sin cambios. | Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia. |
-| 2. Pulsar Login / Submit una sola vez. | No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. |
+| 2. Pulsar Login (nombre accesible Submit) una sola vez. | No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. |
 | 3. Conservar evidencia y abrir https://todo.ly/ en una consulta nueva sin introducir otras credenciales. | Aparece la página pública; la sesión sigue cerrada y no se exponen datos de A o B. |
 
 **Postcondiciones:** Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.
@@ -402,7 +407,7 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.
+2. Sin sesión iniciada en Todo.ly en el navegador.
 3. Dos cuentas gratuitas de prueba A y B sin proyectos compartidos; credenciales privadas vigentes y proyectos Home disponibles.
 4. No existen los marcadores Prueba T09-12 - marcador A y Prueba T09-12 - marcador B en sus respectivos Home.
 
@@ -430,7 +435,7 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.
+2. Sin sesión iniciada en Todo.ly en el navegador.
 3. Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.
 4. Perfil dedicado sin otras ventanas propias; configuración de Chrome estable durante el recorrido y posibilidad de reabrir ese mismo perfil.
 
@@ -439,9 +444,9 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 | Paso | Resultado esperado |
 |---|---|
 | 1. Abrir Login y desmarcar Remember Me; conservar evidencia de la casilla desmarcada antes del envío. | Remember Me está desmarcado. |
-| 2. Introducir las credenciales vigentes de A, pulsar Login y confirmar identidad en Profile. | Se inicia sesión en A; Settings y Logout están disponibles. |
+| 2. Introducir las credenciales vigentes de A, pulsar Login y confirmar identidad en Profile. | Se inicia sesión en A; Settings y Logout están disponibles y Profile muestra el nombre y el correo de A. |
 | 3. Cerrar todas las ventanas de ese perfil dedicado sin pulsar Logout, sin borrar cookies y sin cerrar otros perfiles. Anotar el intervalo hasta la reapertura. | Las ventanas del perfil QA quedan cerradas; el resto del navegador conserva sus sesiones. |
-| 4. Reabrir el mismo perfil y consultar https://todo.ly/ sin introducir credenciales. | Aparece la página pública con Login/Signup, sin una sesión autenticada, conforme al recorrido observado. |
+| 4. Reabrir el mismo perfil y consultar https://todo.ly/ sin introducir credenciales. | Aparece la página pública con Login y Sign Up Free, sin una sesión autenticada, conforme al recorrido observado. |
 | 5. Conservar evidencia con nombre del perfil y estado de Todo.ly. | La evidencia identifica la reapertura correcta; no se usa otro perfil como prueba. |
 
 **Postcondiciones:** Perfil QA abierto con sesión cerrada, datos y credenciales sin cambios; intervalo y cualquier ayuda manual documentados.
@@ -456,7 +461,7 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.
+2. Sin sesión iniciada en Todo.ly en el navegador.
 3. Cuenta gratuita de prueba B con credenciales privadas vigentes; perfil dedicado sin otras ventanas propias y configuración de Chrome estable.
 
 **Descripción:** Repetir el recorrido observado con B, comprobando la identidad restaurada y cerrando después la sesión.
@@ -474,7 +479,7 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 ---
 
-## Candidato pendiente — no registrar todavía
+## Candidatos pendientes — no registrar todavía
 
 ---
 
@@ -486,7 +491,7 @@ La preparación y los errores de lectura de correo Markdown, foco, captura y tim
 
 **Precondiciones:**
 1. Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.
-2. Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.
+2. Sin sesión iniciada en Todo.ly en el navegador.
 
 **Descripción:** Candidato pendiente: las vistas vacías impiden fijar una respuesta de validación. No registrar como caso listo.
 

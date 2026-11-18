@@ -14,12 +14,9 @@ def paragraph(value):
 def prepare(source, output, ticket):
     cases = json.loads(source.read_text())
     importance = {"low": "1", "medium": "2", "high": "3"}
-    suite = ET.Element("testsuite", {"name": ticket})
-    ET.SubElement(suite, "node_order").text = "1"
-    ET.SubElement(suite, "details").text = paragraph(
-        f"Casos de {ticket} de Todo.ly. Diseño preparado para revisión; "
-        "la importación no acredita ejecución ni revisión por otro integrante."
-    )
+    # El destino lo elige Codex en la suite existente Todo.ly tests.
+    # La entrada no crea suites ni contiene IDs que actualicen casos existentes.
+    suite = ET.Element("testcases")
     ids = set()
     for position, case in enumerate(cases, 1):
         if case["id"] in ids or not case["id"].startswith(ticket + "-"):

@@ -7,7 +7,7 @@
     "requerimiento": "PEB-73 / T09. Tratamiento del Email mal formado, pendiente de fijar resultado visible.",
     "precondiciones": [
       "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
-      "Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil."
+      "Sin sesión iniciada en Todo.ly en el navegador."
     ],
     "descripcion": "Candidato pendiente: las vistas vacías impiden fijar una respuesta de validación. No registrar como caso listo.",
     "pasos": [

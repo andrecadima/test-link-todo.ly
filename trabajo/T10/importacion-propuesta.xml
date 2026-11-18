@@ -1,7 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<testsuite name="T10">
-  <node_order>1</node_order>
-  <details>&lt;p&gt;Casos de T10 de Todo.ly. Diseño preparado para revisión; la importación no acredita ejecución ni revisión por otro integrante.&lt;/p&gt;</details>
+<testcases>
   <testcase name="T10-01. Cancelar la modificación del nombre conserva el perfil">
     <node_order>1</node_order>
     <summary>&lt;p&gt;Importancia: medium. Evita que se guarden cambios que la persona decidió descartar.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-74 / T10. Cancelar la edición del nombre conserva el valor anterior.&lt;/p&gt;&lt;p&gt;Descripción: Comprobar que Cancel descarta un nombre editado y que el valor original permanece al volver a consultar Profile.&lt;/p&gt;&lt;p&gt;Postcondiciones: Nombre inicial conservado; correo y Settings sin cambios. Evidencia de la consulta posterior sin secretos.&lt;/p&gt;</summary>
@@ -121,8 +119,8 @@
   </testcase>
   <testcase name="T10-08. Recuperar el acceso de una cuenta registrada mediante su buzón">
     <node_order>4</node_order>
-    <summary>&lt;p&gt;Importancia: high. Cubre pérdida de acceso, aplicación de la nueva credencial y conservación de identidad y datos.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-74 / T10. La recuperación de una cuenta registrada permite establecer una nueva contraseña y volver a acceder.&lt;/p&gt;&lt;p&gt;Descripción: Recorrer solicitud, correo, formulario y Login posterior. Las condiciones de seguridad del transporte se evalúan separadamente en T10-10.&lt;/p&gt;&lt;p&gt;Postcondiciones: Cuenta A accesible con la nueva contraseña, que queda vigente y reflejada en el registro privado; identidad y datos conservados. Sin token ni contraseñas publicados. La restauración de la contraseña anterior queda identificada como actividad pendiente del entorno, separada de este caso de recuperación.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en el perfil dedicado de QA.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta; contraseña inicial conocida y otra contraseña de prueba disponibles en registro privado.&lt;/li&gt;&lt;li&gt;Nombre y un dato representativo de A conocidos para comprobar identidad y conservación.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <summary>&lt;p&gt;Importancia: high. Cubre pérdida de acceso, aplicación de la nueva credencial y conservación de identidad y datos.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-74 / T10. La recuperación de una cuenta registrada permite establecer una nueva contraseña y volver a acceder.&lt;/p&gt;&lt;p&gt;Descripción: Recorrer solicitud, correo, formulario y Login posterior. Las condiciones de seguridad del transporte se evalúan separadamente en T10-10.&lt;/p&gt;&lt;p&gt;Postcondiciones: Cuenta A accesible con la nueva contraseña, que queda vigente y reflejada en el registro privado; identidad y valores de Profile conservados. Sin token ni contraseñas publicados. La restauración de la contraseña original se realiza mediante el cambio válido de Settings y se verifica por Login.&lt;/p&gt;</summary>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A cuyo buzón controla quien ejecuta; contraseña inicial conocida y otra contraseña de prueba disponibles en registro privado.&lt;/li&gt;&lt;li&gt;Nombre inicial y correo de A conocidos por quien ejecuta, con sus valores conservados de forma privada para comprobar identidad.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
     <steps>
@@ -146,8 +144,8 @@
       </step>
       <step>
         <step_number>4</step_number>
-        <actions>&lt;p&gt;Abrir el enlace de recuperación en el perfil de QA mediante HTTPS.&lt;/p&gt;</actions>
-        <expectedresults>&lt;p&gt;Se muestra Please Enter a New Password con Enter a New Password, Verify New Password y Done.&lt;/p&gt;</expectedresults>
+        <actions>&lt;p&gt;Abrir el enlace de recuperación tal como llega en el correo, sin cambiar su esquema ni copiar el token a la evidencia.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestra Please Enter a New Password con Enter a New Password, Verify New Password y Done. Si el enlace recibido no carga el formulario, se registra una falla de este caso; HTTPS se evalúa separadamente en T10-10.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
       <step>
@@ -164,8 +162,8 @@
       </step>
       <step>
         <step_number>7</step_number>
-        <actions>&lt;p&gt;Iniciar sesión con la nueva contraseña y consultar Profile y el dato representativo.&lt;/p&gt;</actions>
-        <expectedresults>&lt;p&gt;Acceso a A; se conservan identidad y datos anteriores a la recuperación.&lt;/p&gt;</expectedresults>
+        <actions>&lt;p&gt;Iniciar sesión con la nueva contraseña y abrir Settings / Profile.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Acceso a A; Full Name y Email conservan el nombre inicial y el correo de A registrados privadamente antes de la recuperación.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
     </steps>
@@ -173,7 +171,7 @@
   <testcase name="T10-09. Solicitar recuperación con un correo no registrado">
     <node_order>5</node_order>
     <summary>&lt;p&gt;Importancia: medium. Comprueba la alternativa de una solicitud que no identifica una cuenta recuperable.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-74 / T10. La recuperación informa el rechazo de un correo que no pertenece a una cuenta.&lt;/p&gt;&lt;p&gt;Descripción: Comprobar el tratamiento observado para la clase correo no registrado, sin consultar ni crear buzones externos.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin sesión ni cambios de cuenta. Evidencia del rechazo conservada. El comportamiento de revelar existencia de cuenta se documenta, sin convertirlo en una auditoría de seguridad.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en el perfil dedicado de QA.&lt;/li&gt;&lt;li&gt;Dirección reservada para ejemplos sin cuenta en Todo.ly: prueba-t10-no-registrada-20261117@example.com.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión del navegador identificados al ejecutar.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Dirección reservada para ejemplos sin cuenta en Todo.ly: prueba-t10-no-registrada-20261117@example.com.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>2</importance>
     <steps>
@@ -212,7 +210,7 @@
       </step>
       <step>
         <step_number>2</step_number>
-        <actions>&lt;p&gt;Abrir el enlace directo en el perfil dedicado de QA sin introducir contraseñas; consultar la indicación de conexión de Chrome.&lt;/p&gt;</actions>
+        <actions>&lt;p&gt;Abrir el enlace directo recibido en el navegador sin introducir contraseñas; consultar la indicación de conexión de Chrome.&lt;/p&gt;</actions>
         <expectedresults>&lt;p&gt;El recorrido de recuperación utiliza una conexión segura; Chrome no presenta Not Secure para la página de recuperación.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
@@ -224,4 +222,4 @@
       </step>
     </steps>
   </testcase>
-</testsuite>
+</testcases>

@@ -111,3 +111,11 @@ La página mostró **Settings y Logout**, y al abrir Profile se confirmó de nue
 Los resultados corresponden a dos recorridos independientes: A sin marcar y B marcado, en el mismo perfil local. No se deduce una caducidad ni un cierre completo del proceso Chrome; sus otros perfiles permanecieron abiertos. No se borraron cookies ni se alteraron contraseñas o correo. Se deja B autenticada con Settings abierto tras la comprobación.
 
 Se cierra la exploración adicional para el diseño de T09. Permanecen pendientes el mensaje específico y la causa de la vista vacía con correo mal formado, las validaciones aisladas de cada campo de Signup, una exploración controlada del registro válido (los registros iniciales fueron completados por el usuario) y cualquier frontera de longitud. No se aplica análisis de valores límite sin esa frontera.
+
+## Nomenclatura y fuentes cruzadas confirmadas durante revisión
+
+Codex inspeccionó directamente `2026-11-16_T09_registro-vacio.png` y `2026-11-17_T09_remember-off-reapertura-sin-sesion.png`: el formulario se titula **Signup**, su botón visible dice **Signup** y la página pública ofrece **Sign Up Free**. El nombre accesible Submit corresponde a ese botón, pero no es su texto visible. Las fichas se corrigieron para usar el texto visible.
+
+El botón visible de Login dice Login y su nombre accesible Submit aparece en las lecturas anteriores. Cancel en Settings fue consultado durante las verificaciones de identidad A/B y está documentado también en `trabajo/T10/exploracion.md` y su captura de Old Password vacío. La inexistencia del correo reservado de T09-09 se contrastó mediante recuperación en `trabajo/T10/exploracion.md`, sección Recuperación: solicitud y contraste, 11:13 AM. Estas fuentes cruzadas no equivalen a ejecutar nuevamente los casos.
+
+La conservación de identidad y datos tras Signup duplicado es **Criterio del equipo** para el caso, no un contraste ya realizado con A después del intento de duplicado. La lectura AX acreditó el aviso global de Signup vacío; la captura solo conserva los asteriscos y aviso de términos. Para publicar evidencia se usarán capturas del registro en TestLink con cuentas genéricas, no capturas de exploración con correos personales visibles.

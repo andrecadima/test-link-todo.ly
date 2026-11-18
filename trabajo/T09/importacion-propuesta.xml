@@ -1,24 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
-<testsuite name="T09">
-  <node_order>1</node_order>
-  <details>&lt;p&gt;Casos de T09 de Todo.ly. Diseño preparado para revisión; la importación no acredita ejecución ni revisión por otro integrante.&lt;/p&gt;</details>
+<testcases>
   <testcase name="T09-01. Rechazar Signup con campos vacíos y términos sin aceptar">
     <node_order>1</node_order>
     <summary>&lt;p&gt;Importancia: medium. Detecta aceptación de un formulario sin los datos necesarios ni el consentimiento indicado.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. Signup informa las omisiones observadas y no concede acceso.&lt;/p&gt;&lt;p&gt;Descripción: Comprobar la combinación vacía observada; no aislar como reglas independientes todas sus condiciones concurrentes.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin cuenta nueva ni sesión; evidencia de la combinación vacía, sin atribuir obligatoriedad del servidor a Timezone.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>2</importance>
     <steps>
       <step>
         <step_number>1</step_number>
-        <actions>&lt;p&gt;Abrir https://todo.ly/ y desplegar Signup.&lt;/p&gt;</actions>
-        <expectedresults>&lt;p&gt;Se muestran Full Name, Email, Password, Timezone, casilla de términos y Submit.&lt;/p&gt;</expectedresults>
+        <actions>&lt;p&gt;Abrir https://todo.ly/ y pulsar Sign Up Free para abrir el formulario Signup.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se muestran Full Name, Email, Password, Timezone, casilla de términos y botón Signup (nombre accesible Submit).&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
       <step>
         <step_number>2</step_number>
-        <actions>&lt;p&gt;Dejar Full Name, Email y Password vacíos, conservar Timezone predeterminado y dejar los términos sin marcar; pulsar Submit.&lt;/p&gt;</actions>
-        <expectedresults>&lt;p&gt;Se rechaza el envío con Error. Please correct the missing fields.; aparecen asteriscos en nombre, correo y contraseña, y el aviso If you don’t agree you can’t use Todo.ly.&lt;/p&gt;</expectedresults>
+        <actions>&lt;p&gt;Dejar Full Name, Email y Password vacíos, conservar Timezone predeterminado y dejar los términos sin marcar; pulsar Signup.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Se rechaza el envío. La lectura del aviso transitorio muestra Error. Please correct the missing fields.; se observan asteriscos en nombre, correo y contraseña. Con los términos sin marcar se muestra If you don’t agree you can’t use Todo.ly. El aviso global puede desaparecer antes de conservar la captura.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
       <step>
@@ -32,20 +30,20 @@
   <testcase name="T09-02. Rechazar el registro con el correo de una cuenta de prueba existente">
     <node_order>2</node_order>
     <summary>&lt;p&gt;Importancia: high. Evita sustituir o confundir una cuenta al reutilizar su identificador.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. Signup rechaza un correo ya registrado sin sustituir la cuenta existente.&lt;/p&gt;&lt;p&gt;Descripción: Comprobar el rechazo de un duplicado usando exclusivamente una cuenta propia de prueba.&lt;/p&gt;&lt;p&gt;Postcondiciones: A conserva sus datos y credenciales; no se crea otra cuenta. Evidencia del rechazo sin contraseñas.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.&lt;/li&gt;&lt;li&gt;Datos de registro válidos conocidos para la cuenta de prueba y aceptación de los términos por quien ejecuta.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.&lt;/li&gt;&lt;li&gt;Datos de registro válidos conocidos para la cuenta de prueba y aceptación de los términos por quien ejecuta.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
     <steps>
       <step>
         <step_number>1</step_number>
-        <actions>&lt;p&gt;Abrir Signup e introducir Prueba T09-02 - duplicado en Full Name, el correo de A en Email y una contraseña de prueba privada válida en Password; seleccionar La Paz UTC-04.&lt;/p&gt;</actions>
+        <actions>&lt;p&gt;Pulsar Sign Up Free para abrir Signup e introducir Prueba T09-02 - duplicado en Full Name, el correo de A en Email y una contraseña de prueba privada distinta de la vigente de A en Password; seleccionar La Paz UTC-04.&lt;/p&gt;</actions>
         <expectedresults>&lt;p&gt;Los campos contienen los datos previstos y el correo corresponde a la cuenta de prueba existente.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
       <step>
         <step_number>2</step_number>
-        <actions>&lt;p&gt;Quien ejecuta marca los términos que acepta y pulsa Submit.&lt;/p&gt;</actions>
-        <expectedresults>&lt;p&gt;Aparece Error. Account with this email address already exists!; no se registra una segunda cuenta con ese correo.&lt;/p&gt;</expectedresults>
+        <actions>&lt;p&gt;Quien ejecuta marca los términos que acepta y pulsa Signup.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Aparece Error. Account with this email address already exists!; no se inicia sesión en una cuenta nueva.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
       <step>
@@ -59,14 +57,14 @@
   <testcase name="T09-03. Consultar y seleccionar Timezone como campo de Signup">
     <node_order>3</node_order>
     <summary>&lt;p&gt;Importancia: medium. Evita confundir las opciones de La Paz y atribuir al campo reglas temporales fuera del alcance.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. Signup ofrece selección de zona y refleja la opción elegida en el formulario.&lt;/p&gt;&lt;p&gt;Descripción: Comprobar opciones, valor inicial y ausencia de una opción vacía en la interfaz; sin crear cuenta ni evaluar vencimientos.&lt;/p&gt;&lt;p&gt;Postcondiciones: Formulario descartado sin registro. No se concluye validación de servidor para un Timezone vacío que la interfaz no permite seleccionar.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>2</importance>
     <steps>
       <step>
         <step_number>1</step_number>
-        <actions>&lt;p&gt;Abrir Signup y consultar el valor inicial de Timezone.&lt;/p&gt;</actions>
-        <expectedresults>&lt;p&gt;El selector muestra (UTC-08:00) Pacific Time (US &amp;amp; Canada), según la referencia observada.&lt;/p&gt;</expectedresults>
+        <actions>&lt;p&gt;Pulsar Sign Up Free para abrir Signup y consultar el valor inicial de Timezone.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;El selector muestra la opción Pacific UTC-08; la captura de referencia deja visible (UTC-08:00) Pacific Time (US &amp;amp; Cana… con el texto recortado.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
       <step>
@@ -84,7 +82,7 @@
       <step>
         <step_number>4</step_number>
         <actions>&lt;p&gt;Volver a https://todo.ly/ sin enviar Signup.&lt;/p&gt;</actions>
-        <expectedresults>&lt;p&gt;No se crea cuenta ni se modifica la configuración de A o B.&lt;/p&gt;</expectedresults>
+        <expectedresults>&lt;p&gt;Se muestra la página pública sin registro completado ni sesión iniciada.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
     </steps>
@@ -92,7 +90,7 @@
   <testcase name="T09-04. Iniciar sesión con credenciales que corresponden a A">
     <node_order>4</node_order>
     <summary>&lt;p&gt;Importancia: high. Protege la operación esencial de acceso a la cuenta correcta.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. Credenciales vigentes que corresponden a una cuenta permiten acceso a esa identidad.&lt;/p&gt;&lt;p&gt;Descripción: Recorrer la regla positiva de la tabla de decisión y comprobar identidad en Profile.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sesión cerrada y datos de A sin cambios; evidencia de identidad sin secretos.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
     <steps>
@@ -104,7 +102,7 @@
       </step>
       <step>
         <step_number>2</step_number>
-        <actions>&lt;p&gt;Pulsar Login, cuyo nombre accesible es Submit.&lt;/p&gt;</actions>
+        <actions>&lt;p&gt;Pulsar Login.&lt;/p&gt;</actions>
         <expectedresults>&lt;p&gt;Se muestra el área autenticada con Settings y Logout.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
@@ -125,19 +123,19 @@
   <testcase name="T09-05. Rechazar Login con ambos campos vacíos">
     <node_order>5</node_order>
     <summary>&lt;p&gt;Importancia: high. Evita acceso sin una combinación de credenciales que corresponda a la cuenta.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. La combinación negativa R1 de la tabla de decisión no concede acceso.&lt;/p&gt;&lt;p&gt;Descripción: Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
     <steps>
       <step>
         <step_number>1</step_number>
-        <actions>&lt;p&gt;Desplegar Login; dejar o introducir Email vacío y Password vacío; conservar Remember Me sin cambios.&lt;/p&gt;</actions>
-        <expectedresults>&lt;p&gt;Los campos contienen la combinación prevista, con datos de prueba y sin exponer credenciales en evidencia.&lt;/p&gt;</expectedresults>
+        <actions>&lt;p&gt;Desplegar Login; dejar Email y Password vacíos; conservar Remember Me sin cambios.&lt;/p&gt;</actions>
+        <expectedresults>&lt;p&gt;Email y Password están vacíos.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
       <step>
         <step_number>2</step_number>
-        <actions>&lt;p&gt;Pulsar Login / Submit una sola vez.&lt;/p&gt;</actions>
+        <actions>&lt;p&gt;Pulsar Login (nombre accesible Submit) una sola vez.&lt;/p&gt;</actions>
         <expectedresults>&lt;p&gt;No se concede acceso. La lectura posterior conserva Login y no muestra datos de proyectos autenticados.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
@@ -152,7 +150,7 @@
   <testcase name="T09-06. Rechazar Login con Email vacío y Password informado">
     <node_order>6</node_order>
     <summary>&lt;p&gt;Importancia: high. Evita acceso sin una combinación de credenciales que corresponda a la cuenta.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. La combinación negativa R2 de la tabla de decisión no concede acceso.&lt;/p&gt;&lt;p&gt;Descripción: Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
     <steps>
@@ -164,7 +162,7 @@
       </step>
       <step>
         <step_number>2</step_number>
-        <actions>&lt;p&gt;Pulsar Login / Submit una sola vez.&lt;/p&gt;</actions>
+        <actions>&lt;p&gt;Pulsar Login (nombre accesible Submit) una sola vez.&lt;/p&gt;</actions>
         <expectedresults>&lt;p&gt;No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
@@ -179,7 +177,7 @@
   <testcase name="T09-07. Rechazar Login de A con Password vacío">
     <node_order>7</node_order>
     <summary>&lt;p&gt;Importancia: high. Evita acceso sin una combinación de credenciales que corresponda a la cuenta.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. La combinación negativa R3 de la tabla de decisión no concede acceso.&lt;/p&gt;&lt;p&gt;Descripción: Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.&lt;/li&gt;&lt;li&gt;Menos de tres intentos fallidos asociados a A en la exploración del lote; la clave vigente es distinta de Prueba-T09-no-valida-17.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.&lt;/li&gt;&lt;li&gt;Según criterio del equipo, A acumula menos de tres intentos fallidos en la sesión de trabajo (no es una política de Todo.ly); la clave vigente es distinta de Prueba-T09-no-valida-17.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
     <steps>
@@ -191,7 +189,7 @@
       </step>
       <step>
         <step_number>2</step_number>
-        <actions>&lt;p&gt;Pulsar Login / Submit una sola vez.&lt;/p&gt;</actions>
+        <actions>&lt;p&gt;Pulsar Login (nombre accesible Submit) una sola vez.&lt;/p&gt;</actions>
         <expectedresults>&lt;p&gt;No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
@@ -206,7 +204,7 @@
   <testcase name="T09-09. Rechazar Login con un correo no registrado">
     <node_order>8</node_order>
     <summary>&lt;p&gt;Importancia: high. Evita acceso sin una combinación de credenciales que corresponda a la cuenta.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. La combinación negativa R4 de la tabla de decisión no concede acceso.&lt;/p&gt;&lt;p&gt;Descripción: Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.&lt;/li&gt;&lt;li&gt;El correo reservado prueba-t10-no-registrada-20261117@example.com no pertenece a una cuenta; esta condición fue contrastada mediante recuperación en la exploración.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;La dirección reservada prueba-t10-no-registrada-20261117@example.com no pertenece a una cuenta; contrastado en la exploración de PEB-74 / T10: la recuperación respondió Error. Account with this Email address doesn&amp;#x27;t exist.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
     <steps>
@@ -218,7 +216,7 @@
       </step>
       <step>
         <step_number>2</step_number>
-        <actions>&lt;p&gt;Pulsar Login / Submit una sola vez.&lt;/p&gt;</actions>
+        <actions>&lt;p&gt;Pulsar Login (nombre accesible Submit) una sola vez.&lt;/p&gt;</actions>
         <expectedresults>&lt;p&gt;No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
@@ -233,7 +231,7 @@
   <testcase name="T09-10. Rechazar Login de A con contraseña incorrecta">
     <node_order>9</node_order>
     <summary>&lt;p&gt;Importancia: high. Evita acceso sin una combinación de credenciales que corresponda a la cuenta.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. La combinación negativa R5 de la tabla de decisión no concede acceso.&lt;/p&gt;&lt;p&gt;Descripción: Comprobar una regla negativa aislada sin ampliar el presupuesto de intentos.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sin sesión ni cambios de cuenta. Un único intento negativo de esta ficha; evidencias sin contraseña legible.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.&lt;/li&gt;&lt;li&gt;Menos de tres intentos fallidos asociados a A en la exploración del lote; la clave vigente es distinta de Prueba-T09-no-valida-17.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.&lt;/li&gt;&lt;li&gt;Según criterio del equipo, A acumula menos de tres intentos fallidos en la sesión de trabajo (no es una política de Todo.ly); la clave vigente es distinta de Prueba-T09-no-valida-17.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
     <steps>
@@ -245,7 +243,7 @@
       </step>
       <step>
         <step_number>2</step_number>
-        <actions>&lt;p&gt;Pulsar Login / Submit una sola vez.&lt;/p&gt;</actions>
+        <actions>&lt;p&gt;Pulsar Login (nombre accesible Submit) una sola vez.&lt;/p&gt;</actions>
         <expectedresults>&lt;p&gt;No se concede acceso y se muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
@@ -299,7 +297,7 @@
   <testcase name="T09-12. Separar los datos propios de A y B al cambiar de cuenta">
     <node_order>11</node_order>
     <summary>&lt;p&gt;Importancia: high. Evita exposición o mezcla de información entre dos cuentas sin proyectos compartidos.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. Cada cuenta muestra sus propios datos de Home después de cambiar de identidad.&lt;/p&gt;&lt;p&gt;Descripción: Comprobar aislamiento en ambos sentidos mediante datos distintos y consultas de identidad.&lt;/p&gt;&lt;p&gt;Postcondiciones: Marcadores propios en Home de sus cuentas, pendientes de la limpieza del lote; sin proyectos compartidos ni cambios a datos de otras personas.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.&lt;/li&gt;&lt;li&gt;Dos cuentas gratuitas de prueba A y B sin proyectos compartidos; credenciales privadas vigentes y proyectos Home disponibles.&lt;/li&gt;&lt;li&gt;No existen los marcadores Prueba T09-12 - marcador A y Prueba T09-12 - marcador B en sus respectivos Home.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Dos cuentas gratuitas de prueba A y B sin proyectos compartidos; credenciales privadas vigentes y proyectos Home disponibles.&lt;/li&gt;&lt;li&gt;No existen los marcadores Prueba T09-12 - marcador A y Prueba T09-12 - marcador B en sus respectivos Home.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
     <steps>
@@ -350,7 +348,7 @@
   <testcase name="T09-13. Reabrir el perfil tras Login con Remember Me desmarcado">
     <node_order>12</node_order>
     <summary>&lt;p&gt;Importancia: high. Detecta permanencia de acceso no solicitada al reabrir el perfil de QA.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. El recorrido observado sin Remember Me vuelve a la página pública al reabrir.&lt;/p&gt;&lt;p&gt;Descripción: Repetir el recorrido observado con A, registrando intervalo y cierre de ventanas; no inferir una caducidad de cookies.&lt;/p&gt;&lt;p&gt;Postcondiciones: Perfil QA abierto con sesión cerrada, datos y credenciales sin cambios; intervalo y cualquier ayuda manual documentados.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.&lt;/li&gt;&lt;li&gt;Perfil dedicado sin otras ventanas propias; configuración de Chrome estable durante el recorrido y posibilidad de reabrir ese mismo perfil.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba A y credenciales vigentes conocidas por quien ejecuta, conservadas únicamente en un registro privado.&lt;/li&gt;&lt;li&gt;Perfil dedicado sin otras ventanas propias; configuración de Chrome estable durante el recorrido y posibilidad de reabrir ese mismo perfil.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
     <steps>
@@ -363,7 +361,7 @@
       <step>
         <step_number>2</step_number>
         <actions>&lt;p&gt;Introducir las credenciales vigentes de A, pulsar Login y confirmar identidad en Profile.&lt;/p&gt;</actions>
-        <expectedresults>&lt;p&gt;Se inicia sesión en A; Settings y Logout están disponibles.&lt;/p&gt;</expectedresults>
+        <expectedresults>&lt;p&gt;Se inicia sesión en A; Settings y Logout están disponibles y Profile muestra el nombre y el correo de A.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
       <step>
@@ -375,7 +373,7 @@
       <step>
         <step_number>4</step_number>
         <actions>&lt;p&gt;Reabrir el mismo perfil y consultar https://todo.ly/ sin introducir credenciales.&lt;/p&gt;</actions>
-        <expectedresults>&lt;p&gt;Aparece la página pública con Login/Signup, sin una sesión autenticada, conforme al recorrido observado.&lt;/p&gt;</expectedresults>
+        <expectedresults>&lt;p&gt;Aparece la página pública con Login y Sign Up Free, sin una sesión autenticada, conforme al recorrido observado.&lt;/p&gt;</expectedresults>
         <execution_type>1</execution_type>
       </step>
       <step>
@@ -389,7 +387,7 @@
   <testcase name="T09-14. Reabrir el perfil tras Login con Remember Me marcado">
     <node_order>13</node_order>
     <summary>&lt;p&gt;Importancia: high. Comprueba recuperación de la sesión solicitada sin confundirla con un nuevo Login.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-73 / T09. El recorrido observado con Remember Me conserva la identidad autenticada al reabrir.&lt;/p&gt;&lt;p&gt;Descripción: Repetir el recorrido observado con B, comprobando la identidad restaurada y cerrando después la sesión.&lt;/p&gt;&lt;p&gt;Postcondiciones: Sesión de B cerrada después de conservar evidencia; datos y credenciales sin cambios. El recorrido no prueba una caducidad ni el cierre completo del proceso Chrome.&lt;/p&gt;</summary>
-    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sesión de Todo.ly cerrada en un perfil dedicado de QA, sin sesiones de otras personas en ese perfil.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba B con credenciales privadas vigentes; perfil dedicado sin otras ventanas propias y configuración de Chrome estable.&lt;/li&gt;&lt;/ol&gt;</preconditions>
+    <preconditions>&lt;ol&gt;&lt;li&gt;Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.&lt;/li&gt;&lt;li&gt;Sin sesión iniciada en Todo.ly en el navegador.&lt;/li&gt;&lt;li&gt;Cuenta gratuita de prueba B con credenciales privadas vigentes; perfil dedicado sin otras ventanas propias y configuración de Chrome estable.&lt;/li&gt;&lt;/ol&gt;</preconditions>
     <execution_type>1</execution_type>
     <importance>3</importance>
     <steps>
@@ -431,4 +429,4 @@
       </step>
     </steps>
   </testcase>
-</testsuite>
+</testcases>

@@ -90,3 +90,11 @@ El usuario solicitó que el agente continuara sin delegarle más cambios. Se ret
 Se cierra la exploración adicional de T10 para priorizar la demo. Quedan pendientes T10-04 (Old Password incorrecto), T10-05 (cambio válido y restauración desde Settings), T10-06 (Cancel de Email) y T10-07 (cambio válido de Email y posible verificación). La causa inmediata es la exigencia de entrada/envío manual de nuevas credenciales de la herramienta, no una restricción observada de Todo.ly. No se repite la solicitud al usuario.
 
 El diseño propone seis casos listos y conserva cuatro candidatos pendientes fuera del conjunto registrable. No se interpreta la delegación general como aprobación de un diseño todavía no presentado. Se mantiene el punto de control por ticket antes de Jira/TestLink.
+
+## Ajustes del usuario antes de registro
+
+El usuario confirmó los ajustes 1–5 y los pasos a/b/c, copiados en CONTINUIDAD.md. Para T10-08, el resultado esperado se evalúa abriendo el enlace **tal como llega**, sin sustituir HTTP por HTTPS. La carga HTTPS realizada durante la exploración es un contraste técnico separado; no demuestra que el enlace original recibido haya cargado el formulario. Si ese enlace no muestra el formulario en ejecución, es una falla funcional de T10-08; el esquema se comprueba además en T10-10 como criterio del equipo.
+
+Sobre persistencia de nombre: tras recarga se observó el texto temporal guardado; tras nueva sesión se confirmó el nombre inicial que ya había sido restaurado y guardado con Ok. La expectativa general de persistencia de un valor guardado en nueva sesión se identifica como criterio del equipo en el diseño.
+
+El bloque manual único solicitado contiene a) Old Password incorrecto con New Password original; b) vigente → original y actualización privada; c) alias de Email en B seguido de Cancel. Resultados pendientes de confirmación, sin repetir el Old Password vacío ya acreditado. Se conserva privadamente la clave reemplazada antes de restaurar, sin publicar valores.

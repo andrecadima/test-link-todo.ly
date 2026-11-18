@@ -1,8 +1,6 @@
-<!-- BORRADOR: pendiente revisión, OK, registro e IDs reales. -->
+<!-- BORRADOR: publicar solo después de revisión y registro verificado. -->
 
 # T11 / PEB-75 — Proyectos, subproyectos y movimientos
-
-Fecha: 17 de noviembre de 2026. **Diseño provisional: cuatro fichas con resultados definidos y dos candidatos pendientes.** No registrado en TestLink, no publicado en Jira y no ejecutado formalmente. El intento de retomar la exploración a las 23:47 UTC devolvió `cgWindowNotFound` con Chrome y Finder, también después de reiniciar CUA; se pidió recuperar la ventana. No se realizaron nuevas mutaciones de T11 durante ese bloqueo.
 
 ## 1. Análisis del área
 
@@ -95,7 +93,7 @@ No se aplica BVA: no hay frontera confirmada. La mención comercial a jerarquía
 
 ## 7. Implementación propuesta en TestLink
 
-Pendiente de revisión del diseño y OK. Proyecto TL:Todo.ly, suite T11; nombres T11-NN, Importance individual, Manual, requerimiento/descripción/postcondiciones en Summary, Preconditions separado y pasos nativos. No hay IDs nuevos ni capturas de registro. La exportación real `testlink-xml/T11.xml` se obtiene después del registro verificado; el XML local propuesto no sustituye esa exportación.
+Registro condicionado a diseño final y revisión independiente sin bloqueantes. Proyecto TL:Todo.ly, suite existente Todo.ly tests; entrada testcases, sin suites nuevas ni actualización de casos; nombres T11-NN, Importance individual, Manual, requerimiento/descripción/postcondiciones en Summary, Preconditions separado y pasos nativos. No hay IDs nuevos ni capturas de registro. La exportación real es `testlink-xml/todo-ly-tests.xml`; `testlink-xml/T11.xml` se extrae de ella después del registro verificado; el XML local propuesto no sustituye esa exportación.
 
 ## 8. Cobertura pendiente y límites
 

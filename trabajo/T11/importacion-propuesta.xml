@@ -1,7 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<testsuite name="T11">
-  <node_order>1</node_order>
-  <details>&lt;p&gt;Casos de T11 de Todo.ly. Diseño preparado para revisión; la importación no acredita ejecución ni revisión por otro integrante.&lt;/p&gt;</details>
+<testcases>
   <testcase name="T11-01. Crear y seleccionar un proyecto raíz vacío">
     <node_order>1</node_order>
     <summary>&lt;p&gt;Importancia: high. Protege la creación y localización de un contenedor sin perder proyectos existentes.&lt;/p&gt;&lt;p&gt;Requerimiento: PEB-75 / T11. Un proyecto nuevo aparece una sola vez y puede seleccionarse conservando su identidad.&lt;/p&gt;&lt;p&gt;Descripción: Comprobar creación, selección y conservación tras recarga de un proyecto propio vacío.&lt;/p&gt;&lt;p&gt;Postcondiciones: Proyecto raíz temporal vacío conservado para la limpieza final del lote; proyectos iniciales intactos.&lt;/p&gt;</summary>
@@ -170,4 +168,4 @@
       </step>
     </steps>
   </testcase>
-</testsuite>
+</testcases>

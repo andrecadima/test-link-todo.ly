@@ -1,8 +1,6 @@
-<!-- BORRADOR LOCAL: no publicar hasta OK, registro verificado e IDs reales. -->
+<!-- BORRADOR: publicar solo después de revisión y registro verificado. -->
 
 # T10 / PEB-74 — Perfil, credenciales y recuperación de acceso
-
-Fecha: 17 de noviembre de 2026. **Diseño preparado para el punto de control: seis casos listos y cuatro candidatos pendientes excluidos del registro propuesto.** No registrado en TestLink ni publicado en Jira. La exploración adicional comenzó a las 15:51 UTC; el presupuesto aproximado de una hora corresponde al trabajo activo. La espera entre el traspaso manual y la respuesta del usuario se registra separadamente. Las fichas de este archivo se generan a partir de `casos.json`, manteniendo los campos acordados. `casos-listos.json` delimita los seis casos propuestos para registro; `casos-pendientes.json` conserva cuatro candidatos que no se importarán como listos. Los códigos se conservan para trazabilidad, aunque la lista registrable no sea consecutiva.
 
 ## 1. Análisis del área
 
@@ -10,7 +8,7 @@ Se analizaron Settings / Profile, el guardado con Ok, el descarte con Cancel y e
 
 Profile ofrece Full Name, Email, Time zone, Old Password y New Password. **Settings no ofrece un campo de confirmación de contraseña.** El formulario de recuperación sí ofrece Enter a New Password y Verify New Password, con Done. Por ello no se fabrica una validación de confirmación distinta dentro de Settings.
 
-Se observaron Cancel del nombre, guardado y persistencia tras recarga y una nueva sesión. La recuperación de A fue completada manualmente por el usuario; el Login posterior rechazó la contraseña reemplazada y aceptó la nueva, conservando la identidad de A. El correo no registrado produjo rechazo explícito. La captura manual de las 14:38 muestra Invalid Password con Old Password vacío y New Password informado. Posteriormente se descartó el formulario y se verificó Login con la misma contraseña vigente antes del intento, confirmando identidad A en Profile. Continúan pendientes el contraste de contraseña incorrecta, el cambio válido desde Settings y el cambio de Email.
+Se observaron Cancel del nombre, guardado y persistencia tras recarga del nombre de prueba. Tras una nueva sesión se verificó la persistencia del nombre inicial restaurado mediante Ok, no la del texto temporal de prueba. La recuperación de A fue completada manualmente por el usuario; el Login posterior rechazó la contraseña reemplazada y aceptó la nueva, conservando la identidad de A. El correo no registrado produjo rechazo explícito. La captura manual de las 14:38 muestra Invalid Password con Old Password vacío y New Password informado. Posteriormente se descartó el formulario y se verificó Login con la misma contraseña vigente antes del intento, confirmando identidad A en Profile. Continúan pendientes el contraste de contraseña incorrecta, el cambio válido desde Settings y el cambio de Email.
 
 No se incluyen zona horaria, vencimientos, eliminación de cuenta, funciones Pro, auditoría de penetración ni tiempos de respuesta sin umbral documentado. Los datos de sesión se usan para comprobar persistencia del perfil; la cobertura completa de sesión corresponde a T09.
 
@@ -31,11 +29,12 @@ Valoración cualitativa de diseño, no frecuencia medida: probabilidad P baja=1/
 
 | Regla o duda | Clasificación | Fundamento |
 |---|---|---|
-| Ok guarda el nombre y Cancel conserva el anterior; el guardado persiste tras recarga y nueva sesión | Comportamiento observado | `exploracion.md`, consultas de Profile del 17/11 |
+| Ok guarda el nombre y Cancel conserva el anterior; tras recarga persiste el nombre de prueba y tras nueva sesión se conserva el nombre inicial restaurado | Comportamiento observado | `exploracion.md`, consultas de Profile del 17/11; no se atribuye a una nueva sesión el texto temporal |
+| Un nombre guardado conserva su valor en nuevas sesiones | Criterio del equipo | Encargo de persistencia del usuario; T10-02 contrasta el valor de prueba en ese recorrido |
 | Settings tiene Old Password y New Password, sin confirmación | Comportamiento observado | Consulta del formulario del 17/11 |
 | Old Password vacío con New Password informado muestra `Invalid Password` | Comportamiento observado | Captura aportada por el usuario del 17/11 a las 14:38; la conservación posterior se contrastó por Login y Profile con la misma credencial previa |
 | Old Password incorrecto y cambio válido desde Settings | Duda pendiente | Segundo contraste manual y restauración solicitados; no confundir el rechazo de vacío con el de incorrecto |
-| Rechazar cambios sin contraseña actual correcta | Criterio de seguridad propuesto para revisión; no confirmado todavía | Riesgo R1; el rechazo de vacío ya se observó; el de incorrecto requiere contraste; la conservación tras el intento vacío se verificó |
+| Old Password debe corresponder a la vigente para aceptar un cambio | Criterio del equipo | Ajuste 5 expreso del usuario. Vacío ya observado; mensaje de incorrecto y aceptación válida se completan con a/b |
 | Cambio válido de contraseña desde Settings y reversión | Duda pendiente | Existe el control; no se ha acreditado el resultado del flujo |
 | Cancel específico de Email y cambio válido a alias sin verificar por correo | Duda pendiente | No atribuir a Email el contraste realizado únicamente con Full Name |
 | Para recuperación registrada se muestra `Info. An email has been sent with a link where you can change your password.` | Comportamiento observado | Solicitud de A, mensaje recibido y formulario leído |
@@ -76,7 +75,7 @@ Una clase agrupa datos con el mismo tratamiento esperado; se elige un representa
 
 **UC1 — Editar nombre.** Actor: persona con sesión A. Flujo principal: A abre Profile; S muestra valores; A edita Full Name y pulsa Ok; S conserva el nombre; A recarga y abre nueva sesión; S muestra el valor guardado. Alternativa: A pulsa Cancel y S conserva el anterior. Recorridos derivados: **T10-02 principal; T10-01 alternativa**. El flujo incluye restauración del dato al terminar.
 
-**UC2 — Recuperar acceso.** Actor: persona que controla el buzón de A. Principal: A abre Reset your Password e informa su correo; S confirma envío; A consulta el buzón y abre enlace seguro; S ofrece formulario; A introduce personalmente y confirma nueva contraseña; S permite acceso con ella; A contrasta credencial reemplazada y datos de A. Alternativa: correo sin cuenta → S rechaza la solicitud y mantiene el formulario. Derivación: **T10-08 principal y T10-09 alternativa**. La comprobación de HTTPS se separa como objetivo de seguridad observable **T10-10**, derivado del punto de entrega/apertura del enlace y del criterio expreso del equipo.
+**UC2 — Recuperar acceso.** Actor: persona que controla el buzón de A. Principal: A abre Reset your Password e informa su correo; S confirma envío; A consulta el buzón y abre el enlace tal como llega; S ofrece formulario; A introduce personalmente y confirma nueva contraseña; S permite acceso con ella; A contrasta credencial reemplazada y datos de A. Alternativa: correo sin cuenta → S rechaza la solicitud y mantiene el formulario. Derivación: **T10-08 principal y T10-09 alternativa**. La comprobación de HTTPS se separa como objetivo de seguridad observable **T10-10**, derivado del punto de entrega/apertura del enlace y del criterio expreso del equipo.
 
 **UC3 — Cambiar contraseña desde Settings, pendiente.** Principal candidato: A acredita contraseña vigente y propone otra; S acepta; A verifica acceso y restaura el estado inicial. Alternativa observada: Old Password vacío → aviso Invalid Password, **T10-03**. Alternativa incorrecto y principal válido pendientes de contraste: **T10-04/05**, aún no listos para registro definitivo.
 
@@ -103,18 +102,18 @@ No se aplican valores límite: no hay una frontera real confirmada de longitud n
 
 ## 7. Implementación en TestLink
 
-**Pendiente de punto de control y OK del usuario.** No hay IDs nuevos, enlaces de casos propios, capturas de suite propia ni XML exportado todavía. Organización acordada: proyecto TL:Todo.ly, suite T10, nombres T10-NN, Importance individual, ejecución Manual, Summary con requerimiento/descripción/postcondiciones, Preconditions separado y pasos nativos con Expected results. No se alterarán casos de otros tickets.
+**OK del usuario recibido; pendiente completar ajustes y revisión sin bloqueantes.** Destino: proyecto TL:Todo.ly, suite existente Todo.ly tests, nombres T10-NN, Importance individual y ejecución Manual; Summary con requerimiento/descripción/postcondiciones, Preconditions separado y pasos nativos. XML de entrada con raíz testcases, sin IDs, nuevas suites ni actualización de existentes. No hay registro comprobado todavía.
 
-El comentario final de Jira contendrá la lista resumida con IDs y enlaces reales y las capturas de registro; las fichas completas estarán en TestLink. Los candidatos con resultado principal pendiente no se presentarán como casos listos ni se registrarán sin resolverlos.
+El comentario final de Jira contendrá la lista resumida con IDs y enlaces reales y las capturas de registro; las fichas completas estarán en TestLink. La exportación real será testlink-xml/todo-ly-tests.xml y el XML T10 se extraerá de ella mediante script. Los candidatos con resultado principal pendiente no se presentarán como casos listos ni se registrarán sin resolverlos.
 
 ## 8. Cobertura pendiente y límites
 
-Pendientes: Old Password incorrecto, cambio válido desde Settings, restauración de A, Email de B, política de contraseña, fronteras de campos, token de uso único/caducidad y sesiones paralelas. Se cierra la exploración adicional para avanzar al diseño, conforme a la prioridad de la demo. El usuario pidió delegar los cambios; la política de CUA exige que los introduzca y envíe personalmente. Por ello T10-04/05/06/07 quedan pendientes por limitación de ejecución, sin nuevas solicitudes repetidas de intervención. No se afirma que el producto exija verificación de correo: esa regla no se alcanzó a consultar mediante un cambio válido. Los cuatro PDF faltantes se excluyen expresamente como fuentes por instrucción del usuario.
+Pendientes: Old Password incorrecto, cambio válido desde Settings, restauración de A, Email de B, política de contraseña, fronteras de campos, token de uso único/caducidad y sesiones paralelas. Se solicitaron al usuario los pasos manuales a/b/c en un único bloque para completar T10-04/05/06. T10-07 se conserva exclusivamente como cobertura pendiente y no se registra, por instrucción expresa. No se afirma que el producto exija verificación de correo: esa regla no se alcanzó a consultar mediante un cambio válido. Los cuatro PDF faltantes se excluyen expresamente como fuentes por instrucción del usuario.
 
-El nombre vacío se envió una vez con credenciales de cambio vacías: la vista quedó en Loading y una nueva consulta conservó Andre Cadima. No hubo una validación visible fiable; no se establece obligatoriedad ni se genera un caso de rechazo basándose solo en ese intento. No se repite la exploración para buscar límites arbitrarios.
+El nombre vacío se envió una vez con credenciales de cambio vacías: la vista quedó en Loading y una nueva consulta conservó el nombre inicial de A. No hubo una validación visible fiable; no se establece obligatoriedad ni se genera un caso de rechazo basándose solo en ese intento. No se repite la exploración para buscar límites arbitrarios.
 
 No se reporta el hallazgo HTTP en la planilla de fallas: el comentario lo dejará para confirmar durante la ejecución. La revisión por otro integrante permanece pendiente y no se marcará por el agente.
 
 ## 9. Estado
 
-Diseño preparado y presentado para revisión: **seis casos listos (T10-01/02/03/08/09/10) y cuatro candidatos pendientes (T10-04/05/06/07), excluidos del registro propuesto**. Exploración adicional cerrada con dudas declaradas para priorizar la entrega. **No registrado, no publicado y no ejecutado formalmente.** Se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante” únicamente después del registro comprobado.
+Diseño con OK del usuario, ajustes y revisión en curso: **seis casos listos (T10-01/02/03/08/09/10) y cuatro candidatos pendientes (T10-04/05/06/07), excluidos del registro propuesto**. El bloque manual a/b/c completa la cobertura de T10-04/05/06; su resultado aún está pendiente. **No registrado, no publicado y no ejecutado formalmente.** Se actualizará a “Diseñados y registrados en TestLink; pendiente de revisión por otro integrante” únicamente después del registro comprobado. La revisión de Claude no sustituye la revisión de otro integrante.

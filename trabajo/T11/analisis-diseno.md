@@ -93,7 +93,7 @@ No se aplica BVA: no hay frontera confirmada. La mención comercial a jerarquía
 
 ## 7. Implementación propuesta en TestLink
 
-Pendiente de revisión del diseño y OK. Proyecto TL:Todo.ly, suite T11; nombres T11-NN, Importance individual, Manual, requerimiento/descripción/postcondiciones en Summary, Preconditions separado y pasos nativos. No hay IDs nuevos ni capturas de registro. La exportación real `testlink-xml/T11.xml` se obtiene después del registro verificado; el XML local propuesto no sustituye esa exportación.
+Registro condicionado a diseño final y revisión independiente sin bloqueantes. Proyecto TL:Todo.ly, suite existente Todo.ly tests; entrada testcases, sin suites nuevas ni actualización de casos; nombres T11-NN, Importance individual, Manual, requerimiento/descripción/postcondiciones en Summary, Preconditions separado y pasos nativos. No hay IDs nuevos ni capturas de registro. La exportación real es `testlink-xml/todo-ly-tests.xml`; `testlink-xml/T11.xml` se extrae de ella después del registro verificado; el XML local propuesto no sustituye esa exportación.
 
 ## 8. Cobertura pendiente y límites
 
