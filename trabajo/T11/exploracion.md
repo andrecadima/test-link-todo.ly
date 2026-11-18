@@ -20,3 +20,13 @@ No hay longitud ni profundidad máxima confirmadas. No se infiere unicidad de no
 ## Datos temporales pendientes de limpieza
 
 En A permanece el proyecto raíz vacío `Prueba T11 - proyecto renombrado 1109`. Home de A y Home de B conservan los marcadores de aislamiento de T09; no se usaron como tareas de movimiento ni se alteraron los tutoriales.
+
+## Retoma para cierre acotado — acceso visual pendiente
+
+El 17/11 a las 23:47 UTC se intentó retomar T11 después de preparar T09. Chrome devolvió `cgWindowNotFound`; el intento de recuperar foco mediante Finder dio el mismo error. El inventario confirmó que ambos procesos seguían ejecutándose, pero no proporcionó ventanas utilizables y el host DOM continuó no disponible. Se reinició la conexión CUA y se consultó Chrome por su bundle ID; persistió el error. Un reintento después del trabajo documental volvió a fallar. No se pulsaron controles ni se crearon datos adicionales de T11 durante esta retoma.
+
+Se pidió al usuario dejar el Mac desbloqueado y Chrome visible en el perfil QA, sin introducir credenciales ni cambiar datos. La exploración de Cancel Editing, anidación y movimientos sigue pendiente de recuperar esa superficie. No se considera que el fallo de herramienta pruebe una restricción de Todo.ly.
+
+Como fuente independiente de resultados esperados se consultó la [portada oficial de Todo.ly](https://todo.ly/), que documenta arrastre de proyectos para anidar y movimiento de tareas entre proyectos. Se clasifica como **Regla documentada**, sin presentarlo como comportamiento observado en A/B. El texto no confirma un procedimiento de retorno a raíz ni la posibilidad específica de mover completadas. El criterio de conservar contenido, estado, atributos y relaciones procede expresamente del usuario.
+
+Se preparó un diseño provisional con T11-01/02 basados en observación previa y persistencia solicitada, T11-04/05 basados en documentación y conservación solicitada, y T11-03/06 como candidatos pendientes. Los datos de esas fichas todavía no se crearon. La consulta pública no inicia sesión ni utiliza la API de Todo.ly.

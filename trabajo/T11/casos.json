@@ -1,0 +1,211 @@
+[
+  {
+    "id": "T11-01",
+    "titulo": "Crear y seleccionar un proyecto raíz vacío",
+    "importancia": "high",
+    "razon": "Protege la creación y localización de un contenedor sin perder proyectos existentes.",
+    "requerimiento": "PEB-75 / T11. Un proyecto nuevo aparece una sola vez y puede seleccionarse conservando su identidad.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A en un perfil dedicado.",
+      "No existe un proyecto llamado Prueba T11-01 - proyecto; proyectos iniciales de la cuenta conocidos."
+    ],
+    "descripcion": "Comprobar creación, selección y conservación tras recarga de un proyecto propio vacío.",
+    "pasos": [
+      [
+        "Consultar el árbol inicial, pulsar Add New Project e introducir Prueba T11-01 - proyecto; pulsar Add una vez.",
+        "Aparece una sola entrada con ese nombre en la raíz; los proyectos iniciales permanecen."
+      ],
+      [
+        "Seleccionar Prueba T11-01 - proyecto.",
+        "El área principal muestra su nombre, There are no items to display y 0 Done Items."
+      ],
+      [
+        "Recargar con F5 y volver a seleccionar el proyecto si fuera necesario.",
+        "La entrada raíz conserva el nombre y sigue vacía, sin duplicación; los proyectos iniciales permanecen."
+      ],
+      [
+        "Conservar evidencia del árbol y del proyecto seleccionado.",
+        "La evidencia permite identificar el contenedor creado y su estado vacío."
+      ]
+    ],
+    "postcondiciones": "Proyecto raíz temporal vacío conservado para la limpieza final del lote; proyectos iniciales intactos."
+  },
+  {
+    "id": "T11-02",
+    "titulo": "Renombrar un proyecto propio y conservarlo tras recarga",
+    "importancia": "medium",
+    "razon": "Evita confundir o perder un proyecto al cambiar su nombre.",
+    "requerimiento": "PEB-75 / T11. Save aplica el nombre nuevo y conserva el proyecto y su contenido tras recarga.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A en un perfil dedicado.",
+      "No existen los proyectos Prueba T11-02 - original ni Prueba T11-02 - renombrado."
+    ],
+    "descripcion": "Comprobar el guardado del nombre sobre un proyecto temporal, sin imponer unicidad como regla del producto.",
+    "pasos": [
+      [
+        "Crear una vez el proyecto raíz Prueba T11-02 - original mediante Add New Project y Add.",
+        "El árbol muestra el proyecto temporal una sola vez."
+      ],
+      [
+        "Seleccionar el proyecto, abrir su menú Options y elegir Edit.",
+        "Aparece el campo editable con el nombre original y los controles Save y Cancel Editing."
+      ],
+      [
+        "Introducir Prueba T11-02 - renombrado y pulsar el icono Save.",
+        "La entrada del proyecto y el título de la vista seleccionada muestran el nombre nuevo."
+      ],
+      [
+        "Recargar con F5 y volver a seleccionar el proyecto.",
+        "El nombre renombrado persiste y no aparece una segunda entrada que represente la versión anterior."
+      ],
+      [
+        "Conservar evidencia de nombre y ubicación.",
+        "Queda documentada la identidad del proyecto renombrado."
+      ]
+    ],
+    "postcondiciones": "Proyecto temporal conservado con el nombre renombrado para limpieza final; no se alteraron proyectos predeterminados."
+  },
+  {
+    "id": "T11-03",
+    "titulo": "Investigar Cancel Editing al renombrar un proyecto",
+    "importancia": "medium",
+    "razon": "Detecta aplicación de un nombre que se decidió descartar.",
+    "requerimiento": "PEB-75 / T11. Cancel Editing debería conservar el nombre anterior; efecto pendiente de contraste.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A en un perfil dedicado.",
+      "No existe un proyecto llamado Prueba T11-03 - original."
+    ],
+    "descripcion": "Candidato pendiente: el control fue observado, pero todavía no se contrastó su efecto al cancelar.",
+    "pasos": [
+      [
+        "Crear y seleccionar el proyecto raíz Prueba T11-03 - original; abrir Options / Edit.",
+        "Se presenta el nombre original y Cancel Editing."
+      ],
+      [
+        "Introducir Prueba T11-03 - descartado y pulsar Cancel Editing.",
+        "PENDIENTE: contrastar que el control descarta el valor editado y conserva el original antes de fijarlo como regla."
+      ],
+      [
+        "Consultar el árbol y recargar con F5.",
+        "PENDIENTE: confirmar el nombre conservado y actualizar el resultado esperado con ese fundamento."
+      ]
+    ],
+    "postcondiciones": "Candidato fuera del registro propuesto; efecto de cancelación y estado posterior pendientes de contraste."
+  },
+  {
+    "id": "T11-04",
+    "titulo": "Crear un subproyecto por arrastre y conservar su contenido",
+    "importancia": "high",
+    "razon": "Protege la relación padre/hijo de proyectos y los datos del contenedor movido.",
+    "requerimiento": "PEB-75 / T11. El arrastre documentado anida proyectos propios; la relación y los datos se conservan tras recarga.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A en un perfil dedicado.",
+      "No existen Prueba T11-04 - padre ni Prueba T11-04 - hijo; no existen tareas con el marcador de este caso."
+    ],
+    "descripcion": "Diseño basado en la función documentada de subproyectos y el criterio del equipo de conservar información; arrastre aún no comprobado en las cuentas.",
+    "pasos": [
+      [
+        "Crear en la raíz Prueba T11-04 - padre y Prueba T11-04 - hijo mediante Add New Project / Add, una vez cada uno.",
+        "El árbol muestra ambos proyectos como raíces distintas."
+      ],
+      [
+        "Seleccionar el hijo y crear una tarea pendiente Prueba T11-04 - dato del hijo mediante Add.",
+        "El hijo contiene el marcador con ese texto y estado pendiente."
+      ],
+      [
+        "Arrastrar el manejador del proyecto hijo sobre el proyecto padre, usando los proyectos temporales del caso.",
+        "El hijo queda anidado bajo el padre según la función de subproyectos documentada; no desaparece ni se duplica ninguno."
+      ],
+      [
+        "Seleccionar el hijo dentro del árbol.",
+        "Se mantiene el título del hijo y su marcador pendiente con el texto original; sigue asociado al hijo."
+      ],
+      [
+        "Recargar con F5 y volver a seleccionar el hijo bajo el padre.",
+        "Se conserva la relación padre/hijo y el marcador con su contenido y estado."
+      ],
+      [
+        "Conservar evidencia del árbol y de la vista del hijo.",
+        "La evidencia permite comprobar relación y datos. No se crean tareas padre/subtareas."
+      ]
+    ],
+    "postcondiciones": "Proyecto temporal padre con hijo y marcador pendiente conservados para limpieza final; proyectos predeterminados intactos. No incluye eliminación del subproyecto ni retorno a raíz."
+  },
+  {
+    "id": "T11-05",
+    "titulo": "Mover una tarea pendiente entre Home y Study conservando sus datos",
+    "importancia": "high",
+    "razon": "Detecta pérdida, duplicación, cambio de estado o ubicación incorrecta al mover.",
+    "requerimiento": "PEB-75 / T11. El movimiento documentado cambia de proyecto sin alterar el contenido ni el estado de la tarea.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A en un perfil dedicado.",
+      "Home y Study son proyectos raíz independientes de la misma cuenta; su contenido inicial es conocido.",
+      "No existe una tarea llamada Prueba T11-05 - mover pendiente."
+    ],
+    "descripcion": "Comprobar ida y vuelta entre proyectos y persistencia con F5. El contenido y estado son criterios del equipo; no se modifican fechas ni preferencias temporales.",
+    "pasos": [
+      [
+        "Consultar Home y Study y registrar sus contenidos iniciales y cantidades visibles de pendientes.",
+        "Queda una referencia del contenido previo de cada proyecto, sin modificarlo."
+      ],
+      [
+        "Seleccionar Home y crear Prueba T11-05 - mover pendiente mediante Add; registrar su estado y atributos que estén visibles.",
+        "Home contiene el nuevo marcador pendiente una sola vez; su texto y atributos visibles quedan como referencia."
+      ],
+      [
+        "Arrastrar el pequeño manejador de esa tarea sobre Study en el árbol de proyectos, sin soltarla sobre otra tarea.",
+        "La tarea queda en Study, con el texto, estado pendiente y atributos visibles conservados; no se crea una subtarea."
+      ],
+      [
+        "Seleccionar Study y después Home para comprobar origen y destino.",
+        "Study muestra una copia del marcador; Home deja de mostrarlo. Los datos previos de ambos proyectos permanecen."
+      ],
+      [
+        "Recargar con F5 y consultar de nuevo Study y Home.",
+        "Se conserva la pertenencia a Study y la ausencia en Home, sin pérdida, duplicación ni cambio del contenido/estado."
+      ],
+      [
+        "Seleccionar Study y arrastrar el mismo marcador de vuelta a Home; recargar y consultar Home.",
+        "El marcador vuelve a Home con el contenido y estado iniciales; Study recupera sus datos previos."
+      ],
+      [
+        "Conservar evidencia de origen, destino y consulta posterior.",
+        "La evidencia permite reconocer el mismo marcador y los datos conservados."
+      ]
+    ],
+    "postcondiciones": "Marcador temporal pendiente en Home para limpieza final; Study y datos previos de ambos proyectos conservados. Atributos no visibles ni preparados quedan fuera de la comprobación, explícitamente pendientes de cobertura."
+  },
+  {
+    "id": "T11-06",
+    "titulo": "Investigar el movimiento de una tarea completada entre proyectos",
+    "importancia": "high",
+    "razon": "Protege el estado completado y la información si el producto permite esa operación.",
+    "requerimiento": "PEB-75 / T11. Disponibilidad y procedimiento para mover completadas pendientes de confirmar.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A en un perfil dedicado.",
+      "Home y Study disponibles; no existe Prueba T11-06 - mover completada."
+    ],
+    "descripcion": "Candidato pendiente: no se presupone que el mecanismo de pendientes permita mover completadas sin reactivarlas.",
+    "pasos": [
+      [
+        "Crear Prueba T11-06 - mover completada en Home y marcar su checkbox para completar; abrir Done Items / See all.",
+        "El marcador aparece como completado en Home; la acción se usa solo como preparación."
+      ],
+      [
+        "Consultar los controles o el arrastre ofrecidos para esa tarea completada, sin reactivarla.",
+        "PENDIENTE: comprobar si existe un mecanismo para moverla manteniendo su estado."
+      ],
+      [
+        "Si la operación se confirma, documentar su procedimiento concreto, destino Study y contraste tras F5 antes de cerrar la ficha.",
+        "PENDIENTE: fijar el resultado sobre ubicación y conservación de completado con la regla y controles confirmados."
+      ]
+    ],
+    "postcondiciones": "Candidato fuera del registro propuesto; disponibilidad del movimiento y localización final pendientes. No se usa completar/reactivar como sustituto de mover completadas."
+  }
+]

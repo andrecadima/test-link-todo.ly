@@ -1,0 +1,58 @@
+[
+  {
+    "id": "T11-03",
+    "titulo": "Investigar Cancel Editing al renombrar un proyecto",
+    "importancia": "medium",
+    "razon": "Detecta aplicación de un nombre que se decidió descartar.",
+    "requerimiento": "PEB-75 / T11. Cancel Editing debería conservar el nombre anterior; efecto pendiente de contraste.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A en un perfil dedicado.",
+      "No existe un proyecto llamado Prueba T11-03 - original."
+    ],
+    "descripcion": "Candidato pendiente: el control fue observado, pero todavía no se contrastó su efecto al cancelar.",
+    "pasos": [
+      [
+        "Crear y seleccionar el proyecto raíz Prueba T11-03 - original; abrir Options / Edit.",
+        "Se presenta el nombre original y Cancel Editing."
+      ],
+      [
+        "Introducir Prueba T11-03 - descartado y pulsar Cancel Editing.",
+        "PENDIENTE: contrastar que el control descarta el valor editado y conserva el original antes de fijarlo como regla."
+      ],
+      [
+        "Consultar el árbol y recargar con F5.",
+        "PENDIENTE: confirmar el nombre conservado y actualizar el resultado esperado con ese fundamento."
+      ]
+    ],
+    "postcondiciones": "Candidato fuera del registro propuesto; efecto de cancelación y estado posterior pendientes de contraste."
+  },
+  {
+    "id": "T11-06",
+    "titulo": "Investigar el movimiento de una tarea completada entre proyectos",
+    "importancia": "high",
+    "razon": "Protege el estado completado y la información si el producto permite esa operación.",
+    "requerimiento": "PEB-75 / T11. Disponibilidad y procedimiento para mover completadas pendientes de confirmar.",
+    "precondiciones": [
+      "Acceso a internet y equipo con Chrome; sistema operativo y versión identificados en el registro de ejecución.",
+      "Sesión iniciada en Todo.ly con una cuenta gratuita de prueba A en un perfil dedicado.",
+      "Home y Study disponibles; no existe Prueba T11-06 - mover completada."
+    ],
+    "descripcion": "Candidato pendiente: no se presupone que el mecanismo de pendientes permita mover completadas sin reactivarlas.",
+    "pasos": [
+      [
+        "Crear Prueba T11-06 - mover completada en Home y marcar su checkbox para completar; abrir Done Items / See all.",
+        "El marcador aparece como completado en Home; la acción se usa solo como preparación."
+      ],
+      [
+        "Consultar los controles o el arrastre ofrecidos para esa tarea completada, sin reactivarla.",
+        "PENDIENTE: comprobar si existe un mecanismo para moverla manteniendo su estado."
+      ],
+      [
+        "Si la operación se confirma, documentar su procedimiento concreto, destino Study y contraste tras F5 antes de cerrar la ficha.",
+        "PENDIENTE: fijar el resultado sobre ubicación y conservación de completado con la regla y controles confirmados."
+      ]
+    ],
+    "postcondiciones": "Candidato fuera del registro propuesto; disponibilidad del movimiento y localización final pendientes. No se usa completar/reactivar como sustituto de mover completadas."
+  }
+]
