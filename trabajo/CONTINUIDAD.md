@@ -1,3 +1,9 @@
+# Etapa vigente — ejecución del XML del grupo 2, 23/11/2026
+
+Andre pidió ejecutar por Chrome solo TS-01 Registro de usuario (9) y TS-02 Inicio de sesión (6) del nuevo proyecto TC:Todo.ly grupo2 (id1387). Se creó plan2897/build1 y se confirmaron15 casos vinculados TC-1…TC-15. Cero casos ejecutados/resultados guardados todavía. TestLink quedó en blanco al navegar a Desktop; se pidió a Andre recargar y abrir Execute Tests. Esperar su aviso antes de retomar Chrome. Detalle y siguiente paso exacto en trabajo/ejecucion-grupo2/CONTINUIDAD.md; inventario en ejecucion.json. No tocar otros60 casos ni corregir fichas ni publicar en Jira. Los pendientes antiguos se conservan abajo, sin desplazar esta prioridad.
+
+---
+
 # Corrección vigente T09 — Jira únicamente, 18/11 17:53
 
 Andre pidió solo casos de uso para fundamentar T09. Comentario10227 de PEB-73 actualizado/leído MCP: UC1Signup parcial/rechazos, UC2Login, UC3Logout/Back/URL, UC4A-B, UC5RememberMe. Secciones5/6 y criterio9 coherentes; diez tablas, una imagen, trece enlaces preservados. Claude15propuso, Codex revisó/resolvió referencias antiguasR1–R5 haciaUC2. T09-08 siguependiente. TestLinkfinal y XMLSINcambios; no reexportar. Diseño/localdraftfundamento sincronizado; resolución15registra ajustes. Decisiones§17rige soloT09.

@@ -1,0 +1,151 @@
+{
+  "fecha": "2026-11-23",
+  "proyecto": "TC:Todo.ly grupo 2",
+  "proyecto_id": 1387,
+  "plan": "Ejecución grupo 2 - 2026-11-23",
+  "plan_id": 2897,
+  "build": "Todo.ly web - 2026-11-23",
+  "build_id": 1,
+  "scope_suites": [
+    1388,
+    1470
+  ],
+  "vinculados_confirmados": 15,
+  "casos": [
+    {
+      "id": "TC-1",
+      "codigo_grupo": "TC-001",
+      "titulo_abreviado": "Full Name obligatorio",
+      "suite": "TS-01 Registro de usuario",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-2",
+      "codigo_grupo": "TC-002",
+      "titulo_abreviado": "Email obligatorio",
+      "suite": "TS-01 Registro de usuario",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-3",
+      "codigo_grupo": "TC-003",
+      "titulo_abreviado": "Password obligatorio",
+      "suite": "TS-01 Registro de usuario",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-4",
+      "codigo_grupo": "TC-004",
+      "titulo_abreviado": "Registro con campos obligatorios completos",
+      "suite": "TS-01 Registro de usuario",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-5",
+      "codigo_grupo": "TC-037",
+      "titulo_abreviado": "Registro sin aceptar condiciones",
+      "suite": "TS-01 Registro de usuario",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-6",
+      "codigo_grupo": "TC-039",
+      "titulo_abreviado": "Formato del correo",
+      "suite": "TS-01 Registro de usuario",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-7",
+      "codigo_grupo": "TC-040",
+      "titulo_abreviado": "Full Name solo espacios",
+      "suite": "TS-01 Registro de usuario",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-8",
+      "codigo_grupo": "TC-041",
+      "titulo_abreviado": "Caracteres especiales Full Name",
+      "suite": "TS-01 Registro de usuario",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-9",
+      "codigo_grupo": "TC-042",
+      "titulo_abreviado": "Correo ya registrado",
+      "suite": "TS-01 Registro de usuario",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-10",
+      "codigo_grupo": "TC-033",
+      "titulo_abreviado": "Login válido",
+      "suite": "TS-02 Inicio de sesión",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-11",
+      "codigo_grupo": "TC-034",
+      "titulo_abreviado": "Password incorrecto",
+      "suite": "TS-02 Inicio de sesión",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-12",
+      "codigo_grupo": "TC-043",
+      "titulo_abreviado": "Email vacío Login",
+      "suite": "TS-02 Inicio de sesión",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-13",
+      "codigo_grupo": "TC-044",
+      "titulo_abreviado": "Password vacío Login",
+      "suite": "TS-02 Inicio de sesión",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-14",
+      "codigo_grupo": "TC-045",
+      "titulo_abreviado": "Login ambos vacíos",
+      "suite": "TS-02 Inicio de sesión",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    },
+    {
+      "id": "TC-15",
+      "codigo_grupo": "TC-046",
+      "titulo_abreviado": "Login correo no registrado",
+      "suite": "TS-02 Inicio de sesión",
+      "resultado": "not_run",
+      "pasos": [],
+      "notas": "Pendiente de ejecución real."
+    }
+  ]
+}
