@@ -1,0 +1,133 @@
+{
+  "fecha": "2026-11-24",
+  "plan": 2897,
+  "build": 1,
+  "casos_vinculados": 15,
+  "totales": {
+    "passed": 10,
+    "blocked": 5
+  },
+  "resultados_leidos_api": [
+    {
+      "caso": "TC-1",
+      "codigo_grupo": "TC-001",
+      "execution_id": 1,
+      "resultado": "passed",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=1"
+    },
+    {
+      "caso": "TC-2",
+      "codigo_grupo": "TC-002",
+      "execution_id": 23,
+      "resultado": "blocked",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=23"
+    },
+    {
+      "caso": "TC-3",
+      "codigo_grupo": "TC-003",
+      "execution_id": 3,
+      "resultado": "passed",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=3"
+    },
+    {
+      "caso": "TC-4",
+      "codigo_grupo": "TC-004",
+      "execution_id": 4,
+      "resultado": "passed",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=4"
+    },
+    {
+      "caso": "TC-5",
+      "codigo_grupo": "TC-037",
+      "execution_id": 5,
+      "resultado": "passed",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=5"
+    },
+    {
+      "caso": "TC-6",
+      "codigo_grupo": "TC-039",
+      "execution_id": 6,
+      "resultado": "passed",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=6"
+    },
+    {
+      "caso": "TC-7",
+      "codigo_grupo": "TC-040",
+      "execution_id": 7,
+      "resultado": "passed",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=7"
+    },
+    {
+      "caso": "TC-8",
+      "codigo_grupo": "TC-041",
+      "execution_id": 8,
+      "resultado": "passed",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=8"
+    },
+    {
+      "caso": "TC-9",
+      "codigo_grupo": "TC-042",
+      "execution_id": 9,
+      "resultado": "passed",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=9"
+    },
+    {
+      "caso": "TC-10",
+      "codigo_grupo": "TC-033",
+      "execution_id": 22,
+      "resultado": "blocked",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=22"
+    },
+    {
+      "caso": "TC-11",
+      "codigo_grupo": "TC-034",
+      "execution_id": 11,
+      "resultado": "passed",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=11"
+    },
+    {
+      "caso": "TC-12",
+      "codigo_grupo": "TC-043",
+      "execution_id": 21,
+      "resultado": "blocked",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=21"
+    },
+    {
+      "caso": "TC-13",
+      "codigo_grupo": "TC-044",
+      "execution_id": 18,
+      "resultado": "blocked",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=18"
+    },
+    {
+      "caso": "TC-14",
+      "codigo_grupo": "TC-045",
+      "execution_id": 19,
+      "resultado": "blocked",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=19"
+    },
+    {
+      "caso": "TC-15",
+      "codigo_grupo": "TC-046",
+      "execution_id": 20,
+      "resultado": "passed",
+      "modo": "Manual",
+      "enlace": "http://68.211.149.112/lib/execute/execPrint.php?id=20"
+    }
+  ],
+  "notas_pasos_api": "No se recuperan por XMLRPC; verificación nativa Print tras completar los seis registros API."
+}

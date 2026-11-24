@@ -1,29 +1,17 @@
-# Ejecución del grupo 2 — 23/11/2026
+# Estado vigente — 24/11/2026, ejecución terminada
 
-## Alcance vigente
+Alcance: proyecto TC:Todo.ly grupo 2 (1387), suites TS-01 (1388) y TS-02 (1470), únicamente TC-1…TC-15. Plan 2897 / build 1: quince vinculados, descripción corregida, activo y privado. Los otros 60 casos, proyecto TL anterior y Jira no se modificaron.
 
-Andre pidió ejecutar en Chrome y registrar los resultados reales en TestLink. Su captura posterior limita el alcance a TS-01 Registro de usuario (9 casos) y TS-02 Inicio de sesión (6 casos). No corregir sus especificaciones, no tocar los otros 60 casos ni el proyecto TL:Todo.ly anterior, ni publicar en Jira sin otro pedido.
+Resultado final verificado por API: **10 Passed, 5 Blocked, 0 Failed, 0 Not Run**, todos Manual. Blocked por ambigüedad: TC-2, TC-10, TC-12, TC-13 y TC-14. No asumir sus criterios ni modificar las fichas. TC-15 Passed por rechazo genérico permitido expresamente.
 
-Proyecto: TC:Todo.ly grupo 2, id 1387. Suites: 1388 y 1470. Casos nativos TC-1 a TC-15; no confundirlos con los códigos TC-001, TC-033, etc. de sus títulos. Mapeo en ejecucion.json.
+Últimas ejecuciones: TC-1=1, TC-2=23, TC-3=3, TC-4=4, TC-5=5, TC-6=6, TC-7=7, TC-8=8, TC-9=9, TC-10=22, TC-11=11, TC-12=21, TC-13=18, TC-14=19, TC-15=20. Detalle y enlaces en INFORME-EJECUCION.md y ejecucion.json.
 
-## Preparación verificada
+Se ejecutó Todo.ly manualmente en Chrome aislado (Incognito el 23/11; Guest para TC13–15 el 24/11). La API autorizada se usó solo para TestLink. Sus respuestas confirmaron globales pero omitieron pasos: se completaron TC-2/10/12/13/14/15 en interfaz y se verificaron las notas y estados de cada paso en Print. No volver a lanzar registrar_resultados.py para repetir registros ya terminados. La evidencia API anterior queda en el historial.
 
-El proyecto no tenía planes. Codex creó el plan activo privado «Ejecución grupo 2 - 2026-11-23», id2897, y el build activo/abierto «Todo.ly web - 2026-11-23», id1. Es una etiqueta de sesión, no una versión comprobada de la AUT. La descripción inicial decía75 antes de que Andre acotara: falta corregirla a15 y las dos suites.
+Adjunto1: TC-1; adjunto2: captura TC-13 en ejecución previa15. XMLRPC informó error al subir el segundo, pero la interfaz confirmó su existencia: no reenviar para evitar duplicarlo. Las demás capturas están en evidencias/. Sin bugs de producto confirmados; dudas de fichas en incidencias-fichas.md.
 
-Vinculación CONFIRMADA: exactamente15 filas con Added on date, TC-1…TC-15 de las dos suites; los otros60 quedaron sin vincular. No se ejecutó ningún caso ni se guardó Passed/Failed/Blocked todavía. Todos figuran localmente not_run.
+Cuentas nuevas QA TC004 y TC041 registradas; TC040 rechazado, sin cuenta. Credenciales y estados solo .secrets/. No se añadieron tareas, no se cambiaron contraseñas ni se eliminaron cuentas. El Login válido terminó con Logout; Todo.ly Guest queda sin sesión. No cuenta de Camila.
 
-## Bloqueo actual y siguiente paso
+Siguiente paso: el grupo autor aclara los cinco casos ambiguos; después reevaluar/repetir solo los afectados. No marcar Passed por defecto. El plan/build siguen abiertos para esa continuación. Los pendientes históricos T09/T10/T11 se mantienen aparte.
 
-Al volver a Desktop, TestLink quedó en blanco, sin documento AX. Cambiar de pestaña y navegar por la barra no recuperó la vista. Se pidió a Andre recargar manualmente TestLink y abrir Desktop → Execute Tests del plan2897. Esperar su aviso antes de usar Chrome, para no interferir con el handoff.
-
-La conexión del navegador de Codex in Chrome informó «browser access host unavailable». El acceso CUA nativo a Chrome sí funcionó para crear plan/build y vincular casos. La ventana está en el perfil RICARDO ANDRE (ucb.edu.bo), TestLink autenticado como admin. Codex abrió una pestaña New Tab vacía; no cerró sesiones ajenas.
-
-Después del aviso:
-1. Confirmar vista Execute Tests y campos de resultado/notas por paso y por caso; no pulsar las X rojas de Test Specification: eliminan pasos. Manual indica tipo, no resultado.
-2. Corregir descripción del plan a15 casos, solo suites TS-01 y TS-02.
-3. Leer las quince fichas y sus precondiciones/datos; abrir Todo.ly en QA o incógnito, aislado de sesiones existentes. No usar cuentas personales ni Camila. Confirmar las cuentas de prueba requeridas, sin exponer claves.
-4. Antes de aceptar términos para registros nuevos, solicitar confirmación en ese momento. Cambios de contraseña, captcha o correo requieren intervención según la política CUA.
-5. Ejecutar cada acción y contrastar el resultado esperado con el obtenido, sin reutilizar observaciones del18/11 como ejecución actual. Guardar resultados solo después de observarlos. Separar defecto del producto, discrepancia de ficha y bloqueo de entorno/precondición.
-6. Conservar evidencia sin secretos y registrar las incidencias en TestLink, con pasos de reproducción, esperado/obtenido y entorno. Resumir totales al terminar.
-
-Secretos solo en .secrets/. No copiar credenciales originales del XML a documentos públicos. El repositorio ya tenía cambios ajenos en revision-testlink/ del23/11: preservarlos sin editar ni incluirlos en este checkpoint. No force push. La limpieza B del trabajo anterior sigue documentada allí, pero no es el alcance prioritario de esta nueva etapa.
+Git: incluir solo trabajo/ejecucion-grupo2/ y la actualización de trabajo/CONTINUIDAD.md. Preservar sin modificar ni incorporar los cambios ajenos actuales en revision-testlink/. Secretos fuera de git; push normal, nunca force.

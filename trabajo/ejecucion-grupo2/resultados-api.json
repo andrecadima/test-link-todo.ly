@@ -1,0 +1,129 @@
+{
+  "records": [
+    {
+      "case": 10,
+      "status": "b",
+      "marker": "G2-20261123-AMBIGUO-TC10",
+      "notes": "AMBIGUO. Summary y pasos3/4 contienen parejas de credenciales diferentes. Las cinco acciones de los pasos fueron ejecutadas y el acceso fue aceptado, pero Andre indicó que los casos ambiguos deben documentarse sin asumir. No se elige una pareja como la definición correcta del caso: veredicto global Blocked hasta que el grupo autor unifique los datos. Se conserva la ejecución previa id10 y la observación real, sin borrar ni modificar la ficha ni las credenciales. No es un bug confirmado de Todo.ly. Prueba manual en Chrome/macOS; registro por API autorizado.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "statusCode": "p",
+          "notes": "Página pública visible sin sesión."
+        },
+        {
+          "stepNumber": 2,
+          "statusCode": "p",
+          "notes": "Login abrió el formulario de acceso."
+        },
+        {
+          "stepNumber": 3,
+          "statusCode": "p",
+          "notes": "Email mostró el valor literal del paso3, distinto del Summary."
+        },
+        {
+          "stepNumber": 4,
+          "statusCode": "p",
+          "notes": "Password del paso4 se mostró enmascarado."
+        },
+        {
+          "stepNumber": 5,
+          "statusCode": "p",
+          "notes": "La pareja literal de los pasos permitió entrar a la página autenticada con Settings y Logout."
+        }
+      ]
+    },
+    {
+      "case": 12,
+      "status": "b",
+      "marker": "G2-20261123-AMBIGUO-TC12",
+      "notes": "AMBIGUO. Se ejecutaron las tres acciones: Email vacío, Password de la ficha enmascarado, envío Login. Obtenido: no inicia sesión y muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. Esperado: no inicia sesión y muestra una validación para el campo Email. La ficha no define si el aviso genérico satisface esa validación ni qué señal de Email debe observarse. Por instrucción de Andre no se asume equivalencia ni se declara Passed/Failed: Blocked hasta aclarar el criterio con el grupo autor. No es un bug de producto confirmado. Ejecución manual en Chrome/macOS Incognito; registro por API autorizado.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "statusCode": "p",
+          "notes": "Email quedó vacío, como indica el paso."
+        },
+        {
+          "stepNumber": 2,
+          "statusCode": "p",
+          "notes": "Password del caso se mostró enmascarado antes del envío."
+        },
+        {
+          "stepNumber": 3,
+          "statusCode": "b",
+          "notes": "Acción ejecutada: Login rechazado con aviso genérico Wrong email or password, sin indicación específica de Email obligatorio. AMBIGUO: falta el criterio para decidir si cumple la validación solicitada; no se asume un resultado."
+        }
+      ]
+    },
+    {
+      "case": 13,
+      "status": "b",
+      "marker": "G2-20261124-AMBIGUO-TC13",
+      "notes": "AMBIGUO. Ejecución manual en Chrome/macOS, ventana Guest aislada, 24/11/2026. Se ejecutaron las tres acciones de la ficha. Obtenido: sin sesión iniciada y aviso genérico: Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. No se mostró una indicación específica junto a los campos. La ficha pide una validación para Password, pero no define si acepta el aviso genérico ni la señal observable requerida. Por instrucción de Andre no se asume equivalencia: Blocked hasta aclaración del grupo autor. No es un defecto de producto confirmado. El envío del 23/11 no tuvo lectura estable; el veredicto usa la observación completa del 24/11.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "statusCode": "p",
+          "notes": "Email mostró el valor literal de la ficha."
+        },
+        {
+          "stepNumber": 2,
+          "statusCode": "p",
+          "notes": "Password permaneció vacío antes del envío."
+        },
+        {
+          "stepNumber": 3,
+          "statusCode": "b",
+          "notes": "Login ejecutado. Sin sesión; aviso genérico: Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. AMBIGUO: falta definir qué validación de Password se considera satisfactoria."
+        }
+      ]
+    },
+    {
+      "case": 14,
+      "status": "b",
+      "marker": "G2-20261124-AMBIGUO-TC14",
+      "notes": "AMBIGUO. Ejecución manual en Chrome/macOS, ventana Guest aislada, 24/11/2026. Se ejecutaron las tres acciones de la ficha. Obtenido: sin sesión iniciada y aviso genérico: Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. No se mostró una indicación específica junto a los campos. La ficha pide una validación para los campos obligatorios, pero no define si acepta el aviso genérico ni la señal observable requerida. Por instrucción de Andre no se asume equivalencia: Blocked hasta aclaración del grupo autor. No es un defecto de producto confirmado.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "statusCode": "p",
+          "notes": "Email permaneció vacío antes del envío."
+        },
+        {
+          "stepNumber": 2,
+          "statusCode": "p",
+          "notes": "Password permaneció vacío antes del envío."
+        },
+        {
+          "stepNumber": 3,
+          "statusCode": "b",
+          "notes": "Login ejecutado. Sin sesión; aviso genérico: Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. AMBIGUO: falta definir qué validación de los campos obligatorios se considera satisfactoria."
+        }
+      ]
+    },
+    {
+      "case": 15,
+      "status": "p",
+      "marker": "G2-20261124-PASSED-TC15",
+      "notes": "Prueba manual en Chrome/macOS, Guest aislado, 24/11/2026. Se ejecutaron las tres acciones con el correo reservado de la ficha y su Password enmascarado. Login rechazado sin sesión. Obtenido: Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. Cumple el esperado explícito de credenciales no válidas o cuenta inexistente. Se utiliza el correo de prueba declarado no registrado por la ficha; el mensaje genérico no se usa como prueba de inexistencia de una cuenta ni se afirma cuál de las credenciales falló. Ninguna recuperación ni modificación de cuentas. Registro por API autorizado.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "statusCode": "p",
+          "notes": "Email mostró qa.noexiste.tc046.20261118@example.com, dato literal de la ficha."
+        },
+        {
+          "stepNumber": 2,
+          "statusCode": "p",
+          "notes": "Password de la ficha introducido y enmascarado antes del envío."
+        },
+        {
+          "stepNumber": 3,
+          "statusCode": "p",
+          "notes": "Sin sesión iniciada; acceso rechazado con el mensaje de credenciales inválidas: Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below."
+        }
+      ]
+    }
+  ]
+}

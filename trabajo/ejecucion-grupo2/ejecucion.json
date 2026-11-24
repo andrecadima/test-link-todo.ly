@@ -17,135 +17,433 @@
       "codigo_grupo": "TC-001",
       "titulo_abreviado": "Full Name obligatorio",
       "suite": "TS-01 Registro de usuario",
-      "resultado": "not_run",
-      "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "resultado": "passed",
+      "pasos": [
+        {
+          "numero": 1,
+          "resultado": "passed",
+          "obtenido": "Página pública disponible en ventana Incognito sin sesión."
+        },
+        {
+          "numero": 2,
+          "resultado": "passed",
+          "obtenido": "Signup visible."
+        },
+        {
+          "numero": 3,
+          "resultado": "passed",
+          "obtenido": "Full Name vacío."
+        },
+        {
+          "numero": 4,
+          "resultado": "passed",
+          "obtenido": "Email mostró el correo reservado de la ficha."
+        },
+        {
+          "numero": 5,
+          "resultado": "passed",
+          "obtenido": "Password enmascarado antes de enviar."
+        },
+        {
+          "numero": 6,
+          "resultado": "passed",
+          "obtenido": "Términos marcados con autorización expresa para esta ejecución."
+        },
+        {
+          "numero": 7,
+          "resultado": "passed",
+          "obtenido": "Envío rechazado con asterisco junto a Full Name; sin sesión ni registro."
+        }
+      ],
+      "notas": "Ejecución manual real en Chrome / macOS, ventana Incognito, 23/11/2026. TC-001: los 7 pasos cumplen el resultado esperado. Se observa * junto a Full Name vacío; no se registra la cuenta. Se utilizó el correo reservado de la ficha, sin modificar sus datos ni su diseño. Incidencia de herramienta: una vista transitoria no permitía leer el resultado; se recuperó sin confirmar reenvío del formulario, y se constató la validación. No se atribuye esa vista al producto. Evidencia: 2026-11-23_TC1.png.",
+      "registro_testlink": "verificado en historial y vista de ejecución: 7 notas/estados y adjunto conservados",
+      "evidencia": "evidencias/2026-11-23_TC1.png",
+      "execution_id": 1,
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=1",
+      "numero_pasos": 7,
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-23",
+      "resumen_obtenido": "Signup rechazado con asterisco junto a Full Name; sin sesión."
     },
     {
       "id": "TC-2",
       "codigo_grupo": "TC-002",
       "titulo_abreviado": "Email obligatorio",
       "suite": "TS-01 Registro de usuario",
-      "resultado": "not_run",
-      "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "resultado": "blocked",
+      "pasos": [
+        {
+          "numero": 1,
+          "resultado": "passed",
+          "obtenido": "Página pública visible sin sesión."
+        },
+        {
+          "numero": 2,
+          "resultado": "passed",
+          "obtenido": "Signup abierto."
+        },
+        {
+          "numero": 3,
+          "resultado": "passed",
+          "obtenido": "Full Name mostró QA Usuario TC002."
+        },
+        {
+          "numero": 4,
+          "resultado": "passed",
+          "obtenido": "Email vacío."
+        },
+        {
+          "numero": 5,
+          "resultado": "passed",
+          "obtenido": "Password enmascarado antes de enviar."
+        },
+        {
+          "numero": 6,
+          "resultado": "passed",
+          "obtenido": "Términos marcados con autorización."
+        },
+        {
+          "numero": 7,
+          "resultado": "passed",
+          "obtenido": "Registro rechazado; Error. Please correct the missing fields. y * junto a Email; sin sesión."
+        }
+      ],
+      "notas": "G2-20261124-AMBIGUO-TC2-NOTAS — AMBIGUO. Acciones ejecutadas el 23/11/2026: Signup rechazado con asterisco Email y Error. Please correct the missing fields., sin sesión. La precondición dice que no existe una cuenta asociada al nombre de prueba y no define cómo acreditar esa asociación. No se asume unicidad de Full Name. Blocked hasta aclaración del grupo autor; no es un bug de producto confirmado. Se conserva el resultado y las observaciones anteriores. Registro de notas por paso completado en interfaz; conserva las observaciones de la prueba manual.",
+      "registro_testlink": "Notas y estados de 7 pasos guardados por interfaz y comprobados en vista Print",
+      "execution_id": 23,
+      "observacion_ficha": "Precondición sobre inexistencia por nombre no verificable como unicidad; se cumple el objetivo observable de Email vacío.",
+      "duda": "Precondición ambigua: inexistencia de cuenta asociada al nombre, sin definir identificación o criterio verificable.",
+      "ejecucion_previa_conservada": 2,
+      "ejecucion_api_previa_conservada": 12,
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=23",
+      "numero_pasos": 7,
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-23",
+      "resumen_obtenido": "Signup rechazado con asterisco en Email y aviso de campos faltantes; precondición por nombre ambigua."
     },
     {
       "id": "TC-3",
       "codigo_grupo": "TC-003",
       "titulo_abreviado": "Password obligatorio",
       "suite": "TS-01 Registro de usuario",
-      "resultado": "not_run",
+      "resultado": "passed",
       "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "notas": "23/11/2026, ejecución manual en Chrome/macOS Incognito. TC-003: 7/7 pasos cumplen. Password vacío es señalado con * y no se completa el registro. Datos reservados tomados de la ficha. Sin cambios al diseño ni defectos del producto observados en este caso.",
+      "execution_id": 3,
+      "registro_testlink": "verificado en historial; notas por paso guardadas en TestLink",
+      "numero_pasos": 7,
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=3",
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-23",
+      "resumen_obtenido": "Signup rechazado con asterisco junto a Password y aviso de campos faltantes; sin sesión."
     },
     {
       "id": "TC-4",
       "codigo_grupo": "TC-004",
       "titulo_abreviado": "Registro con campos obligatorios completos",
       "suite": "TS-01 Registro de usuario",
-      "resultado": "not_run",
+      "resultado": "passed",
       "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "notas": "23/11/2026, Chrome/macOS Incognito. TC-004: 7/7 pasos cumplen; registro aceptado con el correo reservado y los datos literales de la ficha. Inbox y Logout visibles. Cuenta de prueba creada; credenciales conservadas solo en el registro privado. Sin fallas observadas.",
+      "execution_id": 4,
+      "registro_testlink": "verificado en historial; notas por paso guardadas en TestLink",
+      "numero_pasos": 7,
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=4",
+      "evidencia_local": "evidencias/2026-11-23_TC4.png",
+      "cuenta_prueba_creada": true,
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-23",
+      "resumen_obtenido": "Registro aceptado: Inbox y Logout visibles; cuenta QA TC004 creada."
     },
     {
       "id": "TC-5",
       "codigo_grupo": "TC-037",
       "titulo_abreviado": "Registro sin aceptar condiciones",
       "suite": "TS-01 Registro de usuario",
-      "resultado": "not_run",
+      "resultado": "passed",
       "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "notas": "23/11/2026, Chrome/macOS Incognito. TC-037: 7/7 pasos cumplen. Con los datos completos y la aceptación desmarcada, se solicitó aceptar los términos y no se completó el registro. También se observó el aviso Error. Please correct the missing fields. No hay defecto de producto observado en este caso.",
+      "execution_id": 5,
+      "registro_testlink": "verificado en historial; notas por paso guardadas en TestLink",
+      "numero_pasos": 7,
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=5",
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-23",
+      "resumen_obtenido": "Signup rechazado: faltan condiciones aceptadas; mensaje If you don’t agree you can’t use Todo.ly."
     },
     {
       "id": "TC-6",
       "codigo_grupo": "TC-039",
       "titulo_abreviado": "Formato del correo",
       "suite": "TS-01 Registro de usuario",
-      "resultado": "not_run",
+      "resultado": "passed",
       "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "notas": "23/11/2026, Chrome/macOS Incognito. TC-039: 7/7 pasos cumplen. El valor sin arroba fue rechazado mediante Error. Invalid Email Address!, que satisface el resultado esperado de formato inválido. Sin cambios a la ficha ni defecto observado.",
+      "execution_id": 6,
+      "registro_testlink": "verificado en historial; notas por paso guardadas en TestLink",
+      "numero_pasos": 7,
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=6",
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-23",
+      "resumen_obtenido": "Signup rechazado con Error. Invalid Email Address!; sin sesión."
     },
     {
       "id": "TC-7",
       "codigo_grupo": "TC-040",
       "titulo_abreviado": "Full Name solo espacios",
       "suite": "TS-01 Registro de usuario",
-      "resultado": "not_run",
+      "resultado": "passed",
       "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "notas": "23/11/2026, Chrome/macOS Incognito. TC-040: 7/7 pasos cumplen. Se enviaron exactamente tres espacios en Full Name; la respuesta señaló el campo como obligatorio y mantuvo la página sin sesión. No se registró la cuenta. Sin defecto de producto observado.",
+      "execution_id": 7,
+      "registro_testlink": "verificado en historial; notas por paso guardadas en TestLink",
+      "numero_pasos": 7,
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=7",
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-23",
+      "resumen_obtenido": "Tres espacios ASCII rechazados: asterisco Full Name y aviso de campos faltantes."
     },
     {
       "id": "TC-8",
       "codigo_grupo": "TC-041",
       "titulo_abreviado": "Caracteres especiales Full Name",
       "suite": "TS-01 Registro de usuario",
-      "resultado": "not_run",
+      "resultado": "passed",
       "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "notas": "23/11/2026, Chrome/macOS Incognito. TC-041: 7/7 pasos cumplen. Se registró la cuenta de prueba y se comparó el nombre mostrado en Settings/Profile con la cadena enviada, conservando los caracteres especiales. Consulta adicional de Profile necesaria para observar el resultado esperado del paso 7; no se cambió el diseño ni la configuración. Credenciales solo en el registro privado.",
+      "execution_id": 8,
+      "registro_testlink": "verificado en historial; notas por paso guardadas en TestLink",
+      "numero_pasos": 7,
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=8",
+      "cuenta_prueba_creada": true,
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-23",
+      "resumen_obtenido": "Registro aceptado; Settings/Profile conservó QA Ñandú Álvarez #1; cuenta QA TC041 creada."
     },
     {
       "id": "TC-9",
       "codigo_grupo": "TC-042",
       "titulo_abreviado": "Correo ya registrado",
       "suite": "TS-01 Registro de usuario",
-      "resultado": "not_run",
+      "resultado": "passed",
       "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "notas": "23/11/2026, Chrome/macOS Incognito. TC-042: 7/7 pasos cumplen. Se siguió literalmente el dato Email de la ficha y se obtuvo el rechazo específico por cuenta ya existente. No se inició sesión ni se accedió a los datos de esa cuenta, y no se modificaron sus credenciales. Sin defecto observado.",
+      "execution_id": 9,
+      "registro_testlink": "verificado en historial; notas por paso guardadas en TestLink",
+      "numero_pasos": 7,
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=9",
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-23",
+      "resumen_obtenido": "Signup rechazado con Error. Account with this email address already exists!; sin sesión."
     },
     {
       "id": "TC-10",
       "codigo_grupo": "TC-033",
       "titulo_abreviado": "Login válido",
       "suite": "TS-02 Inicio de sesión",
-      "resultado": "not_run",
-      "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "resultado": "blocked",
+      "pasos": [
+        {
+          "numero": 1,
+          "resultado": "passed",
+          "obtenido": "Página pública visible sin sesión."
+        },
+        {
+          "numero": 2,
+          "resultado": "passed",
+          "obtenido": "Login abrió el formulario de acceso."
+        },
+        {
+          "numero": 3,
+          "resultado": "passed",
+          "obtenido": "Email mostró el valor literal del paso3, distinto del Summary."
+        },
+        {
+          "numero": 4,
+          "resultado": "passed",
+          "obtenido": "Password del paso4 se mostró enmascarado."
+        },
+        {
+          "numero": 5,
+          "resultado": "passed",
+          "obtenido": "La pareja literal de los pasos permitió entrar a la página autenticada con Settings y Logout."
+        }
+      ],
+      "notas": "G2-20261123-AMBIGUO-TC10 — AMBIGUO. Summary y pasos3/4 contienen parejas de credenciales diferentes. Las cinco acciones de los pasos fueron ejecutadas y el acceso fue aceptado, pero Andre indicó que los casos ambiguos deben documentarse sin asumir. No se elige una pareja como la definición correcta del caso: veredicto global Blocked hasta que el grupo autor unifique los datos. Se conserva la ejecución previa id10 y la observación real, sin borrar ni modificar la ficha ni las credenciales. No es un bug confirmado de Todo.ly. Prueba manual en Chrome/macOS; registro por API autorizado. Registro de notas por paso completado en interfaz; conserva las observaciones de la prueba manual.",
+      "execution_id": 22,
+      "registro_testlink": "Notas y estados de 5 pasos guardados por interfaz y comprobados en vista Print",
+      "numero_pasos": 5,
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=22",
+      "observacion_ficha": "Summary y pasos3/4 contienen pares de credenciales distintos. Se siguieron los pasos y el acceso fue válido.",
+      "duda": "Datos contradictorios: Summary y pasos3/4 usan parejas distintas; no corresponde asumir cuál es el dato autorizado del caso.",
+      "ejecucion_api_previa_conservada": 13,
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-23",
+      "resumen_obtenido": "Acceso aceptado con los datos literales de los pasos, seguido de Logout; datos del Summary contradictorios, caso ambiguo."
     },
     {
       "id": "TC-11",
       "codigo_grupo": "TC-034",
       "titulo_abreviado": "Password incorrecto",
       "suite": "TS-02 Inicio de sesión",
-      "resultado": "not_run",
+      "resultado": "passed",
       "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "notas": "23/11/2026, Chrome/macOS Incognito. TC-034: 5/5 pasos cumplen. Se hizo un único intento con el valor incorrecto literal del paso4 y se observó rechazo genérico de credenciales. El correo de prueba había dado el rechazo específico de ya registrado durante TC-042. No se accedió a los datos de esa cuenta ni se modificaron credenciales. Sin defecto de producto observado.",
+      "execution_id": 11,
+      "registro_testlink": "verificado en historial; notas por paso guardadas en TestLink",
+      "numero_pasos": 5,
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=11",
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-23",
+      "resumen_obtenido": "Password incorrecto rechazado con Error. Wrong email or password; sin sesión."
     },
     {
       "id": "TC-12",
       "codigo_grupo": "TC-043",
       "titulo_abreviado": "Email vacío Login",
       "suite": "TS-02 Inicio de sesión",
-      "resultado": "not_run",
-      "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "resultado": "blocked",
+      "pasos": [
+        {
+          "numero": 1,
+          "resultado": "passed",
+          "obtenido": "Email quedó vacío, como indica el paso."
+        },
+        {
+          "numero": 2,
+          "resultado": "passed",
+          "obtenido": "Password del caso se mostró enmascarado antes del envío."
+        },
+        {
+          "numero": 3,
+          "resultado": "blocked",
+          "obtenido": "Acción ejecutada: Login rechazado con aviso genérico Wrong email or password, sin indicación específica de Email obligatorio. AMBIGUO: falta el criterio para decidir si cumple la validación solicitada; no se asume un resultado."
+        }
+      ],
+      "notas": "G2-20261123-AMBIGUO-TC12 — AMBIGUO. Se ejecutaron las tres acciones: Email vacío, Password de la ficha enmascarado, envío Login. Obtenido: no inicia sesión y muestra Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. Esperado: no inicia sesión y muestra una validación para el campo Email. La ficha no define si el aviso genérico satisface esa validación ni qué señal de Email debe observarse. Por instrucción de Andre no se asume equivalencia ni se declara Passed/Failed: Blocked hasta aclarar el criterio con el grupo autor. No es un bug de producto confirmado. Ejecución manual en Chrome/macOS Incognito; registro por API autorizado. Registro de notas por paso completado en interfaz; conserva las observaciones de la prueba manual.",
+      "registro_testlink": "Notas y estados de 3 pasos guardados por interfaz y comprobados en vista Print",
+      "duda": "AMBIGUO: Andre indicó documentar sin asumir criterios. No se equipara el rechazo genérico a una validación específica de Email.",
+      "execution_id": 21,
+      "numero_pasos": 3,
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=21",
+      "ejecucion_api_previa_conservada": 14,
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-23",
+      "resumen_obtenido": "Email vacío rechazado con aviso genérico, sin indicación específica; criterio de validación Email ambiguo."
     },
     {
       "id": "TC-13",
       "codigo_grupo": "TC-044",
       "titulo_abreviado": "Password vacío Login",
       "suite": "TS-02 Inicio de sesión",
-      "resultado": "not_run",
-      "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "resultado": "blocked",
+      "pasos": [
+        {
+          "numero": 1,
+          "resultado": "passed",
+          "obtenido": "Email mostró el valor literal de la ficha."
+        },
+        {
+          "numero": 2,
+          "resultado": "passed",
+          "obtenido": "Password permaneció vacío antes del envío."
+        },
+        {
+          "numero": 3,
+          "resultado": "blocked",
+          "obtenido": "Login ejecutado. Sin sesión; aviso genérico: Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. AMBIGUO: falta definir qué validación de Password se considera satisfactoria."
+        }
+      ],
+      "notas": "G2-20261124-AMBIGUO-TC13 — AMBIGUO. Ejecución manual en Chrome/macOS, ventana Guest aislada, 24/11/2026. Se ejecutaron las tres acciones de la ficha. Obtenido: sin sesión iniciada y aviso genérico: Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. No se mostró una indicación específica junto a los campos. La ficha pide una validación para Password, pero no define si acepta el aviso genérico ni la señal observable requerida. Por instrucción de Andre no se asume equivalencia: Blocked hasta aclaración del grupo autor. No es un defecto de producto confirmado. El envío del 23/11 no tuvo lectura estable; el veredicto usa la observación completa del 24/11. Registro de notas por paso completado en interfaz; conserva las observaciones de la prueba manual.",
+      "registro_testlink": "Notas y estados de los tres pasos comprobados en la vista Print de la ejecución nativa18",
+      "numero_pasos": 3,
+      "duda": "AMBIGUO: la ficha pide validación para Password sin definir si acepta aviso genérico. Por instrucción de Andre no se asume equivalencia.",
+      "execution_id": 18,
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=18",
+      "ejecucion_api_previa_conservada": 15,
+      "adjunto_id": 2,
+      "adjunto_en_ejecucion_previa": 15,
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-24",
+      "resumen_obtenido": "Password vacío rechazado con aviso genérico, sin indicación específica; criterio de validación Password ambiguo.",
+      "evidencia": "evidencias/2026-11-24_TC13.png"
     },
     {
       "id": "TC-14",
       "codigo_grupo": "TC-045",
       "titulo_abreviado": "Login ambos vacíos",
       "suite": "TS-02 Inicio de sesión",
-      "resultado": "not_run",
-      "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "resultado": "blocked",
+      "pasos": [
+        {
+          "numero": 1,
+          "resultado": "passed",
+          "obtenido": "Email permaneció vacío antes del envío."
+        },
+        {
+          "numero": 2,
+          "resultado": "passed",
+          "obtenido": "Password permaneció vacío antes del envío."
+        },
+        {
+          "numero": 3,
+          "resultado": "blocked",
+          "obtenido": "Login ejecutado. Sin sesión; aviso genérico: Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. AMBIGUO: falta definir qué validación de los campos obligatorios se considera satisfactoria."
+        }
+      ],
+      "notas": "G2-20261124-AMBIGUO-TC14 — AMBIGUO. Ejecución manual en Chrome/macOS, ventana Guest aislada, 24/11/2026. Se ejecutaron las tres acciones de la ficha. Obtenido: sin sesión iniciada y aviso genérico: Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. No se mostró una indicación específica junto a los campos. La ficha pide una validación para los campos obligatorios, pero no define si acepta el aviso genérico ni la señal observable requerida. Por instrucción de Andre no se asume equivalencia: Blocked hasta aclaración del grupo autor. No es un defecto de producto confirmado. Registro de notas por paso completado en interfaz; conserva las observaciones de la prueba manual.",
+      "execution_id": 19,
+      "numero_pasos": 3,
+      "registro_testlink": "Notas y estados de 3 pasos guardados por interfaz y comprobados en vista Print",
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=19",
+      "ejecucion_api_previa_conservada": 16,
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-24",
+      "resumen_obtenido": "Ambos vacíos rechazados con aviso genérico, sin indicación específica; criterio de validaciones de campos ambiguo.",
+      "evidencia": "evidencias/2026-11-24_TC14.png"
     },
     {
       "id": "TC-15",
       "codigo_grupo": "TC-046",
       "titulo_abreviado": "Login correo no registrado",
       "suite": "TS-02 Inicio de sesión",
-      "resultado": "not_run",
-      "pasos": [],
-      "notas": "Pendiente de ejecución real."
+      "resultado": "passed",
+      "pasos": [
+        {
+          "numero": 1,
+          "resultado": "passed",
+          "obtenido": "Email mostró qa.noexiste.tc046.20261118@example.com, dato literal de la ficha."
+        },
+        {
+          "numero": 2,
+          "resultado": "passed",
+          "obtenido": "Password de la ficha introducido y enmascarado antes del envío."
+        },
+        {
+          "numero": 3,
+          "resultado": "passed",
+          "obtenido": "Sin sesión iniciada; acceso rechazado con el mensaje de credenciales inválidas: Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below."
+        }
+      ],
+      "notas": "G2-20261124-PASSED-TC15 — Prueba manual en Chrome/macOS, Guest aislado, 24/11/2026. Se ejecutaron las tres acciones con el correo reservado de la ficha y su Password enmascarado. Login rechazado sin sesión. Obtenido: Error. Wrong email or password. Please try again. Forgot your password? You can retrieve it using the form below. Cumple el esperado explícito de credenciales no válidas o cuenta inexistente. Se utiliza el correo de prueba declarado no registrado por la ficha; el mensaje genérico no se usa como prueba de inexistencia de una cuenta ni se afirma cuál de las credenciales falló. Ninguna recuperación ni modificación de cuentas. Registro por API autorizado. Registro de notas por paso completado en interfaz; conserva las observaciones de la prueba manual.",
+      "execution_id": 20,
+      "numero_pasos": 3,
+      "registro_testlink": "Notas y estados de 3 pasos guardados por interfaz y comprobados en vista Print",
+      "enlace_ejecucion": "http://68.211.149.112/lib/execute/execPrint.php?id=20",
+      "ejecucion_api_previa_conservada": 17,
+      "notas_por_paso_verificadas": true,
+      "fecha_ejecucion_manual": "2026-11-24",
+      "resumen_obtenido": "Acceso rechazado con aviso genérico de credenciales inválidas, admitido explícitamente por la ficha.",
+      "evidencia": "evidencias/2026-11-24_TC15.png"
     }
-  ]
+  ],
+  "consentimiento_terminos": "Andre aceptó expresamente para las cuentas de prueba de esta ejecución el 23/11/2026.",
+  "criterio_ambiguos": "Andre: los casos ambiguos se documentan como ambiguos, sin asumir resultados (23/11/2026). Veredicto Blocked hasta aclaración.",
+  "fecha_fin": "2026-11-24",
+  "totales": {
+    "passed": 10,
+    "blocked": 5
+  },
+  "plan_descripcion_corregida": true,
+  "registro": "Ejecución manual de Todo.ly en Chrome. UI y API para TestLink; la API confirmó resultados globales pero omitió las notas de pasos. Se completaron por interfaz TC-2,10,12,13,14,15 y se comprobaron sus notas/estados en Print. El historial anterior se conserva."
 }

@@ -1,6 +1,8 @@
-# Etapa vigente — ejecución del XML del grupo 2, 23/11/2026
+# Etapa vigente — ejecución del XML del grupo 2, terminada 24/11/2026
 
-Andre pidió ejecutar por Chrome solo TS-01 Registro de usuario (9) y TS-02 Inicio de sesión (6) del nuevo proyecto TC:Todo.ly grupo2 (id1387). Se creó plan2897/build1 y se confirmaron15 casos vinculados TC-1…TC-15. Cero casos ejecutados/resultados guardados todavía. TestLink quedó en blanco al navegar a Desktop; se pidió a Andre recargar y abrir Execute Tests. Esperar su aviso antes de retomar Chrome. Detalle y siguiente paso exacto en trabajo/ejecucion-grupo2/CONTINUIDAD.md; inventario en ejecucion.json. No tocar otros60 casos ni corregir fichas ni publicar en Jira. Los pendientes antiguos se conservan abajo, sin desplazar esta prioridad.
+Quince casos de TS-01 y TS-02 ejecutados manualmente en Chrome y registrados en el proyecto TC:Todo.ly grupo2 (1387), plan2897/build1. **10 Passed y5 Blocked por ambigüedad; cero Failed y cero Not Run.** Notas y resultados por paso guardados; API confirmó últimos globales y alcance de15. Los seis registros con pasos omitidos por API se completaron/verificaron en la interfaz. INFORME-EJECUCION.md, ejecucion.json, verificacion-final.json e incidencias-fichas.md están en trabajo/ejecucion-grupo2/.
+
+Siguiente: el grupo autor debe aclarar TC-2/10/12/13/14 antes de reevaluarlos; no asumir sus criterios. Las cuentas QA creadas se conservan sin tareas añadidas; credenciales privadas. No se modificaron otros60 casos ni Jira. No repetir las pruebas o importaciones completadas. Detalle en trabajo/ejecucion-grupo2/CONTINUIDAD.md. Los pendientes históricos se conservan abajo y no cambian esta conclusión.
 
 ---
 
